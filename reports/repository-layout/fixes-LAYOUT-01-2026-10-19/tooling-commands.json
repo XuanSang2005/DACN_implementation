@@ -1,0 +1,80 @@
+[
+  {
+    "name": "regression",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "/Users/macbookpro/Documents/DACN_implementation/tools/tests",
+      "-p",
+      "test_package_wrappers.py",
+      "-v"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout01-check-j5f3nwu9",
+    "exit_code": 0,
+    "log": "regression.log"
+  },
+  {
+    "name": "s01-collector",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+      "-B",
+      "/Users/macbookpro/Documents/DACN_implementation/packages/s01/tools/collect_evidence.py",
+      "--wheel-dir",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/builds",
+      "--report-dir",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/fixes-LAYOUT-01-2026-10-19/s01-package-verification"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout01-check-j5f3nwu9",
+    "exit_code": 0,
+    "log": "s01-collector.log"
+  },
+  {
+    "name": "s02-collector",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+      "-B",
+      "/Users/macbookpro/Documents/DACN_implementation/packages/s02/tools/collect_evidence.py",
+      "--wheel-dir",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/builds",
+      "--report-dir",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/fixes-LAYOUT-01-2026-10-19/s02-package-verification"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout01-check-j5f3nwu9",
+    "exit_code": 0,
+    "log": "s02-collector.log"
+  },
+  {
+    "name": "workspace-collector",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+      "-B",
+      "/Users/macbookpro/Documents/DACN_implementation/tools/collect_evidence.py",
+      "--package",
+      "all",
+      "--wheel-dir",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/builds",
+      "--report-dir",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/fixes-LAYOUT-01-2026-10-19/workspace-package-verification"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout01-check-j5f3nwu9",
+    "exit_code": 0,
+    "log": "workspace-collector.log"
+  },
+  {
+    "name": "pip-check",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout01-check-j5f3nwu9",
+    "exit_code": 0,
+    "log": "pip-check.log"
+  }
+]

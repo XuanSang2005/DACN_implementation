@@ -1,0 +1,40 @@
+Processing /Users/macbookpro/Documents/DACN_implementation
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: dacn-s01
+  Building wheel for dacn-s01 (pyproject.toml): started
+  Building wheel for dacn-s01 (pyproject.toml): finished with status 'done'
+  Created wheel for dacn-s01: filename=dacn_s01-0.1.0a1-py3-none-any.whl size=7643 sha256=8ee9e0775b3c938dbcfdbe4733e7eb715aeb5bf57c46566dcf15f28bc2f3dd70
+  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-6y3jckb4/wheels/f6/b1/15/9d315d943c28c91a8202191c5c06ff57af2721e5f134614272
+Successfully built dacn-s01
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip install --upgrade pip
+Processing ./dist/dacn_s01-0.1.0a1-py3-none-any.whl
+Installing collected packages: dacn-s01
+Successfully installed dacn-s01-0.1.0a1
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip install --upgrade pip
+Processing /Users/macbookpro/Documents/DACN_implementation
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: dacn-s01
+  Building wheel for dacn-s01 (pyproject.toml): started
+  Building wheel for dacn-s01 (pyproject.toml): finished with status 'done'
+  Created wheel for dacn-s01: filename=dacn_s01-0.1.0a1-py3-none-any.whl size=7797 sha256=aec0a535212e572121e2672afea4cfaf1ead8e0bacd446c00b602b0b727275c5
+  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-vr5kkf6m/wheels/f6/b1/15/9d315d943c28c91a8202191c5c06ff57af2721e5f134614272
+Successfully built dacn-s01
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip install --upgrade pip
+Processing ./dist/dacn_s01-0.1.0a1-py3-none-any.whl
+Installing collected packages: dacn-s01
+  Attempting uninstall: dacn-s01
+    Found existing installation: dacn-s01 0.1.0a1
+    Uninstalling dacn-s01-0.1.0a1:
+      Successfully uninstalled dacn-s01-0.1.0a1
+Successfully installed dacn-s01-0.1.0a1
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip install --upgrade pip

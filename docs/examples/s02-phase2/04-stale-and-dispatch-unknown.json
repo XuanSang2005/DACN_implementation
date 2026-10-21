@@ -1,0 +1,124 @@
+{
+  "illustration": {
+    "status": "ví dụ minh họa chưa thực thi",
+    "title": "Stale đã capture và dispatch_unknown không capture là hai lịch riêng",
+    "production_importable": false,
+    "meaning": "Kịch bản/projections cho proposal; không phải full canonical export, kết quả mong đợi chưa chạy.",
+    "user_business_confirmation": false
+  },
+  "contract_version": "s02/0.1.0-draft.3",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
+  "bindings": [
+    {
+      "name": "selected_s01_snapshot",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "name": "prior_illustrative_model",
+      "file": "../s02/01-source-and-model.json",
+      "pointer": "/records/2"
+    }
+  ],
+  "cases": [
+    {
+      "name": "captured-but-analysis-stale",
+      "initial_pins": {
+        "base_model_id": "model-clinic-1",
+        "base_analysis_set_id": "AS-clinic-1"
+      },
+      "timeline": [
+        {
+          "order": 1,
+          "event": "T0 chuẩn bị request/prompt/config và receipt."
+        },
+        {
+          "order": 2,
+          "event": "T1 dispatch_intent commit; gửi một lần."
+        },
+        {
+          "order": 3,
+          "event": "Worker khác đổi AnalysisSet thành p2-set-new; Model giữ nguyên."
+        },
+        {
+          "order": 4,
+          "event": "T2a raw bytes durable; T2b response_received; parse candidate hợp lệ."
+        },
+        {
+          "order": 5,
+          "event": "T3 CAS set mismatch, finalize stale chỉ artifacts/attempt/outcome."
+        }
+      ],
+      "expected": {
+        "run_status": "stale",
+        "result_model_id": null,
+        "result_analysis_set_id": null,
+        "head_model_id": "model-clinic-1",
+        "head_analysis_set_id": "p2-set-new",
+        "raw_retained": true,
+        "recovery_provider_calls": 0,
+        "next_step": "Explicit new work trên pair mới nếu còn phù hợp; không promote candidate cũ trực tiếp."
+      }
+    },
+    {
+      "name": "dispatch-outcome-unknown",
+      "timeline": [
+        {
+          "order": 1,
+          "event": "T0 pin request + reserve budget trong ledger đề xuất G4."
+        },
+        {
+          "order": 2,
+          "event": "T1 dispatch_intent commit."
+        },
+        {
+          "order": 3,
+          "event": "Kết nối mất/worker chết trước có raw response durable; không biết provider đã nhận hay chưa."
+        },
+        {
+          "order": 4,
+          "event": "Lookup command không có response; operator xem trạng thái dispatch_unknown."
+        }
+      ],
+      "expected": {
+        "command_state": "dispatch_unknown",
+        "attempt_status": "unknown_outcome",
+        "response_artifact_id": null,
+        "usage": null,
+        "known_cost_usd": null,
+        "reservation_released": false,
+        "automatic_resend": false,
+        "result_model_id": null,
+        "result_analysis_set_id": null,
+        "run_status_if_finalized": "failed",
+        "recovery": "Đối soát; unknown không được chuyển completed hoặc giá 0. Không tuyên bố exactly-once."
+      }
+    },
+    {
+      "name": "raw-captured-before-metadata",
+      "timeline": [
+        {
+          "order": 1,
+          "event": "Đề xuất G3: T2a commit raw bytes + response_bytes_captured chứa HTTP status/safe headers/requested model/elapsed/complete_body=true; chưa phải event hiện có."
+        },
+        {
+          "order": 2,
+          "event": "Crash trước parse outer envelope và response_received."
+        },
+        {
+          "order": 3,
+          "event": "Recovery get_stage đúng blob ID/hash, parse tại local rồi ghi metadata T2b và thử T3."
+        }
+      ],
+      "expected": {
+        "provider_resend_count": 0,
+        "classification": "Sau khi amendment G3 được duyệt: raw + transport metadata đầy đủ cần parse local, không resend; a3 chưa có trạng thái này.",
+        "requires_audit": "G3 stage discoverability và crash windows"
+      }
+    }
+  ],
+  "assumptions": [
+    "T2a/T2b thuộc đề xuất amendment G3, chưa có typed response_bytes_captured trong draft.3/a3.",
+    "Không tuyên bố command lookup a3 đã nhận biết T2a; trước response_received, a3 vẫn dẫn xuất dispatch_unknown."
+  ]
+}

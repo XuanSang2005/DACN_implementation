@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/macbookpro/Documents/DACN_implementation/packages/s02/tools/collect_evidence.py", line 7, in <module>
+    raise SystemExit(tooling["main"](fixed_package="s02"))
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Documents/DACN_implementation/tools/collect_evidence.py", line 104, in main
+    assert a == b == c, f'{name}: package inventory/content mismatch'
+           ^^^^^^^^^^^
+AssertionError: s02: package inventory/content mismatch

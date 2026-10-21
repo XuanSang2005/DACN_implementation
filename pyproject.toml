@@ -1,0 +1,6 @@
+# Workspace navigation only. Build each package from packages/s01 or packages/s02.
+# This root is not the dacn-s01 distribution and has no build-system/project table.
+[tool.dacn-workspace]
+packages = ["packages/s01", "packages/s02"]
+runtime = "CPython 3.13.16"
+checks = "tools/run_checks.py"

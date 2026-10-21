@@ -1,0 +1,569 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-clinic-demo",
+  "external_bindings": [
+    {
+      "id": "ctx-clinic-1",
+      "type": "source_context",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "s02-run-demo-1",
+      "type": "run",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "model-clinic-1",
+      "type": "model",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "Q-book",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "Q-cancel",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "Q-clinic",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "AS-clinic-1",
+      "type": "analysis_set",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/6"
+    },
+    {
+      "id": "SC-cancel",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "SC-performance",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "Q-growth",
+      "type": "issue",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "CHAR-performance",
+      "type": "characteristic",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "VIEW-main-1",
+      "type": "view",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "VAL-not-run-1",
+      "type": "validation",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "DIAGRAM-pending-1",
+      "type": "diagram",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/6"
+    },
+    {
+      "id": "BUNDLE-preparing-1",
+      "type": "bundle",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/7"
+    },
+    {
+      "id": "HANDOFF-denied-1",
+      "type": "handoff",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/8"
+    },
+    {
+      "id": "AS-clinic-2",
+      "type": "analysis_set",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/9"
+    },
+    {
+      "id": "BUNDLE-ready-hypothetical",
+      "type": "hypothetical_bundle",
+      "file": "04-review-and-rejection-scenarios.json",
+      "pointer": "/scenarios/0/definitions/0"
+    },
+    {
+      "id": "REVIEW-conditional-hypothetical",
+      "type": "hypothetical_review",
+      "file": "04-review-and-rejection-scenarios.json",
+      "pointer": "/scenarios/0/definitions/1"
+    }
+  ],
+  "records": [],
+  "scenarios": [
+    {
+      "id": "F01-precondition",
+      "given": {
+        "model_id": "model-clinic-1",
+        "analysis_set_id": "AS-clinic-2",
+        "bundle_id": "BUNDLE-ready-hypothetical",
+        "review_id": "REVIEW-conditional-hypothetical"
+      },
+      "assumption": "Chỉ giả định người dùng đã review đúng bundle đủ mọi structural/render/readability gates, accepted cho scope bệnh nhân ở file04. Không có review/LLM/render thực. Ba lịch bên dưới độc lập, đều bắt đầu từ đây."
+    },
+    {
+      "id": "F01-new-blocking-issue",
+      "publish_records": [
+        {
+          "type": "issue",
+          "id": "Q-F01-patient-block",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-F01-patient-block-key",
+            "supersedes_id": null,
+            "model_id": "model-clinic-1",
+            "detected_step": 1,
+            "kind": "business",
+            "question": "Giả định audit phát hiện một điểm chặn mới trong luồng xem của bệnh nhân?",
+            "reason": "Counterexample synthetic về freshness, không khẳng định yêu cầu phòng khám có lỗi này.",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1/acceptance_criteria/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP03"
+              ],
+              "mapping_part_ids": [
+                "MAP-R4-req-patient",
+                "MAP-R4-ac0-part"
+              ]
+            },
+            "blocking": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP03"
+              ],
+              "mapping_part_ids": [
+                "MAP-R4-req-patient",
+                "MAP-R4-ac0-part"
+              ]
+            },
+            "status": "open",
+            "answer_ids": [],
+            "resolution": null,
+            "resolution_event_refs": []
+          }
+        },
+        {
+          "type": "analysis_set",
+          "id": "AS-F01-issue",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "model_id": "model-clinic-1",
+            "revision": 3,
+            "parent_set_id": "AS-clinic-2",
+            "scenario_ids": [
+              "SC-cancel",
+              "SC-performance"
+            ],
+            "characteristic_ids": [
+              "CHAR-performance"
+            ],
+            "issue_ids": [
+              "Q-book",
+              "Q-cancel",
+              "Q-clinic",
+              "Q-growth",
+              "Q-F01-patient-block"
+            ],
+            "changed_record_ids": [
+              "Q-F01-patient-block"
+            ],
+            "affected": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "A01",
+                "A02",
+                "OP01",
+                "OP02",
+                "OP03",
+                "OP04",
+                "WF01",
+                "WF02",
+                "WF03",
+                "WF04",
+                "DATA01",
+                "DATA02",
+                "DATA03",
+                "DATA04",
+                "RULE01",
+                "RULE02",
+                "RULE03",
+                "RULE04",
+                "C01",
+                "C03",
+                "RS01",
+                "RS02",
+                "RS03",
+                "RS04",
+                "RS05",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R4-req-patient",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac0-part",
+                "MAP-R4-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            }
+          }
+        }
+      ],
+      "expected": {
+        "head_model_id": "model-clinic-1",
+        "head_analysis_set_id": "AS-F01-issue",
+        "old_bundle_id": "BUNDLE-ready-hypothetical",
+        "handoff_eligible": false,
+        "allowed_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "code": "ANALYSIS_STALE",
+        "stage": "review",
+        "reason": "M1 không đổi nhưng set đã đổi. Review cũ lịch sử; issue mới chặn OP03. Gói mới cần validation/review, không carry approval độc lập."
+      }
+    },
+    {
+      "id": "F01-characteristic-successor",
+      "publish_records": [
+        {
+          "type": "characteristic",
+          "id": "CHAR-performance-v2",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "model_id": "model-clinic-1",
+            "name": "performance",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/0"
+                },
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/constraints/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "scope": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "C01",
+                "C03",
+                "D01"
+              ],
+              "mapping_part_ids": []
+            },
+            "goal": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+            "conditions": [
+              "Đo phía server, percentile95.",
+              "50 người dùng trong 30 phút là điều kiện thử, chưa phải tải production."
+            ],
+            "priority": null,
+            "scenario_ids": [
+              "SC-performance"
+            ],
+            "boundary_effects": [
+              {
+                "element_refs": [
+                  {
+                    "model_id": "model-clinic-1",
+                    "element_id": "C01"
+                  },
+                  {
+                    "model_id": "model-clinic-1",
+                    "element_id": "D01"
+                  }
+                ],
+                "observation": "Giữ đọc/ghi trong C01 tránh thêm ranh giới đọc riêng; dependency phạm vi xem vẫn cần giữ. Tác động runtime chưa biết.",
+                "evidence_refs": [
+                  {
+                    "snapshot_id": "snap-demo-clinic-r1",
+                    "input_pointer": "/functional_requirements/0"
+                  },
+                  {
+                    "snapshot_id": "snap-demo-clinic-r1",
+                    "input_pointer": "/functional_requirements/1"
+                  },
+                  {
+                    "snapshot_id": "snap-demo-clinic-r1",
+                    "input_pointer": "/non_functional_requirements/0"
+                  },
+                  {
+                    "snapshot_id": "snap-demo-clinic-r1",
+                    "input_pointer": "/non_functional_requirements/1"
+                  }
+                ],
+                "assumptions": [
+                  "C01 phụ trách đường xem là lựa chọn inferred."
+                ]
+              }
+            ],
+            "options": [
+              {
+                "id": "OPT-keep",
+                "action": "keep",
+                "description": "Giữ phương án hiện tại để review; chưa có căn cứ tải tăng để áp tách.",
+                "benefits": [
+                  "Ít hợp đồng phối hợp mới ở mức model."
+                ],
+                "costs": [
+                  "C01 nhận nhiều trách nhiệm hơn."
+                ],
+                "other_characteristic_impacts": [
+                  "Quy tắc R1/R2 vẫn cần cơ chế nhất quán được thiết kế và kiểm chứng."
+                ],
+                "constraint_refs": [
+                  {
+                    "snapshot_id": "snap-demo-clinic-r1",
+                    "input_pointer": "/constraints/0"
+                  }
+                ],
+                "precondition_issue_ids": []
+              },
+              {
+                "id": "OPT-split-read",
+                "action": "split",
+                "description": "Chỉ cân nhắc tách tra cứu nếu mục tiêu được cung cấp, chưa áp dụng.",
+                "benefits": [
+                  "Có thể chuyên biệt trách nhiệm đọc; chưa khẳng định scale độc lập."
+                ],
+                "costs": [
+                  "Thêm hợp đồng dữ liệu và phối hợp."
+                ],
+                "other_characteristic_impacts": [
+                  "Cần xét độ mới dữ liệu và phạm vi quyền xem."
+                ],
+                "constraint_refs": [
+                  {
+                    "snapshot_id": "snap-demo-clinic-r1",
+                    "input_pointer": "/constraints/0"
+                  }
+                ],
+                "precondition_issue_ids": [
+                  "Q-growth"
+                ]
+              }
+            ],
+            "recommendation": "undecided",
+            "recommended_option_id": null,
+            "issue_ids": [
+              "Q-growth"
+            ],
+            "risks": [
+              "Chưa có phép đo p95; không chứng nhận runtime đạt.",
+              "Giả định nhận xét mới cần xem lại đánh đổi trước quyết định; chưa đo runtime."
+            ],
+            "verification_obligations": [
+              "Đo R3 sau khi chốt môi trường/workload; giữ local và không gửi dữ liệu lịch hẹn ra ngoài theo R5."
+            ],
+            "analysis_key": "CHAR-performance-key",
+            "supersedes_id": "CHAR-performance"
+          }
+        },
+        {
+          "type": "analysis_set",
+          "id": "AS-F01-characteristic",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "model_id": "model-clinic-1",
+            "revision": 3,
+            "parent_set_id": "AS-clinic-2",
+            "scenario_ids": [
+              "SC-cancel",
+              "SC-performance"
+            ],
+            "characteristic_ids": [
+              "CHAR-performance-v2"
+            ],
+            "issue_ids": [
+              "Q-book",
+              "Q-cancel",
+              "Q-clinic",
+              "Q-growth"
+            ],
+            "changed_record_ids": [
+              "CHAR-performance-v2"
+            ],
+            "affected": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "A01",
+                "A02",
+                "OP01",
+                "OP02",
+                "OP03",
+                "OP04",
+                "WF01",
+                "WF02",
+                "WF03",
+                "WF04",
+                "DATA01",
+                "DATA02",
+                "DATA03",
+                "DATA04",
+                "RULE01",
+                "RULE02",
+                "RULE03",
+                "RULE04",
+                "C01",
+                "C03",
+                "RS01",
+                "RS02",
+                "RS03",
+                "RS04",
+                "RS05",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R4-req-patient",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac0-part",
+                "MAP-R4-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            }
+          }
+        }
+      ],
+      "expected": {
+        "head_model_id": "model-clinic-1",
+        "head_analysis_set_id": "AS-F01-characteristic",
+        "old_bundle_id": "BUNDLE-ready-hypothetical",
+        "handoff_eligible": false,
+        "allowed_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "code": "ANALYSIS_STALE",
+        "stage": "review",
+        "reason": "analysis_key giữ nguyên, successor replaces CHAR-performance. Không cần model mới nhưng gói cũ hết hiệu lực."
+      }
+    },
+    {
+      "id": "F01-log-only",
+      "event": {
+        "kind": "operational_log",
+        "effect": "Chỉ session.sequence tăng, không thay hồ sơ/model/set/review/artifact."
+      },
+      "expected": {
+        "head_model_id": "model-clinic-1",
+        "head_analysis_set_id": "AS-clinic-2",
+        "handoff_eligible_under_preconditions": true,
+        "allowed_scope_from": {
+          "file": "04-review-and-rejection-scenarios.json",
+          "pointer": "/scenarios/0/expected_handoff/allowed_scope"
+        },
+        "freshness_invalidated": false,
+        "note": "Đây là expected outcome có điều kiện của review giả định, không tạo handoff true thật."
+      }
+    },
+    {
+      "id": "F01-publication-race",
+      "base_model_id": "model-clinic-1",
+      "base_analysis_set_id": "AS-clinic-2",
+      "orders": [
+        {
+          "order": [
+            "issue-publication-commits",
+            "old-bundle-handoff-tries"
+          ],
+          "expected_code": "ANALYSIS_STALE"
+        },
+        {
+          "order": [
+            "old-bundle-handoff-commits",
+            "issue-publication-commits",
+            "lookup-old-handoff"
+          ],
+          "expected": "Handoff cũ vẫn history; checked lookup báo stale, không xuất eligible như hiện hành."
+        },
+        {
+          "order": [
+            "first-analysis-publication",
+            "second-analysis-publication-same-base"
+          ],
+          "expected_code": "ANALYSIS_CONFLICT"
+        },
+        {
+          "order": [
+            "log-only",
+            "analysis-publication-same-base"
+          ],
+          "expected": "Log không đổi cặp head, publication không false-conflict vì sequence."
+        }
+      ],
+      "execution": "Minh họa lịch, chưa chạy concurrency."
+    }
+  ]
+}

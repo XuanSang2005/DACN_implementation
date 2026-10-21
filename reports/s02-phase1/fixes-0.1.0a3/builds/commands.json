@@ -1,0 +1,21 @@
+[
+  {
+    "package": "s02",
+    "version": "0.1.0a3",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--wheel-dir",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/builds",
+      "/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/build-input/packages/s02"
+    ],
+    "cwd": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/builds",
+    "exit_code": 0
+  }
+]

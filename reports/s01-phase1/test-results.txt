@@ -1,0 +1,579 @@
+
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip check
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s01-phase1-tg7rb5wy
+PYTHONPATH unset; PYTEST_ADDOPTS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+No broken requirements found.
+
+exit_code=0
+
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pytest /Users/macbookpro/Documents/DACN_implementation/tests -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -v --encoder-backend=c
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s01-phase1-tg7rb5wy
+PYTHONPATH unset; PYTEST_ADDOPTS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 108 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"a":2}-a] PASSED [  0%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"x":{"a":null,"a":false}}-a] PASSED [  1%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[[{"a":1,"a":2}]-a] PASSED [  2%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"constraints":[{"constraint":{"value":{"a":1,"a":2}}}]}-a] PASSED [  3%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"\u0061":2}-a] PASSED [  4%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\ud83d\ude00":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  5%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\xf0\x9f\x98\x80":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  6%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a/b~c":1,"a\/b~c":2}-a/b~c] PASSED [  7%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_same_key_in_separate_objects_and_exact_unicode_keys PASSED [  8%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[] PASSED [  9%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[ ] PASSED [ 10%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{] PASSED [ 11%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":}] PASSED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":1,}] PASSED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[1,]] PASSED [ 13%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[01] PASSED [ 14%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1.] PASSED [ 15%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[+1] PASSED [ 16%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[.1] PASSED [ 17%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e] PASSED [ 18%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e+] PASSED [ 19%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[true false] PASSED [ 20%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[// comment\n1] PASSED [ 21%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[NaN] PASSED [ 22%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[Infinity] PASSED [ 23%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[-Infinity] PASSED [ 24%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[NaN]] PASSED [ 25%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"n":Infinity}] PASSED [ 25%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["raw\nnewline"] PASSED [ 26%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\x41"] PASSED [ 27%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\u12xx"] PASSED [ 28%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\xff"] PASSED [ 29%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[\xef\xbb\xbf\xef\xbb\xbf{}] PASSED [ 30%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[null-None-NoneType] PASSED [ 31%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[true-True-bool] PASSED [ 32%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[false-False-bool] PASSED [ 33%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values["hi"-hi-str] PASSED [ 34%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[[]-expected4-list] PASSED [ 35%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[{}-expected5-dict] PASSED [ 36%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1-expected6-Decimal] PASSED [ 37%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1.5-expected7-Decimal] PASSED [ 37%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[above-binary64] PASSED [ 38%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[5001-digits] PASSED [ 39%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[long-fraction] PASSED [ 40%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-400] PASSED [ 41%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-exponent] PASSED [ 42%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero] PASSED [ 43%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero-fraction] PASSED [ 44%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[small-fraction] PASSED [ 45%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[trailing-zeros] PASSED [ 46%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-plus] PASSED [ 47%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_preserve_structure_strings_unknowns_and_no_defaults PASSED [ 48%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-] PASSED [ 49%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-\xef\xbb\xbf] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-\xff\xfe] PASSED [ 51%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-] PASSED [ 52%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-\xfe\xff] PASSED [ 53%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-] PASSED [ 54%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-\xff\xfe\x00\x00] PASSED [ 55%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-] PASSED [ 56%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-\x00\x00\xfe\xff] PASSED [ 57%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud800"-\ud800] PASSED [ 58%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\xed\xa0\x80"-\ud800] PASSED [ 59%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud83d\ude00"-\U0001f600] PASSED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ufeff"-\ufeff] PASSED [ 61%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u200b"-\u200b] PASSED [ 62%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u001c"-\x1c] PASSED [ 62%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1.0] PASSED [ 63%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[nan] PASSED [ 64%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[inf] PASSED [ 65%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[-inf] PASSED [ 66%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value4] PASSED [ 67%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value5] PASSED [ 68%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value6] PASSED [ 69%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value7] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value8] PASSED [ 71%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value9] PASSED [ 72%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[text] PASSED [ 73%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value11] PASSED [ 74%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value12] PASSED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value13] PASSED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value14] PASSED [ 76%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1] PASSED [ 77%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[x] PASSED [ 78%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value17] PASSED [ 79%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value18] PASSED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value19] PASSED [ 81%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value20] PASSED [ 82%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value21] PASSED [ 83%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[{}] PASSED [ 84%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw1] PASSED [ 85%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw2] PASSED [ 86%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[None] PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_cycle_rejected_but_shared_child_allowed PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[True] PASSED [ 88%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[False] PASSED [ 89%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_deep_valid_json_reports_resource_limit PASSED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_internal_integer_limit_is_explicit_not_string_or_null PASSED [ 91%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_selected_real_encoder_is_exercised PASSED [ 92%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_packaged_artifact_digest_and_metaschema_without_network PASSED [ 93%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"type":"object","type":"array"}] PASSED [ 94%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"properties":{"x":{"type":"string","type":"number"}}}] PASSED [ 95%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":"1"}] PASSED [ 96%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{] PASSED [ 97%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":NaN}] PASSED [ 98%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_missing_or_changed_resource_fails PASSED [ 99%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_installed_package_from_unrelated_cwd PASSED [100%]
+
+Observed real encoder factory calls: {'c': 25, 'python': 0}; selected=c
+============================= 108 passed in 0.49s ==============================
+
+exit_code=0
+
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pytest /Users/macbookpro/Documents/DACN_implementation/tests -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -v --encoder-backend=python
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s01-phase1-tg7rb5wy
+PYTHONPATH unset; PYTEST_ADDOPTS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 108 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"a":2}-a] PASSED [  0%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"x":{"a":null,"a":false}}-a] PASSED [  1%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[[{"a":1,"a":2}]-a] PASSED [  2%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"constraints":[{"constraint":{"value":{"a":1,"a":2}}}]}-a] PASSED [  3%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"\u0061":2}-a] PASSED [  4%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\ud83d\ude00":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  5%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\xf0\x9f\x98\x80":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  6%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a/b~c":1,"a\/b~c":2}-a/b~c] PASSED [  7%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_same_key_in_separate_objects_and_exact_unicode_keys PASSED [  8%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[] PASSED [  9%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[ ] PASSED [ 10%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{] PASSED [ 11%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":}] PASSED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":1,}] PASSED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[1,]] PASSED [ 13%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[01] PASSED [ 14%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1.] PASSED [ 15%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[+1] PASSED [ 16%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[.1] PASSED [ 17%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e] PASSED [ 18%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e+] PASSED [ 19%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[true false] PASSED [ 20%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[// comment\n1] PASSED [ 21%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[NaN] PASSED [ 22%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[Infinity] PASSED [ 23%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[-Infinity] PASSED [ 24%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[NaN]] PASSED [ 25%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"n":Infinity}] PASSED [ 25%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["raw\nnewline"] PASSED [ 26%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\x41"] PASSED [ 27%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\u12xx"] PASSED [ 28%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\xff"] PASSED [ 29%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[\xef\xbb\xbf\xef\xbb\xbf{}] PASSED [ 30%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[null-None-NoneType] PASSED [ 31%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[true-True-bool] PASSED [ 32%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[false-False-bool] PASSED [ 33%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values["hi"-hi-str] PASSED [ 34%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[[]-expected4-list] PASSED [ 35%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[{}-expected5-dict] PASSED [ 36%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1-expected6-Decimal] PASSED [ 37%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1.5-expected7-Decimal] PASSED [ 37%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[above-binary64] PASSED [ 38%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[5001-digits] PASSED [ 39%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[long-fraction] PASSED [ 40%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-400] PASSED [ 41%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-exponent] PASSED [ 42%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero] PASSED [ 43%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero-fraction] PASSED [ 44%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[small-fraction] PASSED [ 45%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[trailing-zeros] PASSED [ 46%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-plus] PASSED [ 47%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_preserve_structure_strings_unknowns_and_no_defaults PASSED [ 48%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-] PASSED [ 49%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-\xef\xbb\xbf] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-\xff\xfe] PASSED [ 51%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-] PASSED [ 52%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-\xfe\xff] PASSED [ 53%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-] PASSED [ 54%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-\xff\xfe\x00\x00] PASSED [ 55%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-] PASSED [ 56%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-\x00\x00\xfe\xff] PASSED [ 57%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud800"-\ud800] PASSED [ 58%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\xed\xa0\x80"-\ud800] PASSED [ 59%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud83d\ude00"-\U0001f600] PASSED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ufeff"-\ufeff] PASSED [ 61%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u200b"-\u200b] PASSED [ 62%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u001c"-\x1c] PASSED [ 62%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1.0] PASSED [ 63%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[nan] PASSED [ 64%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[inf] PASSED [ 65%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[-inf] PASSED [ 66%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value4] PASSED [ 67%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value5] PASSED [ 68%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value6] PASSED [ 69%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value7] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value8] PASSED [ 71%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value9] PASSED [ 72%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[text] PASSED [ 73%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value11] PASSED [ 74%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value12] PASSED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value13] PASSED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value14] PASSED [ 76%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1] PASSED [ 77%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[x] PASSED [ 78%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value17] PASSED [ 79%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value18] PASSED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value19] PASSED [ 81%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value20] PASSED [ 82%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value21] PASSED [ 83%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[{}] PASSED [ 84%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw1] PASSED [ 85%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw2] PASSED [ 86%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[None] PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_cycle_rejected_but_shared_child_allowed PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[True] PASSED [ 88%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[False] PASSED [ 89%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_deep_valid_json_reports_resource_limit PASSED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_internal_integer_limit_is_explicit_not_string_or_null PASSED [ 91%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_selected_real_encoder_is_exercised PASSED [ 92%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_packaged_artifact_digest_and_metaschema_without_network PASSED [ 93%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"type":"object","type":"array"}] PASSED [ 94%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"properties":{"x":{"type":"string","type":"number"}}}] PASSED [ 95%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":"1"}] PASSED [ 96%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{] PASSED [ 97%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":NaN}] PASSED [ 98%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_missing_or_changed_resource_fails PASSED [ 99%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_installed_package_from_unrelated_cwd PASSED [100%]
+
+Observed real encoder factory calls: {'c': 0, 'python': 25}; selected=python
+============================= 108 passed in 0.12s ==============================
+
+exit_code=0
+
+Regression before fix; installed wheel still initial build
+$ .venv/bin/python -m pytest tests/test_codec.py -k literal_surrogate_pair --encoder-backend=c -v
+cwd=/Users/macbookpro/Documents/DACN_implementation
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 102 items / 100 deselected / 2 selected
+
+tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[False] FAILED [ 50%]
+tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[True] FAILED [100%]
+
+=================================== FAILURES ===================================
+_________ test_literal_surrogate_pair_cannot_silently_collapse[False] __________
+
+is_key = False
+
+    @pytest.mark.parametrize("is_key", [False, True])
+    def test_literal_surrogate_pair_cannot_silently_collapse(is_key):
+        # CPython surrogatepass accepts this byte sequence as two code points.
+        # Escaping the pair would instead decode to one astral character.
+        raw_string = b'"\xed\xa0\xbd\xed\xb8\x80"'
+        raw = b"{" + raw_string + b":null}" if is_key else raw_string
+        value = parse_json(raw)
+        text = next(iter(value)) if is_key else value
+        assert [ord(c) for c in text] == [0xD83D, 0xDE00]
+>       with pytest.raises(ProcessingError, match="surrogate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ProcessingError
+
+tests/test_codec.py:255: Failed
+__________ test_literal_surrogate_pair_cannot_silently_collapse[True] __________
+
+is_key = True
+
+    @pytest.mark.parametrize("is_key", [False, True])
+    def test_literal_surrogate_pair_cannot_silently_collapse(is_key):
+        # CPython surrogatepass accepts this byte sequence as two code points.
+        # Escaping the pair would instead decode to one astral character.
+        raw_string = b'"\xed\xa0\xbd\xed\xb8\x80"'
+        raw = b"{" + raw_string + b":null}" if is_key else raw_string
+        value = parse_json(raw)
+        text = next(iter(value)) if is_key else value
+        assert [ord(c) for c in text] == [0xD83D, 0xDE00]
+>       with pytest.raises(ProcessingError, match="surrogate"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ProcessingError
+
+tests/test_codec.py:255: Failed
+Observed real encoder factory calls: {'c': 1, 'python': 0}; selected=c
+=========================== short test summary info ============================
+FAILED tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[False]
+FAILED tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[True]
+====================== 2 failed, 100 deselected in 0.02s =======================
+
+exit_code=1
+
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip check
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s01-phase1-a6xi5rhs
+PYTHONPATH unset; PYTEST_ADDOPTS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+No broken requirements found.
+
+exit_code=0
+
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pytest /Users/macbookpro/Documents/DACN_implementation/tests -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -v --encoder-backend=c
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s01-phase1-a6xi5rhs
+PYTHONPATH unset; PYTEST_ADDOPTS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 110 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"a":2}-a] PASSED [  0%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"x":{"a":null,"a":false}}-a] PASSED [  1%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[[{"a":1,"a":2}]-a] PASSED [  2%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"constraints":[{"constraint":{"value":{"a":1,"a":2}}}]}-a] PASSED [  3%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"\u0061":2}-a] PASSED [  4%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\ud83d\ude00":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  5%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\xf0\x9f\x98\x80":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  6%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a/b~c":1,"a\/b~c":2}-a/b~c] PASSED [  7%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_same_key_in_separate_objects_and_exact_unicode_keys PASSED [  8%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[] PASSED [  9%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[ ] PASSED [ 10%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{] PASSED [ 10%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":}] PASSED [ 11%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":1,}] PASSED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[1,]] PASSED [ 13%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[01] PASSED [ 14%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1.] PASSED [ 15%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[+1] PASSED [ 16%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[.1] PASSED [ 17%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e] PASSED [ 18%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e+] PASSED [ 19%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[true false] PASSED [ 20%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[// comment\n1] PASSED [ 20%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[NaN] PASSED [ 21%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[Infinity] PASSED [ 22%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[-Infinity] PASSED [ 23%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[NaN]] PASSED [ 24%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"n":Infinity}] PASSED [ 25%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["raw\nnewline"] PASSED [ 26%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\x41"] PASSED [ 27%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\u12xx"] PASSED [ 28%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\xff"] PASSED [ 29%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[\xef\xbb\xbf\xef\xbb\xbf{}] PASSED [ 30%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[null-None-NoneType] PASSED [ 30%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[true-True-bool] PASSED [ 31%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[false-False-bool] PASSED [ 32%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values["hi"-hi-str] PASSED [ 33%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[[]-expected4-list] PASSED [ 34%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[{}-expected5-dict] PASSED [ 35%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1-expected6-Decimal] PASSED [ 36%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1.5-expected7-Decimal] PASSED [ 37%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[above-binary64] PASSED [ 38%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[5001-digits] PASSED [ 39%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[long-fraction] PASSED [ 40%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-400] PASSED [ 40%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-exponent] PASSED [ 41%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero] PASSED [ 42%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero-fraction] PASSED [ 43%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[small-fraction] PASSED [ 44%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[trailing-zeros] PASSED [ 45%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-plus] PASSED [ 46%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_preserve_structure_strings_unknowns_and_no_defaults PASSED [ 47%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-] PASSED [ 48%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-\xef\xbb\xbf] PASSED [ 49%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-\xff\xfe] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-] PASSED [ 51%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-\xfe\xff] PASSED [ 52%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-] PASSED [ 53%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-\xff\xfe\x00\x00] PASSED [ 54%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-] PASSED [ 55%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-\x00\x00\xfe\xff] PASSED [ 56%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud800"-\ud800] PASSED [ 57%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\xed\xa0\x80"-\ud800] PASSED [ 58%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud83d\ude00"-\U0001f600] PASSED [ 59%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ufeff"-\ufeff] PASSED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u200b"-\u200b] PASSED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u001c"-\x1c] PASSED [ 61%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1.0] PASSED [ 62%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[nan] PASSED [ 63%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[inf] PASSED [ 64%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[-inf] PASSED [ 65%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value4] PASSED [ 66%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value5] PASSED [ 67%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value6] PASSED [ 68%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value7] PASSED [ 69%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value8] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value9] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[text] PASSED [ 71%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value11] PASSED [ 72%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value12] PASSED [ 73%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value13] PASSED [ 74%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value14] PASSED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1] PASSED [ 76%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[x] PASSED [ 77%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value17] PASSED [ 78%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value18] PASSED [ 79%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value19] PASSED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value20] PASSED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value21] PASSED [ 81%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[{}] PASSED [ 82%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw1] PASSED [ 83%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw2] PASSED [ 84%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[None] PASSED [ 85%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_cycle_rejected_but_shared_child_allowed PASSED [ 86%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[True] PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[False] PASSED [ 88%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_deep_valid_json_reports_resource_limit PASSED [ 89%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_internal_integer_limit_is_explicit_not_string_or_null PASSED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_selected_real_encoder_is_exercised PASSED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[False] PASSED [ 91%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[True] PASSED [ 92%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_packaged_artifact_digest_and_metaschema_without_network PASSED [ 93%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"type":"object","type":"array"}] PASSED [ 94%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"properties":{"x":{"type":"string","type":"number"}}}] PASSED [ 95%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":"1"}] PASSED [ 96%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{] PASSED [ 97%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":NaN}] PASSED [ 98%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_missing_or_changed_resource_fails PASSED [ 99%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_installed_package_from_unrelated_cwd PASSED [100%]
+
+Observed real encoder factory calls: {'c': 25, 'python': 0}; selected=c
+============================= 110 passed in 0.12s ==============================
+
+exit_code=0
+
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pytest /Users/macbookpro/Documents/DACN_implementation/tests -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -v --encoder-backend=python
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s01-phase1-a6xi5rhs
+PYTHONPATH unset; PYTEST_ADDOPTS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 110 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"a":2}-a] PASSED [  0%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"x":{"a":null,"a":false}}-a] PASSED [  1%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[[{"a":1,"a":2}]-a] PASSED [  2%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"constraints":[{"constraint":{"value":{"a":1,"a":2}}}]}-a] PASSED [  3%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a":1,"\u0061":2}-a] PASSED [  4%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\ud83d\ude00":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  5%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"\xf0\x9f\x98\x80":1,"\ud83d\ude00":2}-\U0001f600] PASSED [  6%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_duplicate_keys_are_not_overwritten[{"a/b~c":1,"a\/b~c":2}-a/b~c] PASSED [  7%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_same_key_in_separate_objects_and_exact_unicode_keys PASSED [  8%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[] PASSED [  9%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[ ] PASSED [ 10%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{] PASSED [ 10%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":}] PASSED [ 11%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"x":1,}] PASSED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[1,]] PASSED [ 13%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[01] PASSED [ 14%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1.] PASSED [ 15%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[+1] PASSED [ 16%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[.1] PASSED [ 17%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e] PASSED [ 18%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[1e+] PASSED [ 19%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[true false] PASSED [ 20%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[// comment\n1] PASSED [ 20%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[NaN] PASSED [ 21%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[Infinity] PASSED [ 22%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[-Infinity] PASSED [ 23%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[[NaN]] PASSED [ 24%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[{"n":Infinity}] PASSED [ 25%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["raw\nnewline"] PASSED [ 26%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\x41"] PASSED [ 27%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\u12xx"] PASSED [ 28%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json["\xff"] PASSED [ 29%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_invalid_json[\xef\xbb\xbf\xef\xbb\xbf{}] PASSED [ 30%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[null-None-NoneType] PASSED [ 30%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[true-True-bool] PASSED [ 31%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[false-False-bool] PASSED [ 32%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values["hi"-hi-str] PASSED [ 33%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[[]-expected4-list] PASSED [ 34%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[{}-expected5-dict] PASSED [ 35%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1-expected6-Decimal] PASSED [ 36%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_all_root_types_are_codec_values[1.5-expected7-Decimal] PASSED [ 37%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[above-binary64] PASSED [ 38%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[5001-digits] PASSED [ 39%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[long-fraction] PASSED [ 40%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-400] PASSED [ 40%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-exponent] PASSED [ 41%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero] PASSED [ 42%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[negative-zero-fraction] PASSED [ 43%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[small-fraction] PASSED [ 44%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[trailing-zeros] PASSED [ 45%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_exact_number_roundtrip_with_independent_oracles[exponent-plus] PASSED [ 46%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_preserve_structure_strings_unknowns_and_no_defaults PASSED [ 47%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-] PASSED [ 48%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-8-\xef\xbb\xbf] PASSED [ 49%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-le-\xff\xfe] PASSED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-] PASSED [ 51%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-16-be-\xfe\xff] PASSED [ 52%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-] PASSED [ 53%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-le-\xff\xfe\x00\x00] PASSED [ 54%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-] PASSED [ 55%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_encoding_and_bom[utf-32-be-\x00\x00\xfe\xff] PASSED [ 56%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud800"-\ud800] PASSED [ 57%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\xed\xa0\x80"-\ud800] PASSED [ 58%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ud83d\ude00"-\U0001f600] PASSED [ 59%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\ufeff"-\ufeff] PASSED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u200b"-\u200b] PASSED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_unicode_not_normalized_or_filtered["\u001c"-\x1c] PASSED [ 61%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1.0] PASSED [ 62%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[nan] PASSED [ 63%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[inf] PASSED [ 64%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[-inf] PASSED [ 65%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value4] PASSED [ 66%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value5] PASSED [ 67%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value6] PASSED [ 68%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value7] PASSED [ 69%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value8] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value9] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[text] PASSED [ 71%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value11] PASSED [ 72%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value12] PASSED [ 73%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value13] PASSED [ 74%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value14] PASSED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[1] PASSED [ 76%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[x] PASSED [ 77%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value17] PASSED [ 78%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value18] PASSED [ 79%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value19] PASSED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value20] PASSED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_reject_unsupported_internal_values[value21] PASSED [ 81%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[{}] PASSED [ 82%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw1] PASSED [ 83%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[raw2] PASSED [ 84%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_parse_api_requires_bytes[None] PASSED [ 85%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_cycle_rejected_but_shared_child_allowed PASSED [ 86%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[True] PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_valid_number_beyond_decimal_limit_is_processing_failure[False] PASSED [ 88%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_deep_valid_json_reports_resource_limit PASSED [ 89%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_internal_integer_limit_is_explicit_not_string_or_null PASSED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_selected_real_encoder_is_exercised PASSED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[False] PASSED [ 91%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_literal_surrogate_pair_cannot_silently_collapse[True] PASSED [ 92%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_packaged_artifact_digest_and_metaschema_without_network PASSED [ 93%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"type":"object","type":"array"}] PASSED [ 94%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"properties":{"x":{"type":"string","type":"number"}}}] PASSED [ 95%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":"1"}] PASSED [ 96%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{] PASSED [ 97%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_artifact_parser_failures_are_configuration_errors[{"minItems":NaN}] PASSED [ 98%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_missing_or_changed_resource_fails PASSED [ 99%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py::test_installed_package_from_unrelated_cwd PASSED [100%]
+
+Observed real encoder factory calls: {'c': 0, 'python': 25}; selected=python
+============================= 110 passed in 0.12s ==============================
+
+exit_code=0
+
+Final artifact/evidence verification
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python tools/collect_phase1_evidence.py --schema-source /Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/system-input-v1/system-input.schema.json
+cwd=/Users/macbookpro/Documents/DACN_implementation
+Measured environment, schema byte identity, wheel/source identity and protected files: passed
+
+exit_code=0

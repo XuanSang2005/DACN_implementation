@@ -1,0 +1,5 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python -B -m dacn_s02 --config /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx/s02.toml init
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx
+{"command_id":null,"status":"completed","record_ids":[],"errors":[]}
+
+exit_code=0

@@ -1,0 +1,878 @@
+
+build
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip wheel --no-index --no-deps --no-build-isolation --wheel-dir dist .
+cwd=/Users/macbookpro/Documents/DACN_implementation
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+Processing /Users/macbookpro/Documents/DACN_implementation
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: dacn-s01
+  Building wheel for dacn-s01 (pyproject.toml): started
+  Building wheel for dacn-s01 (pyproject.toml): finished with status 'done'
+  Created wheel for dacn-s01: filename=dacn_s01-0.1.0a6-py3-none-any.whl size=34568 sha256=9a08bd287f477b3930bac3b74ca1847e5fbb3efadbb69d3a659e55c348fe8744
+  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-kwnuydvm/wheels/f6/b1/15/9d315d943c28c91a8202191c5c06ff57af2721e5f134614272
+Successfully built dacn-s01
+
+exit_code=0
+
+install
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip install --no-index --no-deps --force-reinstall dist/dacn_s01-0.1.0a6-py3-none-any.whl
+cwd=/Users/macbookpro/Documents/DACN_implementation
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+Processing ./dist/dacn_s01-0.1.0a6-py3-none-any.whl
+Installing collected packages: dacn-s01
+  Attempting uninstall: dacn-s01
+    Found existing installation: dacn-s01 0.1.0a5
+    Uninstalling dacn-s01-0.1.0a5:
+      Successfully uninstalled dacn-s01-0.1.0a5
+Successfully installed dacn-s01-0.1.0a6
+
+exit_code=0
+
+suite-c
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pytest -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -s -v --tb=short -p no:cacheprovider /Users/macbookpro/Documents/DACN_implementation/tests/phase4 --encoder-backend=c
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-g69b3htl
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 79 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lifecycle_lookup_export_and_real_module_entrypoint PHASE4_EVIDENCE {"case": "lifecycle", "backend": "c", "final_counts": {"runs": 4, "sources": 4, "snapshots": 2, "specs": 1}, "historical_revision": 1, "head_revision": 2, "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 399, "python": 0}, "processes": 10}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags0-INVALID_REQUEST-/mode] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags1-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags2-INVALID_REQUEST-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags3-SPEC_NOT_FOUND-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 18, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags4-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags5-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args0] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args2] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args3] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args4] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args5] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args6] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args7] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args8] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[parse-2-INVALID_JSON] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[duplicate-key-2-DUPLICATE_JSON_KEY] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[invalid-priority-2-INVALID_PRIORITY] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-priority-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 22, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-version-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 22, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-key-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 22, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[unknown-2-UNKNOWN_FIELD] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_exact_numbers_legacy_utf16_source_and_export PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 58, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command0] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command2] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command3] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_receipt_missing_run_conflict_and_no_overwrite PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 59, "python": 0}, "processes": 6}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"run_id":"a","run_id":"b"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[[]] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"2","run_id":"a","state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":"a","state_dir":"relative"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":null,"state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_lookup.py::test_new_lookup_consistency_guards PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 11, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_relative_paths_override_and_preservation PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 59, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[unexpected = 1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = true] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = -1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 2147483648] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = "wrong"] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [1]] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = ""] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = 2] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = [] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 1.0] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_missing_store_or_config_does_not_initialize PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[version] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[structure] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[foreign] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[state] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[receipt] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 2, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[export] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[symlink-parent] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 2, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[db-symlink] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[sidecar-symlink] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[same-input] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[hardlink-input] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[symlink-input] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[config] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[receipt-output] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 2, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[state-output] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[dangling] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-journal] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-wal] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-shm] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_symlink_state_and_receipt_lookup_resolve_consistently PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior0-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "c", "fault_injection": {"fsync_fail": 1}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 3, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior1-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "c", "fault_injection": {"link_fail": true}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 3, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior2-True] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "c", "fault_injection": {"fsync_fail": 2}, "receipt_exists": true, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 3, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_two_real_processes_compete_for_same_receipt PHASE4_EVIDENCE {"case": "receipt-contention", "backend": "c", "kind": "two subprocesses and one filesystem destination", "events": [{"event": "before_link", "pid": 56149, "observed_ns": 459930880666291}, {"event": "before_link", "pid": 56150, "observed_ns": 459930880677625}], "exit_codes": [3, 0], "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 85, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[receipt_ready-False] PHASE4_EVIDENCE {"case": "kill-receipt_ready", "backend": "c", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "receipt_ready", "pid": 56153, "observed_ns": 459931154776166}, "returncode": -9, "run_id": "22ff6250-c9f9-4fcd-af22-df6b3ae765dd", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[before_commit-False] PHASE4_EVIDENCE {"case": "kill-before_commit", "backend": "c", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "before_commit", "pid": 56156, "observed_ns": 459931381652541}, "returncode": -9, "run_id": "0b260965-ebbc-4e56-9bfa-325801a6e315", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[after_commit-True] PHASE4_EVIDENCE {"case": "kill-after_commit", "backend": "c", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "after_commit", "pid": 56159, "observed_ns": 459931583450500}, "returncode": -9, "run_id": "5d0528e2-d1b9-464b-be6e-b2a6ec51394e", "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 26, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[closed-pipe] PHASE4_EVIDENCE {"case": "closed-pipe", "backend": "c", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 56162, "observed_ns": 459931850453458}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[export-collision] PHASE4_EVIDENCE {"case": "export-collision", "backend": "c", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 56165, "observed_ns": 459932124210375}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[real-link-permission] PHASE4_EVIDENCE {"case": "real-link-permission", "backend": "c", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 56168, "observed_ns": 459932397944791}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+
+Observed real encoder factory calls: {'c': 196, 'python': 0}; selected=c
+============================= 79 passed in 10.86s ==============================
+
+exit_code=0
+
+suite-python
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pytest -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -s -v --tb=short -p no:cacheprovider /Users/macbookpro/Documents/DACN_implementation/tests/phase4 --encoder-backend=python
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-g69b3htl
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 79 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lifecycle_lookup_export_and_real_module_entrypoint PHASE4_EVIDENCE {"case": "lifecycle", "backend": "python", "final_counts": {"runs": 4, "sources": 4, "snapshots": 2, "specs": 1}, "historical_revision": 1, "head_revision": 2, "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 399}, "processes": 10}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags0-INVALID_REQUEST-/mode] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags1-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags2-INVALID_REQUEST-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags3-SPEC_NOT_FOUND-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 18}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags4-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags5-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args0] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args2] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args3] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args4] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args5] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args6] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args7] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args8] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[parse-2-INVALID_JSON] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[duplicate-key-2-DUPLICATE_JSON_KEY] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[invalid-priority-2-INVALID_PRIORITY] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-priority-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 22}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-version-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 22}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-key-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 22}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[unknown-2-UNKNOWN_FIELD] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_exact_numbers_legacy_utf16_source_and_export PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 58}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command0] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command2] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command3] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_receipt_missing_run_conflict_and_no_overwrite PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 59}, "processes": 6}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"run_id":"a","run_id":"b"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[[]] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"2","run_id":"a","state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":"a","state_dir":"relative"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":null,"state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_lookup.py::test_new_lookup_consistency_guards PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 11}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_relative_paths_override_and_preservation PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 59}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[unexpected = 1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = true] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = -1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 2147483648] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = "wrong"] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [1]] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = ""] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = 2] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = [] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 1.0] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_missing_store_or_config_does_not_initialize PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[version] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[structure] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[foreign] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[state] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[receipt] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 2}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[export] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[symlink-parent] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 2}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[db-symlink] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[sidecar-symlink] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[same-input] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[hardlink-input] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[symlink-input] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[config] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[receipt-output] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 2}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[state-output] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[dangling] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-journal] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-wal] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-shm] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_symlink_state_and_receipt_lookup_resolve_consistently PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior0-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "python", "fault_injection": {"fsync_fail": 1}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 3}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior1-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "python", "fault_injection": {"link_fail": true}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 3}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior2-True] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "python", "fault_injection": {"fsync_fail": 2}, "receipt_exists": true, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 3}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_two_real_processes_compete_for_same_receipt PHASE4_EVIDENCE {"case": "receipt-contention", "backend": "python", "kind": "two subprocesses and one filesystem destination", "events": [{"event": "before_link", "pid": 56348, "observed_ns": 459941847682875}, {"event": "before_link", "pid": 56349, "observed_ns": 459941847692166}], "exit_codes": [0, 3], "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 85}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[receipt_ready-False] PHASE4_EVIDENCE {"case": "kill-receipt_ready", "backend": "python", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "receipt_ready", "pid": 56352, "observed_ns": 459942126980125}, "returncode": -9, "run_id": "d3d74e93-5cb7-4285-ab50-06e3d0253443", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[before_commit-False] PHASE4_EVIDENCE {"case": "kill-before_commit", "backend": "python", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "before_commit", "pid": 56355, "observed_ns": 459942330593875}, "returncode": -9, "run_id": "d68ecf4e-1e59-4e38-8ad8-44e783c51036", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[after_commit-True] PHASE4_EVIDENCE {"case": "kill-after_commit", "backend": "python", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "after_commit", "pid": 56358, "observed_ns": 459942533579458}, "returncode": -9, "run_id": "c3a2c2e1-5979-4b5a-996c-ad6dfdf97b4b", "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 26}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[closed-pipe] PHASE4_EVIDENCE {"case": "closed-pipe", "backend": "python", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 56361, "observed_ns": 459942804659541}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[export-collision] PHASE4_EVIDENCE {"case": "export-collision", "backend": "python", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 56364, "observed_ns": 459943082712375}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[real-link-permission] PHASE4_EVIDENCE {"case": "real-link-permission", "backend": "python", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 56372, "observed_ns": 459943363338000}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+
+Observed real encoder factory calls: {'c': 0, 'python': 196}; selected=python
+============================= 79 passed in 10.88s ==============================
+
+exit_code=0
+
+pip-check
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip check
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-g69b3htl
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+No broken requirements found.
+
+exit_code=0
+
+build
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip wheel --no-index --no-deps --no-build-isolation --wheel-dir dist .
+cwd=/Users/macbookpro/Documents/DACN_implementation
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+Processing /Users/macbookpro/Documents/DACN_implementation
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: dacn-s01
+  Building wheel for dacn-s01 (pyproject.toml): started
+  Building wheel for dacn-s01 (pyproject.toml): finished with status 'done'
+  Created wheel for dacn-s01: filename=dacn_s01-0.1.0a6-py3-none-any.whl size=34718 sha256=e4ebbe7988d7cb5255d93845c94ba41aeb043900c762ca7636d4f7c093bff20b
+  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-a6nmh_1t/wheels/f6/b1/15/9d315d943c28c91a8202191c5c06ff57af2721e5f134614272
+Successfully built dacn-s01
+
+exit_code=0
+
+install
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip install --no-index --no-deps --force-reinstall dist/dacn_s01-0.1.0a6-py3-none-any.whl
+cwd=/Users/macbookpro/Documents/DACN_implementation
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+Processing ./dist/dacn_s01-0.1.0a6-py3-none-any.whl
+Installing collected packages: dacn-s01
+  Attempting uninstall: dacn-s01
+    Found existing installation: dacn-s01 0.1.0a6
+    Uninstalling dacn-s01-0.1.0a6:
+      Successfully uninstalled dacn-s01-0.1.0a6
+Successfully installed dacn-s01-0.1.0a6
+
+exit_code=0
+
+suite-c
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pytest -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -s -v --tb=short -p no:cacheprovider /Users/macbookpro/Documents/DACN_implementation/tests/phase4 --encoder-backend=c
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-7apnsg0r
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 93 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lifecycle_lookup_export_and_real_module_entrypoint PHASE4_EVIDENCE {"case": "lifecycle", "backend": "c", "final_counts": {"runs": 4, "sources": 4, "snapshots": 2, "specs": 1}, "historical_revision": 1, "head_revision": 2, "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 399, "python": 0}, "processes": 10}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags0-INVALID_REQUEST-/mode] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags1-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags2-INVALID_REQUEST-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags3-SPEC_NOT_FOUND-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 18, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags4-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags5-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 14, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args0] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args2] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args3] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args4] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args5] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args6] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args7] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args8] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[parse-2-INVALID_JSON] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[duplicate-key-2-DUPLICATE_JSON_KEY] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[invalid-priority-2-INVALID_PRIORITY] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-priority-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 22, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-version-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 22, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-key-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 22, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[unknown-2-UNKNOWN_FIELD] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 21, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_exact_numbers_legacy_utf16_source_and_export PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 58, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command0] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command2] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command3] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_receipt_missing_run_conflict_and_no_overwrite PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 59, "python": 0}, "processes": 6}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"run_id":"a","run_id":"b"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[[]] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"2","run_id":"a","state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":"a","state_dir":"relative"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":null,"state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_show_source_missing_does_not_create_export PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[False] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 23, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[True] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 23, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[spec-id] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[input-path] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_lookup.py::test_new_lookup_consistency_guards PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 11, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_relative_paths_override_and_preservation PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 59, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[unexpected = 1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = true] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = -1] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 2147483648] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = "wrong"] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [1]] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = ""] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = 2] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = [] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 1.0] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = ["absent"]] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_missing_store_or_config_does_not_initialize PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[version] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[structure] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[foreign] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[state] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[receipt] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 2, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[export] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[symlink-parent] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 2, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[db-symlink] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[sidecar-symlink] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[same-input] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[hardlink-input] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[symlink-input] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[config] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[receipt-output] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 2, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[state-output] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[dangling] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-journal] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-wal] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-shm] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_symlink_state_and_receipt_lookup_resolve_consistently PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior0-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "c", "fault_injection": {"fsync_fail": 1}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 3, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior1-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "c", "fault_injection": {"link_fail": true}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 3, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior2-True] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "c", "fault_injection": {"fsync_fail": 2}, "receipt_exists": true, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 3, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_real_receipt_permission_failure_has_no_commit PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 3, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[3-False] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[4-True] PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_zero_timeout_with_real_writer_lock PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 6, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_existing_dataset_ancestor_identity_blocks_case_alias[state] PHASE4_EVIDENCE {"case": "dataset-ancestor-identity", "backend": "c", "destination": "state", "actual_case_alias": true, "dataset_unchanged": true}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_existing_dataset_ancestor_identity_blocks_case_alias[receipt] PHASE4_EVIDENCE {"case": "dataset-ancestor-identity", "backend": "c", "destination": "receipt", "actual_case_alias": true, "dataset_unchanged": true}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 2, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_existing_dataset_ancestor_identity_blocks_case_alias[export] PHASE4_EVIDENCE {"case": "dataset-ancestor-identity", "backend": "c", "destination": "export", "actual_case_alias": true, "dataset_unchanged": true}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_same_store_case_alias_agrees_with_receipt_and_blocks_export_inside_state PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_two_real_processes_compete_for_same_receipt PHASE4_EVIDENCE {"case": "receipt-contention", "backend": "c", "kind": "two subprocesses and one filesystem destination", "events": [{"event": "before_link", "pid": 59922, "observed_ns": 460739814978750}, {"event": "before_link", "pid": 59923, "observed_ns": 460739814986458}], "exit_codes": [0, 3], "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 85, "python": 0}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[receipt_ready-False] PHASE4_EVIDENCE {"case": "kill-receipt_ready", "backend": "c", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "receipt_ready", "pid": 59926, "observed_ns": 460740090591166}, "returncode": -9, "run_id": "16cc4de2-e742-4a20-a0fc-f3d788ddfb55", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[before_commit-False] PHASE4_EVIDENCE {"case": "kill-before_commit", "backend": "c", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "before_commit", "pid": 59929, "observed_ns": 460740291682541}, "returncode": -9, "run_id": "d401999f-a380-4222-ab9d-d1f20d93c160", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 1, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[after_commit-True] PHASE4_EVIDENCE {"case": "kill-after_commit", "backend": "c", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "after_commit", "pid": 59932, "observed_ns": 460740501391583}, "returncode": -9, "run_id": "5207f875-70e2-4fa9-94f2-a6fc321a0df3", "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 26, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[closed-pipe] PHASE4_EVIDENCE {"case": "closed-pipe", "backend": "c", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 59935, "observed_ns": 460740774334166}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[export-collision] PHASE4_EVIDENCE {"case": "export-collision", "backend": "c", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 59938, "observed_ns": 460741049262291}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[real-export-permission] PHASE4_EVIDENCE {"case": "real-export-permission", "backend": "c", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 59941, "observed_ns": 460741325143500}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "c", "counts": {"c": 83, "python": 0}, "processes": 3}
+
+
+Observed real encoder factory calls: {'c': 207, 'python': 0}; selected=c
+============================= 93 passed in 13.04s ==============================
+
+exit_code=0
+
+suite-python
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pytest -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -s -v --tb=short -p no:cacheprovider /Users/macbookpro/Documents/DACN_implementation/tests/phase4 --encoder-backend=python
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-7apnsg0r
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 93 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lifecycle_lookup_export_and_real_module_entrypoint PHASE4_EVIDENCE {"case": "lifecycle", "backend": "python", "final_counts": {"runs": 4, "sources": 4, "snapshots": 2, "specs": 1}, "historical_revision": 1, "head_revision": 2, "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 399}, "processes": 10}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags0-INVALID_REQUEST-/mode] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags1-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags2-INVALID_REQUEST-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags3-SPEC_NOT_FOUND-/spec_id] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 18}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags4-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags5-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 14}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args0] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args2] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args3] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args4] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args5] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args6] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args7] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args8] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[parse-2-INVALID_JSON] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[duplicate-key-2-DUPLICATE_JSON_KEY] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[invalid-priority-2-INVALID_PRIORITY] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-priority-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 22}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-version-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 22}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-key-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 22}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[unknown-2-UNKNOWN_FIELD] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 21}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_exact_numbers_legacy_utf16_source_and_export PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 58}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command0] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command2] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command3] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_receipt_missing_run_conflict_and_no_overwrite PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 59}, "processes": 6}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"run_id":"a","run_id":"b"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[[]] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"2","run_id":"a","state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":"a","state_dir":"relative"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{"receipt_version":"1","run_id":null,"state_dir":"/tmp"}] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_show_source_missing_does_not_create_export PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[False] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 23}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[True] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 23}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[spec-id] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[input-path] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_lookup.py::test_new_lookup_consistency_guards PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 11}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_relative_paths_override_and_preservation PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 59}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[unexpected = 1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = true] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = -1] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 2147483648] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = "wrong"] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [1]] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = ""] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = 2] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = [] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 1.0] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = ["absent"]] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_missing_store_or_config_does_not_initialize PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[version] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[structure] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[foreign] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[state] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[receipt] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 2}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[export] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[symlink-parent] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 2}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[db-symlink] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[sidecar-symlink] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[same-input] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[hardlink-input] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[symlink-input] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[config] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[receipt-output] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 2}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[state-output] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[dangling] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-journal] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-wal] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-shm] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_symlink_state_and_receipt_lookup_resolve_consistently PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior0-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "python", "fault_injection": {"fsync_fail": 1}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 3}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior1-False] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "python", "fault_injection": {"link_fail": true}, "receipt_exists": false, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 3}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_receipt_flush_and_publish_failure_never_submit[behavior2-True] PHASE4_EVIDENCE {"case": "receipt-fault", "backend": "python", "fault_injection": {"fsync_fail": 2}, "receipt_exists": true, "runs": 0}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 3}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_real_receipt_permission_failure_has_no_commit PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 3}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[3-False] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[4-True] PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_zero_timeout_with_real_writer_lock PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 6}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_existing_dataset_ancestor_identity_blocks_case_alias[state] PHASE4_EVIDENCE {"case": "dataset-ancestor-identity", "backend": "python", "destination": "state", "actual_case_alias": true, "dataset_unchanged": true}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 0}, "processes": 1}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_existing_dataset_ancestor_identity_blocks_case_alias[receipt] PHASE4_EVIDENCE {"case": "dataset-ancestor-identity", "backend": "python", "destination": "receipt", "actual_case_alias": true, "dataset_unchanged": true}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 2}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_existing_dataset_ancestor_identity_blocks_case_alias[export] PHASE4_EVIDENCE {"case": "dataset-ancestor-identity", "backend": "python", "destination": "export", "actual_case_alias": true, "dataset_unchanged": true}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_same_store_case_alias_agrees_with_receipt_and_blocks_export_inside_state PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_two_real_processes_compete_for_same_receipt PHASE4_EVIDENCE {"case": "receipt-contention", "backend": "python", "kind": "two subprocesses and one filesystem destination", "events": [{"event": "before_link", "pid": 60163, "observed_ns": 460753166035000}, {"event": "before_link", "pid": 60164, "observed_ns": 460753166042416}], "exit_codes": [0, 3], "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 85}, "processes": 4}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[receipt_ready-False] PHASE4_EVIDENCE {"case": "kill-receipt_ready", "backend": "python", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "receipt_ready", "pid": 60167, "observed_ns": 460753447810541}, "returncode": -9, "run_id": "f1fc435b-4ff9-487a-964d-989e2dc19bd7", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[before_commit-False] PHASE4_EVIDENCE {"case": "kill-before_commit", "backend": "python", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "before_commit", "pid": 60170, "observed_ns": 460753658725583}, "returncode": -9, "run_id": "d697f27a-092f-4f12-9bf9-5c083b514895", "final_state": {"runs": 0, "sources": 0, "snapshots": 0, "specs": 0}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 1}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_kill_and_recover_through_existing_receipt[after_commit-True] PHASE4_EVIDENCE {"case": "kill-after_commit", "backend": "python", "kind": "actual SIGKILL with IPC boundary", "event": {"event": "after_commit", "pid": 60173, "observed_ns": 460753864321916}, "returncode": -9, "run_id": "37b07f48-dea6-495b-8850-ec2ae1435e5b", "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 26}, "processes": 2}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[closed-pipe] PHASE4_EVIDENCE {"case": "closed-pipe", "backend": "python", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 60176, "observed_ns": 460754136760583}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[export-collision] PHASE4_EVIDENCE {"case": "export-collision", "backend": "python", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 60179, "observed_ns": 460754418559583}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_processes.py::test_delivery_failure_after_commit_keeps_record[real-export-permission] PHASE4_EVIDENCE {"case": "real-export-permission", "backend": "python", "kind": "actual output I/O/collision after commit", "event": {"event": "before_output", "pid": 60187, "observed_ns": 460754698352708}, "exit_code": 3, "final_state": {"runs": 1, "sources": 1, "snapshots": 1, "specs": 1}}
+PASSEDPHASE4_ENCODERS {"backend": "python", "counts": {"c": 0, "python": 83}, "processes": 3}
+
+
+Observed real encoder factory calls: {'c': 0, 'python': 207}; selected=python
+============================= 93 passed in 13.29s ==============================
+
+exit_code=0
+
+pip-check
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip check
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-7apnsg0r
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+No broken requirements found.
+
+exit_code=0

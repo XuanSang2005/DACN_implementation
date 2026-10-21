@@ -1,0 +1,55 @@
+{
+  "output_contract_version": "0.1.0-draft.2",
+  "status": "rejected",
+  "result_kind": null,
+  "run": {
+    "run_id": "run-demo-004",
+    "received_at": "2026-10-12T09:03:00.000Z",
+    "completed_at": "2026-10-12T09:03:01.000Z",
+    "validator_version": "illustration-only",
+    "input_schema_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+    "request": {
+      "mode": "update",
+      "spec_id": "spec-demo-clinic",
+      "base_revision": 1
+    },
+    "source": {
+      "source_id": "src-demo-004",
+      "kind": "json_file",
+      "label": "illustrative-clinic-variant-04.json"
+    },
+    "input_version": {
+      "origin": "explicit",
+      "resolved": "1.0.0"
+    },
+    "normalizations": [],
+    "validation": {
+      "checks": {
+        "parse": "passed",
+        "schema": "failed",
+        "cross_field": "not_run",
+        "revision": "not_run"
+      },
+      "errors": [
+        {
+          "code": "DUPLICATE_METRIC",
+          "stage": "schema",
+          "target": "input",
+          "pointer": "/design_preferences/metric_priorities/3",
+          "related_pointers": [
+            "/design_preferences/metric_priorities/0"
+          ],
+          "message": "Metric response_time_p95 xuất hiện hai lần; phải cung cấp đủ bốn metrics, mỗi metric đúng một lần. Hãy sửa danh sách theo thứ tự ưu tiên của người dùng.",
+          "details": {
+            "value": "response_time_p95"
+          }
+        }
+      ]
+    }
+  },
+  "snapshot": null,
+  "handoff": {
+    "eligible_for_s02": false,
+    "snapshot_id": null
+  }
+}

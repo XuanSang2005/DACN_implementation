@@ -1,0 +1,15 @@
+{
+  "IMPLEMENTATION_REPORT.md": "1481b9e0b2dab31227ca2ad9bde1525aa9facd6c1385d2c2a41875ca381bb3c6",
+  "baseline-verification.json": "e1f76b9e87a00ab0ad29da7fdaae92f9fb97e49eef4a72decc9b1aa8b3338006",
+  "database-schema.sql": "4292e86c2d30312898d4237f6239081e0c01ddecaf2bc184d4a3280b9f28102c",
+  "development-commands.json": "5846c3f3b6e1ba58df10520e0c8ad8f234ea48ae980aea4efba4e96bf5d8701f",
+  "development-concurrency-fault-evidence.json": "0cc99183e17f3a77df6f44d6d11fe28a7f46288227fe24b1da8826ad153eaf1f",
+  "development-results.txt": "44fbe7f37f3593b8c40d0be51675d3abe28a00b38dabd1571747e87eb292f1d4",
+  "environment-manifest.json": "992be424e50e5c1c1b64b9b9ec236e08e81c4960f9669aa8f2f8431a1edfb711",
+  "evidence-verification.txt": "50b1236c6b542e143ba2095847e5fceb18a1ff43c16789a943e6d5c78b2a7fd2",
+  "final-commands.json": "5daed719c16ec10f0bb9f95512086229a49b150e2177cfd73635944402e54171",
+  "final-concurrency-fault-evidence.json": "84a21a6397144e5cc6fc031b779bd87389731478c09e74b6b4709deea6dd182e",
+  "final-results.txt": "eee3a515f72a5c601d938cf8721a9383a96748ba39832266b03abe0fc3fb5a9a",
+  "protected-files-before.json": "374441071c1d842ed231e594d153d5a1ed21e81bddb33df22018cead0d343bea",
+  "protected-files-verification.json": "132f1c937f0ab089f332a38a7d8abe315fce793ef669de121dc26f4213c3701e"
+}

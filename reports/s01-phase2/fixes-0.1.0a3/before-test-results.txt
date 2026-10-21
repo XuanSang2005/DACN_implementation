@@ -1,0 +1,733 @@
+
+regressions-c; installed package=0.1.0a2
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pytest -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -p no:cacheprovider -v --tb=short /Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py --encoder-backend=c
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase2-fix-before-clrhkid3
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 41 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[kind-type] FAILED [  2%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-required] FAILED [  4%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-unknown] FAILED [  7%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[None-null] FAILED [  9%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[False-boolean] FAILED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind2-array] FAILED [ 14%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind3-object] FAILED [ 17%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_valid_nullable_controls[None] PASSED [ 19%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_valid_nullable_controls[structured1] PASSED [ 21%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[123-number] PASSED [ 24%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[True-boolean] PASSED [ 26%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[structured2-array] PASSED [ 29%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[local-string] PASSED [ 31%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_nullable_object_with_nested_anyof PASSED [ 34%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[False] FAILED [ 36%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[True] FAILED [ 39%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-None-{-INVALID_JSON] PASSED [ 41%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 43%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{-INVALID_JSON] FAILED [ 46%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 48%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{-INVALID_JSON] FAILED [ 51%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 53%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-None-{-INVALID_JSON] PASSED [ 56%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 58%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{-INVALID_JSON] FAILED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 63%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] FAILED [ 65%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 68%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-None-{-INVALID_JSON] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 73%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{-INVALID_JSON] FAILED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 78%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{-INVALID_JSON] FAILED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 82%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-None-{-INVALID_JSON] PASSED [ 85%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{-INVALID_JSON] FAILED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 92%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] FAILED [ 95%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 97%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_does_not_force_null_pointer_on_other_stages PASSED [100%]
+
+=================================== FAILURES ===================================
+______________ test_f1_keeps_independent_child_errors[kind-type] _______________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:67: in test_f1_keeps_independent_child_errors
+    assert_schema_errors(validate_input(raw), expected)
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...': 'number'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'number'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+__________ test_f1_keeps_independent_child_errors[type-and-required] ___________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:67: in test_f1_keeps_independent_child_errors
+    assert_schema_errors(validate_input(raw), expected)
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('MISSING_FI...d': 'value'})] == [('TYPE_MISMA...d': 'value'})]
+E     
+E     At index 0 diff: ('MISSING_FIELD', '/constraints/0/constraint/value', {'field': 'value'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'number'})
+E     Right contains one more item: ('MISSING_FIELD', '/constraints/0/constraint/value', {'field': 'value'})
+E     
+E     Full diff:
+E       [
+E     -     (...
+E     
+E     ...Full output truncated (17 lines hidden), use '-vv' to show
+___________ test_f1_keeps_independent_child_errors[type-and-unknown] ___________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:67: in test_f1_keeps_independent_child_errors
+    assert_schema_errors(validate_input(raw), expected)
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('UNKNOWN_FI...d': 'extra'})] == [('UNKNOWN_FI...': 'number'})]
+E     
+E     Right contains one more item: ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'number'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'UNKNOWN_FIELD',...
+E     
+E     ...Full output truncated (16 lines hidden), use '-vv' to show
+__________________ test_f1_other_wrong_kind_types[None-null] ___________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...pe': 'null'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'null'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+________________ test_f1_other_wrong_kind_types[False-boolean] _________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...: 'boolean'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'boolean'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+_________________ test_f1_other_wrong_kind_types[kind2-array] __________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...e': 'array'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'array'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+_________________ test_f1_other_wrong_kind_types[kind3-object] _________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...': 'object'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'object'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (15 lines hidden), use '-vv' to show
+_________ test_f1_structural_adapter_on_synthetic_nested_schema[False] _________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:117: in test_f1_structural_adapter_on_synthetic_nested_schema
+    assert [(e["code"], e["pointer"], e["details"]) for e in issues] == [
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...: 'boolean'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/box', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/box/label', {'expected_types': ['string'], 'actual_type': 'boolean'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+_________ test_f1_structural_adapter_on_synthetic_nested_schema[True] __________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:117: in test_f1_structural_adapter_on_synthetic_nested_schema
+    assert [(e["code"], e["pointer"], e["details"]) for e in issues] == [
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...: 'boolean'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/box', {'expected_types': ['null', 'object'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/box/label', {'expected_types': ['string'], 'actual_type': 'boolean'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+____ test_f2_parse_pointer_must_be_null[no-offset-internal--{-INVALID_JSON] ____
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+Observed real encoder factory calls: {'c': 85, 'python': 0}; selected=c
+=========================== short test summary info ============================
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[kind-type]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-required]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-unknown]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[None-null]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[False-boolean]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind2-array]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind3-object]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[False]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[True]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+======================== 25 failed, 16 passed in 0.21s =========================
+
+exit_code=1
+
+regressions-python; installed package=0.1.0a2
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pytest -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -p no:cacheprovider -v --tb=short /Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py --encoder-backend=python
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase2-fix-before-clrhkid3
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 41 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[kind-type] FAILED [  2%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-required] FAILED [  4%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-unknown] FAILED [  7%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[None-null] FAILED [  9%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[False-boolean] FAILED [ 12%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind2-array] FAILED [ 14%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind3-object] FAILED [ 17%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_valid_nullable_controls[None] PASSED [ 19%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_valid_nullable_controls[structured1] PASSED [ 21%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[123-number] PASSED [ 24%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[True-boolean] PASSED [ 26%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[structured2-array] PASSED [ 29%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_wrong_type_at_nullable_node_is_single_parent_error[local-string] PASSED [ 31%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_nullable_object_with_nested_anyof PASSED [ 34%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[False] FAILED [ 36%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[True] FAILED [ 39%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-None-{-INVALID_JSON] PASSED [ 41%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 43%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{-INVALID_JSON] FAILED [ 46%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 48%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{-INVALID_JSON] FAILED [ 51%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 53%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-None-{-INVALID_JSON] PASSED [ 56%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 58%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{-INVALID_JSON] FAILED [ 60%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 63%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] FAILED [ 65%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 68%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-None-{-INVALID_JSON] PASSED [ 70%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 73%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{-INVALID_JSON] FAILED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 78%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{-INVALID_JSON] FAILED [ 80%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 82%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-None-{-INVALID_JSON] PASSED [ 85%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-None-{"x":1,"x":2}-DUPLICATE_JSON_KEY] PASSED [ 87%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{-INVALID_JSON] FAILED [ 90%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 92%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] FAILED [ 95%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] FAILED [ 97%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_does_not_force_null_pointer_on_other_stages PASSED [100%]
+
+=================================== FAILURES ===================================
+______________ test_f1_keeps_independent_child_errors[kind-type] _______________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:67: in test_f1_keeps_independent_child_errors
+    assert_schema_errors(validate_input(raw), expected)
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...': 'number'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'number'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+__________ test_f1_keeps_independent_child_errors[type-and-required] ___________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:67: in test_f1_keeps_independent_child_errors
+    assert_schema_errors(validate_input(raw), expected)
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('MISSING_FI...d': 'value'})] == [('TYPE_MISMA...d': 'value'})]
+E     
+E     At index 0 diff: ('MISSING_FIELD', '/constraints/0/constraint/value', {'field': 'value'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'number'})
+E     Right contains one more item: ('MISSING_FIELD', '/constraints/0/constraint/value', {'field': 'value'})
+E     
+E     Full diff:
+E       [
+E     -     (...
+E     
+E     ...Full output truncated (17 lines hidden), use '-vv' to show
+___________ test_f1_keeps_independent_child_errors[type-and-unknown] ___________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:67: in test_f1_keeps_independent_child_errors
+    assert_schema_errors(validate_input(raw), expected)
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('UNKNOWN_FI...d': 'extra'})] == [('UNKNOWN_FI...': 'number'})]
+E     
+E     Right contains one more item: ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'number'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'UNKNOWN_FIELD',...
+E     
+E     ...Full output truncated (16 lines hidden), use '-vv' to show
+__________________ test_f1_other_wrong_kind_types[None-null] ___________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...pe': 'null'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'null'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+________________ test_f1_other_wrong_kind_types[False-boolean] _________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...: 'boolean'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'boolean'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+_________________ test_f1_other_wrong_kind_types[kind2-array] __________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...e': 'array'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'array'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+_________________ test_f1_other_wrong_kind_types[kind3-object] _________________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:74: in test_f1_other_wrong_kind_types
+    assert_schema_errors(submit(payload), [
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:38: in assert_schema_errors
+    assert [(e["code"], e["pointer"], e["details"]) for e in result.errors] == expected
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...': 'object'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/constraints/0/constraint', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/constraints/0/constraint/kind', {'expected_types': ['string'], 'actual_type': 'object'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (15 lines hidden), use '-vv' to show
+_________ test_f1_structural_adapter_on_synthetic_nested_schema[False] _________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:117: in test_f1_structural_adapter_on_synthetic_nested_schema
+    assert [(e["code"], e["pointer"], e["details"]) for e in issues] == [
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...: 'boolean'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/box', {'expected_types': ['object', 'null'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/box/label', {'expected_types': ['string'], 'actual_type': 'boolean'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+_________ test_f1_structural_adapter_on_synthetic_nested_schema[True] __________
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:117: in test_f1_structural_adapter_on_synthetic_nested_schema
+    assert [(e["code"], e["pointer"], e["details"]) for e in issues] == [
+E   AssertionError: assert [('TYPE_MISMA...': 'object'})] == [('TYPE_MISMA...: 'boolean'})]
+E     
+E     At index 0 diff: ('TYPE_MISMATCH', '/box', {'expected_types': ['null', 'object'], 'actual_type': 'object'}) != ('TYPE_MISMATCH', '/box/label', {'expected_types': ['string'], 'actual_type': 'boolean'})
+E     
+E     Full diff:
+E       [
+E           (
+E               'TYPE_MISMATCH',...
+E     
+E     ...Full output truncated (18 lines hidden), use '-vv' to show
+____ test_f2_parse_pointer_must_be_null[no-offset-internal--{-INVALID_JSON] ____
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{-INVALID_JSON] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_ test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY] _
+/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py:148: in test_f2_parse_pointer_must_be_null
+    with pytest.raises(EnvelopeInvariantError, match="Parse errors require a null pointer"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+Observed real encoder factory calls: {'c': 0, 'python': 85}; selected=python
+=========================== short test summary info ============================
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[kind-type]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-required]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_keeps_independent_child_errors[type-and-unknown]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[None-null]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[False-boolean]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind2-array]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_other_wrong_kind_types[kind3-object]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[False]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f1_structural_adapter_on_synthetic_nested_schema[True]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[no-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-internal-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip--{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{-INVALID_JSON]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py::test_f2_parse_pointer_must_be_null[synthetic-offset-codec-roundtrip-/invented/path-{"x":1,"x":2}-DUPLICATE_JSON_KEY]
+======================== 25 failed, 16 passed in 0.22s =========================
+
+exit_code=1
+
+independent-audit; installed package=0.1.0a2
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pytest -c /Users/macbookpro/Documents/DACN_implementation/pyproject.toml -p no:cacheprovider -v --tb=short /Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py --noconftest
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase2-fix-before-clrhkid3
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation
+configfile: pyproject.toml
+collecting ... collected 12 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_controls_valid_input_and_parse_failure[c] PASSED [  8%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_controls_valid_input_and_parse_failure[python] PASSED [ 16%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[c-wrong-kind-only] FAILED [ 25%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[c-wrong-kind-and-missing-value] FAILED [ 33%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[c-wrong-kind-and-extra-field] FAILED [ 41%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[python-wrong-kind-only] FAILED [ 50%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[python-wrong-kind-and-missing-value] FAILED [ 58%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[python-wrong-kind-and-extra-field] FAILED [ 66%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[c-invalid-json] FAILED [ 75%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[c-duplicate-key] FAILED [ 83%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[python-invalid-json] FAILED [ 91%]
+../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[python-duplicate-key] FAILED [100%]
+
+=================================== FAILURES ===================================
+__________ test_anyof_preserves_nested_type_error[c-wrong-kind-only] ___________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:100: in test_anyof_preserves_nested_type_error
+    assert actual == expected, result.errors
+E   AssertionError: [{'code': 'TYPE_MISMATCH', 'stage': 'schema', 'target': 'input', 'pointer': '/constraints/0/constraint', ...}]
+E   assert {('TYPE_MISMA.../constraint')} == {('TYPE_MISMA...traint/kind')}
+E     
+E     Extra items in the left set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint')
+E     Extra items in the right set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint/kind')
+E     
+E     Full diff:...
+E     
+E     ...Full output truncated (8 lines hidden), use '-vv' to show
+____ test_anyof_preserves_nested_type_error[c-wrong-kind-and-missing-value] ____
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:100: in test_anyof_preserves_nested_type_error
+    assert actual == expected, result.errors
+E   AssertionError: [{'code': 'MISSING_FIELD', 'stage': 'schema', 'target': 'input', 'pointer': '/constraints/0/constraint/value', ...}]
+E   assert {('MISSING_FI...raint/value')} == {('MISSING_FI...traint/kind')}
+E     
+E     Extra items in the right set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint/kind')
+E     
+E     Full diff:
+E       {
+E           (...
+E     
+E     ...Full output truncated (8 lines hidden), use '-vv' to show
+_____ test_anyof_preserves_nested_type_error[c-wrong-kind-and-extra-field] _____
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:100: in test_anyof_preserves_nested_type_error
+    assert actual == expected, result.errors
+E   AssertionError: [{'code': 'UNKNOWN_FIELD', 'stage': 'schema', 'target': 'input', 'pointer': '/constraints/0/constraint/extra', ...}]
+E   assert {('UNKNOWN_FI...raint/extra')} == {('TYPE_MISMA...raint/extra')}
+E     
+E     Extra items in the right set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint/kind')
+E     
+E     Full diff:
+E       {
+E     -     (...
+E     
+E     ...Full output truncated (8 lines hidden), use '-vv' to show
+________ test_anyof_preserves_nested_type_error[python-wrong-kind-only] ________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:100: in test_anyof_preserves_nested_type_error
+    assert actual == expected, result.errors
+E   AssertionError: [{'code': 'TYPE_MISMATCH', 'stage': 'schema', 'target': 'input', 'pointer': '/constraints/0/constraint', ...}]
+E   assert {('TYPE_MISMA.../constraint')} == {('TYPE_MISMA...traint/kind')}
+E     
+E     Extra items in the left set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint')
+E     Extra items in the right set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint/kind')
+E     
+E     Full diff:...
+E     
+E     ...Full output truncated (8 lines hidden), use '-vv' to show
+_ test_anyof_preserves_nested_type_error[python-wrong-kind-and-missing-value] __
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:100: in test_anyof_preserves_nested_type_error
+    assert actual == expected, result.errors
+E   AssertionError: [{'code': 'MISSING_FIELD', 'stage': 'schema', 'target': 'input', 'pointer': '/constraints/0/constraint/value', ...}]
+E   assert {('MISSING_FI...raint/value')} == {('MISSING_FI...traint/kind')}
+E     
+E     Extra items in the right set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint/kind')
+E     
+E     Full diff:
+E       {
+E           (...
+E     
+E     ...Full output truncated (8 lines hidden), use '-vv' to show
+__ test_anyof_preserves_nested_type_error[python-wrong-kind-and-extra-field] ___
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:100: in test_anyof_preserves_nested_type_error
+    assert actual == expected, result.errors
+E   AssertionError: [{'code': 'UNKNOWN_FIELD', 'stage': 'schema', 'target': 'input', 'pointer': '/constraints/0/constraint/extra', ...}]
+E   assert {('UNKNOWN_FI...raint/extra')} == {('TYPE_MISMA...raint/extra')}
+E     
+E     Extra items in the right set:
+E     ('TYPE_MISMATCH', '/constraints/0/constraint/kind')
+E     
+E     Full diff:
+E       {
+E     -     (...
+E     
+E     ...Full output truncated (8 lines hidden), use '-vv' to show
+___________ test_parse_error_must_have_null_pointer[c-invalid-json] ____________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:111: in test_parse_error_must_have_null_pointer
+    with pytest.raises(EnvelopeInvariantError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+___________ test_parse_error_must_have_null_pointer[c-duplicate-key] ___________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:111: in test_parse_error_must_have_null_pointer
+    with pytest.raises(EnvelopeInvariantError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+_________ test_parse_error_must_have_null_pointer[python-invalid-json] _________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:111: in test_parse_error_must_have_null_pointer
+    with pytest.raises(EnvelopeInvariantError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+________ test_parse_error_must_have_null_pointer[python-duplicate-key] _________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py:111: in test_parse_error_must_have_null_pointer
+    with pytest.raises(EnvelopeInvariantError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE EnvelopeInvariantError
+=========================== short test summary info ============================
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[c-wrong-kind-only]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[c-wrong-kind-and-missing-value]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[c-wrong-kind-and-extra-field]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[python-wrong-kind-only]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[python-wrong-kind-and-missing-value]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_anyof_preserves_nested_type_error[python-wrong-kind-and-extra-field]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[c-invalid-json]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[c-duplicate-key]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[python-invalid-json]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation::test_parse_error_must_have_null_pointer[python-duplicate-key]
+========================= 10 failed, 2 passed in 0.11s =========================
+
+exit_code=1

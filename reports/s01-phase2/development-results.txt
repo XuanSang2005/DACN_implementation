@@ -1,0 +1,51 @@
+
+$ .venv/bin/python -m pip wheel --no-deps --no-build-isolation --wheel-dir dist .
+Processing /Users/macbookpro/Documents/DACN_implementation
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: dacn-s01
+  Building wheel for dacn-s01 (pyproject.toml): started
+  Building wheel for dacn-s01 (pyproject.toml): finished with status 'done'
+  Created wheel for dacn-s01: filename=dacn_s01-0.1.0a2-py3-none-any.whl size=17232 sha256=10477e9ea610860092fdd4fbdc3699d0ed6344a6c0462607cb85e332c16638b0
+  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-ep9_hvf5/wheels/f6/b1/15/9d315d943c28c91a8202191c5c06ff57af2721e5f134614272
+Successfully built dacn-s01
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip install --upgrade pip
+
+exit_code=0
+
+$ .venv/bin/python -m pip install --no-deps --force-reinstall dist/dacn_s01-0.1.0a2-py3-none-any.whl
+Processing ./dist/dacn_s01-0.1.0a2-py3-none-any.whl
+Installing collected packages: dacn-s01
+  Attempting uninstall: dacn-s01
+    Found existing installation: dacn-s01 0.1.0a1
+    Uninstalling dacn-s01-0.1.0a1:
+      Successfully uninstalled dacn-s01-0.1.0a1
+Successfully installed dacn-s01-0.1.0a2
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -m pip install --upgrade pip
+
+exit_code=0
+
+$ .venv/bin/python -m pytest tests/phase2/test_validation.py -q --encoder-backend=c
+........................................................................ [ 13%]
+........................................................................ [ 27%]
+........................................................................ [ 40%]
+........................................................................ [ 54%]
+........................................................................ [ 68%]
+........................................................................ [ 81%]
+........................................................................ [ 95%]
+.......................                                                  [100%]
+Observed real encoder factory calls: {'c': 536, 'python': 0}; selected=c
+527 passed in 3.79s
+
+exit_code=0
+
+$ .venv/bin/python -m pytest tests/phase2/test_envelope.py -q --encoder-backend=c
+........................................................                 [100%]
+Observed real encoder factory calls: {'c': 104, 'python': 0}; selected=c
+56 passed in 0.27s
+
+exit_code=0

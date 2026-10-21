@@ -1,0 +1,276 @@
+{
+  "illustration": {
+    "status": "ví dụ minh họa chưa thực thi",
+    "title": "Consent giả định và recovery sau S01 commit, trước S02 application",
+    "production_importable": false,
+    "meaning": "Kịch bản/projections cho proposal; không phải full canonical export, kết quả mong đợi chưa chạy.",
+    "user_business_confirmation": false
+  },
+  "contract_version": "s02/0.1.0-draft.3",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
+  "bindings": [
+    {
+      "name": "selected_s01_snapshot",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "name": "prior_illustrative_model",
+      "file": "../s02/01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "name": "source_cancel_issue",
+      "file": "../s02/01-source-and-model.json",
+      "pointer": "/records/4"
+    }
+  ],
+  "assumptions": [
+    "Người dùng DEMO trả lời quyền hủy và consent trong kịch bản; không phải xác nhận thật.",
+    "S01 giả định đã commit revision kế tiếp, chưa có run/receipt thật.",
+    "Phạm vi phòng khám vẫn có Issue khác, resolve quyền hủy không hoàn tất reanalysis."
+  ],
+  "symbol_table": {
+    "command": "p2-apply-1",
+    "answer": "p2-answer-cancel",
+    "interpretation_event": "p2-interpret-1",
+    "consent_event": "p2-consent-1",
+    "dispatch_event": "p2-s01-dispatch-1",
+    "observation_event": "p2-observed-1",
+    "input_stage_blob": "p2-proposed-input",
+    "s01_run": "p2-s01-update-run",
+    "next_snapshot": "p2-clinic-r2",
+    "next_model": "p2-model-source-switch",
+    "next_analysis_set": "p2-set-source-switch"
+  },
+  "answer_projection": {
+    "issue_id": "Q-cancel",
+    "supersedes_answer_id": null,
+    "respondent": "DEMO-USER (giả định)",
+    "recorded_by": "DEMO-CLI (chưa tồn tại)",
+    "text": "Chỉ nhân viên phòng khám được hủy lịch trong phạm vi phòng khám mình.",
+    "interpretation": "changes_requirements",
+    "existing_source_refs": []
+  },
+  "review_package": {
+    "base_snapshot_id": "snap-demo-clinic-r1",
+    "s01_request": {
+      "mode": "update",
+      "spec_id": "spec-demo-clinic",
+      "base_revision": 1
+    },
+    "base_model_id": "model-clinic-1",
+    "base_analysis_set_id": "AS-clinic-1",
+    "diff": [
+      {
+        "op": "replace",
+        "input_pointer": "/functional_requirements/1/text",
+        "before": "Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot.",
+        "after": "Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot. Chỉ nhân viên phòng khám được hủy lịch trong phạm vi phòng khám mình."
+      }
+    ],
+    "proposed_input": {
+      "schema_version": "1.0.0",
+      "title": "Hệ thống đặt lịch phòng khám",
+      "context": "Hệ thống phòng khám phục vụ bệnh nhân và nhân viên phòng khám. Phạm vi: Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền.",
+      "actors": [
+        "Bệnh nhân",
+        "Nhân viên phòng khám"
+      ],
+      "functional_requirements": [
+        {
+          "id": "R1",
+          "title": "Không đặt trùng slot",
+          "text": "Hai người đặt cùng một slot thì tối đa một người được xác nhận.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Tối đa một lịch được xác nhận cho một slot.",
+            "Phản hồi xung đột chỉ rõ slot."
+          ]
+        },
+        {
+          "id": "R2",
+          "title": "Hủy lịch có lịch sử",
+          "text": "Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot. Chỉ nhân viên phòng khám được hủy lịch trong phạm vi phòng khám mình.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Ghi lịch sử hủy đầy đủ.",
+            "Trạng thái lịch và slot được cập nhật nhất quán."
+          ]
+        }
+      ],
+      "non_functional_requirements": [
+        {
+          "id": "R3",
+          "title": "p95 ≤ 2 giây",
+          "text": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Đo phía server, percentile 95.",
+            "50 người dùng; thời gian 30 phút."
+          ]
+        },
+        {
+          "id": "R4",
+          "title": "Đúng người, đúng phòng khám",
+          "text": "Bệnh nhân chỉ xem hồ sơ của mình; nhân viên chỉ xem dữ liệu phòng khám mình.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Chặn truy cập khác chủ sở hữu.",
+            "Chặn truy cập chéo phòng khám."
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "id": "R5",
+          "title": "Triển khai local",
+          "text": "App và database chạy local; dữ liệu lịch hẹn không gửi ra ngoài.",
+          "priority": "must",
+          "acceptance_criteria": [
+            "App và database triển khai trong môi trường local.",
+            "Không có luồng gửi dữ liệu lịch hẹn ra ngoài."
+          ]
+        }
+      ],
+      "design_preferences": {
+        "metric_priorities": [
+          "response_time_p95",
+          "sustainable_throughput",
+          "cpu_utilisation",
+          "scaling_gain"
+        ]
+      },
+      "project_details": {
+        "scope_exclusions": null,
+        "external_systems": null,
+        "data_context": null
+      },
+      "operating_conditions": {
+        "critical_scenarios": "Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền",
+        "expected_load": null,
+        "peak_load": "Điều kiện kiểm thử R3: 50 người dùng đồng thời trong 30 phút; chưa biết tải đỉnh khi vận hành.",
+        "data_volume": null,
+        "growth": null,
+        "resource_budget": null
+      }
+    },
+    "payload_encoding": "UTF-8 của payload_utf8 chính xác; không thêm newline. Cách serialize minh họa ensure_ascii=true, separators comma/colon; không phải kết quả chạy codec ứng dụng.",
+    "payload_utf8": "{\"schema_version\":\"1.0.0\",\"title\":\"H\\u1ec7 th\\u1ed1ng \\u0111\\u1eb7t l\\u1ecbch ph\\u00f2ng kh\\u00e1m\",\"context\":\"H\\u1ec7 th\\u1ed1ng ph\\u00f2ng kh\\u00e1m ph\\u1ee5c v\\u1ee5 b\\u1ec7nh nh\\u00e2n v\\u00e0 nh\\u00e2n vi\\u00ean ph\\u00f2ng kh\\u00e1m. Ph\\u1ea1m vi: \\u0110\\u1eb7t l\\u1ecbch; H\\u1ee7y l\\u1ecbch; Xem d\\u1eef li\\u1ec7u trong ph\\u1ea1m vi quy\\u1ec1n.\",\"actors\":[\"B\\u1ec7nh nh\\u00e2n\",\"Nh\\u00e2n vi\\u00ean ph\\u00f2ng kh\\u00e1m\"],\"functional_requirements\":[{\"id\":\"R1\",\"title\":\"Kh\\u00f4ng \\u0111\\u1eb7t tr\\u00f9ng slot\",\"text\":\"Hai ng\\u01b0\\u1eddi \\u0111\\u1eb7t c\\u00f9ng m\\u1ed9t slot th\\u00ec t\\u1ed1i \\u0111a m\\u1ed9t ng\\u01b0\\u1eddi \\u0111\\u01b0\\u1ee3c x\\u00e1c nh\\u1eadn.\",\"priority\":null,\"acceptance_criteria\":[\"T\\u1ed1i \\u0111a m\\u1ed9t l\\u1ecbch \\u0111\\u01b0\\u1ee3c x\\u00e1c nh\\u1eadn cho m\\u1ed9t slot.\",\"Ph\\u1ea3n h\\u1ed3i xung \\u0111\\u1ed9t ch\\u1ec9 r\\u00f5 slot.\"]},{\"id\":\"R2\",\"title\":\"H\\u1ee7y l\\u1ecbch c\\u00f3 l\\u1ecbch s\\u1eed\",\"text\":\"H\\u1ee7y l\\u1ecbch l\\u01b0u l\\u00fd do, ng\\u01b0\\u1eddi th\\u1ef1c hi\\u1ec7n, th\\u1eddi gian v\\u00e0 gi\\u1ea3i ph\\u00f3ng slot. Ch\\u1ec9 nh\\u00e2n vi\\u00ean ph\\u00f2ng kh\\u00e1m \\u0111\\u01b0\\u1ee3c h\\u1ee7y l\\u1ecbch trong ph\\u1ea1m vi ph\\u00f2ng kh\\u00e1m m\\u00ecnh.\",\"priority\":null,\"acceptance_criteria\":[\"Ghi l\\u1ecbch s\\u1eed h\\u1ee7y \\u0111\\u1ea7y \\u0111\\u1ee7.\",\"Tr\\u1ea1ng th\\u00e1i l\\u1ecbch v\\u00e0 slot \\u0111\\u01b0\\u1ee3c c\\u1eadp nh\\u1eadt nh\\u1ea5t qu\\u00e1n.\"]}],\"non_functional_requirements\":[{\"id\":\"R3\",\"title\":\"p95 \\u2264 2 gi\\u00e2y\",\"text\":\"Server p95 kh\\u00f4ng qu\\u00e1 2 gi\\u00e2y v\\u1edbi 50 ng\\u01b0\\u1eddi d\\u00f9ng trong 30 ph\\u00fat.\",\"priority\":null,\"acceptance_criteria\":[\"\\u0110o ph\\u00eda server, percentile 95.\",\"50 ng\\u01b0\\u1eddi d\\u00f9ng; th\\u1eddi gian 30 ph\\u00fat.\"]},{\"id\":\"R4\",\"title\":\"\\u0110\\u00fang ng\\u01b0\\u1eddi, \\u0111\\u00fang ph\\u00f2ng kh\\u00e1m\",\"text\":\"B\\u1ec7nh nh\\u00e2n ch\\u1ec9 xem h\\u1ed3 s\\u01a1 c\\u1ee7a m\\u00ecnh; nh\\u00e2n vi\\u00ean ch\\u1ec9 xem d\\u1eef li\\u1ec7u ph\\u00f2ng kh\\u00e1m m\\u00ecnh.\",\"priority\":null,\"acceptance_criteria\":[\"Ch\\u1eb7n truy c\\u1eadp kh\\u00e1c ch\\u1ee7 s\\u1edf h\\u1eefu.\",\"Ch\\u1eb7n truy c\\u1eadp ch\\u00e9o ph\\u00f2ng kh\\u00e1m.\"]}],\"constraints\":[{\"id\":\"R5\",\"title\":\"Tri\\u1ec3n khai local\",\"text\":\"App v\\u00e0 database ch\\u1ea1y local; d\\u1eef li\\u1ec7u l\\u1ecbch h\\u1eb9n kh\\u00f4ng g\\u1eedi ra ngo\\u00e0i.\",\"priority\":\"must\",\"acceptance_criteria\":[\"App v\\u00e0 database tri\\u1ec3n khai trong m\\u00f4i tr\\u01b0\\u1eddng local.\",\"Kh\\u00f4ng c\\u00f3 lu\\u1ed3ng g\\u1eedi d\\u1eef li\\u1ec7u l\\u1ecbch h\\u1eb9n ra ngo\\u00e0i.\"]}],\"design_preferences\":{\"metric_priorities\":[\"response_time_p95\",\"sustainable_throughput\",\"cpu_utilisation\",\"scaling_gain\"]},\"project_details\":{\"scope_exclusions\":null,\"external_systems\":null,\"data_context\":null},\"operating_conditions\":{\"critical_scenarios\":\"\\u0110\\u1eb7t l\\u1ecbch; H\\u1ee7y l\\u1ecbch; Xem d\\u1eef li\\u1ec7u trong ph\\u1ea1m vi quy\\u1ec1n\",\"expected_load\":null,\"peak_load\":\"\\u0110i\\u1ec1u ki\\u1ec7n ki\\u1ec3m th\\u1eed R3: 50 ng\\u01b0\\u1eddi d\\u00f9ng \\u0111\\u1ed3ng th\\u1eddi trong 30 ph\\u00fat; ch\\u01b0a bi\\u1ebft t\\u1ea3i \\u0111\\u1ec9nh khi v\\u1eadn h\\u00e0nh.\",\"data_volume\":null,\"growth\":null,\"resource_budget\":null}}",
+    "byte_length": 3198,
+    "sha256": "faa427e63bb7d6275096c91fe0ce5de2816f2fba67eb6982baedf3ab5056b8d8",
+    "unchanged_fields_note": "Chỉ text R2 thay đổi; actors, priorities, criteria/thứ tự và unknowns giữ nguyên."
+  },
+  "event_payload_projections": [
+    {
+      "event_id": "p2-interpret-1",
+      "kind": "interpretation_selected",
+      "payload": {
+        "answer_id": "p2-answer-cancel",
+        "interpretation": "changes_requirements",
+        "explanation": "Giả định người dùng bổ sung quyền hủy chưa có ở R2.",
+        "existing_source_refs": [],
+        "proposed_input": {
+          "command_id": "p2-apply-1",
+          "blob_id": "p2-proposed-input"
+        },
+        "s01_request": {
+          "mode": "update",
+          "spec_id": "spec-demo-clinic",
+          "base_revision": 1
+        }
+      }
+    },
+    {
+      "event_id": "p2-consent-1",
+      "kind": "consent_recorded",
+      "payload": {
+        "answer_id": "p2-answer-cancel",
+        "interpretation_event": {
+          "command_id": "p2-apply-1",
+          "event_id": "p2-interpret-1"
+        },
+        "respondent": "DEMO-USER (giả định)",
+        "text": "Minh họa: đã xem toàn input, diff và base; đồng ý đúng bytes này. Không phải consent thật.",
+        "approved_input_sha256": "faa427e63bb7d6275096c91fe0ce5de2816f2fba67eb6982baedf3ab5056b8d8"
+      }
+    },
+    {
+      "event_id": "p2-s01-dispatch-1",
+      "kind": "s01_dispatch_intent",
+      "payload": {
+        "answer_id": "p2-answer-cancel",
+        "consent_event": {
+          "command_id": "p2-apply-1",
+          "event_id": "p2-consent-1"
+        },
+        "s01_store_key": "clinic",
+        "s01_run_id": "p2-s01-update-run",
+        "s01_request": {
+          "mode": "update",
+          "spec_id": "spec-demo-clinic",
+          "base_revision": 1
+        },
+        "input_stage_ref": {
+          "command_id": "p2-apply-1",
+          "blob_id": "p2-proposed-input"
+        }
+      }
+    },
+    {
+      "event_id": "p2-observed-1",
+      "kind": "s01_result_observed",
+      "payload": {
+        "answer_id": "p2-answer-cancel",
+        "dispatch_event": {
+          "command_id": "p2-apply-1",
+          "event_id": "p2-s01-dispatch-1"
+        },
+        "s01_run_id": "p2-s01-update-run",
+        "lookup_status": "validated",
+        "snapshot_id": "p2-clinic-r2"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "order": 1,
+      "action": "Claim Answer + pin full input/interpretation/base; người dùng giả định xem diff/full input và consent hash."
+    },
+    {
+      "order": 2,
+      "action": "Allocate S01 run ID; ghi receipt create-only; commit S02 s01_dispatch_intent trước submit."
+    },
+    {
+      "order": 3,
+      "action": "S01 submit đúng run ID/raw bytes/request; S01 giả định commit r2.",
+      "s01_revision": 2
+    },
+    {
+      "order": 4,
+      "action": "Process S02 giả định chết trước observation/T3 application.",
+      "issue_state": "answered_pending_application",
+      "s02_source_snapshot": "snap-demo-clinic-r1"
+    },
+    {
+      "order": 5,
+      "action": "Recovery lookup đúng run ID/store/receipt; đối chiếu raw/request/hash/snapshot; ghi observation."
+    },
+    {
+      "order": 6,
+      "action": "Nếu base pair đúng: T3 archive Cobserved + branch A1 theo snapshot + Model/Change/AnalysisSet/Issue/application; nếu stale: successor claim giữ Answer/consent/observation, so snapshot trên base mới, không redispatch S01."
+    }
+  ],
+  "expected_after_application": {
+    "answer_application_count": 1,
+    "s01_submission_count": 1,
+    "resolved_issue_key": "Q-cancel-key",
+    "source_switch": "Theo A1: so snapshot observation với nguồn Model base ở T3; khác dùng requirements_switch, bằng dùng analysis_edit giữ Context Model và archive run riêng.",
+    "reanalysis": "pending, bắt đầu bước 1 rồi phần ảnh hưởng ở 2–4; không tự completed",
+    "other_business_issues": "Q-clinic vẫn mở",
+    "failure_policy": "Không lookup head thay run, không submit lại bằng run ID mới.",
+    "observed_source_context_id": "p2-observed-context (symbol đề xuất, trỏ run/snapshot của observation)",
+    "subsequent_model_revision": "A2 required: giữ root application; Issue successor có resolution_carry hoặc pending_revalidation, không clone/rebind trực tiếp trên a3."
+  },
+  "amendment_proposal_version": "s02-phase2-amendment/0.1.0-draft.1"
+}

@@ -1,0 +1,525 @@
+{
+  "$defs": {
+    "Constraint": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Text",
+          "type": "string"
+        },
+        "priority": {
+          "const": "must",
+          "description": "Constraints are mandatory. Soft preferences belong in requirements with a suitable priority.",
+          "title": "Priority",
+          "type": "string"
+        },
+        "acceptance_criteria": {
+          "description": "Keep the original order. Empty means not supplied, not satisfied.",
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Acceptance Criteria",
+          "type": "array"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "group": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Group"
+        },
+        "details": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RequirementDetails"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "constraint": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ConstraintValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "priority",
+        "acceptance_criteria"
+      ],
+      "title": "Constraint",
+      "type": "object"
+    },
+    "ConstraintValue": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Kind",
+          "type": "string"
+        },
+        "value": {
+          "description": "Optional structured value expressed as JSON; null if unknown.",
+          "title": "Value"
+        }
+      },
+      "required": [
+        "kind",
+        "value"
+      ],
+      "title": "ConstraintValue",
+      "type": "object"
+    },
+    "DesignPreferences": {
+      "additionalProperties": false,
+      "properties": {
+        "metric_priorities": {
+          "description": "Permutation of the four Stage 2 metrics; first is highest priority. Not a ranking of all quality attributes.",
+          "items": {
+            "enum": [
+              "response_time_p95",
+              "sustainable_throughput",
+              "cpu_utilisation",
+              "scaling_gain"
+            ],
+            "type": "string"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Metric Priorities",
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "metric_priorities"
+      ],
+      "title": "DesignPreferences",
+      "type": "object"
+    },
+    "OperatingConditions": {
+      "additionalProperties": false,
+      "properties": {
+        "critical_scenarios": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Critical Scenarios"
+        },
+        "expected_load": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Expected Load"
+        },
+        "peak_load": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Peak Load"
+        },
+        "data_volume": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Data Volume"
+        },
+        "growth": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Growth"
+        },
+        "resource_budget": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Resource Budget"
+        }
+      },
+      "required": [
+        "critical_scenarios",
+        "expected_load",
+        "peak_load",
+        "data_volume",
+        "growth",
+        "resource_budget"
+      ],
+      "title": "OperatingConditions",
+      "type": "object"
+    },
+    "ProjectDetails": {
+      "additionalProperties": false,
+      "properties": {
+        "scope_exclusions": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scope Exclusions"
+        },
+        "external_systems": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "External Systems"
+        },
+        "data_context": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Data Context"
+        }
+      },
+      "title": "ProjectDetails",
+      "type": "object"
+    },
+    "Requirement": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "title": "Text",
+          "type": "string"
+        },
+        "priority": {
+          "anyOf": [
+            {
+              "enum": [
+                "must",
+                "should",
+                "could"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "User-supplied priority; null means not supplied.",
+          "title": "Priority"
+        },
+        "acceptance_criteria": {
+          "description": "Keep the original order. Empty means not supplied, not satisfied.",
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "title": "Acceptance Criteria",
+          "type": "array"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "group": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Group"
+        },
+        "details": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RequirementDetails"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "priority",
+        "acceptance_criteria"
+      ],
+      "title": "Requirement",
+      "type": "object"
+    },
+    "RequirementDetails": {
+      "additionalProperties": false,
+      "properties": {
+        "trigger": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Trigger"
+        },
+        "data": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Data"
+        },
+        "business_rules": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Business Rules"
+        },
+        "exceptions": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exceptions"
+        }
+      },
+      "title": "RequirementDetails",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "description": "Format version supplied by the form/API. Legacy input without it is accepted as v1.0.0.",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "title": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Title",
+      "type": "string"
+    },
+    "context": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Context",
+      "type": "string"
+    },
+    "actors": {
+      "items": {
+        "minLength": 1,
+        "pattern": "\\S",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Actors",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "functional_requirements": {
+      "items": {
+        "$ref": "#/$defs/Requirement"
+      },
+      "minItems": 1,
+      "title": "Functional Requirements",
+      "type": "array"
+    },
+    "non_functional_requirements": {
+      "items": {
+        "$ref": "#/$defs/Requirement"
+      },
+      "title": "Non Functional Requirements",
+      "type": "array"
+    },
+    "constraints": {
+      "items": {
+        "$ref": "#/$defs/Constraint"
+      },
+      "title": "Constraints",
+      "type": "array"
+    },
+    "design_preferences": {
+      "$ref": "#/$defs/DesignPreferences"
+    },
+    "operating_conditions": {
+      "$ref": "#/$defs/OperatingConditions"
+    },
+    "project_details": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ProjectDetails"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "title",
+    "context",
+    "actors",
+    "functional_requirements",
+    "non_functional_requirements",
+    "constraints",
+    "design_preferences",
+    "operating_conditions"
+  ],
+  "title": "DACN user input v1.0.0",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Cross-field checks: requirement IDs must be globally unique across FR, NFR and constraints, and must not have surrounding whitespace. Run input_contract.py as well as JSON Schema. Schema validity is not semantic validation, user confirmation or benchmark readiness."
+}

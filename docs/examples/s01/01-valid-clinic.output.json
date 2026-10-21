@@ -1,0 +1,134 @@
+{
+  "output_contract_version": "0.1.0-draft.2",
+  "status": "validated",
+  "result_kind": "new_spec",
+  "run": {
+    "run_id": "run-demo-001",
+    "received_at": "2026-10-12T09:00:00.000Z",
+    "completed_at": "2026-10-12T09:00:01.000Z",
+    "validator_version": "illustration-only",
+    "input_schema_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+    "request": {
+      "mode": "create",
+      "spec_id": null,
+      "base_revision": null
+    },
+    "source": {
+      "source_id": "src-demo-001",
+      "kind": "json_file",
+      "label": "clinic-input.example.json"
+    },
+    "input_version": {
+      "origin": "explicit",
+      "resolved": "1.0.0"
+    },
+    "normalizations": [],
+    "validation": {
+      "checks": {
+        "parse": "passed",
+        "schema": "passed",
+        "cross_field": "passed",
+        "revision": "passed"
+      },
+      "errors": []
+    }
+  },
+  "snapshot": {
+    "spec_id": "spec-demo-clinic",
+    "revision": 1,
+    "snapshot_id": "snap-demo-clinic-r1",
+    "parent_snapshot_id": null,
+    "created_by_run_id": "run-demo-001",
+    "origin_source_id": "src-demo-001",
+    "input": {
+      "schema_version": "1.0.0",
+      "title": "Hệ thống đặt lịch phòng khám",
+      "context": "Hệ thống phòng khám phục vụ bệnh nhân và nhân viên phòng khám. Phạm vi: Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền.",
+      "actors": [
+        "Bệnh nhân",
+        "Nhân viên phòng khám"
+      ],
+      "functional_requirements": [
+        {
+          "id": "R1",
+          "title": "Không đặt trùng slot",
+          "text": "Hai người đặt cùng một slot thì tối đa một người được xác nhận.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Tối đa một lịch được xác nhận cho một slot.",
+            "Phản hồi xung đột chỉ rõ slot."
+          ]
+        },
+        {
+          "id": "R2",
+          "title": "Hủy lịch có lịch sử",
+          "text": "Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Ghi lịch sử hủy đầy đủ.",
+            "Trạng thái lịch và slot được cập nhật nhất quán."
+          ]
+        }
+      ],
+      "non_functional_requirements": [
+        {
+          "id": "R3",
+          "title": "p95 ≤ 2 giây",
+          "text": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Đo phía server, percentile 95.",
+            "50 người dùng; thời gian 30 phút."
+          ]
+        },
+        {
+          "id": "R4",
+          "title": "Đúng người, đúng phòng khám",
+          "text": "Bệnh nhân chỉ xem hồ sơ của mình; nhân viên chỉ xem dữ liệu phòng khám mình.",
+          "priority": null,
+          "acceptance_criteria": [
+            "Chặn truy cập khác chủ sở hữu.",
+            "Chặn truy cập chéo phòng khám."
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "id": "R5",
+          "title": "Triển khai local",
+          "text": "App và database chạy local; dữ liệu lịch hẹn không gửi ra ngoài.",
+          "priority": "must",
+          "acceptance_criteria": [
+            "App và database triển khai trong môi trường local.",
+            "Không có luồng gửi dữ liệu lịch hẹn ra ngoài."
+          ]
+        }
+      ],
+      "design_preferences": {
+        "metric_priorities": [
+          "response_time_p95",
+          "sustainable_throughput",
+          "cpu_utilisation",
+          "scaling_gain"
+        ]
+      },
+      "project_details": {
+        "scope_exclusions": null,
+        "external_systems": null,
+        "data_context": null
+      },
+      "operating_conditions": {
+        "critical_scenarios": "Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền",
+        "expected_load": null,
+        "peak_load": "Điều kiện kiểm thử R3: 50 người dùng đồng thời trong 30 phút; chưa biết tải đỉnh khi vận hành.",
+        "data_volume": null,
+        "growth": null,
+        "resource_budget": null
+      }
+    }
+  },
+  "handoff": {
+    "eligible_for_s02": true,
+    "snapshot_id": "snap-demo-clinic-r1"
+  }
+}

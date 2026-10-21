@@ -1,0 +1,20 @@
+{
+  "source_path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/system-input-v1/system-input.schema.json",
+  "source_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+  "installed_resource_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+  "wheel_resource_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+  "baseline_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+  "byte_identical": true,
+  "read_via_importlib_resources": true,
+  "installed_package_path": "/Users/macbookpro/Documents/DACN_implementation/.venv/lib/python3.13/site-packages/dacn_s01",
+  "duplicate_key_check": "passed: object_pairs_hook before dict construction",
+  "metaschema_check": "passed: Draft202012Validator.check_schema",
+  "integer_keyword_example": {
+    "pointer": "/properties/actors/minItems",
+    "type": "int",
+    "value": 1
+  },
+  "all_source_package_files_match_installed_wheel": true,
+  "requirements_validation_run": false,
+  "profile_adapter_implemented": false
+}

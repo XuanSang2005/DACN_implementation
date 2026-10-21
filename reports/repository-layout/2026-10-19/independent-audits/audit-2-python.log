@@ -1,0 +1,37 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python -B -c 'import sys,pytest;sys.path.insert(0,sys.argv.pop(1));raise SystemExit(pytest.main(sys.argv[1:]))' /Users/macbookpro/Documents/DACN_implementation/packages/s02/tests -p conftest -c /Users/macbookpro/Documents/DACN_implementation/packages/s02/pyproject.toml /Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/test_followup_boundaries.py -s -v --tb=short -p no:cacheprovider --encoder-backend=python --basetemp=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-gq_ni6_g/tmp --junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/independent-audits/audit-2-python.xml
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-gq_ni6_g
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation/packages/s02
+configfile: pyproject.toml
+collecting ... collected 4 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[False-staged] FOLLOWUP_CONFIG {'db': '/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-gq_ni6_g/tmp/test_prepared_config_binding_w0/s02.sqlite3', 'pin_kind': 'staged', 'mismatch': False, 'pinned': 'PreparedConfig', 'actual_run_config': 'PreparedConfig', 'events': ['prepared', 'finalized'], 'state': 'finalized'}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[False-reused] FOLLOWUP_CONFIG {'db': '/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-gq_ni6_g/tmp/test_prepared_config_binding_w1/s02.sqlite3', 'pin_kind': 'reused', 'mismatch': False, 'pinned': '874dbdbb-b965-4069-8db7-b367c585fb00', 'actual_run_config': '874dbdbb-b965-4069-8db7-b367c585fb00', 'events': ['prepared', 'finalized'], 'state': 'finalized'}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[True-staged] FOLLOWUP_CONFIG {'db': '/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-gq_ni6_g/tmp/test_prepared_config_binding_w2/s02.sqlite3', 'pin_kind': 'staged', 'mismatch': True, 'pinned': 'PreparedConfig', 'actual_run_config': '76d6b3ad-f841-4a69-a699-5006757284e6', 'events': ['prepared', 'finalized'], 'state': 'finalized'}
+FAILED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[True-reused] FOLLOWUP_CONFIG {'db': '/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-gq_ni6_g/tmp/test_prepared_config_binding_w3/s02.sqlite3', 'pin_kind': 'reused', 'mismatch': True, 'pinned': '12464072-032c-4ea1-bf2a-ba2a70cc8a3a', 'actual_run_config': 'UnpinnedConfig', 'events': ['prepared', 'finalized'], 'state': 'finalized'}
+FAILED
+
+=================================== FAILURES ===================================
+________ test_prepared_config_binding_without_llm_dispatch[True-staged] ________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/test_followup_boundaries.py:49: in test_prepared_config_binding_without_llm_dispatch
+    assert not mismatch, 'T0 pinned config changed at T3 without any dispatch; checked reopen accepted it'
+E   AssertionError: T0 pinned config changed at T3 without any dispatch; checked reopen accepted it
+E   assert not True
+________ test_prepared_config_binding_without_llm_dispatch[True-reused] ________
+/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/test_followup_boundaries.py:49: in test_prepared_config_binding_without_llm_dispatch
+    assert not mismatch, 'T0 pinned config changed at T3 without any dispatch; checked reopen accepted it'
+E   AssertionError: T0 pinned config changed at T3 without any dispatch; checked reopen accepted it
+E   assert not True
+- generated xml file: /Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/independent-audits/audit-2-python.xml -
+S02_ENCODERS selected=python calls={'c': 0, 'python': 1844}
+=========================== short test summary info ============================
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[True-staged]
+FAILED ../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[True-reused]
+========================= 2 failed, 2 passed in 1.56s ==========================
+
+exit_code=1

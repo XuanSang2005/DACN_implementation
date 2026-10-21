@@ -1,0 +1,23 @@
+{
+  "IMPLEMENTATION_REPORT.md": "9f55453a0168f14f033e359513fd1a66bc368ae2c50f9108ed4f9e02672e5253",
+  "baseline-verification.json": "ebe5acb10ac6d97052f68d4f2f2fdad36a9f01334687733d3fcd58278f29a6f6",
+  "before-path-identity-review-commands.json": "9b979b8bf785e6df4722bb4a4016f637d5040a877676e92b5c48e9c2e4f21b6a",
+  "before-path-identity-review-evidence.json": "6aa70cc8b7bc84cf9cacb789d71f0db8b77a8c6a435721cff0658e1ffd1063bd",
+  "development-commands.json": "f9c3f5646e41063c0b55aa914a7f6f2d0370ed1d68d5566a59c120e1dd70dfb4",
+  "development-evidence.json": "68a0d38eeed9e9cbc865a17ead07e871cd2b5673ecec036db65a3da2b45cb3fb",
+  "development-results.txt": "d5af17881536741c496e3e7784fb24f1b962fdcb73afcebe9790f5deb898624a",
+  "environment-manifest.json": "d3193d78197639ed2f6b924553ebf68fd932d06fb1184676a0e9823d40f65170",
+  "evidence-verification.txt": "53e74a3ed91265367e475e436bfb122945febdf91d06f2b029f6bb8b854b39e1",
+  "final-commands.json": "7df2dc78e2e15c13d9df0e136a78b330c19719ddb09809627a11228f4b880cee",
+  "final-evidence.json": "e86b19a5fc69643bf91cddefabe20e50de5a8abd87a50756ad8f37c528a07ffc",
+  "final-results.txt": "c9a7de2d2b1ccddfc9471a60af812930e78292cc3f18fce4e776ace009b4e993",
+  "local-walkthrough.json": "9368c264878bb541bde7f1cc582141aea0d359b70fb537411f47856156bb607c",
+  "metadata-fixture-correction-checks.json": "ad2ed252849eee17fc690bff9f31fcee9027aa6e708d8ea00079ae7490f7be2b",
+  "pre-metadata-fixture-correction-commands.json": "6f40634ded0587c97cfefd8bdf4e54e1d8298f8189427a0d340b095ee4849294",
+  "pre-metadata-fixture-correction-evidence.json": "fc1ab1eb5a8a1bac6d75dcb0f6c06e9fd0c9f3f2828a99ab29d361609edefd21",
+  "prior-audit-probes-command.json": "58e43f1d83825f48bc38eeaf92d90f15c8309a316928eb83ccb9defb7586eaf2",
+  "prior-audit-probes.txt": "05288a63f6115199f01c8ba134d76395ae19e23bf54916ff78cee9d2071ada27",
+  "production-changes.patch": "597932bafe1eed5387140669a3a42087973f1dd2a8d20a453dba95b36b09f6f1",
+  "protected-files-before.json": "113bb7d351f7054417cced7259a3b585e5b3b3e622920c4e04ee76ada4384035",
+  "protected-files-verification.json": "cb8502b79ff501851ce4ce1b801d75bfa5e265230364ed70763fc28f1bdf1b4f"
+}

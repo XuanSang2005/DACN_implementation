@@ -1,0 +1,1988 @@
+[
+  {
+    "suite": "full-c",
+    "case": "both-unchanged",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "c",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447407655954958
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447407655977000
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447407655986166
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447407702403958
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447407702423916
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447407702436083,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447407702441916
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447407724025916
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447407732065250
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447407732237875
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447407732349541
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447407765146208
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447407765512791
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447407768482916
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447407790392375
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447407799019916,
+        "encoder_calls": {
+          "c": 69,
+          "python": 0
+        },
+        "backend": "c"
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447407799092500
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447407799274625
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447407799402125
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447407831949041
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447407832343958
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447407865134250,
+        "encoder_calls": {
+          "c": 69,
+          "python": 0
+        },
+        "backend": "c"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 1,
+      "heads": [
+        [
+          "a9d2d932-df93-4762-a1e2-e7abd006b5a3",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-c",
+    "case": "same-change",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "c",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447408027959958
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447408027977750
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447408027986958
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447408074790958
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447408074811458
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447408074825083,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447408074831416
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447408096333625
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447408104317083
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447408104518416
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "A",
+        "time_ns": 447408104738041
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447408104774208
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447408136829083
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447408137319625
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447408150985166
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447408170092208,
+        "encoder_calls": {
+          "c": 70,
+          "python": 0
+        },
+        "backend": "c"
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447408172678750
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447408172799458
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447408172970250
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447408173064583
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447408173216500
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447408173423041
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447408173922708,
+        "encoder_calls": {
+          "c": 24,
+          "python": 0
+        },
+        "backend": "c"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "589ed30e-adac-4fcc-979a-ef57ff10c233",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-c",
+    "case": "different-changes",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "c",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447408332397291
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447408332414208
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447408332423375
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447408381389958
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447408381413333
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447408381426875,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447408381433166
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447408405060500
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447408414544750
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447408414819458
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "A",
+        "time_ns": 447408415117375
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447408415253500
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447408456355416
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447408456679958
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447408459540166
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447408481636041
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447408481749958
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447408481919166
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447408481998041
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447408482142375
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447408489840625,
+        "encoder_calls": {
+          "c": 70,
+          "python": 0
+        },
+        "backend": "c"
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447408494424083
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447408494971083,
+        "encoder_calls": {
+          "c": 24,
+          "python": 0
+        },
+        "backend": "c"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "cd2aa0b5-d233-43cb-a3c3-c13be245b1ca",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-c",
+    "case": "unchanged-first",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "c",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447408652619458
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447408652637083
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447408652646041
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447408699728500
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447408699746375
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447408699757791,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447408699763666
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447408721259416
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447408729303083
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447408729481541
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447408729612041
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447408761687458
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447408762130291
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447408772148375
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447408793822458
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447408794527000,
+        "encoder_calls": {
+          "c": 69,
+          "python": 0
+        },
+        "backend": "c"
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447408802214166
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447408802445875
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "B",
+        "time_ns": 447408802663708
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447408802708333
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447408835549291
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447408836041333
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447408868987583,
+        "encoder_calls": {
+          "c": 70,
+          "python": 0
+        },
+        "backend": "c"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "136381c1-b122-4efe-94de-b81a5ffd40e7",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-c",
+    "case": "changed-first",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "c",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447409025528416
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447409025550625
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447409025562666
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447409072509666
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447409072531875
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447409072547250,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447409072554625
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447409094132000
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447409102073416
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447409102242333
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "A",
+        "time_ns": 447409102455000
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447409102495958
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447409134390125
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447409134671125
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447409139186666
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447409161001583
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447409161109916
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447409161274375
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447409161361291
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447409161519708
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447409167458041,
+        "encoder_calls": {
+          "c": 70,
+          "python": 0
+        },
+        "backend": "c"
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447409173849791
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447409174353916,
+        "encoder_calls": {
+          "c": 24,
+          "python": 0
+        },
+        "backend": "c"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "35772385-81d4-4b41-8080-0501f7878549",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-c",
+    "case": "kill-before_commit",
+    "kind": "actual process kill",
+    "backend": "c",
+    "returncode": -9,
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "kill",
+        "time_ns": 447409250956833
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "kill",
+        "time_ns": 447409250975583
+      },
+      {
+        "event": "after_begin",
+        "role": "kill",
+        "time_ns": 447409250986625
+      },
+      {
+        "event": "after_decision",
+        "role": "kill",
+        "time_ns": 447409254405291
+      },
+      {
+        "event": "before_insert",
+        "role": "kill",
+        "time_ns": 447409263803958
+      },
+      {
+        "event": "after_source_insert",
+        "role": "kill",
+        "time_ns": 447409264126458
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "kill",
+        "time_ns": 447409264346333
+      },
+      {
+        "event": "after_records",
+        "role": "kill",
+        "time_ns": 447409264378250
+      },
+      {
+        "event": "before_commit",
+        "role": "kill",
+        "time_ns": 447409296500458
+      }
+    ],
+    "final_state": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "heads": []
+    }
+  },
+  {
+    "suite": "full-c",
+    "case": "kill-after_commit",
+    "kind": "actual process kill",
+    "backend": "c",
+    "returncode": -9,
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "kill",
+        "time_ns": 447409347271125
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "kill",
+        "time_ns": 447409347293416
+      },
+      {
+        "event": "after_begin",
+        "role": "kill",
+        "time_ns": 447409347302625
+      },
+      {
+        "event": "after_decision",
+        "role": "kill",
+        "time_ns": 447409350632250
+      },
+      {
+        "event": "before_insert",
+        "role": "kill",
+        "time_ns": 447409360100625
+      },
+      {
+        "event": "after_source_insert",
+        "role": "kill",
+        "time_ns": 447409360403291
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "kill",
+        "time_ns": 447409360657041
+      },
+      {
+        "event": "after_records",
+        "role": "kill",
+        "time_ns": 447409360694000
+      },
+      {
+        "event": "before_commit",
+        "role": "kill",
+        "time_ns": 447409392950250
+      },
+      {
+        "event": "after_commit",
+        "role": "kill",
+        "time_ns": 447409393445375
+      }
+    ],
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "heads": [
+        [
+          "6c894318-28dc-48a0-be73-f93a5d8cfaa6",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-before_insert",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-after_source_insert",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-after_snapshot_insert",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-before_commit",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-lost-ack",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "reconciled": true
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-update-after_snapshot_insert",
+    "final_counts": {
+      "runs": 2,
+      "sources": 2,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "head_revision": 1
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-update-after_records",
+    "final_counts": {
+      "runs": 2,
+      "sources": 2,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "head_revision": 1
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-update-before_commit",
+    "final_counts": {
+      "runs": 2,
+      "sources": 2,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "head_revision": 1
+  },
+  {
+    "suite": "full-c",
+    "case": "injected-unresolved-commit",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "response": "failed",
+    "stored": "validated"
+  },
+  {
+    "suite": "full-c",
+    "case": "real-begin-lock-timeout",
+    "final_counts": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 0
+    },
+    "kind": "actual SQLite lock"
+  },
+  {
+    "suite": "full-c",
+    "case": "real-commit-busy",
+    "final_counts": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 0
+    },
+    "kind": "actual SQLite reader lock",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-python",
+    "case": "both-unchanged",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "python",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447420677777708
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447420677796291
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447420677805416
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447420725250041
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447420725272458
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447420725286166,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447420725292416
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447420747468333
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447420755906916
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447420756076250
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447420756250541
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447420789632791
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447420789889541
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447420791168333
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447420813632000
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447420822343375
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447420822512833
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447420822690208
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447420823973375,
+        "encoder_calls": {
+          "c": 0,
+          "python": 69
+        },
+        "backend": "python"
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447420856751375
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447420857145500
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447420890681958,
+        "encoder_calls": {
+          "c": 0,
+          "python": 69
+        },
+        "backend": "python"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 1,
+      "heads": [
+        [
+          "715cb19e-94a0-4f4d-885d-76a79514ee31",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-python",
+    "case": "same-change",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "python",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447421054308875
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447421054327375
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447421054338583
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447421101698750
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447421101721041
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447421101734291,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447421101740583
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447421124007916
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447421132454416
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447421132639250
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "A",
+        "time_ns": 447421132953625
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447421132995000
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447421166275583
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447421166670833
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447421177565666
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447421199666083
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447421199821875
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447421200000083
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447421200125333
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447421200324583
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447421200505000,
+        "encoder_calls": {
+          "c": 0,
+          "python": 70
+        },
+        "backend": "python"
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447421202074875
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447421202671708,
+        "encoder_calls": {
+          "c": 0,
+          "python": 24
+        },
+        "backend": "python"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "c972ac5e-f69f-4aca-bc39-dcf8136aa6b0",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-python",
+    "case": "different-changes",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "python",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447421366847916
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447421366864083
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447421366873375
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447421414238333
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447421414261791
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447421414275333,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447421414281416
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447421436864583
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447421445214458
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447421445387583
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "A",
+        "time_ns": 447421445729458
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447421445771166
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447421479022125
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447421479332208
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447421493901833
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447421513358625,
+        "encoder_calls": {
+          "c": 0,
+          "python": 70
+        },
+        "backend": "python"
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447421516763500
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447421516924250
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447421517109791
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447421517234125
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447421517448458
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447421517682041
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447421518234541,
+        "encoder_calls": {
+          "c": 0,
+          "python": 24
+        },
+        "backend": "python"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "eb551f46-0fd4-4f07-a23a-11e1506b5707",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-python",
+    "case": "unchanged-first",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "python",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447421680992875
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447421681012708
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447421681023458
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447421728489666
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447421728508708
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447421728520458,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447421728526208
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447421750609708
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447421758764250
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447421758942041
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447421759121375
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447421792140500
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447421792594791
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447421808132958
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447421825706041,
+        "encoder_calls": {
+          "c": 0,
+          "python": 69
+        },
+        "backend": "python"
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447421830841500
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447421839313708
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447421839510708
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "B",
+        "time_ns": 447421839843666
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447421839887708
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447421873463666
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447421873872250
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447421907629291,
+        "encoder_calls": {
+          "c": 0,
+          "python": 70
+        },
+        "backend": "python"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "138ac91f-3412-49b2-9788-43118ed42b6c",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-python",
+    "case": "changed-first",
+    "kind": "two real processes; actual SQLITE_BUSY probe",
+    "backend": "python",
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "A",
+        "time_ns": 447422071053833
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "A",
+        "time_ns": 447422071075666
+      },
+      {
+        "event": "after_begin",
+        "role": "A",
+        "time_ns": 447422071086750
+      },
+      {
+        "event": "before_begin",
+        "role": "B",
+        "time_ns": 447422118459791
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447422118480125
+      },
+      {
+        "event": "busy_observed",
+        "role": "B",
+        "time_ns": 447422118492125,
+        "sqlite_errorcode": 5
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "B",
+        "time_ns": 447422118497875
+      },
+      {
+        "event": "after_decision",
+        "role": "A",
+        "time_ns": 447422140896541
+      },
+      {
+        "event": "before_insert",
+        "role": "A",
+        "time_ns": 447422149304791
+      },
+      {
+        "event": "after_source_insert",
+        "role": "A",
+        "time_ns": 447422149480791
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "A",
+        "time_ns": 447422149790250
+      },
+      {
+        "event": "after_records",
+        "role": "A",
+        "time_ns": 447422149825583
+      },
+      {
+        "event": "before_commit",
+        "role": "A",
+        "time_ns": 447422183201458
+      },
+      {
+        "event": "after_commit",
+        "role": "A",
+        "time_ns": 447422183704875
+      },
+      {
+        "event": "after_begin",
+        "role": "B",
+        "time_ns": 447422198114666
+      },
+      {
+        "event": "result",
+        "role": "A",
+        "time_ns": 447422217440708,
+        "encoder_calls": {
+          "c": 0,
+          "python": 70
+        },
+        "backend": "python"
+      },
+      {
+        "event": "after_decision",
+        "role": "B",
+        "time_ns": 447422220414041
+      },
+      {
+        "event": "before_insert",
+        "role": "B",
+        "time_ns": 447422220572291
+      },
+      {
+        "event": "after_source_insert",
+        "role": "B",
+        "time_ns": 447422220756875
+      },
+      {
+        "event": "after_records",
+        "role": "B",
+        "time_ns": 447422220883458
+      },
+      {
+        "event": "before_commit",
+        "role": "B",
+        "time_ns": 447422221083083
+      },
+      {
+        "event": "after_commit",
+        "role": "B",
+        "time_ns": 447422221299583
+      },
+      {
+        "event": "result",
+        "role": "B",
+        "time_ns": 447422221839041,
+        "encoder_calls": {
+          "c": 0,
+          "python": 24
+        },
+        "backend": "python"
+      }
+    ],
+    "final_state": {
+      "runs": 3,
+      "sources": 3,
+      "snapshots": 2,
+      "heads": [
+        [
+          "ce8d0a52-8535-44d8-8faa-3a5af7bc9acb",
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-python",
+    "case": "kill-before_commit",
+    "kind": "actual process kill",
+    "backend": "python",
+    "returncode": -9,
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "kill",
+        "time_ns": 447422298532375
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "kill",
+        "time_ns": 447422298552250
+      },
+      {
+        "event": "after_begin",
+        "role": "kill",
+        "time_ns": 447422298563791
+      },
+      {
+        "event": "after_decision",
+        "role": "kill",
+        "time_ns": 447422302051083
+      },
+      {
+        "event": "before_insert",
+        "role": "kill",
+        "time_ns": 447422311739291
+      },
+      {
+        "event": "after_source_insert",
+        "role": "kill",
+        "time_ns": 447422312050375
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "kill",
+        "time_ns": 447422312338250
+      },
+      {
+        "event": "after_records",
+        "role": "kill",
+        "time_ns": 447422312368750
+      },
+      {
+        "event": "before_commit",
+        "role": "kill",
+        "time_ns": 447422346368958
+      }
+    ],
+    "final_state": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "heads": []
+    }
+  },
+  {
+    "suite": "full-python",
+    "case": "kill-after_commit",
+    "kind": "actual process kill",
+    "backend": "python",
+    "returncode": -9,
+    "events": [
+      {
+        "event": "before_begin",
+        "role": "kill",
+        "time_ns": 447422398321958
+      },
+      {
+        "event": "sql_begin_attempt",
+        "role": "kill",
+        "time_ns": 447422398347833
+      },
+      {
+        "event": "after_begin",
+        "role": "kill",
+        "time_ns": 447422398356541
+      },
+      {
+        "event": "after_decision",
+        "role": "kill",
+        "time_ns": 447422401912625
+      },
+      {
+        "event": "before_insert",
+        "role": "kill",
+        "time_ns": 447422411594125
+      },
+      {
+        "event": "after_source_insert",
+        "role": "kill",
+        "time_ns": 447422411910291
+      },
+      {
+        "event": "after_snapshot_insert",
+        "role": "kill",
+        "time_ns": 447422412188916
+      },
+      {
+        "event": "after_records",
+        "role": "kill",
+        "time_ns": 447422412219666
+      },
+      {
+        "event": "before_commit",
+        "role": "kill",
+        "time_ns": 447422445232500
+      },
+      {
+        "event": "after_commit",
+        "role": "kill",
+        "time_ns": 447422445649791
+      }
+    ],
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "heads": [
+        [
+          "568b8e7a-c805-4cd4-9314-d5d43df667cb",
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-before_insert",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-after_source_insert",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-after_snapshot_insert",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-before_commit",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "rollback_verified": true
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-lost-ack",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "reconciled": true
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-update-after_snapshot_insert",
+    "final_counts": {
+      "runs": 2,
+      "sources": 2,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "head_revision": 1
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-update-after_records",
+    "final_counts": {
+      "runs": 2,
+      "sources": 2,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "head_revision": 1
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-update-before_commit",
+    "final_counts": {
+      "runs": 2,
+      "sources": 2,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "head_revision": 1
+  },
+  {
+    "suite": "full-python",
+    "case": "injected-unresolved-commit",
+    "final_counts": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1,
+      "schema_artifacts": 1
+    },
+    "kind": "fault injection",
+    "response": "failed",
+    "stored": "validated"
+  },
+  {
+    "suite": "full-python",
+    "case": "real-begin-lock-timeout",
+    "final_counts": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 0
+    },
+    "kind": "actual SQLite lock"
+  },
+  {
+    "suite": "full-python",
+    "case": "real-commit-busy",
+    "final_counts": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0,
+      "schema_artifacts": 0
+    },
+    "kind": "actual SQLite reader lock",
+    "rollback_verified": true
+  }
+]

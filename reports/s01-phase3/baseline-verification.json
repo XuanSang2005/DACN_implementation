@@ -1,0 +1,271 @@
+{
+  "baseline_version": "0.1.0a3",
+  "contract_version": "0.1.0-draft.2",
+  "python": "3.13.16 (main, Oct  9 2026, 15:11:24) [Clang 22.1.3 ]",
+  "executable": "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+  "executable_sha256": "08c31a4b53dc231eba8fe8785ea11a1b13095bf7f3fce292cffc50f74bbcc895",
+  "sqlite_version": "3.53.1",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "package_files": {
+    "dacn_s01/__init__.py": {
+      "source": "a4919a1993d307e29590e464ae195f3d9f20a2d5d17a472224da2cd4cf3354b1",
+      "installed": "a4919a1993d307e29590e464ae195f3d9f20a2d5d17a472224da2cd4cf3354b1",
+      "wheel": "a4919a1993d307e29590e464ae195f3d9f20a2d5d17a472224da2cd4cf3354b1"
+    },
+    "dacn_s01/codec.py": {
+      "source": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+      "installed": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+      "wheel": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723"
+    },
+    "dacn_s01/envelope.py": {
+      "source": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+      "installed": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+      "wheel": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc"
+    },
+    "dacn_s01/errors.py": {
+      "source": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+      "installed": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+      "wheel": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a"
+    },
+    "dacn_s01/py.typed": {
+      "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wheel": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "dacn_s01/schema_resource.py": {
+      "source": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+      "installed": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+      "wheel": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52"
+    },
+    "dacn_s01/schemas/input/1.0.0/PROVENANCE.md": {
+      "source": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+      "installed": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+      "wheel": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6"
+    },
+    "dacn_s01/schemas/input/1.0.0/system-input.schema.json": {
+      "source": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+      "installed": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+      "wheel": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d"
+    },
+    "dacn_s01/validation.py": {
+      "source": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+      "installed": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+      "wheel": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5"
+    }
+  },
+  "wheel_sha256": "859f96c8def6cd3be7544c652e648ed36f4884dd307fffc6bbe090716937e830",
+  "installed_distributions": [
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "requires_dist": []
+    },
+    {
+      "name": "dacn-s01",
+      "version": "0.1.0a3",
+      "requires_dist": [
+        "jsonschema==4.26.0",
+        "simplejson==4.2.0"
+      ]
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "requires_dist": []
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "requires_dist": [
+        "attrs>=22.2.0",
+        "jsonschema-specifications>=2023.03.6",
+        "referencing>=0.28.4",
+        "rpds-py>=0.25.0",
+        "fqdn; extra == 'format'",
+        "idna; extra == 'format'",
+        "isoduration; extra == 'format'",
+        "jsonpointer>1.13; extra == 'format'",
+        "rfc3339-validator; extra == 'format'",
+        "rfc3987; extra == 'format'",
+        "uri-template; extra == 'format'",
+        "webcolors>=1.11; extra == 'format'",
+        "fqdn; extra == 'format-nongpl'",
+        "idna; extra == 'format-nongpl'",
+        "isoduration; extra == 'format-nongpl'",
+        "jsonpointer>1.13; extra == 'format-nongpl'",
+        "rfc3339-validator; extra == 'format-nongpl'",
+        "rfc3986-validator>0.1.0; extra == 'format-nongpl'",
+        "rfc3987-syntax>=1.1.0; extra == 'format-nongpl'",
+        "uri-template; extra == 'format-nongpl'",
+        "webcolors>=24.6.0; extra == 'format-nongpl'"
+      ]
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "requires_dist": [
+        "referencing>=0.31.0"
+      ]
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "requires_dist": []
+    },
+    {
+      "name": "pip",
+      "version": "25.2",
+      "requires_dist": []
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0",
+      "requires_dist": [
+        "pre-commit; extra == \"dev\"",
+        "tox; extra == \"dev\"",
+        "pytest; extra == \"testing\"",
+        "pytest-benchmark; extra == \"testing\"",
+        "coverage; extra == \"testing\""
+      ]
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "requires_dist": [
+        "colorama>=0.4.6; extra == 'windows-terminal'"
+      ]
+    },
+    {
+      "name": "pytest",
+      "version": "9.1.1",
+      "requires_dist": [
+        "colorama>=0.4; sys_platform == \"win32\"",
+        "exceptiongroup>=1; python_version < \"3.11\"",
+        "iniconfig>=1.0.1",
+        "packaging>=22",
+        "pluggy<2,>=1.5",
+        "pygments>=2.7.2",
+        "tomli>=1; python_version < \"3.11\"",
+        "argcomplete; extra == \"dev\"",
+        "attrs>=19.2; extra == \"dev\"",
+        "hypothesis>=3.56; extra == \"dev\"",
+        "mock; extra == \"dev\"",
+        "requests; extra == \"dev\"",
+        "setuptools; extra == \"dev\"",
+        "xmlschema; extra == \"dev\""
+      ]
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "requires_dist": [
+        "attrs>=22.2.0",
+        "rpds-py>=0.7.0",
+        "typing-extensions>=4.4.0; python_version < '3.13'"
+      ]
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "requires_dist": []
+    },
+    {
+      "name": "setuptools",
+      "version": "80.9.0",
+      "requires_dist": [
+        "pytest!=8.1.*,>=6; extra == \"test\"",
+        "virtualenv>=13.0.0; extra == \"test\"",
+        "wheel>=0.44.0; extra == \"test\"",
+        "pip>=19.1; extra == \"test\"",
+        "packaging>=24.2; extra == \"test\"",
+        "jaraco.envs>=2.2; extra == \"test\"",
+        "pytest-xdist>=3; extra == \"test\"",
+        "jaraco.path>=3.7.2; extra == \"test\"",
+        "build[virtualenv]>=1.0.3; extra == \"test\"",
+        "filelock>=3.4.0; extra == \"test\"",
+        "ini2toml[lite]>=0.14; extra == \"test\"",
+        "tomli-w>=1.0.0; extra == \"test\"",
+        "pytest-timeout; extra == \"test\"",
+        "pytest-perf; sys_platform != \"cygwin\" and extra == \"test\"",
+        "jaraco.develop>=7.21; (python_version >= \"3.9\" and sys_platform != \"cygwin\") and extra == \"test\"",
+        "pytest-home>=0.5; extra == \"test\"",
+        "pytest-subprocess; extra == \"test\"",
+        "pyproject-hooks!=1.1; extra == \"test\"",
+        "jaraco.test>=5.5; extra == \"test\"",
+        "sphinx>=3.5; extra == \"doc\"",
+        "jaraco.packaging>=9.3; extra == \"doc\"",
+        "rst.linker>=1.9; extra == \"doc\"",
+        "furo; extra == \"doc\"",
+        "sphinx-lint; extra == \"doc\"",
+        "jaraco.tidelift>=1.4; extra == \"doc\"",
+        "pygments-github-lexers==0.0.5; extra == \"doc\"",
+        "sphinx-favicon; extra == \"doc\"",
+        "sphinx-inline-tabs; extra == \"doc\"",
+        "sphinx-reredirects; extra == \"doc\"",
+        "sphinxcontrib-towncrier; extra == \"doc\"",
+        "sphinx-notfound-page<2,>=1; extra == \"doc\"",
+        "pyproject-hooks!=1.1; extra == \"doc\"",
+        "towncrier<24.7; extra == \"doc\"",
+        "packaging>=24.2; extra == \"core\"",
+        "more_itertools>=8.8; extra == \"core\"",
+        "jaraco.text>=3.7; extra == \"core\"",
+        "importlib_metadata>=6; python_version < \"3.10\" and extra == \"core\"",
+        "tomli>=2.0.1; python_version < \"3.11\" and extra == \"core\"",
+        "wheel>=0.43.0; extra == \"core\"",
+        "platformdirs>=4.2.2; extra == \"core\"",
+        "jaraco.functools>=4; extra == \"core\"",
+        "more_itertools; extra == \"core\"",
+        "pytest-checkdocs>=2.4; extra == \"check\"",
+        "pytest-ruff>=0.2.1; sys_platform != \"cygwin\" and extra == \"check\"",
+        "ruff>=0.8.0; sys_platform != \"cygwin\" and extra == \"check\"",
+        "pytest-cov; extra == \"cover\"",
+        "pytest-enabler>=2.2; extra == \"enabler\"",
+        "pytest-mypy; extra == \"type\"",
+        "mypy==1.14.*; extra == \"type\"",
+        "importlib_metadata>=7.0.2; python_version < \"3.10\" and extra == \"type\"",
+        "jaraco.develop>=7.21; sys_platform != \"cygwin\" and extra == \"type\""
+      ]
+    },
+    {
+      "name": "simplejson",
+      "version": "4.2.0",
+      "requires_dist": []
+    },
+    {
+      "name": "wheel",
+      "version": "0.45.1",
+      "requires_dist": [
+        "pytest >= 6.0.0 ; extra == \"test\"",
+        "setuptools >= 65 ; extra == \"test\""
+      ]
+    }
+  ],
+  "project_files_match": true,
+  "runtime_dependencies_match": true,
+  "historical_reference_changes": {
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/output/pdf/DACN_Schema_Input_v1_Phong_Kham.tex": {
+      "historical_sha256": "90ab05adccf26ed0aa96014e47f1c02721bd555ebcdd049a276f1e0b3761ac8f",
+      "current_sha256": "0650a2df6332bb2ed2d5aa04d6e0a9e233098d7b030e52247e8f967a83985b03"
+    }
+  },
+  "audit_evidence": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-progress-2026-10-17/audit-evidence.json",
+    "sha256": "d572b64b7af7ff32f3dc1199f2ebeeedd9ebbba1b92ff2210d6ff884a81416d1"
+  },
+  "project_file_sha256": {
+    "pyproject.toml": "f0ccc1b0e763d978c23c20109f601d920d1d812e8ecbdc74d861a0c949428d7b",
+    "tests/conftest.py": "536339b9aff1e8ccf27183978dbb2b7cb5ebe3980a9293d5c28027832ab189e0",
+    "tests/phase2/conftest.py": "bb4949d27acedbd14a0479f4bcc1d72596bd841b61cc2c6080bd58f4cb97400f",
+    "tests/phase2/test_audit_regressions.py": "0a1d54ca3a58470e6047d16115257b48339ed609d196a64118aab153bdcce21a",
+    "tests/phase2/test_envelope.py": "20835f4e066dc1eab8c30f78e5fd03005132a26261f0d2878dcb315df7d29b37",
+    "tests/phase2/test_validation.py": "5fa2002929a52bd5f2cd5e618d18e4ffb2c8fd2e4a5be4771d7add83faaa9b96",
+    "tests/test_codec.py": "1b2426d5ccd6c06c5a61dd32896a8f3f7dfe3bd04fd43c7ae54c3d2ed89504a8",
+    "tests/test_schema_resource.py": "35b388ec23490724c6a103942e8157e85298e66bebcdcc95850e182539c80904",
+    "tools/collect_phase1_evidence.py": "536de350210a4bd660ffc364d3c2055009c47970d16fa4b9cb3f8c87a45c844a",
+    "tools/collect_phase2_evidence.py": "0326747b6bb21ea16838d4e224dc7f69af0678d2ad388d3945c0d0caf81aeefb",
+    "tools/collect_phase2_fix_evidence.py": "67e864ebc98ff67a117ce57816a6ee2c61a8629eca5e4c89818bd6ee41ffc9c2",
+    "tools/run_phase1_checks.py": "560c9c5df9fc25557a580f01bbd0223ab2c45e1aedd9941c0d237bbd403c04e8",
+    "tools/run_phase2_checks.py": "d160551d1cde0a10450f67c16c817423abeae01991e2a1f12ba67d3919ceb348",
+    "tools/run_phase2_fix_checks.py": "cddb1990bb68ec868c43cbcda703be143a8a5c3c0cecc39e70f033fd7ad46169"
+  }
+}

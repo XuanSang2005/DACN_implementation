@@ -1,0 +1,340 @@
+{
+  "algorithm": "sha256",
+  "excluded": [
+    "artifact-manifest.json (self)"
+  ],
+  "artifacts": [
+    {
+      "path": "IMPLEMENTATION_REPORT.md",
+      "sha256": "c35c66e1ca112fb356b157089b6da5c9bf7e6d77828b01e09bc2ff55d5033436",
+      "size": 6767
+    },
+    {
+      "path": "baseline.json",
+      "sha256": "167e59ce16d75c5e52c9d785842a6025508b0686c1d90236cc5ce5ee191380b1",
+      "size": 2591332
+    },
+    {
+      "path": "changes.patch",
+      "sha256": "230a271b843f12b47c6887bd903bc3cc21cff6f66527ce57f3632fff29820115",
+      "size": 9837
+    },
+    {
+      "path": "link-checks.json",
+      "sha256": "d64bf5d6b48d95098f4d194df9314f8b25e94fb61fa9453986f5d170bc3a6980",
+      "size": 6728
+    },
+    {
+      "path": "originals/README.md",
+      "sha256": "c7938bc1c6f2ef1167bff582be8f7a701727bad3bed6d0da70b3c4e5c9cf1402",
+      "size": 8463
+    },
+    {
+      "path": "originals/packages/s01/tools/collect_evidence.py",
+      "sha256": "c92c717688e8306ae7f41dc4be724cb449f04ff52f99a708d467a17d8f927b36",
+      "size": 410
+    },
+    {
+      "path": "originals/packages/s01/tools/run_checks.py",
+      "sha256": "48dcd610ce85b995318a253ee818dd7fd73655b683690a1e67c7bdb7fcccd896",
+      "size": 404
+    },
+    {
+      "path": "originals/packages/s02/tools/collect_evidence.py",
+      "sha256": "f0e969685983cfc6381622fa2dfaa200d39511e682b8e759b1606ce8e80c3fd5",
+      "size": 410
+    },
+    {
+      "path": "originals/packages/s02/tools/run_checks.py",
+      "sha256": "e3dcbd2491de6afd8299a7c6b84a72c0d4a0377c54e2bf84ebc67698d994fe7c",
+      "size": 404
+    },
+    {
+      "path": "originals/reports/README.md",
+      "sha256": "de21352d175f025ba82368b2f31fc66740429b119c3ded023f8661d9ce9b1afb",
+      "size": 1998
+    },
+    {
+      "path": "originals/tools/collect_evidence.py",
+      "sha256": "d33d21045c48b278aa6ebd7f60760ae0972ae8d5fff39241c88f5e9cb93fae42",
+      "size": 3755
+    },
+    {
+      "path": "originals/tools/run_checks.py",
+      "sha256": "0d342cac5fcffebca1d3ad7c7db841c267323fbad5badbb2a5ffbe1b06d0a9cb",
+      "size": 5124
+    },
+    {
+      "path": "pip-check.log",
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "size": 30
+    },
+    {
+      "path": "preservation.json",
+      "sha256": "c5c25cdf7b1c7343936d127adb8fbc323abf218252078474695408a2fe9c0e53",
+      "size": 3958571
+    },
+    {
+      "path": "regression.log",
+      "sha256": "4b3185ef063edbf1c459d88159f1c4772f79c629061dc2085fe3065e559c0831",
+      "size": 45813
+    },
+    {
+      "path": "results.json",
+      "sha256": "77179c924ec23fb75123df3ccb390189521335262f3a070cad863ec0278768ab",
+      "size": 2538
+    },
+    {
+      "path": "s01-checks/commands.json",
+      "sha256": "013e48bbb4eb42d735dcf78514e8df41b0b7a6d7c617b1252eb7bc26a50cd708",
+      "size": 2428
+    },
+    {
+      "path": "s01-checks/observations.json",
+      "sha256": "89e775098f9ccfc3b1c52a1390ef8eca2ab762f9f8be3fa522bf9dd477479ea9",
+      "size": 95126
+    },
+    {
+      "path": "s01-checks/s01-c.log",
+      "sha256": "632c6b24f618f77a17e4ded7b4aaeb0676b2163ebcbfa549585232f28c69eb5a",
+      "size": 198321
+    },
+    {
+      "path": "s01-checks/s01-c.xml",
+      "sha256": "6445fd540df7867238301e30ba9d99164f6b568d5c55338216c77025cd25082b",
+      "size": 126217
+    },
+    {
+      "path": "s01-checks/s01-python.log",
+      "sha256": "290c2b63b45fdd87b4408d719006336f514a0d95eea8ce2e4deb11708a9c710c",
+      "size": 198961
+    },
+    {
+      "path": "s01-checks/s01-python.xml",
+      "sha256": "f617fedc4af3cd0e8576b2d5dba45294252b25f6046f11e6e8dae252461b58d2",
+      "size": 126217
+    },
+    {
+      "path": "s01-collector.log",
+      "sha256": "8a64db4be8cbfaad81c393d543aed8823acdf4280673cebd6f061f9566d84529",
+      "size": 67
+    },
+    {
+      "path": "s01-package-verification/manifest.json",
+      "sha256": "eeebff8f20f1d411d4d1180003cdafb06d42678176147eae78d2ee163389c737",
+      "size": 3551
+    },
+    {
+      "path": "s01-runner-command.json",
+      "sha256": "320d3f076c79efe70ca2bcaa14deb3ad3fac4442e5f59de86ae09cc09571bec6",
+      "size": 515
+    },
+    {
+      "path": "s01-runner.log",
+      "sha256": "2138e4ee9801fca2b2c3b858d9d0f946429251ef0eb9a6fa81410ec6d6f49e3c",
+      "size": 31
+    },
+    {
+      "path": "s02-checks/commands.json",
+      "sha256": "edc56035a6d3bbe531aec96082a010255414e29df0b393c6902d316ea25e33ba",
+      "size": 2428
+    },
+    {
+      "path": "s02-checks/observations.json",
+      "sha256": "b969f522f94db6a4d034dbf633c14aef7a39559d365edcbdc2bf8e563993df08",
+      "size": 74858
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/kill-capture-after_commit.sqlite3",
+      "sha256": "025393d400a72face2fb7222e890c2501555ca926c7da15906d33cd7c3e97976",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/kill-capture-before_commit.sqlite3",
+      "sha256": "2d813b23e8847ecc31cc99c824f075c51f4cb29314c9d5e76201e40810bb1d78",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/kill-finalize-after_commit.sqlite3",
+      "sha256": "7060fd2d90bbed6bc7a136075ee6f5da7d599796d86dd1dbb98137a082559531",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/kill-finalize-before_commit.sqlite3",
+      "sha256": "0ccf231a84d397fa65a8fefb1c08c6f4f028cbcbb43e4106fce662d355e2d632",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/race-analysis_and_log.sqlite3",
+      "sha256": "55b8377110caa5a0b72c6902834372fc0cc9872ee73ffb25fe8c1b51e9d9229b",
+      "size": 245760
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/race-analysis_set.sqlite3",
+      "sha256": "693f683e2c688de24c5e5f3d99ea8f562ba397f2d4848541549a2cfe559f6998",
+      "size": 245760
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/race-application-claim.sqlite3",
+      "sha256": "700dddb010c638b97ff76f3c8b83d5d27bd49fab6d935ab5367ed4b2fa3e66e8",
+      "size": 245760
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/race-application-finalize.sqlite3",
+      "sha256": "14a38aa3402bcdd5059412580fbfb62e9d057162ce3bf3dd37df4ee2d09442c6",
+      "size": 253952
+    },
+    {
+      "path": "s02-checks/process-artifacts/c/race-model.sqlite3",
+      "sha256": "d2e850fc5c1a2e93c519ceced572623fb35c469f15c140beb23fd6a0b8d86c3b",
+      "size": 241664
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/kill-capture-after_commit.sqlite3",
+      "sha256": "ab40ded0f7dbe239af0f86bdc888be69804612574fac8b80ca3a5b36b2f6a0f5",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/kill-capture-before_commit.sqlite3",
+      "sha256": "d74f44ef558849f055aa7618590300214df0f75fc3b424185408183e694549df",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/kill-finalize-after_commit.sqlite3",
+      "sha256": "200d51ab4da883f497d7c0cb5e1300f7ec8f1e5ef9b7a95d40ba41e72860c425",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/kill-finalize-before_commit.sqlite3",
+      "sha256": "78c7ed5869299f3159af960721368df7be99295699a23f08fe4a2f24c149b854",
+      "size": 229376
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/race-analysis_and_log.sqlite3",
+      "sha256": "d649b75315e589d7c8eb911a15c92261ebd147544033b8ba249c086fd82d5385",
+      "size": 245760
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/race-analysis_set.sqlite3",
+      "sha256": "34a90908c7b75b8be19d6392470793115ed7af02759e3e9e1a9604b572becfa2",
+      "size": 245760
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/race-application-claim.sqlite3",
+      "sha256": "42984b1356c918021c0fa417364d1e676405f7c5386ae972981a4aacafbc4494",
+      "size": 245760
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/race-application-finalize.sqlite3",
+      "sha256": "b73e860b9b61c1bbe57f49daef4def8a92d19b0cb53fae0a705f3b6e16db3fbe",
+      "size": 253952
+    },
+    {
+      "path": "s02-checks/process-artifacts/python/race-model.sqlite3",
+      "sha256": "138eb171f522405571efd68807916af53b52fc4cdc68ba6d199dc0aaa3cc14e5",
+      "size": 241664
+    },
+    {
+      "path": "s02-checks/s02-c.log",
+      "sha256": "606fa0079a72e1dafd896a37ab09f944b836367836455bd15021e5d3e33029a4",
+      "size": 60241
+    },
+    {
+      "path": "s02-checks/s02-c.xml",
+      "sha256": "fb8a455b25aefacc1e94ca1f21fb5b14903ec76a77711736645288e47f9b008c",
+      "size": 21634
+    },
+    {
+      "path": "s02-checks/s02-python.log",
+      "sha256": "a69abbeafd2daccdaee7a9f10fcb308099d75d674f66d1969be8d0e89304046e",
+      "size": 60671
+    },
+    {
+      "path": "s02-checks/s02-python.xml",
+      "sha256": "b791f7f40b9cc379bb67cfd9e1e2fabcfd93e3d3e804f1139d08c4c328b2a66e",
+      "size": 21634
+    },
+    {
+      "path": "s02-collector.log",
+      "sha256": "62a81cab727e61224a14f6e71edad8359e4de5664cb886113d6f5c46b276a728",
+      "size": 67
+    },
+    {
+      "path": "s02-package-verification/manifest.json",
+      "sha256": "4f4b80db439f456b77116e192e16d7f8d2ec4eafd49559fb555f222c1c68d4fa",
+      "size": 3331
+    },
+    {
+      "path": "s02-runner-command.json",
+      "sha256": "0aae25e041c9175e59f67c284153b5b090bf06a05bf14345189e2572473ffc03",
+      "size": 515
+    },
+    {
+      "path": "s02-runner.log",
+      "sha256": "a16e59bccdb54729e82a2aab2c24bdfa168b06a100e3ba7e0fdc42eac491b048",
+      "size": 31
+    },
+    {
+      "path": "tooling-commands.json",
+      "sha256": "ca422f4e4f43583af7d7c59051ebc2963a5d02ed21ee041f1ad0f5071c23ac39",
+      "size": 2968
+    },
+    {
+      "path": "workspace-collector.log",
+      "sha256": "683a37ef5c94a33314d33e07e9f20e7b8a6caf3a4c2d9b6a02003486ac1bba10",
+      "size": 119
+    },
+    {
+      "path": "workspace-package-verification/manifest.json",
+      "sha256": "63368fda0f0dc8fbff975854de30e6eb2931499696085b7a43890df0f950054f",
+      "size": 6077
+    }
+  ],
+  "current_files": [
+    {
+      "path": "README.md",
+      "sha256": "4c331a1cd4ab9ba96e011ae21c9193719f3e3a39ff64945d146cdfba97386b25",
+      "size": 9245
+    },
+    {
+      "path": "packages/s01/tools/collect_evidence.py",
+      "sha256": "9b3804bf58e4768d90d4d6c5eba5dca43d4c5033fee19f8023019fcb97a670d9",
+      "size": 309
+    },
+    {
+      "path": "packages/s01/tools/run_checks.py",
+      "sha256": "0dc1439dbe74e723458947787bfd5d504957535b962618c6003b14524136b15b",
+      "size": 303
+    },
+    {
+      "path": "packages/s02/tools/collect_evidence.py",
+      "sha256": "a18dd7616e8d229ec28c80beb8747302f1b0daa6078d3926a9158a1ce094b593",
+      "size": 309
+    },
+    {
+      "path": "packages/s02/tools/run_checks.py",
+      "sha256": "e259afe073a9ffb44bf08206be79f006bc840350a4b4bf1e31c0c483eeb382e6",
+      "size": 303
+    },
+    {
+      "path": "reports/README.md",
+      "sha256": "e2cc9b2e04dd15d7e2ed1eae7230e720d510eca9e972aa0c8edefd6fb2bc3aa6",
+      "size": 2296
+    },
+    {
+      "path": "tools/collect_evidence.py",
+      "sha256": "d9111153f72a89788486dc3ee9810493474140c281226a72730c71959d8e1ece",
+      "size": 4061
+    },
+    {
+      "path": "tools/run_checks.py",
+      "sha256": "ff388dddf13c615224ff2e11d3c9f6bedff34897f48414b4fab22e5edb460cc4",
+      "size": 5430
+    },
+    {
+      "path": "tools/tests/test_package_wrappers.py",
+      "sha256": "ca358836c124fda0b8a3cb4fcef92af03fd0e0cae3a1afd94c5b71c9ca65e008",
+      "size": 3870
+    }
+  ]
+}

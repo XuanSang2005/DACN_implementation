@@ -1,0 +1,38 @@
+{
+  "python": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+  "commands": [
+    {
+      "command": [
+        ".runtime/python/bin/python3.13",
+        "-B",
+        "-m",
+        "venv",
+        "--without-pip",
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv"
+      ],
+      "cwd": "/Users/macbookpro/Documents/DACN_implementation",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.tools/uv",
+        "pip",
+        "install",
+        "--python",
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+        "--no-index",
+        "--find-links",
+        "/Users/macbookpro/Documents/DACN_implementation/.tools/wheelhouse",
+        "--find-links",
+        "/Users/macbookpro/Documents/DACN_implementation/dist",
+        "--require-hashes",
+        "-r",
+        "/Users/macbookpro/Documents/DACN_implementation/packages/s02/requirements-dev.lock"
+      ],
+      "cwd": "/Users/macbookpro/Documents/DACN_implementation",
+      "exit_code": 0
+    }
+  ],
+  "lock_s01_artifact": "dist/dacn_s01-0.1.0a6-py3-none-any.whl",
+  "note": "Fresh env from unmodified S02 dev lock; replaces only S01 product wheel with rebuilt equal payload after comparison"
+}

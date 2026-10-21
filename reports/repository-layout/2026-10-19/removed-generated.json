@@ -1,0 +1,22 @@
+[
+  {
+    "path": ".pytest_cache",
+    "reason": "setuptools build/egg-info or pytest cache, reproducible; no delivered wheel or evidence database"
+  },
+  {
+    "path": "build",
+    "reason": "setuptools build/egg-info or pytest cache, reproducible; no delivered wheel or evidence database"
+  },
+  {
+    "path": "s02/build",
+    "reason": "setuptools build/egg-info or pytest cache, reproducible; no delivered wheel or evidence database"
+  },
+  {
+    "path": "src/dacn_s01.egg-info",
+    "reason": "setuptools build/egg-info or pytest cache, reproducible; no delivered wheel or evidence database"
+  },
+  {
+    "path": "s02/src/dacn_s02.egg-info",
+    "reason": "setuptools build/egg-info or pytest cache, reproducible; no delivered wheel or evidence database"
+  }
+]

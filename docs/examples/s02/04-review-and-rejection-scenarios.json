@@ -1,0 +1,600 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-clinic-demo",
+  "external_bindings": [
+    {
+      "id": "ctx-clinic-1",
+      "type": "source_context",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "s02-run-demo-1",
+      "type": "run",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "model-clinic-1",
+      "type": "model",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "Q-book",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "Q-cancel",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "Q-clinic",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "SC-cancel",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "SC-performance",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "Q-growth",
+      "type": "issue",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "CHAR-performance",
+      "type": "characteristic",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "VIEW-main-1",
+      "type": "view",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "VAL-not-run-1",
+      "type": "validation",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "DIAGRAM-pending-1",
+      "type": "diagram",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/6"
+    },
+    {
+      "id": "BUNDLE-preparing-1",
+      "type": "bundle",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/7"
+    },
+    {
+      "id": "HANDOFF-denied-1",
+      "type": "handoff",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/8"
+    },
+    {
+      "id": "snap-demo-clinic-r2",
+      "type": "s01_snapshot",
+      "file": "../s01/06-next-revision.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "id": "run-demo-006",
+      "type": "s01_envelope",
+      "file": "../s01/06-next-revision.output.json",
+      "pointer": ""
+    },
+    {
+      "id": "revision-scenarios",
+      "type": "illustration",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios"
+    },
+    {
+      "id": "AS-clinic-2",
+      "type": "analysis_set",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/9"
+    },
+    {
+      "id": "BUNDLE-ready-hypothetical",
+      "type": "hypothetical_bundle",
+      "file": "04-review-and-rejection-scenarios.json",
+      "pointer": "/scenarios/0/definitions/0"
+    },
+    {
+      "id": "REVIEW-conditional-hypothetical",
+      "type": "hypothetical_review",
+      "file": "04-review-and-rejection-scenarios.json",
+      "pointer": "/scenarios/0/definitions/1"
+    },
+    {
+      "id": "model-clinic-analysis-2",
+      "type": "hypothetical_model_materialization",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios/0/expected_model_materialization"
+    }
+  ],
+  "records": [],
+  "scenarios": [
+    {
+      "id": "conditional-acceptance-only-if-ready",
+      "given_model_id": "model-clinic-1",
+      "preconditions_not_executed": [
+        "Từ VIEW-main-1 tạo Diagram mới với PUML/SVG artifacts thật và manifest cùng model-clinic-1.",
+        "Validation mới có mọi check passed, fidelity kiểm đúng required/provided interface và dependency; người kiểm readability acceptable.",
+        "Bundle mới BUNDLE-ready-hypothetical status awaiting_review trỏ các artifacts mới; BUNDLE-preparing-1 giữ nguyên.",
+        "Người review đã đối chiếu độc lập rằng đường xem bệnh nhân không cần quyết định quyền hủy; C01 chung không khiến toàn C01 được accepted.",
+        "Model vẫn head; không có requirements_switch/reanalysis pending trong scope accepted.",
+        "AS-clinic-2 còn là analysis head; Validation/Bundle mới pin đúng set và lists. Closure §9.1 xét Part.action_ids, D01.Support cho OP03 và mọi system parts. Không có branch choice; WF03 được duyệt toàn đồ thị."
+      ],
+      "hypothetical_review_body": {
+        "bundle_id": "BUNDLE-ready-hypothetical",
+        "model_id": "model-clinic-1",
+        "source_context_id": "ctx-clinic-1",
+        "reviewer": "hypothetical-reviewer-not-an-actual-user-decision",
+        "decision": "conditionally_accepted",
+        "supersedes_review_id": null,
+        "accepted_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP03",
+            "WF03",
+            "RULE03",
+            "RS03",
+            "RS05",
+            "C01",
+            "C03",
+            "I01",
+            "D01"
+          ],
+          "mapping_part_ids": [
+            "MAP-R4-req-patient",
+            "MAP-R4-ac0-part",
+            "MAP-R3-req-part",
+            "MAP-R3-ac0-part",
+            "MAP-R3-ac1-part",
+            "MAP-R5-req-part",
+            "MAP-R5-ac0-part",
+            "MAP-R5-ac1-part"
+          ]
+        },
+        "blocked_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP01",
+            "OP02",
+            "OP04",
+            "WF01",
+            "WF02",
+            "WF04"
+          ],
+          "mapping_part_ids": [
+            "MAP-R1-req-part",
+            "MAP-R1-ac0-part",
+            "MAP-R1-ac1-part",
+            "MAP-R2-req-part",
+            "MAP-R2-ac0-part",
+            "MAP-R2-ac1-part",
+            "MAP-R4-req-staff",
+            "MAP-R4-ac1-part"
+          ]
+        },
+        "conditions": [
+          {
+            "id": "COND-source-scope",
+            "text": "Chỉ tiếp tục nghĩa vụ xem của bệnh nhân; không suy quyền đặt/hủy hoặc phạm vi phòng khám của nhân viên.",
+            "scope": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP01",
+                "OP02",
+                "OP04"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac1-part"
+              ]
+            },
+            "blocking": true,
+            "verification": "Người dùng trả lời các issue liên quan, cập nhật S01 nếu đổi nghĩa rồi phân tích/review đúng phiên bản."
+          },
+          {
+            "id": "COND-runtime",
+            "text": "R3/R5 vẫn áp dụng cho phần được tiếp tục: thiết kế local/không gửi dữ liệu lịch hẹn ra ngoài và phải kiểm chứng p95 đúng điều kiện; chưa khẳng định đạt.",
+            "scope": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP03",
+                "WF03",
+                "RULE03",
+                "RS03",
+                "RS05",
+                "C01",
+                "C03",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R4-req-patient",
+                "MAP-R4-ac0-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            },
+            "blocking": false,
+            "verification": "Giữ nghĩa vụ kiểm chứng trong giai đoạn thiết kế/đánh giá sau; không lấy diagram làm kết quả benchmark."
+          }
+        ],
+        "acknowledged_issue_ids": [
+          "Q-book",
+          "Q-cancel",
+          "Q-clinic",
+          "Q-growth"
+        ],
+        "feedback": "Tình huống giả định để audit gate. Không có câu trả lời nghiệp vụ mới; không có xác nhận thực tế ở lượt này.",
+        "workflow_choices": []
+      },
+      "expected_handoff": {
+        "bundle_id": "BUNDLE-ready-hypothetical",
+        "review_id": "REVIEW-conditional-hypothetical",
+        "model_id": "model-clinic-1",
+        "eligible": true,
+        "allowed_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP03",
+            "WF03",
+            "RULE03",
+            "RS03",
+            "RS05",
+            "C01",
+            "C03",
+            "I01",
+            "D01"
+          ],
+          "mapping_part_ids": [
+            "MAP-R4-req-patient",
+            "MAP-R4-ac0-part",
+            "MAP-R3-req-part",
+            "MAP-R3-ac0-part",
+            "MAP-R3-ac1-part",
+            "MAP-R5-req-part",
+            "MAP-R5-ac0-part",
+            "MAP-R5-ac1-part"
+          ]
+        },
+        "blocked_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP01",
+            "OP02",
+            "OP04",
+            "WF01",
+            "WF02",
+            "WF04"
+          ],
+          "mapping_part_ids": [
+            "MAP-R1-req-part",
+            "MAP-R1-ac0-part",
+            "MAP-R1-ac1-part",
+            "MAP-R2-req-part",
+            "MAP-R2-ac0-part",
+            "MAP-R2-ac1-part",
+            "MAP-R4-req-staff",
+            "MAP-R4-ac1-part"
+          ]
+        },
+        "condition_ids": [
+          "COND-source-scope",
+          "COND-runtime"
+        ],
+        "reason_codes": [],
+        "analysis_set_id": "AS-clinic-2",
+        "workflow_choices": []
+      },
+      "actual_state_in_these_files": {
+        "bundle_id": "BUNDLE-preparing-1",
+        "status": "preparing_review",
+        "real_review_record": null,
+        "handoff_eligible": false
+      },
+      "note": "Không có review record trong records; chưa có artifacts render. Nếu thiếu một precondition thì REVIEW_GATE_FAILED, không tạo handoff true.",
+      "definitions": [
+        {
+          "id": "BUNDLE-ready-hypothetical",
+          "kind": "hypothetical_bundle",
+          "from_record_id": "BUNDLE-preparing-1",
+          "model_id": "model-clinic-1",
+          "analysis_set_id": "AS-clinic-2",
+          "status": "awaiting_review",
+          "requires": "Chỉ materialize sau toàn bộ preconditions_not_executed; chưa có Artifact render thật."
+        },
+        {
+          "id": "REVIEW-conditional-hypothetical",
+          "kind": "hypothetical_review",
+          "body": {
+            "bundle_id": "BUNDLE-ready-hypothetical",
+            "model_id": "model-clinic-1",
+            "source_context_id": "ctx-clinic-1",
+            "reviewer": "hypothetical-reviewer-not-an-actual-user-decision",
+            "decision": "conditionally_accepted",
+            "supersedes_review_id": null,
+            "accepted_scope": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP03",
+                "WF03",
+                "RULE03",
+                "RS03",
+                "RS05",
+                "C01",
+                "C03",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R4-req-patient",
+                "MAP-R4-ac0-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            },
+            "blocked_scope": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP01",
+                "OP02",
+                "OP04",
+                "WF01",
+                "WF02",
+                "WF04"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac1-part"
+              ]
+            },
+            "conditions": [
+              {
+                "id": "COND-source-scope",
+                "text": "Chỉ tiếp tục nghĩa vụ xem của bệnh nhân; không suy quyền đặt/hủy hoặc phạm vi phòng khám của nhân viên.",
+                "scope": {
+                  "model_id": "model-clinic-1",
+                  "element_ids": [
+                    "OP01",
+                    "OP02",
+                    "OP04"
+                  ],
+                  "mapping_part_ids": [
+                    "MAP-R1-req-part",
+                    "MAP-R1-ac0-part",
+                    "MAP-R1-ac1-part",
+                    "MAP-R2-req-part",
+                    "MAP-R2-ac0-part",
+                    "MAP-R2-ac1-part",
+                    "MAP-R4-req-staff",
+                    "MAP-R4-ac1-part"
+                  ]
+                },
+                "blocking": true,
+                "verification": "Người dùng trả lời các issue liên quan, cập nhật S01 nếu đổi nghĩa rồi phân tích/review đúng phiên bản."
+              },
+              {
+                "id": "COND-runtime",
+                "text": "R3/R5 vẫn áp dụng cho phần được tiếp tục: thiết kế local/không gửi dữ liệu lịch hẹn ra ngoài và phải kiểm chứng p95 đúng điều kiện; chưa khẳng định đạt.",
+                "scope": {
+                  "model_id": "model-clinic-1",
+                  "element_ids": [
+                    "OP03",
+                    "WF03",
+                    "RULE03",
+                    "RS03",
+                    "RS05",
+                    "C01",
+                    "C03",
+                    "I01",
+                    "D01"
+                  ],
+                  "mapping_part_ids": [
+                    "MAP-R4-req-patient",
+                    "MAP-R4-ac0-part",
+                    "MAP-R3-req-part",
+                    "MAP-R3-ac0-part",
+                    "MAP-R3-ac1-part",
+                    "MAP-R5-req-part",
+                    "MAP-R5-ac0-part",
+                    "MAP-R5-ac1-part"
+                  ]
+                },
+                "blocking": false,
+                "verification": "Giữ nghĩa vụ kiểm chứng trong giai đoạn thiết kế/đánh giá sau; không lấy diagram làm kết quả benchmark."
+              }
+            ],
+            "acknowledged_issue_ids": [
+              "Q-book",
+              "Q-cancel",
+              "Q-clinic",
+              "Q-growth"
+            ],
+            "feedback": "Tình huống giả định để audit gate. Không có câu trả lời nghiệp vụ mới; không có xác nhận thực tế ở lượt này.",
+            "workflow_choices": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "review-does-not-survive-new-model",
+      "given_hypothetical_review": "REVIEW-conditional-hypothetical",
+      "event": "Sau hypothetical acceptance, tạo model-clinic-analysis-2 hoặc model-clinic-priority-2 như file03.",
+      "expected": {
+        "old_review_retained_as_history": true,
+        "review_for_new_model": null,
+        "handoff_for_new_model": false,
+        "old_diagram_may_be_retargeted": false
+      }
+    },
+    {
+      "id": "negative-variants",
+      "base_model_id": "model-clinic-1",
+      "cases": [
+        {
+          "mutation": {
+            "record_id": "model-clinic-1",
+            "pointer": "/body/mappings/0/source_ref/input_pointer",
+            "value": "/functional_requirements/99"
+          },
+          "expected_code": "SOURCE_REF_INVALID",
+          "stage": "references",
+          "effect": "Không commit candidate; không tự đổi pointer."
+        },
+        {
+          "mutation": {
+            "record_id": "model-clinic-1",
+            "pointer": "/body/dependencies/0/provider_component_id",
+            "value": "C-missing"
+          },
+          "expected_code": "ELEMENT_REF_INVALID",
+          "stage": "references",
+          "effect": "Không tự tạo component/interface để render."
+        },
+        {
+          "mutation": {
+            "record_id": "DIAGRAM-pending-1",
+            "pointer": "/body/model_id",
+            "value": "model-clinic-analysis-2"
+          },
+          "precondition": "View vẫn của model-clinic-1; model2 tồn tại theo scenario03.",
+          "expected_code": "REVISION_MISMATCH",
+          "stage": "references",
+          "effect": "Không gắn diagram khác revision vào bundle1."
+        },
+        {
+          "mutation": {
+            "record_id": "REVIEW-conditional-hypothetical",
+            "pointer": "/body/model_id",
+            "value": "model-clinic-analysis-2"
+          },
+          "precondition": "Bundle-ready-hypothetical vẫn model-clinic-1.",
+          "expected_code": "REVISION_MISMATCH",
+          "stage": "review",
+          "effect": "Từ chối review, không copy approval sang model2."
+        },
+        {
+          "mutation": {
+            "record_id": "BUNDLE-preparing-1",
+            "pointer": "/body/status",
+            "value": "awaiting_review"
+          },
+          "expected_code": "REVIEW_GATE_FAILED",
+          "stage": "review",
+          "effect": "Các check not_run/diagram not_run/readability not_reviewed không được bỏ qua."
+        },
+        {
+          "mutation": {
+            "record_id": "model-clinic-1",
+            "pointer": "/body/mappings/3/parts/0/covered_portion",
+            "value": "Có lịch sử hủy."
+          },
+          "expected_code": null,
+          "stage": "semantic_review",
+          "effect": "Dù schema/ref hợp lệ, reviewer phải phát hiện chưa thể hiện lý do/người/thời điểm; không tự đánh đủ chỉ vì source_ref R2 tồn tại."
+        },
+        {
+          "mutation": {
+            "record_id": "model-clinic-1",
+            "pointer": "/body/actions/1/actor_ids",
+            "value": [
+              "A01"
+            ]
+          },
+          "expected_code": "SCHEMA_INVARIANT",
+          "stage": "schema",
+          "effect": "OP02.initiator vẫn unknown nhưng actor_ids không rỗng: chặn cấu trúc trước semantic review; Q-cancel vẫn open.",
+          "details": {
+            "invariant": "action_initiator_actors"
+          }
+        },
+        {
+          "mutations": [
+            {
+              "record_id": "model-clinic-1",
+              "pointer": "/body/actions/1/initiator",
+              "value": "external"
+            },
+            {
+              "record_id": "model-clinic-1",
+              "pointer": "/body/actions/1/actor_ids",
+              "value": [
+                "A01"
+              ]
+            }
+          ],
+          "expected_code": null,
+          "stage": "semantic_review",
+          "structural_expectation": "Initiator/actors nhất quán, A01 tồn tại; permission_rule_ids=[] hợp lệ vì chưa biết. Không coi đây là quyền đã được chứng minh.",
+          "semantic_finding": "Suy bệnh nhân được hủy từ quyền xem R4 không có căn cứ trong R2.",
+          "gate_expected": {
+            "issue_id": "Q-cancel",
+            "issue_status": "open",
+            "affected_action_id": "OP02",
+            "handoff_allowed_for_action": false
+          },
+          "effect": "Giữ Q-cancel, state needs_clarification và mapping R2 blocked; semantic review phải bác suy quyền, không sửa input phòng khám."
+        },
+        {
+          "mutation": {
+            "record_id": "CHAR-performance",
+            "pointer": "/body/goal",
+            "value": "Availability 99.99% khi 500 người dùng production."
+          },
+          "expected_code": null,
+          "stage": "semantic_review",
+          "effect": "Reviewer phát hiện mục tiêu không có nguồn; không dùng structural validity để cho qua."
+        }
+      ],
+      "note": "Các biến thể là kỳ vọng audit, chưa chạy validator hoặc tests."
+    }
+  ]
+}

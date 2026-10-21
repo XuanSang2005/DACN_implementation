@@ -1,0 +1,55 @@
+{
+  "output_contract_version": "0.1.0-draft.2",
+  "status": "rejected",
+  "result_kind": null,
+  "run": {
+    "run_id": "run-demo-003",
+    "received_at": "2026-10-12T09:02:00.000Z",
+    "completed_at": "2026-10-12T09:02:01.000Z",
+    "validator_version": "illustration-only",
+    "input_schema_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+    "request": {
+      "mode": "update",
+      "spec_id": "spec-demo-clinic",
+      "base_revision": 1
+    },
+    "source": {
+      "source_id": "src-demo-003",
+      "kind": "json_file",
+      "label": "illustrative-clinic-variant-03.json"
+    },
+    "input_version": {
+      "origin": "explicit",
+      "resolved": "1.0.0"
+    },
+    "normalizations": [],
+    "validation": {
+      "checks": {
+        "parse": "passed",
+        "schema": "passed",
+        "cross_field": "failed",
+        "revision": "not_run"
+      },
+      "errors": [
+        {
+          "code": "DUPLICATE_REQUIREMENT_ID",
+          "stage": "cross_field",
+          "target": "input",
+          "pointer": "/non_functional_requirements/0/id",
+          "related_pointers": [
+            "/functional_requirements/0/id"
+          ],
+          "message": "ID R1 đã xuất hiện trong functional_requirements; ID phải duy nhất trên cả FR, NFR và constraints.",
+          "details": {
+            "requirement_id": "R1"
+          }
+        }
+      ]
+    }
+  },
+  "snapshot": null,
+  "handoff": {
+    "eligible_for_s02": false,
+    "snapshot_id": null
+  }
+}

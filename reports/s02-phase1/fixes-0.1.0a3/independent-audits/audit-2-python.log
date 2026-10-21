@@ -1,0 +1,21 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python -B -c 'import sys,pytest;sys.path.insert(0,sys.argv.pop(1));raise SystemExit(pytest.main(sys.argv[1:]))' /Users/macbookpro/Documents/DACN_implementation/packages/s02/tests -p conftest -c /Users/macbookpro/Documents/DACN_implementation/packages/s02/pyproject.toml /Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/test_followup_boundaries.py -s -v --tb=short -p no:cacheprovider --encoder-backend=python --basetemp=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-_urm1wku/tmp --junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/independent-audits/audit-2-python.xml
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-_urm1wku
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation/packages/s02
+configfile: pyproject.toml
+collecting ... collected 4 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[False-staged] FOLLOWUP_CONFIG {'db': '/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-_urm1wku/tmp/test_prepared_config_binding_w0/s02.sqlite3', 'pin_kind': 'staged', 'mismatch': False, 'pinned': 'PreparedConfig', 'actual_run_config': 'PreparedConfig', 'events': ['prepared', 'finalized'], 'state': 'finalized'}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[False-reused] FOLLOWUP_CONFIG {'db': '/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-_urm1wku/tmp/test_prepared_config_binding_w1/s02.sqlite3', 'pin_kind': 'reused', 'mismatch': False, 'pinned': '97a3add4-6314-4a32-a024-cd80dacd9f62', 'actual_run_config': '97a3add4-6314-4a32-a024-cd80dacd9f62', 'events': ['prepared', 'finalized'], 'state': 'finalized'}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[True-staged] PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_prepared_config_binding_without_llm_dispatch[True-reused] PASSED
+
+- generated xml file: /Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/independent-audits/audit-2-python.xml -
+S02_ENCODERS selected=python calls={'c': 0, 'python': 1777}
+============================== 4 passed in 1.61s ===============================
+
+exit_code=0

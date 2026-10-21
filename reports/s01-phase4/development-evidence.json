@@ -1,0 +1,2304 @@
+[
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "lifecycle",
+    "backend": "c",
+    "final_counts": {
+      "runs": 4,
+      "sources": 4,
+      "snapshots": 2,
+      "specs": 1
+    },
+    "historical_revision": 1,
+    "head_revision": 2,
+    "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 399,
+      "python": 0
+    },
+    "processes": 10
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 14,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 14,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 14,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 18,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 14,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 14,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 21,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 21,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 21,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 22,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 22,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 22,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 21,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 58,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 59,
+      "python": 0
+    },
+    "processes": 6
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 23,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 23,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 11,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 59,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 2,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 2,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 2,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 83,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-fault",
+    "backend": "c",
+    "fault_injection": {
+      "fsync_fail": 1
+    },
+    "receipt_exists": false,
+    "runs": 0
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 3,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-fault",
+    "backend": "c",
+    "fault_injection": {
+      "link_fail": true
+    },
+    "receipt_exists": false,
+    "runs": 0
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 3,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-fault",
+    "backend": "c",
+    "fault_injection": {
+      "fsync_fail": 2
+    },
+    "receipt_exists": true,
+    "runs": 0
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 3,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 3,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 83,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 83,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 6,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "dataset-ancestor-identity",
+    "backend": "c",
+    "destination": "state",
+    "actual_case_alias": true,
+    "dataset_unchanged": true
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "dataset-ancestor-identity",
+    "backend": "c",
+    "destination": "receipt",
+    "actual_case_alias": true,
+    "dataset_unchanged": true
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 2,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "dataset-ancestor-identity",
+    "backend": "c",
+    "destination": "export",
+    "actual_case_alias": true,
+    "dataset_unchanged": true
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 83,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-contention",
+    "backend": "c",
+    "kind": "two subprocesses and one filesystem destination",
+    "events": [
+      {
+        "event": "before_link",
+        "pid": 59922,
+        "observed_ns": 460739814978750
+      },
+      {
+        "event": "before_link",
+        "pid": 59923,
+        "observed_ns": 460739814986458
+      }
+    ],
+    "exit_codes": [
+      0,
+      3
+    ],
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 85,
+      "python": 0
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "kill-receipt_ready",
+    "backend": "c",
+    "kind": "actual SIGKILL with IPC boundary",
+    "event": {
+      "event": "receipt_ready",
+      "pid": 59926,
+      "observed_ns": 460740090591166
+    },
+    "returncode": -9,
+    "run_id": "16cc4de2-e742-4a20-a0fc-f3d788ddfb55",
+    "final_state": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0
+    }
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "kill-before_commit",
+    "backend": "c",
+    "kind": "actual SIGKILL with IPC boundary",
+    "event": {
+      "event": "before_commit",
+      "pid": 59929,
+      "observed_ns": 460740291682541
+    },
+    "returncode": -9,
+    "run_id": "d401999f-a380-4222-ab9d-d1f20d93c160",
+    "final_state": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0
+    }
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 1,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "kill-after_commit",
+    "backend": "c",
+    "kind": "actual SIGKILL with IPC boundary",
+    "event": {
+      "event": "after_commit",
+      "pid": 59932,
+      "observed_ns": 460740501391583
+    },
+    "returncode": -9,
+    "run_id": "5207f875-70e2-4fa9-94f2-a6fc321a0df3",
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 26,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "closed-pipe",
+    "backend": "c",
+    "kind": "actual output I/O/collision after commit",
+    "event": {
+      "event": "before_output",
+      "pid": 59935,
+      "observed_ns": 460740774334166
+    },
+    "exit_code": 3,
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 83,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "export-collision",
+    "backend": "c",
+    "kind": "actual output I/O/collision after commit",
+    "event": {
+      "event": "before_output",
+      "pid": 59938,
+      "observed_ns": 460741049262291
+    },
+    "exit_code": 3,
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 83,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "real-export-permission",
+    "backend": "c",
+    "kind": "actual output I/O/collision after commit",
+    "event": {
+      "event": "before_output",
+      "pid": 59941,
+      "observed_ns": 460741325143500
+    },
+    "exit_code": 3,
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-c",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "c",
+    "counts": {
+      "c": 83,
+      "python": 0
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "lifecycle",
+    "backend": "python",
+    "final_counts": {
+      "runs": 4,
+      "sources": 4,
+      "snapshots": 2,
+      "specs": 1
+    },
+    "historical_revision": 1,
+    "head_revision": 2,
+    "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 399
+    },
+    "processes": 10
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 14
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 14
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 14
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 18
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 14
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 14
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 21
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 21
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 21
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 22
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 22
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 22
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 21
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 58
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 59
+    },
+    "processes": 6
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 23
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 23
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 11
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 59
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 2
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 2
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 2
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 83
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-fault",
+    "backend": "python",
+    "fault_injection": {
+      "fsync_fail": 1
+    },
+    "receipt_exists": false,
+    "runs": 0
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 3
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-fault",
+    "backend": "python",
+    "fault_injection": {
+      "link_fail": true
+    },
+    "receipt_exists": false,
+    "runs": 0
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 3
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-fault",
+    "backend": "python",
+    "fault_injection": {
+      "fsync_fail": 2
+    },
+    "receipt_exists": true,
+    "runs": 0
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 3
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 3
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 83
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 83
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 6
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "dataset-ancestor-identity",
+    "backend": "python",
+    "destination": "state",
+    "actual_case_alias": true,
+    "dataset_unchanged": true
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 0
+    },
+    "processes": 1
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "dataset-ancestor-identity",
+    "backend": "python",
+    "destination": "receipt",
+    "actual_case_alias": true,
+    "dataset_unchanged": true
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 2
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "dataset-ancestor-identity",
+    "backend": "python",
+    "destination": "export",
+    "actual_case_alias": true,
+    "dataset_unchanged": true
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 83
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "receipt-contention",
+    "backend": "python",
+    "kind": "two subprocesses and one filesystem destination",
+    "events": [
+      {
+        "event": "before_link",
+        "pid": 60163,
+        "observed_ns": 460753166035000
+      },
+      {
+        "event": "before_link",
+        "pid": 60164,
+        "observed_ns": 460753166042416
+      }
+    ],
+    "exit_codes": [
+      0,
+      3
+    ],
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 85
+    },
+    "processes": 4
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "kill-receipt_ready",
+    "backend": "python",
+    "kind": "actual SIGKILL with IPC boundary",
+    "event": {
+      "event": "receipt_ready",
+      "pid": 60167,
+      "observed_ns": 460753447810541
+    },
+    "returncode": -9,
+    "run_id": "f1fc435b-4ff9-487a-964d-989e2dc19bd7",
+    "final_state": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0
+    }
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "kill-before_commit",
+    "backend": "python",
+    "kind": "actual SIGKILL with IPC boundary",
+    "event": {
+      "event": "before_commit",
+      "pid": 60170,
+      "observed_ns": 460753658725583
+    },
+    "returncode": -9,
+    "run_id": "d697f27a-092f-4f12-9bf9-5c083b514895",
+    "final_state": {
+      "runs": 0,
+      "sources": 0,
+      "snapshots": 0,
+      "specs": 0
+    }
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 1
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "kill-after_commit",
+    "backend": "python",
+    "kind": "actual SIGKILL with IPC boundary",
+    "event": {
+      "event": "after_commit",
+      "pid": 60173,
+      "observed_ns": 460753864321916
+    },
+    "returncode": -9,
+    "run_id": "37b07f48-dea6-495b-8850-ec2ae1435e5b",
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 26
+    },
+    "processes": 2
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "closed-pipe",
+    "backend": "python",
+    "kind": "actual output I/O/collision after commit",
+    "event": {
+      "event": "before_output",
+      "pid": 60176,
+      "observed_ns": 460754136760583
+    },
+    "exit_code": 3,
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 83
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "export-collision",
+    "backend": "python",
+    "kind": "actual output I/O/collision after commit",
+    "event": {
+      "event": "before_output",
+      "pid": 60179,
+      "observed_ns": 460754418559583
+    },
+    "exit_code": 3,
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 83
+    },
+    "processes": 3
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_EVIDENCE",
+    "case": "real-export-permission",
+    "backend": "python",
+    "kind": "actual output I/O/collision after commit",
+    "event": {
+      "event": "before_output",
+      "pid": 60187,
+      "observed_ns": 460754698352708
+    },
+    "exit_code": 3,
+    "final_state": {
+      "runs": 1,
+      "sources": 1,
+      "snapshots": 1,
+      "specs": 1
+    }
+  },
+  {
+    "suite": "suite-python",
+    "marker": "PHASE4_ENCODERS",
+    "backend": "python",
+    "counts": {
+      "c": 0,
+      "python": 83
+    },
+    "processes": 3
+  }
+]

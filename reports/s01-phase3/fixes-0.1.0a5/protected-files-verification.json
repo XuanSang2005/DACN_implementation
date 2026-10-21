@@ -1,0 +1,576 @@
+{
+  "all_protected_unchanged": true,
+  "inventory_count": 113,
+  "unchanged_count": 111,
+  "intentional_changes": [
+    "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/service.py"
+  ],
+  "files": {
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/output/pdf/DACN_Schema_Input_v1_Phong_Kham.tex": {
+      "before": "0650a2df6332bb2ed2d5aa04d6e0a9e233098d7b030e52247e8f967a83985b03",
+      "after": "0650a2df6332bb2ed2d5aa04d6e0a9e233098d7b030e52247e8f967a83985b03",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/audit-evidence.json": {
+      "before": "d98210b1c34bfb335ad069cb7e572c7c47cdc84b73898e0b75549c9aed019d3a",
+      "after": "d98210b1c34bfb335ad069cb7e572c7c47cdc84b73898e0b75549c9aed019d3a",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/regression-results.txt": {
+      "before": "0372da010855d62f46579ef989bcaf4799b45a276b483c14c2d6af4dde509d24",
+      "after": "0372da010855d62f46579ef989bcaf4799b45a276b483c14c2d6af4dde509d24",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py": {
+      "before": "f39eb478da67f9ec3f350778c0aafa40b87cbd53f2be8ceaa4ecadf6d3bac1e9",
+      "after": "f39eb478da67f9ec3f350778c0aafa40b87cbd53f2be8ceaa4ecadf6d3bac1e9",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase3-0.1.0a4/audit-evidence.json": {
+      "before": "453ee569940d7a31afff5ed4e8a871f04c959b0f0996a498ef75fab0a3613b36",
+      "after": "453ee569940d7a31afff5ed4e8a871f04c959b0f0996a498ef75fab0a3613b36",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase3-0.1.0a4/independent-test-results.txt": {
+      "before": "aa671da7658d31cafed47b04f73366f85484b1f0213338c5ffb1423441d30666",
+      "after": "aa671da7658d31cafed47b04f73366f85484b1f0213338c5ffb1423441d30666",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase3-0.1.0a4/independent-tests.xml": {
+      "before": "7908ae63dc6225c71b0b0ed868976c9bb0cf61d29e7c677e8c8ef3bd438ab9bb",
+      "after": "7908ae63dc6225c71b0b0ed868976c9bb0cf61d29e7c677e8c8ef3bd438ab9bb",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase3-0.1.0a4/test_phase3_audit.py": {
+      "before": "04f6e13631cd2d28ebd21d2146943d53a5c142cd75597f6dc3755d80dd14f371",
+      "after": "04f6e13631cd2d28ebd21d2146943d53a5c142cd75597f6dc3755d80dd14f371",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-progress-2026-10-17/audit-evidence.json": {
+      "before": "d572b64b7af7ff32f3dc1199f2ebeeedd9ebbba1b92ff2210d6ff884a81416d1",
+      "after": "d572b64b7af7ff32f3dc1199f2ebeeedd9ebbba1b92ff2210d6ff884a81416d1",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-progress-2026-10-17/test_extended_audit.py": {
+      "before": "aeb02de4bc54d54ce5c8411571bb8873ed96038d5d442b86417e1065a028d385",
+      "after": "aeb02de4bc54d54ce5c8411571bb8873ed96038d5d442b86417e1065a028d385",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/system-input-v1/clinic-input.example.json": {
+      "before": "cbda7fc1a34bd76b8458471f1516d8089704020031c61d3797dfbf7f4c38fb07",
+      "after": "cbda7fc1a34bd76b8458471f1516d8089704020031c61d3797dfbf7f4c38fb07",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/system-input-v1/system-input.schema.json": {
+      "before": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+      "after": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/.python-version": {
+      "before": "2d82946ffb2ecf549699ebb86ecbbe663bbc19d53c49c681a1a425f003f80ddb",
+      "after": "2d82946ffb2ecf549699ebb86ecbbe663bbc19d53c49c681a1a425f003f80ddb",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/AGENTS.md": {
+      "before": "efc831c8c764eebd36624e458ce98fcd61d899d7ab62a00da67de18e2e4c402c",
+      "after": "efc831c8c764eebd36624e458ce98fcd61d899d7ab62a00da67de18e2e4c402c",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/dist/dacn_s01-0.1.0a1-py3-none-any.whl": {
+      "before": "aec0a535212e572121e2672afea4cfaf1ead8e0bacd446c00b602b0b727275c5",
+      "after": "aec0a535212e572121e2672afea4cfaf1ead8e0bacd446c00b602b0b727275c5",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/dist/dacn_s01-0.1.0a2-py3-none-any.whl": {
+      "before": "97a87a12a02c6e412d6159447b289bf36abf8083ab829506b6dd2ef3e3101a9f",
+      "after": "97a87a12a02c6e412d6159447b289bf36abf8083ab829506b6dd2ef3e3101a9f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/dist/dacn_s01-0.1.0a3-py3-none-any.whl": {
+      "before": "859f96c8def6cd3be7544c652e648ed36f4884dd307fffc6bbe090716937e830",
+      "after": "859f96c8def6cd3be7544c652e648ed36f4884dd307fffc6bbe090716937e830",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/dist/dacn_s01-0.1.0a4-py3-none-any.whl": {
+      "before": "c20caa13ca9fa66253ebad5d21be7cdef1eab28b2faab498975e1f1566f3bfb1",
+      "after": "c20caa13ca9fa66253ebad5d21be7cdef1eab28b2faab498975e1f1566f3bfb1",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/S01_IMPLEMENTATION_PLAN_PROPOSAL.md": {
+      "before": "b8c2eb054a4d3ca621233b4a41d579f20312313ce8efeaa2e65949acf21e6092",
+      "after": "b8c2eb054a4d3ca621233b4a41d579f20312313ce8efeaa2e65949acf21e6092",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/S01_OUTPUT_CONTRACT_PROPOSAL.md": {
+      "before": "39027bfdeeed0c880ccda35cd307eaf4d9729031bf0f80bfe8b8758b03eeb926",
+      "after": "39027bfdeeed0c880ccda35cd307eaf4d9729031bf0f80bfe8b8758b03eeb926",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/examples/s01/01-valid-clinic.output.json": {
+      "before": "81f13115c1204f8a9b9fb26e0838952f55237f3a38ad18a701d28821bd5ca0fb",
+      "after": "81f13115c1204f8a9b9fb26e0838952f55237f3a38ad18a701d28821bd5ca0fb",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/examples/s01/02-missing-schema-version.output.json": {
+      "before": "59dda4f22d33fb4012ac93596940a638ecacb2dfba72494e4c2db937cf1b20e9",
+      "after": "59dda4f22d33fb4012ac93596940a638ecacb2dfba72494e4c2db937cf1b20e9",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/examples/s01/03-invalid-duplicate-id.output.json": {
+      "before": "7cc575326f9036f0f51b04215d7a49d3302b1b0022425e16d5e8ee40efe267ff",
+      "after": "7cc575326f9036f0f51b04215d7a49d3302b1b0022425e16d5e8ee40efe267ff",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/examples/s01/04-invalid-duplicate-metric.output.json": {
+      "before": "c04fd45d2c781413e361f30c2b2f0f22c01f759ba53904d99f975430e354b99c",
+      "after": "c04fd45d2c781413e361f30c2b2f0f22c01f759ba53904d99f975430e354b99c",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/examples/s01/05-unchanged-resubmission.output.json": {
+      "before": "0831726f395b81b5565ef81093839d0d6defec536a319045a5f209f0e9a2aed6",
+      "after": "0831726f395b81b5565ef81093839d0d6defec536a319045a5f209f0e9a2aed6",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/docs/examples/s01/06-next-revision.output.json": {
+      "before": "8d58314c470f9a5fef058e52a65d17c361b33c5e0453500506644aee93fdc82e",
+      "after": "8d58314c470f9a5fef058e52a65d17c361b33c5e0453500506644aee93fdc82e",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml": {
+      "before": "6c86a503cf8dbec132e4b9336afa7a438a2b88089d7782ac02485a4ed933dcbe",
+      "after": "9e8901d406389ea78844dc531fde522791c5ce7d2b9d5edb0c43188a01c3961c",
+      "intentional_change": true
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/IMPLEMENTATION_REPORT.md": {
+      "before": "e3943b58cb9b75464d1c4fa4b2a5606ba85d8442e2ee0532b204b02035c7e1cb",
+      "after": "e3943b58cb9b75464d1c4fa4b2a5606ba85d8442e2ee0532b204b02035c7e1cb",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/bootstrap-uv.json": {
+      "before": "a8d812d75f578161d6b182ebabe430445a2816aac40c709b9390c95c3b8daef0",
+      "after": "a8d812d75f578161d6b182ebabe430445a2816aac40c709b9390c95c3b8daef0",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/build-install.txt": {
+      "before": "4cd67d9c754bc61bb4eb178c819f482797be4b78ddbc6105a42eb324c9427bc0",
+      "after": "4cd67d9c754bc61bb4eb178c819f482797be4b78ddbc6105a42eb324c9427bc0",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/dependency-download.txt": {
+      "before": "92e04a6fb63b8b622c3dd31d6b167817542494f1032ceba07859c170bc89afbc",
+      "after": "92e04a6fb63b8b622c3dd31d6b167817542494f1032ceba07859c170bc89afbc",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/dependency-install.txt": {
+      "before": "b8538e85e00f40e5bcce2f4cb104b6f24aefe221b910ffe2a067ef584f093383",
+      "after": "b8538e85e00f40e5bcce2f4cb104b6f24aefe221b910ffe2a067ef584f093383",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/environment-manifest.json": {
+      "before": "2173de4c3108faa27c7a6fe345537e5db6d08195306d98b920f96bf28d95441f",
+      "after": "2173de4c3108faa27c7a6fe345537e5db6d08195306d98b920f96bf28d95441f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/protected-files-before.json": {
+      "before": "e7b8319c90f6cd55cc215d0902b44b202e83515cb9898f304b8c503776c24711",
+      "after": "e7b8319c90f6cd55cc215d0902b44b202e83515cb9898f304b8c503776c24711",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/protected-files-verification.json": {
+      "before": "d62889c5061820274d4e4fb0a43e07bb7a039990829d48533280b78e429175b5",
+      "after": "d62889c5061820274d4e4fb0a43e07bb7a039990829d48533280b78e429175b5",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/python-distribution.json": {
+      "before": "eaf187890996547c53638735ab68fada6a23ea3db83030014dc734beaffcbf89",
+      "after": "eaf187890996547c53638735ab68fada6a23ea3db83030014dc734beaffcbf89",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/schema-resource-verification.json": {
+      "before": "b87d7edffa18afc0435c74855c8445a6f7b27c5c74757e07d20412bea13d8e77",
+      "after": "b87d7edffa18afc0435c74855c8445a6f7b27c5c74757e07d20412bea13d8e77",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase1/test-results.txt": {
+      "before": "0ee18cd897249fea16c4078c73b4497cc17a6c09f5814058e5b03c6d8d093f72",
+      "after": "0ee18cd897249fea16c4078c73b4497cc17a6c09f5814058e5b03c6d8d093f72",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/IMPLEMENTATION_REPORT.md": {
+      "before": "6dc221e4e8f6d4eb0a43ab0813257fd062107a3470d740b9fbd7e2cbbf544b00",
+      "after": "6dc221e4e8f6d4eb0a43ab0813257fd062107a3470d740b9fbd7e2cbbf544b00",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/build-install.txt": {
+      "before": "4a9bf62d8f6500bcddb6089db9808a99831a5206a46dd2bd94be2bb0a13b75d7",
+      "after": "4a9bf62d8f6500bcddb6089db9808a99831a5206a46dd2bd94be2bb0a13b75d7",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/clinic-input-check.json": {
+      "before": "453b96c6695d1b786f55eb43bce1941e41d02503e9c6b418f37ce2d931505c80",
+      "after": "453b96c6695d1b786f55eb43bce1941e41d02503e9c6b418f37ce2d931505c80",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/development-results.txt": {
+      "before": "def4471684f6ab465796323f5d41d57533fbc385a5795087782b1d631785928f",
+      "after": "def4471684f6ab465796323f5d41d57533fbc385a5795087782b1d631785928f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/environment-manifest.json": {
+      "before": "2087eff525eded864ac311aa19355e38786478061f2ebc452397104a5d12f174",
+      "after": "2087eff525eded864ac311aa19355e38786478061f2ebc452397104a5d12f174",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/IMPLEMENTATION_REPORT.md": {
+      "before": "0d1a39e50a7b4f805eec4e8c6cfdcf5ee5511c41a745fafd93b13ac7be409f29",
+      "after": "0d1a39e50a7b4f805eec4e8c6cfdcf5ee5511c41a745fafd93b13ac7be409f29",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/after-commands.json": {
+      "before": "abf5fd80bcbc176c907c680b987da77fedc37405685e9bfc72dc92570c927b3a",
+      "after": "abf5fd80bcbc176c907c680b987da77fedc37405685e9bfc72dc92570c927b3a",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/after-test-results.txt": {
+      "before": "aa0694b1268e8b76f1a92bc70b66cefb92b50a12119e97d69e4ecf462dda7fcc",
+      "after": "aa0694b1268e8b76f1a92bc70b66cefb92b50a12119e97d69e4ecf462dda7fcc",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/artifact-sha256.json": {
+      "before": "2f2d7d6290663a3f5ffb439e90ea1a881b09303447be2f68e9021bac9d680c60",
+      "after": "2f2d7d6290663a3f5ffb439e90ea1a881b09303447be2f68e9021bac9d680c60",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/baseline-0.1.0a2.json": {
+      "before": "03f9795683be58b6813564038e5670a225c070f73c1e8be85b4feeea8a068d6f",
+      "after": "03f9795683be58b6813564038e5670a225c070f73c1e8be85b4feeea8a068d6f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/before-commands.json": {
+      "before": "0a1f6e86f41edc65def3e785e48d73428b930e7b2f505828f3cf630bc88b78a2",
+      "after": "0a1f6e86f41edc65def3e785e48d73428b930e7b2f505828f3cf630bc88b78a2",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/before-test-results.txt": {
+      "before": "10d7fed2e2f3f8bccc84b63b0d2edb305e4d4139cde0f7ccd72cc20fd8bbcc6f",
+      "after": "10d7fed2e2f3f8bccc84b63b0d2edb305e4d4139cde0f7ccd72cc20fd8bbcc6f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/build-install.txt": {
+      "before": "cc1b55f2bc732b3fb2fe4287352f947d38ee51b3179a4a3f417993cb72ece051",
+      "after": "cc1b55f2bc732b3fb2fe4287352f947d38ee51b3179a4a3f417993cb72ece051",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/environment-manifest.json": {
+      "before": "1ce2422f3db242780d981bd7b0de4ce3e764e565f0c06c507fec2733ae0e221c",
+      "after": "1ce2422f3db242780d981bd7b0de4ce3e764e565f0c06c507fec2733ae0e221c",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/evidence-verification.txt": {
+      "before": "c13f5308583e1a52e6a9b6b0cc25f340785f17d4b1451f1b1c2ea591aa5b11fd",
+      "after": "c13f5308583e1a52e6a9b6b0cc25f340785f17d4b1451f1b1c2ea591aa5b11fd",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/production-changes.patch": {
+      "before": "5ca188e3bcd40c790bc371704282dee501a3df8a16a51b738aa459e8f7e6ad12",
+      "after": "5ca188e3bcd40c790bc371704282dee501a3df8a16a51b738aa459e8f7e6ad12",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/protected-files-before.json": {
+      "before": "6b17bcd36e93e032c301c0f511a25bd83aec2007aba00278e635249374f93867",
+      "after": "6b17bcd36e93e032c301c0f511a25bd83aec2007aba00278e635249374f93867",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/fixes-0.1.0a3/protected-files-verification.json": {
+      "before": "6ca5f9058357d981ea118a020f19faf14cb7623d4facb1f07519605aebfe6db3",
+      "after": "6ca5f9058357d981ea118a020f19faf14cb7623d4facb1f07519605aebfe6db3",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/protected-files-before.json": {
+      "before": "b66602a0370db2fcabb9ad4ce814140f083e9f15588c435ec9351f054b0a16ab",
+      "after": "b66602a0370db2fcabb9ad4ce814140f083e9f15588c435ec9351f054b0a16ab",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/protected-files-verification.json": {
+      "before": "c78a32155863918cee200bc91d3aeb33210311d3dfe3bb038985c13b53d91d57",
+      "after": "c78a32155863918cee200bc91d3aeb33210311d3dfe3bb038985c13b53d91d57",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/schema-resource-verification.json": {
+      "before": "d096de9d703ddf491994607aeacb9e84e468292c63f58931d4adec6db9b220dd",
+      "after": "d096de9d703ddf491994607aeacb9e84e468292c63f58931d4adec6db9b220dd",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase2/test-results.txt": {
+      "before": "d44c8cc66d5edf66e47d71e475046a83633d7e3f74030f53246aa704d7919882",
+      "after": "d44c8cc66d5edf66e47d71e475046a83633d7e3f74030f53246aa704d7919882",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/IMPLEMENTATION_REPORT.md": {
+      "before": "1481b9e0b2dab31227ca2ad9bde1525aa9facd6c1385d2c2a41875ca381bb3c6",
+      "after": "1481b9e0b2dab31227ca2ad9bde1525aa9facd6c1385d2c2a41875ca381bb3c6",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/artifact-sha256.json": {
+      "before": "ba8a5f7732d8b728348b98518eea9f0cf2f768a94273e94fb91b636a591691c4",
+      "after": "ba8a5f7732d8b728348b98518eea9f0cf2f768a94273e94fb91b636a591691c4",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/baseline-verification.json": {
+      "before": "e1f76b9e87a00ab0ad29da7fdaae92f9fb97e49eef4a72decc9b1aa8b3338006",
+      "after": "e1f76b9e87a00ab0ad29da7fdaae92f9fb97e49eef4a72decc9b1aa8b3338006",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/database-schema.sql": {
+      "before": "4292e86c2d30312898d4237f6239081e0c01ddecaf2bc184d4a3280b9f28102c",
+      "after": "4292e86c2d30312898d4237f6239081e0c01ddecaf2bc184d4a3280b9f28102c",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/development-commands.json": {
+      "before": "5846c3f3b6e1ba58df10520e0c8ad8f234ea48ae980aea4efba4e96bf5d8701f",
+      "after": "5846c3f3b6e1ba58df10520e0c8ad8f234ea48ae980aea4efba4e96bf5d8701f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/development-concurrency-fault-evidence.json": {
+      "before": "0cc99183e17f3a77df6f44d6d11fe28a7f46288227fe24b1da8826ad153eaf1f",
+      "after": "0cc99183e17f3a77df6f44d6d11fe28a7f46288227fe24b1da8826ad153eaf1f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/development-results.txt": {
+      "before": "44fbe7f37f3593b8c40d0be51675d3abe28a00b38dabd1571747e87eb292f1d4",
+      "after": "44fbe7f37f3593b8c40d0be51675d3abe28a00b38dabd1571747e87eb292f1d4",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/environment-manifest.json": {
+      "before": "992be424e50e5c1c1b64b9b9ec236e08e81c4960f9669aa8f2f8431a1edfb711",
+      "after": "992be424e50e5c1c1b64b9b9ec236e08e81c4960f9669aa8f2f8431a1edfb711",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/evidence-verification.txt": {
+      "before": "50b1236c6b542e143ba2095847e5fceb18a1ff43c16789a943e6d5c78b2a7fd2",
+      "after": "50b1236c6b542e143ba2095847e5fceb18a1ff43c16789a943e6d5c78b2a7fd2",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/final-commands.json": {
+      "before": "5daed719c16ec10f0bb9f95512086229a49b150e2177cfd73635944402e54171",
+      "after": "5daed719c16ec10f0bb9f95512086229a49b150e2177cfd73635944402e54171",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/final-concurrency-fault-evidence.json": {
+      "before": "84a21a6397144e5cc6fc031b779bd87389731478c09e74b6b4709deea6dd182e",
+      "after": "84a21a6397144e5cc6fc031b779bd87389731478c09e74b6b4709deea6dd182e",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/final-results.txt": {
+      "before": "eee3a515f72a5c601d938cf8721a9383a96748ba39832266b03abe0fc3fb5a9a",
+      "after": "eee3a515f72a5c601d938cf8721a9383a96748ba39832266b03abe0fc3fb5a9a",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/protected-files-before.json": {
+      "before": "374441071c1d842ed231e594d153d5a1ed21e81bddb33df22018cead0d343bea",
+      "after": "374441071c1d842ed231e594d153d5a1ed21e81bddb33df22018cead0d343bea",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s01-phase3/protected-files-verification.json": {
+      "before": "132f1c937f0ab089f332a38a7d8abe315fce793ef669de121dc26f4213c3701e",
+      "after": "132f1c937f0ab089f332a38a7d8abe315fce793ef669de121dc26f4213c3701e",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/requirements-dev.in": {
+      "before": "cb21bfbaac2a315d25ed2ae5bb6ed3d9d9daf689875e0812411f5d1cc196e701",
+      "after": "cb21bfbaac2a315d25ed2ae5bb6ed3d9d9daf689875e0812411f5d1cc196e701",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/requirements-dev.lock": {
+      "before": "5d646ed912a87a9472612a66da22926aec40a08f6baaea104c8fb7759322d38b",
+      "after": "5d646ed912a87a9472612a66da22926aec40a08f6baaea104c8fb7759322d38b",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/requirements-tools.lock": {
+      "before": "2458ac56e3447df0beef216772f5276d7feef6713a037977f67dbeaff0c46f41",
+      "after": "2458ac56e3447df0beef216772f5276d7feef6713a037977f67dbeaff0c46f41",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/requirements.in": {
+      "before": "1135ea2aa024e11111cb5afbe86b6b4168749a0e392bf5c203443049ca4adb7e",
+      "after": "1135ea2aa024e11111cb5afbe86b6b4168749a0e392bf5c203443049ca4adb7e",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/requirements.lock": {
+      "before": "652a74d2145ea08be4eac8ec23f4b19ec4d9ab7f79e3474b5105283fe65773fc",
+      "after": "652a74d2145ea08be4eac8ec23f4b19ec4d9ab7f79e3474b5105283fe65773fc",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/__init__.py": {
+      "before": "d6a5bddc4982a97be73fe1b04eaff96e0644a1e1f0c765775111b34b5a451a2b",
+      "after": "d6a5bddc4982a97be73fe1b04eaff96e0644a1e1f0c765775111b34b5a451a2b",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/codec.py": {
+      "before": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+      "after": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/envelope.py": {
+      "before": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+      "after": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/errors.py": {
+      "before": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+      "after": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/py.typed": {
+      "before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/repository.py": {
+      "before": "1ed0047a8b8fd07b7e47fc82be2078a9086d607c2eb0d0e39cfb4aac0de0bf03",
+      "after": "1ed0047a8b8fd07b7e47fc82be2078a9086d607c2eb0d0e39cfb4aac0de0bf03",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/revision.py": {
+      "before": "4f52f147d7a7743e69b9d5424a21c26ebdd93b78df77f8e42922e221d2fdd782",
+      "after": "4f52f147d7a7743e69b9d5424a21c26ebdd93b78df77f8e42922e221d2fdd782",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/schema_resource.py": {
+      "before": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+      "after": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/schemas/input/1.0.0/PROVENANCE.md": {
+      "before": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+      "after": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/schemas/input/1.0.0/system-input.schema.json": {
+      "before": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+      "after": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/service.py": {
+      "before": "4755f260eb0a2124b3ebba7b9ecdd7a103d22e9be02d35a3eb6385fa47b0be6f",
+      "after": "8f47ec19aa385b0a1c6cfd954487d82eabcc20efde7047b9a95e181d22cae8b9",
+      "intentional_change": true
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/storage_schema.py": {
+      "before": "9a6d6dfa03c3369284f09662bbdcbf13b5f694e1d7501fa71064221b2bd8e7c2",
+      "after": "9a6d6dfa03c3369284f09662bbdcbf13b5f694e1d7501fa71064221b2bd8e7c2",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/src/dacn_s01/validation.py": {
+      "before": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+      "after": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/conftest.py": {
+      "before": "536339b9aff1e8ccf27183978dbb2b7cb5ebe3980a9293d5c28027832ab189e0",
+      "after": "536339b9aff1e8ccf27183978dbb2b7cb5ebe3980a9293d5c28027832ab189e0",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase2/conftest.py": {
+      "before": "bb4949d27acedbd14a0479f4bcc1d72596bd841b61cc2c6080bd58f4cb97400f",
+      "after": "bb4949d27acedbd14a0479f4bcc1d72596bd841b61cc2c6080bd58f4cb97400f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_audit_regressions.py": {
+      "before": "0a1d54ca3a58470e6047d16115257b48339ed609d196a64118aab153bdcce21a",
+      "after": "0a1d54ca3a58470e6047d16115257b48339ed609d196a64118aab153bdcce21a",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_envelope.py": {
+      "before": "20835f4e066dc1eab8c30f78e5fd03005132a26261f0d2878dcb315df7d29b37",
+      "after": "20835f4e066dc1eab8c30f78e5fd03005132a26261f0d2878dcb315df7d29b37",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase2/test_validation.py": {
+      "before": "5fa2002929a52bd5f2cd5e618d18e4ffb2c8fd2e4a5be4771d7add83faaa9b96",
+      "after": "5fa2002929a52bd5f2cd5e618d18e4ffb2c8fd2e4a5be4771d7add83faaa9b96",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/conftest.py": {
+      "before": "a5c15347593a80366f721849b47e71a03bbdb6c60eeeb4e9b41bb83f3463c36a",
+      "after": "a5c15347593a80366f721849b47e71a03bbdb6c60eeeb4e9b41bb83f3463c36a",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/process_worker.py": {
+      "before": "362573d87dc66d899f9123b9e644cf911d0d016d48000e1816db5ea266c7114d",
+      "after": "362573d87dc66d899f9123b9e644cf911d0d016d48000e1816db5ea266c7114d",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py": {
+      "before": "8f29e141d64f71221f97261c542bc52f6c08ff00f2222a7c822423da5f44dd26",
+      "after": "8f29e141d64f71221f97261c542bc52f6c08ff00f2222a7c822423da5f44dd26",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_repository_faults.py": {
+      "before": "146f1b99f8cf2b7adbf775515709fc83e35f3555d15bc73e755111416c9b864f",
+      "after": "146f1b99f8cf2b7adbf775515709fc83e35f3555d15bc73e755111416c9b864f",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_revision.py": {
+      "before": "eead081f5f2ec081e51f74bf228c9ad497d23ea0afddcb6891dfd7215dcd6455",
+      "after": "eead081f5f2ec081e51f74bf228c9ad497d23ea0afddcb6891dfd7215dcd6455",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_service.py": {
+      "before": "c75913746c82565b625701213484cd93b081c3f5777acc155d29a69af5e2e3ae",
+      "after": "c75913746c82565b625701213484cd93b081c3f5777acc155d29a69af5e2e3ae",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py": {
+      "before": "1b2426d5ccd6c06c5a61dd32896a8f3f7dfe3bd04fd43c7ae54c3d2ed89504a8",
+      "after": "1b2426d5ccd6c06c5a61dd32896a8f3f7dfe3bd04fd43c7ae54c3d2ed89504a8",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tests/test_schema_resource.py": {
+      "before": "35b388ec23490724c6a103942e8157e85298e66bebcdcc95850e182539c80904",
+      "after": "35b388ec23490724c6a103942e8157e85298e66bebcdcc95850e182539c80904",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/collect_phase1_evidence.py": {
+      "before": "536de350210a4bd660ffc364d3c2055009c47970d16fa4b9cb3f8c87a45c844a",
+      "after": "536de350210a4bd660ffc364d3c2055009c47970d16fa4b9cb3f8c87a45c844a",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/collect_phase2_evidence.py": {
+      "before": "0326747b6bb21ea16838d4e224dc7f69af0678d2ad388d3945c0d0caf81aeefb",
+      "after": "0326747b6bb21ea16838d4e224dc7f69af0678d2ad388d3945c0d0caf81aeefb",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/collect_phase2_fix_evidence.py": {
+      "before": "67e864ebc98ff67a117ce57816a6ee2c61a8629eca5e4c89818bd6ee41ffc9c2",
+      "after": "67e864ebc98ff67a117ce57816a6ee2c61a8629eca5e4c89818bd6ee41ffc9c2",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/collect_phase3_evidence.py": {
+      "before": "f8db303a3840619c40e368b01b440b619ba591ff7e5c523784c9e0c3fa215ba4",
+      "after": "f8db303a3840619c40e368b01b440b619ba591ff7e5c523784c9e0c3fa215ba4",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/run_phase1_checks.py": {
+      "before": "560c9c5df9fc25557a580f01bbd0223ab2c45e1aedd9941c0d237bbd403c04e8",
+      "after": "560c9c5df9fc25557a580f01bbd0223ab2c45e1aedd9941c0d237bbd403c04e8",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/run_phase2_checks.py": {
+      "before": "d160551d1cde0a10450f67c16c817423abeae01991e2a1f12ba67d3919ceb348",
+      "after": "d160551d1cde0a10450f67c16c817423abeae01991e2a1f12ba67d3919ceb348",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/run_phase2_fix_checks.py": {
+      "before": "cddb1990bb68ec868c43cbcda703be143a8a5c3c0cecc39e70f033fd7ad46169",
+      "after": "cddb1990bb68ec868c43cbcda703be143a8a5c3c0cecc39e70f033fd7ad46169",
+      "intentional_change": false
+    },
+    "/Users/macbookpro/Documents/DACN_implementation/tools/run_phase3_checks.py": {
+      "before": "e2006ab98b13a3f353017453767f0411e89623484b34fb068b68a815f1be3242",
+      "after": "e2006ab98b13a3f353017453767f0411e89623484b34fb068b68a815f1be3242",
+      "intentional_change": false
+    }
+  }
+}

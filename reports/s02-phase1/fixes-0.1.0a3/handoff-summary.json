@@ -1,0 +1,161 @@
+{
+  "suites": [
+    {
+      "name": "s01-c",
+      "tests": 986,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 986,
+      "exit_code": 0,
+      "log": "s01-checks/s01-c.log",
+      "junit": "s01-checks/s01-c.xml"
+    },
+    {
+      "name": "s01-python",
+      "tests": 986,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 986,
+      "exit_code": 0,
+      "log": "s01-checks/s01-python.log",
+      "junit": "s01-checks/s01-python.xml"
+    },
+    {
+      "name": "s02-c",
+      "tests": 217,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 217,
+      "exit_code": 0,
+      "log": "s02-checks/s02-c.log",
+      "junit": "s02-checks/s02-c.xml"
+    },
+    {
+      "name": "s02-python",
+      "tests": 217,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 217,
+      "exit_code": 0,
+      "log": "s02-checks/s02-python.log",
+      "junit": "s02-checks/s02-python.xml"
+    },
+    {
+      "name": "audit-1-c",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 7,
+      "exit_code": 0,
+      "log": "independent-audits/audit-1-c.log",
+      "junit": "independent-audits/audit-1-c.xml"
+    },
+    {
+      "name": "audit-1-python",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 7,
+      "exit_code": 0,
+      "log": "independent-audits/audit-1-python.log",
+      "junit": "independent-audits/audit-1-python.xml"
+    },
+    {
+      "name": "audit-2-c",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 4,
+      "exit_code": 0,
+      "log": "independent-audits/audit-2-c.log",
+      "junit": "independent-audits/audit-2-c.xml"
+    },
+    {
+      "name": "audit-2-python",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 4,
+      "exit_code": 0,
+      "log": "independent-audits/audit-2-python.log",
+      "junit": "independent-audits/audit-2-python.xml"
+    }
+  ],
+  "backend_instrumentation": [
+    {
+      "suite": "s01-c",
+      "backend_instrumentation": "Observed real encoder factory calls: {'c': 6597, 'python': 0}; selected=c"
+    },
+    {
+      "suite": "s01-python",
+      "backend_instrumentation": "Observed real encoder factory calls: {'c': 0, 'python': 6597}; selected=python"
+    },
+    {
+      "suite": "s02-c",
+      "backend_instrumentation": "S02_ENCODERS selected=c calls={'c': 88480, 'python': 0}"
+    },
+    {
+      "suite": "s02-python",
+      "backend_instrumentation": "S02_ENCODERS selected=python calls={'c': 0, 'python': 88480}"
+    },
+    {
+      "suite": "audit-1-c",
+      "backend_instrumentation": "S02_ENCODERS selected=c calls={'c': 4837, 'python': 0}"
+    },
+    {
+      "suite": "audit-1-python",
+      "backend_instrumentation": "S02_ENCODERS selected=python calls={'c': 0, 'python': 4837}"
+    },
+    {
+      "suite": "audit-2-c",
+      "backend_instrumentation": "S02_ENCODERS selected=c calls={'c': 1777, 'python': 0}"
+    },
+    {
+      "suite": "audit-2-python",
+      "backend_instrumentation": "S02_ENCODERS selected=python calls={'c': 0, 'python': 1777}"
+    }
+  ],
+  "tooling_tests": 344,
+  "targeted_tests": 28,
+  "earlier_attempts": [
+    {
+      "log": "targeted-config.log",
+      "passed": 21,
+      "failed": 7,
+      "exit_code": 1,
+      "reason": "New fixture used invalid Error.stage processing; corrected fixture only, assertions unchanged"
+    },
+    {
+      "log": "s01-collector.log",
+      "exit_code": 1,
+      "reason": "S01 installed from lock lacked direct_url; reinstalled same historical wheel directly, no check removed"
+    }
+  ],
+  "status": "implemented_and_tested_awaiting_audit",
+  "date": "2026-10-21",
+  "s01_version": "0.1.0a6",
+  "s02_version": "0.1.0a3",
+  "contract": "s02/0.1.0-draft.3",
+  "phase2_started": false,
+  "smoke": {
+    "commands": 18,
+    "guards": 6,
+    "examples": 15,
+    "shapes": 33,
+    "links": 95
+  },
+  "protection": {
+    "unchanged_workspace": 7598,
+    "unchanged_external": 10577,
+    "unexpected_changes": []
+  },
+  "layout01_prior_fix_retained": true
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "s01-c",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a2-clean-ifz1c2fh/venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "/Users/macbookpro/Documents/DACN_implementation/tests",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=c",
+      "--junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/s01-c.xml"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-oi889w4u",
+    "exit_code": 0,
+    "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/s01-c.log"
+  },
+  {
+    "name": "s01-python",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a2-clean-ifz1c2fh/venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "/Users/macbookpro/Documents/DACN_implementation/tests",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=python",
+      "--junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/s01-python.xml"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-oi889w4u",
+    "exit_code": 0,
+    "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/s01-python.log"
+  }
+]

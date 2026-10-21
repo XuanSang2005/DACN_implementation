@@ -1,0 +1,102 @@
+{
+  "status": "LAYOUT-01 implemented and tested; awaiting re-audit",
+  "captured_at": "2026-10-19T09:18:19.335010+00:00",
+  "regression": {
+    "tests": 339,
+    "selector_cases": 336,
+    "additional_test_groups": 3,
+    "failures": 0,
+    "exit_code": 0
+  },
+  "suites": [
+    {
+      "name": "s01-c",
+      "tests": 986,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "junit": "s01-checks/s01-c.xml"
+    },
+    {
+      "name": "s01-python",
+      "tests": 986,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "junit": "s01-checks/s01-python.xml"
+    },
+    {
+      "name": "s02-c",
+      "tests": 189,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "junit": "s02-checks/s02-c.xml"
+    },
+    {
+      "name": "s02-python",
+      "tests": 189,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "junit": "s02-checks/s02-python.xml"
+    }
+  ],
+  "backend_instrumentation": [
+    {
+      "suite": "s01-c",
+      "backend_instrumentation": "Observed real encoder factory calls: {'c': 6597, 'python': 0}; selected=c"
+    },
+    {
+      "suite": "s01-python",
+      "backend_instrumentation": "Observed real encoder factory calls: {'c': 0, 'python': 6597}; selected=python"
+    },
+    {
+      "suite": "s02-c",
+      "backend_instrumentation": "S02_ENCODERS selected=c calls={'c': 71681, 'python': 0}"
+    },
+    {
+      "suite": "s02-python",
+      "backend_instrumentation": "S02_ENCODERS selected=python calls={'c': 0, 'python': 71681}"
+    }
+  ],
+  "collector_packages": {
+    "s01-collector": [
+      "s01"
+    ],
+    "s02-collector": [
+      "s02"
+    ],
+    "workspace-collector": [
+      "s01",
+      "s02"
+    ]
+  },
+  "pip_check_exit": 0,
+  "s01_version": "0.1.0a6",
+  "s02_version": "0.1.0a2",
+  "s02_05": "open; not changed or re-audited in this fix",
+  "unchanged_workspace_files": 7539,
+  "unchanged_external_audit_files": 3826,
+  "changed_files": [
+    "README.md",
+    "packages/s01/tools/collect_evidence.py",
+    "packages/s01/tools/run_checks.py",
+    "packages/s02/tools/collect_evidence.py",
+    "packages/s02/tools/run_checks.py",
+    "reports/README.md",
+    "tools/collect_evidence.py",
+    "tools/run_checks.py"
+  ],
+  "added_test": "tools/tests/test_package_wrappers.py",
+  "not_rerun": [
+    "external S02 audits",
+    "CLI/guard smoke",
+    "build"
+  ],
+  "environment": "Reused installed-wheel layout verification venv; not newly created for this fix"
+}

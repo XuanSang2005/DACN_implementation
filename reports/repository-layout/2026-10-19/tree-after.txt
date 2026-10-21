@@ -1,0 +1,159 @@
+DACN_implementation/
+(Compact physical tree; collapsed directories explicitly marked. Full paths/types/hashes: inventory-after.json.)
+.gitignore
+.runtime/ [collapsed; retained or generated as inventoried]
+.tools/ [collapsed; retained or generated as inventoried]
+.venv/ [collapsed; retained or generated as inventoried]
+AGENTS.md
+README.md
+dist/ [collapsed; retained or generated as inventoried]
+docs/
+  README.md
+  S01_IMPLEMENTATION_PLAN_PROPOSAL.md
+  S01_LOCAL_GUIDE.md
+  S01_OUTPUT_CONTRACT_PROPOSAL.md
+  S02_DRAFT2_AUDIT_RESPONSE.md
+  S02_DRAFT2_STATIC_CHECKS.json
+  S02_DRAFT3_AUDIT_RESPONSE.md
+  S02_DRAFT3_STATIC_CHECKS.json
+  S02_IMPLEMENTATION_PLAN_PROPOSAL.md
+  S02_OUTPUT_CONTRACT_PROPOSAL.md
+  examples/ [collapsed; retained or generated as inventoried]
+  s01/
+    README.md
+  s02/
+    README.md
+packages/
+  s01/
+    .python-version
+    build/ [collapsed; retained or generated as inventoried]
+    pyproject.toml
+    requirements-dev.in
+    requirements-dev.lock
+    requirements.in
+    requirements.lock
+    src/
+      dacn_s01/
+        __init__.py
+        __main__.py
+        cli.py
+        codec.py
+        envelope.py
+        errors.py
+        local_io.py
+        py.typed
+        repository.py
+        revision.py
+        schema_resource.py
+        schemas/
+          input/
+            1.0.0/
+              PROVENANCE.md
+              system-input.schema.json
+        service.py
+        storage_schema.py
+        validation.py
+      dacn_s01.egg-info/ [collapsed; retained or generated as inventoried]
+    tests/
+      __pycache__/
+      conftest.py
+      phase2/
+        __pycache__/
+        conftest.py
+        test_audit_regressions.py
+        test_envelope.py
+        test_validation.py
+      phase3/
+        conftest.py
+        process_worker.py
+        test_failure_diagnostics.py
+        test_processes.py
+        test_repository_faults.py
+        test_revision.py
+        test_service.py
+      phase4/
+        conftest.py
+        test_cli.py
+        test_lookup.py
+        test_paths_config.py
+        test_processes.py
+        worker.py
+      test_codec.py
+      test_schema_resource.py
+    tools/
+      collect_evidence.py
+      legacy/
+        README.md
+        collect_phase1_evidence.py
+        collect_phase2_evidence.py
+        collect_phase2_fix_evidence.py
+        collect_phase3_evidence.py
+        collect_phase3_fix_evidence.py
+        collect_phase4_evidence.py
+        run_phase1_checks.py
+        run_phase2_checks.py
+        run_phase2_fix_checks.py
+        run_phase3_checks.py
+        run_phase3_fix_checks.py
+        run_phase4_checks.py
+      run_checks.py
+  s02/
+    .python-version
+    build/ [collapsed; retained or generated as inventoried]
+    pyproject.toml
+    requirements-dev.lock
+    requirements.lock
+    src/
+      dacn_s02/
+        __init__.py
+        __main__.py
+        cli.py
+        codec_boundary.py
+        errors.py
+        events.py
+        local_io.py
+        repository.py
+        s01_adapter.py
+        schemas/
+          contract.json
+        scope.py
+        service.py
+        storage_schema.py
+        validation.py
+      dacn_s02.egg-info/ [collapsed; retained or generated as inventoried]
+    tests/
+      cli_probe.py
+      conftest.py
+      helpers.py
+      process_worker.py
+      test_additional_guards.py
+      test_audit_guards.py
+      test_audit_regressions.py
+      test_boundary.py
+      test_cli.py
+      test_contract_artifacts.py
+      test_lifecycle.py
+      test_processes.py
+      test_repository.py
+      test_revision_contract.py
+      test_scope.py
+    tools/
+      collect_evidence.py
+      legacy/
+        README.md
+        collect_evidence.py
+        run_checks.py
+      materialize_schema.py
+      run_checks.py
+pyproject.toml
+reports/ [collapsed; retained or generated as inventoried]
+s02/
+  .venv/ [collapsed; retained or generated as inventoried]
+  README.md
+  dist/ [collapsed; retained or generated as inventoried]
+tools/
+  build_packages.py
+  check_layout.py
+  collect_evidence.py
+  requirements-tools.lock
+  run_checks.py

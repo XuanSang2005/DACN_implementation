@@ -1,0 +1,894 @@
+{
+  "illustration": {
+    "status": "ví dụ minh họa chưa thực thi",
+    "title": "A1 — S01 unchanged cùng hoặc khác snapshot nguồn S02",
+    "production_importable": false,
+    "a3_compatible_export": false,
+    "user_business_confirmation": false,
+    "meaning": "Các graph là projections của records/events và expected transitions; field amendment chưa được duyệt. Không import vào a3."
+  },
+  "contract_version": "s02/0.1.0-draft.3",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
+  "amendment_proposal_version": "s02-phase2-amendment/0.1.0-draft.1",
+  "bindings": [
+    {
+      "name": "schema_input",
+      "file": "../../../packages/s01/src/dacn_s01/schemas/input/1.0.0/system-input.schema.json",
+      "pointer": ""
+    }
+  ],
+  "assumptions": [
+    "Hai graph độc lập cùng dùng tên symbol ngắn, không phải records đã commit.",
+    "Nguồn synthetic S1/S2 và consent đều giả định; không phải clinic user confirmation.",
+    "Projected events bỏ prepared/config/full metadata để gọn; không phải canonical export."
+  ],
+  "graphs": {
+    "same_snapshot": {
+      "snapshots": {
+        "S1": {
+          "spec_id": "SPEC-demo",
+          "revision": 1,
+          "input": {
+            "schema_version": "1.0.0",
+            "title": "Synthetic task",
+            "context": "Fixture thiết kế, không phải nghiệp vụ đã xác nhận.",
+            "actors": [
+              "Nhân viên"
+            ],
+            "functional_requirements": [
+              {
+                "id": "R-task",
+                "text": "Nhân viên được tạo phiếu.",
+                "priority": null,
+                "acceptance_criteria": [
+                  "Phiếu được lưu."
+                ]
+              }
+            ],
+            "non_functional_requirements": [],
+            "constraints": [],
+            "design_preferences": {
+              "metric_priorities": [
+                "response_time_p95",
+                "sustainable_throughput",
+                "cpu_utilisation",
+                "scaling_gain"
+              ]
+            },
+            "operating_conditions": {
+              "critical_scenarios": null,
+              "expected_load": null,
+              "peak_load": null,
+              "data_volume": null,
+              "growth": null,
+              "resource_budget": null
+            }
+          }
+        },
+        "S2": {
+          "spec_id": "SPEC-demo",
+          "revision": 2,
+          "input": {
+            "schema_version": "1.0.0",
+            "title": "Synthetic task",
+            "context": "Fixture thiết kế, không phải nghiệp vụ đã xác nhận.",
+            "actors": [
+              "Nhân viên"
+            ],
+            "functional_requirements": [
+              {
+                "id": "R-task",
+                "text": "Nhân viên được tạo phiếu và ghi người tạo.",
+                "priority": null,
+                "acceptance_criteria": [
+                  "Phiếu được lưu."
+                ]
+              }
+            ],
+            "non_functional_requirements": [],
+            "constraints": [],
+            "design_preferences": {
+              "metric_priorities": [
+                "response_time_p95",
+                "sustainable_throughput",
+                "cpu_utilisation",
+                "scaling_gain"
+              ]
+            },
+            "operating_conditions": {
+              "critical_scenarios": null,
+              "expected_load": null,
+              "peak_load": null,
+              "data_volume": null,
+              "growth": null,
+              "resource_budget": null
+            }
+          }
+        }
+      },
+      "source_contexts": {
+        "C1": {
+          "snapshot_id": "S1",
+          "s01_run_id": "S01-create-1"
+        },
+        "C2-origin": {
+          "snapshot_id": "S2",
+          "s01_run_id": "S01-edit-2"
+        },
+        "C-observed": {
+          "snapshot_id": "S2",
+          "s01_run_id": "S01-observed",
+          "envelope_artifact_id": "ENV-observed",
+          "run_source_artifact_id": "RAW-observed",
+          "origin_source_artifact_id": "RAW-origin-S2",
+          "schema_artifact_id": "SCHEMA-input"
+        }
+      },
+      "s01_runs": {
+        "S01-create-1": {
+          "snapshot_id": "S1",
+          "result_kind": "created"
+        },
+        "S01-edit-2": {
+          "snapshot_id": "S2",
+          "result_kind": "new_revision"
+        },
+        "S01-observed": {
+          "status": "validated",
+          "result_kind": "unchanged",
+          "snapshot_id": "S2",
+          "request": {
+            "mode": "update",
+            "spec_id": "SPEC-demo",
+            "base_revision": 2
+          },
+          "raw_source_sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c",
+          "raw_source_artifact_id": "RAW-observed",
+          "origin_source_artifact_id": "RAW-origin-S2"
+        }
+      },
+      "artifacts": {
+        "ENV-observed": {
+          "purpose": "s01_envelope",
+          "run_id": "S01-observed",
+          "snapshot_id": "S2"
+        },
+        "RAW-observed": {
+          "purpose": "s01_run_source",
+          "payload_utf8": "{\"schema_version\":\"1.0.0\",\"title\":\"Synthetic task\",\"context\":\"Fixture thi\\u1ebft k\\u1ebf, kh\\u00f4ng ph\\u1ea3i nghi\\u1ec7p v\\u1ee5 \\u0111\\u00e3 x\\u00e1c nh\\u1eadn.\",\"actors\":[\"Nh\\u00e2n vi\\u00ean\"],\"functional_requirements\":[{\"id\":\"R-task\",\"text\":\"Nh\\u00e2n vi\\u00ean \\u0111\\u01b0\\u1ee3c t\\u1ea1o phi\\u1ebfu v\\u00e0 ghi ng\\u01b0\\u1eddi t\\u1ea1o.\",\"priority\":null,\"acceptance_criteria\":[\"Phi\\u1ebfu \\u0111\\u01b0\\u1ee3c l\\u01b0u.\"]}],\"non_functional_requirements\":[],\"constraints\":[],\"design_preferences\":{\"metric_priorities\":[\"response_time_p95\",\"sustainable_throughput\",\"cpu_utilisation\",\"scaling_gain\"]},\"operating_conditions\":{\"critical_scenarios\":null,\"expected_load\":null,\"peak_load\":null,\"data_volume\":null,\"growth\":null,\"resource_budget\":null}}",
+          "sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c",
+          "byte_length": 750
+        },
+        "RAW-origin-S2": {
+          "purpose": "s01_origin_source",
+          "note": "Nguồn origin S2 từ run S01-edit-2; khác identity RAW-observed, không đổi provenance."
+        },
+        "SCHEMA-input": {
+          "purpose": "schema",
+          "schema_version": "1.0.0",
+          "binding_file": "../../../packages/s01/src/dacn_s01/schemas/input/1.0.0/system-input.schema.json"
+        }
+      },
+      "staged_blobs": {
+        "INPUT-consented": {
+          "command_id": "CMD-app",
+          "purpose": "requirement_update_input",
+          "payload_utf8": "{\"schema_version\":\"1.0.0\",\"title\":\"Synthetic task\",\"context\":\"Fixture thi\\u1ebft k\\u1ebf, kh\\u00f4ng ph\\u1ea3i nghi\\u1ec7p v\\u1ee5 \\u0111\\u00e3 x\\u00e1c nh\\u1eadn.\",\"actors\":[\"Nh\\u00e2n vi\\u00ean\"],\"functional_requirements\":[{\"id\":\"R-task\",\"text\":\"Nh\\u00e2n vi\\u00ean \\u0111\\u01b0\\u1ee3c t\\u1ea1o phi\\u1ebfu v\\u00e0 ghi ng\\u01b0\\u1eddi t\\u1ea1o.\",\"priority\":null,\"acceptance_criteria\":[\"Phi\\u1ebfu \\u0111\\u01b0\\u1ee3c l\\u01b0u.\"]}],\"non_functional_requirements\":[],\"constraints\":[],\"design_preferences\":{\"metric_priorities\":[\"response_time_p95\",\"sustainable_throughput\",\"cpu_utilisation\",\"scaling_gain\"]},\"operating_conditions\":{\"critical_scenarios\":null,\"expected_load\":null,\"peak_load\":null,\"data_volume\":null,\"growth\":null,\"resource_budget\":null}}",
+          "sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c",
+          "byte_length": 750
+        }
+      },
+      "operations": {
+        "CMD-app": {
+          "session_id": "SESSION",
+          "parent_command_id": null,
+          "reserved_run_id": "RUN-app",
+          "request": {
+            "kind": "apply_answer",
+            "answer_id": "ANSWER",
+            "issue_key": "Q-key",
+            "base_model_id": "M1",
+            "base_analysis_set_id": "AS1",
+            "source_context_id": "C2-origin"
+          }
+        }
+      },
+      "records": {
+        "ANSWER": {
+          "type": "answer",
+          "issue_id": "Q1",
+          "interpretation": "changes_requirements",
+          "text": "Giả định người dùng yêu cầu đúng input S2, không phải xác nhận thật."
+        },
+        "M1": {
+          "type": "model",
+          "revision": 1,
+          "parent_model_id": null,
+          "source_context_id": "C2-origin"
+        },
+        "M2": {
+          "type": "model",
+          "revision": 2,
+          "parent_model_id": "M1",
+          "source_context_id": "C2-origin",
+          "change_id": "CH2",
+          "created_by_run_id": "RUN-app"
+        },
+        "AS1": {
+          "type": "analysis_set",
+          "model_id": "M1",
+          "revision": 1,
+          "issue_ids": [
+            "Q1"
+          ]
+        },
+        "AS2": {
+          "type": "analysis_set",
+          "model_id": "M2",
+          "revision": 1,
+          "issue_ids": [
+            "Q2"
+          ]
+        },
+        "Q1": {
+          "type": "issue",
+          "model_id": "M1",
+          "issue_key": "Q-key",
+          "supersedes_id": null,
+          "status": "answered_pending_application",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": []
+        },
+        "Q2": {
+          "type": "issue",
+          "model_id": "M2",
+          "issue_key": "Q-key",
+          "supersedes_id": "Q1",
+          "status": "resolved",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [
+            {
+              "command_id": "CMD-app",
+              "event_id": "E-apply"
+            }
+          ],
+          "resolution_carry": null
+        },
+        "CH2": {
+          "type": "change",
+          "kind": "analysis_edit",
+          "base_model_id": "M1",
+          "new_model_id": "M2",
+          "old_source_context_id": "C2-origin",
+          "new_source_context_id": "C2-origin",
+          "source_record_ids": [
+            "ANSWER",
+            "Q1"
+          ],
+          "application_event_refs": [
+            {
+              "command_id": "CMD-app",
+              "event_id": "E-apply"
+            }
+          ]
+        },
+        "RUN-app": {
+          "type": "run",
+          "command_id": "CMD-app",
+          "source_context_id": "C2-origin",
+          "base_model_id": "M1",
+          "base_analysis_set_id": "AS1",
+          "result_model_id": "M2",
+          "result_analysis_set_id": "AS2",
+          "status": "completed"
+        }
+      },
+      "events": {
+        "E-interpret": {
+          "command_id": "CMD-app",
+          "kind": "interpretation_selected",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation": "changes_requirements",
+            "explanation": "Giả định người dùng đã chọn exact input S2; không phân loại lại vì S01 unchanged.",
+            "existing_source_refs": [],
+            "proposed_input": {
+              "command_id": "CMD-app",
+              "blob_id": "INPUT-consented"
+            },
+            "s01_request": {
+              "mode": "update",
+              "spec_id": "SPEC-demo",
+              "base_revision": 2
+            }
+          }
+        },
+        "E-consent": {
+          "command_id": "CMD-app",
+          "kind": "consent_recorded",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-interpret"
+            },
+            "respondent": "DEMO USER (giả định)",
+            "text": "Minh họa đã xem full input, diff và S01 base 2/S02 source S2",
+            "approved_input_sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c"
+          }
+        },
+        "E-dispatch": {
+          "command_id": "CMD-app",
+          "kind": "s01_dispatch_intent",
+          "payload": {
+            "answer_id": "ANSWER",
+            "consent_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-consent"
+            },
+            "s01_store_key": "synthetic",
+            "s01_run_id": "S01-observed",
+            "s01_request": {
+              "mode": "update",
+              "spec_id": "SPEC-demo",
+              "base_revision": 2
+            },
+            "input_stage_ref": {
+              "command_id": "CMD-app",
+              "blob_id": "INPUT-consented"
+            }
+          }
+        },
+        "E-observe": {
+          "command_id": "CMD-app",
+          "kind": "s01_result_observed",
+          "payload": {
+            "answer_id": "ANSWER",
+            "dispatch_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-dispatch"
+            },
+            "s01_run_id": "S01-observed",
+            "lookup_status": "validated",
+            "snapshot_id": "S2"
+          }
+        },
+        "E-apply": {
+          "command_id": "CMD-app",
+          "kind": "application_applied",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-interpret"
+            },
+            "consent_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-consent"
+            },
+            "s01_observation_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-observe"
+            },
+            "change_id": "CH2",
+            "new_source_context_id": "C2-origin",
+            "observed_source_context_id": "C-observed",
+            "resolved_issue_id": "Q2"
+          }
+        },
+        "E-final": {
+          "command_id": "CMD-app",
+          "kind": "finalized",
+          "payload": {
+            "run_id": "RUN-app",
+            "promotions": []
+          }
+        }
+      },
+      "publication": {
+        "base_pair": [
+          "M1",
+          "AS1"
+        ],
+        "new_pair": [
+          "M2",
+          "AS2"
+        ],
+        "atomic_new_record_ids": [
+          "M2",
+          "AS2",
+          "Q2",
+          "CH2",
+          "RUN-app"
+        ],
+        "archive_source_context_id": "C-observed",
+        "application_event_id": "E-apply"
+      },
+      "expected": {
+        "source_snapshot_before": "S2",
+        "observed_snapshot": "S2",
+        "s01_result_kind": "unchanged",
+        "change_kind": "analysis_edit",
+        "model_source_context_after": "C2-origin",
+        "archive_of_new_run": "C-observed",
+        "application_count": 1,
+        "s01_submission_count": 1,
+        "a3_accepts_this_export": false
+      }
+    },
+    "different_snapshot_despite_unchanged": {
+      "snapshots": {
+        "S1": {
+          "spec_id": "SPEC-demo",
+          "revision": 1,
+          "input": {
+            "schema_version": "1.0.0",
+            "title": "Synthetic task",
+            "context": "Fixture thiết kế, không phải nghiệp vụ đã xác nhận.",
+            "actors": [
+              "Nhân viên"
+            ],
+            "functional_requirements": [
+              {
+                "id": "R-task",
+                "text": "Nhân viên được tạo phiếu.",
+                "priority": null,
+                "acceptance_criteria": [
+                  "Phiếu được lưu."
+                ]
+              }
+            ],
+            "non_functional_requirements": [],
+            "constraints": [],
+            "design_preferences": {
+              "metric_priorities": [
+                "response_time_p95",
+                "sustainable_throughput",
+                "cpu_utilisation",
+                "scaling_gain"
+              ]
+            },
+            "operating_conditions": {
+              "critical_scenarios": null,
+              "expected_load": null,
+              "peak_load": null,
+              "data_volume": null,
+              "growth": null,
+              "resource_budget": null
+            }
+          }
+        },
+        "S2": {
+          "spec_id": "SPEC-demo",
+          "revision": 2,
+          "input": {
+            "schema_version": "1.0.0",
+            "title": "Synthetic task",
+            "context": "Fixture thiết kế, không phải nghiệp vụ đã xác nhận.",
+            "actors": [
+              "Nhân viên"
+            ],
+            "functional_requirements": [
+              {
+                "id": "R-task",
+                "text": "Nhân viên được tạo phiếu và ghi người tạo.",
+                "priority": null,
+                "acceptance_criteria": [
+                  "Phiếu được lưu."
+                ]
+              }
+            ],
+            "non_functional_requirements": [],
+            "constraints": [],
+            "design_preferences": {
+              "metric_priorities": [
+                "response_time_p95",
+                "sustainable_throughput",
+                "cpu_utilisation",
+                "scaling_gain"
+              ]
+            },
+            "operating_conditions": {
+              "critical_scenarios": null,
+              "expected_load": null,
+              "peak_load": null,
+              "data_volume": null,
+              "growth": null,
+              "resource_budget": null
+            }
+          }
+        }
+      },
+      "source_contexts": {
+        "C1": {
+          "snapshot_id": "S1",
+          "s01_run_id": "S01-create-1"
+        },
+        "C2-origin": {
+          "snapshot_id": "S2",
+          "s01_run_id": "S01-edit-2"
+        },
+        "C-observed": {
+          "snapshot_id": "S2",
+          "s01_run_id": "S01-observed",
+          "envelope_artifact_id": "ENV-observed",
+          "run_source_artifact_id": "RAW-observed",
+          "origin_source_artifact_id": "RAW-origin-S2",
+          "schema_artifact_id": "SCHEMA-input"
+        }
+      },
+      "s01_runs": {
+        "S01-create-1": {
+          "snapshot_id": "S1",
+          "result_kind": "created"
+        },
+        "S01-edit-2": {
+          "snapshot_id": "S2",
+          "result_kind": "new_revision"
+        },
+        "S01-observed": {
+          "status": "validated",
+          "result_kind": "unchanged",
+          "snapshot_id": "S2",
+          "request": {
+            "mode": "update",
+            "spec_id": "SPEC-demo",
+            "base_revision": 2
+          },
+          "raw_source_sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c",
+          "raw_source_artifact_id": "RAW-observed",
+          "origin_source_artifact_id": "RAW-origin-S2"
+        }
+      },
+      "artifacts": {
+        "ENV-observed": {
+          "purpose": "s01_envelope",
+          "run_id": "S01-observed",
+          "snapshot_id": "S2"
+        },
+        "RAW-observed": {
+          "purpose": "s01_run_source",
+          "payload_utf8": "{\"schema_version\":\"1.0.0\",\"title\":\"Synthetic task\",\"context\":\"Fixture thi\\u1ebft k\\u1ebf, kh\\u00f4ng ph\\u1ea3i nghi\\u1ec7p v\\u1ee5 \\u0111\\u00e3 x\\u00e1c nh\\u1eadn.\",\"actors\":[\"Nh\\u00e2n vi\\u00ean\"],\"functional_requirements\":[{\"id\":\"R-task\",\"text\":\"Nh\\u00e2n vi\\u00ean \\u0111\\u01b0\\u1ee3c t\\u1ea1o phi\\u1ebfu v\\u00e0 ghi ng\\u01b0\\u1eddi t\\u1ea1o.\",\"priority\":null,\"acceptance_criteria\":[\"Phi\\u1ebfu \\u0111\\u01b0\\u1ee3c l\\u01b0u.\"]}],\"non_functional_requirements\":[],\"constraints\":[],\"design_preferences\":{\"metric_priorities\":[\"response_time_p95\",\"sustainable_throughput\",\"cpu_utilisation\",\"scaling_gain\"]},\"operating_conditions\":{\"critical_scenarios\":null,\"expected_load\":null,\"peak_load\":null,\"data_volume\":null,\"growth\":null,\"resource_budget\":null}}",
+          "sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c",
+          "byte_length": 750
+        },
+        "RAW-origin-S2": {
+          "purpose": "s01_origin_source",
+          "note": "Nguồn origin S2 từ run S01-edit-2; khác identity RAW-observed, không đổi provenance."
+        },
+        "SCHEMA-input": {
+          "purpose": "schema",
+          "schema_version": "1.0.0",
+          "binding_file": "../../../packages/s01/src/dacn_s01/schemas/input/1.0.0/system-input.schema.json"
+        }
+      },
+      "staged_blobs": {
+        "INPUT-consented": {
+          "command_id": "CMD-app",
+          "purpose": "requirement_update_input",
+          "payload_utf8": "{\"schema_version\":\"1.0.0\",\"title\":\"Synthetic task\",\"context\":\"Fixture thi\\u1ebft k\\u1ebf, kh\\u00f4ng ph\\u1ea3i nghi\\u1ec7p v\\u1ee5 \\u0111\\u00e3 x\\u00e1c nh\\u1eadn.\",\"actors\":[\"Nh\\u00e2n vi\\u00ean\"],\"functional_requirements\":[{\"id\":\"R-task\",\"text\":\"Nh\\u00e2n vi\\u00ean \\u0111\\u01b0\\u1ee3c t\\u1ea1o phi\\u1ebfu v\\u00e0 ghi ng\\u01b0\\u1eddi t\\u1ea1o.\",\"priority\":null,\"acceptance_criteria\":[\"Phi\\u1ebfu \\u0111\\u01b0\\u1ee3c l\\u01b0u.\"]}],\"non_functional_requirements\":[],\"constraints\":[],\"design_preferences\":{\"metric_priorities\":[\"response_time_p95\",\"sustainable_throughput\",\"cpu_utilisation\",\"scaling_gain\"]},\"operating_conditions\":{\"critical_scenarios\":null,\"expected_load\":null,\"peak_load\":null,\"data_volume\":null,\"growth\":null,\"resource_budget\":null}}",
+          "sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c",
+          "byte_length": 750
+        }
+      },
+      "operations": {
+        "CMD-app": {
+          "session_id": "SESSION",
+          "parent_command_id": null,
+          "reserved_run_id": "RUN-app",
+          "request": {
+            "kind": "apply_answer",
+            "answer_id": "ANSWER",
+            "issue_key": "Q-key",
+            "base_model_id": "M1",
+            "base_analysis_set_id": "AS1",
+            "source_context_id": "C1"
+          }
+        }
+      },
+      "records": {
+        "ANSWER": {
+          "type": "answer",
+          "issue_id": "Q1",
+          "interpretation": "changes_requirements",
+          "text": "Giả định người dùng yêu cầu đúng input S2, không phải xác nhận thật."
+        },
+        "M1": {
+          "type": "model",
+          "revision": 1,
+          "parent_model_id": null,
+          "source_context_id": "C1"
+        },
+        "M2": {
+          "type": "model",
+          "revision": 2,
+          "parent_model_id": "M1",
+          "source_context_id": "C-observed",
+          "change_id": "CH2",
+          "created_by_run_id": "RUN-app"
+        },
+        "AS1": {
+          "type": "analysis_set",
+          "model_id": "M1",
+          "revision": 1,
+          "issue_ids": [
+            "Q1"
+          ]
+        },
+        "AS2": {
+          "type": "analysis_set",
+          "model_id": "M2",
+          "revision": 1,
+          "issue_ids": [
+            "Q2"
+          ]
+        },
+        "Q1": {
+          "type": "issue",
+          "model_id": "M1",
+          "issue_key": "Q-key",
+          "supersedes_id": null,
+          "status": "answered_pending_application",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": []
+        },
+        "Q2": {
+          "type": "issue",
+          "model_id": "M2",
+          "issue_key": "Q-key",
+          "supersedes_id": "Q1",
+          "status": "resolved",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [
+            {
+              "command_id": "CMD-app",
+              "event_id": "E-apply"
+            }
+          ],
+          "resolution_carry": null
+        },
+        "CH2": {
+          "type": "change",
+          "kind": "requirements_switch",
+          "base_model_id": "M1",
+          "new_model_id": "M2",
+          "old_source_context_id": "C1",
+          "new_source_context_id": "C-observed",
+          "source_record_ids": [
+            "ANSWER",
+            "Q1"
+          ],
+          "application_event_refs": [
+            {
+              "command_id": "CMD-app",
+              "event_id": "E-apply"
+            }
+          ]
+        },
+        "RUN-app": {
+          "type": "run",
+          "command_id": "CMD-app",
+          "source_context_id": "C1",
+          "base_model_id": "M1",
+          "base_analysis_set_id": "AS1",
+          "result_model_id": "M2",
+          "result_analysis_set_id": "AS2",
+          "status": "completed"
+        }
+      },
+      "events": {
+        "E-interpret": {
+          "command_id": "CMD-app",
+          "kind": "interpretation_selected",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation": "changes_requirements",
+            "explanation": "Giả định người dùng đã chọn exact input S2; không phân loại lại vì S01 unchanged.",
+            "existing_source_refs": [],
+            "proposed_input": {
+              "command_id": "CMD-app",
+              "blob_id": "INPUT-consented"
+            },
+            "s01_request": {
+              "mode": "update",
+              "spec_id": "SPEC-demo",
+              "base_revision": 2
+            }
+          }
+        },
+        "E-consent": {
+          "command_id": "CMD-app",
+          "kind": "consent_recorded",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-interpret"
+            },
+            "respondent": "DEMO USER (giả định)",
+            "text": "Minh họa đã xem full input, diff và S01 base 2/S02 source S1",
+            "approved_input_sha256": "05569c126290e69cbe86e44009a9e65fbf62024fd8a9ef31fec2f213008b577c"
+          }
+        },
+        "E-dispatch": {
+          "command_id": "CMD-app",
+          "kind": "s01_dispatch_intent",
+          "payload": {
+            "answer_id": "ANSWER",
+            "consent_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-consent"
+            },
+            "s01_store_key": "synthetic",
+            "s01_run_id": "S01-observed",
+            "s01_request": {
+              "mode": "update",
+              "spec_id": "SPEC-demo",
+              "base_revision": 2
+            },
+            "input_stage_ref": {
+              "command_id": "CMD-app",
+              "blob_id": "INPUT-consented"
+            }
+          }
+        },
+        "E-observe": {
+          "command_id": "CMD-app",
+          "kind": "s01_result_observed",
+          "payload": {
+            "answer_id": "ANSWER",
+            "dispatch_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-dispatch"
+            },
+            "s01_run_id": "S01-observed",
+            "lookup_status": "validated",
+            "snapshot_id": "S2"
+          }
+        },
+        "E-apply": {
+          "command_id": "CMD-app",
+          "kind": "application_applied",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-interpret"
+            },
+            "consent_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-consent"
+            },
+            "s01_observation_event": {
+              "command_id": "CMD-app",
+              "event_id": "E-observe"
+            },
+            "change_id": "CH2",
+            "new_source_context_id": "C-observed",
+            "observed_source_context_id": "C-observed",
+            "resolved_issue_id": "Q2"
+          }
+        },
+        "E-final": {
+          "command_id": "CMD-app",
+          "kind": "finalized",
+          "payload": {
+            "run_id": "RUN-app",
+            "promotions": []
+          }
+        }
+      },
+      "publication": {
+        "base_pair": [
+          "M1",
+          "AS1"
+        ],
+        "new_pair": [
+          "M2",
+          "AS2"
+        ],
+        "atomic_new_record_ids": [
+          "M2",
+          "AS2",
+          "Q2",
+          "CH2",
+          "RUN-app"
+        ],
+        "archive_source_context_id": "C-observed",
+        "application_event_id": "E-apply"
+      },
+      "expected": {
+        "source_snapshot_before": "S1",
+        "observed_snapshot": "S2",
+        "s01_result_kind": "unchanged",
+        "change_kind": "requirements_switch",
+        "model_source_context_after": "C-observed",
+        "archive_of_new_run": "C-observed",
+        "application_count": 1,
+        "s01_submission_count": 1,
+        "a3_accepts_this_export": false
+      }
+    }
+  },
+  "state_scenarios": [
+    {
+      "id": "A1-1",
+      "graph": "same_snapshot",
+      "expected": "Commit analysis_edit giữ C2-origin; archive C-observed riêng, giữ consent/observation."
+    },
+    {
+      "id": "A1-2",
+      "graph": "different_snapshot_despite_unchanged",
+      "expected": "Commit requirements_switch C1/S1 → C-observed/S2, dù result_kind unchanged."
+    },
+    {
+      "id": "A1-3",
+      "graph": "same_snapshot",
+      "cut": "S01-observed đã commit, trước S02 E-observe/T3",
+      "recovery": "Lookup đúng run/receipt; giữ INPUT-consented/hash, thêm observation rồi T3 cùng command nếu base còn đúng.",
+      "expected_new_s01_submissions": 0,
+      "expected_application_total": 1
+    },
+    {
+      "id": "A1-4-model",
+      "graph": "different_snapshot_despite_unchanged",
+      "race": "M hoặc AS head đổi trước T3",
+      "expected": "Stale, không E-apply; successor claim pin base mới sau impact review và tính lại Smodel/Sobserved, không gửi lại S01.",
+      "old_command_application_count": 0
+    },
+    {
+      "id": "A1-4-set",
+      "graph": "same_snapshot",
+      "race": "Chỉ AS head đổi trước T3",
+      "expected": "Stale như model race; không coi same snapshot là bỏ qua CAS."
+    },
+    {
+      "id": "A1-5",
+      "graph": "same_snapshot",
+      "invalid_variants": [
+        {
+          "mutation": "observation.s01_run_id khác E-dispatch",
+          "expected": "reject run identity"
+        },
+        {
+          "mutation": "C-observed.snapshot_id khác S2 envelope/observation",
+          "expected": "reject snapshot binding"
+        },
+        {
+          "mutation": "RAW-observed bytes khác INPUT-consented dù cùng normalized value",
+          "expected": "reject exact consent raw hash"
+        },
+        {
+          "mutation": "consent trỏ interpretation khác",
+          "expected": "reject consent chain"
+        },
+        {
+          "mutation": "S01 request base khác consent request",
+          "expected": "reject exact request"
+        },
+        {
+          "mutation": "requirements_switch nhưng Smodel=Sobserved",
+          "expected": "reject unchanged snapshot invariant"
+        }
+      ],
+      "expected_head_unchanged": true,
+      "expected_application_count": 0
+    },
+    {
+      "id": "A1-6",
+      "graph": "same_snapshot",
+      "cut": "T3 đã commit, mất ACK",
+      "recovery": "Checked lookup trả đúng RUN-app/E-apply; không thay timestamps hoặc IDs.",
+      "expected_application_total": 1,
+      "expected_new_s01_submissions": 0
+    }
+  ]
+}

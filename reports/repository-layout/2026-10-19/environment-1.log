@@ -1,0 +1,22 @@
+$ /Users/macbookpro/Documents/DACN_implementation/.tools/uv pip install --python /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python --no-index --find-links /Users/macbookpro/Documents/DACN_implementation/.tools/wheelhouse --find-links /Users/macbookpro/Documents/DACN_implementation/dist --require-hashes -r /Users/macbookpro/Documents/DACN_implementation/packages/s02/requirements-dev.lock
+cwd=/Users/macbookpro/Documents/DACN_implementation
+Using Python 3.13.16 environment at: /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv
+Resolved 15 packages in 4ms
+Installed 15 packages in 18ms
+ + attrs==26.1.0
+ + dacn-s01==0.1.0a6
+ + iniconfig==2.3.1
+ + jsonschema==4.26.0
+ + jsonschema-specifications==2025.9.1
+ + packaging==26.3
+ + pip==25.2
+ + pluggy==1.6.0
+ + pygments==2.21.0
+ + pytest==9.1.1
+ + referencing==0.37.0
+ + rpds-py==2026.9.1
+ + setuptools==80.9.0
+ + simplejson==4.2.0
+ + wheel==0.45.1
+
+exit_code=0

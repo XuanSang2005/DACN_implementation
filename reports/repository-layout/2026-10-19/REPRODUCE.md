@@ -1,0 +1,16 @@
+# Tái lập kiểm chứng layout
+
+Đường dẫn package hiện hành và lệnh chuẩn bị/build/CLI/test nằm trong [README workspace](../../../README.md). Tài liệu này chỉ bổ sung cách đối chiếu đúng lượt bàn giao; không ghi lại vào thư mục báo cáo này.
+
+1. Tạo venv mới từ runtime `.runtime/python/bin/python3.13` và `packages/s02/requirements-dev.lock`, offline qua `.tools/uv`, `.tools/wheelhouse`, `dist/`. Các locks không đổi bytes. Muốn chỉ kiểm S01 thì dùng S01 dev lock và cài wheel S01 riêng. [environment.json](environment.json) ghi interpreter/argv thực của lượt này.
+2. Build `tools/build_packages.py --package all --output-dir <thư mục builds mới>`. So payload cùng METADATA/WHEEL với wheels lịch sử (snippet trong README); sau đó cài hai rebuilt wheels vào venv mới bằng `--no-deps --force-reinstall`, chạy pip check. S02 lock pin hash ZIP S01 cũ, không tự sửa lock khi ZIP rebuild có metadata thời gian khác.
+3. Chạy `tools/collect_evidence.py --package all --wheel-dir <builds> --report-dir <manifest mới>` để xác nhận 16 S01 + 14 S02 files và import non-editable site-packages. [Manifest thực](package-verification/manifest.json) của lượt bàn giao giữ đầy đủ versions, paths, hashes và inventories.
+4. Chạy `tools/run_checks.py --package all --report-dir <suite mới>`. Runner dùng process riêng mỗi package/backend, cwd tạm ngoài checkout; không bỏ instrumentation, không gộp conftest. [Commands](suites/commands.json) và [observations](suites/observations.json) của lượt này giữ argv/cwd/exit/events/backend counts. Kỳ vọng baseline hiện tại: S01 986 và S02 189 passed mỗi backend, không skipped.
+5. Chạy audit riêng bằng `packages/s02/tools/run_checks.py --audit-only --audit-file <audit-a1/test_independent_audit.py> --audit-file <audit-a2/test_followup_boundaries.py> --report-dir <audit mới>`. [Commands audit](independent-audits/commands.json) ghi chính xác đường dẫn/hashes bên ngoài và adapter helpers. **Không sửa assertions hoặc file audit.** Kỳ vọng 7 passed/backend ở file đầu; file S02-05 có 2 passed + 2 failed/backend, overall exit 1. Đây là lỗi đã biết, không được bỏ qua thành exit 0.
+6. Chạy `tools/check_layout.py --report-dir <smoke mới>`; [checks thực](layout-checks/checks.json) chứa 18 command results, sáu guard cases, 15 JSON examples, 33 S02 record shapes, 85 links hướng dẫn. Đây là structural/synthetic smoke, không full semantic evaluation.
+
+Các runner/build/collector sẽ từ chối thư mục output/report **đã tồn tại**, kể cả rỗng; chọn một child directory chưa có bên trong thư mục kết quả mới. Root pyproject không build package; không chạy `pip install .` hoặc pytest gom toàn repo ở root. Không thêm src vào PYTHONPATH; chỉ helper tests được tìm qua vị trí mới.
+
+Mọi DB vận hành hoặc fixtures đang được ghi đặt ở vùng tạm ngoài checkout/dataset. Runner archive DB race/kill hoặc audit synthetic cần bằng chứng vào report mới; không mở DB lịch sử để tiếp tục chạy. Nếu cần kiểm bảo toàn một lần mới, lập inventory/hash **mới từ đầu lần đó**, không gọi inventory bàn giao là dữ liệu vừa đo.
+
+[ROLLBACK.md](ROLLBACK.md) chỉ cách hoàn tác có kiểm hash, chưa thực thi. [PATH_MAPPING.md](PATH_MAPPING.md) và JSON tương ứng chỉ ra old→new; nội dung sửa nằm trong patch riêng. Các scripts `tools/legacy` chỉ giúp đối chiếu lịch sử, không phải lệnh tái lập layout mới.

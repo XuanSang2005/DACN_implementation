@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation/packages/s02
+configfile: pyproject.toml
+collecting ... collected 28 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_before_dispatch_positive[interrupted-staged] S02_EVIDENCE {"attempts": [], "bytes_preserved": true, "kind": "S02_05_positive", "pin": "staged", "selected": "ArtConfig", "status": "interrupted"}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_before_dispatch_positive[interrupted-reused] S02_EVIDENCE {"attempts": [], "bytes_preserved": true, "kind": "S02_05_positive", "pin": "reused", "selected": "92a58195-212f-4cb8-8d36-3c92fd9ed06a", "status": "interrupted"}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_before_dispatch_positive[interrupted-request_only] S02_EVIDENCE {"attempts": [], "bytes_preserved": true, "kind": "S02_05_positive", "pin": "request_only", "selected": "fe7167a2-eddb-4e05-aa21-34e86db644fa", "status": "interrupted"}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_before_dispatch_positive[failed-staged] S02_EVIDENCE {"attempts": [], "bytes_preserved": true, "kind": "S02_05_positive", "pin": "staged", "selected": "ArtConfig", "status": "failed"}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_before_dispatch_positive[failed-reused] S02_EVIDENCE {"attempts": [], "bytes_preserved": true, "kind": "S02_05_positive", "pin": "reused", "selected": "65281324-e7b3-4efd-9772-845653cb0f00", "status": "failed"}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_before_dispatch_positive[failed-request_only] S02_EVIDENCE {"attempts": [], "bytes_preserved": true, "kind": "S02_05_positive", "pin": "request_only", "selected": "79c2b93b-c635-4a7d-9509-c8014a662645", "status": "failed"}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[interrupted-False-staged] S02_EVIDENCE {"after_sha256": "352b7ad742b3db8f6cb8c6e7efd3569ac0664c5cdaffd2c757973f06f70f2a5d", "before_sha256": "352b7ad742b3db8f6cb8c6e7efd3569ac0664c5cdaffd2c757973f06f70f2a5d", "command_id": "a9354adc-ae24-4605-b4f6-3f018082959c", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[interrupted-False-reused] S02_EVIDENCE {"after_sha256": "545b282d14d3f1f9d086ca35bcc03b9716e5cf617560803713e0bfe9237590b4", "before_sha256": "545b282d14d3f1f9d086ca35bcc03b9716e5cf617560803713e0bfe9237590b4", "command_id": "e9b0277e-38a5-445e-a254-0d0657f08541", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[interrupted-True-staged] S02_EVIDENCE {"after_sha256": "267fc840a8894be48fbf4a844cf67d3b8326b5cdca699c66449ea49e2ee27c8a", "before_sha256": "267fc840a8894be48fbf4a844cf67d3b8326b5cdca699c66449ea49e2ee27c8a", "command_id": "dc5f4118-ab91-4626-8c6e-4eb4579ac5ca", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[interrupted-True-reused] S02_EVIDENCE {"after_sha256": "e285b226a7ca65984d1bfeb86da297a31f66ee18e50cafb4ca183c04284d88f5", "before_sha256": "e285b226a7ca65984d1bfeb86da297a31f66ee18e50cafb4ca183c04284d88f5", "command_id": "92cc7b5f-4481-4526-b760-c9daba4df48e", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[failed-False-staged] S02_EVIDENCE {"after_sha256": "5b2ade648762efceded67649943753451f24c9f8b2624fe4349917d72850a312", "before_sha256": "5b2ade648762efceded67649943753451f24c9f8b2624fe4349917d72850a312", "command_id": "a4f8fcd3-3c88-447c-a96f-b02f20be538f", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[failed-False-reused] S02_EVIDENCE {"after_sha256": "0bb455c89c7abd977c9eab4b61ca191b5b5570ddd2c86fdefe68d46b332a4563", "before_sha256": "0bb455c89c7abd977c9eab4b61ca191b5b5570ddd2c86fdefe68d46b332a4563", "command_id": "2c762e47-7ccb-4be7-8424-66ff3c6fed9a", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[failed-True-staged] S02_EVIDENCE {"after_sha256": "a410bee4ccfb92b4073f3fae7f082b889a8bf1a65475fe50b914d70e0635be36", "before_sha256": "a410bee4ccfb92b4073f3fae7f082b889a8bf1a65475fe50b914d70e0635be36", "command_id": "7e96f2b7-8f57-416a-b0d3-9fb53618fc77", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_wrong_identity_rejected_even_if_same_bytes[failed-True-reused] S02_EVIDENCE {"after_sha256": "25dd9c312cbe92a1a995829e48e7efe1d8e2e38c2d47c56897f0ef737d8fdce6", "before_sha256": "25dd9c312cbe92a1a995829e48e7efe1d8e2e38c2d47c56897f0ef737d8fdce6", "command_id": "0c8c46bc-088e-4b51-b98e-355d987efec4", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_mismatch_rolls_back_head_publication[staged] S02_EVIDENCE {"after_sha256": "a295ad19ef7b2eb292fd9539c337d2b8aad6f846a8f815bbc4e9def8468f9aab", "before_sha256": "a295ad19ef7b2eb292fd9539c337d2b8aad6f846a8f815bbc4e9def8468f9aab", "command_id": "d265ae5c-ef71-4047-bb66-5695ea7483ba", "heads": ["M1", "AS1"], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_mismatch_rolls_back_head_publication[reused] S02_EVIDENCE {"after_sha256": "f5da6c1c043c929733d270e223a390f845ba9db32acf9e853d23565ae36ec460", "before_sha256": "f5da6c1c043c929733d270e223a390f845ba9db32acf9e853d23565ae36ec460", "command_id": "f0936895-571d-4ad2-a078-1f49d475f23e", "heads": ["M1", "AS1"], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_request_pin_must_agree_with_prepared_and_run[False-staged] S02_EVIDENCE {"after_sha256": "a1c791dde42296d721c811dc445c3782653f5c68c9ea69649f2808b897f657ec", "before_sha256": "a1c791dde42296d721c811dc445c3782653f5c68c9ea69649f2808b897f657ec", "command_id": "3ff2ebbd-63f9-41f7-877d-4d2a7e496750", "heads": [null, null], "invariant": "run_intent_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_request_pin_must_agree_with_prepared_and_run[False-reused] S02_EVIDENCE {"after_sha256": "74be153bbb85e282c3ce977f2a5702e502ea8415da5356e25b1a41a3ce658d5e", "before_sha256": "74be153bbb85e282c3ce977f2a5702e502ea8415da5356e25b1a41a3ce658d5e", "command_id": "272f36ee-cf9c-4fb2-8bc3-cd5af8e73ce4", "heads": [null, null], "invariant": "run_intent_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_request_pin_must_agree_with_prepared_and_run[False-request_only] S02_EVIDENCE {"after_sha256": "5c15ef1b3b747937e87649af2d2b0370c4a815ae2d8c3922e0334b22346804e1", "before_sha256": "5c15ef1b3b747937e87649af2d2b0370c4a815ae2d8c3922e0334b22346804e1", "command_id": "37676afa-7079-4db4-bcc1-6f216043dee5", "heads": [null, null], "invariant": "run_intent_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_request_pin_must_agree_with_prepared_and_run[True-staged] S02_EVIDENCE {"after_sha256": "944e5b8dbad755dfc5616be305f0f8f05e11d5ee177600801914b69e64cfdaf8", "before_sha256": "944e5b8dbad755dfc5616be305f0f8f05e11d5ee177600801914b69e64cfdaf8", "command_id": "062f878f-703b-4b35-b66a-5639d2d84bc6", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_request_pin_must_agree_with_prepared_and_run[True-reused] S02_EVIDENCE {"after_sha256": "e090fa918eed09428cdb89e370c44458a72695212c2504ed3b7e1f069735e148", "before_sha256": "e090fa918eed09428cdb89e370c44458a72695212c2504ed3b7e1f069735e148", "command_id": "4be4428b-eec5-434c-b62a-68c26836b475", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_request_pin_must_agree_with_prepared_and_run[True-request_only] PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_staged_config_requires_exact_promotion[missing_promotion] S02_EVIDENCE {"after_sha256": "f4a3b05cff5f0f44cc92cc62b3dd45bc8b752741f7f426246b6a037a71df10bf", "before_sha256": "f4a3b05cff5f0f44cc92cc62b3dd45bc8b752741f7f426246b6a037a71df10bf", "command_id": "ad3c5787-dc00-4cf5-8624-438e299ac38a", "heads": [null, null], "invariant": "attempt_prepared_config", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_staged_config_requires_exact_promotion[wrong_bytes] S02_EVIDENCE {"after_sha256": "e9004579084b0f1aac37b4efa08b811772b8a8ca65475bb4ce4bdad3f7fd7642", "before_sha256": "e9004579084b0f1aac37b4efa08b811772b8a8ca65475bb4ce4bdad3f7fd7642", "command_id": "4ac00859-a84a-47c8-bdfb-b681c2da1fb7", "heads": [null, null], "invariant": "promotion_exact_bytes", "kind": "S02_05_rollback", "sql_dump_equal": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_checked_read_rejects_bad_pre_dispatch_history[staged] S02_EVIDENCE {"fixture": "temporary DB operational-gate bypass", "kind": "S02_05_checked_read", "lookup": "verify", "pin": "staged", "rejected": true}
+S02_EVIDENCE {"fixture": "temporary DB operational-gate bypass", "kind": "S02_05_checked_read", "lookup": "get_command", "pin": "staged", "rejected": true}
+S02_EVIDENCE {"fixture": "temporary DB operational-gate bypass", "kind": "S02_05_checked_read", "lookup": "get_record", "pin": "staged", "rejected": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_checked_read_rejects_bad_pre_dispatch_history[reused] S02_EVIDENCE {"fixture": "temporary DB operational-gate bypass", "kind": "S02_05_checked_read", "lookup": "verify", "pin": "reused", "rejected": true}
+S02_EVIDENCE {"fixture": "temporary DB operational-gate bypass", "kind": "S02_05_checked_read", "lookup": "get_command", "pin": "reused", "rejected": true}
+S02_EVIDENCE {"fixture": "temporary DB operational-gate bypass", "kind": "S02_05_checked_read", "lookup": "get_record", "pin": "reused", "rejected": true}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_after_dispatch_remains_valid[staged] PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02/tests/test_config_pin.py::test_config_pin_after_dispatch_remains_valid[reused] PASSED
+
+- generated xml file: /Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/targeted-config-corrected.xml -
+S02_ENCODERS selected=c calls={'c': 16799, 'python': 0}
+============================= 28 passed in 11.60s ==============================

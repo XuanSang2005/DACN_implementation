@@ -1,0 +1,80 @@
+{
+  "illustration": {
+    "status": "ví dụ minh họa chưa thực thi",
+    "title": "Thiếu quyền hủy và actor mới là hai nhánh minh họa",
+    "production_importable": false,
+    "meaning": "Kịch bản/projections cho proposal; không phải full canonical export, kết quả mong đợi chưa chạy.",
+    "user_business_confirmation": false
+  },
+  "contract_version": "s02/0.1.0-draft.3",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
+  "bindings": [
+    {
+      "name": "selected_s01_snapshot",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "name": "prior_illustrative_model",
+      "file": "../s02/01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "name": "clinic_flow",
+      "file": "01-clinic-steps-1-4.json",
+      "pointer": "/progression"
+    }
+  ],
+  "cases": [
+    {
+      "name": "cancel-permission",
+      "evidence": [
+        {
+          "snapshot_id": "snap-demo-clinic-r1",
+          "input_pointer": "/functional_requirements/1"
+        },
+        {
+          "snapshot_id": "snap-demo-clinic-r1",
+          "input_pointer": "/non_functional_requirements/1"
+        }
+      ],
+      "invalid_inference": "Bệnh nhân được xem hồ sơ của mình nên được hủy lịch.",
+      "expected_rejection_reason": "R4 chỉ nêu quyền xem; không cung cấp quyền hủy R2.",
+      "action_projection": {
+        "name": "Hủy lịch",
+        "initiator": "unknown",
+        "actor_ids": [],
+        "permission_rule_ids": [],
+        "state": "needs_clarification",
+        "origin": "inferred"
+      },
+      "question": "Ai được hủy lịch; quyền áp dụng cho lịch/phòng khám nào?",
+      "continuation": "Có thể phân tích phần đọc dữ liệu nháp, chưa tự chứng nhận scope được chấp nhận."
+    },
+    {
+      "name": "new-actor",
+      "assumption": "LLM giả định có Quản trị viên; nguồn clinic không cung cấp vai trò này.",
+      "candidate_actor_projection": {
+        "name": "Quản trị viên",
+        "kind": "candidate",
+        "state": "needs_clarification",
+        "origin": "inferred",
+        "source_refs": [
+          {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/context"
+          }
+        ],
+        "rationale": "Giả thuyết phân tích cần hỏi; context không chứng minh vai trò tồn tại."
+      },
+      "question": "Có vai trò quản trị trong phạm vi hệ thống không? Nếu có, trách nhiệm và quyền cụ thể là gì?",
+      "expected": {
+        "add_to_s01_actors": false,
+        "assign_global_permission": false,
+        "canonical_supplied_actor_count": 2,
+        "issue_open": true,
+        "if_user_adds_requirement": "Answer → interpretation → full-input consent → S01 update; chưa có câu trả lời thực."
+      }
+    }
+  ]
+}

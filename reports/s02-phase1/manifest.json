@@ -1,0 +1,516 @@
+{
+  "captured_at_utc": "2026-10-19T01:49:49.856274+00:00",
+  "python": "3.13.16 (main, Oct  9 2026, 15:11:24) [Clang 22.1.3 ]",
+  "executable": "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "sqlite": "3.53.1",
+  "gil_enabled": true,
+  "dependencies": {
+    "pip": "25.2",
+    "packaging": "26.3",
+    "Pygments": "2.21.0",
+    "jsonschema-specifications": "2025.9.1",
+    "jsonschema": "4.26.0",
+    "iniconfig": "2.3.1",
+    "dacn-s02": "0.1.0a1",
+    "dacn-s01": "0.1.0a6",
+    "pytest": "9.1.1",
+    "setuptools": "80.9.0",
+    "simplejson": "4.2.0",
+    "wheel": "0.45.1",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1",
+    "pluggy": "1.6.0",
+    "attrs": "26.1.0"
+  },
+  "locks": {
+    "requirements-dev.lock": "d5917dc7467238dd8bea843eed827a5c9eb79601af7e9c1fae25ab39b1d331bb",
+    "requirements.lock": "a30bc92e79a7a420346f1b169ea04d350b13cc1352bfab21b47e4b43ef138e83"
+  },
+  "packages": [
+    {
+      "version": "0.1.0a6",
+      "import_path": "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/lib/python3.13/site-packages/dacn_s01/__init__.py",
+      "wheel": "/Users/macbookpro/Documents/DACN_implementation/dist/dacn_s01-0.1.0a6-py3-none-any.whl",
+      "wheel_sha256": "e4ebbe7988d7cb5255d93845c94ba41aeb043900c762ca7636d4f7c093bff20b",
+      "files": [
+        {
+          "path": "__init__.py",
+          "source_sha256": "d6a5bddc4982a97be73fe1b04eaff96e0644a1e1f0c765775111b34b5a451a2b",
+          "installed_sha256": "d6a5bddc4982a97be73fe1b04eaff96e0644a1e1f0c765775111b34b5a451a2b",
+          "wheel_sha256": "d6a5bddc4982a97be73fe1b04eaff96e0644a1e1f0c765775111b34b5a451a2b",
+          "equal": true
+        },
+        {
+          "path": "__main__.py",
+          "source_sha256": "9b9e03be57d68556119bf6b332d6c006cc4f892f70a45653ad76155970b3ee0f",
+          "installed_sha256": "9b9e03be57d68556119bf6b332d6c006cc4f892f70a45653ad76155970b3ee0f",
+          "wheel_sha256": "9b9e03be57d68556119bf6b332d6c006cc4f892f70a45653ad76155970b3ee0f",
+          "equal": true
+        },
+        {
+          "path": "cli.py",
+          "source_sha256": "bee853a366ed4b20035e7bcee9f6e53ec09fb4d109ac96b7f0cb66ec92153a34",
+          "installed_sha256": "bee853a366ed4b20035e7bcee9f6e53ec09fb4d109ac96b7f0cb66ec92153a34",
+          "wheel_sha256": "bee853a366ed4b20035e7bcee9f6e53ec09fb4d109ac96b7f0cb66ec92153a34",
+          "equal": true
+        },
+        {
+          "path": "codec.py",
+          "source_sha256": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+          "installed_sha256": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+          "wheel_sha256": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+          "equal": true
+        },
+        {
+          "path": "envelope.py",
+          "source_sha256": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+          "installed_sha256": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+          "wheel_sha256": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+          "equal": true
+        },
+        {
+          "path": "errors.py",
+          "source_sha256": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+          "installed_sha256": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+          "wheel_sha256": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+          "equal": true
+        },
+        {
+          "path": "local_io.py",
+          "source_sha256": "6fc4da8324c1e718655fdba0d97d9ae5c1c39c56583d69cce144af01c6306588",
+          "installed_sha256": "6fc4da8324c1e718655fdba0d97d9ae5c1c39c56583d69cce144af01c6306588",
+          "wheel_sha256": "6fc4da8324c1e718655fdba0d97d9ae5c1c39c56583d69cce144af01c6306588",
+          "equal": true
+        },
+        {
+          "path": "py.typed",
+          "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "installed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "wheel_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "equal": true
+        },
+        {
+          "path": "repository.py",
+          "source_sha256": "64bee10288a685fe373606781d2d7f4e60c6fc7397ca3b63af37a2c752aed106",
+          "installed_sha256": "64bee10288a685fe373606781d2d7f4e60c6fc7397ca3b63af37a2c752aed106",
+          "wheel_sha256": "64bee10288a685fe373606781d2d7f4e60c6fc7397ca3b63af37a2c752aed106",
+          "equal": true
+        },
+        {
+          "path": "revision.py",
+          "source_sha256": "4f52f147d7a7743e69b9d5424a21c26ebdd93b78df77f8e42922e221d2fdd782",
+          "installed_sha256": "4f52f147d7a7743e69b9d5424a21c26ebdd93b78df77f8e42922e221d2fdd782",
+          "wheel_sha256": "4f52f147d7a7743e69b9d5424a21c26ebdd93b78df77f8e42922e221d2fdd782",
+          "equal": true
+        },
+        {
+          "path": "schema_resource.py",
+          "source_sha256": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+          "installed_sha256": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+          "wheel_sha256": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+          "equal": true
+        },
+        {
+          "path": "schemas/input/1.0.0/PROVENANCE.md",
+          "source_sha256": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+          "installed_sha256": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+          "wheel_sha256": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+          "equal": true
+        },
+        {
+          "path": "schemas/input/1.0.0/system-input.schema.json",
+          "source_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+          "installed_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+          "wheel_sha256": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+          "equal": true
+        },
+        {
+          "path": "service.py",
+          "source_sha256": "8f47ec19aa385b0a1c6cfd954487d82eabcc20efde7047b9a95e181d22cae8b9",
+          "installed_sha256": "8f47ec19aa385b0a1c6cfd954487d82eabcc20efde7047b9a95e181d22cae8b9",
+          "wheel_sha256": "8f47ec19aa385b0a1c6cfd954487d82eabcc20efde7047b9a95e181d22cae8b9",
+          "equal": true
+        },
+        {
+          "path": "storage_schema.py",
+          "source_sha256": "9a6d6dfa03c3369284f09662bbdcbf13b5f694e1d7501fa71064221b2bd8e7c2",
+          "installed_sha256": "9a6d6dfa03c3369284f09662bbdcbf13b5f694e1d7501fa71064221b2bd8e7c2",
+          "wheel_sha256": "9a6d6dfa03c3369284f09662bbdcbf13b5f694e1d7501fa71064221b2bd8e7c2",
+          "equal": true
+        },
+        {
+          "path": "validation.py",
+          "source_sha256": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+          "installed_sha256": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+          "wheel_sha256": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+          "equal": true
+        }
+      ]
+    },
+    {
+      "version": "0.1.0a1",
+      "import_path": "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/lib/python3.13/site-packages/dacn_s02/__init__.py",
+      "wheel": "/Users/macbookpro/Documents/DACN_implementation/s02/dist/dacn_s02-0.1.0a1-py3-none-any.whl",
+      "wheel_sha256": "5f43c9d60eedc2d8ab507ebc83473476bc8699df4a712c69e53e1494ccc6b630",
+      "files": [
+        {
+          "path": "__init__.py",
+          "source_sha256": "314fdc94efab909c383cd3242f5eba6ec399682f5317a179b1ce427f9c01aa9f",
+          "installed_sha256": "314fdc94efab909c383cd3242f5eba6ec399682f5317a179b1ce427f9c01aa9f",
+          "wheel_sha256": "314fdc94efab909c383cd3242f5eba6ec399682f5317a179b1ce427f9c01aa9f",
+          "equal": true
+        },
+        {
+          "path": "__main__.py",
+          "source_sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+          "installed_sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+          "wheel_sha256": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+          "equal": true
+        },
+        {
+          "path": "cli.py",
+          "source_sha256": "67bbde0c8062b79670494327465edd8eac43ff06d6ae463842154a5fd72c75d1",
+          "installed_sha256": "67bbde0c8062b79670494327465edd8eac43ff06d6ae463842154a5fd72c75d1",
+          "wheel_sha256": "67bbde0c8062b79670494327465edd8eac43ff06d6ae463842154a5fd72c75d1",
+          "equal": true
+        },
+        {
+          "path": "codec_boundary.py",
+          "source_sha256": "12a8e60713950ad57514e73d5b8f4b6738c4ef949f7bc54bf625cfb9923a73a2",
+          "installed_sha256": "12a8e60713950ad57514e73d5b8f4b6738c4ef949f7bc54bf625cfb9923a73a2",
+          "wheel_sha256": "12a8e60713950ad57514e73d5b8f4b6738c4ef949f7bc54bf625cfb9923a73a2",
+          "equal": true
+        },
+        {
+          "path": "errors.py",
+          "source_sha256": "6a04e0e3e335b29aa4802be943779b90ff6c348f8afd4a38ce5ea8a283e910e5",
+          "installed_sha256": "6a04e0e3e335b29aa4802be943779b90ff6c348f8afd4a38ce5ea8a283e910e5",
+          "wheel_sha256": "6a04e0e3e335b29aa4802be943779b90ff6c348f8afd4a38ce5ea8a283e910e5",
+          "equal": true
+        },
+        {
+          "path": "events.py",
+          "source_sha256": "b8dd56ebc3ed4b71b2f07c6b05df669757b10124ce35fd2593f2a421acef4f22",
+          "installed_sha256": "b8dd56ebc3ed4b71b2f07c6b05df669757b10124ce35fd2593f2a421acef4f22",
+          "wheel_sha256": "b8dd56ebc3ed4b71b2f07c6b05df669757b10124ce35fd2593f2a421acef4f22",
+          "equal": true
+        },
+        {
+          "path": "local_io.py",
+          "source_sha256": "993d9e65359e3f1f24269c3998c699a9a900c437d0505fde855f5c574a94a9da",
+          "installed_sha256": "993d9e65359e3f1f24269c3998c699a9a900c437d0505fde855f5c574a94a9da",
+          "wheel_sha256": "993d9e65359e3f1f24269c3998c699a9a900c437d0505fde855f5c574a94a9da",
+          "equal": true
+        },
+        {
+          "path": "repository.py",
+          "source_sha256": "5611f5c14f3a07e916dc34f563c31172a2b3461cbf90ae8f885b7d4da4ecb045",
+          "installed_sha256": "5611f5c14f3a07e916dc34f563c31172a2b3461cbf90ae8f885b7d4da4ecb045",
+          "wheel_sha256": "5611f5c14f3a07e916dc34f563c31172a2b3461cbf90ae8f885b7d4da4ecb045",
+          "equal": true
+        },
+        {
+          "path": "s01_adapter.py",
+          "source_sha256": "b0180cd6398641d2b189ade29bb6710fdcce2add0129b9271500f61cacfcb36d",
+          "installed_sha256": "b0180cd6398641d2b189ade29bb6710fdcce2add0129b9271500f61cacfcb36d",
+          "wheel_sha256": "b0180cd6398641d2b189ade29bb6710fdcce2add0129b9271500f61cacfcb36d",
+          "equal": true
+        },
+        {
+          "path": "schemas/contract.json",
+          "source_sha256": "c1b1c005aa86c23664f6addaf02120789afae503028dcfe0c00d9e4a1651107c",
+          "installed_sha256": "c1b1c005aa86c23664f6addaf02120789afae503028dcfe0c00d9e4a1651107c",
+          "wheel_sha256": "c1b1c005aa86c23664f6addaf02120789afae503028dcfe0c00d9e4a1651107c",
+          "equal": true
+        },
+        {
+          "path": "scope.py",
+          "source_sha256": "52c9e7d8026a652075c06cd4bb42ae057654509c257148d6a57364c56d012405",
+          "installed_sha256": "52c9e7d8026a652075c06cd4bb42ae057654509c257148d6a57364c56d012405",
+          "wheel_sha256": "52c9e7d8026a652075c06cd4bb42ae057654509c257148d6a57364c56d012405",
+          "equal": true
+        },
+        {
+          "path": "service.py",
+          "source_sha256": "62bab717a4fb90e747bee9d6b7175a5e6168aaab13084564ba1f718801c4314f",
+          "installed_sha256": "62bab717a4fb90e747bee9d6b7175a5e6168aaab13084564ba1f718801c4314f",
+          "wheel_sha256": "62bab717a4fb90e747bee9d6b7175a5e6168aaab13084564ba1f718801c4314f",
+          "equal": true
+        },
+        {
+          "path": "storage_schema.py",
+          "source_sha256": "85bfd5c1dd9e181e0ef516f24a43d80832cf57111f00f867b9887364695c299c",
+          "installed_sha256": "85bfd5c1dd9e181e0ef516f24a43d80832cf57111f00f867b9887364695c299c",
+          "wheel_sha256": "85bfd5c1dd9e181e0ef516f24a43d80832cf57111f00f867b9887364695c299c",
+          "equal": true
+        },
+        {
+          "path": "validation.py",
+          "source_sha256": "1927a93f0705481f7f242921d61b2a560d0231da842e60efadb334393a35eaa3",
+          "installed_sha256": "1927a93f0705481f7f242921d61b2a560d0231da842e60efadb334393a35eaa3",
+          "wheel_sha256": "1927a93f0705481f7f242921d61b2a560d0231da842e60efadb334393a35eaa3",
+          "equal": true
+        }
+      ]
+    }
+  ],
+  "db_structure": {
+    "version": 1,
+    "application_id": 1145127730,
+    "ddl_sha256": "cda2a0888bedbb27fb13b20f8695453289d37860206f66d1ce71b04300a1c370",
+    "observed_process_databases": [
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/kill-capture-after_commit.sqlite3",
+        "sha256": "b4e4b906980b9bae8e4c66e523729fe726c2d8e8ec2d10cd6014eb52202e7304",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/kill-capture-before_commit.sqlite3",
+        "sha256": "334274762e04004a84c85bd547506c4ffd3c21ff3faabc4b405616d59cc79acc",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/kill-finalize-after_commit.sqlite3",
+        "sha256": "c396d3f46bbf4d5c086aa039ae2e85c8593fc4c9d2fb04061a10b981a71319f1",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/kill-finalize-before_commit.sqlite3",
+        "sha256": "4c930cbea8f69b780a6bc451ce33ec96535109f68a4e876dfe038dd3ece0fc1c",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/race-analysis_and_log.sqlite3",
+        "sha256": "50eb36248d710f91098138698bd9dff1f43e14e07ec30ad1af3ba1bf88d10bdd",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/race-analysis_set.sqlite3",
+        "sha256": "3f53754a04b6e3b29bc90f770d0d498f6a0ad3603b24e9d06f2ac6fc4dbfc0f2",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/race-application-claim.sqlite3",
+        "sha256": "234142cd926390509992e5d8eb080574c5b9eb5445989d1b23bb6e63924ea20a",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/race-application-finalize.sqlite3",
+        "sha256": "1a84ea82c962c896a41e7237e56fb9d2f0246c68cd5753d4446a74e7703405b1",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/c/race-model.sqlite3",
+        "sha256": "e5be740a231cc13c7bd2297ad07b255a81e410ff509cf88941e5fade29c321e9",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/kill-capture-after_commit.sqlite3",
+        "sha256": "7344ff7c08e099528a1b84c9243aa4e1e8d1502910b9b0683e89dbb02e7106fc",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/kill-capture-before_commit.sqlite3",
+        "sha256": "2531dc31d07f5b6bcb7ae35e3e9e452e7d1028ab214a9e22e56ffc8235283b59",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/kill-finalize-after_commit.sqlite3",
+        "sha256": "fe5b5487556ccf66078029bf0cbc11ff03f47421a5f02e2a15b18fa99d707484",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/kill-finalize-before_commit.sqlite3",
+        "sha256": "a6488767ad981700f03b7f7d43b3518b7b23a0a67f1607fac89ee4f635fc22d2",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/race-analysis_and_log.sqlite3",
+        "sha256": "503e0401ddef0fa55ea70f8d01a103eda31820a300e888e7bb065dc4a7d5cd9d",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/race-analysis_set.sqlite3",
+        "sha256": "b93d21d2dc323af1f81b4dc23d2dc0ab6acbf3e1ed497a91d7efeaade1bfc70c",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/race-application-claim.sqlite3",
+        "sha256": "0e7d158f06fc46cd24eb23be56531daf2935f413306dd2462a19bc81a384eca4",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/race-application-finalize.sqlite3",
+        "sha256": "5ebfe7e29c9ef602c2c63299a16cd2056c664b426468d54259233f90dc230a0a",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      },
+      {
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/process-artifacts/python/race-model.sqlite3",
+        "sha256": "16cc401aea115131dc9903a65a904cbe85abc2b1ee65f515cc121f5293678d9b",
+        "user_version": 1,
+        "application_id": 1145127730,
+        "journal_mode": "delete",
+        "foreign_key_check": []
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "clean-venv",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python",
+        "-B",
+        "-m",
+        "venv",
+        "--without-pip",
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/venv"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk",
+      "exit_code": 0,
+      "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/clean-venv.log"
+    },
+    {
+      "name": "clean-install-lock",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.tools/uv",
+        "pip",
+        "install",
+        "--python",
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/venv/bin/python",
+        "--no-index",
+        "--find-links",
+        "/Users/macbookpro/Documents/DACN_implementation/.tools/wheelhouse",
+        "--find-links",
+        "/Users/macbookpro/Documents/DACN_implementation/dist",
+        "--require-hashes",
+        "-r",
+        "/Users/macbookpro/Documents/DACN_implementation/s02/requirements-dev.lock"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk",
+      "exit_code": 0,
+      "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/clean-install-lock.log"
+    },
+    {
+      "name": "clean-install-s02",
+      "command": [
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/venv/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/Users/macbookpro/Documents/DACN_implementation/s02/dist/dacn_s02-0.1.0a1-py3-none-any.whl"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk",
+      "exit_code": 0,
+      "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/clean-install-s02.log"
+    },
+    {
+      "name": "clean-pip-check",
+      "command": [
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/venv/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk",
+      "exit_code": 0,
+      "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/clean-pip-check.log"
+    },
+    {
+      "name": "clean-import-paths",
+      "command": [
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/venv/bin/python",
+        "-B",
+        "-c",
+        "import json,sys,sqlite3,importlib.metadata as m,dacn_s01,dacn_s02;print(json.dumps({'python':sys.version,'sqlite':sqlite3.sqlite_version,'s01':dacn_s01.__file__,'s02':dacn_s02.__file__,'versions':{k:m.version(k) for k in ('dacn-s01','dacn-s02','simplejson','jsonschema','pytest')}}))"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk",
+      "exit_code": 0,
+      "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/clean-import-paths.log"
+    },
+    {
+      "name": "clean-cli-init",
+      "command": [
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/venv/bin/python",
+        "-B",
+        "-m",
+        "dacn_s02",
+        "--config",
+        "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/s02.toml",
+        "init"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk",
+      "exit_code": 0,
+      "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/clean-cli-init.log"
+    },
+    {
+      "name": "installed-pip-check",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk",
+      "exit_code": 0,
+      "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/installed-pip-check.log"
+    }
+  ]
+}

@@ -1,0 +1,679 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-clinic-demo",
+  "external_bindings": [
+    {
+      "id": "ctx-clinic-1",
+      "type": "source_context",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "s02-run-demo-1",
+      "type": "run",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "model-clinic-1",
+      "type": "model",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "Q-book",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "Q-cancel",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "Q-clinic",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "art-config-demo",
+      "type": "artifact",
+      "file": "01-source-and-model.json",
+      "pointer": "/scenarios/0/config"
+    },
+    {
+      "id": "art-toolchain-demo",
+      "type": "artifact",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/scenarios/0/toolchain"
+    },
+    {
+      "id": "snap-demo-clinic-r1",
+      "type": "s01_snapshot",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "id": "AS-clinic-1",
+      "type": "analysis_set",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/6"
+    }
+  ],
+  "records": [
+    {
+      "type": "scenario",
+      "id": "SC-cancel",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "name": "Hủy lịch và giữ lịch-slot nhất quán",
+        "trace": {
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1"
+            }
+          ],
+          "answer_refs": [],
+          "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+          "issue_ids": [
+            "Q-cancel"
+          ]
+        },
+        "scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP02",
+            "RS02",
+            "C01"
+          ],
+          "mapping_part_ids": []
+        },
+        "trigger": "Có yêu cầu hủy một lịch hẹn.",
+        "conditions": [
+          "Chưa biết người gửi có quyền; không giả định quyền từ R4."
+        ],
+        "expected_obligations": [
+          {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/1"
+          },
+          {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/1/acceptance_criteria/0"
+          },
+          {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/1/acceptance_criteria/1"
+          }
+        ],
+        "walkthrough": [
+          {
+            "order": 1,
+            "element_refs": [
+              {
+                "model_id": "model-clinic-1",
+                "element_id": "RS02"
+              }
+            ],
+            "observation": "Trách nhiệm đề xuất giữ đủ lý do/người/thời gian và cập nhật lịch-slot; chưa có cơ chế runtime được kiểm chứng."
+          }
+        ],
+        "assessment": "needs_clarification",
+        "issue_ids": [
+          "Q-cancel"
+        ],
+        "verification_obligations": [
+          "Làm rõ quyền hủy trước quyết định phụ thuộc.",
+          "Thiết kế và kiểm thử nhất quán lịch-slot khi thực thi ở giai đoạn phù hợp."
+        ],
+        "analysis_key": "SC-cancel-key",
+        "supersedes_id": null
+      }
+    },
+    {
+      "type": "scenario",
+      "id": "SC-performance",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "name": "Đối chiếu mục tiêu p95 ở mức model",
+        "trace": {
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/0"
+            }
+          ],
+          "answer_refs": [],
+          "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+          "issue_ids": []
+        },
+        "scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "C01",
+            "C03",
+            "D01"
+          ],
+          "mapping_part_ids": []
+        },
+        "trigger": "Tải kiểm thử nêu trong R3.",
+        "conditions": [
+          "Đo phía server, percentile95; 50 người dùng trong 30 phút.",
+          "Tải đỉnh vận hành và tăng trưởng chưa được xác định."
+        ],
+        "expected_obligations": [
+          {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/0/acceptance_criteria/0"
+          },
+          {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/0/acceptance_criteria/1"
+          }
+        ],
+        "walkthrough": [
+          {
+            "order": 1,
+            "element_refs": [
+              {
+                "model_id": "model-clinic-1",
+                "element_id": "D01"
+              }
+            ],
+            "observation": "Đường xem cần xác định phạm vi; thêm ranh giới cần xem chi phí phối hợp, không suy ra latency từ diagram."
+          }
+        ],
+        "assessment": "not_assessed",
+        "issue_ids": [],
+        "verification_obligations": [
+          "Định nghĩa workload/phép đo cụ thể và kiểm chứng p95 ở giai đoạn benchmark phù hợp; chưa đo trong S02."
+        ],
+        "analysis_key": "SC-performance-key",
+        "supersedes_id": null
+      }
+    },
+    {
+      "type": "issue",
+      "id": "Q-growth",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "issue_key": "Q-growth-key",
+        "supersedes_id": null,
+        "model_id": "model-clinic-1",
+        "detected_step": 6,
+        "kind": "quality_target",
+        "question": "Nếu cân nhắc tách phần đọc vì tải tăng, mức tăng và độ mới dữ liệu cần hỗ trợ là gì?",
+        "reason": "Chỉ cần quyết định khi chọn phương án tách vì tăng trưởng; không tự dùng điều kiện thử R3 làm mục tiêu scaling.",
+        "trace": {
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/operating_conditions/growth"
+            },
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/0"
+            }
+          ],
+          "answer_refs": [],
+          "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+          "issue_ids": []
+        },
+        "affected": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "C01",
+            "C03"
+          ],
+          "mapping_part_ids": []
+        },
+        "blocking": {
+          "model_id": "model-clinic-1",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "status": "open",
+        "answer_ids": [],
+        "resolution": null,
+        "resolution_event_refs": []
+      }
+    },
+    {
+      "type": "characteristic",
+      "id": "CHAR-performance",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "name": "performance",
+        "trace": {
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/0"
+            },
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/constraints/0"
+            }
+          ],
+          "answer_refs": [],
+          "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+          "issue_ids": []
+        },
+        "scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "C01",
+            "C03",
+            "D01"
+          ],
+          "mapping_part_ids": []
+        },
+        "goal": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+        "conditions": [
+          "Đo phía server, percentile95.",
+          "50 người dùng trong 30 phút là điều kiện thử, chưa phải tải production."
+        ],
+        "priority": null,
+        "scenario_ids": [
+          "SC-performance"
+        ],
+        "boundary_effects": [
+          {
+            "element_refs": [
+              {
+                "model_id": "model-clinic-1",
+                "element_id": "C01"
+              },
+              {
+                "model_id": "model-clinic-1",
+                "element_id": "D01"
+              }
+            ],
+            "observation": "Giữ đọc/ghi trong C01 tránh thêm ranh giới đọc riêng; dependency phạm vi xem vẫn cần giữ. Tác động runtime chưa biết.",
+            "evidence_refs": [
+              {
+                "snapshot_id": "snap-demo-clinic-r1",
+                "input_pointer": "/functional_requirements/0"
+              },
+              {
+                "snapshot_id": "snap-demo-clinic-r1",
+                "input_pointer": "/functional_requirements/1"
+              },
+              {
+                "snapshot_id": "snap-demo-clinic-r1",
+                "input_pointer": "/non_functional_requirements/0"
+              },
+              {
+                "snapshot_id": "snap-demo-clinic-r1",
+                "input_pointer": "/non_functional_requirements/1"
+              }
+            ],
+            "assumptions": [
+              "C01 phụ trách đường xem là lựa chọn inferred."
+            ]
+          }
+        ],
+        "options": [
+          {
+            "id": "OPT-keep",
+            "action": "keep",
+            "description": "Giữ phương án hiện tại để review; chưa có căn cứ tải tăng để áp tách.",
+            "benefits": [
+              "Ít hợp đồng phối hợp mới ở mức model."
+            ],
+            "costs": [
+              "C01 nhận nhiều trách nhiệm hơn."
+            ],
+            "other_characteristic_impacts": [
+              "Quy tắc R1/R2 vẫn cần cơ chế nhất quán được thiết kế và kiểm chứng."
+            ],
+            "constraint_refs": [
+              {
+                "snapshot_id": "snap-demo-clinic-r1",
+                "input_pointer": "/constraints/0"
+              }
+            ],
+            "precondition_issue_ids": []
+          },
+          {
+            "id": "OPT-split-read",
+            "action": "split",
+            "description": "Chỉ cân nhắc tách tra cứu nếu mục tiêu được cung cấp, chưa áp dụng.",
+            "benefits": [
+              "Có thể chuyên biệt trách nhiệm đọc; chưa khẳng định scale độc lập."
+            ],
+            "costs": [
+              "Thêm hợp đồng dữ liệu và phối hợp."
+            ],
+            "other_characteristic_impacts": [
+              "Cần xét độ mới dữ liệu và phạm vi quyền xem."
+            ],
+            "constraint_refs": [
+              {
+                "snapshot_id": "snap-demo-clinic-r1",
+                "input_pointer": "/constraints/0"
+              }
+            ],
+            "precondition_issue_ids": [
+              "Q-growth"
+            ]
+          }
+        ],
+        "recommendation": "keep",
+        "recommended_option_id": "OPT-keep",
+        "issue_ids": [
+          "Q-growth"
+        ],
+        "risks": [
+          "Chưa có phép đo p95; không chứng nhận runtime đạt."
+        ],
+        "verification_obligations": [
+          "Đo R3 sau khi chốt môi trường/workload; giữ local và không gửi dữ liệu lịch hẹn ra ngoài theo R5."
+        ],
+        "analysis_key": "CHAR-performance-key",
+        "supersedes_id": null
+      }
+    },
+    {
+      "type": "view",
+      "id": "VIEW-main-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "name": "Components và capability phạm vi xem",
+        "component_ids": [
+          "C01",
+          "C03"
+        ],
+        "interface_ids": [
+          "I01"
+        ],
+        "dependency_ids": [
+          "D01"
+        ],
+        "omitted_element_ids": [],
+        "scope_note": "Hiển thị đủ components/interfaces/dependencies; responsibilities/mapping/issues nằm trong bảng model.",
+        "config_artifact_id": "art-config-demo"
+      }
+    },
+    {
+      "type": "validation",
+      "id": "VAL-not-run-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "view_id": "VIEW-main-1",
+        "diagram_id": "DIAGRAM-pending-1",
+        "validator_version": "illustration-only",
+        "checks": {
+          "schema": "not_run",
+          "references": "not_run",
+          "mapping_inventory": "not_run",
+          "freshness": "not_run",
+          "view": "not_run",
+          "conversion": "not_run",
+          "render": "not_run",
+          "fidelity": "not_run"
+        },
+        "errors": [],
+        "reported_issue_ids": [
+          "Q-book",
+          "Q-cancel",
+          "Q-clinic",
+          "Q-growth"
+        ],
+        "readability": {
+          "status": "not_reviewed",
+          "reviewer": null,
+          "note": null
+        },
+        "completed_change_tasks": [],
+        "analysis_set_id": "AS-clinic-2"
+      }
+    },
+    {
+      "type": "diagram",
+      "id": "DIAGRAM-pending-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "view_id": "VIEW-main-1",
+        "converter_version": "illustration-only",
+        "toolchain_artifact_id": "art-toolchain-demo",
+        "status": "not_run",
+        "puml_artifact_id": null,
+        "svg_artifact_id": null,
+        "aliases": [
+          {
+            "element_id": "C01",
+            "alias": "n_433031"
+          },
+          {
+            "element_id": "C03",
+            "alias": "n_433033"
+          },
+          {
+            "element_id": "D01",
+            "alias": "e_443031"
+          },
+          {
+            "element_id": "I01",
+            "alias": "n_493031"
+          }
+        ],
+        "validation_id": "VAL-not-run-1"
+      }
+    },
+    {
+      "type": "bundle",
+      "id": "BUNDLE-preparing-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "source_context_id": "ctx-clinic-1",
+        "scenario_ids": [
+          "SC-cancel",
+          "SC-performance"
+        ],
+        "characteristic_ids": [
+          "CHAR-performance"
+        ],
+        "issue_ids": [
+          "Q-book",
+          "Q-cancel",
+          "Q-clinic",
+          "Q-growth"
+        ],
+        "answer_ids": [],
+        "change_ids": [],
+        "view_id": "VIEW-main-1",
+        "diagram_id": "DIAGRAM-pending-1",
+        "validation_id": "VAL-not-run-1",
+        "status": "preparing_review",
+        "disclosures": [
+          "Gói dự kiến đưa review; chưa validate, converter, render hoặc kiểm khả năng đọc.",
+          "Chưa có câu trả lời nghiệp vụ; không nhận review accepted trên gói này.",
+          "R3/R5 là nghĩa vụ kiểm chứng/thiết kế về sau, chưa đạt runtime.",
+          "Không tự tách tra cứu theo giả định tăng trưởng hoặc availability."
+        ],
+        "analysis_set_id": "AS-clinic-2"
+      }
+    },
+    {
+      "type": "handoff",
+      "id": "HANDOFF-denied-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "bundle_id": "BUNDLE-preparing-1",
+        "review_id": null,
+        "model_id": "model-clinic-1",
+        "eligible": false,
+        "allowed_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "A01",
+            "A02",
+            "OP01",
+            "OP02",
+            "OP03",
+            "OP04",
+            "WF01",
+            "WF02",
+            "WF03",
+            "WF04",
+            "DATA01",
+            "DATA02",
+            "DATA03",
+            "DATA04",
+            "RULE01",
+            "RULE02",
+            "RULE03",
+            "RULE04",
+            "C01",
+            "C03",
+            "RS01",
+            "RS02",
+            "RS03",
+            "RS04",
+            "RS05",
+            "I01",
+            "D01"
+          ],
+          "mapping_part_ids": [
+            "MAP-R1-req-part",
+            "MAP-R1-ac0-part",
+            "MAP-R1-ac1-part",
+            "MAP-R2-req-part",
+            "MAP-R2-ac0-part",
+            "MAP-R2-ac1-part",
+            "MAP-R3-req-part",
+            "MAP-R3-ac0-part",
+            "MAP-R3-ac1-part",
+            "MAP-R4-req-patient",
+            "MAP-R4-req-staff",
+            "MAP-R4-ac0-part",
+            "MAP-R4-ac1-part",
+            "MAP-R5-req-part",
+            "MAP-R5-ac0-part",
+            "MAP-R5-ac1-part"
+          ]
+        },
+        "condition_ids": [],
+        "reason_codes": [
+          "REVIEW_GATE_FAILED"
+        ],
+        "analysis_set_id": "AS-clinic-2",
+        "workflow_choices": []
+      }
+    },
+    {
+      "type": "analysis_set",
+      "id": "AS-clinic-2",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "revision": 2,
+        "parent_set_id": "AS-clinic-1",
+        "scenario_ids": [
+          "SC-cancel",
+          "SC-performance"
+        ],
+        "characteristic_ids": [
+          "CHAR-performance"
+        ],
+        "issue_ids": [
+          "Q-book",
+          "Q-cancel",
+          "Q-clinic",
+          "Q-growth"
+        ],
+        "changed_record_ids": [
+          "SC-cancel",
+          "SC-performance",
+          "Q-growth",
+          "CHAR-performance"
+        ],
+        "affected": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "A01",
+            "A02",
+            "OP01",
+            "OP02",
+            "OP03",
+            "OP04",
+            "WF01",
+            "WF02",
+            "WF03",
+            "WF04",
+            "DATA01",
+            "DATA02",
+            "DATA03",
+            "DATA04",
+            "RULE01",
+            "RULE02",
+            "RULE03",
+            "RULE04",
+            "C01",
+            "C03",
+            "RS01",
+            "RS02",
+            "RS03",
+            "RS04",
+            "RS05",
+            "I01",
+            "D01"
+          ],
+          "mapping_part_ids": [
+            "MAP-R1-req-part",
+            "MAP-R1-ac0-part",
+            "MAP-R1-ac1-part",
+            "MAP-R2-req-part",
+            "MAP-R2-ac0-part",
+            "MAP-R2-ac1-part",
+            "MAP-R3-req-part",
+            "MAP-R3-ac0-part",
+            "MAP-R3-ac1-part",
+            "MAP-R4-req-patient",
+            "MAP-R4-req-staff",
+            "MAP-R4-ac0-part",
+            "MAP-R4-ac1-part",
+            "MAP-R5-req-part",
+            "MAP-R5-ac0-part",
+            "MAP-R5-ac1-part"
+          ]
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "planned-toolchain",
+      "toolchain": {
+        "status": "proposal_not_installed",
+        "plantuml_candidate": "1.2026.9",
+        "java_candidate": "Temurin21",
+        "graphviz_version": null,
+        "font_hash": null
+      },
+      "note": "Các trường null ở đây thuộc scenario tài liệu, không giả làm manifest toolchain production."
+    }
+  ]
+}

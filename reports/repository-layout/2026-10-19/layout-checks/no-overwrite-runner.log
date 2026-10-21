@@ -1,0 +1,15 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python -B /Users/macbookpro/Documents/DACN_implementation/tools/run_checks.py --package all --report-dir /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx/existing
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx
+Traceback (most recent call last):
+  File "/Users/macbookpro/Documents/DACN_implementation/tools/run_checks.py", line 84, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/macbookpro/Documents/DACN_implementation/tools/run_checks.py", line 30, in main
+    report.mkdir(parents=True, exist_ok=False)  # Never replace prior evidence.
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Documents/DACN_implementation/.runtime/python/lib/python3.13/pathlib/_local.py", line 722, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx/existing'
+
+exit_code=1

@@ -1,0 +1,5 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a2-clean-ifz1c2fh/venv/bin/python -B -m pip check
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-2g1oiofl
+No broken requirements found.
+
+exit_code=0

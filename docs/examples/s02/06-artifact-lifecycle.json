@@ -1,0 +1,518 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-clinic-demo",
+  "external_bindings": [
+    {
+      "id": "model-clinic-1",
+      "type": "model",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "AS-clinic-2",
+      "type": "analysis_set",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/9"
+    },
+    {
+      "id": "ctx-clinic-1",
+      "type": "source_context",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/0"
+    }
+  ],
+  "records": [],
+  "scenarios": [
+    {
+      "id": "F02-prepared-crash",
+      "operation": {
+        "command_id": "CMD-F02-1",
+        "session_id": "session-clinic-demo",
+        "parent_command_id": null,
+        "reserved_run_id": "RUN-F02-1",
+        "request": {
+          "kind": "illustrative_llm_attempt",
+          "base_model_id": "model-clinic-1",
+          "base_analysis_set_id": "AS-clinic-2",
+          "source_context_id": "ctx-clinic-1",
+          "scope": {
+            "model_id": "model-clinic-1",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "configuration_stage_ref": {
+            "command_id": "CMD-F02-1",
+            "blob_id": "BLOB-F02-1-config"
+          }
+        }
+      },
+      "staged_blobs": [
+        {
+          "command_id": "CMD-F02-1",
+          "blob_id": "BLOB-F02-1-config",
+          "media_type": "application/json",
+          "purpose": "config",
+          "sha256": "c8502f6829727ccfdca381890ea9fdbd386b5dda79155dcbafad05e211107cde",
+          "byte_length": 31,
+          "bytes_hex": "7b226d6f6465223a2273796e7468657469632d6e6f2d6e6574776f726b227d"
+        },
+        {
+          "command_id": "CMD-F02-1",
+          "blob_id": "BLOB-F02-1-prompt",
+          "media_type": "application/json",
+          "purpose": "prompt",
+          "sha256": "1f76a9e803918f74f72ad6d2df8fb5f15fd90ff81b71f66d2fc47d94733eb601",
+          "byte_length": 23,
+          "bytes_hex": "7b227461736b223a22696c6c757374726174696f6e227d"
+        },
+        {
+          "command_id": "CMD-F02-1",
+          "blob_id": "BLOB-F02-1-request",
+          "media_type": "application/json",
+          "purpose": "llm_request",
+          "sha256": "6cd55aa35ecfb5091f8e128afefdf66957648848f475f1f75258de3eed26db4d",
+          "byte_length": 21,
+          "bytes_hex": "7b22696e707574223a2273796e746865746963227d"
+        }
+      ],
+      "committed_events": [
+        {
+          "event_id": "EV-F02-1-prepared",
+          "command_id": "CMD-F02-1",
+          "ordinal": 1,
+          "kind": "prepared",
+          "payload": {
+            "stage_refs": [
+              {
+                "command_id": "CMD-F02-1",
+                "blob_id": "BLOB-F02-1-config"
+              },
+              {
+                "command_id": "CMD-F02-1",
+                "blob_id": "BLOB-F02-1-prompt"
+              },
+              {
+                "command_id": "CMD-F02-1",
+                "blob_id": "BLOB-F02-1-request"
+              }
+            ],
+            "attempt_id": "ATT-F02-1"
+          }
+        }
+      ],
+      "not_committed": [
+        "Official Artifact records",
+        "Official nested Attempt",
+        "Final Run RUN-F02-1",
+        "Model/AnalysisSet changes"
+      ],
+      "planned_ids": {
+        "run_id": "RUN-F02-1",
+        "attempt_id": "ATT-F02-1"
+      },
+      "note": "bytes_hex chỉ là cách hiển thị BLOB minh họa; payload synthetic không phải một API call đã gửi. Planned IDs không được dùng làm FK cho records chưa tồn tại.",
+      "expected": {
+        "lookup_state": "prepared",
+        "external_outcome": "not_sent_by_protocol",
+        "automatic_send": false,
+        "recovery": "Explicit recover có thể ghi T1 rồi gửi đúng staged bytes; lookup tự nó không gửi."
+      }
+    },
+    {
+      "id": "F02-captured-crash",
+      "operation": {
+        "command_id": "CMD-F02-2",
+        "session_id": "session-clinic-demo",
+        "parent_command_id": null,
+        "reserved_run_id": "RUN-F02-2",
+        "request": {
+          "kind": "illustrative_llm_attempt",
+          "base_model_id": "model-clinic-1",
+          "base_analysis_set_id": "AS-clinic-2",
+          "source_context_id": "ctx-clinic-1",
+          "scope": {
+            "model_id": "model-clinic-1",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "configuration_stage_ref": {
+            "command_id": "CMD-F02-2",
+            "blob_id": "BLOB-F02-2-config"
+          }
+        }
+      },
+      "staged_blobs": [
+        {
+          "command_id": "CMD-F02-2",
+          "blob_id": "BLOB-F02-2-config",
+          "media_type": "application/json",
+          "purpose": "config",
+          "sha256": "c8502f6829727ccfdca381890ea9fdbd386b5dda79155dcbafad05e211107cde",
+          "byte_length": 31,
+          "bytes_hex": "7b226d6f6465223a2273796e7468657469632d6e6f2d6e6574776f726b227d"
+        },
+        {
+          "command_id": "CMD-F02-2",
+          "blob_id": "BLOB-F02-2-prompt",
+          "media_type": "application/json",
+          "purpose": "prompt",
+          "sha256": "1f76a9e803918f74f72ad6d2df8fb5f15fd90ff81b71f66d2fc47d94733eb601",
+          "byte_length": 23,
+          "bytes_hex": "7b227461736b223a22696c6c757374726174696f6e227d"
+        },
+        {
+          "command_id": "CMD-F02-2",
+          "blob_id": "BLOB-F02-2-request",
+          "media_type": "application/json",
+          "purpose": "llm_request",
+          "sha256": "6cd55aa35ecfb5091f8e128afefdf66957648848f475f1f75258de3eed26db4d",
+          "byte_length": 21,
+          "bytes_hex": "7b22696e707574223a2273796e746865746963227d"
+        },
+        {
+          "command_id": "CMD-F02-2",
+          "blob_id": "BLOB-F02-2-response",
+          "media_type": "application/json",
+          "purpose": "llm_response",
+          "sha256": "34cf0a062011a3d4287054876e4112c630b4b9179d34fdb9a68086a4ce70abb1",
+          "byte_length": 16,
+          "bytes_hex": "7b2263616e646964617465223a7b7d7d"
+        }
+      ],
+      "committed_events": [
+        {
+          "event_id": "EV-F02-2-prepared",
+          "command_id": "CMD-F02-2",
+          "ordinal": 1,
+          "kind": "prepared",
+          "payload": {
+            "stage_refs": [
+              {
+                "command_id": "CMD-F02-2",
+                "blob_id": "BLOB-F02-2-config"
+              },
+              {
+                "command_id": "CMD-F02-2",
+                "blob_id": "BLOB-F02-2-prompt"
+              },
+              {
+                "command_id": "CMD-F02-2",
+                "blob_id": "BLOB-F02-2-request"
+              }
+            ],
+            "attempt_id": "ATT-F02-2"
+          }
+        },
+        {
+          "event_id": "EV-F02-2-dispatch",
+          "command_id": "CMD-F02-2",
+          "ordinal": 2,
+          "kind": "dispatch_intent",
+          "payload": {
+            "prepared_event": {
+              "command_id": "CMD-F02-2",
+              "event_id": "EV-F02-2-prepared"
+            },
+            "transport_attempt": 1
+          }
+        },
+        {
+          "event_id": "EV-F02-2-capture",
+          "command_id": "CMD-F02-2",
+          "ordinal": 3,
+          "kind": "response_received",
+          "payload": {
+            "response": {
+              "command_id": "CMD-F02-2",
+              "blob_id": "BLOB-F02-2-response"
+            },
+            "http_status": 200,
+            "safe_headers": {},
+            "requested_model": "illustration-only",
+            "returned_model": null,
+            "provider_response_id": null,
+            "usage": null,
+            "elapsed_ms": 10
+          }
+        }
+      ],
+      "not_committed": [
+        "Official Artifact records",
+        "Official nested Attempt",
+        "Final Run RUN-F02-2",
+        "Model/AnalysisSet changes"
+      ],
+      "planned_ids": {
+        "run_id": "RUN-F02-2",
+        "attempt_id": "ATT-F02-2"
+      },
+      "note": "bytes_hex chỉ là cách hiển thị BLOB minh họa; payload synthetic không phải một API call đã gửi. Planned IDs không được dùng làm FK cho records chưa tồn tại.",
+      "expected": {
+        "lookup_state": "captured",
+        "external_outcome": "response_captured_in_this_hypothetical_history",
+        "automatic_send": false,
+        "recovery": "Parse/validate từ response BLOB; T3 mới tạo Artifact/Run/Attempt cùng transaction. Synthetic candidate rỗng không được mặc nhiên đánh completed."
+      }
+    },
+    {
+      "id": "F02-invalid-response",
+      "operation": {
+        "command_id": "CMD-F02-3",
+        "session_id": "session-clinic-demo",
+        "parent_command_id": null,
+        "reserved_run_id": "RUN-F02-3",
+        "request": {
+          "kind": "illustrative_llm_attempt",
+          "base_model_id": "model-clinic-1",
+          "base_analysis_set_id": "AS-clinic-2",
+          "source_context_id": "ctx-clinic-1",
+          "scope": {
+            "model_id": "model-clinic-1",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "configuration_stage_ref": {
+            "command_id": "CMD-F02-3",
+            "blob_id": "BLOB-F02-3-config"
+          }
+        }
+      },
+      "staged_blobs": [
+        {
+          "command_id": "CMD-F02-3",
+          "blob_id": "BLOB-F02-3-config",
+          "media_type": "application/json",
+          "purpose": "config",
+          "sha256": "c8502f6829727ccfdca381890ea9fdbd386b5dda79155dcbafad05e211107cde",
+          "byte_length": 31,
+          "bytes_hex": "7b226d6f6465223a2273796e7468657469632d6e6f2d6e6574776f726b227d"
+        },
+        {
+          "command_id": "CMD-F02-3",
+          "blob_id": "BLOB-F02-3-prompt",
+          "media_type": "application/json",
+          "purpose": "prompt",
+          "sha256": "1f76a9e803918f74f72ad6d2df8fb5f15fd90ff81b71f66d2fc47d94733eb601",
+          "byte_length": 23,
+          "bytes_hex": "7b227461736b223a22696c6c757374726174696f6e227d"
+        },
+        {
+          "command_id": "CMD-F02-3",
+          "blob_id": "BLOB-F02-3-request",
+          "media_type": "application/json",
+          "purpose": "llm_request",
+          "sha256": "6cd55aa35ecfb5091f8e128afefdf66957648848f475f1f75258de3eed26db4d",
+          "byte_length": 21,
+          "bytes_hex": "7b22696e707574223a2273796e746865746963227d"
+        },
+        {
+          "command_id": "CMD-F02-3",
+          "blob_id": "BLOB-F02-3-response",
+          "media_type": "application/json",
+          "purpose": "llm_response",
+          "sha256": "f03c4b5ef035bbc260619449a9d912bfe0604611c81568c31657e8b564aae28a",
+          "byte_length": 13,
+          "bytes_hex": "7b2263616e646964617465223a"
+        }
+      ],
+      "committed_events": [
+        {
+          "event_id": "EV-F02-3-prepared",
+          "command_id": "CMD-F02-3",
+          "ordinal": 1,
+          "kind": "prepared",
+          "payload": {
+            "stage_refs": [
+              {
+                "command_id": "CMD-F02-3",
+                "blob_id": "BLOB-F02-3-config"
+              },
+              {
+                "command_id": "CMD-F02-3",
+                "blob_id": "BLOB-F02-3-prompt"
+              },
+              {
+                "command_id": "CMD-F02-3",
+                "blob_id": "BLOB-F02-3-request"
+              }
+            ],
+            "attempt_id": "ATT-F02-3"
+          }
+        },
+        {
+          "event_id": "EV-F02-3-dispatch",
+          "command_id": "CMD-F02-3",
+          "ordinal": 2,
+          "kind": "dispatch_intent",
+          "payload": {
+            "prepared_event": {
+              "command_id": "CMD-F02-3",
+              "event_id": "EV-F02-3-prepared"
+            },
+            "transport_attempt": 1
+          }
+        },
+        {
+          "event_id": "EV-F02-3-capture",
+          "command_id": "CMD-F02-3",
+          "ordinal": 3,
+          "kind": "response_received",
+          "payload": {
+            "response": {
+              "command_id": "CMD-F02-3",
+              "blob_id": "BLOB-F02-3-response"
+            },
+            "http_status": 200,
+            "safe_headers": {},
+            "requested_model": "illustration-only",
+            "returned_model": null,
+            "provider_response_id": null,
+            "usage": null,
+            "elapsed_ms": 10
+          }
+        }
+      ],
+      "not_committed": [
+        "Official Artifact records",
+        "Official nested Attempt",
+        "Final Run RUN-F02-3",
+        "Model/AnalysisSet changes"
+      ],
+      "planned_ids": {
+        "run_id": "RUN-F02-3",
+        "attempt_id": "ATT-F02-3"
+      },
+      "note": "bytes_hex chỉ là cách hiển thị BLOB minh họa; payload synthetic không phải một API call đã gửi. Planned IDs không được dùng làm FK cho records chưa tồn tại.",
+      "expected": {
+        "lookup_state": "captured",
+        "code": "INVALID_JSON",
+        "stage": "parse",
+        "raw_evidence_preserved": true,
+        "finalize_projection": {
+          "run_id": "RUN-F02-3",
+          "run_status": "rejected",
+          "attempt_status": "invalid_output",
+          "artifact": {
+            "id": "ART-F02-invalid-response",
+            "producer_run_id": "RUN-F02-3",
+            "source_stage_ref": {
+              "command_id": "CMD-F02-3",
+              "blob_id": "BLOB-F02-3-response"
+            }
+          },
+          "model_created": false
+        },
+        "rule": "Projection chưa phải Run/Artifact export đầy đủ. Khi T3 commit, toàn metadata/prompt/request/config artifacts + Run cùng tồn tại; không sửa raw bytes."
+      }
+    },
+    {
+      "id": "F02-dispatch-unknown",
+      "operation": {
+        "command_id": "CMD-F02-4",
+        "session_id": "session-clinic-demo",
+        "parent_command_id": null,
+        "reserved_run_id": "RUN-F02-4",
+        "request": {
+          "kind": "illustrative_llm_attempt",
+          "base_model_id": "model-clinic-1",
+          "base_analysis_set_id": "AS-clinic-2",
+          "source_context_id": "ctx-clinic-1",
+          "scope": {
+            "model_id": "model-clinic-1",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "configuration_stage_ref": {
+            "command_id": "CMD-F02-4",
+            "blob_id": "BLOB-F02-4-config"
+          }
+        }
+      },
+      "staged_blobs": [
+        {
+          "command_id": "CMD-F02-4",
+          "blob_id": "BLOB-F02-4-config",
+          "media_type": "application/json",
+          "purpose": "config",
+          "sha256": "c8502f6829727ccfdca381890ea9fdbd386b5dda79155dcbafad05e211107cde",
+          "byte_length": 31,
+          "bytes_hex": "7b226d6f6465223a2273796e7468657469632d6e6f2d6e6574776f726b227d"
+        },
+        {
+          "command_id": "CMD-F02-4",
+          "blob_id": "BLOB-F02-4-prompt",
+          "media_type": "application/json",
+          "purpose": "prompt",
+          "sha256": "1f76a9e803918f74f72ad6d2df8fb5f15fd90ff81b71f66d2fc47d94733eb601",
+          "byte_length": 23,
+          "bytes_hex": "7b227461736b223a22696c6c757374726174696f6e227d"
+        },
+        {
+          "command_id": "CMD-F02-4",
+          "blob_id": "BLOB-F02-4-request",
+          "media_type": "application/json",
+          "purpose": "llm_request",
+          "sha256": "6cd55aa35ecfb5091f8e128afefdf66957648848f475f1f75258de3eed26db4d",
+          "byte_length": 21,
+          "bytes_hex": "7b22696e707574223a2273796e746865746963227d"
+        }
+      ],
+      "committed_events": [
+        {
+          "event_id": "EV-F02-4-prepared",
+          "command_id": "CMD-F02-4",
+          "ordinal": 1,
+          "kind": "prepared",
+          "payload": {
+            "stage_refs": [
+              {
+                "command_id": "CMD-F02-4",
+                "blob_id": "BLOB-F02-4-config"
+              },
+              {
+                "command_id": "CMD-F02-4",
+                "blob_id": "BLOB-F02-4-prompt"
+              },
+              {
+                "command_id": "CMD-F02-4",
+                "blob_id": "BLOB-F02-4-request"
+              }
+            ],
+            "attempt_id": "ATT-F02-4"
+          }
+        },
+        {
+          "event_id": "EV-F02-4-dispatch",
+          "command_id": "CMD-F02-4",
+          "ordinal": 2,
+          "kind": "dispatch_intent",
+          "payload": {
+            "prepared_event": {
+              "command_id": "CMD-F02-4",
+              "event_id": "EV-F02-4-prepared"
+            },
+            "transport_attempt": 1
+          }
+        }
+      ],
+      "not_committed": [
+        "Official Artifact records",
+        "Official nested Attempt",
+        "Final Run RUN-F02-4",
+        "Model/AnalysisSet changes"
+      ],
+      "planned_ids": {
+        "run_id": "RUN-F02-4",
+        "attempt_id": "ATT-F02-4"
+      },
+      "note": "bytes_hex chỉ là cách hiển thị BLOB minh họa; payload synthetic không phải một API call đã gửi. Planned IDs không được dùng làm FK cho records chưa tồn tại.",
+      "expected": {
+        "lookup_state": "dispatch_unknown",
+        "external_outcome": "unknown_provider_may_have_processed",
+        "automatic_send": false,
+        "recovery": "Lookup cùng command; không có response không chứng minh chưa gửi. Chờ đối soát; nếu finalize interrupted thì Attempt unknown_outcome, response_artifact_id null. Không tự retry."
+      }
+    }
+  ]
+}

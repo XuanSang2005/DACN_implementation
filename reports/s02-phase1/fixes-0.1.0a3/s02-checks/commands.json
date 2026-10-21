@@ -1,0 +1,76 @@
+[
+  {
+    "name": "s02-c",
+    "package": "s02",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/packages/s02/pyproject.toml",
+      "/Users/macbookpro/Documents/DACN_implementation/packages/s02/tests",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=c",
+      "--basetemp=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-ypakzzs8/tmp",
+      "--junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/s02-checks/s02-c.xml"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-ypakzzs8",
+    "exit_code": 0,
+    "junit": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "217",
+        "time": "69.652",
+        "timestamp": "2026-10-21T10:29:18.278917+07:00",
+        "hostname": "MacbookPros-MacBook-Pro.local"
+      }
+    ],
+    "audit_file": null,
+    "audit_sha256": null
+  },
+  {
+    "name": "s02-python",
+    "package": "s02",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/packages/s02/pyproject.toml",
+      "/Users/macbookpro/Documents/DACN_implementation/packages/s02/tests",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=python",
+      "--basetemp=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-ve2adkwr/tmp",
+      "--junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/s02-checks/s02-python.xml"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-ve2adkwr",
+    "exit_code": 0,
+    "junit": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "217",
+        "time": "68.692",
+        "timestamp": "2026-10-21T10:30:28.255134+07:00",
+        "hostname": "MacbookPros-MacBook-Pro.local"
+      }
+    ],
+    "audit_file": null,
+    "audit_sha256": null
+  }
+]

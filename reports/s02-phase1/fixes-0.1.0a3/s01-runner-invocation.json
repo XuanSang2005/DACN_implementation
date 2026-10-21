@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python",
+    "-B",
+    "/Users/macbookpro/Documents/DACN_implementation/packages/s01/tools/run_checks.py",
+    "--report-dir",
+    "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/s01-checks"
+  ],
+  "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-a3-full-iz8npadb",
+  "exit_code": 0
+}

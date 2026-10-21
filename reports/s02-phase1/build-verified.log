@@ -1,0 +1,13 @@
+$ ['/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python', '-B', '-m', 'pip', 'wheel', '--no-index', '--no-deps', '--no-build-isolation', '--wheel-dir', '/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/rebuild-check', '/Users/macbookpro/Documents/DACN_implementation/s02']
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/s02-build-evidence-w2_4ce7x
+Processing /Users/macbookpro/Documents/DACN_implementation/s02
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: dacn-s02
+  Building wheel for dacn-s02 (pyproject.toml): started
+  Building wheel for dacn-s02 (pyproject.toml): finished with status 'done'
+  Created wheel for dacn-s02: filename=dacn_s02-0.1.0a1-py3-none-any.whl size=40237 sha256=6024c33a552f73bfd5a9b8d8a1e810722d6e9501db865ecb2721c8ba85718e37
+  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-mqcks_16/wheels/4a/c3/6c/2dbf2a45564dfd1706b3d3740ab99e799c4fdc6702a79aad62
+Successfully built dacn-s02
+
+exit_code=0

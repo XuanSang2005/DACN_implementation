@@ -1,0 +1,58 @@
+--- before/packages/s02/src/dacn_s02/events.py
++++ after/packages/s02/src/dacn_s02/events.py
+@@ -26,6 +26,18 @@
+         prepared=ordered[0]['payload']
+         dispatch=next((e['payload'] for e in ordered if e['kind']=='dispatch_intent'),None)
+         capture=next((e['payload'] for e in ordered if e['kind']=='response_received'),None)
++        promoted={(x['stage_ref']['command_id'],x['stage_ref']['blob_id']):x['artifact_id'] for x in promotions}
++        def check_pin(owner,field,purpose):
++            staged_refs=[s for s in prepared['stage_refs'] if stage(s)['purpose']==purpose]
++            reused=[i for i in prepared.get('reused_artifact_ids',[]) if record(i,'artifact')['purpose']==purpose]
++            if purpose=='config' and not staged_refs and not reused:
++                return  # Existing operation.request pin is checked separately.
++            require(len(staged_refs)+len(reused)==1,'attempt_input_pin_inventory')
++            expected=reused[0] if reused else promoted.get((staged_refs[0]['command_id'],staged_refs[0]['blob_id']))
++            require(expected is not None and owner[field]==expected,'attempt_prepared_'+purpose)
++        # Config belongs to Run, including interruption/failure before dispatch.
++        # Artifact identity comes from promotion/reuse; repository checks bytes.
++        check_pin(run,'config_artifact_id','config')
+         if dispatch is None:
+             require(not run['attempts'],'attempt_requires_dispatch')
+             return
+@@ -33,16 +45,8 @@
+         attempt=run['attempts'][0]
+         require(attempt['id']==prepared['attempt_id'],'attempt_prepared_identity')
+         require(attempt['transport_attempt']==dispatch['transport_attempt'],'attempt_transport_identity')
+-        promoted={(x['stage_ref']['command_id'],x['stage_ref']['blob_id']):x['artifact_id'] for x in promotions}
+-        for field,purpose in (('prompt_artifact_id','prompt'),('request_artifact_id','llm_request'),('config_artifact_id','config')):
+-            staged_refs=[s for s in prepared['stage_refs'] if stage(s)['purpose']==purpose]
+-            reused=[i for i in prepared.get('reused_artifact_ids',[]) if record(i,'artifact')['purpose']==purpose]
+-            if purpose=='config' and not staged_refs and not reused:
+-                continue  # Existing operation.request pin is checked separately.
+-            require(len(staged_refs)+len(reused)==1,'attempt_input_pin_inventory')
+-            expected=reused[0] if reused else promoted.get((staged_refs[0]['command_id'],staged_refs[0]['blob_id']))
+-            owner=run if purpose=='config' else attempt
+-            require(expected is not None and owner[field]==expected,'attempt_prepared_'+purpose)
++        for field,purpose in (('prompt_artifact_id','prompt'),('request_artifact_id','llm_request')):
++            check_pin(attempt,field,purpose)
+         if capture is not None:
+             expected=promoted.get((capture['response']['command_id'],capture['response']['blob_id']))
+             require(expected is not None and attempt['response_artifact_id']==expected,'captured_response_preserved')
+--- before/packages/s02/src/dacn_s02/__init__.py
++++ after/packages/s02/src/dacn_s02/__init__.py
+@@ -1,3 +1,3 @@
+ """S02 phase 1 foundation. No LLM, renderer or semantic acceptance."""
+-__version__ = "0.1.0a2"
++__version__ = "0.1.0a3"
+ CONTRACT_VERSION = "s02/0.1.0-draft.3"
+--- before/packages/s02/pyproject.toml
++++ after/packages/s02/pyproject.toml
+@@ -4,7 +4,7 @@
+ 
+ [project]
+ name = "dacn-s02"
+-version = "0.1.0a2"
++version = "0.1.0a3"
+ description = "DACN S02 foundation: immutable local records and checked S01 intake"
+ requires-python = ">=3.13,<3.14"
+ dependencies = ["dacn-s01==0.1.0a6", "jsonschema==4.26.0"]

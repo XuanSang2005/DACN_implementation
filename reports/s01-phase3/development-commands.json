@@ -1,0 +1,42 @@
+[
+  {
+    "name": "suite-c",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "/Users/macbookpro/Documents/DACN_implementation/tests/phase3",
+      "--encoder-backend=c"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-checks-rvxl2ja6",
+    "exit_code": 0
+  },
+  {
+    "name": "suite-python",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "/Users/macbookpro/Documents/DACN_implementation/tests/phase3",
+      "--encoder-backend=python"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-checks-rvxl2ja6",
+    "exit_code": 0
+  }
+]

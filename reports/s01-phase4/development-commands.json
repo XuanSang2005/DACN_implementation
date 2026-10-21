@@ -1,0 +1,88 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--wheel-dir",
+      "dist",
+      "."
+    ],
+    "cwd": "/Users/macbookpro/Documents/DACN_implementation",
+    "exit_code": 0
+  },
+  {
+    "name": "install",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "install",
+      "--no-index",
+      "--no-deps",
+      "--force-reinstall",
+      "dist/dacn_s01-0.1.0a6-py3-none-any.whl"
+    ],
+    "cwd": "/Users/macbookpro/Documents/DACN_implementation",
+    "exit_code": 0
+  },
+  {
+    "name": "suite-c",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "/Users/macbookpro/Documents/DACN_implementation/tests/phase4",
+      "--encoder-backend=c"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-7apnsg0r",
+    "exit_code": 0
+  },
+  {
+    "name": "suite-python",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "/Users/macbookpro/Documents/DACN_implementation/tests/phase4",
+      "--encoder-backend=python"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-7apnsg0r",
+    "exit_code": 0
+  },
+  {
+    "name": "pip-check",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase4-checks-7apnsg0r",
+    "exit_code": 0
+  }
+]

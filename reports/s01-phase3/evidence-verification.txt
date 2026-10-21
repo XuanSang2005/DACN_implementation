@@ -1,0 +1,6 @@
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B /Users/macbookpro/Documents/DACN_implementation/tools/collect_phase3_evidence.py
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-evidence-2bfnprm8
+PYTHONPATH unset
+Verified 13 package files across source/install/wheel; 65 inventory files unchanged; only __init__ package description intentionally updated.
+Verified five real process schedules and two kill boundaries on each backend; 36 evidence records.
+exit_code=0

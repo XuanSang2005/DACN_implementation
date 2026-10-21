@@ -1,0 +1,3394 @@
+[
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "both-unchanged",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "c",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507275233068708
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507275233087000
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507275233096833
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507275310821583
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507275310844333
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507275310857083,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507275310863375
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507275333193541
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507275341533166
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507275341677750
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507275341794666
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507275374637500
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507275374827958
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507275397099000
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507275408343000,
+          "encoder_calls": {
+            "c": 69,
+            "python": 0
+          },
+          "backend": "c"
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507275420342291
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507275428732333
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507275428878541
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507275428998416
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507275462016416
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507275462237291
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507275495507875,
+          "encoder_calls": {
+            "c": 69,
+            "python": 0
+          },
+          "backend": "c"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 1,
+        "heads": [
+          [
+            "51baa29c-f775-4cdc-bfa4-613e5f96adc6",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[both-unchanged-False-False-True-expected0] PHASE3_EVIDENCE {\"case\": \"both-unchanged\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"c\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507275233068708}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507275233087000}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507275233096833}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507275310821583}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507275310844333}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507275310857083, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507275310863375}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507275333193541}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507275341533166}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507275341677750}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507275341794666}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507275374637500}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507275374827958}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507275397099000}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507275408343000, \"encoder_calls\": {\"c\": 69, \"python\": 0}, \"backend\": \"c\"}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507275420342291}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507275428732333}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507275428878541}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507275428998416}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507275462016416}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507275462237291}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507275495507875, \"encoder_calls\": {\"c\": 69, \"python\": 0}, \"backend\": \"c\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 1, \"heads\": [[\"51baa29c-f775-4cdc-bfa4-613e5f96adc6\", 1]]}}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "same-change",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "c",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507275685006000
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507275685028625
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507275685039458
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507275762718125
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507275762738333
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507275762751250,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507275762757333
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507275785016708
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507275793405291
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507275793559875
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "A",
+          "time_ns": 507275793820500
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507275793861166
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507275827302250
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507275827537375
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507275847730250
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507275860922416,
+          "encoder_calls": {
+            "c": 70,
+            "python": 0
+          },
+          "backend": "c"
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507275870297958
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507275870420791
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507275870562375
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507275870644833
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507275870794583
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507275871017458
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507275871491333,
+          "encoder_calls": {
+            "c": 24,
+            "python": 0
+          },
+          "backend": "c"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "e8f57ee6-e07f-40bd-b4fa-559c7a72669f",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[same-change-True-True-True-expected1] PHASE3_EVIDENCE {\"case\": \"same-change\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"c\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507275685006000}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507275685028625}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507275685039458}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507275762718125}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507275762738333}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507275762751250, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507275762757333}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507275785016708}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507275793405291}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507275793559875}, {\"event\": \"after_snapshot_insert\", \"role\": \"A\", \"time_ns\": 507275793820500}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507275793861166}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507275827302250}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507275827537375}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507275847730250}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507275860922416, \"encoder_calls\": {\"c\": 70, \"python\": 0}, \"backend\": \"c\"}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507275870297958}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507275870420791}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507275870562375}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507275870644833}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507275870794583}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507275871017458}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507275871491333, \"encoder_calls\": {\"c\": 24, \"python\": 0}, \"backend\": \"c\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"e8f57ee6-e07f-40bd-b4fa-559c7a72669f\", 2]]}}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "different-changes",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "c",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507276060045291
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507276060065541
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507276060075041
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507276137475500
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507276137494708
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507276137507666,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507276137514250
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507276159749375
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507276168095375
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507276168288833
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "A",
+          "time_ns": 507276168526791
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507276168571625
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507276201385500
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507276201578166
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507276223736750
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507276235160166,
+          "encoder_calls": {
+            "c": 70,
+            "python": 0
+          },
+          "backend": "c"
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507276246148041
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507276246265083
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507276246406541
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507276246487458
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507276246635958
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507276246805208
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507276247274125,
+          "encoder_calls": {
+            "c": 24,
+            "python": 0
+          },
+          "backend": "c"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "e4220927-be7f-40e3-b6a6-5c6ccb34e09b",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[different-changes-True-True-False-expected2] PHASE3_EVIDENCE {\"case\": \"different-changes\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"c\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507276060045291}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507276060065541}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507276060075041}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507276137475500}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507276137494708}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507276137507666, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507276137514250}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507276159749375}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507276168095375}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507276168288833}, {\"event\": \"after_snapshot_insert\", \"role\": \"A\", \"time_ns\": 507276168526791}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507276168571625}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507276201385500}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507276201578166}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507276223736750}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507276235160166, \"encoder_calls\": {\"c\": 70, \"python\": 0}, \"backend\": \"c\"}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507276246148041}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507276246265083}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507276246406541}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507276246487458}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507276246635958}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507276246805208}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507276247274125, \"encoder_calls\": {\"c\": 24, \"python\": 0}, \"backend\": \"c\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"e4220927-be7f-40e3-b6a6-5c6ccb34e09b\", 2]]}}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "unchanged-first",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "c",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507276437852583
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507276437872083
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507276437881750
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507276517680041
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507276517700833
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507276517714833,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507276517721416
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507276540395291
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507276548781375
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507276548960291
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507276549114083
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507276582502875
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507276582952375
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507276612048291
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507276616938625,
+          "encoder_calls": {
+            "c": 69,
+            "python": 0
+          },
+          "backend": "c"
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507276634658958
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507276643259541
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507276643414916
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "B",
+          "time_ns": 507276643634958
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507276643673125
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507276676837000
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507276677060166
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507276710443583,
+          "encoder_calls": {
+            "c": 70,
+            "python": 0
+          },
+          "backend": "c"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "01bfec7a-7416-4000-8bf6-1ade431cba85",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[unchanged-first-False-True-False-expected3] PHASE3_EVIDENCE {\"case\": \"unchanged-first\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"c\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507276437852583}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507276437872083}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507276437881750}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507276517680041}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507276517700833}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507276517714833, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507276517721416}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507276540395291}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507276548781375}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507276548960291}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507276549114083}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507276582502875}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507276582952375}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507276612048291}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507276616938625, \"encoder_calls\": {\"c\": 69, \"python\": 0}, \"backend\": \"c\"}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507276634658958}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507276643259541}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507276643414916}, {\"event\": \"after_snapshot_insert\", \"role\": \"B\", \"time_ns\": 507276643634958}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507276643673125}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507276676837000}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507276677060166}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507276710443583, \"encoder_calls\": {\"c\": 70, \"python\": 0}, \"backend\": \"c\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"01bfec7a-7416-4000-8bf6-1ade431cba85\", 2]]}}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "changed-first",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "c",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507276901142583
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507276901163083
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507276901174291
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507276977689041
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507276977710250
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507276977724041,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507276977730583
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507276999952041
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507277008248666
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507277008430791
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "A",
+          "time_ns": 507277008654958
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507277008697083
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507277042079875
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507277042300083
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507277066355625
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507277075707458,
+          "encoder_calls": {
+            "c": 70,
+            "python": 0
+          },
+          "backend": "c"
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507277088960458
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507277089094500
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507277089278291
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507277089365458
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507277089525291
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507277089726958
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507277090189875,
+          "encoder_calls": {
+            "c": 24,
+            "python": 0
+          },
+          "backend": "c"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "f3781510-aae0-4b13-a33d-fb23ba3a6a14",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[changed-first-True-False-False-expected4] PHASE3_EVIDENCE {\"case\": \"changed-first\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"c\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507276901142583}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507276901163083}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507276901174291}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507276977689041}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507276977710250}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507276977724041, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507276977730583}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507276999952041}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507277008248666}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507277008430791}, {\"event\": \"after_snapshot_insert\", \"role\": \"A\", \"time_ns\": 507277008654958}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507277008697083}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507277042079875}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507277042300083}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507277066355625}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507277075707458, \"encoder_calls\": {\"c\": 70, \"python\": 0}, \"backend\": \"c\"}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507277088960458}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507277089094500}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507277089278291}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507277089365458}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507277089525291}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507277089726958}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507277090189875, \"encoder_calls\": {\"c\": 24, \"python\": 0}, \"backend\": \"c\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"f3781510-aae0-4b13-a33d-fb23ba3a6a14\", 2]]}}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "kill-before_commit",
+      "kind": "actual process kill",
+      "backend": "c",
+      "returncode": -9,
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "kill",
+          "time_ns": 507277196258291
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "kill",
+          "time_ns": 507277196277125
+        },
+        {
+          "event": "after_begin",
+          "role": "kill",
+          "time_ns": 507277196286833
+        },
+        {
+          "event": "after_decision",
+          "role": "kill",
+          "time_ns": 507277200122958
+        },
+        {
+          "event": "before_insert",
+          "role": "kill",
+          "time_ns": 507277209807458
+        },
+        {
+          "event": "after_source_insert",
+          "role": "kill",
+          "time_ns": 507277210101708
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "kill",
+          "time_ns": 507277210312541
+        },
+        {
+          "event": "after_records",
+          "role": "kill",
+          "time_ns": 507277210342833
+        },
+        {
+          "event": "before_commit",
+          "role": "kill",
+          "time_ns": 507277243739625
+        }
+      ],
+      "final_state": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "heads": []
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "kill-after_commit",
+      "kind": "actual process kill",
+      "backend": "c",
+      "returncode": -9,
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "kill",
+          "time_ns": 507277325161375
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "kill",
+          "time_ns": 507277325182125
+        },
+        {
+          "event": "after_begin",
+          "role": "kill",
+          "time_ns": 507277325193958
+        },
+        {
+          "event": "after_decision",
+          "role": "kill",
+          "time_ns": 507277328787500
+        },
+        {
+          "event": "before_insert",
+          "role": "kill",
+          "time_ns": 507277338414000
+        },
+        {
+          "event": "after_source_insert",
+          "role": "kill",
+          "time_ns": 507277338721458
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "kill",
+          "time_ns": 507277338925375
+        },
+        {
+          "event": "after_records",
+          "role": "kill",
+          "time_ns": 507277338963291
+        },
+        {
+          "event": "before_commit",
+          "role": "kill",
+          "time_ns": 507277372012041
+        },
+        {
+          "event": "after_commit",
+          "role": "kill",
+          "time_ns": 507277372310958
+        }
+      ],
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "heads": [
+          [
+            "07032925-9728-48ee-920a-50bc0d2b32fa",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-before_insert",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-after_source_insert",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-after_snapshot_insert",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-before_commit",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-lost-ack",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "reconciled": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-update-after_snapshot_insert",
+      "final_counts": {
+        "runs": 2,
+        "sources": 2,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "head_revision": 1
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-update-after_records",
+      "final_counts": {
+        "runs": 2,
+        "sources": 2,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "head_revision": 1
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-update-before_commit",
+      "final_counts": {
+        "runs": 2,
+        "sources": 2,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "head_revision": 1
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-unresolved-commit",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "response": "failed",
+      "stored": "validated"
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "real-begin-lock-timeout",
+      "final_counts": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 0
+      },
+      "kind": "actual SQLite lock"
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "real-commit-busy",
+      "final_counts": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 0
+      },
+      "kind": "actual SQLite reader lock",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "lifecycle",
+      "backend": "c",
+      "final_counts": {
+        "runs": 4,
+        "sources": 4,
+        "snapshots": 2,
+        "specs": 1
+      },
+      "historical_revision": 1,
+      "head_revision": 2,
+      "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 399, \"python\": 0}, \"processes\": 10}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags0-INVALID_REQUEST-/mode] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 14, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags1-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 14, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags2-INVALID_REQUEST-/spec_id] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 14, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags3-SPEC_NOT_FOUND-/spec_id] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 18, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags4-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 14, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags5-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 14, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args0] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args1] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args2] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args3] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args4] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args5] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args6] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args7] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args8] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[parse-2-INVALID_JSON] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 21, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[duplicate-key-2-DUPLICATE_JSON_KEY] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 21, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[invalid-priority-2-INVALID_PRIORITY] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 21, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-priority-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 22, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-version-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 22, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-key-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 22, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[unknown-2-UNKNOWN_FIELD] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 21, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_exact_numbers_legacy_utf16_source_and_export PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 58, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command0] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command1] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command2] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command3] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_receipt_missing_run_conflict_and_no_overwrite PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 59, \"python\": 0}, \"processes\": 6}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"run_id\":\"a\",\"run_id\":\"b\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[[]] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"receipt_version\":\"2\",\"run_id\":\"a\",\"state_dir\":\"/tmp\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"receipt_version\":\"1\",\"run_id\":\"a\",\"state_dir\":\"relative\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"receipt_version\":\"1\",\"run_id\":null,\"state_dir\":\"/tmp\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_show_source_missing_does_not_create_export PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[False] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 23, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[True] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 23, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[spec-id] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[input-path] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_lookup.py::test_new_lookup_consistency_guards PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 11, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_relative_paths_override_and_preservation PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 59, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[unexpected = 1] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = true] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = -1] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 2147483648] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = \"wrong\"] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [1]] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = \"\"] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = 2] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = [] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 1.0] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [\"absent\"]] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_missing_store_or_config_does_not_initialize PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[version] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[structure] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[foreign] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[state] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[receipt] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 2, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[export] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[symlink-parent] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 2, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[db-symlink] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[sidecar-symlink] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[same-input] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[hardlink-input] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[symlink-input] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[config] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[receipt-output] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 2, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[state-output] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[dangling] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-journal] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-wal] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-shm] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_symlink_state_and_receipt_lookup_resolve_consistently PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 83, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-fault",
+      "backend": "c",
+      "fault_injection": {
+        "fsync_fail": 1
+      },
+      "receipt_exists": false,
+      "runs": 0
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 3, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-fault",
+      "backend": "c",
+      "fault_injection": {
+        "link_fail": true
+      },
+      "receipt_exists": false,
+      "runs": 0
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 3, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-fault",
+      "backend": "c",
+      "fault_injection": {
+        "fsync_fail": 2
+      },
+      "receipt_exists": true,
+      "runs": 0
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 3, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_real_receipt_permission_failure_has_no_commit PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 3, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[3-False] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 83, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[4-True] PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 83, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_zero_timeout_with_real_writer_lock PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 6, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "dataset-ancestor-identity",
+      "backend": "c",
+      "destination": "state",
+      "actual_case_alias": true,
+      "dataset_unchanged": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "dataset-ancestor-identity",
+      "backend": "c",
+      "destination": "receipt",
+      "actual_case_alias": true,
+      "dataset_unchanged": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 2, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "dataset-ancestor-identity",
+      "backend": "c",
+      "destination": "export",
+      "actual_case_alias": true,
+      "dataset_unchanged": true
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_same_store_case_alias_agrees_with_receipt_and_blocks_export_inside_state PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 83, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-contention",
+      "backend": "c",
+      "kind": "two subprocesses and one filesystem destination",
+      "events": [
+        {
+          "event": "before_link",
+          "pid": 82363,
+          "observed_ns": 507300454156958
+        },
+        {
+          "event": "before_link",
+          "pid": 82364,
+          "observed_ns": 507300454169041
+        }
+      ],
+      "exit_codes": [
+        0,
+        3
+      ],
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 85, \"python\": 0}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "kill-receipt_ready",
+      "backend": "c",
+      "kind": "actual SIGKILL with IPC boundary",
+      "event": {
+        "event": "receipt_ready",
+        "pid": 82369,
+        "observed_ns": 507300838311500
+      },
+      "returncode": -9,
+      "run_id": "1fb435ea-7cfa-4bc3-8fda-e4e38ffd5574",
+      "final_state": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "kill-before_commit",
+      "backend": "c",
+      "kind": "actual SIGKILL with IPC boundary",
+      "event": {
+        "event": "before_commit",
+        "pid": 82373,
+        "observed_ns": 507301138125166
+      },
+      "returncode": -9,
+      "run_id": "306abd5a-a1e5-4be1-82f4-ac0ff9782659",
+      "final_state": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 1, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "kill-after_commit",
+      "backend": "c",
+      "kind": "actual SIGKILL with IPC boundary",
+      "event": {
+        "event": "after_commit",
+        "pid": 82377,
+        "observed_ns": 507301440702375
+      },
+      "returncode": -9,
+      "run_id": "265c7fae-1222-4047-b23e-1e2704a9e10f",
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 26, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "closed-pipe",
+      "backend": "c",
+      "kind": "actual output I/O/collision after commit",
+      "event": {
+        "event": "before_output",
+        "pid": 82382,
+        "observed_ns": 507301807615500
+      },
+      "exit_code": 3,
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 83, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "export-collision",
+      "backend": "c",
+      "kind": "actual output I/O/collision after commit",
+      "event": {
+        "event": "before_output",
+        "pid": 82387,
+        "observed_ns": 507302190153166
+      },
+      "exit_code": 3,
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 83, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "real-export-permission",
+      "backend": "c",
+      "kind": "actual output I/O/collision after commit",
+      "event": {
+        "event": "before_output",
+        "pid": 82392,
+        "observed_ns": 507302574401041
+      },
+      "exit_code": 3,
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"c\", \"counts\": {\"c\": 83, \"python\": 0}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_selected_real_encoder_is_exercised PASSED"
+  },
+  {
+    "suite": "s01-c",
+    "backend_instrumentation": "Observed real encoder factory calls: {'c': 6597, 'python': 0}; selected=c"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "both-unchanged",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "python",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507308873447833
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507308873466500
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507308873477958
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507308928128416
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507308928151333
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507308928164791,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507308928170750
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507308950895083
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507308959313291
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507308959485708
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507308959660416
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507308993461708
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507308993796708
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507308994505250
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507309017327000
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507309027002458
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507309027201625
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507309027391791
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507309030063833,
+          "encoder_calls": {
+            "c": 0,
+            "python": 69
+          },
+          "backend": "python"
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507309061378708
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507309061609125
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507309095305416,
+          "encoder_calls": {
+            "c": 0,
+            "python": 69
+          },
+          "backend": "python"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 1,
+        "heads": [
+          [
+            "3d669786-2541-4346-87be-5d769143c586",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[both-unchanged-False-False-True-expected0] PHASE3_EVIDENCE {\"case\": \"both-unchanged\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"python\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507308873447833}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507308873466500}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507308873477958}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507308928128416}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507308928151333}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507308928164791, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507308928170750}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507308950895083}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507308959313291}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507308959485708}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507308959660416}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507308993461708}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507308993796708}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507308994505250}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507309017327000}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507309027002458}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507309027201625}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507309027391791}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507309030063833, \"encoder_calls\": {\"c\": 0, \"python\": 69}, \"backend\": \"python\"}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507309061378708}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507309061609125}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507309095305416, \"encoder_calls\": {\"c\": 0, \"python\": 69}, \"backend\": \"python\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 1, \"heads\": [[\"3d669786-2541-4346-87be-5d769143c586\", 1]]}}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "same-change",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "python",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507309264607916
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507309264628458
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507309264638125
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507309319312750
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507309319331750
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507309319343708,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507309319349750
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507309341801708
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507309350161958
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507309350337958
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "A",
+          "time_ns": 507309350654583
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507309350693541
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507309384208916
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507309384512916
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507309408680458
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507309418164041,
+          "encoder_calls": {
+            "c": 0,
+            "python": 70
+          },
+          "backend": "python"
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507309431588625
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507309431758083
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507309431937166
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507309432072833
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507309432268541
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507309432479250
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507309432986833,
+          "encoder_calls": {
+            "c": 0,
+            "python": 24
+          },
+          "backend": "python"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "61896654-56e7-46ed-903d-7da290ed2658",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[same-change-True-True-True-expected1] PHASE3_EVIDENCE {\"case\": \"same-change\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"python\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507309264607916}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507309264628458}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507309264638125}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507309319312750}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507309319331750}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507309319343708, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507309319349750}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507309341801708}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507309350161958}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507309350337958}, {\"event\": \"after_snapshot_insert\", \"role\": \"A\", \"time_ns\": 507309350654583}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507309350693541}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507309384208916}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507309384512916}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507309408680458}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507309418164041, \"encoder_calls\": {\"c\": 0, \"python\": 70}, \"backend\": \"python\"}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507309431588625}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507309431758083}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507309431937166}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507309432072833}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507309432268541}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507309432479250}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507309432986833, \"encoder_calls\": {\"c\": 0, \"python\": 24}, \"backend\": \"python\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"61896654-56e7-46ed-903d-7da290ed2658\", 2]]}}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "different-changes",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "python",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507309600963958
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507309600984458
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507309600995750
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507309654888708
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507309654912500
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507309654926375,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507309654932541
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507309677209875
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507309685628083
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507309685798833
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "A",
+          "time_ns": 507309686114625
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507309686153333
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507309719638250
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507309719957166
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507309721268000
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507309743468750
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507309743617250
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507309743761666
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507309743877666
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507309744066791
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507309753635500,
+          "encoder_calls": {
+            "c": 0,
+            "python": 70
+          },
+          "backend": "python"
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507309754327791
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507309754893541,
+          "encoder_calls": {
+            "c": 0,
+            "python": 24
+          },
+          "backend": "python"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "d8495a7b-f10f-49ba-92e0-c913f7193233",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[different-changes-True-True-False-expected2] PHASE3_EVIDENCE {\"case\": \"different-changes\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"python\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507309600963958}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507309600984458}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507309600995750}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507309654888708}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507309654912500}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507309654926375, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507309654932541}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507309677209875}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507309685628083}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507309685798833}, {\"event\": \"after_snapshot_insert\", \"role\": \"A\", \"time_ns\": 507309686114625}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507309686153333}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507309719638250}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507309719957166}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507309721268000}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507309743468750}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507309743617250}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507309743761666}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507309743877666}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507309744066791}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507309753635500, \"encoder_calls\": {\"c\": 0, \"python\": 70}, \"backend\": \"python\"}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507309754327791}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507309754893541, \"encoder_calls\": {\"c\": 0, \"python\": 24}, \"backend\": \"python\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"d8495a7b-f10f-49ba-92e0-c913f7193233\", 2]]}}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "unchanged-first",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "python",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507309922415208
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507309922433791
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507309922445083
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507309975867541
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507309975889166
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507309975903041,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507309975909166
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507309998384666
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507310006829166
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507310006983791
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507310007162791
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507310040570250
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507310040812041
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507310042247458
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507310064519291
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507310072829958
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507310072967083
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "B",
+          "time_ns": 507310073276375
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507310073314583
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507310074528250,
+          "encoder_calls": {
+            "c": 0,
+            "python": 69
+          },
+          "backend": "python"
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507310106968583
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507310107216166
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507310140495541,
+          "encoder_calls": {
+            "c": 0,
+            "python": 70
+          },
+          "backend": "python"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "75d9abb1-7831-4dfd-a302-0c03fdb1d7b5",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[unchanged-first-False-True-False-expected3] PHASE3_EVIDENCE {\"case\": \"unchanged-first\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"python\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507309922415208}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507309922433791}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507309922445083}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507309975867541}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507309975889166}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507309975903041, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507309975909166}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507309998384666}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507310006829166}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507310006983791}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507310007162791}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507310040570250}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507310040812041}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507310042247458}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507310064519291}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507310072829958}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507310072967083}, {\"event\": \"after_snapshot_insert\", \"role\": \"B\", \"time_ns\": 507310073276375}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507310073314583}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507310074528250, \"encoder_calls\": {\"c\": 0, \"python\": 69}, \"backend\": \"python\"}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507310106968583}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507310107216166}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507310140495541, \"encoder_calls\": {\"c\": 0, \"python\": 70}, \"backend\": \"python\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"75d9abb1-7831-4dfd-a302-0c03fdb1d7b5\", 2]]}}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "changed-first",
+      "kind": "two real processes; actual SQLITE_BUSY probe",
+      "backend": "python",
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "A",
+          "time_ns": 507310307679083
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "A",
+          "time_ns": 507310307698000
+        },
+        {
+          "event": "after_begin",
+          "role": "A",
+          "time_ns": 507310307709083
+        },
+        {
+          "event": "before_begin",
+          "role": "B",
+          "time_ns": 507310361266583
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507310361288666
+        },
+        {
+          "event": "busy_observed",
+          "role": "B",
+          "time_ns": 507310361302333,
+          "sqlite_errorcode": 5
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "B",
+          "time_ns": 507310361308583
+        },
+        {
+          "event": "after_decision",
+          "role": "A",
+          "time_ns": 507310383794666
+        },
+        {
+          "event": "before_insert",
+          "role": "A",
+          "time_ns": 507310392082291
+        },
+        {
+          "event": "after_source_insert",
+          "role": "A",
+          "time_ns": 507310392253583
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "A",
+          "time_ns": 507310392569750
+        },
+        {
+          "event": "after_records",
+          "role": "A",
+          "time_ns": 507310392610458
+        },
+        {
+          "event": "before_commit",
+          "role": "A",
+          "time_ns": 507310425814041
+        },
+        {
+          "event": "after_commit",
+          "role": "A",
+          "time_ns": 507310426129583
+        },
+        {
+          "event": "after_begin",
+          "role": "B",
+          "time_ns": 507310427656791
+        },
+        {
+          "event": "after_decision",
+          "role": "B",
+          "time_ns": 507310449861625
+        },
+        {
+          "event": "before_insert",
+          "role": "B",
+          "time_ns": 507310450008375
+        },
+        {
+          "event": "after_source_insert",
+          "role": "B",
+          "time_ns": 507310450152958
+        },
+        {
+          "event": "after_records",
+          "role": "B",
+          "time_ns": 507310450274208
+        },
+        {
+          "event": "before_commit",
+          "role": "B",
+          "time_ns": 507310450462541
+        },
+        {
+          "event": "result",
+          "role": "A",
+          "time_ns": 507310460147166,
+          "encoder_calls": {
+            "c": 0,
+            "python": 70
+          },
+          "backend": "python"
+        },
+        {
+          "event": "after_commit",
+          "role": "B",
+          "time_ns": 507310460677708
+        },
+        {
+          "event": "result",
+          "role": "B",
+          "time_ns": 507310461259333,
+          "encoder_calls": {
+            "c": 0,
+            "python": 24
+          },
+          "backend": "python"
+        }
+      ],
+      "final_state": {
+        "runs": 3,
+        "sources": 3,
+        "snapshots": 2,
+        "heads": [
+          [
+            "a15abb9b-d915-4f77-8aed-7a3f6b00b602",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_processes.py::test_five_real_process_schedules[changed-first-True-False-False-expected4] PHASE3_EVIDENCE {\"case\": \"changed-first\", \"kind\": \"two real processes; actual SQLITE_BUSY probe\", \"backend\": \"python\", \"events\": [{\"event\": \"before_begin\", \"role\": \"A\", \"time_ns\": 507310307679083}, {\"event\": \"sql_begin_attempt\", \"role\": \"A\", \"time_ns\": 507310307698000}, {\"event\": \"after_begin\", \"role\": \"A\", \"time_ns\": 507310307709083}, {\"event\": \"before_begin\", \"role\": \"B\", \"time_ns\": 507310361266583}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507310361288666}, {\"event\": \"busy_observed\", \"role\": \"B\", \"time_ns\": 507310361302333, \"sqlite_errorcode\": 5}, {\"event\": \"sql_begin_attempt\", \"role\": \"B\", \"time_ns\": 507310361308583}, {\"event\": \"after_decision\", \"role\": \"A\", \"time_ns\": 507310383794666}, {\"event\": \"before_insert\", \"role\": \"A\", \"time_ns\": 507310392082291}, {\"event\": \"after_source_insert\", \"role\": \"A\", \"time_ns\": 507310392253583}, {\"event\": \"after_snapshot_insert\", \"role\": \"A\", \"time_ns\": 507310392569750}, {\"event\": \"after_records\", \"role\": \"A\", \"time_ns\": 507310392610458}, {\"event\": \"before_commit\", \"role\": \"A\", \"time_ns\": 507310425814041}, {\"event\": \"after_commit\", \"role\": \"A\", \"time_ns\": 507310426129583}, {\"event\": \"after_begin\", \"role\": \"B\", \"time_ns\": 507310427656791}, {\"event\": \"after_decision\", \"role\": \"B\", \"time_ns\": 507310449861625}, {\"event\": \"before_insert\", \"role\": \"B\", \"time_ns\": 507310450008375}, {\"event\": \"after_source_insert\", \"role\": \"B\", \"time_ns\": 507310450152958}, {\"event\": \"after_records\", \"role\": \"B\", \"time_ns\": 507310450274208}, {\"event\": \"before_commit\", \"role\": \"B\", \"time_ns\": 507310450462541}, {\"event\": \"result\", \"role\": \"A\", \"time_ns\": 507310460147166, \"encoder_calls\": {\"c\": 0, \"python\": 70}, \"backend\": \"python\"}, {\"event\": \"after_commit\", \"role\": \"B\", \"time_ns\": 507310460677708}, {\"event\": \"result\", \"role\": \"B\", \"time_ns\": 507310461259333, \"encoder_calls\": {\"c\": 0, \"python\": 24}, \"backend\": \"python\"}], \"final_state\": {\"runs\": 3, \"sources\": 3, \"snapshots\": 2, \"heads\": [[\"a15abb9b-d915-4f77-8aed-7a3f6b00b602\", 2]]}}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "kill-before_commit",
+      "kind": "actual process kill",
+      "backend": "python",
+      "returncode": -9,
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "kill",
+          "time_ns": 507310542540625
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "kill",
+          "time_ns": 507310542557791
+        },
+        {
+          "event": "after_begin",
+          "role": "kill",
+          "time_ns": 507310542568916
+        },
+        {
+          "event": "after_decision",
+          "role": "kill",
+          "time_ns": 507310546213916
+        },
+        {
+          "event": "before_insert",
+          "role": "kill",
+          "time_ns": 507310555784125
+        },
+        {
+          "event": "after_source_insert",
+          "role": "kill",
+          "time_ns": 507310556085083
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "kill",
+          "time_ns": 507310556382291
+        },
+        {
+          "event": "after_records",
+          "role": "kill",
+          "time_ns": 507310556417750
+        },
+        {
+          "event": "before_commit",
+          "role": "kill",
+          "time_ns": 507310589683208
+        }
+      ],
+      "final_state": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "heads": []
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "kill-after_commit",
+      "kind": "actual process kill",
+      "backend": "python",
+      "returncode": -9,
+      "events": [
+        {
+          "event": "before_begin",
+          "role": "kill",
+          "time_ns": 507310646542583
+        },
+        {
+          "event": "sql_begin_attempt",
+          "role": "kill",
+          "time_ns": 507310646559833
+        },
+        {
+          "event": "after_begin",
+          "role": "kill",
+          "time_ns": 507310646569166
+        },
+        {
+          "event": "after_decision",
+          "role": "kill",
+          "time_ns": 507310650239541
+        },
+        {
+          "event": "before_insert",
+          "role": "kill",
+          "time_ns": 507310659795250
+        },
+        {
+          "event": "after_source_insert",
+          "role": "kill",
+          "time_ns": 507310660131333
+        },
+        {
+          "event": "after_snapshot_insert",
+          "role": "kill",
+          "time_ns": 507310660426000
+        },
+        {
+          "event": "after_records",
+          "role": "kill",
+          "time_ns": 507310660460541
+        },
+        {
+          "event": "before_commit",
+          "role": "kill",
+          "time_ns": 507310693838416
+        },
+        {
+          "event": "after_commit",
+          "role": "kill",
+          "time_ns": 507310694141583
+        }
+      ],
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "heads": [
+          [
+            "67192b0f-2635-4014-9c7d-853992fad554",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-before_insert",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-after_source_insert",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-after_snapshot_insert",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-before_commit",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-lost-ack",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "reconciled": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-update-after_snapshot_insert",
+      "final_counts": {
+        "runs": 2,
+        "sources": 2,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "head_revision": 1
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-update-after_records",
+      "final_counts": {
+        "runs": 2,
+        "sources": 2,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "head_revision": 1
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-update-before_commit",
+      "final_counts": {
+        "runs": 2,
+        "sources": 2,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "head_revision": 1
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "injected-unresolved-commit",
+      "final_counts": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1,
+        "schema_artifacts": 1
+      },
+      "kind": "fault injection",
+      "response": "failed",
+      "stored": "validated"
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "real-begin-lock-timeout",
+      "final_counts": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 0
+      },
+      "kind": "actual SQLite lock"
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE3_EVIDENCE",
+    "data": {
+      "case": "real-commit-busy",
+      "final_counts": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0,
+        "schema_artifacts": 0
+      },
+      "kind": "actual SQLite reader lock",
+      "rollback_verified": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "lifecycle",
+      "backend": "python",
+      "final_counts": {
+        "runs": 4,
+        "sources": 4,
+        "snapshots": 2,
+        "specs": 1
+      },
+      "historical_revision": 1,
+      "head_revision": 2,
+      "raw_sha256": "034617e94b49f126ad1dfada916a28576e15913d37bff07f2365348e5b8a2652"
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 399}, \"processes\": 10}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags0-INVALID_REQUEST-/mode] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 14}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags1-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 14}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags2-INVALID_REQUEST-/spec_id] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 14}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags3-SPEC_NOT_FOUND-/spec_id] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 18}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags4-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 14}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_request_errors_go_through_service[flags5-INVALID_REQUEST-/base_revision] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 14}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args0] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args1] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args2] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args3] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args4] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args5] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args6] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args7] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_usage_is_64_without_intake[args8] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[parse-2-INVALID_JSON] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 21}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[duplicate-key-2-DUPLICATE_JSON_KEY] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 21}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[invalid-priority-2-INVALID_PRIORITY] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 21}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-priority-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 22}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-version-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 22}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[p3-key-3-PROCESSING_FAILED] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 22}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_input_and_p3f1_through_cli[unknown-2-UNKNOWN_FIELD] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 21}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_exact_numbers_legacy_utf16_source_and_export PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 58}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command0] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command1] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command2] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_lookup_not_found[command3] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_receipt_missing_run_conflict_and_no_overwrite PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 59}, \"processes\": 6}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"run_id\":\"a\",\"run_id\":\"b\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[[]] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"receipt_version\":\"2\",\"run_id\":\"a\",\"state_dir\":\"/tmp\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"receipt_version\":\"1\",\"run_id\":\"a\",\"state_dir\":\"relative\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_invalid_receipts_are_operational_errors[{\"receipt_version\":\"1\",\"run_id\":null,\"state_dir\":\"/tmp\"}] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_show_source_missing_does_not_create_export PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[False] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 23}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_crossfield_unicode_failure_through_cli_preserves_safe_error[True] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 23}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[spec-id] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_cli.py::test_cli_refuses_unrepresentable_operational_metadata_before_receipt[input-path] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_lookup.py::test_new_lookup_consistency_guards PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 11}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_relative_paths_override_and_preservation PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 59}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[unexpected = 1] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = true] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = -1] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 2147483648] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = \"wrong\"] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [1]] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = \"\"] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = 2] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[state_dir = [] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[busy_timeout_ms = 1.0] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_bad_config_is_3_before_any_write[dataset_roots = [\"absent\"]] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_missing_store_or_config_does_not_initialize PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[version] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[structure] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_unsupported_store_not_reset[foreign] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[state] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[receipt] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 2}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[export] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[symlink-parent] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 2}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[db-symlink] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_dataset_roots_guard_every_write_location[sidecar-symlink] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[same-input] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[hardlink-input] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[symlink-input] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[config] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[receipt-output] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 2}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[state-output] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_artifact_alias_and_no_clobber[dangling] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-journal] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-wal] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_db_hardlink_to_unknown_source_refused_even_without_dataset_config[-shm] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_symlink_state_and_receipt_lookup_resolve_consistently PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 83}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-fault",
+      "backend": "python",
+      "fault_injection": {
+        "fsync_fail": 1
+      },
+      "receipt_exists": false,
+      "runs": 0
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 3}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-fault",
+      "backend": "python",
+      "fault_injection": {
+        "link_fail": true
+      },
+      "receipt_exists": false,
+      "runs": 0
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 3}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-fault",
+      "backend": "python",
+      "fault_injection": {
+        "fsync_fail": 2
+      },
+      "receipt_exists": true,
+      "runs": 0
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 3}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_real_receipt_permission_failure_has_no_commit PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 3}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[3-False] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 83}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_export_fsync_failure_preserves_committed_run[4-True] PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 83}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_config_zero_timeout_with_real_writer_lock PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 6}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "dataset-ancestor-identity",
+      "backend": "python",
+      "destination": "state",
+      "actual_case_alias": true,
+      "dataset_unchanged": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 0}, \"processes\": 1}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "dataset-ancestor-identity",
+      "backend": "python",
+      "destination": "receipt",
+      "actual_case_alias": true,
+      "dataset_unchanged": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 2}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "dataset-ancestor-identity",
+      "backend": "python",
+      "destination": "export",
+      "actual_case_alias": true,
+      "dataset_unchanged": true
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/phase4/test_paths_config.py::test_same_store_case_alias_agrees_with_receipt_and_blocks_export_inside_state PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 83}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "receipt-contention",
+      "backend": "python",
+      "kind": "two subprocesses and one filesystem destination",
+      "events": [
+        {
+          "event": "before_link",
+          "pid": 82681,
+          "observed_ns": 507329587580083
+        },
+        {
+          "event": "before_link",
+          "pid": 82682,
+          "observed_ns": 507329587588166
+        }
+      ],
+      "exit_codes": [
+        3,
+        0
+      ],
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 85}, \"processes\": 4}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "kill-receipt_ready",
+      "backend": "python",
+      "kind": "actual SIGKILL with IPC boundary",
+      "event": {
+        "event": "receipt_ready",
+        "pid": 82685,
+        "observed_ns": 507329896494208
+      },
+      "returncode": -9,
+      "run_id": "3b68b25a-c82c-405a-a939-d7567fea2a81",
+      "final_state": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "kill-before_commit",
+      "backend": "python",
+      "kind": "actual SIGKILL with IPC boundary",
+      "event": {
+        "event": "before_commit",
+        "pid": 82693,
+        "observed_ns": 507330128193666
+      },
+      "returncode": -9,
+      "run_id": "f7c9a0cb-c3bc-48cf-811e-d38b94e2a681",
+      "final_state": {
+        "runs": 0,
+        "sources": 0,
+        "snapshots": 0,
+        "specs": 0
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 1}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "kill-after_commit",
+      "backend": "python",
+      "kind": "actual SIGKILL with IPC boundary",
+      "event": {
+        "event": "after_commit",
+        "pid": 82696,
+        "observed_ns": 507330360610083
+      },
+      "returncode": -9,
+      "run_id": "8891aa6d-ae9b-4d9c-9b50-9045b966a5e8",
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 26}, \"processes\": 2}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "closed-pipe",
+      "backend": "python",
+      "kind": "actual output I/O/collision after commit",
+      "event": {
+        "event": "before_output",
+        "pid": 82701,
+        "observed_ns": 507330660545666
+      },
+      "exit_code": 3,
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 83}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "export-collision",
+      "backend": "python",
+      "kind": "actual output I/O/collision after commit",
+      "event": {
+        "event": "before_output",
+        "pid": 82704,
+        "observed_ns": 507330967546583
+      },
+      "exit_code": 3,
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 83}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "marker": "PHASE4_EVIDENCE",
+    "data": {
+      "case": "real-export-permission",
+      "backend": "python",
+      "kind": "actual output I/O/collision after commit",
+      "event": {
+        "event": "before_output",
+        "pid": 82707,
+        "observed_ns": 507331275213083
+      },
+      "exit_code": 3,
+      "final_state": {
+        "runs": 1,
+        "sources": 1,
+        "snapshots": 1,
+        "specs": 1
+      }
+    }
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "PASSEDPHASE4_ENCODERS {\"backend\": \"python\", \"counts\": {\"c\": 0, \"python\": 83}, \"processes\": 3}"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/tests/test_codec.py::test_selected_real_encoder_is_exercised PASSED"
+  },
+  {
+    "suite": "s01-python",
+    "backend_instrumentation": "Observed real encoder factory calls: {'c': 0, 'python': 6597}; selected=python"
+  }
+]

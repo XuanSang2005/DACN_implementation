@@ -1,0 +1,720 @@
+{
+  "illustration": {
+    "status": "ví dụ minh họa chưa thực thi",
+    "title": "Phòng khám qua bước 1–4, giữ unknowns và gaps",
+    "production_importable": false,
+    "meaning": "Kịch bản/projections cho proposal; không phải full canonical export, kết quả mong đợi chưa chạy.",
+    "user_business_confirmation": false
+  },
+  "contract_version": "s02/0.1.0-draft.3",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
+  "bindings": [
+    {
+      "name": "selected_s01_snapshot",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "name": "prior_illustrative_model",
+      "file": "../s02/01-source-and-model.json",
+      "pointer": "/records/2"
+    }
+  ],
+  "assumptions": [
+    "Hai component đề xuất chỉ là một phương án minh họa cần review.",
+    "Các action/rule/workflow là diễn giải candidate; chưa được xác nhận nghiệp vụ.",
+    "Mọi ID bắt đầu p2-/handle đều là symbol minh họa, không lấy từ DB."
+  ],
+  "source_facts": {
+    "supplied_actors": [
+      "Bệnh nhân",
+      "Nhân viên phòng khám"
+    ],
+    "priority_R1_to_R4": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "operating_unknowns": {
+      "expected_load": null,
+      "data_volume": null,
+      "growth": null,
+      "resource_budget": null
+    },
+    "source_criterion_count": 10
+  },
+  "progression": [
+    {
+      "step": 1,
+      "input": "SourceContext checked + bootstrap model và set, chỉ minh họa thiết kế G1.",
+      "candidate_findings": [
+        {
+          "handle": "q-book",
+          "kind": "business",
+          "question": "Ai được xác nhận đặt lịch?",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0"
+            }
+          ]
+        },
+        {
+          "handle": "q-cancel",
+          "kind": "business",
+          "question": "Ai được hủy lịch và trong phạm vi nào?",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1"
+            },
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1"
+            }
+          ]
+        },
+        {
+          "handle": "q-clinic",
+          "kind": "business",
+          "question": "Phạm vi phòng khám của nhân viên được xác định thế nào?",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1"
+            }
+          ]
+        },
+        {
+          "handle": "q-workload",
+          "kind": "quality_target",
+          "question": "Tải vận hành thực dự kiến là gì nếu cần quyết định thiết kế dựa tải?",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/operating_conditions/expected_load"
+            },
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/0"
+            }
+          ]
+        },
+        {
+          "handle": "q-local-evidence",
+          "kind": "verification",
+          "question": "Cần kiểm các luồng dữ liệu và môi trường local khi có model đầy đủ.",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/constraints/0"
+            }
+          ]
+        }
+      ],
+      "canonical_projection": "Issue + AnalysisSet successor, không auto resolve; source holds cho phần chưa có actions."
+    },
+    {
+      "step": 2,
+      "candidate_actions": [
+        {
+          "handle": "book",
+          "name": "Xác nhận đặt lịch",
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0"
+            }
+          ],
+          "initiator": "unknown",
+          "actor_handles": [],
+          "reads": [
+            "slot"
+          ],
+          "writes": [
+            "appointment",
+            "slot"
+          ],
+          "rules": [
+            "one-confirmation"
+          ],
+          "state": "needs_clarification",
+          "question_handles": [
+            "q-book"
+          ]
+        },
+        {
+          "handle": "cancel",
+          "name": "Hủy lịch",
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1"
+            }
+          ],
+          "initiator": "unknown",
+          "actor_handles": [],
+          "reads": [
+            "appointment",
+            "slot"
+          ],
+          "writes": [
+            "appointment",
+            "slot",
+            "cancel-history"
+          ],
+          "rules": [
+            "cancel-consistency"
+          ],
+          "state": "needs_clarification",
+          "question_handles": [
+            "q-cancel"
+          ]
+        },
+        {
+          "handle": "view-own",
+          "name": "Xem hồ sơ của mình",
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1"
+            }
+          ],
+          "initiator": "external",
+          "actor_handles": [
+            "patient"
+          ],
+          "reads": [
+            "patient-record"
+          ],
+          "writes": [],
+          "rules": [
+            "owner-only"
+          ],
+          "state": "draft",
+          "question_handles": []
+        },
+        {
+          "handle": "view-clinic",
+          "name": "Xem dữ liệu phòng khám mình",
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1"
+            }
+          ],
+          "initiator": "external",
+          "actor_handles": [
+            "staff"
+          ],
+          "reads": [
+            "patient-record"
+          ],
+          "writes": [],
+          "rules": [
+            "clinic-only"
+          ],
+          "state": "needs_clarification",
+          "question_handles": [
+            "q-clinic"
+          ]
+        }
+      ],
+      "handle_catalog": {
+        "actors": {
+          "patient": "Bệnh nhân",
+          "staff": "Nhân viên phòng khám"
+        },
+        "data": [
+          "slot",
+          "appointment",
+          "cancel-history",
+          "patient-record"
+        ],
+        "rules": {
+          "one-confirmation": "Tối đa một xác nhận/slot; cách giữ nhất quán chưa chốt.",
+          "cancel-consistency": "Lưu lý do/người/thời gian và cập nhật lịch/slot nhất quán.",
+          "owner-only": "Chỉ xem hồ sơ của mình, không suy quyền hủy.",
+          "clinic-only": "Chỉ xem dữ liệu phòng khám mình; scope cần làm rõ."
+        }
+      },
+      "workflow_projections": [
+        {
+          "handle": "wf-book",
+          "action_handles": [
+            "book"
+          ],
+          "main_path": "Slot được xác nhận tối đa một lần.",
+          "alternative_path": "Xung đột: phản hồi chỉ rõ slot.",
+          "unknown_exception": "Các ngoại lệ nghiệp vụ khác chưa được cung cấp.",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0"
+            }
+          ]
+        },
+        {
+          "handle": "wf-cancel",
+          "action_handles": [
+            "cancel"
+          ],
+          "main_path": "Ghi lịch sử và cập nhật lịch/slot nhất quán.",
+          "alternative_path": null,
+          "unknown_exception": "Điều kiện từ chối hủy chưa có; hỏi, không tự đặt thời hạn.",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1"
+            }
+          ]
+        }
+      ],
+      "canonical_projection": "Model successor với actions/data/rules/workflows có typed refs; giữ Issues/AnalysisSet mới, chưa dependencies."
+    },
+    {
+      "step": 3,
+      "candidate_components": [
+        {
+          "handle": "scheduling",
+          "name": "Quản lý lịch và slot",
+          "purpose": "Giữ các trách nhiệm thay đổi trạng thái lịch/slot.",
+          "origin": "inferred",
+          "responsibility_handles": [
+            "schedule-state"
+          ],
+          "grouping_reason": "Đặt/hủy cùng có quy tắc nhất quán trạng thái; đây là căn cứ cân nhắc.",
+          "alternatives": [
+            "Tách điều phối đặt/hủy khỏi trách nhiệm quản lý slot; phải phân tích phối hợp sau."
+          ],
+          "uncertainties": [
+            "Quyền đặt/hủy chưa rõ."
+          ],
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0"
+            },
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1"
+            }
+          ]
+        },
+        {
+          "handle": "scoped-view",
+          "name": "Truy vấn dữ liệu theo phạm vi",
+          "purpose": "Thể hiện trách nhiệm đọc dữ liệu trong phạm vi quyền.",
+          "origin": "inferred",
+          "responsibility_handles": [
+            "view-scope"
+          ],
+          "grouping_reason": "Hai trường hợp xem có điều kiện phạm vi nguồn R4.",
+          "alternatives": [
+            "Phân trách nhiệm kiểm phạm vi vào từng phần xử lý nghiệp vụ; cần review trade-off."
+          ],
+          "uncertainties": [
+            "Phạm vi nhân viên chưa rõ."
+          ],
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1"
+            }
+          ]
+        }
+      ],
+      "responsibility_projections": [
+        {
+          "handle": "schedule-state",
+          "component_handle": "scheduling",
+          "action_handles": [
+            "book",
+            "cancel"
+          ],
+          "rule_handles": [
+            "one-confirmation",
+            "cancel-consistency"
+          ]
+        },
+        {
+          "handle": "view-scope",
+          "component_handle": "scoped-view",
+          "action_handles": [
+            "view-own",
+            "view-clinic"
+          ],
+          "rule_handles": [
+            "owner-only",
+            "clinic-only"
+          ]
+        }
+      ],
+      "canonical_projection": "Component/Responsibility trong Model; không quyết định microservices/style/deployment."
+    },
+    {
+      "step": 4,
+      "mapping_candidate_rows": [
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/0"
+          },
+          "source_requirement_id": "R1",
+          "obligation_excerpt": "Hai người đặt cùng một slot thì tối đa một người được xác nhận.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "book"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "schedule-state"
+          ],
+          "remaining_gap": "Chưa xác định người được đặt; cần review phân công.",
+          "question_handle": "q-book"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/0/acceptance_criteria/0"
+          },
+          "source_requirement_id": "R1",
+          "obligation_excerpt": "Tối đa một lịch được xác nhận cho một slot.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "book"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "schedule-state"
+          ],
+          "remaining_gap": "Chưa xác định người được đặt; cần review phân công.",
+          "question_handle": "q-book"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/0/acceptance_criteria/1"
+          },
+          "source_requirement_id": "R1",
+          "obligation_excerpt": "Phản hồi xung đột chỉ rõ slot.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "book"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "schedule-state"
+          ],
+          "remaining_gap": "Chưa xác định người được đặt; cần review phân công.",
+          "question_handle": "q-book"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/1"
+          },
+          "source_requirement_id": "R2",
+          "obligation_excerpt": "Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "cancel"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "schedule-state"
+          ],
+          "remaining_gap": "Chưa xác định quyền hủy; thiếu phạm vi phòng khám.",
+          "question_handle": "q-cancel"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/1/acceptance_criteria/0"
+          },
+          "source_requirement_id": "R2",
+          "obligation_excerpt": "Ghi lịch sử hủy đầy đủ.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "cancel"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "schedule-state"
+          ],
+          "remaining_gap": "Chưa xác định quyền hủy; thiếu phạm vi phòng khám.",
+          "question_handle": "q-cancel"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/functional_requirements/1/acceptance_criteria/1"
+          },
+          "source_requirement_id": "R2",
+          "obligation_excerpt": "Trạng thái lịch và slot được cập nhật nhất quán.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "cancel"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "schedule-state"
+          ],
+          "remaining_gap": "Chưa xác định quyền hủy; thiếu phạm vi phòng khám.",
+          "question_handle": "q-cancel"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/0"
+          },
+          "source_requirement_id": "R3",
+          "obligation_excerpt": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+          "candidate_target": "system",
+          "candidate_assignment": "unassigned",
+          "candidate_action_handles": [],
+          "candidate_primary_responsibility_handles": [],
+          "remaining_gap": "Chưa phân tích tình huống/characteristics bước 6 hoặc benchmark; không xác nhận p95.",
+          "question_handle": "q-workload"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/0/acceptance_criteria/0"
+          },
+          "source_requirement_id": "R3",
+          "obligation_excerpt": "Đo phía server, percentile 95.",
+          "candidate_target": "system",
+          "candidate_assignment": "unassigned",
+          "candidate_action_handles": [],
+          "candidate_primary_responsibility_handles": [],
+          "remaining_gap": "Chưa phân tích tình huống/characteristics bước 6 hoặc benchmark; không xác nhận p95.",
+          "question_handle": "q-workload"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/0/acceptance_criteria/1"
+          },
+          "source_requirement_id": "R3",
+          "obligation_excerpt": "50 người dùng; thời gian 30 phút.",
+          "candidate_target": "system",
+          "candidate_assignment": "unassigned",
+          "candidate_action_handles": [],
+          "candidate_primary_responsibility_handles": [],
+          "remaining_gap": "Chưa phân tích tình huống/characteristics bước 6 hoặc benchmark; không xác nhận p95.",
+          "question_handle": "q-workload"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/1"
+          },
+          "source_requirement_id": "R4",
+          "obligation_excerpt": "Bệnh nhân chỉ xem hồ sơ của mình; nhân viên chỉ xem dữ liệu phòng khám mình.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "view-own",
+            "view-clinic"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "view-scope"
+          ],
+          "remaining_gap": "Phạm vi nhân viên theo phòng khám chưa đủ rõ; cần xét từng nghĩa vụ khi tách Parts.",
+          "question_handle": "q-clinic"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/1/acceptance_criteria/0"
+          },
+          "source_requirement_id": "R4",
+          "obligation_excerpt": "Chặn truy cập khác chủ sở hữu.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "view-own",
+            "view-clinic"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "view-scope"
+          ],
+          "remaining_gap": "Phạm vi nhân viên theo phòng khám chưa đủ rõ; cần xét từng nghĩa vụ khi tách Parts.",
+          "question_handle": "q-clinic"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/non_functional_requirements/1/acceptance_criteria/1"
+          },
+          "source_requirement_id": "R4",
+          "obligation_excerpt": "Chặn truy cập chéo phòng khám.",
+          "candidate_target": "components",
+          "candidate_assignment": "blocked",
+          "candidate_action_handles": [
+            "view-own",
+            "view-clinic"
+          ],
+          "candidate_primary_responsibility_handles": [
+            "view-scope"
+          ],
+          "remaining_gap": "Phạm vi nhân viên theo phòng khám chưa đủ rõ; cần xét từng nghĩa vụ khi tách Parts.",
+          "question_handle": "q-clinic"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/constraints/0"
+          },
+          "source_requirement_id": "R5",
+          "obligation_excerpt": "App và database chạy local; dữ liệu lịch hẹn không gửi ra ngoài.",
+          "candidate_target": "system",
+          "candidate_assignment": "unassigned",
+          "candidate_action_handles": [],
+          "candidate_primary_responsibility_handles": [],
+          "remaining_gap": "Chưa có evidence kiểm luồng dữ liệu và local deployment; không tự xác nhận tuân thủ.",
+          "question_handle": "q-local-evidence"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/constraints/0/acceptance_criteria/0"
+          },
+          "source_requirement_id": "R5",
+          "obligation_excerpt": "App và database triển khai trong môi trường local.",
+          "candidate_target": "system",
+          "candidate_assignment": "unassigned",
+          "candidate_action_handles": [],
+          "candidate_primary_responsibility_handles": [],
+          "remaining_gap": "Chưa có evidence kiểm luồng dữ liệu và local deployment; không tự xác nhận tuân thủ.",
+          "question_handle": "q-local-evidence"
+        },
+        {
+          "source_ref": {
+            "snapshot_id": "snap-demo-clinic-r1",
+            "input_pointer": "/constraints/0/acceptance_criteria/1"
+          },
+          "source_requirement_id": "R5",
+          "obligation_excerpt": "Không có luồng gửi dữ liệu lịch hẹn ra ngoài.",
+          "candidate_target": "system",
+          "candidate_assignment": "unassigned",
+          "candidate_action_handles": [],
+          "candidate_primary_responsibility_handles": [],
+          "remaining_gap": "Chưa có evidence kiểm luồng dữ liệu và local deployment; không tự xác nhận tuân thủ.",
+          "question_handle": "q-local-evidence"
+        }
+      ],
+      "canonical_projection": "Mỗi source row phải được phân rã Parts đầy đủ, xác định covered_portion/remaining_gap; projections này không phải canonical Parts hoàn chỉnh.",
+      "expected_inventory_rows": 15,
+      "expected_terminal": "blocked: model nháp có gaps; không Review/Handoff, không xác nhận p95/local compliance."
+    }
+  ],
+  "scope_expectation": {
+    "may_analyze_provisionally": [
+      "view-own"
+    ],
+    "not_a_review_acceptance": true,
+    "reason": "R4 có quyền xem của bệnh nhân; vẫn phải xét toàn bộ constraint/holds và closure trước gọi scope độc lập.",
+    "accepted_scope": null,
+    "r5_unassessed_blocks_acceptance": true
+  },
+  "admission_walkthroughs": [
+    {
+      "case": "clear-synthetic-source",
+      "not_clinic_confirmation": true,
+      "source_assumptions": [
+        "Nhân viên được tạo phiếu, đọc danh mục, lưu phiếu.",
+        "Criterion: dữ liệu bắt buộc được kiểm; constraint local đã rõ cho bước phân tích."
+      ],
+      "trace": [
+        {
+          "step": 1,
+          "source_inspection": "all inspected; information needed for next step usable",
+          "mapping_assessment": "not_assessed",
+          "parts_complete": false,
+          "may_publish_checkpoint": true,
+          "may_advance_to_next_step": true,
+          "user_review_accepted": false
+        },
+        {
+          "step": 2,
+          "source_inspection": "all inspected; information needed for next step usable",
+          "mapping_assessment": "not_assessed",
+          "parts_complete": false,
+          "may_publish_checkpoint": true,
+          "may_advance_to_next_step": true,
+          "user_review_accepted": false
+        },
+        {
+          "step": 3,
+          "source_inspection": "all inspected; information needed for next step usable",
+          "mapping_assessment": "not_assessed",
+          "parts_complete": false,
+          "may_publish_checkpoint": true,
+          "may_advance_to_next_step": true,
+          "user_review_accepted": false
+        },
+        {
+          "step": 4,
+          "source_inspection": "all inspected; information needed for next step usable",
+          "mapping_assessment": "proposed",
+          "parts_complete": true,
+          "may_publish_checkpoint": true,
+          "may_advance_to_next_step": false,
+          "user_review_accepted": false
+        }
+      ],
+      "expected": "Không có vòng cần Parts bước 4 trước khi tạo components ở bước 3; chưa kiểm local compliance thực thi."
+    },
+    {
+      "case": "unknown-constraint-and-cancel-permission",
+      "source_is_hypothetical_variant": true,
+      "hold_selectors": [
+        "all-source-uses: phạm vi constraint chưa rõ",
+        "cancel-and-dependent-uses: quyền hủy chưa rõ"
+      ],
+      "trace": [
+        {
+          "step": 1,
+          "new_elements": [],
+          "hold_materialization": "Giữ selectors dù chưa có action; không suy scope độc lập."
+        },
+        {
+          "step": 2,
+          "new_elements": [
+            "cancel",
+            "read-history"
+          ],
+          "hold_materialization": "Constraint all-source-uses mở rộng cả hai; quyền hủy phủ cancel và phần phụ thuộc."
+        },
+        {
+          "step": 3,
+          "new_elements": [
+            "scheduling",
+            "schedule-state"
+          ],
+          "hold_materialization": "Tính lại trên candidate graph; component mới không làm mất holds."
+        },
+        {
+          "step": 4,
+          "new_elements": [
+            "P-cancel-history"
+          ],
+          "hold_materialization": "Part chứa cancel/read-history mở toàn action_ids, union closure kiểm lại."
+        }
+      ],
+      "expected": {
+        "draft_analysis_allowed": true,
+        "blocked_checkpoint_allowed_if_structurally_valid": true,
+        "dependent_scope_advance": false,
+        "user_review_accepted": false
+      }
+    }
+  ]
+}

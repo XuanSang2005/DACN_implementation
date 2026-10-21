@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "install",
+      "--no-index",
+      "--no-deps",
+      "--force-reinstall",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/builds/dacn_s01-0.1.0a6-py3-none-any.whl",
+      "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/builds/dacn_s02-0.1.0a2-py3-none-any.whl"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-install-oio27rbc",
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-install-oio27rbc",
+    "exit_code": 0
+  }
+]

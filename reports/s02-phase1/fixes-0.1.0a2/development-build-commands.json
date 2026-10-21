@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--wheel-dir",
+      "s02/dist",
+      "./s02"
+    ],
+    "cwd": "/Users/macbookpro/Documents/DACN_implementation",
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python",
+      "-B",
+      "-m",
+      "pip",
+      "install",
+      "--no-index",
+      "--no-deps",
+      "--force-reinstall",
+      "s02/dist/dacn_s02-0.1.0a2-py3-none-any.whl"
+    ],
+    "cwd": "/Users/macbookpro/Documents/DACN_implementation",
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,5 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python -B -m dacn_s02 --config /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx/s02.toml start --store-key synthetic --s01-run-id 753e461c-d8c1-4ec8-aade-aa7d12d76565 --receipt /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx/s02.receipt.json
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx
+{"command_id":"f0937f7d-8271-42f8-900a-20193abe375e","status":"completed","record_ids":["8b87b5ef-1b95-4c02-ae01-3d86cc1eeaaa","aa53f675-9a99-4760-b316-f86569384bb7"],"errors":[],"result":{"command_id":"f0937f7d-8271-42f8-900a-20193abe375e","session_id":"7945ee0b-adc8-4bae-9a7e-2c7825e0b3b5","run_id":"8b87b5ef-1b95-4c02-ae01-3d86cc1eeaaa","source_context_id":"aa53f675-9a99-4760-b316-f86569384bb7","snapshot_id":"4799411d-6e61-4469-aa5c-1a153e817a8b"}}
+
+exit_code=0

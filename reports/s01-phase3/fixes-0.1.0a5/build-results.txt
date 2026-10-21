@@ -1,0 +1,28 @@
+
+build
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip wheel --no-index --no-deps --no-build-isolation --wheel-dir dist .
+cwd=/Users/macbookpro/Documents/DACN_implementation
+Processing /Users/macbookpro/Documents/DACN_implementation
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: dacn-s01
+  Building wheel for dacn-s01 (pyproject.toml): started
+  Building wheel for dacn-s01 (pyproject.toml): finished with status 'done'
+  Created wheel for dacn-s01: filename=dacn_s01-0.1.0a5-py3-none-any.whl size=28153 sha256=5b3dbc9feac551a727896555f60282c5170d93b7a042cb79ffec01b68493da82
+  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-nq4ltjrz/wheels/f6/b1/15/9d315d943c28c91a8202191c5c06ff57af2721e5f134614272
+Successfully built dacn-s01
+
+exit_code=0
+
+install
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B -m pip install --no-index --no-deps --force-reinstall dist/dacn_s01-0.1.0a5-py3-none-any.whl
+cwd=/Users/macbookpro/Documents/DACN_implementation
+Processing ./dist/dacn_s01-0.1.0a5-py3-none-any.whl
+Installing collected packages: dacn-s01
+  Attempting uninstall: dacn-s01
+    Found existing installation: dacn-s01 0.1.0a4
+    Uninstalling dacn-s01-0.1.0a4:
+      Successfully uninstalled dacn-s01-0.1.0a4
+Successfully installed dacn-s01-0.1.0a5
+
+exit_code=0

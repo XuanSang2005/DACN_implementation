@@ -1,0 +1,5 @@
+Verified 16 package files across source/install/wheel; runtime/dependencies unchanged.
+Verified 131/133 baseline inventory files unchanged; only repository lookup additions and package version changed.
+Verified real process schedules/receipt contention/kill/output recovery on both backends; 250 evidence records.
+Completed instrumented CLI subprocess totals: {"c": {"processes": 203, "counts": {"c": 1610, "python": 0}}, "python": {"processes": 203, "counts": {"c": 0, "python": 1610}}}
+Wheel sha256: e4ebbe7988d7cb5255d93845c94ba41aeb043900c762ca7636d4f7c093bff20b

@@ -1,0 +1,3 @@
+# Bootstrap resolver only; macOS arm64 wheel verified against PyPI.
+uv==0.13.0 \
+    --hash=sha256:a5f93ae362b751737cecef0bbc0294624be68a843ff9b32d86e6862a26101630

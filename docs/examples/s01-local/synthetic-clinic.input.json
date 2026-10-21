@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Synthetic clinic — local CLI demonstration",
+  "context": "Synthetic fixture for CLI verification; not confirmed business requirements.",
+  "actors": ["Reception"],
+  "functional_requirements": [
+    {"id": "R1", "text": "Record an appointment request.", "priority": null,
+     "acceptance_criteria": ["Keep the supplied request text."]}
+  ],
+  "non_functional_requirements": [],
+  "constraints": [],
+  "design_preferences": {
+    "metric_priorities": ["response_time_p95", "sustainable_throughput", "cpu_utilisation", "scaling_gain"]
+  },
+  "operating_conditions": {
+    "critical_scenarios": null, "expected_load": null, "peak_load": null,
+    "data_volume": null, "growth": null, "resource_budget": null
+  }
+}

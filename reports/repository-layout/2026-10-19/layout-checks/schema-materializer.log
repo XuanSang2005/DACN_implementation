@@ -1,0 +1,5 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python -B /Users/macbookpro/Documents/DACN_implementation/packages/s02/tools/materialize_schema.py --check
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx
+Schema resource matches materializer; no file changed
+
+exit_code=0

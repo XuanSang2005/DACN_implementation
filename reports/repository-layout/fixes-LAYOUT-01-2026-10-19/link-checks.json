@@ -1,0 +1,247 @@
+[
+  {
+    "file": "README.md",
+    "target": "packages/s01/",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "packages/s02/",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase4-0.1.0a6/S01_ACCEPTANCE.json",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/AUDIT_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/repository-layout-2026-10-19/AUDIT_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "reports/repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "packages/s01/",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "packages/s02/",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "tools/",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "packages/s01/tools/legacy/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "packages/s02/tools/legacy/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "docs/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "docs/s01/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "docs/s02/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "reports/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "tools/requirements-tools.lock",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": ".venv/",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "s02/.venv/",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "docs/s01/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "docs/s02/README.md",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "tools/check_layout.py",
+    "resolves": true
+  },
+  {
+    "file": "README.md",
+    "target": "reports/repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "s01-phase1/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "s01-phase2/fixes-0.1.0a3/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "s01-phase3/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "s01-phase3/fixes-0.1.0a5/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "s01-phase4/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase4-0.1.0a6/S01_ACCEPTANCE.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "s02-phase1/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "s02-phase1/fixes-0.1.0a2/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/AUDIT_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/repository-layout-2026-10-19/AUDIT_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/README.md",
+    "target": "../README.md",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "</Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/repository-layout-2026-10-19/AUDIT_REPORT.md>",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "changes.patch",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "results.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "tooling-commands.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "regression.log",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "s01-package-verification/manifest.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "s02-package-verification/manifest.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "workspace-package-verification/manifest.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "s01-runner-command.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "s02-runner-command.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "baseline.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "preservation.json",
+    "resolves": true
+  },
+  {
+    "file": "reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md",
+    "target": "artifact-manifest.json",
+    "resolves": true
+  }
+]

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dacn-s02"
+version = "0.1.0a2"
+description = "DACN S02 foundation: immutable local records and checked S01 intake"
+requires-python = ">=3.13,<3.14"
+dependencies = ["dacn-s01==0.1.0a6", "jsonschema==4.26.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools.package-data]
+dacn_s02 = ["schemas/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib -ra"

@@ -1,0 +1,2294 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-synthetic-scope",
+  "external_bindings": [],
+  "records": [],
+  "scenarios": [
+    {
+      "id": "F04-mandatory",
+      "graph": {
+        "id": "F04-mandatory-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-mandatory-A1",
+            "workflow_ids": [
+              "F04-mandatory-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-mandatory-A2",
+            "workflow_ids": [
+              "F04-mandatory-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-mandatory-W1",
+            "entry_node_id": "F04-mandatory-N2",
+            "nodes": [
+              {
+                "id": "F04-mandatory-N2",
+                "kind": "action",
+                "action_id": "F04-mandatory-A2"
+              },
+              {
+                "id": "F04-mandatory-N1",
+                "kind": "action",
+                "action_id": "F04-mandatory-A1"
+              },
+              {
+                "id": "F04-mandatory-E",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-mandatory-EDGE21",
+                "from": "F04-mandatory-N2",
+                "to": "F04-mandatory-N1",
+                "guard": null
+              },
+              {
+                "id": "F04-mandatory-EDGE1E",
+                "from": "F04-mandatory-N1",
+                "to": "F04-mandatory-E",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-mandatory-C1"
+          },
+          {
+            "id": "F04-mandatory-C2"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-mandatory-RS1",
+            "component_id": "F04-mandatory-C1",
+            "action_ids": [
+              "F04-mandatory-A1"
+            ]
+          },
+          {
+            "id": "F04-mandatory-RS2",
+            "component_id": "F04-mandatory-C2",
+            "action_ids": [
+              "F04-mandatory-A2"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [],
+        "parts": [
+          {
+            "id": "F04-mandatory-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-mandatory-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-mandatory-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-mandatory-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-mandatory-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-mandatory-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph synthetic là projection chỉ gồm fields dùng closure, không phải Model runtime đầy đủ. Refs/source/traces/states/inventory/render/freshness được giả định đủ trừ điểm case nêu; mọi review là giả định. Không import projection thành records.",
+      "selected_parts": [
+        "F04-mandatory-P1"
+      ],
+      "selected_actions": [
+        "F04-mandatory-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-mandatory-P1"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [
+        {
+          "id": "F04-mandatory-Q2",
+          "blocking": {
+            "model_id": "F04-mandatory-model",
+            "element_ids": [
+              "F04-mandatory-A2"
+            ],
+            "mapping_part_ids": [
+              "F04-mandatory-P2"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-mandatory-A2",
+          "F04-mandatory-A1"
+        ],
+        "required_part_ids": [
+          "F04-mandatory-P1",
+          "F04-mandatory-P2"
+        ],
+        "eligible": false,
+        "allowed_scope": {
+          "model_id": "F04-mandatory-model",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "F04-mandatory-model",
+          "element_ids": [
+            "F04-mandatory-A1",
+            "F04-mandatory-A2"
+          ],
+          "mapping_part_ids": [
+            "F04-mandatory-P1",
+            "F04-mandatory-P2"
+          ]
+        },
+        "code": "BLOCKED_SCOPE",
+        "stage": "revision",
+        "reason": "Entry A2 bắt buộc trước A1. Chỉ chọn A1 không bỏ được A2; A2 có blocker và P2 chưa accepted."
+      }
+    },
+    {
+      "id": "F04-exclusive",
+      "graph": {
+        "id": "F04-exclusive-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-exclusive-A1",
+            "workflow_ids": [
+              "F04-exclusive-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-exclusive-A2",
+            "workflow_ids": [
+              "F04-exclusive-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-exclusive-W1",
+            "entry_node_id": "F04-exclusive-D",
+            "nodes": [
+              {
+                "id": "F04-exclusive-D",
+                "kind": "decision",
+                "action_id": null
+              },
+              {
+                "id": "F04-exclusive-N1",
+                "kind": "action",
+                "action_id": "F04-exclusive-A1"
+              },
+              {
+                "id": "F04-exclusive-N2",
+                "kind": "action",
+                "action_id": "F04-exclusive-A2"
+              },
+              {
+                "id": "F04-exclusive-E",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-exclusive-BR1",
+                "from": "F04-exclusive-D",
+                "to": "F04-exclusive-N1",
+                "guard": "Synthetic route X"
+              },
+              {
+                "id": "F04-exclusive-BR2",
+                "from": "F04-exclusive-D",
+                "to": "F04-exclusive-N2",
+                "guard": "Synthetic route Y"
+              },
+              {
+                "id": "F04-exclusive-END1",
+                "from": "F04-exclusive-N1",
+                "to": "F04-exclusive-E",
+                "guard": null
+              },
+              {
+                "id": "F04-exclusive-END2",
+                "from": "F04-exclusive-N2",
+                "to": "F04-exclusive-E",
+                "guard": null
+              }
+            ],
+            "branch_points": [
+              {
+                "node_id": "F04-exclusive-D",
+                "mode": "exclusive"
+              }
+            ]
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-exclusive-C1"
+          },
+          {
+            "id": "F04-exclusive-C2"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-exclusive-RS1",
+            "component_id": "F04-exclusive-C1",
+            "action_ids": [
+              "F04-exclusive-A1"
+            ]
+          },
+          {
+            "id": "F04-exclusive-RS2",
+            "component_id": "F04-exclusive-C2",
+            "action_ids": [
+              "F04-exclusive-A2"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [],
+        "parts": [
+          {
+            "id": "F04-exclusive-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-exclusive-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-exclusive-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-exclusive-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-exclusive-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-exclusive-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph synthetic là projection chỉ gồm fields dùng closure, không phải Model runtime đầy đủ. Refs/source/traces/states/inventory/render/freshness được giả định đủ trừ điểm case nêu; mọi review là giả định. Không import projection thành records.",
+      "selected_parts": [
+        "F04-exclusive-P1"
+      ],
+      "selected_actions": [
+        "F04-exclusive-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-exclusive-P1"
+      ],
+      "workflow_choices": [
+        {
+          "workflow_id": "F04-exclusive-W1",
+          "node_id": "F04-exclusive-D",
+          "edge_id": "F04-exclusive-BR1",
+          "independence_evidence": "GIẢ ĐỊNH reviewer đã đối chiếu nguồn synthetic: route X và Y loại trừ nhau, A1 không đọc/ghi trạng thái do A2 thiết lập, không dependency/prerequisite chung bị chặn. Trace nguồn phải có trong model đầy đủ; prose guard tự nó không đủ."
+        }
+      ],
+      "blocking_issues": [
+        {
+          "id": "F04-exclusive-Q2",
+          "blocking": {
+            "model_id": "F04-exclusive-model",
+            "element_ids": [
+              "F04-exclusive-A2"
+            ],
+            "mapping_part_ids": [
+              "F04-exclusive-P2"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-exclusive-A1"
+        ],
+        "eligible": true,
+        "allowed_scope": {
+          "model_id": "F04-exclusive-model",
+          "element_ids": [
+            "F04-exclusive-A1",
+            "F04-exclusive-W1",
+            "F04-exclusive-RS1",
+            "F04-exclusive-C1"
+          ],
+          "mapping_part_ids": [
+            "F04-exclusive-P1"
+          ]
+        },
+        "blocked_scope": {
+          "model_id": "F04-exclusive-model",
+          "element_ids": [
+            "F04-exclusive-A2"
+          ],
+          "mapping_part_ids": [
+            "F04-exclusive-P2"
+          ]
+        },
+        "code": null,
+        "reason": "Choice exclusive đã biểu diễn/review; closure route X không gặp Q2. Eligibility chỉ dưới preconditions giả định, không cấp quyền thực."
+      }
+    },
+    {
+      "id": "F04-unknown-branch",
+      "graph": {
+        "id": "F04-unknown-branch-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-unknown-branch-A1",
+            "workflow_ids": [
+              "F04-unknown-branch-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-unknown-branch-A2",
+            "workflow_ids": [
+              "F04-unknown-branch-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-unknown-branch-W1",
+            "entry_node_id": "F04-unknown-branch-D",
+            "nodes": [
+              {
+                "id": "F04-unknown-branch-D",
+                "kind": "decision",
+                "action_id": null
+              },
+              {
+                "id": "F04-unknown-branch-N1",
+                "kind": "action",
+                "action_id": "F04-unknown-branch-A1"
+              },
+              {
+                "id": "F04-unknown-branch-N2",
+                "kind": "action",
+                "action_id": "F04-unknown-branch-A2"
+              },
+              {
+                "id": "F04-unknown-branch-E",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-unknown-branch-BR1",
+                "from": "F04-unknown-branch-D",
+                "to": "F04-unknown-branch-N1",
+                "guard": "Synthetic route X"
+              },
+              {
+                "id": "F04-unknown-branch-BR2",
+                "from": "F04-unknown-branch-D",
+                "to": "F04-unknown-branch-N2",
+                "guard": "Synthetic route Y"
+              },
+              {
+                "id": "F04-unknown-branch-END1",
+                "from": "F04-unknown-branch-N1",
+                "to": "F04-unknown-branch-E",
+                "guard": null
+              },
+              {
+                "id": "F04-unknown-branch-END2",
+                "from": "F04-unknown-branch-N2",
+                "to": "F04-unknown-branch-E",
+                "guard": null
+              }
+            ],
+            "branch_points": [
+              {
+                "node_id": "F04-unknown-branch-D",
+                "mode": "unknown"
+              }
+            ]
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-unknown-branch-C1"
+          },
+          {
+            "id": "F04-unknown-branch-C2"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-unknown-branch-RS1",
+            "component_id": "F04-unknown-branch-C1",
+            "action_ids": [
+              "F04-unknown-branch-A1"
+            ]
+          },
+          {
+            "id": "F04-unknown-branch-RS2",
+            "component_id": "F04-unknown-branch-C2",
+            "action_ids": [
+              "F04-unknown-branch-A2"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [],
+        "parts": [
+          {
+            "id": "F04-unknown-branch-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-unknown-branch-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-unknown-branch-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-unknown-branch-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-unknown-branch-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-unknown-branch-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph synthetic là projection chỉ gồm fields dùng closure, không phải Model runtime đầy đủ. Refs/source/traces/states/inventory/render/freshness được giả định đủ trừ điểm case nêu; mọi review là giả định. Không import projection thành records.",
+      "selected_parts": [
+        "F04-unknown-branch-P1"
+      ],
+      "selected_actions": [
+        "F04-unknown-branch-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-unknown-branch-P1"
+      ],
+      "workflow_choices": [
+        {
+          "workflow_id": "F04-unknown-branch-W1",
+          "node_id": "F04-unknown-branch-D",
+          "edge_id": "F04-unknown-branch-BR1",
+          "independence_evidence": "GIẢ ĐỊNH reviewer đã đối chiếu nguồn synthetic: route X và Y loại trừ nhau, A1 không đọc/ghi trạng thái do A2 thiết lập, không dependency/prerequisite chung bị chặn. Trace nguồn phải có trong model đầy đủ; prose guard tự nó không đủ."
+        }
+      ],
+      "blocking_issues": [
+        {
+          "id": "F04-unknown-branch-Q2",
+          "blocking": {
+            "model_id": "F04-unknown-branch-model",
+            "element_ids": [
+              "F04-unknown-branch-A2"
+            ],
+            "mapping_part_ids": [
+              "F04-unknown-branch-P2"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "eligible": false,
+        "allowed_scope": {
+          "model_id": "F04-unknown-branch-model",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "F04-unknown-branch-model",
+          "element_ids": [
+            "F04-unknown-branch-A1",
+            "F04-unknown-branch-A2"
+          ],
+          "mapping_part_ids": [
+            "F04-unknown-branch-P1",
+            "F04-unknown-branch-P2"
+          ]
+        },
+        "code": "SCOPE_UNDETERMINED",
+        "stage": "review",
+        "reason": "BranchPoint unknown không cho choice thu hẹp. Nếu bỏ choice thì duyệt cả A1/A2, Q2 vẫn kéo A1 blocked; không suy độc lập từ guard."
+      }
+    },
+    {
+      "id": "F04-multilevel",
+      "graph": {
+        "id": "F04-multilevel-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-multilevel-A1",
+            "workflow_ids": [
+              "F04-multilevel-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-multilevel-A2",
+            "workflow_ids": [
+              "F04-multilevel-W2"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-multilevel-A3",
+            "workflow_ids": [
+              "F04-multilevel-W3"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-multilevel-W1",
+            "entry_node_id": "F04-multilevel-N1",
+            "nodes": [
+              {
+                "id": "F04-multilevel-N1",
+                "kind": "action",
+                "action_id": "F04-multilevel-A1"
+              },
+              {
+                "id": "F04-multilevel-E1",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multilevel-EDGE1",
+                "from": "F04-multilevel-N1",
+                "to": "F04-multilevel-E1",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-multilevel-W2",
+            "entry_node_id": "F04-multilevel-N2",
+            "nodes": [
+              {
+                "id": "F04-multilevel-N2",
+                "kind": "action",
+                "action_id": "F04-multilevel-A2"
+              },
+              {
+                "id": "F04-multilevel-E2",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multilevel-EDGE2",
+                "from": "F04-multilevel-N2",
+                "to": "F04-multilevel-E2",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-multilevel-W3",
+            "entry_node_id": "F04-multilevel-N3",
+            "nodes": [
+              {
+                "id": "F04-multilevel-N3",
+                "kind": "action",
+                "action_id": "F04-multilevel-A3"
+              },
+              {
+                "id": "F04-multilevel-E3",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multilevel-EDGE3",
+                "from": "F04-multilevel-N3",
+                "to": "F04-multilevel-E3",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-multilevel-C1"
+          },
+          {
+            "id": "F04-multilevel-C2"
+          },
+          {
+            "id": "F04-multilevel-C3"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-multilevel-RS1",
+            "component_id": "F04-multilevel-C1",
+            "action_ids": [
+              "F04-multilevel-A1"
+            ]
+          },
+          {
+            "id": "F04-multilevel-RS2",
+            "component_id": "F04-multilevel-C2",
+            "action_ids": [
+              "F04-multilevel-A2"
+            ]
+          },
+          {
+            "id": "F04-multilevel-RS3",
+            "component_id": "F04-multilevel-C3",
+            "action_ids": [
+              "F04-multilevel-A3"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [
+          {
+            "id": "F04-multilevel-DEP1",
+            "kind": "uses_component",
+            "consumer_component_id": "F04-multilevel-C1",
+            "provider_component_id": "F04-multilevel-C2",
+            "interface_id": null,
+            "action_ids": [
+              "F04-multilevel-A1"
+            ],
+            "workflow_ids": [],
+            "support": [
+              {
+                "action_id": "F04-multilevel-A1",
+                "provider_responsibility_ids": [
+                  "F04-multilevel-RS2"
+                ],
+                "required_action_ids": [
+                  "F04-multilevel-A2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "F04-multilevel-DEP2",
+            "kind": "uses_component",
+            "consumer_component_id": "F04-multilevel-C2",
+            "provider_component_id": "F04-multilevel-C3",
+            "interface_id": null,
+            "action_ids": [
+              "F04-multilevel-A2"
+            ],
+            "workflow_ids": [],
+            "support": [
+              {
+                "action_id": "F04-multilevel-A2",
+                "provider_responsibility_ids": [
+                  "F04-multilevel-RS3"
+                ],
+                "required_action_ids": [
+                  "F04-multilevel-A3"
+                ]
+              }
+            ]
+          }
+        ],
+        "parts": [
+          {
+            "id": "F04-multilevel-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-multilevel-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multilevel-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multilevel-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-multilevel-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multilevel-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multilevel-P3",
+            "target": "components",
+            "action_ids": [
+              "F04-multilevel-A3"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multilevel-RS3"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph synthetic là projection chỉ gồm fields dùng closure, không phải Model runtime đầy đủ. Refs/source/traces/states/inventory/render/freshness được giả định đủ trừ điểm case nêu; mọi review là giả định. Không import projection thành records.",
+      "selected_parts": [
+        "F04-multilevel-P1"
+      ],
+      "selected_actions": [
+        "F04-multilevel-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-multilevel-P1",
+        "F04-multilevel-P2",
+        "F04-multilevel-P3"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [
+        {
+          "id": "F04-multilevel-Q3",
+          "blocking": {
+            "model_id": "F04-multilevel-model",
+            "element_ids": [
+              "F04-multilevel-A3"
+            ],
+            "mapping_part_ids": [
+              "F04-multilevel-P3"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-multilevel-A1",
+          "F04-multilevel-A2",
+          "F04-multilevel-A3"
+        ],
+        "required_part_ids": [
+          "F04-multilevel-P1",
+          "F04-multilevel-P2",
+          "F04-multilevel-P3"
+        ],
+        "eligible": false,
+        "allowed_scope": {
+          "model_id": "F04-multilevel-model",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "F04-multilevel-model",
+          "element_ids": [
+            "F04-multilevel-A1",
+            "F04-multilevel-A2",
+            "F04-multilevel-A3"
+          ],
+          "mapping_part_ids": [
+            "F04-multilevel-P1",
+            "F04-multilevel-P2",
+            "F04-multilevel-P3"
+          ]
+        },
+        "code": "BLOCKED_SCOPE",
+        "stage": "revision",
+        "reason": "Closure fixed point đi đủ nhiều tầng; Q3 block A3 kéo A2/A1. Không giới hạn depth rồi bỏ nghĩa vụ tầng cuối."
+      }
+    },
+    {
+      "id": "F04-cycle",
+      "graph": {
+        "id": "F04-cycle-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-cycle-A1",
+            "workflow_ids": [
+              "F04-cycle-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-cycle-A2",
+            "workflow_ids": [
+              "F04-cycle-W2"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-cycle-A3",
+            "workflow_ids": [
+              "F04-cycle-W3"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-cycle-W1",
+            "entry_node_id": "F04-cycle-N1",
+            "nodes": [
+              {
+                "id": "F04-cycle-N1",
+                "kind": "action",
+                "action_id": "F04-cycle-A1"
+              },
+              {
+                "id": "F04-cycle-E1",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-cycle-EDGE1",
+                "from": "F04-cycle-N1",
+                "to": "F04-cycle-E1",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-cycle-W2",
+            "entry_node_id": "F04-cycle-N2",
+            "nodes": [
+              {
+                "id": "F04-cycle-N2",
+                "kind": "action",
+                "action_id": "F04-cycle-A2"
+              },
+              {
+                "id": "F04-cycle-E2",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-cycle-EDGE2",
+                "from": "F04-cycle-N2",
+                "to": "F04-cycle-E2",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-cycle-W3",
+            "entry_node_id": "F04-cycle-N3",
+            "nodes": [
+              {
+                "id": "F04-cycle-N3",
+                "kind": "action",
+                "action_id": "F04-cycle-A3"
+              },
+              {
+                "id": "F04-cycle-E3",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-cycle-EDGE3",
+                "from": "F04-cycle-N3",
+                "to": "F04-cycle-E3",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-cycle-C1"
+          },
+          {
+            "id": "F04-cycle-C2"
+          },
+          {
+            "id": "F04-cycle-C3"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-cycle-RS1",
+            "component_id": "F04-cycle-C1",
+            "action_ids": [
+              "F04-cycle-A1"
+            ]
+          },
+          {
+            "id": "F04-cycle-RS2",
+            "component_id": "F04-cycle-C2",
+            "action_ids": [
+              "F04-cycle-A2"
+            ]
+          },
+          {
+            "id": "F04-cycle-RS3",
+            "component_id": "F04-cycle-C3",
+            "action_ids": [
+              "F04-cycle-A3"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [
+          {
+            "id": "F04-cycle-DEP1",
+            "kind": "uses_component",
+            "consumer_component_id": "F04-cycle-C1",
+            "provider_component_id": "F04-cycle-C2",
+            "interface_id": null,
+            "action_ids": [
+              "F04-cycle-A1"
+            ],
+            "workflow_ids": [],
+            "support": [
+              {
+                "action_id": "F04-cycle-A1",
+                "provider_responsibility_ids": [
+                  "F04-cycle-RS2"
+                ],
+                "required_action_ids": [
+                  "F04-cycle-A2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "F04-cycle-DEP2",
+            "kind": "uses_component",
+            "consumer_component_id": "F04-cycle-C2",
+            "provider_component_id": "F04-cycle-C3",
+            "interface_id": null,
+            "action_ids": [
+              "F04-cycle-A2"
+            ],
+            "workflow_ids": [],
+            "support": [
+              {
+                "action_id": "F04-cycle-A2",
+                "provider_responsibility_ids": [
+                  "F04-cycle-RS3"
+                ],
+                "required_action_ids": [
+                  "F04-cycle-A3"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "F04-cycle-DEP3",
+            "kind": "uses_component",
+            "consumer_component_id": "F04-cycle-C3",
+            "provider_component_id": "F04-cycle-C1",
+            "interface_id": null,
+            "action_ids": [
+              "F04-cycle-A3"
+            ],
+            "workflow_ids": [],
+            "support": [
+              {
+                "action_id": "F04-cycle-A3",
+                "provider_responsibility_ids": [
+                  "F04-cycle-RS1"
+                ],
+                "required_action_ids": [
+                  "F04-cycle-A1"
+                ]
+              }
+            ]
+          }
+        ],
+        "parts": [
+          {
+            "id": "F04-cycle-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-cycle-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-cycle-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-cycle-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-cycle-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-cycle-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-cycle-P3",
+            "target": "components",
+            "action_ids": [
+              "F04-cycle-A3"
+            ],
+            "primary_responsibility_ids": [
+              "F04-cycle-RS3"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph synthetic là projection chỉ gồm fields dùng closure, không phải Model runtime đầy đủ. Refs/source/traces/states/inventory/render/freshness được giả định đủ trừ điểm case nêu; mọi review là giả định. Không import projection thành records.",
+      "selected_parts": [
+        "F04-cycle-P1"
+      ],
+      "selected_actions": [
+        "F04-cycle-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-cycle-P1",
+        "F04-cycle-P2",
+        "F04-cycle-P3"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [
+        {
+          "id": "F04-cycle-Q3",
+          "blocking": {
+            "model_id": "F04-cycle-model",
+            "element_ids": [
+              "F04-cycle-A3"
+            ],
+            "mapping_part_ids": [
+              "F04-cycle-P3"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-cycle-A1",
+          "F04-cycle-A2",
+          "F04-cycle-A3"
+        ],
+        "required_part_ids": [
+          "F04-cycle-P1",
+          "F04-cycle-P2",
+          "F04-cycle-P3"
+        ],
+        "eligible": false,
+        "allowed_scope": {
+          "model_id": "F04-cycle-model",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "F04-cycle-model",
+          "element_ids": [
+            "F04-cycle-A1",
+            "F04-cycle-A2",
+            "F04-cycle-A3"
+          ],
+          "mapping_part_ids": [
+            "F04-cycle-P1",
+            "F04-cycle-P2",
+            "F04-cycle-P3"
+          ]
+        },
+        "code": "BLOCKED_SCOPE",
+        "stage": "revision",
+        "reason": "Closure fixed point đi đủ nhiều tầng; Q3 block A3 kéo A2/A1. Visited dừng SCC A1→A2→A3→A1, không loại cạnh chu trình hoặc chấp nhận vì vòng đã gặp."
+      }
+    },
+    {
+      "id": "F04-shared",
+      "graph": {
+        "id": "F04-shared-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-shared-A1",
+            "workflow_ids": [
+              "F04-shared-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-shared-A2",
+            "workflow_ids": [
+              "F04-shared-W2"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-shared-W1",
+            "entry_node_id": "F04-shared-N1",
+            "nodes": [
+              {
+                "id": "F04-shared-N1",
+                "kind": "action",
+                "action_id": "F04-shared-A1"
+              },
+              {
+                "id": "F04-shared-E1",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-shared-EDGE1",
+                "from": "F04-shared-N1",
+                "to": "F04-shared-E1",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-shared-W2",
+            "entry_node_id": "F04-shared-N2",
+            "nodes": [
+              {
+                "id": "F04-shared-N2",
+                "kind": "action",
+                "action_id": "F04-shared-A2"
+              },
+              {
+                "id": "F04-shared-E2",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-shared-EDGE2",
+                "from": "F04-shared-N2",
+                "to": "F04-shared-E2",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-shared-C1"
+          },
+          {
+            "id": "F04-shared-C2"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-shared-RS1",
+            "component_id": "F04-shared-C1",
+            "action_ids": [
+              "F04-shared-A1"
+            ]
+          },
+          {
+            "id": "F04-shared-RS2",
+            "component_id": "F04-shared-C1",
+            "action_ids": [
+              "F04-shared-A2"
+            ]
+          },
+          {
+            "id": "F04-shared-RS-shared",
+            "component_id": "F04-shared-C2",
+            "action_ids": [
+              "F04-shared-A1",
+              "F04-shared-A2"
+            ]
+          }
+        ],
+        "interfaces": [
+          {
+            "id": "F04-shared-I-shared",
+            "provider_component_id": "F04-shared-C2",
+            "responsibility_ids": [
+              "F04-shared-RS-shared"
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "id": "F04-shared-DEP-shared",
+            "kind": "requires_interface",
+            "consumer_component_id": "F04-shared-C1",
+            "provider_component_id": "F04-shared-C2",
+            "interface_id": "F04-shared-I-shared",
+            "action_ids": [
+              "F04-shared-A1",
+              "F04-shared-A2"
+            ],
+            "workflow_ids": [
+              "F04-shared-W1",
+              "F04-shared-W2"
+            ],
+            "support": [
+              {
+                "action_id": "F04-shared-A1",
+                "provider_responsibility_ids": [
+                  "F04-shared-RS-shared"
+                ],
+                "required_action_ids": []
+              },
+              {
+                "action_id": "F04-shared-A2",
+                "provider_responsibility_ids": [
+                  "F04-shared-RS-shared"
+                ],
+                "required_action_ids": []
+              }
+            ]
+          }
+        ],
+        "parts": [
+          {
+            "id": "F04-shared-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-shared-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-shared-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-shared-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-shared-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-shared-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph synthetic là projection chỉ gồm fields dùng closure, không phải Model runtime đầy đủ. Refs/source/traces/states/inventory/render/freshness được giả định đủ trừ điểm case nêu; mọi review là giả định. Không import projection thành records.",
+      "selected_parts": [
+        "F04-shared-P1"
+      ],
+      "selected_actions": [
+        "F04-shared-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-shared-P1"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [
+        {
+          "id": "F04-shared-Q2",
+          "blocking": {
+            "model_id": "F04-shared-model",
+            "element_ids": [
+              "F04-shared-A2"
+            ],
+            "mapping_part_ids": [
+              "F04-shared-P2"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-shared-A1"
+        ],
+        "eligible": true,
+        "allowed_scope": {
+          "model_id": "F04-shared-model",
+          "element_ids": [
+            "F04-shared-A1",
+            "F04-shared-W1",
+            "F04-shared-RS1",
+            "F04-shared-RS-shared",
+            "F04-shared-C1",
+            "F04-shared-C2",
+            "F04-shared-I-shared",
+            "F04-shared-DEP-shared"
+          ],
+          "mapping_part_ids": [
+            "F04-shared-P1"
+          ]
+        },
+        "blocked_scope": {
+          "model_id": "F04-shared-model",
+          "element_ids": [
+            "F04-shared-A2"
+          ],
+          "mapping_part_ids": [
+            "F04-shared-P2"
+          ]
+        },
+        "code": null,
+        "reason": "Support entry A1 có prerequisite=[] đã review giả định. Không kéo A2 chỉ vì cùng component/interface/responsibility."
+      },
+      "variant_shared_capability_itself_blocked": {
+        "add_issue": {
+          "id": "F04-shared-QI",
+          "blocking": {
+            "model_id": "F04-shared-model",
+            "element_ids": [
+              "F04-shared-I-shared"
+            ],
+            "mapping_part_ids": []
+          }
+        },
+        "expected": {
+          "eligible": false,
+          "allowed_scope": {
+            "model_id": "F04-shared-model",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "blocked_scope": {
+            "model_id": "F04-shared-model",
+            "element_ids": [
+              "F04-shared-A1",
+              "F04-shared-A2"
+            ],
+            "mapping_part_ids": [
+              "F04-shared-P1",
+              "F04-shared-P2"
+            ]
+          },
+          "code": "BLOCKED_SCOPE",
+          "reason": "Issue chặn toàn interface khác với Q2 chỉ chặn use A2; mọi use I-shared đều phụ thuộc blocker."
+        }
+      }
+    },
+    {
+      "id": "F04-global",
+      "graph": {
+        "id": "F04-global-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-global-A1",
+            "workflow_ids": [
+              "F04-global-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-global-W1",
+            "entry_node_id": "F04-global-N1",
+            "nodes": [
+              {
+                "id": "F04-global-N1",
+                "kind": "action",
+                "action_id": "F04-global-A1"
+              },
+              {
+                "id": "F04-global-E1",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-global-EDGE1",
+                "from": "F04-global-N1",
+                "to": "F04-global-E1",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-global-C1"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-global-RS1",
+            "component_id": "F04-global-C1",
+            "action_ids": [
+              "F04-global-A1"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [],
+        "parts": [
+          {
+            "id": "F04-global-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-global-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-global-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-global-GLOBAL-NFR",
+            "target": "system",
+            "action_ids": [],
+            "primary_responsibility_ids": [],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-global-GLOBAL-constraint",
+            "target": "system",
+            "action_ids": [],
+            "primary_responsibility_ids": [],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph synthetic là projection chỉ gồm fields dùng closure, không phải Model runtime đầy đủ. Refs/source/traces/states/inventory/render/freshness được giả định đủ trừ điểm case nêu; mọi review là giả định. Không import projection thành records.",
+      "selected_parts": [
+        "F04-global-P1"
+      ],
+      "selected_actions": [
+        "F04-global-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-global-P1"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [],
+      "expected": {
+        "required_action_ids": [
+          "F04-global-A1"
+        ],
+        "required_part_ids": [
+          "F04-global-P1",
+          "F04-global-GLOBAL-NFR",
+          "F04-global-GLOBAL-constraint"
+        ],
+        "eligible": false,
+        "allowed_scope": {
+          "model_id": "F04-global-model",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "F04-global-model",
+          "element_ids": [
+            "F04-global-A1"
+          ],
+          "mapping_part_ids": [
+            "F04-global-P1",
+            "F04-global-GLOBAL-NFR",
+            "F04-global-GLOBAL-constraint"
+          ]
+        },
+        "code": "BLOCKED_SCOPE",
+        "stage": "revision",
+        "reason": "Nghĩa vụ system chưa được review; chọn chức năng hoặc view nhỏ không miễn global obligations. Không phụ thuộc tên R3/R5 hoặc priority."
+      },
+      "if_later_review_accepts_global_for_this_slice": {
+        "hypothetical_accepted_parts": [
+          "F04-global-P1",
+          "F04-global-GLOBAL-NFR",
+          "F04-global-GLOBAL-constraint"
+        ],
+        "expected": "Chỉ có thể eligible sau review mới và đủ gates; giữ nghĩa vụ verification, không claim runtime đã đạt."
+      }
+    },
+    {
+      "id": "F04-discovered-multi-action-part-blocked",
+      "graph": {
+        "id": "F04-multipart-model1",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-multipart-A1",
+            "workflow_ids": [
+              "F04-multipart-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-multipart-A2",
+            "workflow_ids": [
+              "F04-multipart-W2"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-multipart-W1",
+            "entry_node_id": "F04-multipart-N1",
+            "nodes": [
+              {
+                "id": "F04-multipart-N1",
+                "kind": "action",
+                "action_id": "F04-multipart-A1"
+              },
+              {
+                "id": "F04-multipart-E1",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multipart-EDGE1",
+                "from": "F04-multipart-N1",
+                "to": "F04-multipart-E1",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-multipart-W2",
+            "entry_node_id": "F04-multipart-N2",
+            "nodes": [
+              {
+                "id": "F04-multipart-N2",
+                "kind": "action",
+                "action_id": "F04-multipart-A2"
+              },
+              {
+                "id": "F04-multipart-E2",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multipart-EDGE2",
+                "from": "F04-multipart-N2",
+                "to": "F04-multipart-E2",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-multipart-C1"
+          },
+          {
+            "id": "F04-multipart-C2"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-multipart-RS1",
+            "component_id": "F04-multipart-C1",
+            "action_ids": [
+              "F04-multipart-A1"
+            ]
+          },
+          {
+            "id": "F04-multipart-RS2",
+            "component_id": "F04-multipart-C2",
+            "action_ids": [
+              "F04-multipart-A2"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [],
+        "parts": [
+          {
+            "id": "F04-multipart-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multipart-P12",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A1",
+              "F04-multipart-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS1",
+              "F04-multipart-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multipart-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph projection synthetic, minh họa chưa thực thi; không phải Model export production. A1/A2 có workflow/trách nhiệm riêng, không dependency/rule khác nối nhau; chỉ P12 nối hai actions trong cùng nghĩa vụ. Ngoài điểm case nêu, giả định source/refs/fields/analysis set/render gates đầy đủ và không nghĩa vụ global bị bỏ sót. Danh sách hypothetical_accepted_parts mô tả phạm vi xin/giả định review, không phải bằng chứng review hợp lệ hoặc output đã được chấp nhận.",
+      "selected_parts": [
+        "F04-multipart-P1"
+      ],
+      "selected_actions": [
+        "F04-multipart-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-multipart-P1",
+        "F04-multipart-P12"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [
+        {
+          "id": "F04-multipart-Q2",
+          "blocking": {
+            "model_id": "F04-multipart-model1",
+            "element_ids": [
+              "F04-multipart-A2"
+            ],
+            "mapping_part_ids": [
+              "F04-multipart-P2"
+            ]
+          }
+        }
+      ],
+      "closure_trace_expected": [
+        {
+          "relation": "seed Part→actions",
+          "action_ids": [
+            "F04-multipart-A1"
+          ],
+          "part_ids": [
+            "F04-multipart-P1"
+          ]
+        },
+        {
+          "relation": "A1→P12 mới; P12→TOÀN BỘ actions ngay trong vòng lặp",
+          "action_ids": [
+            "F04-multipart-A1",
+            "F04-multipart-A2"
+          ],
+          "part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12"
+          ]
+        },
+        {
+          "relation": "A2→P2; mở rộng workflow/rules/dependencies/parts tới fixed point",
+          "action_ids": [
+            "F04-multipart-A1",
+            "F04-multipart-A2"
+          ],
+          "part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12",
+            "F04-multipart-P2"
+          ]
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-multipart-A1",
+          "F04-multipart-A2"
+        ],
+        "required_part_ids": [
+          "F04-multipart-P1",
+          "F04-multipart-P12",
+          "F04-multipart-P2"
+        ],
+        "eligible": false,
+        "allowed_scope": {
+          "model_id": "F04-multipart-model1",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "F04-multipart-model1",
+          "element_ids": [
+            "F04-multipart-A1",
+            "F04-multipart-A2"
+          ],
+          "mapping_part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12",
+            "F04-multipart-P2"
+          ]
+        },
+        "code": "BLOCKED_SCOPE",
+        "stage": "revision",
+        "reason": "P12 được phát hiện qua A1 phải kéo A2 vào closure; Q2 chặn A2/P2 nên P1 cũng blocked. P2 chưa được review cũng là blocker; chọn P1/P12 trên giấy không bỏ qua Q2. Không được dừng ở {A1}/{P1,P12}."
+      }
+    },
+    {
+      "id": "F04-discovered-multi-action-part-complete",
+      "graph": {
+        "id": "F04-multipart-clear-model",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-multipart-A1",
+            "workflow_ids": [
+              "F04-multipart-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-multipart-A2",
+            "workflow_ids": [
+              "F04-multipart-W2"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-multipart-W1",
+            "entry_node_id": "F04-multipart-N1",
+            "nodes": [
+              {
+                "id": "F04-multipart-N1",
+                "kind": "action",
+                "action_id": "F04-multipart-A1"
+              },
+              {
+                "id": "F04-multipart-E1",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multipart-EDGE1",
+                "from": "F04-multipart-N1",
+                "to": "F04-multipart-E1",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-multipart-W2",
+            "entry_node_id": "F04-multipart-N2",
+            "nodes": [
+              {
+                "id": "F04-multipart-N2",
+                "kind": "action",
+                "action_id": "F04-multipart-A2"
+              },
+              {
+                "id": "F04-multipart-E2",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multipart-EDGE2",
+                "from": "F04-multipart-N2",
+                "to": "F04-multipart-E2",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-multipart-C1"
+          },
+          {
+            "id": "F04-multipart-C2"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-multipart-RS1",
+            "component_id": "F04-multipart-C1",
+            "action_ids": [
+              "F04-multipart-A1"
+            ]
+          },
+          {
+            "id": "F04-multipart-RS2",
+            "component_id": "F04-multipart-C2",
+            "action_ids": [
+              "F04-multipart-A2"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [],
+        "parts": [
+          {
+            "id": "F04-multipart-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multipart-P12",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A1",
+              "F04-multipart-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS1",
+              "F04-multipart-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multipart-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph projection synthetic, minh họa chưa thực thi; không phải Model export production. A1/A2 có workflow/trách nhiệm riêng, không dependency/rule khác nối nhau; chỉ P12 nối hai actions trong cùng nghĩa vụ. Ngoài điểm case nêu, giả định source/refs/fields/analysis set/render gates đầy đủ và không nghĩa vụ global bị bỏ sót. Danh sách hypothetical_accepted_parts mô tả phạm vi xin/giả định review, không phải bằng chứng review hợp lệ hoặc output đã được chấp nhận. Biến thể độc lập với case bị chặn: không Q2; giả định người dùng review hợp lệ toàn P1/P12/P2 và mọi gate khác đạt đúng model/set. Không phải chỉ bỏ issue khỏi một model rồi mang approval cũ sang.",
+      "selected_parts": [
+        "F04-multipart-P1"
+      ],
+      "selected_actions": [
+        "F04-multipart-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-multipart-P1",
+        "F04-multipart-P12",
+        "F04-multipart-P2"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [],
+      "closure_trace_expected": [
+        {
+          "relation": "seed Part→actions",
+          "action_ids": [
+            "F04-multipart-A1"
+          ],
+          "part_ids": [
+            "F04-multipart-P1"
+          ]
+        },
+        {
+          "relation": "A1→P12 mới; P12→TOÀN BỘ actions ngay trong vòng lặp",
+          "action_ids": [
+            "F04-multipart-A1",
+            "F04-multipart-A2"
+          ],
+          "part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12"
+          ]
+        },
+        {
+          "relation": "A2→P2; mở rộng workflow/rules/dependencies/parts tới fixed point",
+          "action_ids": [
+            "F04-multipart-A1",
+            "F04-multipart-A2"
+          ],
+          "part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12",
+            "F04-multipart-P2"
+          ]
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-multipart-A1",
+          "F04-multipart-A2"
+        ],
+        "required_part_ids": [
+          "F04-multipart-P1",
+          "F04-multipart-P12",
+          "F04-multipart-P2"
+        ],
+        "eligible": true,
+        "allowed_scope": {
+          "model_id": "F04-multipart-clear-model",
+          "element_ids": [
+            "F04-multipart-A1",
+            "F04-multipart-A2",
+            "F04-multipart-W1",
+            "F04-multipart-W2",
+            "F04-multipart-RS1",
+            "F04-multipart-RS2",
+            "F04-multipart-C1",
+            "F04-multipart-C2"
+          ],
+          "mapping_part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12",
+            "F04-multipart-P2"
+          ]
+        },
+        "blocked_scope": {
+          "model_id": "F04-multipart-clear-model",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "code": null,
+        "reason": "Dưới các preconditions giả định, allowed giữ toàn bộ closure. Mỗi part trong hợp cuối có đủ actions/phụ thuộc và acceptance; không trả only-A1 cùng P12 nhiều actions."
+      }
+    },
+    {
+      "id": "F04-split-multi-action-part-new-model",
+      "graph": {
+        "id": "F04-multipart-model2",
+        "kind": "scope_graph_projection",
+        "actions": [
+          {
+            "id": "F04-multipart-A1",
+            "workflow_ids": [
+              "F04-multipart-W1"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          },
+          {
+            "id": "F04-multipart-A2",
+            "workflow_ids": [
+              "F04-multipart-W2"
+            ],
+            "rule_ids": [],
+            "permission_rule_ids": []
+          }
+        ],
+        "workflows": [
+          {
+            "id": "F04-multipart-W1",
+            "entry_node_id": "F04-multipart-N1",
+            "nodes": [
+              {
+                "id": "F04-multipart-N1",
+                "kind": "action",
+                "action_id": "F04-multipart-A1"
+              },
+              {
+                "id": "F04-multipart-E1",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multipart-EDGE1",
+                "from": "F04-multipart-N1",
+                "to": "F04-multipart-E1",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "F04-multipart-W2",
+            "entry_node_id": "F04-multipart-N2",
+            "nodes": [
+              {
+                "id": "F04-multipart-N2",
+                "kind": "action",
+                "action_id": "F04-multipart-A2"
+              },
+              {
+                "id": "F04-multipart-E2",
+                "kind": "end",
+                "action_id": null
+              }
+            ],
+            "edges": [
+              {
+                "id": "F04-multipart-EDGE2",
+                "from": "F04-multipart-N2",
+                "to": "F04-multipart-E2",
+                "guard": null
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "rules": [],
+        "components": [
+          {
+            "id": "F04-multipart-C1"
+          },
+          {
+            "id": "F04-multipart-C2"
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "F04-multipart-RS1",
+            "component_id": "F04-multipart-C1",
+            "action_ids": [
+              "F04-multipart-A1"
+            ]
+          },
+          {
+            "id": "F04-multipart-RS2",
+            "component_id": "F04-multipart-C2",
+            "action_ids": [
+              "F04-multipart-A2"
+            ]
+          }
+        ],
+        "interfaces": [],
+        "dependencies": [],
+        "parts": [
+          {
+            "id": "F04-multipart-P1",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multipart-P12-A1",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A1"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS1"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multipart-P12-A2",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          },
+          {
+            "id": "F04-multipart-P2",
+            "target": "components",
+            "action_ids": [
+              "F04-multipart-A2"
+            ],
+            "primary_responsibility_ids": [
+              "F04-multipart-RS2"
+            ],
+            "supporting_responsibility_ids": [],
+            "assignment": "proposed"
+          }
+        ]
+      },
+      "preconditions": "Graph projection synthetic, minh họa chưa thực thi; không phải Model export production. A1/A2 có workflow/trách nhiệm riêng, không dependency/rule khác nối nhau; Model mới đã tách nghĩa vụ P12 thành P12-A1 và P12-A2 có căn cứ độc lập; không còn part chung nối A1/A2. Ngoài điểm case nêu, giả định source/refs/fields/analysis set/render gates đầy đủ và không nghĩa vụ global bị bỏ sót. Danh sách hypothetical_accepted_parts mô tả phạm vi xin/giả định review, không phải bằng chứng review hợp lệ hoặc output đã được chấp nhận. Phải kiểm nguồn/coverage không mất nghĩa vụ khi tách, tạo AnalysisSet/Validation/Bundle mới và người dùng review đúng phiên bản; chưa có các kết quả thực đó.",
+      "selected_parts": [
+        "F04-multipart-P1"
+      ],
+      "selected_actions": [
+        "F04-multipart-A1"
+      ],
+      "hypothetical_accepted_parts": [
+        "F04-multipart-P1",
+        "F04-multipart-P12-A1"
+      ],
+      "workflow_choices": [],
+      "blocking_issues": [
+        {
+          "id": "F04-multipart-Q2",
+          "blocking": {
+            "model_id": "F04-multipart-model2",
+            "element_ids": [
+              "F04-multipart-A2"
+            ],
+            "mapping_part_ids": [
+              "F04-multipart-P2",
+              "F04-multipart-P12-A2"
+            ]
+          }
+        }
+      ],
+      "closure_trace_expected": [
+        {
+          "relation": "P1→A1→P12-A1→A1, fixed point; không kéo A2 vì không còn part nối hai actions",
+          "action_ids": [
+            "F04-multipart-A1"
+          ],
+          "part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12-A1"
+          ]
+        }
+      ],
+      "expected": {
+        "required_action_ids": [
+          "F04-multipart-A1"
+        ],
+        "required_part_ids": [
+          "F04-multipart-P1",
+          "F04-multipart-P12-A1"
+        ],
+        "eligible": true,
+        "allowed_scope": {
+          "model_id": "F04-multipart-model2",
+          "element_ids": [
+            "F04-multipart-A1",
+            "F04-multipart-W1",
+            "F04-multipart-RS1",
+            "F04-multipart-C1"
+          ],
+          "mapping_part_ids": [
+            "F04-multipart-P1",
+            "F04-multipart-P12-A1"
+          ]
+        },
+        "blocked_scope": {
+          "model_id": "F04-multipart-model2",
+          "element_ids": [
+            "F04-multipart-A2"
+          ],
+          "mapping_part_ids": [
+            "F04-multipart-P2",
+            "F04-multipart-P12-A2"
+          ]
+        },
+        "code": null,
+        "reason": "CHỈ sau review mới hợp lệ theo preconditions: A1 độc lập và đủ closure, A2 vẫn blocked. Trước review mới handoff false; không tự tách P12 ở gate hoặc dùng review model1."
+      },
+      "model_change_expected": {
+        "base_model_id": "F04-multipart-model1",
+        "new_model_id": "F04-multipart-model2",
+        "base_revision": 1,
+        "new_revision": 2,
+        "removed_part_ids": [
+          "F04-multipart-P12"
+        ],
+        "added_part_ids": [
+          "F04-multipart-P12-A1",
+          "F04-multipart-P12-A2"
+        ],
+        "reason": "Tách tường minh trong model trước review; action/workflow/responsibility IDs giữ nguyên. Removed part resolve ở base graph /scenarios/7/graph; parts mới resolve ở /scenarios/9/graph.",
+        "old_approval_carried": false,
+        "handoff_before_new_review": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "suite": "audit-c",
+    "backend_instrumentation": "S02_ENCODERS selected=c calls={'c': 5820, 'python': 0}"
+  },
+  {
+    "suite": "audit-python",
+    "backend_instrumentation": "S02_ENCODERS selected=python calls={'c': 0, 'python': 5820}"
+  }
+]

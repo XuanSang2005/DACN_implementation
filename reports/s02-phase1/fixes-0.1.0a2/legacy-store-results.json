@@ -1,0 +1,363 @@
+{
+  "scope": "Synthetic a1 evidence copied to temporary stores; a2 installed package",
+  "negative_stores": [
+    {
+      "backend": "c",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-c/tmp/test_resolved_issue_requires_a0/s02.sqlite3",
+      "sha256": "dad98fd156099d3c4998039bf2b430e6455a40486dde46f9e8262128f305ee0e",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "c",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-c/tmp/test_application_preserves_cur0/s02.sqlite3",
+      "sha256": "74f506612ad1b7ae434cbfe59ad780dd2b9a1f16f396329d68771876d6176ec9",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "c",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-c/tmp/test_application_preserves_cur1/s02.sqlite3",
+      "sha256": "cf7f5c4787cb0eb1494993fce0b618ff8b9b58ecd6d4d5a1881f465433e1145e",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "c",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-c/tmp/test_final_attempt_bound_to_st0/s02.sqlite3",
+      "sha256": "f9f17b6c7c79368057099a538fa1d8ce6210838127239ec594c6485cf938bdbc",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "c",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-c/tmp/test_final_attempt_bound_to_st1/s02.sqlite3",
+      "sha256": "1c1c067725203818c184407595aac40a5b7a04e5b6f6c808b03a8aceeeee4dc6",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "c",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-c/tmp/test_final_attempt_bound_to_st2/s02.sqlite3",
+      "sha256": "b42d32da11c437c1be9adc5c88472760e37c63daa51ebba6bfcba5cf2ee83042",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "c",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-c/tmp/test_empty_mandatory_mapping_c0/s02.sqlite3",
+      "sha256": "04c2f166f999df4e585d44afc766b20d521fec07c3e7a2d48a6a3b67065bb8d0",
+      "expected_reject": false,
+      "error": null,
+      "gate": {
+        "allowed_scope": {
+          "model_id": "M1",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "M1",
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ]
+        },
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ],
+        "closures": []
+      }
+    },
+    {
+      "backend": "python",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-python/tmp/test_resolved_issue_requires_a0/s02.sqlite3",
+      "sha256": "2fcbea71fe6217ebcba5a1b6d246ab9028e0c57e26a6aa33d8beeb1fd75d13da",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "python",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-python/tmp/test_application_preserves_cur0/s02.sqlite3",
+      "sha256": "bbd8cf2bd03faa139d443e316bca58094652906ec7386f0740191007a000bd0b",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "python",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-python/tmp/test_application_preserves_cur1/s02.sqlite3",
+      "sha256": "d43ed0a752237139279409c871cf629f0361dd484293f2dc3be4bf7de11d1349",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "python",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-python/tmp/test_final_attempt_bound_to_st0/s02.sqlite3",
+      "sha256": "8e4453409e8b55c4208758cd9664cb5aa3105b664fce185d7dcbfd2f6025271a",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "python",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-python/tmp/test_final_attempt_bound_to_st1/s02.sqlite3",
+      "sha256": "42221bc0fcf6f4c2f9284aa0a3a47db02a9fb0106017fecb47b4d2eb5f8e5069",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "python",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-python/tmp/test_final_attempt_bound_to_st2/s02.sqlite3",
+      "sha256": "a5f3dfc013f232cbf4453ac2378aad4ef96eb10bf36dfc742dc17918abcbca19",
+      "expected_reject": true,
+      "error": {
+        "code": "PERSISTENCE_FAILED",
+        "stage": "persistence",
+        "record_id": null,
+        "pointer": null,
+        "related_ids": [],
+        "message": "Stored data or structure failed integrity checks",
+        "details": {
+          "reason": "Stored data or structure failed integrity checks"
+        }
+      }
+    },
+    {
+      "backend": "python",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/independent-python/tmp/test_empty_mandatory_mapping_c0/s02.sqlite3",
+      "sha256": "0cf18dc4deeabc10da056915b10a449246ab7c3438696949ee149c96317960cb",
+      "expected_reject": false,
+      "error": null,
+      "gate": {
+        "allowed_scope": {
+          "model_id": "M1",
+          "element_ids": [],
+          "mapping_part_ids": []
+        },
+        "blocked_scope": {
+          "model_id": "M1",
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ]
+        },
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ],
+        "closures": []
+      }
+    }
+  ],
+  "valid_a1_stores": [
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/kill-capture-after_commit.sqlite3",
+      "sha256": "b4e4b906980b9bae8e4c66e523729fe726c2d8e8ec2d10cd6014eb52202e7304",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/kill-capture-before_commit.sqlite3",
+      "sha256": "334274762e04004a84c85bd547506c4ffd3c21ff3faabc4b405616d59cc79acc",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/kill-finalize-after_commit.sqlite3",
+      "sha256": "c396d3f46bbf4d5c086aa039ae2e85c8593fc4c9d2fb04061a10b981a71319f1",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/kill-finalize-before_commit.sqlite3",
+      "sha256": "4c930cbea8f69b780a6bc451ce33ec96535109f68a4e876dfe038dd3ece0fc1c",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/race-analysis_and_log.sqlite3",
+      "sha256": "50eb36248d710f91098138698bd9dff1f43e14e07ec30ad1af3ba1bf88d10bdd",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/race-analysis_set.sqlite3",
+      "sha256": "3f53754a04b6e3b29bc90f770d0d498f6a0ad3603b24e9d06f2ac6fc4dbfc0f2",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/race-application-claim.sqlite3",
+      "sha256": "234142cd926390509992e5d8eb080574c5b9eb5445989d1b23bb6e63924ea20a",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/race-application-finalize.sqlite3",
+      "sha256": "1a84ea82c962c896a41e7237e56fb9d2f0246c68cd5753d4446a74e7703405b1",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/c/race-model.sqlite3",
+      "sha256": "e5be740a231cc13c7bd2297ad07b255a81e410ff509cf88941e5fade29c321e9",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/kill-capture-after_commit.sqlite3",
+      "sha256": "7344ff7c08e099528a1b84c9243aa4e1e8d1502910b9b0683e89dbb02e7106fc",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/kill-capture-before_commit.sqlite3",
+      "sha256": "2531dc31d07f5b6bcb7ae35e3e9e452e7d1028ab214a9e22e56ffc8235283b59",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/kill-finalize-after_commit.sqlite3",
+      "sha256": "fe5b5487556ccf66078029bf0cbc11ff03f47421a5f02e2a15b18fa99d707484",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/kill-finalize-before_commit.sqlite3",
+      "sha256": "a6488767ad981700f03b7f7d43b3518b7b23a0a67f1607fac89ee4f635fc22d2",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/race-analysis_and_log.sqlite3",
+      "sha256": "503e0401ddef0fa55ea70f8d01a103eda31820a300e888e7bb065dc4a7d5cd9d",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/race-analysis_set.sqlite3",
+      "sha256": "b93d21d2dc323af1f81b4dc23d2dc0ab6acbf3e1ed497a91d7efeaade1bfc70c",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/race-application-claim.sqlite3",
+      "sha256": "0e7d158f06fc46cd24eb23be56531daf2935f413306dd2462a19bc81a384eca4",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/race-application-finalize.sqlite3",
+      "sha256": "5ebfe7e29c9ef602c2c63299a16cd2056c664b426468d54259233f90dc230a0a",
+      "verified": true
+    },
+    {
+      "path": "reports/s02-phase1/process-artifacts/python/race-model.sqlite3",
+      "sha256": "16cc401aea115131dc9903a65a904cbe85abc2b1ee65f515cc121f5293678d9b",
+      "verified": true
+    }
+  ]
+}

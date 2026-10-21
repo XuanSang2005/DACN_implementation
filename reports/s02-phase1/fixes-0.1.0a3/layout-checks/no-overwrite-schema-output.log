@@ -1,0 +1,12 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python -B /Users/macbookpro/Documents/DACN_implementation/packages/s02/tools/materialize_schema.py --output /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-kzsk0qxi/existing/sentinel
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-kzsk0qxi
+Traceback (most recent call last):
+  File "/Users/macbookpro/Documents/DACN_implementation/packages/s02/tools/materialize_schema.py", line 126, in <module>
+    with args.output.open('xb') as stream: stream.write(raw)
+         ~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/macbookpro/Documents/DACN_implementation/.runtime/python/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-kzsk0qxi/existing/sentinel'
+
+exit_code=1

@@ -1,0 +1,56 @@
+[
+  {
+    "package": "s01",
+    "old": "/Users/macbookpro/Documents/DACN_implementation/dist/dacn_s01-0.1.0a6-py3-none-any.whl",
+    "new": "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/builds/dacn_s01-0.1.0a6-py3-none-any.whl",
+    "old_sha256": "e4ebbe7988d7cb5255d93845c94ba41aeb043900c762ca7636d4f7c093bff20b",
+    "new_sha256": "425298e036225d58b03d08014c182ac2f906502f8af42807a128dfd397d84d41",
+    "all_payload_and_metadata_equal": true,
+    "files": {
+      "dacn_s01/__init__.py": "d6a5bddc4982a97be73fe1b04eaff96e0644a1e1f0c765775111b34b5a451a2b",
+      "dacn_s01/__main__.py": "9b9e03be57d68556119bf6b332d6c006cc4f892f70a45653ad76155970b3ee0f",
+      "dacn_s01/cli.py": "bee853a366ed4b20035e7bcee9f6e53ec09fb4d109ac96b7f0cb66ec92153a34",
+      "dacn_s01/codec.py": "ffbc75fbee2fb8e63a7b1010ace53f6306a0b00f2c395fa4198e45ad00f64723",
+      "dacn_s01/envelope.py": "539ae0dbc2c6b7712916d8f3e84e0b87e5deab1a6eacd42767fe5713675b11cc",
+      "dacn_s01/errors.py": "132fe5a9320faf3e52838b585922a6cd00740c46c27428ce1289748d15c2be4a",
+      "dacn_s01/local_io.py": "6fc4da8324c1e718655fdba0d97d9ae5c1c39c56583d69cce144af01c6306588",
+      "dacn_s01/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dacn_s01/repository.py": "64bee10288a685fe373606781d2d7f4e60c6fc7397ca3b63af37a2c752aed106",
+      "dacn_s01/revision.py": "4f52f147d7a7743e69b9d5424a21c26ebdd93b78df77f8e42922e221d2fdd782",
+      "dacn_s01/schema_resource.py": "1868bfbfe1fa7765813531116e77b3b54fb9bd2067eb8fe5e1669749f1591b52",
+      "dacn_s01/service.py": "8f47ec19aa385b0a1c6cfd954487d82eabcc20efde7047b9a95e181d22cae8b9",
+      "dacn_s01/storage_schema.py": "9a6d6dfa03c3369284f09662bbdcbf13b5f694e1d7501fa71064221b2bd8e7c2",
+      "dacn_s01/validation.py": "565ef5d0e33cb3b8baa344da423edb34401b78379905c3cd7899700b227f61a5",
+      "dacn_s01/schemas/input/1.0.0/PROVENANCE.md": "7e3171ce362329ce9e9d03d37dfe0d9a17a65afa6e3788bb01f26ee0f62a2fe6",
+      "dacn_s01/schemas/input/1.0.0/system-input.schema.json": "0a7cda79ac2d949579c0a2279df3d60c18b8f0cd6335e28fac6d51d46248613d",
+      "dacn_s01-0.1.0a6.dist-info/METADATA": "d6979879893cd2016ed900ff43a098ca4b3cf31f986272ed8db55adb41b4f663",
+      "dacn_s01-0.1.0a6.dist-info/WHEEL": "ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b"
+    }
+  },
+  {
+    "package": "s02",
+    "old": "/Users/macbookpro/Documents/DACN_implementation/s02/dist/dacn_s02-0.1.0a2-py3-none-any.whl",
+    "new": "/Users/macbookpro/Documents/DACN_implementation/reports/repository-layout/2026-10-19/builds/dacn_s02-0.1.0a2-py3-none-any.whl",
+    "old_sha256": "0b8824cb38f06308b760e14f8a0c2a7584a73df87a8356d767cf7aa1ae7457a5",
+    "new_sha256": "0edd928b3610b5518b2fd02470539937cd5bf80e80729420ea582e15116981df",
+    "all_payload_and_metadata_equal": true,
+    "files": {
+      "dacn_s02/__init__.py": "fd7d982e2bf7399aeea7cd48b214cd595fb04bafc725f2c5892360ec947f1c76",
+      "dacn_s02/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+      "dacn_s02/cli.py": "67bbde0c8062b79670494327465edd8eac43ff06d6ae463842154a5fd72c75d1",
+      "dacn_s02/codec_boundary.py": "12a8e60713950ad57514e73d5b8f4b6738c4ef949f7bc54bf625cfb9923a73a2",
+      "dacn_s02/errors.py": "6a04e0e3e335b29aa4802be943779b90ff6c348f8afd4a38ce5ea8a283e910e5",
+      "dacn_s02/events.py": "5f7221f5aa718ea0dedae4c6320dec550b015db664f3261c8feaf4c561aa71c1",
+      "dacn_s02/local_io.py": "993d9e65359e3f1f24269c3998c699a9a900c437d0505fde855f5c574a94a9da",
+      "dacn_s02/repository.py": "a29b37d2bad174dc162efa9c4126149154fabddbc740dcb10056776161ba45d5",
+      "dacn_s02/s01_adapter.py": "b0180cd6398641d2b189ade29bb6710fdcce2add0129b9271500f61cacfcb36d",
+      "dacn_s02/scope.py": "dcf01a2a278a69a140927b33d3e5262b8ff4521724620f9585616516a7f3a4c3",
+      "dacn_s02/service.py": "62bab717a4fb90e747bee9d6b7175a5e6168aaab13084564ba1f718801c4314f",
+      "dacn_s02/storage_schema.py": "85bfd5c1dd9e181e0ef516f24a43d80832cf57111f00f867b9887364695c299c",
+      "dacn_s02/validation.py": "eca24fb5d7742c51530755287d4de34fd3c9b93e67ae8819a26dc1208b155280",
+      "dacn_s02/schemas/contract.json": "dd32824ab03c5e4d5faae3eb3888bdea3cacd5ba4735a4a5df19416b024f70b7",
+      "dacn_s02-0.1.0a2.dist-info/METADATA": "58b04adc0cc7d6ef00e9d78388de8fe81b262ffb3c1cf8683a6b7856800b2c6d",
+      "dacn_s02-0.1.0a2.dist-info/WHEEL": "ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b"
+    }
+  }
+]

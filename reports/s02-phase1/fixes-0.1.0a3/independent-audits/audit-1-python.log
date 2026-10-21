@@ -1,0 +1,29 @@
+$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python -B -c 'import sys,pytest;sys.path.insert(0,sys.argv.pop(1));raise SystemExit(pytest.main(sys.argv[1:]))' /Users/macbookpro/Documents/DACN_implementation/packages/s02/tests -p conftest -c /Users/macbookpro/Documents/DACN_implementation/packages/s02/pyproject.toml /Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/test_independent_audit.py -s -v --tb=short -p no:cacheprovider --encoder-backend=python --basetemp=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-4lytge11/tmp --junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/independent-audits/audit-1-python.xml
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-4lytge11
+PYTHONPATH/PYTEST_ADDOPTS/PYTEST_PLUGINS unset; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1; PYTHONDONTWRITEBYTECODE=1
+============================= test session starts ==============================
+platform darwin -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python
+rootdir: /Users/macbookpro/Documents/DACN_implementation/packages/s02
+configfile: pyproject.toml
+collecting ... collected 7 items
+
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_resolved_issue_requires_application_event AUDIT_OUTCOME {"rejected": true, "error": {"code": "SCHEMA_INVARIANT", "stage": "schema", "record_id": "Q-resolved", "pointer": null, "related_ids": [], "message": "issue_resolution_application_event", "details": {"invariant": "issue_resolution_application_event"}}}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_application_preserves_current_issue_identity[wrong_issue_key] AUDIT_OUTCOME {"rejected": true, "error": {"code": "SCHEMA_INVARIANT", "stage": "schema", "record_id": "Q2-resolved", "pointer": null, "related_ids": [], "message": "issue_resolution_answer_lineage", "details": {"invariant": "issue_resolution_answer_lineage"}}}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_application_preserves_current_issue_identity[not_in_current_set] AUDIT_OUTCOME {"rejected": true, "error": {"code": "SCHEMA_INVARIANT", "stage": "schema", "record_id": null, "pointer": null, "related_ids": [], "message": "application_resolved_issue_selected", "details": {"invariant": "application_resolved_issue_selected"}}}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_final_attempt_bound_to_staging[attempt_id] AUDIT_OUTCOME {"rejected": true, "error": {"code": "SCHEMA_INVARIANT", "stage": "schema", "record_id": null, "pointer": null, "related_ids": [], "message": "attempt_prepared_identity", "details": {"invariant": "attempt_prepared_identity"}}}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_final_attempt_bound_to_staging[capture_metadata] AUDIT_OUTCOME {"rejected": true, "error": {"code": "SCHEMA_INVARIANT", "stage": "schema", "record_id": null, "pointer": null, "related_ids": [], "message": "attempt_transport_identity", "details": {"invariant": "attempt_transport_identity"}}}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_final_attempt_bound_to_staging[substitute_prompt] AUDIT_OUTCOME {"rejected": true, "error": {"code": "SCHEMA_INVARIANT", "stage": "schema", "record_id": null, "pointer": null, "related_ids": [], "message": "attempt_prepared_prompt", "details": {"invariant": "attempt_prepared_prompt"}}}
+PASSED
+../../../../../../../Users/macbookpro/Documents/DACN_implementation/packages/s02::test_empty_mandatory_mapping_cannot_pass_scope_gate AUDIT_OUTCOME {"db": "/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-installed-checks-4lytge11/tmp/test_empty_mandatory_mapping_c0/s02.sqlite3", "unassessed_mapping": {"id": "MapConstraint", "source_ref": {"snapshot_id": "a71aeeb2-dfb4-4013-a9ec-683ef8a57435", "input_pointer": "/constraints/0"}, "parts": [], "assessment": "not_assessed", "issue_ids": ["Q-global"]}, "result": {"allowed_scope": {"model_id": "M1", "element_ids": [], "mapping_part_ids": []}, "blocked_scope": {"model_id": "M1", "element_ids": ["A1", "A2"], "mapping_part_ids": ["P1", "P12", "P2"]}, "reason_codes": ["MAPPING_NOT_ASSESSED", "NO_ALLOWED_FUNCTIONAL_SCOPE"], "closures": []}}
+PASSED
+
+- generated xml file: /Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/independent-audits/audit-1-python.xml -
+S02_ENCODERS selected=python calls={'c': 0, 'python': 4837}
+============================== 7 passed in 3.44s ===============================
+
+exit_code=0

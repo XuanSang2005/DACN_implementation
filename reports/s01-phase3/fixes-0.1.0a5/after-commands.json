@@ -1,0 +1,166 @@
+{
+  "package": "0.1.0a5",
+  "runs": [
+    {
+      "name": "regressions-c",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-c",
+        "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+        "-p",
+        "no:cacheprovider",
+        "-s",
+        "-v",
+        "--tb=short",
+        "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_failure_diagnostics.py",
+        "--encoder-backend=c"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    },
+    {
+      "name": "regressions-python",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-c",
+        "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+        "-p",
+        "no:cacheprovider",
+        "-s",
+        "-v",
+        "--tb=short",
+        "/Users/macbookpro/Documents/DACN_implementation/tests/phase3/test_failure_diagnostics.py",
+        "--encoder-backend=python"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    },
+    {
+      "name": "full-c",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-c",
+        "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+        "-p",
+        "no:cacheprovider",
+        "-s",
+        "-v",
+        "--tb=short",
+        "/Users/macbookpro/Documents/DACN_implementation/tests",
+        "--encoder-backend=c"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    },
+    {
+      "name": "full-python",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-c",
+        "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+        "-p",
+        "no:cacheprovider",
+        "-s",
+        "-v",
+        "--tb=short",
+        "/Users/macbookpro/Documents/DACN_implementation/tests",
+        "--encoder-backend=python"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    },
+    {
+      "name": "pip-check",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    },
+    {
+      "name": "audit-0",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-c",
+        "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+        "-p",
+        "no:cacheprovider",
+        "-s",
+        "-v",
+        "--tb=short",
+        "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase3-0.1.0a4/test_phase3_audit.py",
+        "--noconftest"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    },
+    {
+      "name": "audit-1",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-c",
+        "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+        "-p",
+        "no:cacheprovider",
+        "-s",
+        "-v",
+        "--tb=short",
+        "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase2-0.1.0a2/test_phase2_audit.py",
+        "--noconftest"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    },
+    {
+      "name": "audit-2",
+      "command": [
+        "/Users/macbookpro/Documents/DACN_implementation/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-c",
+        "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+        "-p",
+        "no:cacheprovider",
+        "-s",
+        "-v",
+        "--tb=short",
+        "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-progress-2026-10-17/test_extended_audit.py",
+        "--noconftest"
+      ],
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase3-fix-after-ce7vi7lz",
+      "exit_code": 0
+    }
+  ],
+  "env": {
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "unset": [
+      "PYTHONPATH",
+      "PYTEST_ADDOPTS",
+      "PYTEST_PLUGINS"
+    ]
+  }
+}

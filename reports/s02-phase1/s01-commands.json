@@ -1,0 +1,44 @@
+[
+  {
+    "name": "s01-c",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "/Users/macbookpro/Documents/DACN_implementation/tests",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=c"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-h5d8bsih",
+    "exit_code": 0,
+    "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/s01-c.log"
+  },
+  {
+    "name": "s01-python",
+    "command": [
+      "/Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/pyproject.toml",
+      "/Users/macbookpro/Documents/DACN_implementation/tests",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=python"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-h5d8bsih",
+    "exit_code": 0,
+    "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/s01-python.log"
+  }
+]

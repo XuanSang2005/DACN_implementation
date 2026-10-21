@@ -1,0 +1,467 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-clinic-demo",
+  "external_bindings": [
+    {
+      "id": "ctx-clinic-1",
+      "type": "source_context",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "s02-run-demo-1",
+      "type": "run",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "model-clinic-1",
+      "type": "model",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "Q-book",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "Q-cancel",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "Q-clinic",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "SC-cancel",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "SC-performance",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "Q-growth",
+      "type": "issue",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "CHAR-performance",
+      "type": "characteristic",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "VIEW-main-1",
+      "type": "view",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "VAL-not-run-1",
+      "type": "validation",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "DIAGRAM-pending-1",
+      "type": "diagram",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/6"
+    },
+    {
+      "id": "BUNDLE-preparing-1",
+      "type": "bundle",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/7"
+    },
+    {
+      "id": "HANDOFF-denied-1",
+      "type": "handoff",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/8"
+    },
+    {
+      "id": "snap-demo-clinic-r2",
+      "type": "s01_snapshot",
+      "file": "../s01/06-next-revision.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "id": "run-demo-006",
+      "type": "s01_envelope",
+      "file": "../s01/06-next-revision.output.json",
+      "pointer": ""
+    },
+    {
+      "id": "AS-clinic-2",
+      "type": "analysis_set",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/9"
+    },
+    {
+      "id": "model-clinic-analysis-2",
+      "type": "hypothetical_model_materialization",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios/0/expected_model_materialization"
+    },
+    {
+      "id": "ctx-clinic-priority-2",
+      "type": "hypothetical_source_context",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios/1/definitions/0"
+    },
+    {
+      "id": "model-clinic-priority-2",
+      "type": "hypothetical_model_materialization",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios/1/definitions/1"
+    },
+    {
+      "id": "snap-clinic-reorder-hypothetical",
+      "type": "hypothetical_s01_snapshot",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios/2/hypothetical_snapshot"
+    }
+  ],
+  "records": [],
+  "scenarios": [
+    {
+      "id": "analysis-edit-history",
+      "given_model_id": "model-clinic-1",
+      "event": {
+        "kind": "analysis_edit",
+        "base_model_id": "model-clinic-1",
+        "proposal": "Đổi tên C01 thành Điều phối lịch hẹn; giữ nguyên nguồn và mọi trách nhiệm. Đây là lựa chọn trình bày minh họa, chưa áp dụng.",
+        "base_analysis_set_id": "AS-clinic-2"
+      },
+      "expected_change": {
+        "base_model_id": "model-clinic-1",
+        "new_model_id": "model-clinic-analysis-2",
+        "kind": "analysis_edit",
+        "old_source_context_id": "ctx-clinic-1",
+        "new_source_context_id": "ctx-clinic-1",
+        "reason": "Tên khác để trình bày rõ vai trò điều phối; không đổi requirement.",
+        "source_record_ids": [
+          "CHAR-performance"
+        ],
+        "operations": [
+          {
+            "kind": "replace",
+            "element_id": "C01",
+            "reason": "Chỉ đổi name; proposal không thay nghĩa responsibilities."
+          }
+        ],
+        "affected": {
+          "model_id": "model-clinic-analysis-2",
+          "element_ids": [
+            "C01",
+            "D01",
+            "I01"
+          ],
+          "mapping_part_ids": []
+        },
+        "reused": [
+          {
+            "from": {
+              "model_id": "model-clinic-1",
+              "element_id": "OP03"
+            },
+            "to": {
+              "model_id": "model-clinic-analysis-2",
+              "element_id": "OP03"
+            },
+            "reason": "Chỉ rename component; action/read/rule và requirement nguồn không đổi, đã nêu căn cứ độc lập để review.",
+            "checked_source_refs": [
+              {
+                "snapshot_id": "snap-demo-clinic-r1",
+                "input_pointer": "/non_functional_requirements/1/acceptance_criteria/0"
+              }
+            ],
+            "checked_by": "illustration-author-not-an-executed-check"
+          }
+        ],
+        "reevaluate": [
+          {
+            "step": 5,
+            "scope": {
+              "model_id": "model-clinic-analysis-2",
+              "element_ids": [
+                "C01",
+                "D01"
+              ],
+              "mapping_part_ids": []
+            },
+            "reason": "Đối chiếu lại nhãn và liên kết sau đổi model.",
+            "status": "pending",
+            "evidence_record_ids": []
+          },
+          {
+            "step": 6,
+            "scope": {
+              "model_id": "model-clinic-analysis-2",
+              "element_ids": [
+                "C01",
+                "D01"
+              ],
+              "mapping_part_ids": []
+            },
+            "reason": "Ghi attestation phù hợp hồ sơ characteristics với revision mới; không dùng record cũ như current.",
+            "status": "pending",
+            "evidence_record_ids": []
+          }
+        ],
+        "invalidated_bundle_ids": [
+          "BUNDLE-preparing-1"
+        ],
+        "application_event_refs": []
+      },
+      "expected_model_materialization": {
+        "from_record": "model-clinic-1",
+        "new_id": "model-clinic-analysis-2",
+        "revision": 2,
+        "parent_model_id": "model-clinic-1",
+        "source_context_id": "ctx-clinic-1",
+        "changed_element_fields": [
+          {
+            "element_id": "C01",
+            "field": "name",
+            "value": "Điều phối lịch hẹn"
+          }
+        ],
+        "unchanged_elements": "Copy exact từ base chỉ sau kiểm tác động; full model mới là authoritative khi implement.",
+        "current_review": null,
+        "new_analysis_set": "AnalysisSet revision1 của model mới; hồ sơ cũ chỉ history, không tự giữ review.",
+        "id": "model-clinic-analysis-2"
+      },
+      "note": "Scenario mô tả model mới và Change dự kiến, không là records đã lưu. Bundle cũ vẫn lookup được; không retarget SVG/review của nó."
+    },
+    {
+      "id": "requirements-priority-switch",
+      "independent_from": "analysis-edit-history",
+      "given_model_id": "model-clinic-1",
+      "given_new_s01_run": "run-demo-006",
+      "event": {
+        "kind": "requirements_switch",
+        "reason": "Dùng biến thể S01 minh họa đã có: R1 priority null thành should, không thêm quyền hủy.",
+        "changed_source_pointer": "/functional_requirements/0/priority",
+        "old_value": null,
+        "new_value": "should"
+      },
+      "expected": {
+        "new_source_context_id": "ctx-clinic-priority-2",
+        "new_snapshot_id": "snap-demo-clinic-r2",
+        "new_model_id": "model-clinic-priority-2",
+        "model_revision": 2,
+        "parent_model_id": "model-clinic-1",
+        "old_model_retained": true,
+        "requires_explicit_source_alignment": true,
+        "criterion_identity_auto_retarget": false,
+        "earliest_affected_step": 1,
+        "direct_impact": [
+          "OP01",
+          "RS01",
+          "MAP-R1-req",
+          "MAP-R1-ac0",
+          "MAP-R1-ac1"
+        ],
+        "indirect_impact": [
+          "C01",
+          "SC-performance",
+          "CHAR-performance"
+        ],
+        "reanalysis_tasks": [
+          {
+            "step": 1,
+            "reason": "Đánh giá priority mới ảnh hưởng lựa chọn/ràng buộc nào; không đổi thứ tự metrics."
+          },
+          {
+            "step": 4,
+            "reason": "Mọi mapping phải được kiểm lại nguồn snapshot2; criteria index/text không tự cho phép nối identity."
+          },
+          {
+            "step": 6,
+            "reason": "Xét lại đánh đổi liên quan R1 và hồ sơ model mới."
+          }
+        ],
+        "reuse_candidates": [
+          "A01",
+          "A02",
+          "OP03",
+          "RULE03"
+        ],
+        "reuse_requires": "Chỉ tạo Reuse sau kiểm source refs mới + ảnh hưởng gián tiếp; chưa tự đánh ready hoặc sao chép references theo index.",
+        "pending_semantic_answers": [],
+        "cancel_permission_still_unknown": true,
+        "review_id": null,
+        "handoff_eligible": false
+      },
+      "note": "Full model mới chỉ được commit sau typed-reference checks; đây là kế hoạch chuyển nguồn, chưa tạo SourceContext/model/snapshot thật. Không dùng thay priority giả định này làm quyết định nghiệp vụ.",
+      "definitions": [
+        {
+          "id": "ctx-clinic-priority-2",
+          "kind": "hypothetical_source_context",
+          "s01_run_id": "run-demo-006",
+          "snapshot_id": "snap-demo-clinic-r2"
+        },
+        {
+          "id": "model-clinic-priority-2",
+          "kind": "hypothetical_model_materialization",
+          "from_record_id": "model-clinic-1",
+          "revision": 2,
+          "source_context_id": "ctx-clinic-priority-2",
+          "rule": "Full model mới phải align source refs/reanalysis, không auto retarget; descriptor chưa là Model record."
+        }
+      ]
+    },
+    {
+      "id": "criterion-reorder",
+      "given_snapshot_id": "snap-demo-clinic-r1",
+      "event": {
+        "description": "Biến thể độc lập: đảo hai criteria R2; nếu gửi S01 với base đúng thì tạo snapshot mới.",
+        "new_snapshot_id": "snap-clinic-reorder-hypothetical",
+        "source_edits": [
+          {
+            "pointer": "/functional_requirements/1/acceptance_criteria",
+            "value": [
+              "Trạng thái lịch và slot được cập nhật nhất quán.",
+              "Ghi lịch sử hủy đầy đủ."
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "old_ref": {
+          "snapshot_id": "snap-demo-clinic-r1",
+          "input_pointer": "/functional_requirements/1/acceptance_criteria/0"
+        },
+        "old_ref_text": "Ghi lịch sử hủy đầy đủ.",
+        "same_pointer_new_snapshot_text": "Trạng thái lịch và slot được cập nhật nhất quán.",
+        "retarget_forbidden": true,
+        "mapping_state": "needs_reanalysis",
+        "new_ref_must_be_selected_explicitly": true,
+        "old_review_applicable_to_new_model": false
+      },
+      "hypothetical_snapshot": {
+        "snapshot_id": "snap-clinic-reorder-hypothetical",
+        "input": {
+          "schema_version": "1.0.0",
+          "title": "Hệ thống đặt lịch phòng khám",
+          "context": "Hệ thống phòng khám phục vụ bệnh nhân và nhân viên phòng khám. Phạm vi: Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền.",
+          "actors": [
+            "Bệnh nhân",
+            "Nhân viên phòng khám"
+          ],
+          "functional_requirements": [
+            {
+              "id": "R1",
+              "title": "Không đặt trùng slot",
+              "text": "Hai người đặt cùng một slot thì tối đa một người được xác nhận.",
+              "priority": null,
+              "acceptance_criteria": [
+                "Tối đa một lịch được xác nhận cho một slot.",
+                "Phản hồi xung đột chỉ rõ slot."
+              ]
+            },
+            {
+              "id": "R2",
+              "title": "Hủy lịch có lịch sử",
+              "text": "Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot.",
+              "priority": null,
+              "acceptance_criteria": [
+                "Trạng thái lịch và slot được cập nhật nhất quán.",
+                "Ghi lịch sử hủy đầy đủ."
+              ]
+            }
+          ],
+          "non_functional_requirements": [
+            {
+              "id": "R3",
+              "title": "p95 ≤ 2 giây",
+              "text": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+              "priority": null,
+              "acceptance_criteria": [
+                "Đo phía server, percentile 95.",
+                "50 người dùng; thời gian 30 phút."
+              ]
+            },
+            {
+              "id": "R4",
+              "title": "Đúng người, đúng phòng khám",
+              "text": "Bệnh nhân chỉ xem hồ sơ của mình; nhân viên chỉ xem dữ liệu phòng khám mình.",
+              "priority": null,
+              "acceptance_criteria": [
+                "Chặn truy cập khác chủ sở hữu.",
+                "Chặn truy cập chéo phòng khám."
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "R5",
+              "title": "Triển khai local",
+              "text": "App và database chạy local; dữ liệu lịch hẹn không gửi ra ngoài.",
+              "priority": "must",
+              "acceptance_criteria": [
+                "App và database triển khai trong môi trường local.",
+                "Không có luồng gửi dữ liệu lịch hẹn ra ngoài."
+              ]
+            }
+          ],
+          "design_preferences": {
+            "metric_priorities": [
+              "response_time_p95",
+              "sustainable_throughput",
+              "cpu_utilisation",
+              "scaling_gain"
+            ]
+          },
+          "project_details": {
+            "scope_exclusions": null,
+            "external_systems": null,
+            "data_context": null
+          },
+          "operating_conditions": {
+            "critical_scenarios": "Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền",
+            "expected_load": null,
+            "peak_load": "Điều kiện kiểm thử R3: 50 người dùng đồng thời trong 30 phút; chưa biết tải đỉnh khi vận hành.",
+            "data_volume": null,
+            "growth": null,
+            "resource_budget": null
+          }
+        }
+      }
+    },
+    {
+      "id": "late-and-concurrent-output",
+      "given_base_model_id": "model-clinic-1",
+      "events": [
+        "Hai work items nhận cùng base model-clinic-1.",
+        "A commit model-clinic-analysis-2 trước.",
+        "B nhận response LLM cho model-clinic-1 sau đó."
+      ],
+      "expected": {
+        "b_attempt_status": "stale",
+        "b_error_code": "STALE_OUTPUT",
+        "head_model_id": "model-clinic-analysis-2",
+        "raw_response_retained": true,
+        "auto_merge": false,
+        "auto_retry": false
+      },
+      "note": "Lịch minh họa; không phải kết quả concurrency đã chạy.",
+      "given_base_analysis_set_id": "AS-clinic-2"
+    }
+  ]
+}

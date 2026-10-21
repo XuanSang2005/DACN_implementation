@@ -1,0 +1,1440 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-clinic-demo",
+  "external_bindings": [
+    {
+      "id": "ctx-clinic-1",
+      "type": "source_context",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "s02-run-demo-1",
+      "type": "run",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "model-clinic-1",
+      "type": "model",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "Q-book",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "Q-cancel",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "Q-clinic",
+      "type": "issue",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "AS-clinic-1",
+      "type": "analysis_set",
+      "file": "01-source-and-model.json",
+      "pointer": "/records/6"
+    },
+    {
+      "id": "SC-cancel",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/0"
+    },
+    {
+      "id": "SC-performance",
+      "type": "scenario",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/1"
+    },
+    {
+      "id": "Q-growth",
+      "type": "issue",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/2"
+    },
+    {
+      "id": "CHAR-performance",
+      "type": "characteristic",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/3"
+    },
+    {
+      "id": "VIEW-main-1",
+      "type": "view",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/4"
+    },
+    {
+      "id": "VAL-not-run-1",
+      "type": "validation",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/5"
+    },
+    {
+      "id": "DIAGRAM-pending-1",
+      "type": "diagram",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/6"
+    },
+    {
+      "id": "BUNDLE-preparing-1",
+      "type": "bundle",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/7"
+    },
+    {
+      "id": "HANDOFF-denied-1",
+      "type": "handoff",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/8"
+    },
+    {
+      "id": "AS-clinic-2",
+      "type": "analysis_set",
+      "file": "02-analysis-and-review-package.json",
+      "pointer": "/records/9"
+    },
+    {
+      "id": "ctx-clinic-priority-2",
+      "type": "hypothetical_source_context",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios/1/definitions/0"
+    },
+    {
+      "id": "model-clinic-priority-2",
+      "type": "hypothetical_model_materialization",
+      "file": "03-revision-scenarios.json",
+      "pointer": "/scenarios/1/definitions/1"
+    },
+    {
+      "id": "run-demo-006",
+      "type": "s01_run",
+      "file": "../s01/06-next-revision.output.json",
+      "pointer": "/run"
+    },
+    {
+      "id": "snap-demo-clinic-r1",
+      "type": "s01_snapshot",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "id": "snap-demo-clinic-r2",
+      "type": "s01_snapshot",
+      "file": "../s01/06-next-revision.output.json",
+      "pointer": "/snapshot"
+    }
+  ],
+  "records": [],
+  "scenarios": [
+    {
+      "id": "F03-definitions",
+      "warning": "Toàn bộ Answer/consent/user actions và commit dưới đây đều GIẢ ĐỊNH; records=[] có chủ đích. Không trả lời hoặc đóng Q-cancel. Input proposed chỉ dùng biến thể priority đã có trong ví dụ S01, không sửa dataset.",
+      "definitions": [
+        {
+          "type": "issue",
+          "id": "Q-priority-hypothetical",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-priority-key",
+            "supersedes_id": null,
+            "model_id": "model-clinic-1",
+            "detected_step": 1,
+            "kind": "business",
+            "question": "Giả định cần làm rõ priority R1?",
+            "reason": "Chỉ dựng trace áp dụng câu trả lời; không phải yêu cầu thực của người dùng.",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0/priority"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Nguồn minh họa R1 priority null.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP01",
+                "RS01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part"
+              ]
+            },
+            "blocking": {
+              "model_id": "model-clinic-1",
+              "element_ids": [],
+              "mapping_part_ids": []
+            },
+            "status": "open",
+            "answer_ids": [],
+            "resolution_event_refs": [],
+            "resolution": null
+          }
+        },
+        {
+          "type": "answer",
+          "id": "ANS-priority-hypothetical",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_id": "Q-priority-hypothetical",
+            "supersedes_answer_id": null,
+            "respondent": "hypothetical-user-not-real-consent",
+            "recorded_by": "illustration-author",
+            "text": "MINH HỌA GIẢ ĐỊNH: tôi muốn R1 ở mức should.",
+            "interpretation": "needs_interpretation",
+            "existing_source_refs": []
+          }
+        },
+        {
+          "type": "issue",
+          "id": "Q-priority-pending",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-priority-key",
+            "supersedes_id": "Q-priority-hypothetical",
+            "model_id": "model-clinic-1",
+            "detected_step": 1,
+            "kind": "business",
+            "question": "Giả định cần làm rõ priority R1?",
+            "reason": "Chỉ dựng trace áp dụng câu trả lời; không phải yêu cầu thực của người dùng.",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0/priority"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Nguồn minh họa R1 priority null.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "OP01",
+                "RS01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part"
+              ]
+            },
+            "blocking": {
+              "model_id": "model-clinic-1",
+              "element_ids": [],
+              "mapping_part_ids": []
+            },
+            "status": "answered_pending_application",
+            "answer_ids": [
+              "ANS-priority-hypothetical"
+            ],
+            "resolution_event_refs": [],
+            "resolution": null
+          }
+        },
+        {
+          "type": "analysis_set",
+          "id": "AS-priority-question",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "model_id": "model-clinic-1",
+            "revision": 3,
+            "parent_set_id": "AS-clinic-2",
+            "scenario_ids": [
+              "SC-cancel",
+              "SC-performance"
+            ],
+            "characteristic_ids": [
+              "CHAR-performance"
+            ],
+            "issue_ids": [
+              "Q-book",
+              "Q-cancel",
+              "Q-clinic",
+              "Q-growth",
+              "Q-priority-hypothetical"
+            ],
+            "changed_record_ids": [
+              "Q-priority-hypothetical"
+            ],
+            "affected": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "A01",
+                "A02",
+                "OP01",
+                "OP02",
+                "OP03",
+                "OP04",
+                "WF01",
+                "WF02",
+                "WF03",
+                "WF04",
+                "DATA01",
+                "DATA02",
+                "DATA03",
+                "DATA04",
+                "RULE01",
+                "RULE02",
+                "RULE03",
+                "RULE04",
+                "C01",
+                "C03",
+                "RS01",
+                "RS02",
+                "RS03",
+                "RS04",
+                "RS05",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R4-req-patient",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac0-part",
+                "MAP-R4-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            }
+          }
+        },
+        {
+          "type": "analysis_set",
+          "id": "AS-priority-pending",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "model_id": "model-clinic-1",
+            "revision": 4,
+            "parent_set_id": "AS-priority-question",
+            "scenario_ids": [
+              "SC-cancel",
+              "SC-performance"
+            ],
+            "characteristic_ids": [
+              "CHAR-performance"
+            ],
+            "issue_ids": [
+              "Q-book",
+              "Q-cancel",
+              "Q-clinic",
+              "Q-growth",
+              "Q-priority-pending"
+            ],
+            "changed_record_ids": [
+              "Q-priority-pending"
+            ],
+            "affected": {
+              "model_id": "model-clinic-1",
+              "element_ids": [
+                "A01",
+                "A02",
+                "OP01",
+                "OP02",
+                "OP03",
+                "OP04",
+                "WF01",
+                "WF02",
+                "WF03",
+                "WF04",
+                "DATA01",
+                "DATA02",
+                "DATA03",
+                "DATA04",
+                "RULE01",
+                "RULE02",
+                "RULE03",
+                "RULE04",
+                "C01",
+                "C03",
+                "RS01",
+                "RS02",
+                "RS03",
+                "RS04",
+                "RS05",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R4-req-patient",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac0-part",
+                "MAP-R4-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            }
+          }
+        },
+        {
+          "type": "issue",
+          "id": "Q-priority-resolved",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-priority-key",
+            "supersedes_id": "Q-priority-pending",
+            "model_id": "model-clinic-priority-2",
+            "detected_step": 1,
+            "kind": "business",
+            "question": "Giả định cần làm rõ priority R1?",
+            "reason": "Chỉ dựng trace áp dụng câu trả lời; không phải yêu cầu thực của người dùng.",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r2",
+                  "input_pointer": "/functional_requirements/0/priority"
+                }
+              ],
+              "answer_refs": [
+                {
+                  "answer_id": "ANS-priority-hypothetical",
+                  "pointer": "/text"
+                }
+              ],
+              "rationale": "Nguồn minh họa R1 priority null.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "OP01",
+                "RS01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part"
+              ]
+            },
+            "blocking": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [],
+              "mapping_part_ids": []
+            },
+            "status": "resolved",
+            "answer_ids": [
+              "ANS-priority-hypothetical"
+            ],
+            "resolution_event_refs": [
+              {
+                "command_id": "CMD-answer-priority",
+                "event_id": "EV-priority-applied"
+              }
+            ],
+            "resolution": "Giả định đã áp dụng đúng R1.priority=should qua S01 run-demo-006; chưa giải quyết quyền đặt/hủy hoặc reanalysis."
+          }
+        },
+        {
+          "type": "issue",
+          "id": "Q-book-priority2",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-book-key",
+            "supersedes_id": "Q-book",
+            "model_id": "model-clinic-priority-2",
+            "detected_step": 1,
+            "kind": "business",
+            "question": "Những vai trò nào được đặt lịch và trong phạm vi nào?",
+            "reason": "Nguồn hiện có chưa nêu đủ; R4 chỉ quy định quyền xem, không trả lời quyền hủy. Nhánh giả định: từng SourceRef mới phải được đối chiếu đúng nghĩa; chỉ priority R1 thay đổi theo ví dụ S01, chưa chạy kiểm tra S02.",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r2",
+                  "input_pointer": "/functional_requirements/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "OP01",
+                "WF01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part"
+              ]
+            },
+            "blocking": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "OP01",
+                "WF01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part"
+              ]
+            },
+            "status": "open",
+            "answer_ids": [],
+            "resolution": null,
+            "resolution_event_refs": []
+          }
+        },
+        {
+          "type": "issue",
+          "id": "Q-cancel-priority2",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-cancel-key",
+            "supersedes_id": "Q-cancel",
+            "model_id": "model-clinic-priority-2",
+            "detected_step": 1,
+            "kind": "business",
+            "question": "Ai được hủy lịch, được hủy lịch của ai và trong điều kiện nào?",
+            "reason": "Nguồn hiện có chưa nêu đủ; R4 chỉ quy định quyền xem, không trả lời quyền hủy. Nhánh giả định: từng SourceRef mới phải được đối chiếu đúng nghĩa; chỉ priority R1 thay đổi theo ví dụ S01, chưa chạy kiểm tra S02.",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r2",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "OP02",
+                "WF02"
+              ],
+              "mapping_part_ids": [
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part"
+              ]
+            },
+            "blocking": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "OP02",
+                "WF02"
+              ],
+              "mapping_part_ids": [
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part"
+              ]
+            },
+            "status": "open",
+            "answer_ids": [],
+            "resolution": null,
+            "resolution_event_refs": []
+          }
+        },
+        {
+          "type": "issue",
+          "id": "Q-clinic-priority2",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-clinic-key",
+            "supersedes_id": "Q-clinic",
+            "model_id": "model-clinic-priority-2",
+            "detected_step": 1,
+            "kind": "business",
+            "question": "Một nhân viên được xem dữ liệu của phòng khám nào; có thể thuộc nhiều phòng khám không?",
+            "reason": "Nguồn hiện có chưa nêu đủ; R4 chỉ quy định quyền xem, không trả lời quyền hủy. Nhánh giả định: từng SourceRef mới phải được đối chiếu đúng nghĩa; chỉ priority R1 thay đổi theo ví dụ S01, chưa chạy kiểm tra S02.",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r2",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "OP04",
+                "WF04",
+                "RS04",
+                "RULE04"
+              ],
+              "mapping_part_ids": [
+                "MAP-R4-req-staff",
+                "MAP-R4-ac1-part"
+              ]
+            },
+            "blocking": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "OP04",
+                "WF04",
+                "RS04",
+                "RULE04"
+              ],
+              "mapping_part_ids": [
+                "MAP-R4-req-staff",
+                "MAP-R4-ac1-part"
+              ]
+            },
+            "status": "open",
+            "answer_ids": [],
+            "resolution": null,
+            "resolution_event_refs": []
+          }
+        },
+        {
+          "type": "issue",
+          "id": "Q-growth-priority2",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "issue_key": "Q-growth-key",
+            "supersedes_id": "Q-growth",
+            "model_id": "model-clinic-priority-2",
+            "detected_step": 6,
+            "kind": "quality_target",
+            "question": "Nếu cân nhắc tách phần đọc vì tải tăng, mức tăng và độ mới dữ liệu cần hỗ trợ là gì?",
+            "reason": "Chỉ cần quyết định khi chọn phương án tách vì tăng trưởng; không tự dùng điều kiện thử R3 làm mục tiêu scaling. Nhánh giả định: từng SourceRef mới phải được đối chiếu đúng nghĩa; chỉ priority R1 thay đổi theo ví dụ S01, chưa chạy kiểm tra S02.",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r2",
+                  "input_pointer": "/operating_conditions/growth"
+                },
+                {
+                  "snapshot_id": "snap-demo-clinic-r2",
+                  "input_pointer": "/non_functional_requirements/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "affected": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "C01",
+                "C03"
+              ],
+              "mapping_part_ids": []
+            },
+            "blocking": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [],
+              "mapping_part_ids": []
+            },
+            "status": "open",
+            "answer_ids": [],
+            "resolution": null,
+            "resolution_event_refs": []
+          }
+        },
+        {
+          "type": "analysis_set",
+          "id": "AS-priority-new-model",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "model_id": "model-clinic-priority-2",
+            "revision": 1,
+            "parent_set_id": null,
+            "scenario_ids": [],
+            "characteristic_ids": [],
+            "issue_ids": [
+              "Q-book-priority2",
+              "Q-cancel-priority2",
+              "Q-clinic-priority2",
+              "Q-growth-priority2",
+              "Q-priority-resolved"
+            ],
+            "changed_record_ids": [
+              "Q-book-priority2",
+              "Q-cancel-priority2",
+              "Q-clinic-priority2",
+              "Q-growth-priority2",
+              "Q-priority-resolved"
+            ],
+            "affected": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "A01",
+                "A02",
+                "OP01",
+                "OP02",
+                "OP03",
+                "OP04",
+                "WF01",
+                "WF02",
+                "WF03",
+                "WF04",
+                "DATA01",
+                "DATA02",
+                "DATA03",
+                "DATA04",
+                "RULE01",
+                "RULE02",
+                "RULE03",
+                "RULE04",
+                "C01",
+                "C03",
+                "RS01",
+                "RS02",
+                "RS03",
+                "RS04",
+                "RS05",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R4-req-patient",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac0-part",
+                "MAP-R4-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            }
+          }
+        },
+        {
+          "type": "change",
+          "id": "CHANGE-answer-priority",
+          "created_at": "2026-10-18T08:00:00.000Z",
+          "body": {
+            "base_model_id": "model-clinic-1",
+            "new_model_id": "model-clinic-priority-2",
+            "kind": "requirements_switch",
+            "old_source_context_id": "ctx-clinic-1",
+            "new_source_context_id": "ctx-clinic-priority-2",
+            "reason": "Giả định người dùng chỉ duyệt đổi priority R1; không đổi quyền hoặc criteria.",
+            "source_record_ids": [
+              "ANS-priority-hypothetical",
+              "Q-priority-pending"
+            ],
+            "application_event_refs": [
+              {
+                "command_id": "CMD-answer-priority",
+                "event_id": "EV-priority-applied"
+              }
+            ],
+            "operations": [
+              {
+                "kind": "replace",
+                "element_id": "A01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "A02",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "OP01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "OP02",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "OP03",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "OP04",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "WF01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "WF02",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "WF03",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "WF04",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "DATA01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "DATA02",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "DATA03",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "DATA04",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RULE01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RULE02",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RULE03",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RULE04",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "C01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "C03",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RS01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RS02",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RS03",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RS04",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "RS05",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "I01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "D01",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R1-req",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R1-ac0",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R1-ac1",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R2-req",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R2-ac0",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R2-ac1",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R3-req",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R3-ac0",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R3-ac1",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R4-req",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R4-ac0",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R4-ac1",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R5-req",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R5-ac0",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              },
+              {
+                "kind": "replace",
+                "element_id": "MAP-R5-ac1",
+                "reason": "Giả định đã đối chiếu SourceRefs từng phần tử/Mapping vào snapshot mới; giữ unknowns và đánh giá lại theo impact. Không lấy ID/index giống nhau làm bằng chứng."
+              }
+            ],
+            "affected": {
+              "model_id": "model-clinic-priority-2",
+              "element_ids": [
+                "A01",
+                "A02",
+                "OP01",
+                "OP02",
+                "OP03",
+                "OP04",
+                "WF01",
+                "WF02",
+                "WF03",
+                "WF04",
+                "DATA01",
+                "DATA02",
+                "DATA03",
+                "DATA04",
+                "RULE01",
+                "RULE02",
+                "RULE03",
+                "RULE04",
+                "C01",
+                "C03",
+                "RS01",
+                "RS02",
+                "RS03",
+                "RS04",
+                "RS05",
+                "I01",
+                "D01"
+              ],
+              "mapping_part_ids": [
+                "MAP-R1-req-part",
+                "MAP-R1-ac0-part",
+                "MAP-R1-ac1-part",
+                "MAP-R2-req-part",
+                "MAP-R2-ac0-part",
+                "MAP-R2-ac1-part",
+                "MAP-R3-req-part",
+                "MAP-R3-ac0-part",
+                "MAP-R3-ac1-part",
+                "MAP-R4-req-patient",
+                "MAP-R4-req-staff",
+                "MAP-R4-ac0-part",
+                "MAP-R4-ac1-part",
+                "MAP-R5-req-part",
+                "MAP-R5-ac0-part",
+                "MAP-R5-ac1-part"
+              ]
+            },
+            "reused": [],
+            "reevaluate": [
+              {
+                "step": 1,
+                "scope": {
+                  "model_id": "model-clinic-priority-2",
+                  "element_ids": [
+                    "A01",
+                    "A02",
+                    "OP01",
+                    "OP02",
+                    "OP03",
+                    "OP04",
+                    "WF01",
+                    "WF02",
+                    "WF03",
+                    "WF04",
+                    "DATA01",
+                    "DATA02",
+                    "DATA03",
+                    "DATA04",
+                    "RULE01",
+                    "RULE02",
+                    "RULE03",
+                    "RULE04",
+                    "C01",
+                    "C03",
+                    "RS01",
+                    "RS02",
+                    "RS03",
+                    "RS04",
+                    "RS05",
+                    "I01",
+                    "D01"
+                  ],
+                  "mapping_part_ids": [
+                    "MAP-R1-req-part",
+                    "MAP-R1-ac0-part",
+                    "MAP-R1-ac1-part",
+                    "MAP-R2-req-part",
+                    "MAP-R2-ac0-part",
+                    "MAP-R2-ac1-part",
+                    "MAP-R3-req-part",
+                    "MAP-R3-ac0-part",
+                    "MAP-R3-ac1-part",
+                    "MAP-R4-req-patient",
+                    "MAP-R4-req-staff",
+                    "MAP-R4-ac0-part",
+                    "MAP-R4-ac1-part",
+                    "MAP-R5-req-part",
+                    "MAP-R5-ac0-part",
+                    "MAP-R5-ac1-part"
+                  ]
+                },
+                "reason": "Xét ảnh hưởng priority và align nguồn; chưa chứng minh reuse chỉ từ ID/text.",
+                "status": "pending",
+                "evidence_record_ids": []
+              },
+              {
+                "step": 6,
+                "scope": {
+                  "model_id": "model-clinic-priority-2",
+                  "element_ids": [
+                    "A01",
+                    "A02",
+                    "OP01",
+                    "OP02",
+                    "OP03",
+                    "OP04",
+                    "WF01",
+                    "WF02",
+                    "WF03",
+                    "WF04",
+                    "DATA01",
+                    "DATA02",
+                    "DATA03",
+                    "DATA04",
+                    "RULE01",
+                    "RULE02",
+                    "RULE03",
+                    "RULE04",
+                    "C01",
+                    "C03",
+                    "RS01",
+                    "RS02",
+                    "RS03",
+                    "RS04",
+                    "RS05",
+                    "I01",
+                    "D01"
+                  ],
+                  "mapping_part_ids": [
+                    "MAP-R1-req-part",
+                    "MAP-R1-ac0-part",
+                    "MAP-R1-ac1-part",
+                    "MAP-R2-req-part",
+                    "MAP-R2-ac0-part",
+                    "MAP-R2-ac1-part",
+                    "MAP-R3-req-part",
+                    "MAP-R3-ac0-part",
+                    "MAP-R3-ac1-part",
+                    "MAP-R4-req-patient",
+                    "MAP-R4-req-staff",
+                    "MAP-R4-ac0-part",
+                    "MAP-R4-ac1-part",
+                    "MAP-R5-req-part",
+                    "MAP-R5-ac0-part",
+                    "MAP-R5-ac1-part"
+                  ]
+                },
+                "reason": "Characteristics phải phân tích đúng nguồn/model mới.",
+                "status": "pending",
+                "evidence_record_ids": []
+              }
+            ],
+            "invalidated_bundle_ids": [
+              "BUNDLE-preparing-1"
+            ]
+          }
+        }
+      ],
+      "operation": {
+        "command_id": "CMD-answer-priority",
+        "session_id": "session-clinic-demo",
+        "parent_command_id": null,
+        "reserved_run_id": "RUN-answer-priority",
+        "request": {
+          "kind": "apply_answer",
+          "answer_id": "ANS-priority-hypothetical",
+          "issue_key": "Q-priority-key",
+          "base_model_id": "model-clinic-1",
+          "base_analysis_set_id": "AS-priority-pending",
+          "source_context_id": "ctx-clinic-1"
+        }
+      },
+      "staged_input": {
+        "command_id": "CMD-answer-priority",
+        "blob_id": "BLOB-approved-priority",
+        "media_type": "application/json",
+        "purpose": "requirement_update_input",
+        "sha256": "e2dadb627c4e8d5b0117bdfc9bcc80ece102090ff7261ba535e3d3b7b64532f1",
+        "byte_length": 2332,
+        "bytes_utf8": "{\"schema_version\":\"1.0.0\",\"title\":\"Hệ thống đặt lịch phòng khám\",\"context\":\"Hệ thống phòng khám phục vụ bệnh nhân và nhân viên phòng khám. Phạm vi: Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền.\",\"actors\":[\"Bệnh nhân\",\"Nhân viên phòng khám\"],\"functional_requirements\":[{\"id\":\"R1\",\"title\":\"Không đặt trùng slot\",\"text\":\"Hai người đặt cùng một slot thì tối đa một người được xác nhận.\",\"priority\":\"should\",\"acceptance_criteria\":[\"Tối đa một lịch được xác nhận cho một slot.\",\"Phản hồi xung đột chỉ rõ slot.\"]},{\"id\":\"R2\",\"title\":\"Hủy lịch có lịch sử\",\"text\":\"Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot.\",\"priority\":null,\"acceptance_criteria\":[\"Ghi lịch sử hủy đầy đủ.\",\"Trạng thái lịch và slot được cập nhật nhất quán.\"]}],\"non_functional_requirements\":[{\"id\":\"R3\",\"title\":\"p95 ≤ 2 giây\",\"text\":\"Server p95 không quá 2 giây với 50 người dùng trong 30 phút.\",\"priority\":null,\"acceptance_criteria\":[\"Đo phía server, percentile 95.\",\"50 người dùng; thời gian 30 phút.\"]},{\"id\":\"R4\",\"title\":\"Đúng người, đúng phòng khám\",\"text\":\"Bệnh nhân chỉ xem hồ sơ của mình; nhân viên chỉ xem dữ liệu phòng khám mình.\",\"priority\":null,\"acceptance_criteria\":[\"Chặn truy cập khác chủ sở hữu.\",\"Chặn truy cập chéo phòng khám.\"]}],\"constraints\":[{\"id\":\"R5\",\"title\":\"Triển khai local\",\"text\":\"App và database chạy local; dữ liệu lịch hẹn không gửi ra ngoài.\",\"priority\":\"must\",\"acceptance_criteria\":[\"App và database triển khai trong môi trường local.\",\"Không có luồng gửi dữ liệu lịch hẹn ra ngoài.\"]}],\"design_preferences\":{\"metric_priorities\":[\"response_time_p95\",\"sustainable_throughput\",\"cpu_utilisation\",\"scaling_gain\"]},\"project_details\":{\"scope_exclusions\":null,\"external_systems\":null,\"data_context\":null},\"operating_conditions\":{\"critical_scenarios\":\"Đặt lịch; Hủy lịch; Xem dữ liệu trong phạm vi quyền\",\"expected_load\":null,\"peak_load\":\"Điều kiện kiểm thử R3: 50 người dùng đồng thời trong 30 phút; chưa biết tải đỉnh khi vận hành.\",\"data_volume\":null,\"growth\":null,\"resource_budget\":null}}"
+      },
+      "events": [
+        {
+          "event_id": "EV-priority-interpret",
+          "command_id": "CMD-answer-priority",
+          "ordinal": 1,
+          "kind": "interpretation_selected",
+          "payload": {
+            "answer_id": "ANS-priority-hypothetical",
+            "interpretation": "changes_requirements",
+            "explanation": "Diễn giải được chọn trong nhánh minh họa: chỉ R1.priority từ null sang should; nguyên văn Answer không sửa.",
+            "existing_source_refs": [],
+            "proposed_input": {
+              "command_id": "CMD-answer-priority",
+              "blob_id": "BLOB-approved-priority"
+            },
+            "s01_request": {
+              "mode": "update",
+              "spec_id": "spec-demo-clinic",
+              "base_revision": 1
+            }
+          }
+        },
+        {
+          "event_id": "EV-priority-consent",
+          "command_id": "CMD-answer-priority",
+          "ordinal": 2,
+          "kind": "consent_recorded",
+          "payload": {
+            "answer_id": "ANS-priority-hypothetical",
+            "interpretation_event": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-interpret"
+            },
+            "respondent": "hypothetical-user-not-real-consent",
+            "text": "MINH HỌA GIẢ ĐỊNH: đồng ý đúng input/diff/request base này. Không phải chấp thuận của người dùng thật.",
+            "approved_input_sha256": "e2dadb627c4e8d5b0117bdfc9bcc80ece102090ff7261ba535e3d3b7b64532f1"
+          }
+        },
+        {
+          "event_id": "EV-priority-dispatch",
+          "command_id": "CMD-answer-priority",
+          "ordinal": 3,
+          "kind": "s01_dispatch_intent",
+          "payload": {
+            "answer_id": "ANS-priority-hypothetical",
+            "consent_event": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-consent"
+            },
+            "s01_store_key": "s01-clinic-demo",
+            "s01_run_id": "run-demo-006",
+            "s01_request": {
+              "mode": "update",
+              "spec_id": "spec-demo-clinic",
+              "base_revision": 1
+            },
+            "input_stage_ref": {
+              "command_id": "CMD-answer-priority",
+              "blob_id": "BLOB-approved-priority"
+            }
+          }
+        },
+        {
+          "event_id": "EV-priority-recover",
+          "command_id": "CMD-answer-priority",
+          "ordinal": 4,
+          "kind": "recovery_observed",
+          "payload": {
+            "answer_id": "ANS-priority-hypothetical",
+            "related_event": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-dispatch"
+            },
+            "reason": "Giả định S01 đã commit, S02 crash trước quan sát/switch; lookup cùng receipt/run-demo-006, không submit lại."
+          }
+        },
+        {
+          "event_id": "EV-priority-observed",
+          "command_id": "CMD-answer-priority",
+          "ordinal": 5,
+          "kind": "s01_result_observed",
+          "payload": {
+            "answer_id": "ANS-priority-hypothetical",
+            "dispatch_event": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-dispatch"
+            },
+            "s01_run_id": "run-demo-006",
+            "lookup_status": "validated",
+            "snapshot_id": "snap-demo-clinic-r2"
+          }
+        },
+        {
+          "event_id": "EV-priority-applied",
+          "command_id": "CMD-answer-priority",
+          "ordinal": 6,
+          "kind": "application_applied",
+          "payload": {
+            "answer_id": "ANS-priority-hypothetical",
+            "interpretation_event": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-interpret"
+            },
+            "consent_event": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-consent"
+            },
+            "s01_observation_event": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-observed"
+            },
+            "change_id": "CHANGE-answer-priority",
+            "new_source_context_id": "ctx-clinic-priority-2",
+            "resolved_issue_id": "Q-priority-resolved"
+          }
+        },
+        {
+          "event_id": "EV-priority-finalized",
+          "command_id": "CMD-answer-priority",
+          "ordinal": 7,
+          "kind": "finalized",
+          "payload": {
+            "run_id": "RUN-answer-priority",
+            "promotions": []
+          }
+        }
+      ],
+      "recovery_command": {
+        "command_id": "CMD-recover-priority",
+        "session_id": "session-clinic-demo",
+        "parent_command_id": "CMD-answer-priority",
+        "reserved_run_id": "RUN-recover-priority",
+        "request": {
+          "kind": "recover_application",
+          "application_command_id": "CMD-answer-priority"
+        }
+      }
+    },
+    {
+      "id": "F03-crash-and-resume",
+      "timeline": [
+        {
+          "step": 1,
+          "hypothetically_committed": [
+            "Q-priority-hypothetical",
+            "AS-priority-question"
+          ],
+          "note": "Phát hiện câu hỏi; set head thay đổi, review cũ mất hiệu lực."
+        },
+        {
+          "step": 2,
+          "hypothetically_committed": [
+            "ANS-priority-hypothetical",
+            "Q-priority-pending",
+            "AS-priority-pending"
+          ],
+          "note": "Lời trả lời giả định nhận một lần, interpretation ban đầu needs_interpretation; hai kết quả S01/context không nằm trong Answer."
+        },
+        {
+          "step": 3,
+          "hypothetically_committed_event_refs": [
+            {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-interpret"
+            },
+            {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-consent"
+            }
+          ],
+          "note": "Staged input exact/hash và request base đã commit cùng interpretation; người dùng giả định xem/duyệt đúng bytes."
+        },
+        {
+          "step": 4,
+          "hypothetically_committed_event_refs": [
+            {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-dispatch"
+            }
+          ],
+          "external_s01_outcome": "Giả định submit run-demo-006 commit snapshot r2, như biến thể JSON đã có."
+        },
+        {
+          "step": 5,
+          "s02_result": "Crash trước source switch; không có application_applied, Change hoặc model mới. Answer và dispatch event đã lưu không đổi.",
+          "s01_result": "Commit tồn tại trong lịch giả định, S02 chưa biết chắc cho tới checked lookup."
+        },
+        {
+          "step": 6,
+          "hypothetically_committed_event_refs": [
+            {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-recover"
+            },
+            {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-observed"
+            }
+          ],
+          "note": "Recover command con chỉ lookup đúng S01 run, không gửi lại input."
+        },
+        {
+          "step": 7,
+          "single_atomic_s02_commit": {
+            "model_id": "model-clinic-priority-2",
+            "source_context_id": "ctx-clinic-priority-2",
+            "change_id": "CHANGE-answer-priority",
+            "analysis_set_id": "AS-priority-new-model",
+            "resolved_issue_id": "Q-priority-resolved",
+            "event_ref": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-applied"
+            },
+            "run_id": "RUN-answer-priority",
+            "finalized_event_ref": {
+              "command_id": "CMD-answer-priority",
+              "event_id": "EV-priority-finalized"
+            }
+          },
+          "precondition": "M1/AS-priority-pending còn current, full model/source archives và refs đã align; các Issue successors/AnalysisSet/Change/event cùng commit. Nếu không đúng base thì APPLICATION_CONFLICT, chưa resolved. Final Run dùng config Artifact có sẵn, không có LLM attempts; các source archives thuộc ngoại lệ S01. Promotions=[] chỉ vì input xin consent giữ StageRef, không làm Artifact mới ngoài S01 archives. Đây là projection timeline, không Run export đầy đủ."
+        }
+      ],
+      "expected": {
+        "answer_text_unchanged": true,
+        "answer_interpretation_unchanged": "needs_interpretation",
+        "effective_interpretation_from": {
+          "command_id": "CMD-answer-priority",
+          "event_id": "EV-priority-interpret"
+        },
+        "same_s01_run": "run-demo-006",
+        "s01_submit_count_in_hypothetical_history": 1,
+        "application_applied_count": 1,
+        "issue_resolved": "Q-priority-resolved",
+        "reanalysis_still_pending": true,
+        "handoff_eligible": false,
+        "cancel_permission_still_unknown": true
+      }
+    },
+    {
+      "id": "F03-repeated-recovery-versus-new-answer",
+      "cases": [
+        {
+          "action": "Mất phản hồi sau application_applied rồi recover cùng command",
+          "expected": "Lookup đúng Change/model/event; không submit S01, không tạo model/revision/Answer mới."
+        },
+        {
+          "action": "Người dùng GIẢ ĐỊNH trả lời khác sau đó",
+          "expected": "Answer ID mới, supersedes_answer_id trỏ ANS-priority-hypothetical; diễn giải/consent mới nếu đổi nghĩa, không mutate text hoặc reuse consent cũ."
+        },
+        {
+          "action": "S02 head đã đổi trong khi chờ S01 lookup",
+          "expected_code": "APPLICATION_CONFLICT",
+          "stage": "revision",
+          "expected": "Giữ S01 outcome và Answer; không rebase/source switch tự động, cần đối chiếu lại impact và consent nếu payload/base đổi."
+        }
+      ]
+    }
+  ]
+}

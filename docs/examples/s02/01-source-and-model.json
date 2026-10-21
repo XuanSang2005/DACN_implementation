@@ -1,0 +1,1744 @@
+{
+  "illustration": "minh họa chưa thực thi",
+  "contract_version": "s02/0.1.0-draft.3",
+  "session_id": "session-clinic-demo",
+  "external_bindings": [
+    {
+      "id": "art-s01-envelope-005",
+      "type": "artifact",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": ""
+    },
+    {
+      "id": "snap-demo-clinic-r1",
+      "type": "s01_snapshot",
+      "file": "../s01/05-unchanged-resubmission.output.json",
+      "pointer": "/snapshot"
+    },
+    {
+      "id": "art-source-005",
+      "type": "artifact",
+      "file": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/system-input-v1/clinic-input.example.json",
+      "pointer": ""
+    },
+    {
+      "id": "art-origin-001",
+      "type": "artifact",
+      "file": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/system-input-v1/clinic-input.example.json",
+      "pointer": ""
+    },
+    {
+      "id": "art-schema",
+      "type": "artifact",
+      "file": "../../../src/dacn_s01/schemas/input/1.0.0/system-input.schema.json",
+      "pointer": ""
+    },
+    {
+      "id": "art-config-demo",
+      "type": "artifact",
+      "file": "01-source-and-model.json",
+      "pointer": "/scenarios/0/config"
+    },
+    {
+      "id": "cmd-demo-initial",
+      "type": "operation",
+      "file": "01-source-and-model.json",
+      "pointer": "/scenarios/0/operation"
+    }
+  ],
+  "records": [
+    {
+      "type": "source_context",
+      "id": "ctx-clinic-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "store_key": "s01-clinic-demo",
+        "s01_run_id": "run-demo-005",
+        "snapshot_id": "snap-demo-clinic-r1",
+        "envelope_artifact_id": "art-s01-envelope-005",
+        "run_source_artifact_id": "art-source-005",
+        "origin_source_artifact_id": "art-origin-001",
+        "schema_artifact_id": "art-schema"
+      }
+    },
+    {
+      "type": "run",
+      "id": "s02-run-demo-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "mode": "replay",
+        "source_context_id": "ctx-clinic-1",
+        "config_artifact_id": "art-config-demo",
+        "base_model_id": null,
+        "steps": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "status": "completed",
+        "result_model_id": "model-clinic-1",
+        "started_at": "2026-10-18T08:00:00.000Z",
+        "completed_at": "2026-10-18T08:00:00.000Z",
+        "attempts": [],
+        "errors": [],
+        "command_id": "cmd-demo-initial",
+        "base_analysis_set_id": null,
+        "result_analysis_set_id": "AS-clinic-1"
+      }
+    },
+    {
+      "type": "model",
+      "id": "model-clinic-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "revision": 1,
+        "parent_model_id": null,
+        "source_context_id": "ctx-clinic-1",
+        "created_by_run_id": "s02-run-demo-1",
+        "change_id": null,
+        "actors": [
+          {
+            "id": "A01",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/actors/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Bệnh nhân",
+            "kind": "supplied"
+          },
+          {
+            "id": "A02",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/actors/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Nhân viên phòng khám",
+            "kind": "supplied"
+          }
+        ],
+        "actions": [
+          {
+            "id": "OP01",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-book"
+              ]
+            },
+            "state": "needs_clarification",
+            "name": "Xác nhận đặt lịch",
+            "initiator": "unknown",
+            "actor_ids": [],
+            "permission_rule_ids": [],
+            "read_data_ids": [
+              "DATA01",
+              "DATA02"
+            ],
+            "write_data_ids": [
+              "DATA01",
+              "DATA02"
+            ],
+            "rule_ids": [
+              "RULE01"
+            ],
+            "workflow_ids": [
+              "WF01"
+            ]
+          },
+          {
+            "id": "OP02",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-cancel"
+              ]
+            },
+            "state": "needs_clarification",
+            "name": "Hủy lịch",
+            "initiator": "unknown",
+            "actor_ids": [],
+            "permission_rule_ids": [],
+            "read_data_ids": [
+              "DATA01",
+              "DATA02"
+            ],
+            "write_data_ids": [
+              "DATA01",
+              "DATA02",
+              "DATA03"
+            ],
+            "rule_ids": [
+              "RULE02"
+            ],
+            "workflow_ids": [
+              "WF02"
+            ]
+          },
+          {
+            "id": "OP03",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Bệnh nhân xem dữ liệu theo chủ sở hữu",
+            "initiator": "external",
+            "actor_ids": [
+              "A01"
+            ],
+            "permission_rule_ids": [
+              "RULE03"
+            ],
+            "read_data_ids": [
+              "DATA04"
+            ],
+            "write_data_ids": [],
+            "rule_ids": [
+              "RULE03"
+            ],
+            "workflow_ids": [
+              "WF03"
+            ]
+          },
+          {
+            "id": "OP04",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-clinic"
+              ]
+            },
+            "state": "needs_clarification",
+            "name": "Nhân viên xem dữ liệu theo phòng khám",
+            "initiator": "external",
+            "actor_ids": [
+              "A02"
+            ],
+            "permission_rule_ids": [
+              "RULE04"
+            ],
+            "read_data_ids": [
+              "DATA04"
+            ],
+            "write_data_ids": [],
+            "rule_ids": [
+              "RULE04"
+            ],
+            "workflow_ids": [
+              "WF04"
+            ]
+          }
+        ],
+        "workflows": [
+          {
+            "id": "WF01",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-book"
+              ]
+            },
+            "state": "needs_clarification",
+            "name": "Xác nhận đặt lịch",
+            "entry_node_id": "WF01-N1",
+            "nodes": [
+              {
+                "id": "WF01-N1",
+                "action_id": "OP01",
+                "kind": "action",
+                "label": "Xác nhận đặt lịch"
+              },
+              {
+                "id": "WF01-N2",
+                "action_id": null,
+                "kind": "end",
+                "label": "Kết quả hợp lệ trong phạm vi đã biết"
+              },
+              {
+                "id": "WF01-N3",
+                "action_id": null,
+                "kind": "end",
+                "label": "Xung đột hoặc từ chối; lý do theo nguồn/issue"
+              }
+            ],
+            "edges": [
+              {
+                "id": "WF01-E1",
+                "from": "WF01-N1",
+                "to": "WF01-N2",
+                "guard": "Điều kiện nguồn được đáp ứng; quyền chưa biết vẫn cần làm rõ",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/functional_requirements/0"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": []
+                }
+              },
+              {
+                "id": "WF01-E2",
+                "from": "WF01-N1",
+                "to": "WF01-N3",
+                "guard": "Xung đột slot",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/functional_requirements/0"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": [
+                    "Q-book"
+                  ]
+                }
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "WF02",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-cancel"
+              ]
+            },
+            "state": "needs_clarification",
+            "name": "Hủy lịch",
+            "entry_node_id": "WF02-N1",
+            "nodes": [
+              {
+                "id": "WF02-N1",
+                "action_id": "OP02",
+                "kind": "action",
+                "label": "Hủy lịch"
+              },
+              {
+                "id": "WF02-N2",
+                "action_id": null,
+                "kind": "end",
+                "label": "Kết quả hợp lệ trong phạm vi đã biết"
+              },
+              {
+                "id": "WF02-N3",
+                "action_id": null,
+                "kind": "end",
+                "label": "Xung đột hoặc từ chối; lý do theo nguồn/issue"
+              }
+            ],
+            "edges": [
+              {
+                "id": "WF02-E1",
+                "from": "WF02-N1",
+                "to": "WF02-N2",
+                "guard": "Điều kiện nguồn được đáp ứng; quyền chưa biết vẫn cần làm rõ",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/functional_requirements/1"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": []
+                }
+              },
+              {
+                "id": "WF02-E2",
+                "from": "WF02-N1",
+                "to": "WF02-N3",
+                "guard": "Điều kiện hủy chưa được xác định; nhánh cần làm rõ",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/functional_requirements/1"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": [
+                    "Q-cancel"
+                  ]
+                }
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "WF03",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Bệnh nhân xem dữ liệu theo chủ sở hữu",
+            "entry_node_id": "WF03-N1",
+            "nodes": [
+              {
+                "id": "WF03-N1",
+                "action_id": "OP03",
+                "kind": "action",
+                "label": "Bệnh nhân xem dữ liệu theo chủ sở hữu"
+              },
+              {
+                "id": "WF03-N2",
+                "action_id": null,
+                "kind": "end",
+                "label": "Kết quả hợp lệ trong phạm vi đã biết"
+              },
+              {
+                "id": "WF03-N3",
+                "action_id": null,
+                "kind": "end",
+                "label": "Xung đột hoặc từ chối; lý do theo nguồn/issue"
+              }
+            ],
+            "edges": [
+              {
+                "id": "WF03-E1",
+                "from": "WF03-N1",
+                "to": "WF03-N2",
+                "guard": "Đúng chủ sở hữu",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/non_functional_requirements/1"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": []
+                }
+              },
+              {
+                "id": "WF03-E2",
+                "from": "WF03-N1",
+                "to": "WF03-N3",
+                "guard": "Ngoài phạm vi xem",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/non_functional_requirements/1"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": []
+                }
+              }
+            ],
+            "branch_points": []
+          },
+          {
+            "id": "WF04",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-clinic"
+              ]
+            },
+            "state": "needs_clarification",
+            "name": "Nhân viên xem dữ liệu theo phòng khám",
+            "entry_node_id": "WF04-N1",
+            "nodes": [
+              {
+                "id": "WF04-N1",
+                "action_id": "OP04",
+                "kind": "action",
+                "label": "Nhân viên xem dữ liệu theo phòng khám"
+              },
+              {
+                "id": "WF04-N2",
+                "action_id": null,
+                "kind": "end",
+                "label": "Kết quả hợp lệ trong phạm vi đã biết"
+              },
+              {
+                "id": "WF04-N3",
+                "action_id": null,
+                "kind": "end",
+                "label": "Xung đột hoặc từ chối; lý do theo nguồn/issue"
+              }
+            ],
+            "edges": [
+              {
+                "id": "WF04-E1",
+                "from": "WF04-N1",
+                "to": "WF04-N2",
+                "guard": "Điều kiện nguồn được đáp ứng; quyền chưa biết vẫn cần làm rõ",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/non_functional_requirements/1"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": []
+                }
+              },
+              {
+                "id": "WF04-E2",
+                "from": "WF04-N1",
+                "to": "WF04-N3",
+                "guard": "Ngoài phạm vi xem",
+                "trace": {
+                  "origin": "inferred",
+                  "source_refs": [
+                    {
+                      "snapshot_id": "snap-demo-clinic-r1",
+                      "input_pointer": "/non_functional_requirements/1"
+                    }
+                  ],
+                  "answer_refs": [],
+                  "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+                  "issue_ids": [
+                    "Q-clinic"
+                  ]
+                }
+              }
+            ],
+            "branch_points": []
+          }
+        ],
+        "data": [
+          {
+            "id": "DATA01",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0"
+                },
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Lịch hẹn",
+            "description": "Khái niệm logic, không chốt bảng hoặc database."
+          },
+          {
+            "id": "DATA02",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0"
+                },
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Slot",
+            "description": "Slot được xác nhận hoặc giải phóng theo R1/R2."
+          },
+          {
+            "id": "DATA03",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Thông tin hủy",
+            "description": "Lý do, người thực hiện, thời điểm; không mặc định người thực hiện có quyền."
+          },
+          {
+            "id": "DATA04",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Dữ liệu và phạm vi xem",
+            "description": "Chủ sở hữu/phòng khám của dữ liệu; nguồn thông tin quyền chưa chốt."
+          }
+        ],
+        "rules": [
+          {
+            "id": "RULE01",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "statement": "Tối đa một xác nhận cho cùng slot; xung đột chỉ rõ slot.",
+            "kind": "consistency",
+            "action_ids": [
+              "OP01"
+            ]
+          },
+          {
+            "id": "RULE02",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "statement": "Lưu lý do, người thực hiện, thời gian; giải phóng slot và giữ trạng thái lịch-slot nhất quán.",
+            "kind": "consistency",
+            "action_ids": [
+              "OP02"
+            ]
+          },
+          {
+            "id": "RULE03",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1/acceptance_criteria/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "statement": "Bệnh nhân chỉ xem hồ sơ của mình; chặn truy cập khác chủ sở hữu.",
+            "kind": "permission",
+            "action_ids": [
+              "OP03"
+            ]
+          },
+          {
+            "id": "RULE04",
+            "trace": {
+              "origin": "explicit",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1/acceptance_criteria/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-clinic"
+              ]
+            },
+            "state": "needs_clarification",
+            "statement": "Nhân viên chỉ xem dữ liệu phòng khám mình; số/phạm vi phòng khám chưa rõ.",
+            "kind": "permission",
+            "action_ids": [
+              "OP04"
+            ]
+          }
+        ],
+        "components": [
+          {
+            "id": "C01",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0"
+                },
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                },
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Quản lý lịch hẹn",
+            "purpose": "Điều phối vòng đời lịch-slot và đường xem dữ liệu lịch hẹn.",
+            "grouping_reason": "Đặt/hủy cùng quy tắc lịch-slot; giữ chung để giảm phối hợp qua ranh giới. Phân công đường xem là suy luận thiết kế.",
+            "alternatives": [
+              "Tách đặt/hủy/slot cần giải thích nhất quán và phối hợp.",
+              "Tách phần đọc chỉ khi có căn cứ mục tiêu riêng."
+            ],
+            "uncertainties": [
+              "Ai được đặt/hủy; phạm vi dữ liệu xem cần làm rõ."
+            ]
+          },
+          {
+            "id": "C03",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Truy cập dữ liệu có kiểm soát",
+            "purpose": "Cung cấp khả năng xác định phạm vi dữ liệu được xem.",
+            "grouping_reason": "Tách trách nhiệm xác định phạm vi xem để C01 không lặp quy tắc chủ sở hữu/phòng khám.",
+            "alternatives": [
+              "Giữ kiểm tra phạm vi xem trong C01 cũng cần đối chiếu."
+            ],
+            "uncertainties": [
+              "Nguồn thông tin quyền và phạm vi phòng khám của nhân viên chưa xác định."
+            ]
+          }
+        ],
+        "responsibilities": [
+          {
+            "id": "RS01",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "component_id": "C01",
+            "statement": "Giữ tối đa một xác nhận/slot và trả xung đột chỉ rõ slot.",
+            "action_ids": [
+              "OP01"
+            ],
+            "rule_ids": [
+              "RULE01"
+            ]
+          },
+          {
+            "id": "RS02",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "component_id": "C01",
+            "statement": "Ghi lý do/người/thời điểm hủy; giải phóng slot; cập nhật lịch-slot nhất quán.",
+            "action_ids": [
+              "OP02"
+            ],
+            "rule_ids": [
+              "RULE02"
+            ]
+          },
+          {
+            "id": "RS03",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1/acceptance_criteria/0"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "component_id": "C01",
+            "statement": "Phục vụ dữ liệu xem của bệnh nhân trong phạm vi chủ sở hữu được xác định.",
+            "action_ids": [
+              "OP03"
+            ],
+            "rule_ids": [
+              "RULE03"
+            ]
+          },
+          {
+            "id": "RS04",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1/acceptance_criteria/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": [
+                "Q-clinic"
+              ]
+            },
+            "state": "needs_clarification",
+            "component_id": "C01",
+            "statement": "Phục vụ dữ liệu xem của nhân viên theo phòng khám; phạm vi cần làm rõ.",
+            "action_ids": [
+              "OP04"
+            ],
+            "rule_ids": [
+              "RULE04"
+            ]
+          },
+          {
+            "id": "RS05",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "component_id": "C03",
+            "statement": "Xác định phạm vi dữ liệu được xem theo chủ sở hữu/phòng khám; không cấp quyền hủy.",
+            "action_ids": [
+              "OP03",
+              "OP04"
+            ],
+            "rule_ids": [
+              "RULE03",
+              "RULE04"
+            ]
+          }
+        ],
+        "interfaces": [
+          {
+            "id": "I01",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "name": "Phạm vi xem",
+            "capability": "Xác định phạm vi dữ liệu được xem",
+            "provider_component_id": "C03",
+            "responsibility_ids": [
+              "RS05"
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "id": "D01",
+            "trace": {
+              "origin": "inferred",
+              "source_refs": [
+                {
+                  "snapshot_id": "snap-demo-clinic-r1",
+                  "input_pointer": "/non_functional_requirements/1"
+                }
+              ],
+              "answer_refs": [],
+              "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+              "issue_ids": []
+            },
+            "state": "ready",
+            "kind": "requires_interface",
+            "consumer_component_id": "C01",
+            "provider_component_id": "C03",
+            "interface_id": "I01",
+            "capability": "Xác định phạm vi dữ liệu được xem",
+            "action_ids": [
+              "OP03",
+              "OP04"
+            ],
+            "workflow_ids": [
+              "WF03",
+              "WF04"
+            ],
+            "reason": "C01 phục vụ dữ liệu xem và cần capability phạm vi xem từ C03; phân công này là inferred, không suy từ cùng dữ liệu.",
+            "support": [
+              {
+                "action_id": "OP03",
+                "provider_responsibility_ids": [
+                  "RS05"
+                ],
+                "required_action_ids": []
+              },
+              {
+                "action_id": "OP04",
+                "provider_responsibility_ids": [
+                  "RS05"
+                ],
+                "required_action_ids": []
+              }
+            ]
+          }
+        ],
+        "mappings": [
+          {
+            "id": "MAP-R1-req",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R1-req-part",
+                "obligation": "Hai người đặt cùng một slot thì tối đa một người được xác nhận.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS01"
+                ],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Hai người đặt cùng một slot thì tối đa một người được xác nhận.",
+                "remaining_gap": "Chưa biết quyền khởi phát; phần lưu/cập nhật đã có trách nhiệm đề xuất.",
+                "issue_ids": [
+                  "Q-book"
+                ],
+                "action_ids": [
+                  "OP01"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-book"
+            ]
+          },
+          {
+            "id": "MAP-R1-ac0",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0/acceptance_criteria/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R1-ac0-part",
+                "obligation": "Tối đa một lịch được xác nhận cho một slot.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS01"
+                ],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Tối đa một lịch được xác nhận cho một slot.",
+                "remaining_gap": "Chưa biết quyền khởi phát; phần lưu/cập nhật đã có trách nhiệm đề xuất.",
+                "issue_ids": [
+                  "Q-book"
+                ],
+                "action_ids": [
+                  "OP01"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-book"
+            ]
+          },
+          {
+            "id": "MAP-R1-ac1",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0/acceptance_criteria/1"
+            },
+            "parts": [
+              {
+                "id": "MAP-R1-ac1-part",
+                "obligation": "Phản hồi xung đột chỉ rõ slot.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS01"
+                ],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Phản hồi xung đột chỉ rõ slot.",
+                "remaining_gap": "Chưa biết quyền khởi phát; phần lưu/cập nhật đã có trách nhiệm đề xuất.",
+                "issue_ids": [
+                  "Q-book"
+                ],
+                "action_ids": [
+                  "OP01"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-book"
+            ]
+          },
+          {
+            "id": "MAP-R2-req",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1"
+            },
+            "parts": [
+              {
+                "id": "MAP-R2-req-part",
+                "obligation": "Hủy lịch lưu lý do, người thực hiện, thời gian và giải phóng slot.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS02"
+                ],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "RS02 nhận đủ lý do/người/thời điểm; giải phóng slot và giữ nhất quán. Chưa gán quyền khởi phát.",
+                "remaining_gap": "Chưa biết quyền khởi phát; phần lưu/cập nhật đã có trách nhiệm đề xuất.",
+                "issue_ids": [
+                  "Q-cancel"
+                ],
+                "action_ids": [
+                  "OP02"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-cancel"
+            ]
+          },
+          {
+            "id": "MAP-R2-ac0",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1/acceptance_criteria/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R2-ac0-part",
+                "obligation": "Ghi lịch sử hủy đầy đủ.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS02"
+                ],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Ghi lịch sử hủy đầy đủ.",
+                "remaining_gap": "Chưa biết quyền khởi phát; phần lưu/cập nhật đã có trách nhiệm đề xuất.",
+                "issue_ids": [
+                  "Q-cancel"
+                ],
+                "action_ids": [
+                  "OP02"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-cancel"
+            ]
+          },
+          {
+            "id": "MAP-R2-ac1",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1/acceptance_criteria/1"
+            },
+            "parts": [
+              {
+                "id": "MAP-R2-ac1-part",
+                "obligation": "Trạng thái lịch và slot được cập nhật nhất quán.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS02"
+                ],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Trạng thái lịch và slot được cập nhật nhất quán.",
+                "remaining_gap": "Chưa biết quyền khởi phát; phần lưu/cập nhật đã có trách nhiệm đề xuất.",
+                "issue_ids": [
+                  "Q-cancel"
+                ],
+                "action_ids": [
+                  "OP02"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-cancel"
+            ]
+          },
+          {
+            "id": "MAP-R3-req",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R3-req-part",
+                "obligation": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+                "assignment": "proposed",
+                "target": "system",
+                "primary_responsibility_ids": [],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Server p95 không quá 2 giây với 50 người dùng trong 30 phút.",
+                "remaining_gap": "Nghĩa vụ runtime/triển khai chưa kiểm chứng; model không chứng nhận đạt.",
+                "issue_ids": [],
+                "action_ids": []
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": []
+          },
+          {
+            "id": "MAP-R3-ac0",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/0/acceptance_criteria/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R3-ac0-part",
+                "obligation": "Đo phía server, percentile 95.",
+                "assignment": "proposed",
+                "target": "system",
+                "primary_responsibility_ids": [],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Đo phía server, percentile 95.",
+                "remaining_gap": "Nghĩa vụ runtime/triển khai chưa kiểm chứng; model không chứng nhận đạt.",
+                "issue_ids": [],
+                "action_ids": []
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": []
+          },
+          {
+            "id": "MAP-R3-ac1",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/0/acceptance_criteria/1"
+            },
+            "parts": [
+              {
+                "id": "MAP-R3-ac1-part",
+                "obligation": "50 người dùng; thời gian 30 phút.",
+                "assignment": "proposed",
+                "target": "system",
+                "primary_responsibility_ids": [],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "50 người dùng; thời gian 30 phút.",
+                "remaining_gap": "Nghĩa vụ runtime/triển khai chưa kiểm chứng; model không chứng nhận đạt.",
+                "issue_ids": [],
+                "action_ids": []
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": []
+          },
+          {
+            "id": "MAP-R4-req",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1"
+            },
+            "parts": [
+              {
+                "id": "MAP-R4-req-patient",
+                "obligation": "Bệnh nhân chỉ xem hồ sơ của mình.",
+                "assignment": "proposed",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS03"
+                ],
+                "supporting_responsibility_ids": [
+                  "RS05"
+                ],
+                "covered_portion": "Bệnh nhân chỉ xem hồ sơ của mình.",
+                "remaining_gap": null,
+                "issue_ids": [],
+                "action_ids": [
+                  "OP03"
+                ]
+              },
+              {
+                "id": "MAP-R4-req-staff",
+                "obligation": "Nhân viên chỉ xem dữ liệu phòng khám mình.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS04"
+                ],
+                "supporting_responsibility_ids": [
+                  "RS05"
+                ],
+                "covered_portion": "Nhân viên chỉ xem dữ liệu phòng khám mình.",
+                "remaining_gap": "Cần xác định phạm vi phòng khám.",
+                "issue_ids": [
+                  "Q-clinic"
+                ],
+                "action_ids": [
+                  "OP04"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-clinic"
+            ]
+          },
+          {
+            "id": "MAP-R4-ac0",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1/acceptance_criteria/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R4-ac0-part",
+                "obligation": "Chặn truy cập khác chủ sở hữu.",
+                "assignment": "proposed",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS03"
+                ],
+                "supporting_responsibility_ids": [
+                  "RS05"
+                ],
+                "covered_portion": "Chặn truy cập khác chủ sở hữu.",
+                "remaining_gap": null,
+                "issue_ids": [],
+                "action_ids": [
+                  "OP03"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": []
+          },
+          {
+            "id": "MAP-R4-ac1",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1/acceptance_criteria/1"
+            },
+            "parts": [
+              {
+                "id": "MAP-R4-ac1-part",
+                "obligation": "Chặn truy cập chéo phòng khám.",
+                "assignment": "blocked",
+                "target": "components",
+                "primary_responsibility_ids": [
+                  "RS04"
+                ],
+                "supporting_responsibility_ids": [
+                  "RS05"
+                ],
+                "covered_portion": "Chặn truy cập chéo phòng khám.",
+                "remaining_gap": "Chưa rõ phạm vi phòng khám.",
+                "issue_ids": [
+                  "Q-clinic"
+                ],
+                "action_ids": [
+                  "OP04"
+                ]
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": [
+              "Q-clinic"
+            ]
+          },
+          {
+            "id": "MAP-R5-req",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/constraints/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R5-req-part",
+                "obligation": "App và database chạy local; dữ liệu lịch hẹn không gửi ra ngoài.",
+                "assignment": "proposed",
+                "target": "system",
+                "primary_responsibility_ids": [],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "App và database chạy local; dữ liệu lịch hẹn không gửi ra ngoài.",
+                "remaining_gap": "Nghĩa vụ runtime/triển khai chưa kiểm chứng; model không chứng nhận đạt.",
+                "issue_ids": [],
+                "action_ids": []
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": []
+          },
+          {
+            "id": "MAP-R5-ac0",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/constraints/0/acceptance_criteria/0"
+            },
+            "parts": [
+              {
+                "id": "MAP-R5-ac0-part",
+                "obligation": "App và database triển khai trong môi trường local.",
+                "assignment": "proposed",
+                "target": "system",
+                "primary_responsibility_ids": [],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "App và database triển khai trong môi trường local.",
+                "remaining_gap": "Nghĩa vụ runtime/triển khai chưa kiểm chứng; model không chứng nhận đạt.",
+                "issue_ids": [],
+                "action_ids": []
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": []
+          },
+          {
+            "id": "MAP-R5-ac1",
+            "source_ref": {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/constraints/0/acceptance_criteria/1"
+            },
+            "parts": [
+              {
+                "id": "MAP-R5-ac1-part",
+                "obligation": "Không có luồng gửi dữ liệu lịch hẹn ra ngoài.",
+                "assignment": "proposed",
+                "target": "system",
+                "primary_responsibility_ids": [],
+                "supporting_responsibility_ids": [],
+                "covered_portion": "Không có luồng gửi dữ liệu lịch hẹn ra ngoài.",
+                "remaining_gap": "Nghĩa vụ runtime/triển khai chưa kiểm chứng; model không chứng nhận đạt.",
+                "issue_ids": [],
+                "action_ids": []
+              }
+            ],
+            "assessment": "proposed",
+            "issue_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "issue",
+      "id": "Q-book",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "issue_key": "Q-book-key",
+        "supersedes_id": null,
+        "model_id": "model-clinic-1",
+        "detected_step": 1,
+        "kind": "business",
+        "question": "Những vai trò nào được đặt lịch và trong phạm vi nào?",
+        "reason": "Nguồn hiện có chưa nêu đủ; R4 chỉ quy định quyền xem, không trả lời quyền hủy.",
+        "trace": {
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/0"
+            }
+          ],
+          "answer_refs": [],
+          "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+          "issue_ids": []
+        },
+        "affected": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP01",
+            "WF01"
+          ],
+          "mapping_part_ids": [
+            "MAP-R1-req-part",
+            "MAP-R1-ac0-part",
+            "MAP-R1-ac1-part"
+          ]
+        },
+        "blocking": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP01",
+            "WF01"
+          ],
+          "mapping_part_ids": [
+            "MAP-R1-req-part",
+            "MAP-R1-ac0-part",
+            "MAP-R1-ac1-part"
+          ]
+        },
+        "status": "open",
+        "answer_ids": [],
+        "resolution": null,
+        "resolution_event_refs": []
+      }
+    },
+    {
+      "type": "issue",
+      "id": "Q-cancel",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "issue_key": "Q-cancel-key",
+        "supersedes_id": null,
+        "model_id": "model-clinic-1",
+        "detected_step": 1,
+        "kind": "business",
+        "question": "Ai được hủy lịch, được hủy lịch của ai và trong điều kiện nào?",
+        "reason": "Nguồn hiện có chưa nêu đủ; R4 chỉ quy định quyền xem, không trả lời quyền hủy.",
+        "trace": {
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/functional_requirements/1"
+            }
+          ],
+          "answer_refs": [],
+          "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+          "issue_ids": []
+        },
+        "affected": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP02",
+            "WF02"
+          ],
+          "mapping_part_ids": [
+            "MAP-R2-req-part",
+            "MAP-R2-ac0-part",
+            "MAP-R2-ac1-part"
+          ]
+        },
+        "blocking": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP02",
+            "WF02"
+          ],
+          "mapping_part_ids": [
+            "MAP-R2-req-part",
+            "MAP-R2-ac0-part",
+            "MAP-R2-ac1-part"
+          ]
+        },
+        "status": "open",
+        "answer_ids": [],
+        "resolution": null,
+        "resolution_event_refs": []
+      }
+    },
+    {
+      "type": "issue",
+      "id": "Q-clinic",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "issue_key": "Q-clinic-key",
+        "supersedes_id": null,
+        "model_id": "model-clinic-1",
+        "detected_step": 1,
+        "kind": "business",
+        "question": "Một nhân viên được xem dữ liệu của phòng khám nào; có thể thuộc nhiều phòng khám không?",
+        "reason": "Nguồn hiện có chưa nêu đủ; R4 chỉ quy định quyền xem, không trả lời quyền hủy.",
+        "trace": {
+          "origin": "inferred",
+          "source_refs": [
+            {
+              "snapshot_id": "snap-demo-clinic-r1",
+              "input_pointer": "/non_functional_requirements/1"
+            }
+          ],
+          "answer_refs": [],
+          "rationale": "Phương án phân tích minh họa từ nguồn; cần review.",
+          "issue_ids": []
+        },
+        "affected": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP04",
+            "WF04",
+            "RS04",
+            "RULE04"
+          ],
+          "mapping_part_ids": [
+            "MAP-R4-req-staff",
+            "MAP-R4-ac1-part"
+          ]
+        },
+        "blocking": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "OP04",
+            "WF04",
+            "RS04",
+            "RULE04"
+          ],
+          "mapping_part_ids": [
+            "MAP-R4-req-staff",
+            "MAP-R4-ac1-part"
+          ]
+        },
+        "status": "open",
+        "answer_ids": [],
+        "resolution": null,
+        "resolution_event_refs": []
+      }
+    },
+    {
+      "type": "analysis_set",
+      "id": "AS-clinic-1",
+      "created_at": "2026-10-18T08:00:00.000Z",
+      "body": {
+        "model_id": "model-clinic-1",
+        "revision": 1,
+        "parent_set_id": null,
+        "scenario_ids": [],
+        "characteristic_ids": [],
+        "issue_ids": [
+          "Q-book",
+          "Q-cancel",
+          "Q-clinic"
+        ],
+        "changed_record_ids": [
+          "Q-book",
+          "Q-cancel",
+          "Q-clinic"
+        ],
+        "affected": {
+          "model_id": "model-clinic-1",
+          "element_ids": [
+            "A01",
+            "A02",
+            "OP01",
+            "OP02",
+            "OP03",
+            "OP04",
+            "WF01",
+            "WF02",
+            "WF03",
+            "WF04",
+            "DATA01",
+            "DATA02",
+            "DATA03",
+            "DATA04",
+            "RULE01",
+            "RULE02",
+            "RULE03",
+            "RULE04",
+            "C01",
+            "C03",
+            "RS01",
+            "RS02",
+            "RS03",
+            "RS04",
+            "RS05",
+            "I01",
+            "D01"
+          ],
+          "mapping_part_ids": [
+            "MAP-R1-req-part",
+            "MAP-R1-ac0-part",
+            "MAP-R1-ac1-part",
+            "MAP-R2-req-part",
+            "MAP-R2-ac0-part",
+            "MAP-R2-ac1-part",
+            "MAP-R3-req-part",
+            "MAP-R3-ac0-part",
+            "MAP-R3-ac1-part",
+            "MAP-R4-req-patient",
+            "MAP-R4-req-staff",
+            "MAP-R4-ac0-part",
+            "MAP-R4-ac1-part",
+            "MAP-R5-req-part",
+            "MAP-R5-ac0-part",
+            "MAP-R5-ac1-part"
+          ]
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "illustration-context",
+      "note": "Các ID/timestamps là biên soạn, không có DB/LLM/replay thực. Binding artifact chỉ giúp đối chiếu tài liệu; không thay checked lookup. Nguồn raw ở binding là payload giả định cùng bytes ví dụ nguồn, không phải bằng chứng src-demo-* đã lưu.",
+      "config": {
+        "execution": "illustration-only",
+        "llm_calls": 0,
+        "render_calls": 0
+      },
+      "expected_provenance": {
+        "selected_run_id": "run-demo-005",
+        "run_source_id": "src-demo-005",
+        "snapshot_id": "snap-demo-clinic-r1",
+        "origin_source_id": "src-demo-001",
+        "snapshot_creator": "run-demo-001"
+      },
+      "open_business_answers": [],
+      "model_interpretation": "Luồng thành công/ngoại lệ chỉ là phác thảo logic; OP01/OP02 chưa được phép thực hiện khi chưa rõ actor/quyền.",
+      "operation": {
+        "command_id": "cmd-demo-initial",
+        "session_id": "session-clinic-demo",
+        "parent_command_id": null,
+        "reserved_run_id": "s02-run-demo-1",
+        "request": {
+          "kind": "illustration_initial",
+          "base_model_id": null,
+          "base_analysis_set_id": null
+        }
+      }
+    }
+  ]
+}

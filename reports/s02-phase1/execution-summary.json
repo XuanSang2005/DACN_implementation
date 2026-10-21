@@ -1,0 +1,64 @@
+{
+  "completed_at_utc": "2026-10-19T01:50:23.486931+00:00",
+  "contract": "s02/0.1.0-draft.3",
+  "s02_package": "0.1.0a1",
+  "s01_package": "0.1.0a6",
+  "suites": [
+    {
+      "suite": "s01-c",
+      "passed": 986,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "backend_evidence": [
+        "Observed real encoder factory calls: {'c': 6597, 'python': 0}; selected=c"
+      ],
+      "command_log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/s01-c.log",
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-h5d8bsih"
+    },
+    {
+      "suite": "s01-python",
+      "passed": 986,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "backend_evidence": [
+        "Observed real encoder factory calls: {'c': 0, 'python': 6597}; selected=python"
+      ],
+      "command_log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/s01-python.log",
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-h5d8bsih"
+    },
+    {
+      "suite": "s02-c",
+      "passed": 141,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "backend_evidence": [
+        "S02_ENCODERS selected=c calls={'c': 35921, 'python': 0}"
+      ],
+      "command_log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/s02-c.log",
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-y9mengm0"
+    },
+    {
+      "suite": "s02-python",
+      "passed": 141,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "backend_evidence": [
+        "S02_ENCODERS selected=python calls={'c': 0, 'python': 35921}"
+      ],
+      "command_log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/s02-python.log",
+      "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-y9mengm0"
+    }
+  ],
+  "clean_install_commands_passed": 7,
+  "matched_package_files": {
+    "0.1.0a6": 16,
+    "0.1.0a1": 14
+  },
+  "protected_unchanged": 198,
+  "phase2_started": false,
+  "semantic_or_live_llm_evaluation": false
+}

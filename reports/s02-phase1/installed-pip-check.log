@@ -1,0 +1,5 @@
+$ /Users/macbookpro/Documents/DACN_implementation/s02/.venv/bin/python -B -m pip check
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk
+No broken requirements found.
+
+exit_code=0

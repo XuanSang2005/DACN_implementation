@@ -1,0 +1,3228 @@
+[
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "boundary": "prepare",
+      "kind": "lost_ack_boundary",
+      "outcome": "reconciled_without_resubmit"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "boundary": "capture",
+      "kind": "lost_ack_boundary",
+      "outcome": "reconciled_without_resubmit"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "completed"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "refused"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "invalid_output"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "incomplete"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "stale"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/functional_requirements/1",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/non_functional_requirements/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/constraints/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/functional_requirements/1/acceptance_criteria/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "AssessedGlobal",
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/non_functional_requirements/0/acceptance_criteria/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "AssessedGlobal",
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/constraints/0/acceptance_criteria/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "AssessedGlobal",
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "prepared_resolution",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "wrong_key",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "not_selected",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "attempt_identity",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "attempt_metadata",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "attempt_prompt",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "backend": "c",
+      "encoder_calls": {
+        "c": 192,
+        "python": 0
+      },
+      "kind": "installed_cli_backend"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_cli.py::test_installed_cli_encoder_probe S02_EVIDENCE {\"backend\": \"c\", \"encoder_calls\": {\"c\": 192, \"python\": 0}, \"kind\": \"installed_cli_backend\"}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "command_id": "e00e0537-c9ab-4974-9662-278c2101a793",
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "F02_invalid_captured",
+      "raw_hex": "7b20696e76616c696420ff",
+      "run_status": "rejected",
+      "state": "finalized"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "events": [
+        "prepared",
+        "dispatch_intent"
+      ],
+      "kind": "F02_unknown",
+      "state": "dispatch_unknown"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "answer_id": "Answer1",
+      "applied_events": 1,
+      "full_business_flow": false,
+      "heads": [
+        "M2",
+        "AS-M2"
+      ],
+      "kind": "F03_atomic_application"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "model",
+      "database": {
+        "byte_length": 241664,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-model.sqlite3",
+        "sha256": "464b15ea4206da1f7499fc6e7004917ab938db87bf10cb82d56b43a49c8f5d4f"
+      },
+      "events": [
+        {
+          "at_ns": 507059247007875,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81441
+        },
+        {
+          "at_ns": 507059247195416,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81442
+        },
+        {
+          "at_ns": 507059248639458,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81441
+        },
+        {
+          "at_ns": 507059248619500,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81442
+        },
+        {
+          "at_ns": 507059249348958,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81442
+        },
+        {
+          "at_ns": 507059249348416,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81441
+        },
+        {
+          "at_ns": 507059249374166,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81441
+        },
+        {
+          "at_ns": 507059275930083,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 69,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81441
+        },
+        {
+          "at_ns": 507059276311333,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 69,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81441
+        },
+        {
+          "at_ns": 507059276397416,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 69,
+            "python": 0
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81441,
+          "run_id": "bd5bf9b5-2193-4fa4-976f-2bc917545cf2",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507059298742333,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81442
+        },
+        {
+          "at_ns": 507059327423875,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 76,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81442
+        },
+        {
+          "at_ns": 507059327728791,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 76,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81442
+        },
+        {
+          "at_ns": 507059327814000,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 76,
+            "python": 0
+          },
+          "errors": [
+            {
+              "code": "MODEL_CONFLICT",
+              "details": {
+                "expected_model_id": "M1",
+                "provided_model_id": null
+              },
+              "message": "Model head changed",
+              "pointer": null,
+              "record_id": null,
+              "related_ids": [],
+              "stage": "revision"
+            }
+          ],
+          "event": "result",
+          "pid": 81442,
+          "run_id": "e27d2152-f274-499e-8b1a-7495ed037275",
+          "status": "stale"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 1,
+          "application_heads": 0,
+          "models": 1,
+          "operation_events": 6,
+          "operations": 3,
+          "promotions": 1,
+          "records": 10,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS1"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_two_process_publication[model] S02_EVIDENCE {\"case\": \"model\", \"database\": {\"byte_length\": 241664, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-model.sqlite3\", \"sha256\": \"464b15ea4206da1f7499fc6e7004917ab938db87bf10cb82d56b43a49c8f5d4f\"}, \"events\": [{\"at_ns\": 507059247007875, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81441}, {\"at_ns\": 507059247195416, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81442}, {\"at_ns\": 507059248639458, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81441}, {\"at_ns\": 507059248619500, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81442}, {\"at_ns\": 507059249348958, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81442}, {\"at_ns\": 507059249348416, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81441}, {\"at_ns\": 507059249374166, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81441}, {\"at_ns\": 507059275930083, \"backend\": \"c\", \"encoder_calls\": {\"c\": 69, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81441}, {\"at_ns\": 507059276311333, \"backend\": \"c\", \"encoder_calls\": {\"c\": 69, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81441}, {\"at_ns\": 507059276397416, \"backend\": \"c\", \"encoder_calls\": {\"c\": 69, \"python\": 0}, \"errors\": [], \"event\": \"result\", \"pid\": 81441, \"run_id\": \"bd5bf9b5-2193-4fa4-976f-2bc917545cf2\", \"status\": \"completed\"}, {\"at_ns\": 507059298742333, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81442}, {\"at_ns\": 507059327423875, \"backend\": \"c\", \"encoder_calls\": {\"c\": 76, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81442}, {\"at_ns\": 507059327728791, \"backend\": \"c\", \"encoder_calls\": {\"c\": 76, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81442}, {\"at_ns\": 507059327814000, \"backend\": \"c\", \"encoder_calls\": {\"c\": 76, \"python\": 0}, \"errors\": [{\"code\": \"MODEL_CONFLICT\", \"details\": {\"expected_model_id\": \"M1\", \"provided_model_id\": null}, \"message\": \"Model head changed\", \"pointer\": null, \"record_id\": null, \"related_ids\": [], \"stage\": \"revision\"}], \"event\": \"result\", \"pid\": 81442, \"run_id\": \"e27d2152-f274-499e-8b1a-7495ed037275\", \"status\": \"stale\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 1, \"application_heads\": 0, \"models\": 1, \"operation_events\": 6, \"operations\": 3, \"promotions\": 1, \"records\": 10, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS1\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "analysis_set",
+      "database": {
+        "byte_length": 245760,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-analysis_set.sqlite3",
+        "sha256": "24ff3ff4b9f848fd189acf416eefabfcdb2b632ff163c83f696589f5affdd531"
+      },
+      "events": [
+        {
+          "at_ns": 507059930086291,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81444
+        },
+        {
+          "at_ns": 507059930292791,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81443
+        },
+        {
+          "at_ns": 507059931712791,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81443
+        },
+        {
+          "at_ns": 507059931754625,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81444
+        },
+        {
+          "at_ns": 507059932283666,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81443
+        },
+        {
+          "at_ns": 507059932282041,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81444
+        },
+        {
+          "at_ns": 507059932308791,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81444
+        },
+        {
+          "at_ns": 507059962550333,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81444
+        },
+        {
+          "at_ns": 507059962892791,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81444
+        },
+        {
+          "at_ns": 507059962977625,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81444,
+          "run_id": "7868ba13-fe03-4f06-b7af-f32ba4f0f598",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507059980205583,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81443
+        },
+        {
+          "at_ns": 507060011568416,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 94,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81443
+        },
+        {
+          "at_ns": 507060011917500,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 94,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81443
+        },
+        {
+          "at_ns": 507060012004083,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 94,
+            "python": 0
+          },
+          "errors": [
+            {
+              "code": "ANALYSIS_CONFLICT",
+              "details": {
+                "expected_analysis_set_id": "AS-new-2",
+                "provided_analysis_set_id": "AS1"
+              },
+              "message": "AnalysisSet head changed",
+              "pointer": null,
+              "record_id": null,
+              "related_ids": [],
+              "stage": "revision"
+            }
+          ],
+          "event": "result",
+          "pid": 81443,
+          "run_id": "b199b222-6c36-4fd3-86d6-6c5508c5c3e4",
+          "status": "stale"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 2,
+          "application_heads": 0,
+          "models": 1,
+          "operation_events": 8,
+          "operations": 4,
+          "promotions": 1,
+          "records": 13,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS-new-2"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_two_process_publication[analysis_set] S02_EVIDENCE {\"case\": \"analysis_set\", \"database\": {\"byte_length\": 245760, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-analysis_set.sqlite3\", \"sha256\": \"24ff3ff4b9f848fd189acf416eefabfcdb2b632ff163c83f696589f5affdd531\"}, \"events\": [{\"at_ns\": 507059930086291, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81444}, {\"at_ns\": 507059930292791, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81443}, {\"at_ns\": 507059931712791, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81443}, {\"at_ns\": 507059931754625, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81444}, {\"at_ns\": 507059932283666, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81443}, {\"at_ns\": 507059932282041, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81444}, {\"at_ns\": 507059932308791, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81444}, {\"at_ns\": 507059962550333, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81444}, {\"at_ns\": 507059962892791, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81444}, {\"at_ns\": 507059962977625, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"errors\": [], \"event\": \"result\", \"pid\": 81444, \"run_id\": \"7868ba13-fe03-4f06-b7af-f32ba4f0f598\", \"status\": \"completed\"}, {\"at_ns\": 507059980205583, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81443}, {\"at_ns\": 507060011568416, \"backend\": \"c\", \"encoder_calls\": {\"c\": 94, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81443}, {\"at_ns\": 507060011917500, \"backend\": \"c\", \"encoder_calls\": {\"c\": 94, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81443}, {\"at_ns\": 507060012004083, \"backend\": \"c\", \"encoder_calls\": {\"c\": 94, \"python\": 0}, \"errors\": [{\"code\": \"ANALYSIS_CONFLICT\", \"details\": {\"expected_analysis_set_id\": \"AS-new-2\", \"provided_analysis_set_id\": \"AS1\"}, \"message\": \"AnalysisSet head changed\", \"pointer\": null, \"record_id\": null, \"related_ids\": [], \"stage\": \"revision\"}], \"event\": \"result\", \"pid\": 81443, \"run_id\": \"b199b222-6c36-4fd3-86d6-6c5508c5c3e4\", \"status\": \"stale\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 2, \"application_heads\": 0, \"models\": 1, \"operation_events\": 8, \"operations\": 4, \"promotions\": 1, \"records\": 13, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS-new-2\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "analysis_and_log",
+      "database": {
+        "byte_length": 245760,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-analysis_and_log.sqlite3",
+        "sha256": "3fcf20ebd3c9746092138e8fbd30d71c57040bfc7a396ce85f965cdc25e1667b"
+      },
+      "events": [
+        {
+          "at_ns": 507060623616625,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81446
+        },
+        {
+          "at_ns": 507060623719250,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81445
+        },
+        {
+          "at_ns": 507060625307791,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81446
+        },
+        {
+          "at_ns": 507060625257083,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81445
+        },
+        {
+          "at_ns": 507060625777250,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81445
+        },
+        {
+          "at_ns": 507060625803166,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81445
+        },
+        {
+          "at_ns": 507060626086208,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81446
+        },
+        {
+          "at_ns": 507060656799916,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81445
+        },
+        {
+          "at_ns": 507060657122333,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81445
+        },
+        {
+          "at_ns": 507060657200916,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81445,
+          "run_id": "c2c0fc23-3a5d-4445-8ee0-9752f179cc03",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507060674137000,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81446
+        },
+        {
+          "at_ns": 507060705037625,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81446
+        },
+        {
+          "at_ns": 507060705305541,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81446
+        },
+        {
+          "at_ns": 507060705388416,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "result",
+          "pid": 81446,
+          "status": "logged"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 2,
+          "application_heads": 0,
+          "models": 1,
+          "operation_events": 8,
+          "operations": 4,
+          "promotions": 1,
+          "records": 12,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS-new-1"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_two_process_publication[analysis_and_log] S02_EVIDENCE {\"case\": \"analysis_and_log\", \"database\": {\"byte_length\": 245760, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-analysis_and_log.sqlite3\", \"sha256\": \"3fcf20ebd3c9746092138e8fbd30d71c57040bfc7a396ce85f965cdc25e1667b\"}, \"events\": [{\"at_ns\": 507060623616625, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81446}, {\"at_ns\": 507060623719250, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81445}, {\"at_ns\": 507060625307791, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81446}, {\"at_ns\": 507060625257083, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81445}, {\"at_ns\": 507060625777250, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81445}, {\"at_ns\": 507060625803166, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81445}, {\"at_ns\": 507060626086208, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81446}, {\"at_ns\": 507060656799916, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81445}, {\"at_ns\": 507060657122333, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81445}, {\"at_ns\": 507060657200916, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"errors\": [], \"event\": \"result\", \"pid\": 81445, \"run_id\": \"c2c0fc23-3a5d-4445-8ee0-9752f179cc03\", \"status\": \"completed\"}, {\"at_ns\": 507060674137000, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81446}, {\"at_ns\": 507060705037625, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81446}, {\"at_ns\": 507060705305541, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81446}, {\"at_ns\": 507060705388416, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"result\", \"pid\": 81446, \"status\": \"logged\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 2, \"application_heads\": 0, \"models\": 1, \"operation_events\": 8, \"operations\": 4, \"promotions\": 1, \"records\": 12, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS-new-1\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "application_claim",
+      "database": {
+        "byte_length": 245760,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-application-claim.sqlite3",
+        "sha256": "2ff74320320bd16634dc1bce0fc8e6cb0e6082843d7c5de5d4426e444cf9d903"
+      },
+      "events": [
+        {
+          "at_ns": 507061325704000,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81453
+        },
+        {
+          "at_ns": 507061325722833,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81452
+        },
+        {
+          "at_ns": 507061327376958,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81453
+        },
+        {
+          "at_ns": 507061327340916,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81452
+        },
+        {
+          "at_ns": 507061328027416,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 1,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81453
+        },
+        {
+          "at_ns": 507061328028166,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 1,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81452
+        },
+        {
+          "at_ns": 507061328055833,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 1,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81453
+        },
+        {
+          "at_ns": 507061357424583,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81453
+        },
+        {
+          "at_ns": 507061357764208,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81453
+        },
+        {
+          "at_ns": 507061357852750,
+          "backend": "c",
+          "command_id": "cc365044-70eb-4b35-b0a1-1a7e7c180b9b",
+          "encoder_calls": {
+            "c": 87,
+            "python": 0
+          },
+          "event": "result",
+          "pid": 81453,
+          "status": "claimed"
+        },
+        {
+          "at_ns": 507061371052291,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 1,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81452
+        },
+        {
+          "at_ns": 507061387260375,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 46,
+            "python": 0
+          },
+          "error": {
+            "code": "APPLICATION_CONFLICT",
+            "details": {
+              "answer_id": "Answer1",
+              "reason": "Active claim"
+            },
+            "message": "Answer claim belongs to another command",
+            "pointer": null,
+            "record_id": null,
+            "related_ids": [],
+            "stage": "revision"
+          },
+          "event": "result",
+          "pid": 81452,
+          "status": "error"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 1,
+          "application_heads": 1,
+          "models": 1,
+          "operation_events": 7,
+          "operations": 4,
+          "promotions": 1,
+          "records": 12,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS1"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_two_process_application_claim S02_EVIDENCE {\"case\": \"application_claim\", \"database\": {\"byte_length\": 245760, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-application-claim.sqlite3\", \"sha256\": \"2ff74320320bd16634dc1bce0fc8e6cb0e6082843d7c5de5d4426e444cf9d903\"}, \"events\": [{\"at_ns\": 507061325704000, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81453}, {\"at_ns\": 507061325722833, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81452}, {\"at_ns\": 507061327376958, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81453}, {\"at_ns\": 507061327340916, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81452}, {\"at_ns\": 507061328027416, \"backend\": \"c\", \"encoder_calls\": {\"c\": 1, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81453}, {\"at_ns\": 507061328028166, \"backend\": \"c\", \"encoder_calls\": {\"c\": 1, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81452}, {\"at_ns\": 507061328055833, \"backend\": \"c\", \"encoder_calls\": {\"c\": 1, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81453}, {\"at_ns\": 507061357424583, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81453}, {\"at_ns\": 507061357764208, \"backend\": \"c\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81453}, {\"at_ns\": 507061357852750, \"backend\": \"c\", \"command_id\": \"cc365044-70eb-4b35-b0a1-1a7e7c180b9b\", \"encoder_calls\": {\"c\": 87, \"python\": 0}, \"event\": \"result\", \"pid\": 81453, \"status\": \"claimed\"}, {\"at_ns\": 507061371052291, \"backend\": \"c\", \"encoder_calls\": {\"c\": 1, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81452}, {\"at_ns\": 507061387260375, \"backend\": \"c\", \"encoder_calls\": {\"c\": 46, \"python\": 0}, \"error\": {\"code\": \"APPLICATION_CONFLICT\", \"details\": {\"answer_id\": \"Answer1\", \"reason\": \"Active claim\"}, \"message\": \"Answer claim belongs to another command\", \"pointer\": null, \"record_id\": null, \"related_ids\": [], \"stage\": \"revision\"}, \"event\": \"result\", \"pid\": 81452, \"status\": \"error\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 1, \"application_heads\": 1, \"models\": 1, \"operation_events\": 7, \"operations\": 4, \"promotions\": 1, \"records\": 12, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS1\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "same_application_finalization",
+      "database": {
+        "byte_length": 253952,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-application-finalize.sqlite3",
+        "sha256": "1738804f0f81c580c908d8ebf2711fda79e2cfba73bf2228e96cce6e07c54b69"
+      },
+      "events": [
+        {
+          "at_ns": 507062059324916,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81454
+        },
+        {
+          "at_ns": 507062059491833,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81455
+        },
+        {
+          "at_ns": 507062060962666,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81455
+        },
+        {
+          "at_ns": 507062060995416,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81454
+        },
+        {
+          "at_ns": 507062061755333,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81454
+        },
+        {
+          "at_ns": 507062061756541,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81455
+        },
+        {
+          "at_ns": 507062061787333,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81454
+        },
+        {
+          "at_ns": 507062099317541,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 114,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81454
+        },
+        {
+          "at_ns": 507062099823750,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 114,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81454
+        },
+        {
+          "at_ns": 507062099920833,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 114,
+            "python": 0
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81454,
+          "run_id": "8e0ac164-d3fd-444b-8e91-f8e5355b503d",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507062111423708,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 2,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81455
+        },
+        {
+          "at_ns": 507062148686041,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 112,
+            "python": 0
+          },
+          "event": "before_commit",
+          "pid": 81455
+        },
+        {
+          "at_ns": 507062148723208,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 112,
+            "python": 0
+          },
+          "event": "after_commit",
+          "pid": 81455
+        },
+        {
+          "at_ns": 507062148798500,
+          "backend": "c",
+          "encoder_calls": {
+            "c": 112,
+            "python": 0
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81455,
+          "run_id": "8e0ac164-d3fd-444b-8e91-f8e5355b503d",
+          "status": "completed"
+        }
+      ],
+      "final": {
+        "applied_events": 1,
+        "counts": {
+          "analysis_sets": 2,
+          "application_heads": 1,
+          "models": 2,
+          "operation_events": 10,
+          "operations": 4,
+          "promotions": 1,
+          "records": 17,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M2",
+          "AS-M2"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_two_process_same_application_finalization S02_EVIDENCE {\"case\": \"same_application_finalization\", \"database\": {\"byte_length\": 253952, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/race-application-finalize.sqlite3\", \"sha256\": \"1738804f0f81c580c908d8ebf2711fda79e2cfba73bf2228e96cce6e07c54b69\"}, \"events\": [{\"at_ns\": 507062059324916, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81454}, {\"at_ns\": 507062059491833, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81455}, {\"at_ns\": 507062060962666, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81455}, {\"at_ns\": 507062060995416, \"backend\": \"c\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81454}, {\"at_ns\": 507062061755333, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81454}, {\"at_ns\": 507062061756541, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81455}, {\"at_ns\": 507062061787333, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81454}, {\"at_ns\": 507062099317541, \"backend\": \"c\", \"encoder_calls\": {\"c\": 114, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81454}, {\"at_ns\": 507062099823750, \"backend\": \"c\", \"encoder_calls\": {\"c\": 114, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81454}, {\"at_ns\": 507062099920833, \"backend\": \"c\", \"encoder_calls\": {\"c\": 114, \"python\": 0}, \"errors\": [], \"event\": \"result\", \"pid\": 81454, \"run_id\": \"8e0ac164-d3fd-444b-8e91-f8e5355b503d\", \"status\": \"completed\"}, {\"at_ns\": 507062111423708, \"backend\": \"c\", \"encoder_calls\": {\"c\": 2, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81455}, {\"at_ns\": 507062148686041, \"backend\": \"c\", \"encoder_calls\": {\"c\": 112, \"python\": 0}, \"event\": \"before_commit\", \"pid\": 81455}, {\"at_ns\": 507062148723208, \"backend\": \"c\", \"encoder_calls\": {\"c\": 112, \"python\": 0}, \"event\": \"after_commit\", \"pid\": 81455}, {\"at_ns\": 507062148798500, \"backend\": \"c\", \"encoder_calls\": {\"c\": 112, \"python\": 0}, \"errors\": [], \"event\": \"result\", \"pid\": 81455, \"run_id\": \"8e0ac164-d3fd-444b-8e91-f8e5355b503d\", \"status\": \"completed\"}], \"final\": {\"applied_events\": 1, \"counts\": {\"analysis_sets\": 2, \"application_heads\": 1, \"models\": 2, \"operation_events\": 10, \"operations\": 4, \"promotions\": 1, \"records\": 17, \"staged_blobs\": 1}, \"heads\": [\"M2\", \"AS-M2\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "finalize",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-finalize-before_commit.sqlite3",
+        "sha256": "67d2a41d329ce2862cbe4819ad96e5ce110cbb3986ff0694eec5076b39851756"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 3,
+          "operations": 2,
+          "promotions": 1,
+          "records": 6,
+          "staged_blobs": 1
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "before_commit",
+      "result_state": "prepared",
+      "synchronized": {
+        "at_ns": 507062667743208,
+        "backend": "c",
+        "encoder_calls": {
+          "c": 57,
+          "python": 0
+        },
+        "in_transaction": true,
+        "pid": 81456,
+        "point": "before_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[before_commit-finalize] S02_EVIDENCE {\"case\": \"finalize\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-finalize-before_commit.sqlite3\", \"sha256\": \"67d2a41d329ce2862cbe4819ad96e5ce110cbb3986ff0694eec5076b39851756\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 3, \"operations\": 2, \"promotions\": 1, \"records\": 6, \"staged_blobs\": 1}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"before_commit\", \"result_state\": \"prepared\", \"synchronized\": {\"at_ns\": 507062667743208, \"backend\": \"c\", \"encoder_calls\": {\"c\": 57, \"python\": 0}, \"in_transaction\": true, \"pid\": 81456, \"point\": \"before_commit\"}}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "capture",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-capture-before_commit.sqlite3",
+        "sha256": "8e360d8dc9d9e4951e0cab4d88fab73af7b909853b7a76658efe85047a0dd29a"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 4,
+          "operations": 2,
+          "promotions": 1,
+          "records": 6,
+          "staged_blobs": 1
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "before_commit",
+      "result_state": "dispatch_unknown",
+      "synchronized": {
+        "at_ns": 507063205481083,
+        "backend": "c",
+        "encoder_calls": {
+          "c": 55,
+          "python": 0
+        },
+        "in_transaction": true,
+        "pid": 81462,
+        "point": "before_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[before_commit-capture] S02_EVIDENCE {\"case\": \"capture\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-capture-before_commit.sqlite3\", \"sha256\": \"8e360d8dc9d9e4951e0cab4d88fab73af7b909853b7a76658efe85047a0dd29a\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 4, \"operations\": 2, \"promotions\": 1, \"records\": 6, \"staged_blobs\": 1}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"before_commit\", \"result_state\": \"dispatch_unknown\", \"synchronized\": {\"at_ns\": 507063205481083, \"backend\": \"c\", \"encoder_calls\": {\"c\": 55, \"python\": 0}, \"in_transaction\": true, \"pid\": 81462, \"point\": \"before_commit\"}}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "finalize",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-finalize-after_commit.sqlite3",
+        "sha256": "8aa7a53d9e893be834eedd4e72d9255c3b09b3779056134d0d6de5238043f4e8"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 4,
+          "operations": 2,
+          "promotions": 1,
+          "records": 7,
+          "staged_blobs": 1
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "after_commit",
+      "result_state": "finalized",
+      "synchronized": {
+        "at_ns": 507063711319041,
+        "backend": "c",
+        "encoder_calls": {
+          "c": 57,
+          "python": 0
+        },
+        "in_transaction": false,
+        "pid": 81463,
+        "point": "after_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[after_commit-finalize] S02_EVIDENCE {\"case\": \"finalize\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-finalize-after_commit.sqlite3\", \"sha256\": \"8aa7a53d9e893be834eedd4e72d9255c3b09b3779056134d0d6de5238043f4e8\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 4, \"operations\": 2, \"promotions\": 1, \"records\": 7, \"staged_blobs\": 1}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"after_commit\", \"result_state\": \"finalized\", \"synchronized\": {\"at_ns\": 507063711319041, \"backend\": \"c\", \"encoder_calls\": {\"c\": 57, \"python\": 0}, \"in_transaction\": false, \"pid\": 81463, \"point\": \"after_commit\"}}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "capture",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-capture-after_commit.sqlite3",
+        "sha256": "3f448aab46b62a8b700d8be366099af038d90a2c4c0b25e24a462bbe36db014c"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 5,
+          "operations": 2,
+          "promotions": 1,
+          "records": 6,
+          "staged_blobs": 2
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "after_commit",
+      "result_state": "captured",
+      "synchronized": {
+        "at_ns": 507064249838666,
+        "backend": "c",
+        "encoder_calls": {
+          "c": 55,
+          "python": 0
+        },
+        "in_transaction": false,
+        "pid": 81464,
+        "point": "after_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[after_commit-capture] S02_EVIDENCE {\"case\": \"capture\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/c/kill-capture-after_commit.sqlite3\", \"sha256\": \"3f448aab46b62a8b700d8be366099af038d90a2c4c0b25e24a462bbe36db014c\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 5, \"operations\": 2, \"promotions\": 1, \"records\": 6, \"staged_blobs\": 2}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"after_commit\", \"result_state\": \"captured\", \"synchronized\": {\"at_ns\": 507064249838666, \"backend\": \"c\", \"encoder_calls\": {\"c\": 55, \"python\": 0}, \"in_transaction\": false, \"pid\": 81464, \"point\": \"after_commit\"}}"
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_stage"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_insert"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "before_commit"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "before_finalize_insert"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_records"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_finalize"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "fault_injection",
+      "outcome": "reconciled_finalized_not_overwritten",
+      "point": "after_commit"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "real_sqlite_lock",
+      "outcome": "persistence_failure_not_conflict"
+    }
+  },
+  {
+    "suite": "s02-c",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "final_heads": [
+        "M4",
+        "AS-M4"
+      ],
+      "heads": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "kind": "model_revision_chain",
+      "reopened_between": true
+    }
+  },
+  {
+    "suite": "s02-c",
+    "backend_instrumentation": "S02_ENCODERS selected=c calls={'c': 70827, 'python': 0}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "boundary": "prepare",
+      "kind": "lost_ack_boundary",
+      "outcome": "reconciled_without_resubmit"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "boundary": "capture",
+      "kind": "lost_ack_boundary",
+      "outcome": "reconciled_without_resubmit"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "completed"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "refused"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "invalid_output"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "incomplete"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "audit_fix_capture",
+      "raw_preserved": true,
+      "status": "stale"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/functional_requirements/1",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/non_functional_requirements/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/constraints/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/functional_requirements/1/acceptance_criteria/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "AssessedGlobal",
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/non_functional_requirements/0/acceptance_criteria/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "AssessedGlobal",
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "intermediate_store_valid": true,
+      "kind": "audit_fix_mapping_gate",
+      "pointer": "/constraints/0/acceptance_criteria/0",
+      "result": {
+        "allowed_scope": {
+          "element_ids": [],
+          "mapping_part_ids": [],
+          "model_id": "M1"
+        },
+        "blocked_scope": {
+          "element_ids": [
+            "A1",
+            "A2"
+          ],
+          "mapping_part_ids": [
+            "AssessedGlobal",
+            "P1",
+            "P12",
+            "P2"
+          ],
+          "model_id": "M1"
+        },
+        "closures": [],
+        "reason_codes": [
+          "MAPPING_NOT_ASSESSED",
+          "NO_ALLOWED_FUNCTIONAL_SCOPE"
+        ]
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "prepared_resolution",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "wrong_key",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "not_selected",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "attempt_identity",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "attempt_metadata",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "attempt_prompt",
+      "fixture_method": "validation-bypass fault injection",
+      "kind": "audit_fix_checked_read",
+      "rejected": true
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "backend": "python",
+      "encoder_calls": {
+        "c": 0,
+        "python": 192
+      },
+      "kind": "installed_cli_backend"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_cli.py::test_installed_cli_encoder_probe S02_EVIDENCE {\"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 192}, \"kind\": \"installed_cli_backend\"}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "command_id": "02136ab2-a3f0-4f33-af39-dade56aa387b",
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "F02_invalid_captured",
+      "raw_hex": "7b20696e76616c696420ff",
+      "run_status": "rejected",
+      "state": "finalized"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "events": [
+        "prepared",
+        "dispatch_intent"
+      ],
+      "kind": "F02_unknown",
+      "state": "dispatch_unknown"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "answer_id": "Answer1",
+      "applied_events": 1,
+      "full_business_flow": false,
+      "heads": [
+        "M2",
+        "AS-M2"
+      ],
+      "kind": "F03_atomic_application"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "model",
+      "database": {
+        "byte_length": 241664,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-model.sqlite3",
+        "sha256": "490303fd335bf67102af30b17707c38d88bb4cf7d97dcab60aed89db6507d898"
+      },
+      "events": [
+        {
+          "at_ns": 507114302227583,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81625
+        },
+        {
+          "at_ns": 507114302260875,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81626
+        },
+        {
+          "at_ns": 507114303612458,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81625
+        },
+        {
+          "at_ns": 507114303590541,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81626
+        },
+        {
+          "at_ns": 507114304616041,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "before_begin",
+          "pid": 81625
+        },
+        {
+          "at_ns": 507114304617541,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "before_begin",
+          "pid": 81626
+        },
+        {
+          "at_ns": 507114304648458,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "after_begin",
+          "pid": 81625
+        },
+        {
+          "at_ns": 507114334554333,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 69
+          },
+          "event": "before_commit",
+          "pid": 81625
+        },
+        {
+          "at_ns": 507114334973583,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 69
+          },
+          "event": "after_commit",
+          "pid": 81625
+        },
+        {
+          "at_ns": 507114335083750,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 69
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81625,
+          "run_id": "bb950da1-347c-4d89-a333-ef42b128a262",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507114344950083,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "after_begin",
+          "pid": 81626
+        },
+        {
+          "at_ns": 507114377190916,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 76
+          },
+          "event": "before_commit",
+          "pid": 81626
+        },
+        {
+          "at_ns": 507114377547250,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 76
+          },
+          "event": "after_commit",
+          "pid": 81626
+        },
+        {
+          "at_ns": 507114377633500,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 76
+          },
+          "errors": [
+            {
+              "code": "MODEL_CONFLICT",
+              "details": {
+                "expected_model_id": "M1",
+                "provided_model_id": null
+              },
+              "message": "Model head changed",
+              "pointer": null,
+              "record_id": null,
+              "related_ids": [],
+              "stage": "revision"
+            }
+          ],
+          "event": "result",
+          "pid": 81626,
+          "run_id": "406a6c50-b250-40be-89ea-00d5fcc7555b",
+          "status": "stale"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 1,
+          "application_heads": 0,
+          "models": 1,
+          "operation_events": 6,
+          "operations": 3,
+          "promotions": 1,
+          "records": 10,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS1"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_two_process_publication[model] S02_EVIDENCE {\"case\": \"model\", \"database\": {\"byte_length\": 241664, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-model.sqlite3\", \"sha256\": \"490303fd335bf67102af30b17707c38d88bb4cf7d97dcab60aed89db6507d898\"}, \"events\": [{\"at_ns\": 507114302227583, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81625}, {\"at_ns\": 507114302260875, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81626}, {\"at_ns\": 507114303612458, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81625}, {\"at_ns\": 507114303590541, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81626}, {\"at_ns\": 507114304616041, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"before_begin\", \"pid\": 81625}, {\"at_ns\": 507114304617541, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"before_begin\", \"pid\": 81626}, {\"at_ns\": 507114304648458, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"after_begin\", \"pid\": 81625}, {\"at_ns\": 507114334554333, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 69}, \"event\": \"before_commit\", \"pid\": 81625}, {\"at_ns\": 507114334973583, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 69}, \"event\": \"after_commit\", \"pid\": 81625}, {\"at_ns\": 507114335083750, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 69}, \"errors\": [], \"event\": \"result\", \"pid\": 81625, \"run_id\": \"bb950da1-347c-4d89-a333-ef42b128a262\", \"status\": \"completed\"}, {\"at_ns\": 507114344950083, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"after_begin\", \"pid\": 81626}, {\"at_ns\": 507114377190916, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 76}, \"event\": \"before_commit\", \"pid\": 81626}, {\"at_ns\": 507114377547250, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 76}, \"event\": \"after_commit\", \"pid\": 81626}, {\"at_ns\": 507114377633500, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 76}, \"errors\": [{\"code\": \"MODEL_CONFLICT\", \"details\": {\"expected_model_id\": \"M1\", \"provided_model_id\": null}, \"message\": \"Model head changed\", \"pointer\": null, \"record_id\": null, \"related_ids\": [], \"stage\": \"revision\"}], \"event\": \"result\", \"pid\": 81626, \"run_id\": \"406a6c50-b250-40be-89ea-00d5fcc7555b\", \"status\": \"stale\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 1, \"application_heads\": 0, \"models\": 1, \"operation_events\": 6, \"operations\": 3, \"promotions\": 1, \"records\": 10, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS1\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "analysis_set",
+      "database": {
+        "byte_length": 245760,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-analysis_set.sqlite3",
+        "sha256": "c856ade51f3272bdb83b2724e6d1aad51a37df4b36a41f00f214a69209066a63"
+      },
+      "events": [
+        {
+          "at_ns": 507115010311625,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81628
+        },
+        {
+          "at_ns": 507115010301000,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81629
+        },
+        {
+          "at_ns": 507115011674625,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81629
+        },
+        {
+          "at_ns": 507115011694666,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81628
+        },
+        {
+          "at_ns": 507115012286291,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "before_begin",
+          "pid": 81628
+        },
+        {
+          "at_ns": 507115012287166,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "before_begin",
+          "pid": 81629
+        },
+        {
+          "at_ns": 507115012316416,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "after_begin",
+          "pid": 81628
+        },
+        {
+          "at_ns": 507115045633875,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "before_commit",
+          "pid": 81628
+        },
+        {
+          "at_ns": 507115046029833,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "after_commit",
+          "pid": 81628
+        },
+        {
+          "at_ns": 507115046106250,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81628,
+          "run_id": "a6c49ef2-f4fa-4e1a-b2a0-ba04e1776801",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507115053453416,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "after_begin",
+          "pid": 81629
+        },
+        {
+          "at_ns": 507115087282125,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 94
+          },
+          "event": "before_commit",
+          "pid": 81629
+        },
+        {
+          "at_ns": 507115087586458,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 94
+          },
+          "event": "after_commit",
+          "pid": 81629
+        },
+        {
+          "at_ns": 507115087671291,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 94
+          },
+          "errors": [
+            {
+              "code": "ANALYSIS_CONFLICT",
+              "details": {
+                "expected_analysis_set_id": "AS-new-1",
+                "provided_analysis_set_id": "AS1"
+              },
+              "message": "AnalysisSet head changed",
+              "pointer": null,
+              "record_id": null,
+              "related_ids": [],
+              "stage": "revision"
+            }
+          ],
+          "event": "result",
+          "pid": 81629,
+          "run_id": "1c01600e-7e85-4c47-9917-66f4ecf790df",
+          "status": "stale"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 2,
+          "application_heads": 0,
+          "models": 1,
+          "operation_events": 8,
+          "operations": 4,
+          "promotions": 1,
+          "records": 13,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS-new-1"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_two_process_publication[analysis_set] S02_EVIDENCE {\"case\": \"analysis_set\", \"database\": {\"byte_length\": 245760, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-analysis_set.sqlite3\", \"sha256\": \"c856ade51f3272bdb83b2724e6d1aad51a37df4b36a41f00f214a69209066a63\"}, \"events\": [{\"at_ns\": 507115010311625, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81628}, {\"at_ns\": 507115010301000, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81629}, {\"at_ns\": 507115011674625, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81629}, {\"at_ns\": 507115011694666, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81628}, {\"at_ns\": 507115012286291, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"before_begin\", \"pid\": 81628}, {\"at_ns\": 507115012287166, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"before_begin\", \"pid\": 81629}, {\"at_ns\": 507115012316416, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"after_begin\", \"pid\": 81628}, {\"at_ns\": 507115045633875, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"before_commit\", \"pid\": 81628}, {\"at_ns\": 507115046029833, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"after_commit\", \"pid\": 81628}, {\"at_ns\": 507115046106250, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"errors\": [], \"event\": \"result\", \"pid\": 81628, \"run_id\": \"a6c49ef2-f4fa-4e1a-b2a0-ba04e1776801\", \"status\": \"completed\"}, {\"at_ns\": 507115053453416, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"after_begin\", \"pid\": 81629}, {\"at_ns\": 507115087282125, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 94}, \"event\": \"before_commit\", \"pid\": 81629}, {\"at_ns\": 507115087586458, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 94}, \"event\": \"after_commit\", \"pid\": 81629}, {\"at_ns\": 507115087671291, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 94}, \"errors\": [{\"code\": \"ANALYSIS_CONFLICT\", \"details\": {\"expected_analysis_set_id\": \"AS-new-1\", \"provided_analysis_set_id\": \"AS1\"}, \"message\": \"AnalysisSet head changed\", \"pointer\": null, \"record_id\": null, \"related_ids\": [], \"stage\": \"revision\"}], \"event\": \"result\", \"pid\": 81629, \"run_id\": \"1c01600e-7e85-4c47-9917-66f4ecf790df\", \"status\": \"stale\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 2, \"application_heads\": 0, \"models\": 1, \"operation_events\": 8, \"operations\": 4, \"promotions\": 1, \"records\": 13, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS-new-1\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "analysis_and_log",
+      "database": {
+        "byte_length": 245760,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-analysis_and_log.sqlite3",
+        "sha256": "17fabdcbd57dee515e471c62097d9adf8e7e5e1a1973e595a0263c796d56c620"
+      },
+      "events": [
+        {
+          "at_ns": 507115737313875,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81636
+        },
+        {
+          "at_ns": 507115737333500,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81635
+        },
+        {
+          "at_ns": 507115738719000,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81636
+        },
+        {
+          "at_ns": 507115738698833,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81635
+        },
+        {
+          "at_ns": 507115739407041,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "before_begin",
+          "pid": 81635
+        },
+        {
+          "at_ns": 507115739418250,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "after_begin",
+          "pid": 81635
+        },
+        {
+          "at_ns": 507115740263208,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "before_begin",
+          "pid": 81636
+        },
+        {
+          "at_ns": 507115801344208,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "before_commit",
+          "pid": 81635
+        },
+        {
+          "at_ns": 507115802034541,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "after_commit",
+          "pid": 81635
+        },
+        {
+          "at_ns": 507115802157833,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81635,
+          "run_id": "0e5173b4-4a33-40d8-a9d7-4becd284537d",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507115825386416,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "after_begin",
+          "pid": 81636
+        },
+        {
+          "at_ns": 507115873734250,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "before_commit",
+          "pid": 81636
+        },
+        {
+          "at_ns": 507115874099791,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "after_commit",
+          "pid": 81636
+        },
+        {
+          "at_ns": 507115874203208,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "result",
+          "pid": 81636,
+          "status": "logged"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 2,
+          "application_heads": 0,
+          "models": 1,
+          "operation_events": 8,
+          "operations": 4,
+          "promotions": 1,
+          "records": 12,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS-new-1"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_two_process_publication[analysis_and_log] S02_EVIDENCE {\"case\": \"analysis_and_log\", \"database\": {\"byte_length\": 245760, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-analysis_and_log.sqlite3\", \"sha256\": \"17fabdcbd57dee515e471c62097d9adf8e7e5e1a1973e595a0263c796d56c620\"}, \"events\": [{\"at_ns\": 507115737313875, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81636}, {\"at_ns\": 507115737333500, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81635}, {\"at_ns\": 507115738719000, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81636}, {\"at_ns\": 507115738698833, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81635}, {\"at_ns\": 507115739407041, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"before_begin\", \"pid\": 81635}, {\"at_ns\": 507115739418250, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"after_begin\", \"pid\": 81635}, {\"at_ns\": 507115740263208, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"before_begin\", \"pid\": 81636}, {\"at_ns\": 507115801344208, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"before_commit\", \"pid\": 81635}, {\"at_ns\": 507115802034541, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"after_commit\", \"pid\": 81635}, {\"at_ns\": 507115802157833, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"errors\": [], \"event\": \"result\", \"pid\": 81635, \"run_id\": \"0e5173b4-4a33-40d8-a9d7-4becd284537d\", \"status\": \"completed\"}, {\"at_ns\": 507115825386416, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"after_begin\", \"pid\": 81636}, {\"at_ns\": 507115873734250, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"before_commit\", \"pid\": 81636}, {\"at_ns\": 507115874099791, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"after_commit\", \"pid\": 81636}, {\"at_ns\": 507115874203208, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"result\", \"pid\": 81636, \"status\": \"logged\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 2, \"application_heads\": 0, \"models\": 1, \"operation_events\": 8, \"operations\": 4, \"promotions\": 1, \"records\": 12, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS-new-1\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "application_claim",
+      "database": {
+        "byte_length": 245760,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-application-claim.sqlite3",
+        "sha256": "67c2f163efb2e74432511f9f7bd579e483937c4da1c75cceed355753d7d50167"
+      },
+      "events": [
+        {
+          "at_ns": 507116579380958,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81638
+        },
+        {
+          "at_ns": 507116579380958,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81637
+        },
+        {
+          "at_ns": 507116580819666,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81637
+        },
+        {
+          "at_ns": 507116580804833,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81638
+        },
+        {
+          "at_ns": 507116581511708,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 1
+          },
+          "event": "before_begin",
+          "pid": 81637
+        },
+        {
+          "at_ns": 507116581516708,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 1
+          },
+          "event": "before_begin",
+          "pid": 81638
+        },
+        {
+          "at_ns": 507116581542791,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 1
+          },
+          "event": "after_begin",
+          "pid": 81637
+        },
+        {
+          "at_ns": 507116614104166,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "before_commit",
+          "pid": 81637
+        },
+        {
+          "at_ns": 507116614497833,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "after_commit",
+          "pid": 81637
+        },
+        {
+          "at_ns": 507116614579666,
+          "backend": "python",
+          "command_id": "4d6c0d6b-8639-498b-b436-43c13f92b258",
+          "encoder_calls": {
+            "c": 0,
+            "python": 87
+          },
+          "event": "result",
+          "pid": 81637,
+          "status": "claimed"
+        },
+        {
+          "at_ns": 507116619022375,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 1
+          },
+          "event": "after_begin",
+          "pid": 81638
+        },
+        {
+          "at_ns": 507116637107916,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 46
+          },
+          "error": {
+            "code": "APPLICATION_CONFLICT",
+            "details": {
+              "answer_id": "Answer1",
+              "reason": "Active claim"
+            },
+            "message": "Answer claim belongs to another command",
+            "pointer": null,
+            "record_id": null,
+            "related_ids": [],
+            "stage": "revision"
+          },
+          "event": "result",
+          "pid": 81638,
+          "status": "error"
+        }
+      ],
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 1,
+          "application_heads": 1,
+          "models": 1,
+          "operation_events": 7,
+          "operations": 4,
+          "promotions": 1,
+          "records": 12,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M1",
+          "AS1"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_two_process_application_claim S02_EVIDENCE {\"case\": \"application_claim\", \"database\": {\"byte_length\": 245760, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-application-claim.sqlite3\", \"sha256\": \"67c2f163efb2e74432511f9f7bd579e483937c4da1c75cceed355753d7d50167\"}, \"events\": [{\"at_ns\": 507116579380958, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81638}, {\"at_ns\": 507116579380958, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81637}, {\"at_ns\": 507116580819666, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81637}, {\"at_ns\": 507116580804833, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81638}, {\"at_ns\": 507116581511708, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 1}, \"event\": \"before_begin\", \"pid\": 81637}, {\"at_ns\": 507116581516708, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 1}, \"event\": \"before_begin\", \"pid\": 81638}, {\"at_ns\": 507116581542791, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 1}, \"event\": \"after_begin\", \"pid\": 81637}, {\"at_ns\": 507116614104166, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"before_commit\", \"pid\": 81637}, {\"at_ns\": 507116614497833, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"after_commit\", \"pid\": 81637}, {\"at_ns\": 507116614579666, \"backend\": \"python\", \"command_id\": \"4d6c0d6b-8639-498b-b436-43c13f92b258\", \"encoder_calls\": {\"c\": 0, \"python\": 87}, \"event\": \"result\", \"pid\": 81637, \"status\": \"claimed\"}, {\"at_ns\": 507116619022375, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 1}, \"event\": \"after_begin\", \"pid\": 81638}, {\"at_ns\": 507116637107916, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 46}, \"error\": {\"code\": \"APPLICATION_CONFLICT\", \"details\": {\"answer_id\": \"Answer1\", \"reason\": \"Active claim\"}, \"message\": \"Answer claim belongs to another command\", \"pointer\": null, \"record_id\": null, \"related_ids\": [], \"stage\": \"revision\"}, \"event\": \"result\", \"pid\": 81638, \"status\": \"error\"}], \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 1, \"application_heads\": 1, \"models\": 1, \"operation_events\": 7, \"operations\": 4, \"promotions\": 1, \"records\": 12, \"staged_blobs\": 1}, \"heads\": [\"M1\", \"AS1\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "same_application_finalization",
+      "database": {
+        "byte_length": 253952,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-application-finalize.sqlite3",
+        "sha256": "e05e6a8e20365118757e3a082b5855c7f71ee05ff75a951c04fcbad60f25e144"
+      },
+      "events": [
+        {
+          "at_ns": 507117392628000,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81640
+        },
+        {
+          "at_ns": 507117392636625,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "ready",
+          "pid": 81639
+        },
+        {
+          "at_ns": 507117394063291,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81640
+        },
+        {
+          "at_ns": 507117394080458,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 0
+          },
+          "event": "released",
+          "pid": 81639
+        },
+        {
+          "at_ns": 507117395316583,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "before_begin",
+          "pid": 81640
+        },
+        {
+          "at_ns": 507117395329583,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "before_begin",
+          "pid": 81639
+        },
+        {
+          "at_ns": 507117395348458,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "after_begin",
+          "pid": 81640
+        },
+        {
+          "at_ns": 507117439023791,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 114
+          },
+          "event": "before_commit",
+          "pid": 81640
+        },
+        {
+          "at_ns": 507117439611833,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 114
+          },
+          "event": "after_commit",
+          "pid": 81640
+        },
+        {
+          "at_ns": 507117439712458,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 114
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81640,
+          "run_id": "443f7d6d-3189-4489-8322-45c853b9dac6",
+          "status": "completed"
+        },
+        {
+          "at_ns": 507117460793750,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 2
+          },
+          "event": "after_begin",
+          "pid": 81639
+        },
+        {
+          "at_ns": 507117504867666,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 112
+          },
+          "event": "before_commit",
+          "pid": 81639
+        },
+        {
+          "at_ns": 507117504918791,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 112
+          },
+          "event": "after_commit",
+          "pid": 81639
+        },
+        {
+          "at_ns": 507117505009708,
+          "backend": "python",
+          "encoder_calls": {
+            "c": 0,
+            "python": 112
+          },
+          "errors": [],
+          "event": "result",
+          "pid": 81639,
+          "run_id": "443f7d6d-3189-4489-8322-45c853b9dac6",
+          "status": "completed"
+        }
+      ],
+      "final": {
+        "applied_events": 1,
+        "counts": {
+          "analysis_sets": 2,
+          "application_heads": 1,
+          "models": 2,
+          "operation_events": 10,
+          "operations": 4,
+          "promotions": 1,
+          "records": 17,
+          "staged_blobs": 1
+        },
+        "heads": [
+          "M2",
+          "AS-M2"
+        ]
+      },
+      "kind": "real_two_process_race"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_two_process_same_application_finalization S02_EVIDENCE {\"case\": \"same_application_finalization\", \"database\": {\"byte_length\": 253952, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/race-application-finalize.sqlite3\", \"sha256\": \"e05e6a8e20365118757e3a082b5855c7f71ee05ff75a951c04fcbad60f25e144\"}, \"events\": [{\"at_ns\": 507117392628000, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81640}, {\"at_ns\": 507117392636625, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"ready\", \"pid\": 81639}, {\"at_ns\": 507117394063291, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81640}, {\"at_ns\": 507117394080458, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 0}, \"event\": \"released\", \"pid\": 81639}, {\"at_ns\": 507117395316583, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"before_begin\", \"pid\": 81640}, {\"at_ns\": 507117395329583, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"before_begin\", \"pid\": 81639}, {\"at_ns\": 507117395348458, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"after_begin\", \"pid\": 81640}, {\"at_ns\": 507117439023791, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 114}, \"event\": \"before_commit\", \"pid\": 81640}, {\"at_ns\": 507117439611833, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 114}, \"event\": \"after_commit\", \"pid\": 81640}, {\"at_ns\": 507117439712458, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 114}, \"errors\": [], \"event\": \"result\", \"pid\": 81640, \"run_id\": \"443f7d6d-3189-4489-8322-45c853b9dac6\", \"status\": \"completed\"}, {\"at_ns\": 507117460793750, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 2}, \"event\": \"after_begin\", \"pid\": 81639}, {\"at_ns\": 507117504867666, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 112}, \"event\": \"before_commit\", \"pid\": 81639}, {\"at_ns\": 507117504918791, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 112}, \"event\": \"after_commit\", \"pid\": 81639}, {\"at_ns\": 507117505009708, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 112}, \"errors\": [], \"event\": \"result\", \"pid\": 81639, \"run_id\": \"443f7d6d-3189-4489-8322-45c853b9dac6\", \"status\": \"completed\"}], \"final\": {\"applied_events\": 1, \"counts\": {\"analysis_sets\": 2, \"application_heads\": 1, \"models\": 2, \"operation_events\": 10, \"operations\": 4, \"promotions\": 1, \"records\": 17, \"staged_blobs\": 1}, \"heads\": [\"M2\", \"AS-M2\"]}, \"kind\": \"real_two_process_race\"}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "finalize",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-finalize-before_commit.sqlite3",
+        "sha256": "91eb15e53949ee62744b26b4df2301e9e4d3a38d6b08f18e4363e26557b51520"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 3,
+          "operations": 2,
+          "promotions": 1,
+          "records": 6,
+          "staged_blobs": 1
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "before_commit",
+      "result_state": "prepared",
+      "synchronized": {
+        "at_ns": 507118058317125,
+        "backend": "python",
+        "encoder_calls": {
+          "c": 0,
+          "python": 57
+        },
+        "in_transaction": true,
+        "pid": 81646,
+        "point": "before_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[before_commit-finalize] S02_EVIDENCE {\"case\": \"finalize\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-finalize-before_commit.sqlite3\", \"sha256\": \"91eb15e53949ee62744b26b4df2301e9e4d3a38d6b08f18e4363e26557b51520\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 3, \"operations\": 2, \"promotions\": 1, \"records\": 6, \"staged_blobs\": 1}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"before_commit\", \"result_state\": \"prepared\", \"synchronized\": {\"at_ns\": 507118058317125, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 57}, \"in_transaction\": true, \"pid\": 81646, \"point\": \"before_commit\"}}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "capture",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-capture-before_commit.sqlite3",
+        "sha256": "44a470278038d0af8dd05e990cd44119f3aea90ee3de51a468a0455cf6c78480"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 4,
+          "operations": 2,
+          "promotions": 1,
+          "records": 6,
+          "staged_blobs": 1
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "before_commit",
+      "result_state": "dispatch_unknown",
+      "synchronized": {
+        "at_ns": 507118629639333,
+        "backend": "python",
+        "encoder_calls": {
+          "c": 0,
+          "python": 55
+        },
+        "in_transaction": true,
+        "pid": 81647,
+        "point": "before_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[before_commit-capture] S02_EVIDENCE {\"case\": \"capture\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-capture-before_commit.sqlite3\", \"sha256\": \"44a470278038d0af8dd05e990cd44119f3aea90ee3de51a468a0455cf6c78480\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 4, \"operations\": 2, \"promotions\": 1, \"records\": 6, \"staged_blobs\": 1}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"before_commit\", \"result_state\": \"dispatch_unknown\", \"synchronized\": {\"at_ns\": 507118629639333, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 55}, \"in_transaction\": true, \"pid\": 81647, \"point\": \"before_commit\"}}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "finalize",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-finalize-after_commit.sqlite3",
+        "sha256": "bcddf0f9c3c6f7e786a7524cc67b8b329e9f3fb75434aefed995faf93618d64c"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 4,
+          "operations": 2,
+          "promotions": 1,
+          "records": 7,
+          "staged_blobs": 1
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "after_commit",
+      "result_state": "finalized",
+      "synchronized": {
+        "at_ns": 507119154428916,
+        "backend": "python",
+        "encoder_calls": {
+          "c": 0,
+          "python": 57
+        },
+        "in_transaction": false,
+        "pid": 81648,
+        "point": "after_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[after_commit-finalize] S02_EVIDENCE {\"case\": \"finalize\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-finalize-after_commit.sqlite3\", \"sha256\": \"bcddf0f9c3c6f7e786a7524cc67b8b329e9f3fb75434aefed995faf93618d64c\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 4, \"operations\": 2, \"promotions\": 1, \"records\": 7, \"staged_blobs\": 1}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"after_commit\", \"result_state\": \"finalized\", \"synchronized\": {\"at_ns\": 507119154428916, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 57}, \"in_transaction\": false, \"pid\": 81648, \"point\": \"after_commit\"}}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "case": "capture",
+      "database": {
+        "byte_length": 229376,
+        "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-capture-after_commit.sqlite3",
+        "sha256": "c89118f6d907b4b1dff6c7fcf16b5786f1bbf65d1b7986fe670d901facf7ae2f"
+      },
+      "exit_code": -15,
+      "final": {
+        "applied_events": 0,
+        "counts": {
+          "analysis_sets": 0,
+          "application_heads": 0,
+          "models": 0,
+          "operation_events": 5,
+          "operations": 2,
+          "promotions": 1,
+          "records": 6,
+          "staged_blobs": 2
+        },
+        "heads": [
+          null,
+          null
+        ]
+      },
+      "kind": "real_process_termination",
+      "point": "after_commit",
+      "result_state": "captured",
+      "synchronized": {
+        "at_ns": 507119725204250,
+        "backend": "python",
+        "encoder_calls": {
+          "c": 0,
+          "python": 55
+        },
+        "in_transaction": false,
+        "pid": 81649,
+        "point": "after_commit"
+      }
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "../../../../../../../Users/macbookpro/Documents/DACN_implementation/s02/tests/test_processes.py::test_real_kill_synchronized[after_commit-capture] S02_EVIDENCE {\"case\": \"capture\", \"database\": {\"byte_length\": 229376, \"path\": \"/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/development/process-artifacts/python/kill-capture-after_commit.sqlite3\", \"sha256\": \"c89118f6d907b4b1dff6c7fcf16b5786f1bbf65d1b7986fe670d901facf7ae2f\"}, \"exit_code\": -15, \"final\": {\"applied_events\": 0, \"counts\": {\"analysis_sets\": 0, \"application_heads\": 0, \"models\": 0, \"operation_events\": 5, \"operations\": 2, \"promotions\": 1, \"records\": 6, \"staged_blobs\": 2}, \"heads\": [null, null]}, \"kind\": \"real_process_termination\", \"point\": \"after_commit\", \"result_state\": \"captured\", \"synchronized\": {\"at_ns\": 507119725204250, \"backend\": \"python\", \"encoder_calls\": {\"c\": 0, \"python\": 55}, \"in_transaction\": false, \"pid\": 81649, \"point\": \"after_commit\"}}"
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_stage"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_insert"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "before_commit"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "before_finalize_insert"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_records"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "heads": [
+        null,
+        null
+      ],
+      "kind": "fault_injection",
+      "outcome": "rollback_checked_new_connection",
+      "point": "after_finalize"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "fault_injection",
+      "outcome": "reconciled_finalized_not_overwritten",
+      "point": "after_commit"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "kind": "real_sqlite_lock",
+      "outcome": "persistence_failure_not_conflict"
+    }
+  },
+  {
+    "suite": "s02-python",
+    "marker": "S02_EVIDENCE",
+    "data": {
+      "final_heads": [
+        "M4",
+        "AS-M4"
+      ],
+      "heads": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "kind": "model_revision_chain",
+      "reopened_between": true
+    }
+  },
+  {
+    "suite": "s02-python",
+    "backend_instrumentation": "S02_ENCODERS selected=python calls={'c': 0, 'python': 70827}"
+  }
+]

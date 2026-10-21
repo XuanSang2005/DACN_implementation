@@ -1,0 +1,5 @@
+$ /Users/macbookpro/Documents/DACN_implementation/.venv/bin/python -B /Users/macbookpro/Documents/DACN_implementation/tools/collect_phase2_fix_evidence.py
+cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-phase2-fix-evidence-mloeggoq
+PYTHONPATH unset
+0.1.0a3 verified: 9 package files identical across source/install/wheel; 45 protected files unchanged; runtime/dependencies/W unchanged
+exit_code=0

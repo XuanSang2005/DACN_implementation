@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/macbookpro/Documents/DACN_implementation/packages/s02/tools/collect_evidence.py", line 7, in <module>
+    raise SystemExit(tooling["main"](fixed_package="s02"))
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Documents/DACN_implementation/tools/collect_evidence.py", line 113, in main
+    baseline,baseline_diff=compare_baseline(wheel,old,namespace,version)
+                           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Documents/DACN_implementation/tools/collect_evidence.py", line 52, in compare_baseline
+    assert current==prior, 'Same-version historical payload mismatch'
+           ^^^^^^^^^^^^^^
+AssertionError: Same-version historical payload mismatch

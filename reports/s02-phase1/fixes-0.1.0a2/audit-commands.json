@@ -1,0 +1,52 @@
+[
+  {
+    "name": "audit-c",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a2-clean-ifz1c2fh/venv/bin/python",
+      "-B",
+      "-c",
+      "import sys,pytest;sys.path.insert(0,sys.argv.pop(1));raise SystemExit(pytest.main(sys.argv[1:]))",
+      "/Users/macbookpro/Documents/DACN_implementation/s02/tests",
+      "-p",
+      "conftest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/s02/pyproject.toml",
+      "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/test_independent_audit.py",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=c",
+      "--junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/audit-c.xml"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-8zt_1wmh",
+    "exit_code": 0,
+    "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/audit-c.log"
+  },
+  {
+    "name": "audit-python",
+    "command": [
+      "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a2-clean-ifz1c2fh/venv/bin/python",
+      "-B",
+      "-c",
+      "import sys,pytest;sys.path.insert(0,sys.argv.pop(1));raise SystemExit(pytest.main(sys.argv[1:]))",
+      "/Users/macbookpro/Documents/DACN_implementation/s02/tests",
+      "-p",
+      "conftest",
+      "-c",
+      "/Users/macbookpro/Documents/DACN_implementation/s02/pyproject.toml",
+      "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a1-2026-10-19/test_independent_audit.py",
+      "-s",
+      "-v",
+      "--tb=short",
+      "-p",
+      "no:cacheprovider",
+      "--encoder-backend=python",
+      "--junitxml=/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/audit-python.xml"
+    ],
+    "cwd": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-installed-checks-8zt_1wmh",
+    "exit_code": 0,
+    "log": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a2/audit-python.log"
+  }
+]

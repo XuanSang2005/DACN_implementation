@@ -1,0 +1,134 @@
+--- before/README.md
++++ after/README.md
+@@ -7,7 +7,7 @@
+ | S01 | `dacn-s01 0.1.0a6`, đã nghiệm thu kỹ thuật CLI local; input 1.0.0, output draft.2 | [S01_ACCEPTANCE.json](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase4-0.1.0a6/S01_ACCEPTANCE.json) |
+ | S02 | `dacn-s02 0.1.0a2`, contract draft.3; **chưa nghiệm thu Đợt 1**. S02-01–04 đóng; **S02-05 còn mở** | [Audit a2](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/AUDIT_REPORT.md) |
+ 
+-Đợt tổ chức thư mục giữ nguyên bytes production source/schema/locks và phiên bản sản phẩm. Không sửa S02-05, không triển khai S02 Đợt 2. [Bàn giao layout](reports/repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md) đang chờ audit; kiểm thử pass không thay nghiệm thu nghiệp vụ.
++Đợt tổ chức thư mục giữ nguyên bytes production source/schema/locks và phiên bản sản phẩm. [Audit layout](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/repository-layout-2026-10-19/AUDIT_REPORT.md) xác nhận đạt mục tiêu, kèm LAYOUT-01 ở wrappers. [Bản sửa LAYOUT-01](reports/repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md) chờ audit lại; [bàn giao layout gốc](reports/repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md) giữ nguyên. S02-05 vẫn mở, chưa triển khai S02 Đợt 2; kiểm thử pass không thay nghiệm thu nghiệp vụ.
+ 
+ ## Tìm code và tài liệu
+ 
+@@ -99,6 +99,8 @@
+ 
+ Chọn cách chạy phù hợp, không cần lặp cả ba lệnh. Runner chạy C/Python và đo factory thực; cwd test ở ngoài checkout, không đưa production src vào PYTHONPATH. Không gom tests S01/S02 trong một pytest process vì hai conftest cùng đăng ký `--encoder-backend`. Mỗi thư mục báo cáo phải mới; không tự ghi đè lần trước.
+ 
++Wrappers runner/collector trong `packages/<stage>/tools/` cố định package: không nhận `--package`, dạng `--package=...` hoặc viết tắt. Chọn package qua tooling ở root với tên option đầy đủ; parser runner/collector không chấp nhận viết tắt option. Kiểm hồi quy ranh giới này: `python -B -m unittest discover -s tools/tests -p test_package_wrappers.py -v` (stdlib, không chạy suite sản phẩm).
++
+ Audit ngoài: dùng `packages/s02/tools/run_checks.py --audit-only --audit-file /path/to/test_independent_audit.py --audit-file /path/to/test_followup_boundaries.py --report-dir <mới>`. Adapter chỉ thêm helpers S02 mới vào sys.path; file/assertions audit giữ nguyên và được kiểm hash trước/sau. Suite S02-05 hiện **2 passed + 2 failed/backend, exit 1**; không bỏ tests, skip/xfail hay đổi kỳ vọng để làm xanh.
+ 
+ [`tools/check_layout.py`](tools/check_layout.py) kiểm CLI smoke, resources/examples, guard workspace/package, links hướng dẫn và từ chối overwrite reports: chạy với `--report-dir <mới>`. Bằng chứng layout đã chạy tại [báo cáo mới](reports/repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md); không chạy lại vào thư mục đó. Các lệnh README là hướng dẫn tái lập, logs mới là bằng chứng thực chạy.
+--- before/tools/collect_evidence.py
++++ after/tools/collect_evidence.py
+@@ -30,9 +30,15 @@
+                 if n.startswith(namespace + '/') and not n.endswith('/')}
+ 
+ 
+-def main():
+-    parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--package', choices=('s01', 's02', 'all'), required=True)
++def main(*, fixed_package=None):
++    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
++    if fixed_package is None:
++        parser.add_argument('--package', choices=('s01', 's02', 'all'), required=True)
++    else:
++        # Package entry points have no public selector to override.
++        if fixed_package not in ('s01', 's02'):
++            raise ValueError('Invalid fixed package')
++        parser.set_defaults(package=fixed_package)
+     parser.add_argument('--wheel-dir', type=Path, required=True)
+     parser.add_argument('--report-dir', type=Path, required=True, help='Must not exist')
+     args = parser.parse_args()
+--- before/tools/run_checks.py
++++ after/tools/run_checks.py
+@@ -14,9 +14,15 @@
+ WORKSPACE = Path(__file__).resolve().parents[1]
+ 
+ 
+-def main():
+-    parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--package', choices=('s01', 's02', 'all'), required=True)
++def main(*, fixed_package=None):
++    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
++    if fixed_package is None:
++        parser.add_argument('--package', choices=('s01', 's02', 'all'), required=True)
++    else:
++        # Package entry points have no public selector to override.
++        if fixed_package not in ('s01', 's02'):
++            raise ValueError('Invalid fixed package')
++        parser.set_defaults(package=fixed_package)
+     parser.add_argument('--report-dir', type=Path, required=True, help='Must not exist')
+     parser.add_argument('--audit-file', type=Path, action='append', default=[])
+     parser.add_argument('--audit-only', action='store_true')
+--- before/packages/s02/tools/collect_evidence.py
++++ after/packages/s02/tools/collect_evidence.py
+@@ -1,10 +1,7 @@
+ """Package entry point; shared workspace tooling, never production imports."""
+ import runpy
+-import sys
+ from pathlib import Path
+ 
+ if __name__ == "__main__":
+-    if "--package" in sys.argv:
+-        raise SystemExit("Package is fixed by this entry point")
+-    sys.argv[1:1] = ["--package", "s02"]
+-    runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "collect_evidence.py"), run_name="__main__")
++    tooling = runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "collect_evidence.py"))
++    raise SystemExit(tooling["main"](fixed_package="s02"))
+--- before/packages/s02/tools/run_checks.py
++++ after/packages/s02/tools/run_checks.py
+@@ -1,10 +1,7 @@
+ """Package entry point; shared workspace tooling, never production imports."""
+ import runpy
+-import sys
+ from pathlib import Path
+ 
+ if __name__ == "__main__":
+-    if "--package" in sys.argv:
+-        raise SystemExit("Package is fixed by this entry point")
+-    sys.argv[1:1] = ["--package", "s02"]
+-    runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "run_checks.py"), run_name="__main__")
++    tooling = runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "run_checks.py"))
++    raise SystemExit(tooling["main"](fixed_package="s02"))
+--- before/packages/s01/tools/collect_evidence.py
++++ after/packages/s01/tools/collect_evidence.py
+@@ -1,10 +1,7 @@
+ """Package entry point; shared workspace tooling, never production imports."""
+ import runpy
+-import sys
+ from pathlib import Path
+ 
+ if __name__ == "__main__":
+-    if "--package" in sys.argv:
+-        raise SystemExit("Package is fixed by this entry point")
+-    sys.argv[1:1] = ["--package", "s01"]
+-    runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "collect_evidence.py"), run_name="__main__")
++    tooling = runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "collect_evidence.py"))
++    raise SystemExit(tooling["main"](fixed_package="s01"))
+--- before/packages/s01/tools/run_checks.py
++++ after/packages/s01/tools/run_checks.py
+@@ -1,10 +1,7 @@
+ """Package entry point; shared workspace tooling, never production imports."""
+ import runpy
+-import sys
+ from pathlib import Path
+ 
+ if __name__ == "__main__":
+-    if "--package" in sys.argv:
+-        raise SystemExit("Package is fixed by this entry point")
+-    sys.argv[1:1] = ["--package", "s01"]
+-    runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "run_checks.py"), run_name="__main__")
++    tooling = runpy.run_path(str(Path(__file__).resolve().parents[3] / "tools" / "run_checks.py"))
++    raise SystemExit(tooling["main"](fixed_package="s01"))
+--- before/reports/README.md
++++ after/reports/README.md
+@@ -9,7 +9,8 @@
+ | S01 Đợt 3 / persistence | [Bàn giao](s01-phase3/IMPLEMENTATION_REPORT.md), [bản sửa a5](s01-phase3/fixes-0.1.0a5/IMPLEMENTATION_REPORT.md) |
+ | S01 Đợt 4 / CLI local a6 | [Bàn giao](s01-phase4/IMPLEMENTATION_REPORT.md), [nghiệm thu bên ngoài](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase4-0.1.0a6/S01_ACCEPTANCE.json) |
+ | S02 Đợt 1 a1/a2 | [a1](s02-phase1/IMPLEMENTATION_REPORT.md), [a2](s02-phase1/fixes-0.1.0a2/IMPLEMENTATION_REPORT.md), [audit a2: S02-05 còn mở](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a2-2026-10-19/AUDIT_REPORT.md) |
+-| Tổ chức layout 19/10/2026 | [Bàn giao mới](repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md) — chờ audit |
++| Tổ chức layout 19/10/2026 | [Bàn giao](repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md), [audit: đạt mục tiêu, còn LAYOUT-01](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/repository-layout-2026-10-19/AUDIT_REPORT.md) |
++| LAYOUT-01 / wrappers | [Bản sửa](repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md) — chờ audit lại |
+ 
+ Các report chứa đường dẫn cũ để tái hiện đúng bối cảnh, không chỉnh thành layout mới. Xem [README hiện hành](../README.md) và bảng old→new trong report layout. Wheel bàn giao ở `dist/` và `s02/dist/` giữ nguyên; rebuild và tests mới của layout chỉ nằm trong thư mục layout mới. DB synthetic trong evidence không dùng làm kho vận hành.
+ 
