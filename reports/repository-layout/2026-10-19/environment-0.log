@@ -1,4 +1,0 @@
-$ .runtime/python/bin/python3.13 -B -m venv --without-pip /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv
-cwd=/Users/macbookpro/Documents/DACN_implementation
-
-exit_code=0

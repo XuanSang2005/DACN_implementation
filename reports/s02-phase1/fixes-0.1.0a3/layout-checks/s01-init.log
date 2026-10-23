@@ -1,5 +1,0 @@
-$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python -B -m dacn_s01 --state-dir /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-kzsk0qxi/s01-state init
-cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-kzsk0qxi
-{"state_dir":"/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-kzsk0qxi/s01-state","database":"/private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-kzsk0qxi/s01-state/s01.sqlite3"}
-
-exit_code=0

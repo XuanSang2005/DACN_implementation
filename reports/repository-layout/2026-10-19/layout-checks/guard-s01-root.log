@@ -1,5 +1,0 @@
-$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python -B -m dacn_s02 --config /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx/guard.toml init
-cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx
-{"command_id":null,"status":"failed","record_ids":[],"errors":[{"code":"PERSISTENCE_FAILED","stage":"persistence","record_id":null,"pointer":null,"related_ids":[],"message":"Write path is inside an implementation checkout","details":{"reason":"Write path is inside an implementation checkout"}}]}
-
-exit_code=3

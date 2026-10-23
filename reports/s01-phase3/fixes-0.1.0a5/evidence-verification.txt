@@ -1,4 +1,0 @@
-Verified 13 package files across source/install/wheel; runtime/dependencies unchanged.
-Verified 111/113 baseline inventory files unchanged; only service.py and package version changed.
-Verified five real process schedules and two kill boundaries per backend; 36 evidence records.
-Wheel sha256: 5b3dbc9feac551a727896555f60282c5170d93b7a042cb79ffec01b68493da82

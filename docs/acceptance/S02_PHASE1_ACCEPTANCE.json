@@ -1,0 +1,130 @@
+{
+  "audit_date": "2026-10-21",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "status": "accepted_technical_phase1_local_foundation",
+  "product": "dacn-s02",
+  "version": "0.1.0a3",
+  "contract_version": "s02/0.1.0-draft.3",
+  "db_structure": 1,
+  "s01_baseline": "0.1.0a6",
+  "wheel": {
+    "path": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase1/fixes-0.1.0a3/builds/dacn_s02-0.1.0a3-py3-none-any.whl",
+    "sha256": "0b9df6bd99e63efb25786aaf3bea58b0da7678d066fae20a2e01e90c8d97d1cf"
+  },
+  "closed_in_this_audit": [
+    "S02-05",
+    "LAYOUT-01"
+  ],
+  "previous_findings_remain_closed": [
+    "S02-01",
+    "S02-02",
+    "S02-03",
+    "S02-04"
+  ],
+  "new_findings": [],
+  "scope": [
+    "package/schema/typed refs",
+    "checked S01 intake and source archive",
+    "SQLite repository and immutable revisions/AnalysisSet heads",
+    "staging/promotion/operational and application invariants",
+    "pure scope closure",
+    "minimal local CLI and related tooling"
+  ],
+  "full_s02_accepted": false,
+  "business_acceptance": false,
+  "phase2_started": false,
+  "phase2_authorized_by_this_audit": false,
+  "live_llm_authorized_by_this_audit": false,
+  "excluded": [
+    "live LLM/prompt quality",
+    "complete clarification/consent/S01-update orchestration",
+    "end-to-end review/handoff",
+    "renderer/fidelity/readability",
+    "semantic evaluation",
+    "KB/S03",
+    "production deployment",
+    "power-loss/disk-full"
+  ],
+  "runtime": {
+    "python": "3.13.16 (main, Oct  9 2026, 15:11:24) [Clang 22.1.3 ]",
+    "sqlite": "3.53.1",
+    "gil_enabled": true,
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "suites": [
+    {
+      "suite": "s01-c",
+      "tests": 986,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "31.810"
+    },
+    {
+      "suite": "s01-python",
+      "tests": 986,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "27.050"
+    },
+    {
+      "suite": "s02-c",
+      "tests": 217,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "66.191"
+    },
+    {
+      "suite": "s02-python",
+      "tests": 217,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "69.555"
+    },
+    {
+      "suite": "audit-1-c",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "3.211"
+    },
+    {
+      "suite": "audit-1-python",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "3.348"
+    },
+    {
+      "suite": "audit-2-c",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "1.519"
+    },
+    {
+      "suite": "audit-2-python",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "1.534"
+    }
+  ],
+  "tooling_tests": 344,
+  "smoke": {
+    "commands": 18,
+    "guard_checks": 6,
+    "examples": 15,
+    "guide_links": 95
+  },
+  "report": "AUDIT_REPORT.md",
+  "legacy_read_evidence": "legacy-config-verification.json",
+  "immutability_evidence": "preservation-after.json"
+}

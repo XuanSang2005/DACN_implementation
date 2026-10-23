@@ -1,0 +1,58 @@
+{
+  "S01_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase4-0.1.0a6/S01_ACCEPTANCE.json",
+    "sha256": "9b8139e1a338deed7e5843e4fd53a866d0845e80f0d53a7d1c255775a7f2732e"
+  },
+  "S02_PHASE1_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a3-2026-10-21/S02_PHASE1_ACCEPTANCE.json",
+    "sha256": "1589270ce703da0952a9a0b8275f727332298e4e22c13af79a5f3807dadb5a8f"
+  },
+  "S02_2A_P1_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-p1-0.2.0a3-2026-10-22-223420/S02_2A_P1_ACCEPTANCE.json",
+    "sha256": "1747ab61b69868201630f77f0dace8a8757e14878f6e63b78415e9e566694e51"
+  },
+  "S02_2A_P2_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-p2-0.3.0a2-2026-10-23-015238/S02_2A_P2_ACCEPTANCE.json",
+    "sha256": "9f781d53e21bc0f3d66c32779cca619b3d297a90758c219c1d9c354125c067c2"
+  },
+  "S02_2A_P3_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-p3-0.4.0a3-2026-10-23-125317/S02_2A_P3_ACCEPTANCE.json",
+    "sha256": "ab123941ca5e728ff8f96e9526e599339ab191ec94a86f5428afb34bc04366e9"
+  },
+  "P3_AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-p3-0.4.0a3-2026-10-23-125317/AUDIT_REPORT.md",
+    "sha256": "515c5cc8a4aa786052a1a6ecf6feaa65cee22de578de6ef04f777852d10f6650"
+  },
+  "s02-2a-p2-0.3.0a2-2026-10-23-015238/AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-p2-0.3.0a2-2026-10-23-015238/AUDIT_REPORT.md",
+    "sha256": "9b2b0324ac69433971db0430b7bee07fbc74a4c03cf34e2823b84ce1c909822a"
+  },
+  "s02-2a-p1-0.2.0a3-2026-10-22-223420/AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-p1-0.2.0a3-2026-10-22-223420/AUDIT_REPORT.md",
+    "sha256": "7f3e78032b614451f419d5883bb1a726e2733cb4fe1e2a295162820d9e17e86d"
+  },
+  "s02-proposal-draft3-2026-10-19/AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-proposal-draft3-2026-10-19/AUDIT_REPORT.md",
+    "sha256": "59fbe197d7154fc0c53cbc64a466a6a073d126c341d9d08f3bc9a5c54e94608e"
+  },
+  "s01-phase4-0.1.0a6/S01_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase4-0.1.0a6/S01_ACCEPTANCE.json",
+    "sha256": "9b8139e1a338deed7e5843e4fd53a866d0845e80f0d53a7d1c255775a7f2732e"
+  },
+  "s02-phase1-0.1.0a3-2026-10-21/AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a3-2026-10-21/AUDIT_REPORT.md",
+    "sha256": "b7ea882c4c5222185a58f47987c57169deac14f2afb4f105c6e76f51b1340702"
+  },
+  "s02-phase2-2a-storage-draft2-2026-10-22/AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-2a-storage-draft2-2026-10-22/AUDIT_REPORT.md",
+    "sha256": "148f2dd27f558fd10bf860160617921f8544cab255a9799c6cb9a9d3ee2aa6a5"
+  },
+  "s02-phase1-0.1.0a3-2026-10-21/S02_PHASE1_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase1-0.1.0a3-2026-10-21/S02_PHASE1_ACCEPTANCE.json",
+    "sha256": "1589270ce703da0952a9a0b8275f727332298e4e22c13af79a5f3807dadb5a8f"
+  },
+  "s02-phase2-proposal-draft3-2026-10-21/AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft3-2026-10-21/AUDIT_REPORT.md",
+    "sha256": "493facdaf623574c3b6544a858658a5f85401f5eb6ca278dbcfe485b019f0fcc"
+  }
+}

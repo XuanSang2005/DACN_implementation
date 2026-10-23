@@ -1,0 +1,68 @@
+{
+  "record_type": "technical_acceptance",
+  "stage": "S01",
+  "status": "accepted",
+  "recorded_at_utc": "2026-10-18T02:29:59Z",
+  "recorded_date_local": "2026-10-18",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "authorization": {
+    "source": "Người dùng trong cuộc hội thoại DACN hiện tại",
+    "instruction": "từ từ, trước hết nghiệm thu S01 đã",
+    "action": "Ghi nhận nghiệm thu kỹ thuật S01 theo kết luận audit đã hoàn tất."
+  },
+  "accepted_baseline": {
+    "package_version": "0.1.0a6",
+    "input_schema_version": "1.0.0",
+    "output_contract_version": "0.1.0-draft.2",
+    "database_structure_version": 1,
+    "wheel_path": "/Users/macbookpro/Documents/DACN_implementation/dist/dacn_s01-0.1.0a6-py3-none-any.whl",
+    "wheel_sha256": "e4ebbe7988d7cb5255d93845c94ba41aeb043900c762ca7636d4f7c093bff20b",
+    "validator_version": "dacn-s01/0.1.0a6+sha256:38b3ce1cf52578ea7f9d999009847bd4d68ddafaea18c0e687e9f3aff112c635"
+  },
+  "accepted_scope": [
+    "Đợt 1: môi trường, dependency locks, codec JSON chính xác và schema resource.",
+    "Đợt 2: validation cấu trúc, cross-field và invariants của envelope theo contract.",
+    "Đợt 3: SQLite persistence, revision service, nguồn thô, snapshot, concurrency và checked lookup.",
+    "Đợt 4: CLI/TOML local, receipt trước submit, lookup/export, bảo vệ đường dẫn và recovery."
+  ],
+  "audit_basis": {
+    "verdict": "PASS trong phạm vi S01 local đã chốt; không phát hiện lỗi chặn nghiệm thu.",
+    "evidence": "audit-evidence.json",
+    "test_log": "test-results.txt",
+    "independent_tests": "test_phase4_audit.py",
+    "previously_executed_results": {
+      "full_suite_c_passed": 986,
+      "full_suite_python_passed": 986,
+      "full_suites_skipped": 0,
+      "prior_audit_tests_passed": 60,
+      "prior_regression_probes_passed": 4,
+      "new_independent_tests_passed": 8,
+      "package_files_source_installed_wheel_matching": 16,
+      "pip_check": "passed"
+    },
+    "note": "Kết quả từ lượt audit hoàn tất trước nghiệm thu; lượt này không chạy lại tests hoặc sửa implementation."
+  },
+  "environment": {
+    "platform": "macOS arm64, filesystem local",
+    "python": "CPython 3.13.16, GIL enabled",
+    "sqlite": "3.53.1"
+  },
+  "acceptance_boundary": {
+    "meaning": "Nghiệm thu kỹ thuật implementation S01 theo phạm vi và môi trường đã kiểm chứng; chưa xác nhận requirements đúng hoặc đầy đủ về nghiệp vụ.",
+    "known_limits_reference": "audit-evidence.json#/limitations",
+    "known_limits_summary": [
+      "Receipt phục vụ truy vết/khôi phục, không phải idempotency key.",
+      "Bảo vệ dữ liệu dựa trên dataset roots đã khai báo và thư mục local do người dùng kiểm soát.",
+      "Chưa kiểm chứng mất điện, hỏng ổ đĩa, disk-full thực, Windows hoặc filesystem mạng.",
+      "Resource quotas, pagination, prune, backup và API idempotency nằm ngoài phạm vi bàn giao."
+    ],
+    "blocking_findings": [],
+    "outstanding_work_within_accepted_s01_scope": []
+  },
+  "handoff": {
+    "s01": "Đã nghiệm thu kỹ thuật; 0.1.0a6 là baseline để đối chiếu các thay đổi sau.",
+    "s02": "Chưa triển khai trong lượt này; chờ yêu cầu riêng của người dùng.",
+    "deferred_item": "Đồng bộ AGENTS.md với flow S02 mới nhất trước khi triển khai S02."
+  },
+  "preservation": "Biên bản mới ghi nhận quyết định nghiệm thu; giữ nguyên code, contract, schema, dataset và toàn bộ báo cáo/bằng chứng audit cũ."
+}

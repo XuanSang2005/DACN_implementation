@@ -7,3 +7,14 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+.bootstrap/
+# Evidence stays on disk and in a verified external archive. Keep report prose.
+/reports/**/*
+!/reports/**/
+!/reports/**/*.md
+/reports/**/before/
+/reports/**/originals/
+/docs/**/STATIC_CHECKS*.json
+.DS_Store
+# Keep the handwritten CLI regression; only its generated evidence is archived.
+!/reports/s02-phase2/2a-p3-fix02-0.4.0a3-2026-10-23/test_cli_policy_controls.py

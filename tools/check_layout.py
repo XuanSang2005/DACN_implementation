@@ -75,7 +75,7 @@ def main():
         lookup=parse_json(command('s02-lookup',['-m','dacn_s02','--config',config,'show-command','--receipt',work/'s02.receipt.json']))
         assert lookup['result']['state']=='finalized'
         context=parse_json(command('s02-source-context',['-m','dacn_s02','--config',config,'show-record','--id',started['result']['source_context_id']]))
-        assert context['result']['body']['snapshot_id']==envelope['snapshot']['snapshot_id']
+        assert context['result']['record']['body']['snapshot_id']==envelope['snapshot']['snapshot_id']
         # Test the unchanged guard at exact roots AND fresh descendants. First
         # check the pure path boundary, so CLI cannot write if that guard regresses.
         for name,root in [('workspace',WORKSPACE),('s01',WORKSPACE/'packages/s01'),('s02',WORKSPACE/'packages/s02')]:

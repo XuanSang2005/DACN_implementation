@@ -1,6 +1,0 @@
-{
-  "kind": "Synthetic corrupt wheel for collector rejection only; NOT delivery",
-  "source_sha256": "0b9df6bd99e63efb25786aaf3bea58b0da7678d066fae20a2e01e90c8d97d1cf",
-  "mutated_sha256": "13935fd3df5c79df96a9afdb53d982d72683f0a9471d48f2832d19a4143cd4a4",
-  "mutation": "Append comment to dacn_s02/events.py; preserve other ZIP entries"
-}

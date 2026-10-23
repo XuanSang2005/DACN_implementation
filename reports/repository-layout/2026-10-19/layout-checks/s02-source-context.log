@@ -1,5 +1,0 @@
-$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-verify-vujg0rj1/venv/bin/python -B -m dacn_s02 --config /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx/s02.toml show-record --id aa53f675-9a99-4760-b316-f86569384bb7
-cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-layout-smoke-ioaxekxx
-{"command_id":null,"status":"completed","record_ids":["aa53f675-9a99-4760-b316-f86569384bb7"],"errors":[],"result":{"type":"source_context","id":"aa53f675-9a99-4760-b316-f86569384bb7","created_at":"2026-10-19T04:40:07.081Z","body":{"store_key":"synthetic","s01_run_id":"753e461c-d8c1-4ec8-aade-aa7d12d76565","snapshot_id":"4799411d-6e61-4469-aa5c-1a153e817a8b","envelope_artifact_id":"c58d597e-667c-4508-93f4-b8d7bc3e497c","run_source_artifact_id":"b635668d-dac1-4271-a9c0-ed0126579a8f","origin_source_artifact_id":"b635668d-dac1-4271-a9c0-ed0126579a8f","schema_artifact_id":"4863d30e-308d-4f38-aa84-84befe8c310d"}}}
-
-exit_code=0

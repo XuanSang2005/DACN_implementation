@@ -1,9 +1,0 @@
-Processing ./s02
-  Preparing metadata (pyproject.toml): started
-  Preparing metadata (pyproject.toml): finished with status 'done'
-Building wheels for collected packages: dacn-s02
-  Building wheel for dacn-s02 (pyproject.toml): started
-  Building wheel for dacn-s02 (pyproject.toml): finished with status 'done'
-  Created wheel for dacn-s02: filename=dacn_s02-0.1.0a1-py3-none-any.whl size=40237 sha256=5f43c9d60eedc2d8ab507ebc83473476bc8699df4a712c69e53e1494ccc6b630
-  Stored in directory: /private/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/pip-ephem-wheel-cache-xs9gs_y6/wheels/4a/c3/6c/2dbf2a45564dfd1706b3d3740ab99e799c4fdc6702a79aad62
-Successfully built dacn-s02

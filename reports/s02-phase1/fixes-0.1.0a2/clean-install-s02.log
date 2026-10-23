@@ -1,7 +1,0 @@
-$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-2g1oiofl/venv/bin/python -B -m pip install --no-index --no-deps /Users/macbookpro/Documents/DACN_implementation/s02/dist/dacn_s02-0.1.0a2-py3-none-any.whl
-cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-2g1oiofl
-Processing /Users/macbookpro/Documents/DACN_implementation/s02/dist/dacn_s02-0.1.0a2-py3-none-any.whl
-Installing collected packages: dacn-s02
-Successfully installed dacn-s02-0.1.0a2
-
-exit_code=0

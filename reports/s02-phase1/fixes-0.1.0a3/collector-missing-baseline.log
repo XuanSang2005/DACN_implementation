@@ -1,4 +1,0 @@
-usage: collect_evidence.py [-h] --wheel-dir WHEEL_DIR
-                           [--baseline-wheel PACKAGE=PATH]
-                           --report-dir REPORT_DIR
-collect_evidence.py: error: s02: no historical wheel; provide --baseline-wheel s02=PATH

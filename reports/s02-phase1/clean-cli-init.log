@@ -1,5 +1,0 @@
-$ /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/venv/bin/python -B -m dacn_s02 --config /var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk/s02.toml init
-cwd=/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-clean-install-i2674bqk
-{"command_id":null,"status":"completed","record_ids":[],"errors":[]}
-
-exit_code=0

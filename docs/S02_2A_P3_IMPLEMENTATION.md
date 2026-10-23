@@ -1,8 +1,8 @@
 # S02 2A-P3 — migration local
 
-`dacn-s02 0.4.0a2`: **Đã sửa, chờ audit lại**. Quyền triển khai do yêu cầu riêng ngày 23/10/2026; P2 a2 đã nghiệm thu local, không thay nghiệm thu P3. Chỉ thực thi trên kho synthetic/test. Giữ storage plan draft.2, manifest schema/framing/mutable_baseline đã chốt, L1/E1 profiles/rules và schemas nguyên byte.
+`dacn-s02 0.4.0a3`: **Đã nghiệm thu kỹ thuật P3 local/synthetic** theo [audit a3](acceptance/P3_AUDIT_REPORT.md) và [biên bản](acceptance/S02_2A_P3_ACCEPTANCE.json). P3-01/02 đã đóng; P1/P2 giữ nghiệm thu trước. Chỉ thực thi trên kho synthetic/test. Giữ storage plan draft.2, manifest schema/framing/mutable_baseline đã chốt, L1/E1 profiles/rules và schemas nguyên byte.
 
-Audit a1 phát hiện S02-2A-P3-01: init coi đích partial là fresh. a2 thêm reservation filesystem và khóa chung init/copy; chưa được auditor đóng finding hoặc nghiệm thu P3. Bàn giao a1 giữ nguyên [trạng thái lịch sử](../reports/s02-phase2/2a-p3-0.4.0a1-2026-10-23/START_HERE.md).
+Audit a1 phát hiện S02-2A-P3-01: init coi đích partial là fresh. a2 thêm reservation filesystem và khóa chung init/copy; a3 guard cả namespace/marker tự sinh bằng policy `writable`, loại source/aliases/links trước effects của copy mới và resume. Auditor a3 đã đóng cả hai findings và kiểm hồi quy fix 01. Bàn giao a1 giữ nguyên [trạng thái lịch sử](../reports/s02-phase2/2a-p3-0.4.0a1-2026-10-23/START_HERE.md).
 
 API `dacn_s02.migration.Migration(settings, source_state_dir)` nhận `Settings` có `state` là đích mới, protected/dataset/S01 roots và timeout như CLI cũ. Source, target, receipt phải ngoài protected roots/checkout, paths không alias; receipt ngoài hai stores, parent có sẵn. Không tự tạo parent tree hoặc reset đích tồn tại. API có `reviews=` để caller tin cậy cấp review bindings khi đối soát đích đã có E1 human_review; thiếu/sai binding bị từ chối, CLI không đọc review evidence từ JSON. Không lưu/xác thực review trong migration metadata. API `inspect`, `copy`, `reconcile`, `activate`, `lookup_migrated` đều yêu cầu `offline=True`: operator đã dừng toàn bộ writer cũ và giữ dừng đến khi chuyển cấu hình thủ công. Đây không phải fencing tự động.
 
@@ -23,7 +23,7 @@ Sau durable receipt, copy lấy `flock` exclusive trên inode thư mục cha hi�
 
 `Repository.initialize` lấy cùng lock trước mọi DB effects. Missing/version0 có marker bị từ chối; kho nonempty phải qua writable/full checks và, nếu có marker, phải là migration với binding khớp. CLI gọi `initialize(create_parent=True)` để tạo leaf bên trong lock; không mkdir leaf trước lock. Các API callers cũ giữ mặc định không tạo parent. Lock giữ qua commit/reopen; process death tự thả lock, marker vẫn còn. Khóa dùng chung parent nên có thể serialize init/copy các sibling stores; timeout giữ lỗi, không tự recovery.
 
-Cơ chế này áp dụng cho các tiến trình a2 cùng tuân thủ protocol. Không chống writer a1/SQL thô hoặc người dùng xóa marker, đổi parent inode/di chuyển directory. Partial a1 trước đây không có marker và không có metadata thì không thể phân biệt bằng bytes với fresh directory/DB rỗng: phải giữ quarantine/evidence, không chạy init và không tự retro-fit/repair. Các kho a1 committed/active vẫn qua checked metadata như trước. Không có migration operational hoặc cleanup trong lượt sửa này.
+Cơ chế này áp dụng cho các tiến trình a3 cùng tuân thủ protocol (giữ bảo vệ reservation của a2). Không chống writer a1/SQL thô hoặc người dùng xóa marker, đổi parent inode/di chuyển directory. Partial a1 trước đây không có marker và không có metadata thì không thể phân biệt bằng bytes với fresh directory/DB rỗng: phải giữ quarantine/evidence, không chạy init và không tự retro-fit/repair. Các kho a1 committed/active vẫn qua checked metadata như trước. Không có quyền migration operational; cleanup docs/tooling/tracking là thay đổi riêng, giữ nguyên payload và evidence.
 
 Copy parameter binding tất cả cột cũ của 17 bảng, JSON TEXT/BLOB không tái serialize; chỉ thêm profile L1. Một BEGIN IMMEDIATE chứa DDL2, registry, metadata/manifest và copy; kiểm raw equality, FK/integrity và toàn graph trước commit. Đích committed nhưng inactive; normal writer bị chặn. Reopen bằng connection existing-only đối soát cả ba IDs/root/profiles/manifest. Không thêm Run/event nghiệp vụ hoặc sửa lịch sử.
 
@@ -33,4 +33,4 @@ SOURCE_RECOVERY_REQUIRED chỉ dùng khi SQLite báo SQLITE_READONLY_ROLLBACK, c
 
 Giới hạn: local filesystem/runtime đã pin; không online migration, network filesystem, power-loss/hardware assurance, performance certification, chữ ký chống giả mạo, tự source recovery hoặc orchestration. SQLite read lock chặn commit writer trong lúc giữ lock, không cấm writer lấy RESERVED lock và không ngăn writer cũ chạy lại sau khi thả lock. Review/operator strings trong tests đều synthetic.
 
-Bằng chứng mới, wheel audit duy nhất, diff đúng dirty-state trước sửa và cách tái lập: [START_HERE](../reports/s02-phase2/2a-p3-fix01-0.4.0a2-2026-10-23/START_HERE.md).
+Bằng chứng mới, wheel audit duy nhất, diff đúng dirty-state trước sửa và cách tái lập: [START_HERE](../reports/s02-phase2/2a-p3-fix02-0.4.0a3-2026-10-23/START_HERE.md).

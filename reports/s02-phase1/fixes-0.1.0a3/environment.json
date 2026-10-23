@@ -1,8 +1,0 @@
-{
-  "python": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp/venv/bin/python",
-  "work": "/var/folders/6l/_0xtd5hs2dd4w7fzlqw14_zr0000gn/T/dacn-s02-a3-verify-utn6c8cp",
-  "created_fresh": true,
-  "build_input_copy_provenance": "build-input-provenance.json",
-  "s01": "Historical a6 wheel installed from unchanged dev lock",
-  "s02": "New a3 wheel non-editable"
-}

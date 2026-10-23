@@ -1,0 +1,10 @@
+{
+  "format": 1,
+  "filename": "evidence-2026-10-23.tar.gz",
+  "size": 195295587,
+  "sha256": "daabbc883bb841fd3738d18b1e82508823ab202fe56ff6108f5159f671167d01",
+  "inventory": "evidence-2026-10-23.inventory.json",
+  "inventory_sha256": "af4416bef0837f7698eee8dada17369cc10cd4a93e820f42127b276d01d6507c",
+  "members": 12893,
+  "uncompressed_file_bytes": 2267394570
+}

@@ -1,0 +1,10 @@
+{
+  "format": 1,
+  "filename": "bootstrap-macos-arm64-2026-10-23.tar.gz",
+  "size": 65353334,
+  "sha256": "06222091b5d518e194ba9a5da28f210ae9ed66096eca4ae9ae0def1fa2c87201",
+  "inventory": "bootstrap-macos-arm64-2026-10-23.inventory.json",
+  "inventory_sha256": "08f04ef12b58b531752efd90a937e12bac89c91f3d02b60d1e1c2e899ac17856",
+  "members": 1905,
+  "uncompressed_file_bytes": 119752005
+}

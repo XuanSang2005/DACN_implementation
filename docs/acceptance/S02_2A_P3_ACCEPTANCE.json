@@ -1,0 +1,144 @@
+{
+  "audit_at": "2026-10-23T13:07:27.152423+07:00",
+  "version": "0.4.0a3",
+  "status": "NGHIEM_THU_KY_THUAT_P3_LOCAL",
+  "technical_acceptance": true,
+  "scope": "2A-P3 offline local migration DB1 to DB2, synthetic fixtures, pinned macOS arm64 environment",
+  "wheel": "/Users/macbookpro/Documents/DACN_implementation/reports/s02-phase2/2a-p3-fix02-0.4.0a3-2026-10-23/release/dacn_s02-0.4.0a3-py3-none-any.whl",
+  "wheel_sha256": "fa50f818ae572d2139daeafb60de2f395b92adddce5c4e18cc4d9de8c3a95214",
+  "findings": [
+    {
+      "id": "S02-2A-P3-01",
+      "severity": "High",
+      "status": "CLOSED",
+      "closed_on": "0.4.0a2",
+      "regression_verified_on": "0.4.0a3"
+    },
+    {
+      "id": "S02-2A-P3-02",
+      "severity": "Medium",
+      "status": "CLOSED",
+      "closed_on": "0.4.0a3"
+    }
+  ],
+  "new_findings": [],
+  "tests": {
+    "four_p3": {
+      "c": {
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 11.689999999999998
+      },
+      "python": {
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 11.612000000000002
+      }
+    },
+    "reservation_regressions": {
+      "c": {
+        "tests": 77,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 21.13
+      },
+      "python": {
+        "tests": 77,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 21.451
+      }
+    },
+    "cli_policy_controls": {
+      "c": {
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 4.697
+      },
+      "python": {
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 6.121
+      }
+    },
+    "independent_boundaries": {
+      "c": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.694
+      },
+      "python": {
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.676
+      }
+    },
+    "full_s02": {
+      "c": {
+        "tests": 666,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 598.753
+      },
+      "python": {
+        "tests": 666,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 616.881
+      }
+    },
+    "full_s01": {
+      "c": {
+        "tests": 986,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 34.486
+      },
+      "python": {
+        "tests": 986,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 28.33
+      }
+    }
+  },
+  "package_payload_counts": {
+    "s01": 16,
+    "s02": 26
+  },
+  "implementation_edited": false,
+  "cleanup_performed": false,
+  "commit_or_push": false,
+  "operational_or_live_authorized": false,
+  "limitations": [
+    "Markerless/metadata-less a1 partial stores remain quarantined; no automatic init or repair",
+    "Cooperating a3 processes on pinned local filesystem; no guarantee for raw SQL, old executables, marker removal, parent inode replacement or relocation",
+    "No hardware power-loss, actual disk-full, network filesystem or performance certification",
+    "No operational migration/cutover, LLM/live, business validation or whole-S02 acceptance"
+  ],
+  "prior_baselines": {
+    "s01": "0.1.0a6 local",
+    "s02_phase1": "0.1.0a3 local",
+    "p1": "0.2.0a3 low-level local",
+    "p2": "0.3.0a2 local"
+  },
+  "next_step": "Repository cleanup for GitHub, separate reviewable change; user commits/pushes"
+}

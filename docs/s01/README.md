@@ -1,6 +1,6 @@
 # S01 — chỉ dẫn hiện hành
 
-Package **0.1.0a6**, [nghiệm thu kỹ thuật CLI local](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s01-phase4-0.1.0a6/S01_ACCEPTANCE.json); không xác nhận đúng nghiệp vụ. [Code/config](../../packages/s01/), [tests](../../packages/s01/tests/), [tools](../../packages/s01/tools/). Root pyproject không còn là package S01.
+Package **0.1.0a6**, [nghiệm thu kỹ thuật CLI local](../acceptance/S01_ACCEPTANCE.json); không xác nhận đúng nghiệp vụ. [Code/config](../../packages/s01/), [tests](../../packages/s01/tests/), [tools](../../packages/s01/tools/). Root pyproject không còn là package S01.
 
 Xem [hướng dẫn workspace](../../README.md) để cài wheel non-editable, build riêng và chạy hai backend. Namespace/CLI vẫn `dacn_s01`. Runner riêng: `python packages/s01/tools/run_checks.py --report-dir <thư mục mới>`; chạy bằng interpreter venv đã cài package, không PYTHONPATH src.
 

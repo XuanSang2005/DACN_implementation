@@ -1,7 +1,0 @@
-Processing ./s02/dist/dacn_s02-0.1.0a1-py3-none-any.whl
-Installing collected packages: dacn-s02
-  Attempting uninstall: dacn-s02
-    Found existing installation: dacn-s02 0.1.0a1
-    Uninstalling dacn-s02-0.1.0a1:
-      Successfully uninstalled dacn-s02-0.1.0a1
-Successfully installed dacn-s02-0.1.0a1
