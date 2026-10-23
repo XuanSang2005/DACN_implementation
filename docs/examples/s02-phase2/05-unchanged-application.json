@@ -8,8 +8,8 @@
     "meaning": "Các graph là projections của records/events và expected transitions; field amendment chưa được duyệt. Không import vào a3."
   },
   "contract_version": "s02/0.1.0-draft.3",
-  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
-  "amendment_proposal_version": "s02-phase2-amendment/0.1.0-draft.1",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.3",
+  "amendment_proposal_version": "s02-phase2-amendment/0.1.0-draft.2",
   "bindings": [
     {
       "name": "schema_input",

@@ -1,10 +1,14 @@
 # Addendum hẹp: application S01 cùng snapshot và kế thừa resolution
 
-**Trạng thái: proposed — đã phản hồi audit, chưa audit lại/chưa được duyệt implementation.**
+**Trạng thái: proposed — A1/A2 đã audit đạt ở mức thiết kế; chưa được duyệt implementation, schema/profile/migration còn cần chốt.**
 
-Phiên bản addendum `s02-phase2-amendment/0.1.0-draft.1`, ngày 21/10/2026; đi cùng [kế hoạch Đợt 2 draft.2](S02_PHASE2_IMPLEMENTATION_PLAN_PROPOSAL.md). Đây là đề nghị thay hai nhóm quy tắc, **không phải contract thay thế draft.3**, không được đưa vào a3 bằng cách chỉ thêm orchestrator. G3 capture/G4 ledger vẫn là đề xuất độc lập, không được giải quyết hoặc triển khai bởi addendum này.
+Phiên bản addendum `s02-phase2-amendment/0.1.0-draft.2`, ngày 21/10/2026; đi cùng [kế hoạch Đợt 2 draft.3](S02_PHASE2_IMPLEMENTATION_PLAN_PROPOSAL.md). Đây là đề nghị thay hai nhóm quy tắc, **không phải contract thay thế draft.3**, không được đưa vào a3 bằng cách chỉ thêm orchestrator. G3 capture/G4 ledger vẫn là đề xuất độc lập, không được giải quyết hoặc triển khai bởi addendum này.
 
 ## 1. Căn cứ và phạm vi
+
+**Kết luận hiện hành:** [audit draft.3 ngày 21/10/2026](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft3-2026-10-21/AUDIT_REPORT.md) đóng A2-R1/R2 và S02-P2-02 ở mức thiết kế; A1/G2 giữ kết luận trước. Các mục 2–3 dưới đây giữ nguyên bytes đã audit. [Đề xuất schema/profile/migration 2A](S02_PHASE2_2A_SCHEMA_MIGRATION_PROPOSAL.md) là tài liệu mới riêng, chưa được audit hoặc duyệt implementation.
+
+**Phản hồi audit draft.2:** [audit ngày 21/10/2026](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft2-2026-10-21/AUDIT_REPORT.md) đóng S02-P2-01 ở mức thiết kế và xác nhận G2 đã rõ. Mục 2 A1 giữ nguyên bytes; lần sửa plan draft.3/addendum draft.2 đã xử lý riêng A2-R1/R2. Đó là trạng thái trước audit draft.3; kết luận hiện hành ở đoạn trên. Chưa có quyền implementation.
 
 [Audit draft.1](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft1-2026-10-21/AUDIT_REPORT.md), [kết luận](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft1-2026-10-21/AUDIT_RESULT.json) và probes [C](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft1-2026-10-21/compatibility-c.json)/[Python](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft1-2026-10-21/compatibility-python.json) xác nhận hai P1. Các probes là thực chạy **của auditor**, không được chạy lại trong lượt viết addendum. Nghiệm thu kỹ thuật Đợt 1 a3 giữ nguyên phạm vi lịch sử.
 
@@ -80,7 +84,7 @@ Phương án khác: người dùng chọn interpretation mới points_to_existin
 
 Giữ `application_applied` gốc, Answer, Issue resolved gốc, Change, Model/AnalysisSet gốc nguyên byte. Event luôn trỏ **Issue gốc tại Model áp dụng**, tuyệt đối không retarget sang Model sau. Unique một application/Answer vẫn là sự thật lịch sử toàn kho.
 
-Thêm trường nullable `resolution_carry` vào Issue body, và status `resolution_pending_revalidation`. Đây là chứng cứ typed **nằm trong Issue successor bất biến**, tránh tạo một ứng dụng Answer mới hoặc hệ thống approval mới. Trường mới không phải Review, không cấp xác nhận nghiệp vụ/kiến trúc. Issue gốc trực tiếp có resolution_carry=null; Issue kế thừa có object non-null.
+Thêm trường nullable `resolution_carry` vào Issue body, và status `resolution_pending_revalidation`. Đây là chứng cứ typed **nằm trong Issue successor bất biến**, tránh tạo một ứng dụng Answer mới hoặc hệ thống approval mới. Trường mới không phải Review, không cấp xác nhận nghiệp vụ/kiến trúc. Issue gốc trực tiếp có resolution_carry=null; Issue kế thừa có object non-null. A2-R2 bổ sung nhánh REPLACEMENT ở §3.6: trường nullable resolution_replacement và status resolution_replaced. Hai object carry/replacement loại trừ nhau; DIRECT có cả hai null, CARRY chỉ carry non-null, REPLACEMENT chỉ replacement non-null. Không chọn DIRECT chỉ vì carry=null.
 
 `resolution_carry` đề xuất:
 
@@ -93,13 +97,13 @@ Thêm trường nullable `resolution_carry` vào Issue body, và status `resolut
 | `assessment` | `applicable`, `undetermined`, `not_applicable` |
 | `source_checks` | Mảng `{from_ref:SourceRef,to_ref:SourceRef|null,relation:equal_value|changed|removed,reason:Text}`; cover đủ nguồn phụ thuộc của resolution, không chọn bỏ nguồn thay đổi |
 | `scope_check` | `{from_scope:Scope,to_scope:Scope,element_pairs:[{from:ElementRef,to:ElementRef|null,relation:unchanged|modified|removed,reason:Text}],reason:Text}`; gồm Parts nếu có. Null to chỉ removed có căn cứ, không tự có nghĩa hết nghĩa vụ |
-| `evaluation` | `{method:structural_reuse|human_review,evaluator:Text,rule_version:Text,evidence_record_ids:ID[],reason:Text}`; method do code quản lý, evaluator thật (code version hoặc người review), không LLM tự nhận là user |
+| `evaluation` | `{method:structural_check|human_review,evaluator:Text,rule_version:Text,evidence_record_ids:ID[],reason:Text}`; method do code quản lý, evaluator thật (code version hoặc người review), không LLM tự nhận là user |
 
 Các refs lịch sử trong object này có mục đích rõ: origin chứng minh application, from/base chứng minh tuyến kế thừa hiện hành, checks chứng minh điều kiện còn phù hợp. `Trace` của Issue mới vẫn trỏ source của Model hiện tại; `answer_ids` và `resolution_event_refs` giữ nguyên đầy đủ từ predecessor, không xoá hoặc đổi event để qua validator. `resolution` giữ diễn giải kết quả lịch sử; trạng thái và assessment nói liệu kết quả ấy dùng được hiện tại.
 
-### 3.2 Invariants thay thế — hai nhánh tách biệt
+### 3.2 Invariants DIRECT/CARRY và phương pháp đánh giá
 
-**DIRECT (resolution_carry=null):** giữ kiểm a3: every resolution_event_ref là application_applied, resolved_issue_id đúng chính Issue, Change.new_model_id đúng model Issue, backlinks đủ, Answer/current lineage đúng, Issue được chọn trong result set của T3 application. Không chấp nhận prepared/consent làm evidence giải quyết. Issue resolved không có Answer vẫn giữ source-only rule cũ; không dùng A2 để hợp thức hóa business resolution không bằng chứng.
+**DIRECT (resolution_carry=null, resolution_replacement=null):** giữ kiểm a3: every resolution_event_ref là application_applied, resolved_issue_id đúng chính Issue, Change.new_model_id đúng model Issue, backlinks đủ, Answer/current lineage đúng, Issue được chọn trong result set của T3 application. Không chấp nhận prepared/consent làm evidence giải quyết. Issue resolved không có Answer vẫn giữ source-only rule cũ; không dùng A2 để hợp thức hóa business resolution không bằng chứng.
 
 **CARRY (object non-null):** không nới DIRECT thành “event thuộc một Issue bất kỳ cùng key”. Phải kiểm toàn chuỗi sau:
 
@@ -109,11 +113,24 @@ Các refs lịch sử trong object này có mục đích rõ: origin chứng min
 4. Model successor phải có parent=Model của from, Change khớp old/new, source contexts đúng; base set phải là head được CAS. Trên cùng Model chỉ cho Issue/set successor với change_id=null và base set hiện hành. Target Issue nằm trong result AnalysisSet cùng Model; không chọn Issue lịch sử thay nó. Giữ `changed_record_ids`, selection đủ key và affected closure.
 5. Source checks cover basis nguồn đã dùng để resolve, gồm Trace nguồn/nguồn đã kiểm của interpretation và nguồn của affected thao tác/quy tắc/nghĩa vụ. Issue/from/origin và Answer refs được dereference để lập basis, không chỉ tin danh sách LLM chọn. Mọi from_ref phải đúng nguồn predecessor/basis lịch sử được chỉ rõ; to_ref thuộc nguồn Model đích. So exact values có kiểu, nhưng equal text/pointer chưa đủ cho semantic scope. Reorder tiêu chí không nối index; cần correspondence có căn cứ hoặc undetermined. Nguồn mới thêm nghĩa vụ liên quan cũng phải xét, không chỉ source_checks các nguồn cũ.
 6. Scope evidence cover toàn affected/blocking và dependencies/Parts liên quan, kể cả phần tử mới ảnh hưởng; code tính reverse impact/closure và kiểm pairs không thiếu, không cắt action của Part. Common component không tự kéo cả model; thiếu graph/unknown scope không được suy độc lập.
-7. Assessment/applicability và status phải khớp bảng 3.3. Source/impact checks lặp khi mở kho; evidence IDs phải tồn tại và có đúng phiên bản liên quan. CAS trước publish bảo đảm đánh giá không stale. Không vì root resolved mà bỏ checks 5–6.
+7. Assessment/applicability và status của CARRY phải khớp bảng 3.3. REPLACEMENT có bảng riêng §3.6, không đánh assessment cũ thành applicable. Source/impact checks lặp khi mở kho; evidence IDs phải tồn tại và có đúng phiên bản liên quan. CAS trước publish bảo đảm đánh giá không stale. Không vì root resolved mà bỏ checks 5–6.
 
-**Giới hạn của tự động đánh giá:** `structural_reuse` chỉ được chọn khi cùng snapshot, basis values không đổi, phạm vi liên quan/refs/actions/rules/Parts cùng nội dung, không có edit ảnh hưởng hoặc phần tử mới chưa xét, predecessor đang applicable, và code có proof diff/closure đầy đủ theo rule version đã audit. Same ID/text đơn thuần không là proof. Khác snapshot hoặc thay nội dung liên quan ⇒ mặc định undetermined; LLM có thể đề xuất tác động nhưng **human_review** cần xem source diff, scope correspondence và evidence trước khi đánh applicable. Review này chỉ đánh giá tái dùng resolution, không thay consent S01 hoặc Review bước 9. Nếu câu trả lời cũ rõ ràng mâu thuẫn nguồn mới, assessment=not_applicable với căn cứ; giữ unresolved effect, không tự đặt câu trả lời thay thế.
+**A2-R1 — phương pháp kiểm tra khác kết luận tái sử dụng.** Đổi tên method đề xuất `structural_reuse` thành `structural_check`: code luôn được thực hiện kiểm tra trên nguồn hiện hành, kể cả snapshot đổi hoặc proof còn thiếu. Method nói ai/cách nào kiểm; `assessment` mới nói kết quả. Đây là sửa schema proposal, không rename dữ liệu đã lưu trong a3 (a3 chưa có field này).
+
+| Method | Assessment hợp lệ | Điều kiện và giới hạn |
+| --- | --- | --- |
+| structural_check | applicable | Cùng snapshot; basis values và toàn footprint/refs/actions/rules/Parts liên quan không đổi; predecessor applicable; không có phần tử mới/impact chưa xét; diff + reverse closure + source coverage đầy đủ theo rule version được audit. Chỉ đủ tất cả mới kết luận reuse |
+| structural_check | undetermined | Được ghi sau kiểm tra ở **bất kỳ snapshot** nào khi ít nhất một điều kiện applicable chưa chứng minh được: snapshot đổi, nguồn/footprint đổi, thiếu proof, predecessor pending hoặc unknown impact. Ghi điều kiện thất bại và phần chưa biết; giữ hold. Không bắt có reviewer |
+| structural_check | not_applicable | Không cho phép trong profile hẹp này: code ghi undetermined và chuyển đánh giá có người review, không tự kết luận quyền nghiệp vụ cũ hết hiệu lực |
+| human_review | applicable | Người review thực đã xem basis nguồn, correspondence/impact đầy đủ và chứng minh kết quả cũ vẫn trả lời nghĩa vụ hiện tại. Cho phép khác snapshot hoặc predecessor undetermined; không tự cấp bởi LLM. Không áp dụng nhánh này để lật một kết luận not_applicable đã có: dùng §3.6 |
+| human_review | undetermined | Review thực đã diễn ra nhưng người review ghi rõ chưa đủ căn cứ; vẫn chặn. Không dùng nhãn này nếu chưa có người review |
+| human_review | not_applicable | Người review thực chỉ ra căn cứ nguồn/phạm vi khiến kết quả cũ không còn áp dụng; bảo toàn root, chuyển luồng thay thế §3.6 |
+
+`evaluation.evaluator` của structural_check là code/rule version, reason ghi checks thiếu/thất bại; human_review là người thực hiện, reason là quyết định và căn cứ họ cung cấp qua thao tác người dùng, gắn đúng model/source/base set và evidence_record_ids. Code lưu nguyên quyết định, không tự điền tên người hoặc sinh câu “đã review”. Ví dụ dùng DEMO được ghi là giả định. Nếu không có human review thì không được chọn method này. Thiếu record/field bắt buộc, ref hỏng hoặc lineage sai vẫn reject; undetermined không hợp thức hóa graph lỗi. Proof còn thiếu phải được ghi rõ trong reason và giữ toàn phạm vi chưa chứng minh độc lập, không dựng chứng cứ giả để điền đủ bảng. Equal text/ID không đủ proof. Nguồn mới đổi quyền chưa đồng nghĩa code biết quyền đúng mới là gì. Quyết định tái dùng không thay consent S01 hoặc Review bước 9.
 
 ### 3.3 Trạng thái và phạm vi bị chặn
+
+Bảng này chỉ áp dụng CARRY; REPLACEMENT có bảng riêng ở §3.6.
 
 | Assessment | Issue.status | Hành vi |
 | --- | --- | --- |
@@ -123,18 +140,18 @@ Các refs lịch sử trong object này có mục đích rõ: origin chứng min
 
 Unknown impact: affected/blocking enumerate tất cả phần tử/Parts có thể bị ảnh hưởng ở Model mới; khi chưa xác định được, enumerate toàn Model và giữ source-level hold mở rộng qua mọi lần graph lớn lên. Scope rỗng không biểu diễn unknown. `resolution_pending_revalidation` phải được tính là blocker trong admission, model/mapping state, current set và gate handoff; không lọt qua chỉ vì enum khác open. Part blocked có thể trỏ Issue này sau amendment; entity liên quan giữ needs_reanalysis với Change/task, không giả một câu hỏi nghiệp vụ mới.
 
-Khi đánh giá lại có căn cứ, tạo Issue successor và AnalysisSet mới (hoặc Model/Change mới nếu sửa nội dung model), giữ origin/from lineage; **không thêm application_applied** cho Answer cũ. Chỉ nếu thật sự phát sinh câu hỏi nghiệp vụ mới từ thay đổi nguồn mới thì người dùng nhận câu hỏi có lý do/nguồn mới; không sinh câu hỏi để lách unique. Không đánh tasks hoàn tất chỉ vì status Issue đổi; tasks hoàn tất cần evidence theo version riêng.
+Từ undetermined, khi có căn cứ xác nhận resolution cũ vẫn đúng, tạo CARRY successor applicable và AnalysisSet mới (hoặc Model/Change mới nếu sửa nội dung model), giữ origin/from lineage; **không thêm application_applied** cho Answer cũ. Từ not_applicable, không dùng chuyển này để xóa blocker: đi nhánh REPLACEMENT §3.6, giữ nguyên kết luận hết hiệu lực. Chỉ nếu thật sự phát sinh câu hỏi nghiệp vụ mới từ thay đổi nguồn mới thì người dùng nhận câu hỏi có lý do/nguồn mới; không sinh câu hỏi để lách unique. Không đánh tasks hoàn tất chỉ vì status Issue đổi; tasks hoàn tất cần evidence theo version riêng.
 
 ### 3.4 Các resolver cần sửa tường minh sau khi được duyệt
 
 Không chỉ sửa `issue_resolution_target`:
 
-- Schema Issue: field/enum mới. DIRECT path giữ invariant cũ, CARRY path có validator riêng và lookup root chain.
-- `validate_set`: vẫn chọn Issue.model_id đúng Model hiện hành. Chỉ các field lịch sử **resolution_carry.origin_issue_id/from_issue_id/base_analysis_set_id** được resolve tới history với các checks 3.2; không bắt origin phải ở current set và cũng không bỏ kiểm current-selection cho các Issue refs khác.
+- Schema Issue: field/enum mới. DIRECT path giữ invariant cũ; CARRY/REPLACEMENT có validators riêng, không chạy direct event-target check lên Issue kế thừa/thay thế. Mỗi nhánh vẫn validate DIRECT root nguyên gốc. Method structural_check kiểm theo bảng §3.2; không còn structural_reuse trong extended profile mới.
+- `validate_set`: vẫn chọn Issue.model_id đúng Model hiện hành. Trong CARRY, chỉ các field lịch sử **resolution_carry.origin_issue_id/from_issue_id/base_analysis_set_id** được resolve tới history với các checks 3.2; không bắt origin phải ở current set và cũng không bỏ kiểm current-selection cho các Issue refs khác.
 - `validate_record` generic SourceRef/Scope/ElementRef: Trace thường vẫn pinned current Model. Riêng `resolution_carry.source_checks.from_ref`, `scope_check.from_scope` và element_pairs.from được kiểm theo predecessor/basis lịch sử; to refs theo Model hiện tại. Không nới mọi SourceRef để chấp nhận snapshot tùy ý.
 - `validate_change`, set/head inventory và builders: giữ all current keys qua model switch, source-only root cần logic riêng chứ không giả Answer carry. Change.source_record_ids trỏ predecessor/evidence; **Change.application_event_refs rỗng cho carry thuần**. Event gốc thuộc Change áp dụng gốc, không thêm backlink giả vào Change phân tích sau.
 - `scope`, pending state checks, Part blocked checks và task/admission readers: nhận status revalidation mới và propagation scope. Model pin Issue cũ được resolver theo key/current set xử lý như draft.3; không dùng status lịch sử để qua blocker hiện tại.
-- Recovery/checked reads phải validate DIRECT root + CARRY chain và chứng cứ đầy đủ, không chỉ validate shape object mới.
+- Recovery/checked reads phải validate DIRECT root + CARRY/REPLACEMENT chain và chứng cứ đầy đủ, không chỉ validate shape object mới. §3.6 chỉ rõ thêm history refs, current target selection và gate status cần sửa; application_pending_issue của Answer vẫn chỉ nhận open/answered_pending_application ở **key mới**, không cho apply Answer cũ lên pending-revalidation.
 
 ### 3.5 Ca cần chứng minh và phương án khác
 
@@ -151,11 +168,60 @@ Không chỉ sửa `issue_resolution_target`:
 
 Phương án thay thế: tách một record Resolution toàn cục rồi cho Issue trỏ tới nó. Có ưu điểm root identity riêng, nhưng thêm loại record/selection/migration và phải tái thể hiện toàn bộ evidence đã lưu; không cần cho hai finding hiện tại. Phương án chỉ giữ Q2 trong AS3 vi phạm current Model; xóa Answer/event hoặc tạo application thứ hai làm sai lịch sử, không chấp nhận. Inline carry giảm abstraction nhưng cần parser/validator/history refs rõ như 3.4; không phải vài dòng clone/rebind.
 
+### 3.6 A2-R2 — thay thế kết quả hết hiệu lực, giữ đủ keys và lịch sử
+
+**Khuyến nghị:** không tạo DIRECT root mới trên key cũ bằng cách xóa Answer/event refs. Khi đã có CARRY `not_applicable`, giữ kết luận đó và tạo Issue **key mới cho quyết định/nghĩa vụ hiện tại** với lý do nguồn thay đổi. Ví dụ key cũ hỏi quyền nhân viên theo S2; key mới hỏi chính sách cấp quyền sau thay đổi S3. Đây là câu hỏi mới do thay đổi nghiệp vụ, không tự mở lại câu hỏi cũ để né unique. Nếu nguồn hiện hành đã rõ và chỉ thiếu phân tích, key mới là analysis_omission giải quyết bằng nguồn/kiểm tra; không hỏi người dùng lại nội dung đã có.
+
+Old key luôn còn một successor được chọn trong AnalysisSet. Successor giữ nguyên `answer_ids`, `resolution_event_refs` và nội dung resolution lịch sử; chỉ thêm `resolution_replacement` để phân biệt “đã có lời giải thay thế cho nghĩa vụ hiện tại” với “lời giải cũ trở lại đúng”. `resolution_carry=null` ở nhánh này; bằng chứng carry not_applicable vẫn nằm nguyên trong `obsolete_issue_id`. Không tạo app cho key cũ.
+
+`resolution_replacement` đề xuất là object sau (null ở DIRECT/CARRY):
+
+| Field | Kiểu và quy tắc |
+| --- | --- |
+| origin_issue_id | DIRECT Issue gốc, cùng root của obsolete_issue_id; chứng minh Answer/application cũ |
+| obsolete_issue_id | CARRY Issue lịch sử có assessment=not_applicable do human_review; cố định cho chuỗi replacement này, truy lại đầy đủ checks/root |
+| from_issue_id, base_analysis_set_id | Predecessor **current cùng key cũ**, bằng supersedes_id, được set base chọn; CAS trên cả Model/set |
+| change_id | Change đúng parent/current Model khi đổi Model; null khi chỉ đổi Issue/set trên cùng Model |
+| replacement_issue_id | Issue **current ở result AnalysisSet**, cùng Model/session, key khác; đại diện quyết định/nghĩa vụ mới. Không dùng Issue lịch sử hoặc chính key cũ |
+| assessment | complete hoặc incomplete: nghĩa vụ hiện tại đã được thay thế đầy đủ hay chưa; không phải applicability của resolution cũ |
+| obligation_checks | Mảng `{old_ref:SourceRef,current_ref:SourceRef|null,disposition:replaced|removed,evidence_record_ids:ID[],reason:Text}`; đối chiếu đủ basis/criteria/nghĩa vụ cũ và phát hiện nghĩa vụ mới. Removed cần căn cứ nguồn mới và quyết định người review, không suy từ việc LLM bỏ sót |
+| scope_check | Cùng shape scope_check của carry: từ predecessor, tới Model hiện tại; cover toàn affected/blocking/Parts và reverse impact, không cắt action |
+| evaluation | Cùng shape evaluation; method structural_check hoặc human_review, evaluator/rule/evidence/reason gắn đúng base, nguồn và phạm vi |
+
+**Bảng transition của nhánh REPLACEMENT:**
+
+| Tiền đề / kết quả | Record được chọn ở key cũ | Key mới / chặn |
+| --- | --- | --- |
+| Old carry not_applicable, chưa có quyết định thay thế | Giữ CARRY pending, hoặc successor REPLACEMENT incomplete khi đã tạo target | Target open/pending nếu có; old hold giữ nguyên, không tự withdraw |
+| Đã có Answer mới nhưng chưa applied, chỉ prepared hoặc model chưa sửa | REPLACEMENT incomplete, status=resolution_pending_revalidation | Không release; unique Answer cũ vẫn applied=1, Answer mới applied=0 |
+| Target resolved đúng nguồn/model, coverage và việc tái phân tích liên quan đã đủ, được người review xác nhận thay thế | REPLACEMENT complete, status=resolution_replaced, blocking rỗng | Giữ affected cho audit. Chỉ bỏ hold của key cũ, các blockers/tasks khác vẫn xét bình thường |
+| Model tiếp theo chỉ thay phần độc lập | Tạo successor, target rebind theo current key/lineage; có proof coverage/closure đầy đủ thì structural_check được giữ complete | Không dùng target ID lịch sử. Nếu chưa chứng minh được thì incomplete + materialize lại hold |
+| Target lại pending/hết hiệu lực, nguồn/scope thay đổi hoặc thiếu evidence | REPLACEMENT incomplete + resolution_pending_revalidation | Giữ obsolete root bất biến và blocker hiện tại; không đánh Answer cũ applicable |
+
+**Điều kiện complete, kiểm nguyên tử trước publish và khi đọc lại:**
+
+1. Origin/obsolete/from đúng session, old issue_key và lineage; obsolete bằng from hoặc là ancestor của from và not_applicable đã có bằng chứng, không đổi text/status để tạo điều kiện. Successor giữ **bằng** answer_ids/resolution_event_refs của from. Root event vẫn trỏ root cũ, không backlink sang replacement Issue.
+2. Result set chọn đúng một Issue/key: cả old successor lẫn target mới và các keys cũ khác đều có mặt, cùng Model. Target khác key, có lý do câu hỏi/nghĩa vụ mới gắn nguồn và hiện hành, không giả key khác để né claim. Target complete phải là DIRECT resolved hoặc CARRY applicable hợp lệ; không chấp nhận target là REPLACEMENT để tránh vòng/chains tự chứng minh. Kiểm cycle cả lineage và quan hệ thay thế; incomplete cũng không được trỏ vòng hoặc thiếu record.
+3. Target đã giải quyết **toàn bộ** nghĩa vụ gây blocker cũ trong nguồn hiện tại. Obligation/scope checks phải cover text + từng criterion + rules/permissions/Parts và phần mới phát sinh; chỉ refs resolve hoặc đổi prose là không đủ. Target hẹp hơn ⇒ incomplete, giữ toàn vùng chưa chứng minh (không release một phần theo nhãn complete).
+4. Việc áp dụng quyết định phải hiện trong Model/actions/rules/mapping thuộc scope; mọi task reanalysis liên quan được chứng minh bằng current-model evidence và TaskAttestation theo contract. Không mutate task/Change lịch sử thành done. Task ngoài scope chưa xong vẫn chặn phần tương ứng. Khi source đổi, source switch và reanalysis completion là hai việc khác nhau.
+5. **Lần complete đầu tiên** hoặc source/scope/target meaning thay đổi cần human_review thật về quan hệ thay thế, với source diff, target resolution, coverage và task evidence. Đây là review chuyển nghĩa vụ, không Model Review bước 9; có thể nhận cùng thao tác người dùng trả lời nhưng chỉ ghi complete sau khi model/evidence đã hình thành và họ đã xem đúng bản. Structural_check được ghi incomplete bất cứ khi nào; chỉ được giữ complete từ predecessor complete trên cùng snapshot với target còn resolved/applicable, nghĩa/footprint không đổi và proof đầy đủ. Human_review chưa đủ căn cứ cũng trả incomplete. Không giả human_review để tự hoàn tất.
+6. Chỉ complete mới có status=resolution_replaced và blocking rỗng; incomplete có status=resolution_pending_revalidation và hold đầy đủ theo impact. Bảng CARRY §3.3 không áp lên REPLACEMENT. Admission/closure/current-key resolver phải hiểu ba nhánh; không bỏ blocker chỉ vì status không phải open. Thất bại CAS/kiểm tra ⇒ không publish successor/set/head mới.
+
+**Answer mới và nguồn mới:** tạo `Answer_new.issue_id=target_pending`, key mới; `supersedes_answer_id=null` khi khác key (không vi phạm answer_lineage bằng cách trỏ Answer cũ). Application hiện có chỉ nhận target open/answered_pending_application, tạo target DIRECT resolved, Model/Change/set và event mới đúng target. Unique tính **theo từng Answer**: Answer_old vẫn một application, Answer_new tối đa một application. Bảo toàn kiểm application_pending_issue/current-key/backlinks/claim; không mở rộng nó để apply lên old revalidation Issue. Nếu Answer_new đổi requirements, vẫn full input/diff/consent + checked S01 theo A1; không dùng human review replacement thay consent. Nếu chỉ nguồn đã có, dùng points_to_existing_source. Nếu không cần Answer vì nghĩa vụ đã rõ, target resolved source-only cần trace/evidence thật và human review quan hệ thay thế; không tạo Answer/event giả.
+
+**Thứ tự và recovery:** có thể (a) atomic T3 ứng dụng Answer mới và publish old successor incomplete; sau khi người review xem evidence, một command mới CAS cùng Model/AnalysisSet tạo old successor complete, hoặc (b) publish complete cùng T3 chỉ nếu người review đã xem/pin đúng toàn candidate/hash/base và mọi proof hoàn tất. Khuyến nghị (a) cho local đầu tiên. Khi thêm key mới hoặc đổi Model, old key vẫn giữ hold trong mọi checkpoint trung gian. Nếu S01 đã commit, recovery lookup đúng run như A1, không resend. Nếu T3 application mới đã commit nhưng replacement review chưa xong: lookup application_new, giữ incomplete, chỉ tiếp tục review; không apply Answer_new lần hai. Mất ACK sau complete: lookup đúng command/records. Hai reviewers/publishers cạnh tranh: một CAS thắng, bên còn lại stale, không rebase ngầm. Hai applications cùng Answer_new: unique/claim như cũ, không có đường khác qua retirement.
+
+**Kế thừa sau replacement:** mỗi successor kiểm lại target current/model/lineage và proof; obsolete/root vẫn cố định và giữ not_applicable ở lịch sử. Nếu target bị thay bởi một quyết định/key khác, không auto follow; explicit new replacement proof phải nối lịch sử target trước, đầy đủ coverage và human review. Target không còn đủ chứng cứ ⇒ incomplete/hold, không quay về coi resolution cũ đúng. Khi một nghĩa vụ bị bỏ khỏi source, complete cũng cần chứng cứ loại bỏ và human review; không tự xoá key khỏi AnalysisSet.
+
+**Phạm vi sửa validator/schema sau duyệt:** thêm field/status REPLACEMENT và nhánh discriminator theo hai object; typed history refs origin/obsolete/from/base cùng old side của checks được resolve lịch sử có kiểm; replacement_issue_id bắt buộc current trong result set. Generic issue refs khác giữ nguyên. Run/Change khi chỉ review set không tạo application; khi apply Answer mới Change.application_event_refs chỉ chứa event **mới**, event cũ vẫn thuộc Change cũ. Model/Part/task readers nhận resolution_replaced chỉ khi proof complete, revalidation luôn blocker. Extended schemas/profile phải bắt cả hai nullable fields; history thiếu field dùng legacy profile, không backfill bytes. Không sửa contract draft.3 trong lượt này.
+
+Phương án khác là root DIRECT mới cùng issue_key, tách active/historical Answer/event arrays. Không chọn vì phải đổi identity của các trường evidence hiện có và application target semantics rộng hơn. Nhánh replacement giữ root cũ và current-key selection nhưng thêm một field/trạng thái cùng proof coverage; đánh đổi này cần audit. [JSON 07](examples/s02-phase2/07-resolution-replacement.json) minh họa đầy đủ các checkpoint; đây chưa là ứng dụng đã chạy.
+
 ## 4. Version, lịch sử và migration đề xuất
 
 **Chưa thực thi migration hoặc đổi version.** Sau audit mới chốt contract/package/DB profile mới, tách với draft.3/a3. Đề xuất DB format mới có capability/profile marker để reader a3 từ chối kho chứa extended payloads, không diễn giải chúng như DB1. Nếu G4 về sau cũng đổi DB thì cần migration order cụ thể, không mặc nhiên gộp hai migrations chưa thiết kế.
 
-Khuyến nghị compatibility reader có **hai schema profiles rõ ràng**. Legacy payload thiếu observed_source_context_id hoặc resolution_carry được kiểm bằng rules draft.3 nguyên trạng; không insert mặc định vào bytes lịch sử. Extended application phải có field mới, extended Issue phải có resolution_carry (null cho DIRECT), không cho payload lai thiếu field rồi tự đoán. Legacy root application hợp lệ có thể là origin của carry mới sau full DIRECT validation; thiếu/sai evidence thì reject, không backfill approval.
+Khuyến nghị compatibility reader có **hai schema profiles rõ ràng**. Legacy payload thiếu observed_source_context_id hoặc resolution_carry được kiểm bằng rules draft.3 nguyên trạng; không insert mặc định vào bytes lịch sử. Extended application phải có field mới, extended Issue phải có cả resolution_carry và resolution_replacement (cả hai null cho DIRECT), không cho payload lai thiếu field rồi tự đoán. Legacy root application hợp lệ có thể là origin của carry mới sau full DIRECT validation; thiếu/sai evidence thì reject, không backfill approval.
 
 Migration đề xuất trên **bản sao mới**, explicit người dùng chọn, verify DB1 bằng a3 trước, giữ records/events/blobs/IDs/timestamps/hashes/receipt links/unique applied và links lịch sử nguyên byte; chỉ metadata cấu trúc/profile mới nếu đã được audit. Không tự sửa DB cũ, không reset/cập nhật Answer/Issue cũ. Readers mới cần kiểm mixed history theo profile, materialize/verify typed links mới chỉ cho records mới, và gate unknown status fail closed. Rollback vận hành về kho DB1 cũ chỉ an toàn nếu không mất writes mới; không hứa downgrade tự động. Chi tiết DDL/backup/reopen/migration fault thuộc batch sau có quyền implementation, phải review trước khi chạy.
 
@@ -163,4 +229,4 @@ Migration đề xuất trên **bản sao mới**, explicit người dùng chọn
 
 Giữ Answer/events/records bất biến; current Issue key + lineage; root event target/model/backlinks; AnalysisSet cùng Model, một current/key; unique application/Answer và active claim; paired CAS; Run failed/rejected/stale không publish; exact source/request/consent chain; không transaction xuyên S01/S02; lookup recovery không resend; requirements_switch snapshot khác; analysis_edit giữ Context; source refs không nối index xuyên revision; admission khác Review.
 
-Cần auditor review A1 field/branch/archival proof, A2 status/carry shape/history exceptions/blocker propagation, negative oracles và compatibility profile. Người dùng quyết định cho phép semantics amendment, migration scope và batch implementation; chưa có quyết định ấy. Ví dụ [05](examples/s02-phase2/05-unchanged-application.json) và [06](examples/s02-phase2/06-resolved-issue-carry-forward.json) là projections dùng field mới **không hợp a3**, có positive/negative expectations để audit. [Bảng phản hồi](S02_PHASE2_DRAFT2_AUDIT_RESPONSE.md) không tự ghi findings đã đóng.
+A1 đã đóng ở mức thiết kế theo audit draft.2; phần 2 được giữ nguyên. A2-R1/R2 và S02-P2-02 đã đóng ở mức thiết kế theo audit draft.3; không yêu cầu sửa lại semantics. Cần audit gói schema/profile/version/compatibility/migration cụ thể trước persistence/carry. Người dùng quyết định cho phép semantics amendment, migration scope và batch implementation; chưa có quyết định ấy. Ví dụ [05](examples/s02-phase2/05-unchanged-application.json) và [06](examples/s02-phase2/06-resolved-issue-carry-forward.json) là projections dùng field mới **không hợp a3**, có positive/negative expectations để audit. [Bảng phản hồi draft.3](S02_PHASE2_DRAFT3_AUDIT_RESPONSE.md) không tự ghi findings đã đóng.

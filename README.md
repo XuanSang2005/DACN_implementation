@@ -1,5 +1,7 @@
 # DACN implementation — S01 và S02
 
+Trạng thái hiện hành 23/10/2026: P1 `0.2.0a3` và P2 `0.3.0a2` đã nghiệm thu kỹ thuật local; findings P1 01–04 và P2 01/02 đã đóng theo [audit P2 a2](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-p2-0.3.0a2-2026-10-23-015238/AUDIT_REPORT.md). Người dùng giao riêng [P3 migration local](docs/S02_2A_P3_IMPLEMENTATION.md), `0.4.0a2`: **Đã sửa, chờ audit lại**. [Bàn giao mới](reports/s02-phase2/2a-p3-fix01-0.4.0a2-2026-10-23/START_HERE.md). Chỉ thử trên kho synthetic/test; không migration operational, 2B/2C hoặc live. Bàn giao cũ giữ nguyên trạng thái lịch sử.
+
 Code hiện hành nằm trong [`packages/s01/`](packages/s01/) và [`packages/s02/`](packages/s02/). Root là workspace, không phải package S01; không chạy `pip install .` ở root. Namespace, distribution và CLI không đổi.
 
 | Giai đoạn | Baseline / trạng thái | Căn cứ |

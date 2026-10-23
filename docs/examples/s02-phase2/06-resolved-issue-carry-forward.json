@@ -8,8 +8,8 @@
     "meaning": "Các graph là projections của records/events và expected transitions; field amendment chưa được duyệt. Không import vào a3."
   },
   "contract_version": "s02/0.1.0-draft.3",
-  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
-  "amendment_proposal_version": "s02-phase2-amendment/0.1.0-draft.1",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.3",
+  "amendment_proposal_version": "s02-phase2-amendment/0.1.0-draft.2",
   "bindings": [
     {
       "name": "a1_source_snapshot",
@@ -192,7 +192,8 @@
           "answer_ids": [
             "ANSWER"
           ],
-          "resolution_event_refs": []
+          "resolution_event_refs": [],
+          "resolution_replacement": null
         },
         "Q2": {
           "type": "issue",
@@ -240,7 +241,8 @@
             ],
             "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
             "issue_ids": []
-          }
+          },
+          "resolution_replacement": null
         },
         "Q3": {
           "type": "issue",
@@ -323,9 +325,9 @@
               "reason": "Chỉ sửa A-report độc lập; code kiểm toàn diff, source basis, closure và phần tử mới."
             },
             "evaluation": {
-              "method": "structural_reuse",
+              "method": "structural_check",
               "evaluator": "proposal-only carry-rule/1",
-              "rule_version": "carry-rule/1-proposed",
+              "rule_version": "carry-rule/2-proposed",
               "evidence_record_ids": [
                 "CH3",
                 "M2",
@@ -364,7 +366,8 @@
             ],
             "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
             "issue_ids": []
-          }
+          },
+          "resolution_replacement": null
         },
         "CH2": {
           "type": "change",
@@ -755,7 +758,8 @@
           "answer_ids": [
             "ANSWER"
           ],
-          "resolution_event_refs": []
+          "resolution_event_refs": [],
+          "resolution_replacement": null
         },
         "Q2": {
           "type": "issue",
@@ -803,7 +807,8 @@
             ],
             "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
             "issue_ids": []
-          }
+          },
+          "resolution_replacement": null
         },
         "Q3": {
           "type": "issue",
@@ -888,7 +893,7 @@
             "evaluation": {
               "method": "human_review",
               "evaluator": "DEMO REVIEWER (giả định)",
-              "rule_version": "carry-rule/1-proposed",
+              "rule_version": "carry-rule/2-proposed",
               "evidence_record_ids": [
                 "CH3",
                 "M2",
@@ -930,7 +935,8 @@
             ],
             "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
             "issue_ids": []
-          }
+          },
+          "resolution_replacement": null
         },
         "CH2": {
           "type": "change",
@@ -1341,7 +1347,8 @@
           "answer_ids": [
             "ANSWER"
           ],
-          "resolution_event_refs": []
+          "resolution_event_refs": [],
+          "resolution_replacement": null
         },
         "Q2": {
           "type": "issue",
@@ -1389,7 +1396,8 @@
             ],
             "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
             "issue_ids": []
-          }
+          },
+          "resolution_replacement": null
         },
         "Q3": {
           "type": "issue",
@@ -1472,15 +1480,15 @@
               "reason": "Phạm vi A-create/RULE-owner trực tiếp ảnh hưởng, không còn independent."
             },
             "evaluation": {
-              "method": "structural_reuse",
+              "method": "structural_check",
               "evaluator": "proposal-only carry-rule/1",
-              "rule_version": "carry-rule/1-proposed",
+              "rule_version": "carry-rule/2-proposed",
               "evidence_record_ids": [
                 "CH3",
                 "M2",
                 "M3"
               ],
-              "reason": "Code thấy source khác nên từ chối kết luận applicable; chưa có human review."
+              "reason": "Code kiểm S2→S3, phát hiện snapshot và quyền thay đổi: thiếu điều kiện kết luận applicable; ghi undetermined, chưa có human review."
             }
           },
           "affected": {
@@ -1516,7 +1524,8 @@
             ],
             "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
             "issue_ids": []
-          }
+          },
+          "resolution_replacement": null
         },
         "CH2": {
           "type": "change",
@@ -1710,6 +1719,1245 @@
         "answer_id": "ANSWER",
         "meaning": "Oracle fixture cho phạm vi câu hỏi quyền tạo, không tuyên bố cover mọi requirement của hệ thống."
       }
+    },
+    "same_snapshot_missing_proof": {
+      "snapshots": {
+        "S2": {
+          "spec_id": "SPEC-demo",
+          "revision": 2,
+          "input": {
+            "schema_version": "1.0.0",
+            "title": "Synthetic task",
+            "context": "Fixture thiết kế, không phải nghiệp vụ đã xác nhận.",
+            "actors": [
+              "Nhân viên"
+            ],
+            "functional_requirements": [
+              {
+                "id": "R-task",
+                "text": "Nhân viên được tạo phiếu và ghi người tạo.",
+                "priority": null,
+                "acceptance_criteria": [
+                  "Phiếu được lưu."
+                ]
+              }
+            ],
+            "non_functional_requirements": [],
+            "constraints": [],
+            "design_preferences": {
+              "metric_priorities": [
+                "response_time_p95",
+                "sustainable_throughput",
+                "cpu_utilisation",
+                "scaling_gain"
+              ]
+            },
+            "operating_conditions": {
+              "critical_scenarios": null,
+              "expected_load": null,
+              "peak_load": null,
+              "data_volume": null,
+              "growth": null,
+              "resource_budget": null
+            }
+          }
+        }
+      },
+      "source_contexts": {
+        "C2": {
+          "snapshot_id": "S2",
+          "note": "checked source projection, archive details outside projection"
+        }
+      },
+      "records": {
+        "ANSWER": {
+          "type": "answer",
+          "issue_id": "Q1",
+          "interpretation": "points_to_existing_source",
+          "existing_source_refs": [
+            {
+              "snapshot_id": "S2",
+              "input_pointer": "/functional_requirements/0/text"
+            }
+          ],
+          "text": "Giả định câu trả lời chỉ nguồn quyền tạo phiếu đã có."
+        },
+        "M1": {
+          "type": "model",
+          "revision": 1,
+          "parent_model_id": null,
+          "source_context_id": "C2"
+        },
+        "M2": {
+          "type": "model",
+          "revision": 2,
+          "parent_model_id": "M1",
+          "source_context_id": "C2",
+          "change_id": "CH2",
+          "created_by_run_id": "RUN-apply",
+          "elements": {
+            "A-create": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "rule_ids": [
+                "RULE-owner"
+              ]
+            },
+            "RULE-owner": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "text": "Quyền tạo phiếu theo R-task."
+            },
+            "A-report": {
+              "synthetic_independent": true,
+              "depends_on": []
+            }
+          }
+        },
+        "M3": {
+          "type": "model",
+          "revision": 3,
+          "parent_model_id": "M2",
+          "source_context_id": "C2",
+          "change_id": "CH3",
+          "created_by_run_id": "RUN-analysis",
+          "elements": {
+            "A-create": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "rule_ids": [
+                "RULE-owner"
+              ]
+            },
+            "RULE-owner": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "text": "Quyền tạo phiếu theo R-task."
+            },
+            "A-report": {
+              "synthetic_independent": true,
+              "depends_on": [],
+              "note": "Đổi nhãn chỉ trong fixture độc lập, không thêm quyền."
+            }
+          }
+        },
+        "AS1": {
+          "type": "analysis_set",
+          "model_id": "M1",
+          "revision": 1,
+          "issue_ids": [
+            "Q1"
+          ]
+        },
+        "AS2": {
+          "type": "analysis_set",
+          "model_id": "M2",
+          "revision": 1,
+          "issue_ids": [
+            "Q2"
+          ]
+        },
+        "AS3": {
+          "type": "analysis_set",
+          "model_id": "M3",
+          "revision": 1,
+          "issue_ids": [
+            "Q3"
+          ]
+        },
+        "Q1": {
+          "type": "issue",
+          "model_id": "M1",
+          "issue_key": "Q-key",
+          "supersedes_id": null,
+          "status": "answered_pending_application",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [],
+          "resolution_replacement": null
+        },
+        "Q2": {
+          "type": "issue",
+          "model_id": "M2",
+          "issue_key": "Q-key",
+          "supersedes_id": "Q1",
+          "status": "resolved",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [
+            {
+              "command_id": "CMD-apply",
+              "event_id": "E-root"
+            }
+          ],
+          "resolution_carry": null,
+          "affected": {
+            "model_id": "M2",
+            "element_ids": [
+              "A-create",
+              "RULE-owner"
+            ],
+            "mapping_part_ids": []
+          },
+          "blocking": {
+            "model_id": "M2",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "resolution": "Nguồn đã cung cấp quyền tạo phiếu; Answer được áp dụng tại M2.",
+          "trace": {
+            "origin": "explicit",
+            "source_refs": [
+              {
+                "snapshot_id": "S2",
+                "input_pointer": "/functional_requirements/0/text"
+              }
+            ],
+            "answer_refs": [
+              {
+                "answer_id": "ANSWER",
+                "pointer": "/text"
+              }
+            ],
+            "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
+            "issue_ids": []
+          },
+          "resolution_replacement": null
+        },
+        "Q3": {
+          "type": "issue",
+          "model_id": "M3",
+          "issue_key": "Q-key",
+          "supersedes_id": "Q2",
+          "status": "resolution_pending_revalidation",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [
+            {
+              "command_id": "CMD-apply",
+              "event_id": "E-root"
+            }
+          ],
+          "resolution_carry": {
+            "origin_issue_id": "Q2",
+            "from_issue_id": "Q2",
+            "base_analysis_set_id": "AS2",
+            "change_id": "CH3",
+            "assessment": "undetermined",
+            "source_checks": [
+              {
+                "from_ref": {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                },
+                "to_ref": {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                },
+                "relation": "equal_value",
+                "reason": "Cùng snapshot S2; toàn basis quyền tạo phiếu giữ nguyên."
+              }
+            ],
+            "scope_check": {
+              "from_scope": {
+                "model_id": "M2",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "to_scope": {
+                "model_id": "M3",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "element_pairs": [
+                {
+                  "from": {
+                    "model_id": "M2",
+                    "element_id": "A-create"
+                  },
+                  "to": {
+                    "model_id": "M3",
+                    "element_id": "A-create"
+                  },
+                  "relation": "unchanged",
+                  "reason": "Nội dung/refs và dependency footprint liên quan không đổi."
+                },
+                {
+                  "from": {
+                    "model_id": "M2",
+                    "element_id": "RULE-owner"
+                  },
+                  "to": {
+                    "model_id": "M3",
+                    "element_id": "RULE-owner"
+                  },
+                  "relation": "unchanged",
+                  "reason": "Nội dung/refs và dependency footprint liên quan không đổi."
+                }
+              ],
+              "reason": "Chỉ sửa A-report độc lập; code kiểm toàn diff, source basis, closure và phần tử mới."
+            },
+            "evaluation": {
+              "method": "structural_check",
+              "evaluator": "proposal-only carry-rule/1",
+              "rule_version": "carry-rule/2-proposed",
+              "evidence_record_ids": [
+                "CH3",
+                "M2",
+                "M3"
+              ],
+              "reason": "Cùng snapshot nhưng chưa có proof reverse impact đủ để kết luận A-report độc lập. Refs vẫn đầy đủ; code giữ hold."
+            }
+          },
+          "affected": {
+            "model_id": "M3",
+            "element_ids": [
+              "A-create",
+              "RULE-owner"
+            ],
+            "mapping_part_ids": []
+          },
+          "blocking": {
+            "model_id": "M3",
+            "element_ids": [
+              "A-create",
+              "RULE-owner"
+            ],
+            "mapping_part_ids": []
+          },
+          "resolution": "Nguồn đã cung cấp quyền tạo phiếu; Answer được áp dụng tại M2.",
+          "trace": {
+            "origin": "explicit",
+            "source_refs": [
+              {
+                "snapshot_id": "S2",
+                "input_pointer": "/functional_requirements/0/text"
+              }
+            ],
+            "answer_refs": [
+              {
+                "answer_id": "ANSWER",
+                "pointer": "/text"
+              }
+            ],
+            "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
+            "issue_ids": []
+          },
+          "resolution_replacement": null
+        },
+        "CH2": {
+          "type": "change",
+          "kind": "analysis_edit",
+          "base_model_id": "M1",
+          "new_model_id": "M2",
+          "old_source_context_id": "C2",
+          "new_source_context_id": "C2",
+          "source_record_ids": [
+            "ANSWER",
+            "Q1"
+          ],
+          "application_event_refs": [
+            {
+              "command_id": "CMD-apply",
+              "event_id": "E-root"
+            }
+          ]
+        },
+        "CH3": {
+          "type": "change",
+          "kind": "analysis_edit",
+          "base_model_id": "M2",
+          "new_model_id": "M3",
+          "old_source_context_id": "C2",
+          "new_source_context_id": "C2",
+          "source_record_ids": [
+            "Q2"
+          ],
+          "application_event_refs": [],
+          "operations": [
+            {
+              "kind": "replace",
+              "element_id": "A-report",
+              "reason": "Independent synthetic edit"
+            }
+          ],
+          "affected": {
+            "model_id": "M3",
+            "element_ids": [
+              "A-report"
+            ],
+            "mapping_part_ids": []
+          },
+          "reevaluate": [
+            {
+              "step": 2,
+              "scope": {
+                "model_id": "M3",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "status": "pending",
+              "reason": "Chưa chứng minh reverse impact của sửa phần được giả định độc lập.",
+              "evidence_record_ids": []
+            }
+          ]
+        },
+        "RUN-apply": {
+          "type": "run",
+          "command_id": "CMD-apply",
+          "source_context_id": "C2",
+          "base_model_id": "M1",
+          "base_analysis_set_id": "AS1",
+          "result_model_id": "M2",
+          "result_analysis_set_id": "AS2",
+          "status": "completed"
+        },
+        "RUN-analysis": {
+          "type": "run",
+          "command_id": "CMD-analysis",
+          "source_context_id": "C2",
+          "base_model_id": "M2",
+          "base_analysis_set_id": "AS2",
+          "result_model_id": "M3",
+          "result_analysis_set_id": "AS3",
+          "status": "completed"
+        }
+      },
+      "operations": {
+        "CMD-apply": {
+          "session_id": "SESSION",
+          "reserved_run_id": "RUN-apply",
+          "request": {
+            "kind": "apply_answer",
+            "answer_id": "ANSWER",
+            "issue_key": "Q-key",
+            "base_model_id": "M1",
+            "base_analysis_set_id": "AS1",
+            "source_context_id": "C2"
+          }
+        },
+        "CMD-analysis": {
+          "session_id": "SESSION",
+          "reserved_run_id": "RUN-analysis",
+          "request": {
+            "kind": "work",
+            "base_model_id": "M2",
+            "base_analysis_set_id": "AS2",
+            "source_context_id": "C2"
+          }
+        }
+      },
+      "events": {
+        "E-interpret": {
+          "command_id": "CMD-apply",
+          "kind": "interpretation_selected",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation": "points_to_existing_source",
+            "existing_source_refs": [
+              {
+                "snapshot_id": "S2",
+                "input_pointer": "/functional_requirements/0/text"
+              }
+            ],
+            "proposed_input": null,
+            "s01_request": null
+          }
+        },
+        "E-root": {
+          "command_id": "CMD-apply",
+          "kind": "application_applied",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation_event": {
+              "command_id": "CMD-apply",
+              "event_id": "E-interpret"
+            },
+            "consent_event": null,
+            "s01_observation_event": null,
+            "observed_source_context_id": null,
+            "change_id": "CH2",
+            "new_source_context_id": "C2",
+            "resolved_issue_id": "Q2"
+          }
+        }
+      },
+      "head_transitions": [
+        {
+          "base_pair": [
+            "M1",
+            "AS1"
+          ],
+          "new_pair": [
+            "M2",
+            "AS2"
+          ],
+          "application_event_id": "E-root"
+        },
+        {
+          "base_pair": [
+            "M2",
+            "AS2"
+          ],
+          "new_pair": [
+            "M3",
+            "AS3"
+          ],
+          "application_event_id": null
+        }
+      ],
+      "expected": {
+        "assessment": "undetermined",
+        "blocked": true,
+        "application_count": 1
+      },
+      "resolution_basis_oracle": {
+        "not_canonical_field": true,
+        "source_refs": [
+          {
+            "snapshot_id": "S2",
+            "input_pointer": "/functional_requirements/0/text"
+          }
+        ],
+        "related_elements": [
+          "A-create",
+          "RULE-owner"
+        ],
+        "answer_id": "ANSWER",
+        "meaning": "Oracle fixture cho phạm vi câu hỏi quyền tạo, không tuyên bố cover mọi requirement của hệ thống.",
+        "proof_complete": false
+      }
+    },
+    "pending_then_same_model_review": {
+      "snapshots": {
+        "S2": {
+          "spec_id": "SPEC-demo",
+          "revision": 2,
+          "input": {
+            "schema_version": "1.0.0",
+            "title": "Synthetic task",
+            "context": "Fixture thiết kế, không phải nghiệp vụ đã xác nhận.",
+            "actors": [
+              "Nhân viên"
+            ],
+            "functional_requirements": [
+              {
+                "id": "R-task",
+                "text": "Nhân viên được tạo phiếu và ghi người tạo.",
+                "priority": null,
+                "acceptance_criteria": [
+                  "Phiếu được lưu."
+                ]
+              }
+            ],
+            "non_functional_requirements": [],
+            "constraints": [],
+            "design_preferences": {
+              "metric_priorities": [
+                "response_time_p95",
+                "sustainable_throughput",
+                "cpu_utilisation",
+                "scaling_gain"
+              ]
+            },
+            "operating_conditions": {
+              "critical_scenarios": null,
+              "expected_load": null,
+              "peak_load": null,
+              "data_volume": null,
+              "growth": null,
+              "resource_budget": null
+            }
+          }
+        }
+      },
+      "source_contexts": {
+        "C2": {
+          "snapshot_id": "S2",
+          "note": "checked source projection, archive details outside projection"
+        }
+      },
+      "records": {
+        "ANSWER": {
+          "type": "answer",
+          "issue_id": "Q1",
+          "interpretation": "points_to_existing_source",
+          "existing_source_refs": [
+            {
+              "snapshot_id": "S2",
+              "input_pointer": "/functional_requirements/0/text"
+            }
+          ],
+          "text": "Giả định câu trả lời chỉ nguồn quyền tạo phiếu đã có."
+        },
+        "M1": {
+          "type": "model",
+          "revision": 1,
+          "parent_model_id": null,
+          "source_context_id": "C2"
+        },
+        "M2": {
+          "type": "model",
+          "revision": 2,
+          "parent_model_id": "M1",
+          "source_context_id": "C2",
+          "change_id": "CH2",
+          "created_by_run_id": "RUN-apply",
+          "elements": {
+            "A-create": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "rule_ids": [
+                "RULE-owner"
+              ]
+            },
+            "RULE-owner": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "text": "Quyền tạo phiếu theo R-task."
+            },
+            "A-report": {
+              "synthetic_independent": true,
+              "depends_on": []
+            }
+          }
+        },
+        "M3": {
+          "type": "model",
+          "revision": 3,
+          "parent_model_id": "M2",
+          "source_context_id": "C2",
+          "change_id": "CH3",
+          "created_by_run_id": "RUN-analysis",
+          "elements": {
+            "A-create": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "rule_ids": [
+                "RULE-owner"
+              ]
+            },
+            "RULE-owner": {
+              "source_refs": [
+                {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                }
+              ],
+              "text": "Quyền tạo phiếu theo R-task."
+            },
+            "A-report": {
+              "synthetic_independent": true,
+              "depends_on": [],
+              "note": "Đổi nhãn chỉ trong fixture độc lập, không thêm quyền."
+            }
+          }
+        },
+        "AS1": {
+          "type": "analysis_set",
+          "model_id": "M1",
+          "revision": 1,
+          "issue_ids": [
+            "Q1"
+          ]
+        },
+        "AS2": {
+          "type": "analysis_set",
+          "model_id": "M2",
+          "revision": 1,
+          "issue_ids": [
+            "Q2"
+          ]
+        },
+        "AS3": {
+          "type": "analysis_set",
+          "model_id": "M3",
+          "revision": 1,
+          "issue_ids": [
+            "Q3"
+          ]
+        },
+        "Q1": {
+          "type": "issue",
+          "model_id": "M1",
+          "issue_key": "Q-key",
+          "supersedes_id": null,
+          "status": "answered_pending_application",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [],
+          "resolution_replacement": null
+        },
+        "Q2": {
+          "type": "issue",
+          "model_id": "M2",
+          "issue_key": "Q-key",
+          "supersedes_id": "Q1",
+          "status": "resolved",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [
+            {
+              "command_id": "CMD-apply",
+              "event_id": "E-root"
+            }
+          ],
+          "resolution_carry": null,
+          "affected": {
+            "model_id": "M2",
+            "element_ids": [
+              "A-create",
+              "RULE-owner"
+            ],
+            "mapping_part_ids": []
+          },
+          "blocking": {
+            "model_id": "M2",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "resolution": "Nguồn đã cung cấp quyền tạo phiếu; Answer được áp dụng tại M2.",
+          "trace": {
+            "origin": "explicit",
+            "source_refs": [
+              {
+                "snapshot_id": "S2",
+                "input_pointer": "/functional_requirements/0/text"
+              }
+            ],
+            "answer_refs": [
+              {
+                "answer_id": "ANSWER",
+                "pointer": "/text"
+              }
+            ],
+            "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
+            "issue_ids": []
+          },
+          "resolution_replacement": null
+        },
+        "Q3": {
+          "type": "issue",
+          "model_id": "M3",
+          "issue_key": "Q-key",
+          "supersedes_id": "Q2",
+          "status": "resolution_pending_revalidation",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [
+            {
+              "command_id": "CMD-apply",
+              "event_id": "E-root"
+            }
+          ],
+          "resolution_carry": {
+            "origin_issue_id": "Q2",
+            "from_issue_id": "Q2",
+            "base_analysis_set_id": "AS2",
+            "change_id": "CH3",
+            "assessment": "undetermined",
+            "source_checks": [
+              {
+                "from_ref": {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                },
+                "to_ref": {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                },
+                "relation": "equal_value",
+                "reason": "Cùng snapshot S2; toàn basis quyền tạo phiếu giữ nguyên."
+              }
+            ],
+            "scope_check": {
+              "from_scope": {
+                "model_id": "M2",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "to_scope": {
+                "model_id": "M3",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "element_pairs": [
+                {
+                  "from": {
+                    "model_id": "M2",
+                    "element_id": "A-create"
+                  },
+                  "to": {
+                    "model_id": "M3",
+                    "element_id": "A-create"
+                  },
+                  "relation": "unchanged",
+                  "reason": "Nội dung/refs và dependency footprint liên quan không đổi."
+                },
+                {
+                  "from": {
+                    "model_id": "M2",
+                    "element_id": "RULE-owner"
+                  },
+                  "to": {
+                    "model_id": "M3",
+                    "element_id": "RULE-owner"
+                  },
+                  "relation": "unchanged",
+                  "reason": "Nội dung/refs và dependency footprint liên quan không đổi."
+                }
+              ],
+              "reason": "Chỉ sửa A-report độc lập; code kiểm toàn diff, source basis, closure và phần tử mới."
+            },
+            "evaluation": {
+              "method": "structural_check",
+              "evaluator": "proposal-only carry-rule/1",
+              "rule_version": "carry-rule/2-proposed",
+              "evidence_record_ids": [
+                "CH3",
+                "M2",
+                "M3"
+              ],
+              "reason": "Cùng snapshot nhưng chưa có proof reverse impact đủ để kết luận A-report độc lập. Refs vẫn đầy đủ; code giữ hold."
+            }
+          },
+          "affected": {
+            "model_id": "M3",
+            "element_ids": [
+              "A-create",
+              "RULE-owner"
+            ],
+            "mapping_part_ids": []
+          },
+          "blocking": {
+            "model_id": "M3",
+            "element_ids": [
+              "A-create",
+              "RULE-owner"
+            ],
+            "mapping_part_ids": []
+          },
+          "resolution": "Nguồn đã cung cấp quyền tạo phiếu; Answer được áp dụng tại M2.",
+          "trace": {
+            "origin": "explicit",
+            "source_refs": [
+              {
+                "snapshot_id": "S2",
+                "input_pointer": "/functional_requirements/0/text"
+              }
+            ],
+            "answer_refs": [
+              {
+                "answer_id": "ANSWER",
+                "pointer": "/text"
+              }
+            ],
+            "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
+            "issue_ids": []
+          },
+          "resolution_replacement": null
+        },
+        "CH2": {
+          "type": "change",
+          "kind": "analysis_edit",
+          "base_model_id": "M1",
+          "new_model_id": "M2",
+          "old_source_context_id": "C2",
+          "new_source_context_id": "C2",
+          "source_record_ids": [
+            "ANSWER",
+            "Q1"
+          ],
+          "application_event_refs": [
+            {
+              "command_id": "CMD-apply",
+              "event_id": "E-root"
+            }
+          ]
+        },
+        "CH3": {
+          "type": "change",
+          "kind": "analysis_edit",
+          "base_model_id": "M2",
+          "new_model_id": "M3",
+          "old_source_context_id": "C2",
+          "new_source_context_id": "C2",
+          "source_record_ids": [
+            "Q2"
+          ],
+          "application_event_refs": [],
+          "operations": [
+            {
+              "kind": "replace",
+              "element_id": "A-report",
+              "reason": "Independent synthetic edit"
+            }
+          ],
+          "affected": {
+            "model_id": "M3",
+            "element_ids": [
+              "A-report"
+            ],
+            "mapping_part_ids": []
+          },
+          "reevaluate": [
+            {
+              "step": 2,
+              "scope": {
+                "model_id": "M3",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "status": "pending",
+              "reason": "Chưa chứng minh reverse impact của sửa phần được giả định độc lập.",
+              "evidence_record_ids": []
+            }
+          ]
+        },
+        "RUN-apply": {
+          "type": "run",
+          "command_id": "CMD-apply",
+          "source_context_id": "C2",
+          "base_model_id": "M1",
+          "base_analysis_set_id": "AS1",
+          "result_model_id": "M2",
+          "result_analysis_set_id": "AS2",
+          "status": "completed"
+        },
+        "RUN-analysis": {
+          "type": "run",
+          "command_id": "CMD-analysis",
+          "source_context_id": "C2",
+          "base_model_id": "M2",
+          "base_analysis_set_id": "AS2",
+          "result_model_id": "M3",
+          "result_analysis_set_id": "AS3",
+          "status": "completed"
+        },
+        "Q4": {
+          "type": "issue",
+          "model_id": "M3",
+          "issue_key": "Q-key",
+          "supersedes_id": "Q3",
+          "status": "resolved",
+          "answer_ids": [
+            "ANSWER"
+          ],
+          "resolution_event_refs": [
+            {
+              "command_id": "CMD-apply",
+              "event_id": "E-root"
+            }
+          ],
+          "resolution_carry": {
+            "origin_issue_id": "Q2",
+            "from_issue_id": "Q3",
+            "base_analysis_set_id": "AS3",
+            "change_id": null,
+            "assessment": "applicable",
+            "source_checks": [
+              {
+                "from_ref": {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                },
+                "to_ref": {
+                  "snapshot_id": "S2",
+                  "input_pointer": "/functional_requirements/0/text"
+                },
+                "relation": "equal_value",
+                "reason": "Cùng snapshot S2; toàn basis quyền tạo phiếu giữ nguyên."
+              }
+            ],
+            "scope_check": {
+              "from_scope": {
+                "model_id": "M3",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "to_scope": {
+                "model_id": "M3",
+                "element_ids": [
+                  "A-create",
+                  "RULE-owner"
+                ],
+                "mapping_part_ids": []
+              },
+              "element_pairs": [
+                {
+                  "from": {
+                    "model_id": "M3",
+                    "element_id": "A-create"
+                  },
+                  "to": {
+                    "model_id": "M3",
+                    "element_id": "A-create"
+                  },
+                  "relation": "unchanged",
+                  "reason": "Nội dung/refs và dependency footprint liên quan không đổi."
+                },
+                {
+                  "from": {
+                    "model_id": "M3",
+                    "element_id": "RULE-owner"
+                  },
+                  "to": {
+                    "model_id": "M3",
+                    "element_id": "RULE-owner"
+                  },
+                  "relation": "unchanged",
+                  "reason": "Nội dung/refs và dependency footprint liên quan không đổi."
+                }
+              ],
+              "reason": "Chỉ sửa A-report độc lập; code kiểm toàn diff, source basis, closure và phần tử mới."
+            },
+            "evaluation": {
+              "method": "human_review",
+              "evaluator": "DEMO reviewer — giả định",
+              "rule_version": "carry-rule/2-proposed",
+              "evidence_record_ids": [
+                "Q3",
+                "M3",
+                "CH3"
+              ],
+              "reason": "Giả định reviewer đã kiểm đủ reverse impact và xác nhận sửa nhãn A-report không liên quan quyền; nguồn S2 không đổi, kết quả cũ còn áp dụng."
+            }
+          },
+          "affected": {
+            "model_id": "M3",
+            "element_ids": [
+              "A-create",
+              "RULE-owner"
+            ],
+            "mapping_part_ids": []
+          },
+          "blocking": {
+            "model_id": "M3",
+            "element_ids": [],
+            "mapping_part_ids": []
+          },
+          "resolution": "Nguồn đã cung cấp quyền tạo phiếu; Answer được áp dụng tại M2.",
+          "trace": {
+            "origin": "explicit",
+            "source_refs": [
+              {
+                "snapshot_id": "S2",
+                "input_pointer": "/functional_requirements/0/text"
+              }
+            ],
+            "answer_refs": [
+              {
+                "answer_id": "ANSWER",
+                "pointer": "/text"
+              }
+            ],
+            "rationale": "Nguồn quyền tạo phiếu và Answer gốc; applicability được đánh riêng.",
+            "issue_ids": []
+          },
+          "resolution_replacement": null
+        },
+        "AS3-reviewed": {
+          "type": "analysis_set",
+          "model_id": "M3",
+          "revision": 2,
+          "issue_ids": [
+            "Q4"
+          ]
+        },
+        "RUN-carry-review": {
+          "type": "run",
+          "command_id": "CMD-carry-review",
+          "source_context_id": "C2",
+          "base_model_id": "M3",
+          "base_analysis_set_id": "AS3",
+          "result_model_id": "M3",
+          "result_analysis_set_id": "AS3-reviewed",
+          "status": "completed"
+        }
+      },
+      "operations": {
+        "CMD-apply": {
+          "session_id": "SESSION",
+          "reserved_run_id": "RUN-apply",
+          "request": {
+            "kind": "apply_answer",
+            "answer_id": "ANSWER",
+            "issue_key": "Q-key",
+            "base_model_id": "M1",
+            "base_analysis_set_id": "AS1",
+            "source_context_id": "C2"
+          }
+        },
+        "CMD-analysis": {
+          "session_id": "SESSION",
+          "reserved_run_id": "RUN-analysis",
+          "request": {
+            "kind": "work",
+            "base_model_id": "M2",
+            "base_analysis_set_id": "AS2",
+            "source_context_id": "C2"
+          }
+        },
+        "CMD-carry-review": {
+          "session_id": "SESSION",
+          "reserved_run_id": "RUN-carry-review",
+          "request": {
+            "kind": "work",
+            "base_model_id": "M3",
+            "base_analysis_set_id": "AS3",
+            "source_context_id": "C2"
+          }
+        }
+      },
+      "events": {
+        "E-interpret": {
+          "command_id": "CMD-apply",
+          "kind": "interpretation_selected",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation": "points_to_existing_source",
+            "existing_source_refs": [
+              {
+                "snapshot_id": "S2",
+                "input_pointer": "/functional_requirements/0/text"
+              }
+            ],
+            "proposed_input": null,
+            "s01_request": null
+          }
+        },
+        "E-root": {
+          "command_id": "CMD-apply",
+          "kind": "application_applied",
+          "payload": {
+            "answer_id": "ANSWER",
+            "interpretation_event": {
+              "command_id": "CMD-apply",
+              "event_id": "E-interpret"
+            },
+            "consent_event": null,
+            "s01_observation_event": null,
+            "observed_source_context_id": null,
+            "change_id": "CH2",
+            "new_source_context_id": "C2",
+            "resolved_issue_id": "Q2"
+          }
+        }
+      },
+      "head_transitions": [
+        {
+          "base_pair": [
+            "M1",
+            "AS1"
+          ],
+          "new_pair": [
+            "M2",
+            "AS2"
+          ],
+          "application_event_id": "E-root"
+        },
+        {
+          "base_pair": [
+            "M2",
+            "AS2"
+          ],
+          "new_pair": [
+            "M3",
+            "AS3"
+          ],
+          "application_event_id": null
+        },
+        {
+          "base_pair": [
+            "M3",
+            "AS3"
+          ],
+          "new_pair": [
+            "M3",
+            "AS3-reviewed"
+          ],
+          "application_event_id": null
+        }
+      ],
+      "expected": {
+        "assessment": "applicable",
+        "old_application_count": 1,
+        "new_application_count": 0,
+        "human_review_is_hypothetical": true,
+        "resolution_recovered_only": true,
+        "other_tasks_not_automatically_complete": true
+      },
+      "resolution_basis_oracle": {
+        "not_canonical_field": true,
+        "source_refs": [
+          {
+            "snapshot_id": "S2",
+            "input_pointer": "/functional_requirements/0/text"
+          }
+        ],
+        "related_elements": [
+          "A-create",
+          "RULE-owner"
+        ],
+        "answer_id": "ANSWER",
+        "meaning": "Oracle fixture cho phạm vi câu hỏi quyền tạo, không tuyên bố cover mọi requirement của hệ thống.",
+        "proof_complete": false
+      }
     }
   },
   "scenarios": [
@@ -1785,6 +3033,33 @@
       "graph": "carry_applicable",
       "race": "AS2 đổi trước T3 carry",
       "expected": "Stale; Q3/AS3/M3 không publish, explicit reevaluate base mới."
+    },
+    {
+      "id": "A2-R1-same-source-missing-proof",
+      "graph": "same_snapshot_missing_proof",
+      "expectation": "structural_check/undetermined hợp lệ; không cần human review giả."
+    },
+    {
+      "id": "A2-R1-revalidation-exit",
+      "graph": "pending_then_same_model_review",
+      "expectation": "Q3 pending→Q4 applicable trên M3; AS successor, không application mới."
+    },
+    {
+      "id": "A2-R1-method-negatives",
+      "invalid_variants": [
+        {
+          "mutation": "structural_check/applicable khi snapshot đổi hoặc thiếu proof",
+          "expected": "reject"
+        },
+        {
+          "mutation": "structural_check/not_applicable",
+          "expected": "reject; dùng undetermined và review"
+        },
+        {
+          "mutation": "human_review khi không có thao tác reviewer thực",
+          "expected": "reject giả evidence"
+        }
+      ]
     }
   ],
   "graphs_are_independent_alternatives": true

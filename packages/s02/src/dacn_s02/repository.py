@@ -12,7 +12,10 @@ from uuid import uuid4
 
 from .codec_boundary import encode,decode
 from .errors import S02Error,require,storage_error
-from .storage_schema import APPLICATION_ID,DB_VERSION,DDL
+from .storage_schema import APPLICATION_ID,DB_VERSION,DDL,DDL1
+from .profiles import L1,E1,get_profile
+from . import store_profiles, reservation
+from .profile_graph import validate_graph
 from .validation import shape,valid_id,fields,typed_links,walk_schema,SCHEMA,validate_record
 from .s01_adapter import verify_archive
 
@@ -22,13 +25,14 @@ def timestamp(): return datetime.now(timezone.utc).isoformat(timespec="milliseco
 def record(kind,identity,body,created_at=None): return dict(type=kind,id=identity,created_at=created_at or timestamp(),body=body)
 
 class Repository:
-    def __init__(self,path,*,timeout=5.0,_hook=None,_ids=None,_clock=None):
+    def __init__(self,path,*,timeout=5.0,_hook=None,_ids=None,_clock=None,reviews=None):
         self.path=Path(path).resolve();self.timeout=timeout
+        self._reviews=dict(reviews or {})
         self._hook=_hook or (lambda point,connection:None)
         self._ids=_ids or (lambda:str(uuid4()));self._clock=_clock or timestamp
 
-    def _connect(self,create=False):
-        c=sqlite3.connect(self.path.as_uri()+('?mode=rwc' if create else '?mode=rw'),uri=True,autocommit=True,timeout=self.timeout)
+    def _connect(self,create=False,*,write=False):
+        c=sqlite3.connect(self.path.as_uri()+('?mode=rwc' if create else '?mode=rw' if write else '?mode=ro'),uri=True,autocommit=True,timeout=self.timeout)
         c.row_factory=sqlite3.Row
         try:
             c.execute('PRAGMA foreign_keys=ON');c.execute('PRAGMA synchronous=FULL')
@@ -38,20 +42,72 @@ class Repository:
 
     def _structure(self,c):
         require(c.execute('PRAGMA application_id').fetchone()[0]==APPLICATION_ID,'s02_database_identity')
-        require(c.execute('PRAGMA user_version').fetchone()[0]==DB_VERSION,'unsupported_database_version')
-        require(dict(c.execute("SELECT name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'"))==DDL,'s02_exact_ddl')
+        version=c.execute('PRAGMA user_version').fetchone()[0]
+        require(version in (1,DB_VERSION),'unsupported_database_version')
+        require(dict(c.execute("SELECT name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'"))==(DDL1 if version==1 else DDL),'s02_exact_ddl')
         require(c.execute('PRAGMA journal_mode').fetchone()[0]=='delete','sqlite_journal_delete')
+        return version
 
-    def initialize(self):
+    def _write_gate(self,c):
+        if self._structure(c)==1:
+            raise S02Error('MIGRATION_REQUIRED','persistence','DB1 is read-only; migration_required')
+        store_profiles.check(c,path=self.path,writable=True)
+
+    def assert_writable(self):
+        with self._read() as c:
+            self._write_gate(c);self._check(c)
+
+    @contextmanager
+    def _read_empty_or_existing(self):
+        c=None
+        try:
+            c=self._connect();c.execute('BEGIN');yield c
+        except S02Error:raise
+        except Exception as exc:
+            raise storage_error('Existing store initialization inspection refused') from exc
+        finally:
+            if c:
+                if c.in_transaction:c.execute('ROLLBACK')
+                c.close()
+
+    def initialize(self,*,operator='local-init',create_parent=False):
+        # CLI may create ancestors, but the destination leaf belongs inside guard.
+        if create_parent:self.path.parent.parent.mkdir(parents=True,exist_ok=True)
+        with reservation.guard(self.path.parent,self.timeout):
+            self._hook('init_guard_locked',None)
+            self._initialize_guarded(operator=operator,create_parent=create_parent)
+
+    def _initialize_guarded(self,*,operator,create_parent):
+        # Existing DB1 is inspected through mode=ro before any writable open.
+        if self.path.exists():
+            with self._read_empty_or_existing() as probe:
+                empty=not probe.execute('SELECT name FROM sqlite_master').fetchall() and probe.execute('PRAGMA user_version').fetchone()[0]==0 and probe.execute('PRAGMA application_id').fetchone()[0]==0
+                if not empty:
+                    self._write_gate(probe);self._check(probe)
+                    if reservation.reserved(self.path.parent):
+                        info=store_profiles.check(probe,path=self.path)
+                        if info['metadata']['origin_kind']!='migration':reservation.refuse()
+                        receipt=decode(reservation.read(self.path.parent))
+                        manifest=decode(info['metadata']['migration_manifest'])
+                        if (type(receipt) is not dict or receipt.get('receipt_version')!='s02-migration/1'
+                            or any(manifest.get(k)!=v for k,v in receipt.items() if k!='receipt_version')):
+                            reservation.refuse()
+                    return
+        if reservation.reserved(self.path.parent):reservation.refuse()
+        self._hook('before_fresh_init',None)
+        if create_parent:self.path.parent.mkdir(exist_ok=True)
         c=None
         try:
             c=self._connect(True);c.execute('BEGIN IMMEDIATE')
             if not c.execute('SELECT name FROM sqlite_master').fetchall() and c.execute('PRAGMA user_version').fetchone()[0]==0 and c.execute('PRAGMA application_id').fetchone()[0]==0:
                 for sql in DDL.values(): c.execute(sql)
                 c.execute(f'PRAGMA application_id={APPLICATION_ID}');c.execute(f'PRAGMA user_version={DB_VERSION}')
-            self._structure(c);c.execute('COMMIT')
+                store_profiles.seed_fresh(c,self._ids(),self._ids(),operator,self._clock())
+            self._write_gate(c);self._check(c);self._hook('before_init_commit',c)
+            c.execute('COMMIT');self._hook('after_init_commit',c)
         except Exception as exc:
             if c and c.in_transaction: c.execute('ROLLBACK')
+            if isinstance(exc,S02Error): raise
             raise storage_error('Database initialization refused or failed; no reset performed') from exc
         finally:
             if c: c.close()
@@ -60,7 +116,7 @@ class Repository:
     def _read(self):
         c=None
         try:
-            c=self._connect();self._structure(c);c.execute('BEGIN')
+            c=self._connect();c.execute('BEGIN');self._structure(c)
             yield c
         except S02Error as exc:
             if exc.error['stage']=='persistence' or exc.error['code'] in ('ANALYSIS_STALE','REVISION_MISMATCH'): raise
@@ -75,8 +131,9 @@ class Repository:
         """Reconcile an unacknowledged COMMIT using a new checked connection."""
         c=None;attempted=False;failure=None;result=None
         try:
-            c=self._connect();self._structure(c);self._hook('before_begin',c)
-            c.execute('BEGIN IMMEDIATE');self._hook('after_begin',c)
+            with self._read() as preflight:self._write_gate(preflight)
+            c=self._connect(write=True);self._hook('before_begin',c)
+            c.execute('BEGIN IMMEDIATE');self._write_gate(c);self._hook('after_begin',c)
             self._check(c);result=work(c);self._hook('after_insert',c);self._check(c)
             self._hook('before_commit',c);attempted=True;c.execute('COMMIT');self._hook('after_commit',c)
         except Exception as exc:
@@ -124,26 +181,33 @@ class Repository:
 
     def _put_records(self,c,session_id,records,blobs):
         for r in records:
-            shape(r);raw=encode(r);b=r['body'];i=r['id']
-            c.execute('INSERT INTO records VALUES (?,?,?,?,?,?)',(i,session_id,r['type'],r['created_at'],raw.decode('ascii'),digest(raw)))
+            shape(r,profile=E1);raw=encode(r);b=r['body'];i=r['id']
+            c.execute('INSERT INTO records VALUES (?,?,?,?,?,?,?)',(i,session_id,r['type'],r['created_at'],raw.decode('ascii'),digest(raw),E1))
             if r['type']=='model': c.execute('INSERT INTO models VALUES (?,?,?,?,?)',(i,session_id,int(b['revision']),b['parent_model_id'],b['source_context_id']))
             if r['type']=='analysis_set': c.execute('INSERT INTO analysis_sets VALUES (?,?,?,?)',(i,b['model_id'],int(b['revision']),b['parent_set_id']))
             if r['type']=='artifact':
                 require(i in blobs and type(blobs[i]) is bytes,'artifact_bytes_present')
                 c.execute('INSERT INTO artifacts VALUES (?,?,?,?,?)',(i,b['producer_run_id'],b['sha256'],int(b['byte_length']),blobs[i]))
-            self._links(c,i,fields(r),'record',write=True)
+            self._links(c,i,fields(r,profile=E1),'record',write=True)
+
+    def _command_write_profile(self,c,command_id):
+        row=c.execute('SELECT profile_id FROM operations WHERE command_id=?',(command_id,)).fetchone()
+        require(row is not None and row[0]==E1,'command_write_profile_e1')
+        return get_profile(row[0])
 
     def _put_stages(self,c,command_id,staged):
+        profile=self._command_write_profile(c,command_id)
         for item,raw in staged:
-            shape(item,'StagedBlob');require(item['command_id']==command_id,'staging_command')
+            shape(item,'StagedBlob',profile=profile);require(item['command_id']==command_id,'staging_command')
             require(type(raw) is bytes and digest(raw)==item['sha256'] and len(raw)==item['byte_length'],'staged_bytes')
             c.execute('INSERT INTO staged_blobs VALUES (?,?,?,?,?,?,?)',(command_id,item['blob_id'],item['media_type'],item['purpose'],item['sha256'],int(item['byte_length']),raw))
         self._hook('after_stage',c)
 
     def _put_event(self,c,event):
-        shape(event,'OperationEvent');raw=encode(event['payload'])
+        profile=self._command_write_profile(c,event['command_id'])
+        shape(event,'OperationEvent',profile=profile);raw=encode(event['payload'])
         c.execute('INSERT INTO operation_events VALUES (?,?,?,?,?,?,?)',(event['event_id'],event['command_id'],int(event['ordinal']),event['kind'],raw.decode('ascii'),digest(raw),event['payload'].get('answer_id')))
-        self._links(c,event['event_id'],walk_schema(event,SCHEMA['$defs'][event['kind']+'Event']),'event',write=True)
+        self._links(c,event['event_id'],walk_schema(event,profile.schema['$defs'][event['kind']+'Event'],profile=profile),'event',write=True)
         c.execute('UPDATE sessions SET sequence=sequence+1 WHERE session_id=(SELECT session_id FROM operations WHERE command_id=?)',(event['command_id'],))
 
     def _event(self,c,cmd,kind,payload,identity=None):
@@ -151,12 +215,12 @@ class Repository:
         return dict(event_id=identity or self._ids(),command_id=cmd,ordinal=ordinal,kind=kind,payload=payload)
 
     def prepare(self,operation,*,session_spec=None,staged=(),attempt_id=None,claim_from=None,reused_artifact_ids=()):
-        shape(operation,'Operation');cmd=operation['command_id'];request=operation['request']
+        shape(operation,'Operation',profile=E1);cmd=operation['command_id'];request=operation['request']
         def work(c):
             if session_spec is not None:
                 require(request['kind']=='start' and operation['session_id'] is not None,'initial_session_intent')
                 c.execute('INSERT INTO sessions VALUES (?,?,NULL,NULL,0)',(operation['session_id'],session_spec))
-            c.execute('INSERT INTO operations VALUES (?,?,?,?,?,?)',(cmd,operation['session_id'],operation['parent_command_id'],operation['reserved_run_id'],jtext(request),digest(encode(request))))
+            c.execute('INSERT INTO operations VALUES (?,?,?,?,?,?,?)',(cmd,operation['session_id'],operation['parent_command_id'],operation['reserved_run_id'],jtext(request),digest(encode(request)),E1))
             if request['kind']=='apply_answer':
                 aid=request['answer_id']
                 if c.execute("SELECT 1 FROM operation_events WHERE kind='application_applied' AND answer_id=?",(aid,)).fetchone():
@@ -220,6 +284,7 @@ class Repository:
         # Detached exact trees: no caller mutation while constructing final outcome.
         records=decode(encode(records));promotions=decode(encode(list(promotions)))
         def work(c):
+            self._command_write_profile(c,command_id)
             op=self._command(c,command_id)
             if op['state']=='finalized': return op['run']
             operation=op['operation'];runid=operation['reserved_run_id']
@@ -293,6 +358,98 @@ class Repository:
         return dict(operation=op,state=state,events=events,staged_blobs=stages,run=run)
 
     def _check(self,c):
+        if self._structure(c)==1: return self._check_legacy(c)
+        return self._check_db2(c)
+
+    def _check_db2(self,c):
+        """DB2 invariants, also used on an exact-DDL in-memory migration projection."""
+        store_profiles.check(c,path=self.path)
+        require(not c.execute('PRAGMA foreign_key_check').fetchall(),'foreign_key_check')
+        records={};owners={};blobs={};commands={};events={};stages={};record_profiles={};operation_profiles={}
+        for row in c.execute('SELECT * FROM records'):
+            raw=row['record_json'].encode('ascii');r=decode(raw);profile=get_profile(row['profile_id']);shape(r,profile=profile)
+            record_profiles[row['id']]=profile.profile_id
+            require(digest(raw)==row['sha256'] and (r['id'],r['type'],r['created_at'])==(row['id'],row['type'],row['created_at']),'record_columns_hash')
+            records[r['id']]=r;owners[r['id']]=row['session_id'];self._links(c,r['id'],fields(r,profile=profile),'record')
+        for row in c.execute('SELECT * FROM artifacts'):
+            r=records[row['record_id']];b=r['body'];raw=row['bytes']
+            require(r['type']=='artifact' and (b['producer_run_id'],b['sha256'],b['byte_length'])==(row['producer_run_id'],row['sha256'],row['byte_length']) and digest(raw)==b['sha256'] and len(raw)==b['byte_length'],'artifact_columns_hash')
+            blobs[r['id']]=raw
+        require(set(blobs)=={i for i,r in records.items() if r['type']=='artifact'},'artifact_inventory')
+        for row in c.execute('SELECT * FROM operations'):
+            profile=get_profile(row['profile_id']);operation_profiles[row['command_id']]=profile.profile_id
+            cmd=self._command(c,row['command_id']);op=cmd['operation'];shape(op,'Operation',profile=profile)
+            require(digest(row['request_json'].encode('ascii'))==row['sha256'],'operation_hash');commands[op['command_id']]=op
+            for e in cmd['events']:
+                shape(e,'OperationEvent',profile=profile);events[(e['command_id'],e['event_id'])]=e
+                self._links(c,e['event_id'],walk_schema(e,profile.schema['$defs'][e['kind']+'Event'],profile=profile),'event')
+        for row in c.execute('SELECT * FROM operation_events'):
+            e=events[row['command_id'],row['event_id']]
+            require(digest(row['payload_json'].encode('ascii'))==row['sha256'] and row['answer_id']==e['payload'].get('answer_id'),'event_columns_hash')
+        for row in c.execute('SELECT * FROM staged_blobs'):
+            item={k:row[k] for k in ('command_id','blob_id','media_type','purpose','sha256','byte_length')};shape(item,'StagedBlob',profile=operation_profiles[row['command_id']])
+            require(digest(row['bytes'])==row['sha256'] and len(row['bytes'])==row['byte_length'],'stage_hash')
+            stages[row['command_id'],row['blob_id']]={**item,'bytes':row['bytes']}
+        for row in c.execute('SELECT * FROM promotions'):
+            stage=stages[row['command_id'],row['blob_id']];artifact=records[row['artifact_id']]['body']
+            require(stage['bytes']==blobs[row['artifact_id']] and stage['purpose']==artifact['purpose'] and stage['media_type']==artifact['media_type'] and artifact['producer_run_id']==commands[row['command_id']]['reserved_run_id'],'promotion_exact_bytes')
+        snapshots=validate_graph(records=records,record_profiles=record_profiles,owners=owners,
+            commands=commands,operation_profiles=operation_profiles,events=events,stages=stages,blobs=blobs,reviews=self._reviews)
+        self._check_heads(c,records,owners,snapshots)
+        # New configuration artifacts name their own immutable profile/rules.
+        # Reused L1 artifacts retain their exact historical bytes.
+        descriptor=get_profile(E1).descriptor
+        for identity,raw in blobs.items():
+            if record_profiles[identity]==E1 and records[identity]['body']['purpose']=='config':
+                config=decode(raw)
+                require(type(config) is dict and config.get('profile_id')==E1 and
+                    all(config.get(k)==descriptor[k] for k in ('contract_version','rules_id')),'config_profile_binding')
+        claims={r['answer_id']:r['active_command_id'] for r in c.execute('SELECT * FROM application_heads')}
+        applications={i:o for i,o in commands.items() if o['request']['kind']=='apply_answer'}
+        require(set(claims)=={o['request']['answer_id'] for o in applications.values()},'application_claim_inventory')
+        for aid,active in claims.items():
+            lineage={i for i,o in applications.items() if o['request']['answer_id']==aid}
+            parents={o['parent_command_id'] for i,o in applications.items() if i in lineage}
+            require(lineage-parents=={active},'application_claim_latest')
+        declared={(e['command_id'],p['stage_ref']['blob_id'],p['artifact_id']) for e in events.values() if e['kind']=='finalized' for p in e['payload']['promotions']}
+        require(declared=={tuple(r) for r in c.execute('SELECT * FROM promotions')},'promotion_manifest')
+        for row in c.execute('SELECT * FROM application_heads'):
+            op=commands[row['active_command_id']];require(op['request'].get('answer_id')==row['answer_id'],'application_claim_identity')
+        self._check_review_selection(c,records)
+        return records,blobs,commands,events,stages
+
+    def _check_review_selection(self,c,records):
+        """DB2 selection is the unique tip of all L1+E1 history per bundle.
+
+        A revoked tip remains selected. Manifest mutable_baseline and timestamps
+        cannot substitute for this current inventory and connected-chain check.
+        DB1 continues through its pinned legacy verifier.
+        """
+        histories={}
+        for identity,review in records.items():
+            if review['type']=='review':
+                histories.setdefault(review['body']['bundle_id'],{})[identity]=review['body']['supersedes_review_id']
+        selected={row['bundle_id']:row['review_id'] for row in c.execute('SELECT * FROM active_reviews')}
+        require(set(selected)==set(histories),'active_review_inventory')
+        for bundle,parents in histories.items():
+            require(records[bundle]['type']=='bundle','active_review_binding')
+            children={};roots=[]
+            for identity,parent in parents.items():
+                if parent is None:roots.append(identity)
+                else:
+                    require(parent in parents and parent!=identity,'review_lineage_parent')
+                    require(parent not in children,'review_lineage_fork')
+                    children[parent]=identity
+            require(len(roots)==1,'review_lineage_root')
+            seen=set();tip=roots[0]
+            while True:
+                require(tip not in seen,'review_lineage_cycle');seen.add(tip)
+                if tip not in children:break
+                tip=children[tip]
+            require(seen==set(parents),'review_lineage_connected')
+            require(selected[bundle]==tip,'active_review_latest')
+
+    def _check_legacy(self,c):
         require(not c.execute('PRAGMA foreign_key_check').fetchall(),'foreign_key_check')
         records={};owners={};blobs={};commands={};events={};stages={}
         for row in c.execute('SELECT * FROM records'):
@@ -401,3 +558,49 @@ class Repository:
                 reviewid=r['id'] if r['type']=='review' else b['review_id']
                 require(active is not None and active[0]==reviewid and records[reviewid]['body']['decision']!='revoked','active_review_required')
             return r
+
+    def store_info(self):
+        """Authoritative identity; DB1 has no fabricated store UUID."""
+        with self._read() as c:
+            self._check(c)
+            if self._structure(c)==1: return dict(db_version=1,profile_id=L1,store_id=None,activation=None)
+            info=store_profiles.check(c,path=self.path)
+            return dict(db_version=2,**info)
+
+    def lookup_record(self,identity,*,raw=False):
+        with self._read() as c:
+            records=self._check(c)[0]
+            if identity not in records:return None
+            row=c.execute('SELECT * FROM records WHERE id=?',(identity,)).fetchone()
+            profile=row['profile_id'] if self._structure(c)==2 else L1
+            return dict(profile_id=profile,record=row['record_json'].encode('ascii') if raw else records[identity])
+
+    def lookup_command(self,command_id):
+        with self._read() as c:
+            self._check(c);cmd=self._command(c,command_id)
+            if cmd is None:return None
+            row=c.execute('SELECT * FROM operations WHERE command_id=?',(command_id,)).fetchone()
+            profile=row['profile_id'] if self._structure(c)==2 else L1
+            return dict(profile_id=profile,**cmd)
+
+    def lookup_event(self,command_id,event_id,*,raw=False):
+        with self._read() as c:
+            events=self._check(c)[3];event=events.get((command_id,event_id))
+            if event is None:return None
+            profile=c.execute('SELECT profile_id FROM operations WHERE command_id=?',(command_id,)).fetchone()[0] if self._structure(c)==2 else L1
+            if raw:event=c.execute('SELECT payload_json FROM operation_events WHERE event_id=?',(event_id,)).fetchone()[0].encode('ascii')
+            return dict(profile_id=profile,event=event)
+
+    def lookup_stage(self,command_id,blob_id):
+        with self._read() as c:
+            stages=self._check(c)[4];stage=stages.get((command_id,blob_id))
+            if stage is None:return None
+            profile=c.execute('SELECT profile_id FROM operations WHERE command_id=?',(command_id,)).fetchone()[0] if self._structure(c)==2 else L1
+            return dict(profile_id=profile,stage=stage)
+
+    def raw_operation(self,command_id):
+        with self._read() as c:
+            self._check(c)
+            row=c.execute('SELECT * FROM operations WHERE command_id=?',(command_id,)).fetchone()
+            if row is None:return None
+            return dict(profile_id=row['profile_id'] if self._structure(c)==2 else L1,request_json=row['request_json'].encode('ascii'))

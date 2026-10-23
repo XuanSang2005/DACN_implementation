@@ -1,0 +1,203 @@
+{
+  "sessions": {
+    "columns": [
+      "session_id",
+      "spec_id",
+      "head_model_id",
+      "head_analysis_set_id",
+      "sequence"
+    ],
+    "primary_key": [
+      "session_id"
+    ]
+  },
+  "records": {
+    "columns": [
+      "id",
+      "session_id",
+      "type",
+      "created_at",
+      "record_json",
+      "sha256"
+    ],
+    "primary_key": [
+      "id"
+    ]
+  },
+  "models": {
+    "columns": [
+      "record_id",
+      "session_id",
+      "revision",
+      "parent_id",
+      "source_context_id"
+    ],
+    "primary_key": [
+      "record_id"
+    ]
+  },
+  "analysis_sets": {
+    "columns": [
+      "record_id",
+      "model_id",
+      "revision",
+      "parent_set_id"
+    ],
+    "primary_key": [
+      "record_id"
+    ]
+  },
+  "artifacts": {
+    "columns": [
+      "record_id",
+      "producer_run_id",
+      "sha256",
+      "byte_length",
+      "bytes"
+    ],
+    "primary_key": [
+      "record_id"
+    ]
+  },
+  "operations": {
+    "columns": [
+      "command_id",
+      "session_id",
+      "parent_command_id",
+      "reserved_run_id",
+      "request_json",
+      "sha256"
+    ],
+    "primary_key": [
+      "command_id"
+    ]
+  },
+  "staged_blobs": {
+    "columns": [
+      "command_id",
+      "blob_id",
+      "media_type",
+      "purpose",
+      "sha256",
+      "byte_length",
+      "bytes"
+    ],
+    "primary_key": [
+      "command_id",
+      "blob_id"
+    ]
+  },
+  "operation_events": {
+    "columns": [
+      "event_id",
+      "command_id",
+      "ordinal",
+      "kind",
+      "payload_json",
+      "sha256",
+      "answer_id"
+    ],
+    "primary_key": [
+      "event_id"
+    ]
+  },
+  "promotions": {
+    "columns": [
+      "command_id",
+      "blob_id",
+      "artifact_id"
+    ],
+    "primary_key": [
+      "command_id",
+      "blob_id"
+    ]
+  },
+  "application_heads": {
+    "columns": [
+      "answer_id",
+      "active_command_id"
+    ],
+    "primary_key": [
+      "answer_id"
+    ]
+  },
+  "active_reviews": {
+    "columns": [
+      "bundle_id",
+      "review_id"
+    ],
+    "primary_key": [
+      "bundle_id"
+    ]
+  },
+  "record_links": {
+    "columns": [
+      "owner_id",
+      "role",
+      "target_id"
+    ],
+    "primary_key": [
+      "owner_id",
+      "role"
+    ]
+  },
+  "record_event_links": {
+    "columns": [
+      "owner_id",
+      "role",
+      "command_id",
+      "event_id"
+    ],
+    "primary_key": [
+      "owner_id",
+      "role"
+    ]
+  },
+  "record_stage_links": {
+    "columns": [
+      "owner_id",
+      "role",
+      "command_id",
+      "blob_id"
+    ],
+    "primary_key": [
+      "owner_id",
+      "role"
+    ]
+  },
+  "event_record_links": {
+    "columns": [
+      "owner_id",
+      "role",
+      "target_id"
+    ],
+    "primary_key": [
+      "owner_id",
+      "role"
+    ]
+  },
+  "event_event_links": {
+    "columns": [
+      "owner_id",
+      "role",
+      "command_id",
+      "event_id"
+    ],
+    "primary_key": [
+      "owner_id",
+      "role"
+    ]
+  },
+  "event_stage_links": {
+    "columns": [
+      "owner_id",
+      "role",
+      "command_id",
+      "blob_id"
+    ],
+    "primary_key": [
+      "owner_id",
+      "role"
+    ]
+  }
+}

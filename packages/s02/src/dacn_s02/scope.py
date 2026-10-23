@@ -1,6 +1,7 @@
 """Finite fixed-point scope algebra (§9.1), not a business review workflow."""
 from dataclasses import dataclass
 from .errors import S02Error, require
+from .profiles import L1, blocking_statuses
 from .validation import COLLECTIONS, index_model, scope_sets, subset
 
 
@@ -87,7 +88,7 @@ def closure(model, seed, choices=()):
 
 
 def permitted_scope(model, requested, accepted, *, current_analysis_set_id, reviewed_analysis_set_id,
-                    issues=(), pending_tasks=(), conditions=(), choices=()):
+                    issues=(), pending_tasks=(), conditions=(), choices=(), profile=L1):
     """Pure gate result. Does not create Review/Handoff or prove renderer gates.
 
     Caller supplies current selected Issues and checked task attestations. The
@@ -117,7 +118,7 @@ def permitted_scope(model, requested, accepted, *, current_analysis_set_id, revi
         if not c.action_ids: failures.add("NO_FUNCTIONAL_SCOPE")
         if any(parts[p]["assignment"]!="proposed" for p in ps): failures.add("BLOCKED_SCOPE")
         if any(elements[e]["state"] in ("needs_clarification","needs_reanalysis") for e in es): failures.add("NEEDS_REANALYSIS")
-        blocked=[i["body"]["blocking"] for i in issues if i["body"]["status"] in ("open","answered_pending_application")]
+        blocked=[i["body"]["blocking"] for i in issues if i["body"]["status"] in blocking_statuses(profile)]
         blocked += [t["scope"] for t in pending_tasks if t["status"]=="pending"]
         blocked += [c["scope"] for c in conditions if c["blocking"]]
         for s in blocked:

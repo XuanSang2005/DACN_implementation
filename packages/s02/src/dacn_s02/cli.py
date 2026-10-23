@@ -19,24 +19,41 @@ def main(argv=None):
     start.add_argument('--expect-snapshot');start.add_argument('--receipt',required=True)
     show=sub.add_parser('show-command');group=show.add_mutually_exclusive_group(required=True);group.add_argument('--receipt');group.add_argument('--id')
     show=sub.add_parser('show-record');show.add_argument('--id',required=True)
+    for name in ('migration-inspect','migration-copy','migration-reconcile','migration-activate','lookup-migrated'):
+        mig=sub.add_parser(name);mig.add_argument('--source-state-dir',required=True)
+        mig.add_argument('--offline-confirmed',action='store_true',help='All old writers stopped and kept stopped until manual cutover')
+        if name!='migration-inspect':mig.add_argument('--migration-receipt',required=True)
+        if name=='migration-copy':mig.add_argument('--resume',action='store_true')
+        if name=='migration-activate':
+            mig.add_argument('--confirm-activation',action='store_true');mig.add_argument('--operator',required=True)
+        if name=='lookup-migrated':mig.add_argument('--receipt',required=True)
     args=parser.parse_args(argv);cmd=None
     try:
         s=settings(args.config);check_store(s);repo=Repository(s.state/'s02.sqlite3',timeout=s.timeout/1000)
         result=None;record_ids=[];status='completed';exit_code=0
-        if args.command=='init':
-            s.state.mkdir(parents=True,exist_ok=True);check_store(s);repo.initialize()
+        if args.command.startswith('migration-') or args.command=='lookup-migrated':
+            from .migration import Migration
+            migration=Migration(s,args.source_state_dir);kw=dict(offline=args.offline_confirmed)
+            if args.command=='migration-inspect':result=migration.inspect(**kw)
+            elif args.command=='migration-copy':result=migration.copy(args.migration_receipt,resume=args.resume,**kw)
+            elif args.command=='migration-reconcile':result=migration.reconcile(args.migration_receipt,**kw)
+            elif args.command=='migration-activate':result=migration.activate(args.migration_receipt,confirm=args.confirm_activation,operator=args.operator,**kw)
+            else:result=migration.lookup_migrated(args.receipt,args.migration_receipt,**kw)
+        elif args.command=='init':
+            repo.initialize(create_parent=True)
         elif args.command=='start':
-            repo.verify()
+            repo.assert_writable()
             if args.store_key not in s.stores: raise storage_error('Unknown S01 store alias')
-            service=Service(repo);cmd=service.allocate_command_id();write_receipt(s,args.receipt,cmd)
+            service=Service(repo);cmd=service.allocate_command_id();write_receipt(s,args.receipt,cmd,store_id=repo.store_info()['metadata']['store_id'])
             result=service.start(s.stores[args.store_key],args.store_key,args.s01_run_id,expected_snapshot_id=args.expect_snapshot,command_id=cmd)
             record_ids=[result['run_id'],result['source_context_id']]
         elif args.command=='show-command':
-            cmd=read_receipt(s,args.receipt)['command_id'] if args.receipt else args.id
-            result=repo.get_command(cmd)
+            info=repo.store_info();store_id=info.get('metadata',{}).get('store_id')
+            cmd=read_receipt(s,args.receipt,store_id=store_id)['command_id'] if args.receipt else args.id
+            result=repo.lookup_command(cmd)
             if result: record_ids=[result['run']['id']] if result['run'] else []
         else:
-            result=repo.get_record(args.id);record_ids=[args.id] if result else []
+            result=repo.lookup_record(args.id);record_ids=[args.id] if result else []
         if args.command.startswith('show-') and result is None: status='not_found';exit_code=4
         output=dict(command_id=cmd,status=status,record_ids=record_ids,errors=[])
         if result is not None: output['result']=result

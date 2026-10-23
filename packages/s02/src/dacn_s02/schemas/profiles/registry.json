@@ -1,0 +1,24 @@
+[
+  {
+    "profile_id": "s02-profile/legacy-a3",
+    "contract_version": "s02/0.1.0-draft.3",
+    "rules_id": "s02-rules/legacy-a3",
+    "required_capabilities": [
+      "foundation-draft3"
+    ],
+    "schema_sha256": "dd32824ab03c5e4d5faae3eb3888bdea3cacd5ba4735a4a5df19416b024f70b7"
+  },
+  {
+    "profile_id": "s02-profile/a1a2-v1",
+    "contract_version": "s02/0.1.0-draft.4",
+    "rules_id": "s02-rules/a1a2-v1",
+    "required_capabilities": [
+      "foundation-draft3",
+      "observed-s01-context-v1",
+      "issue-carry-v1",
+      "issue-replacement-v1",
+      "typed-history-refs-v1"
+    ],
+    "schema_sha256": "bd8eb8e838b709edfa6f5ac3d710fb5e3414985270cad35f5aa86acf7f5ebf6d"
+  }
+]

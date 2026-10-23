@@ -8,6 +8,7 @@ import re
 from jsonschema import Draft202012Validator, FormatChecker, validators
 from .codec_boundary import encode
 from .errors import S02Error, require
+from .profiles import L1, E1, get_profile, owner_profiles, blocking_statuses
 
 COLLECTIONS = ("actors","actions","workflows","data","rules","components","responsibilities","interfaces","dependencies")
 W = frozenset(chr(n) for n in (*range(9,14),*range(28,33),133,160,5760,*range(8192,8203),8232,8233,8239,8287,12288))
@@ -38,14 +39,16 @@ Draft202012Validator.check_schema(SCHEMA)
 
 def escape(value): return str(value).replace("~","~0").replace("/","~1")
 
-def shape(value, name="Record"):
+def shape(value, name="Record", *, profile=L1):
+    schema = get_profile(profile).schema
     encode(value)  # Reject unsupported floats/Unicode before diagnostics retain values.
-    definition = SCHEMA["$defs"][name]
-    if name == "Record" and type(value) is dict and type(value.get("type")) is str and value["type"]+"Record" in SCHEMA["$defs"]:
-        definition = SCHEMA["$defs"][value["type"]+"Record"]
-    if name == "OperationEvent" and type(value) is dict and type(value.get("kind")) is str and value["kind"]+"Event" in SCHEMA["$defs"]:
-        definition = SCHEMA["$defs"][value["kind"]+"Event"]
-    errors = list(Validator({**definition,"$defs":SCHEMA["$defs"]},format_checker=FORMATS).iter_errors(value))
+    definition = schema["$defs"][name]
+    require(definition is not False,"profile_export_unavailable")
+    if name == "Record" and type(value) is dict and type(value.get("type")) is str and value["type"]+"Record" in schema["$defs"]:
+        definition = schema["$defs"][value["type"]+"Record"]
+    if name == "OperationEvent" and type(value) is dict and type(value.get("kind")) is str and value["kind"]+"Event" in schema["$defs"]:
+        definition = schema["$defs"][value["kind"]+"Event"]
+    errors = list(Validator({**definition,"$defs":schema["$defs"]},format_checker=FORMATS).iter_errors(value))
     if errors:
         e=errors[0]; path="".join("/"+escape(v) for v in e.absolute_path)
         raise S02Error("SCHEMA_INVALID","schema","Value violates the S02 schema",pointer=path,
@@ -62,30 +65,33 @@ def resolve_pointer(value, path):
         else: raise ValueError("Pointer traverses a scalar")
     return value
 
-def walk_schema(value, spec, path=""):
+def walk_schema(value, spec, path="", *, profile=L1, _schema=None):
     """Yield value + resolved field schema; local refs only, never network refs."""
+    schema = get_profile(profile).schema if _schema is None else _schema
     name=None
     if "$ref" in spec:
-        name=spec["$ref"].split("/")[-1];spec=SCHEMA["$defs"][name]
+        name=spec["$ref"].split("/")[-1];spec={**schema["$defs"][name], **{k:v for k,v in spec.items() if k!="$ref"}}
     yield value,spec,path,name
     if "anyOf" in spec:
-        if value is not None: yield from walk_schema(value,spec["anyOf"][0],path)
+        if value is not None: yield from walk_schema(value,spec["anyOf"][0],path,profile=profile,_schema=schema)
     elif "oneOf" in spec:
         for variant in spec["oneOf"]:
-            v=SCHEMA["$defs"][variant["$ref"].split("/")[-1]] if "$ref" in variant else variant
-            if not list(Validator({**v,"$defs":SCHEMA["$defs"]},format_checker=FORMATS).iter_errors(value)):
-                yield from walk_schema(value,variant,path);break
+            v=schema["$defs"][variant["$ref"].split("/")[-1]] if "$ref" in variant else variant
+            if not list(Validator({**v,"$defs":schema["$defs"]},format_checker=FORMATS).iter_errors(value)):
+                yield from walk_schema(value,variant,path,profile=profile,_schema=schema);break
     elif spec.get("type")=="object":
         for k,s in spec.get("properties",{}).items():
-            if k in value: yield from walk_schema(value[k],s,path+"/"+escape(k))
+            if k in value: yield from walk_schema(value[k],s,path+"/"+escape(k),profile=profile,_schema=schema)
     elif spec.get("type")=="array":
-        for i,v in enumerate(value): yield from walk_schema(v,spec["items"],path+"/"+str(i))
+        for i,v in enumerate(value): yield from walk_schema(v,spec["items"],path+"/"+str(i),profile=profile,_schema=schema)
 
-def fields(record): return walk_schema(record,SCHEMA["$defs"][record["type"]+"Record"])
+def fields(record, *, profile=L1):
+    schema=get_profile(profile).schema
+    return walk_schema(record,schema["$defs"][record["type"]+"Record"],profile=profile,_schema=schema)
 
-def typed_links(record):
+def typed_links(record, *, profile=L1):
     out=[]
-    for v,s,p,n in fields(record):
+    for v,s,p,n in fields(record,profile=profile):
         if "x-record" in s: out.append((p,v,s["x-record"]))
     return out
 
@@ -100,9 +106,12 @@ def inventory(snapshot):
     return {f"/{k}/{i}"+suffix for k in ("functional_requirements","non_functional_requirements","constraints")
             for i,r in enumerate(snapshot["input"][k]) for suffix in ["",*[f"/acceptance_criteria/{j}" for j in range(len(r["acceptance_criteria"]))]]}
 
-def validate_record(record, records, snapshots, *, events=None, stages=None, commands=None):
+def validate_record(record, records, snapshots, *, events=None, stages=None, commands=None, owner_profile=L1, profile_map=None, reviews=None):
     """Validate one immutable record against a complete same-session graph."""
-    shape(record); rid=record["id"];b=record["body"];kind=record["type"]
+    profile=get_profile(owner_profile).profile_id
+    profiles=owner_profiles(records,profile,profile_map)
+    require(profiles.get(record["id"])==profile,"record_owner_profile")
+    shape(record,profile=profile); rid=record["id"];b=record["body"];kind=record["type"]
     def check(ok,inv): require(ok,inv,record_id=rid)
     def get(i,t=None):
         v=records.get(i);check(v is not None and (t is None or v["type"]==t),"typed_record_reference");return v["body"]
@@ -110,7 +119,8 @@ def validate_record(record, records, snapshots, *, events=None, stages=None, com
     if kind=="source_context": context_id=rid
     elif context_id is None and b.get("model_id"): context_id=get(b["model_id"],"model")["source_context_id"]
     snapshot_id=get(context_id,"source_context")["snapshot_id"] if context_id else None
-    for value,spec,path,name in fields(record):
+    for value,spec,path,name in fields(record,profile=profile):
+        history = profile==E1 and spec.get("x-history",False)
         if "x-record" in spec:
             target=records.get(value);expected=spec["x-record"]
             check(target is not None and (expected=="*" or target["type"] in ([expected] if type(expected) is str else expected)),"typed_record_reference")
@@ -121,7 +131,7 @@ def validate_record(record, records, snapshots, *, events=None, stages=None, com
             try:
                 if snap is None: raise ValueError()
                 resolve_pointer(snap["input"],value["input_pointer"])
-                if snapshot_id is not None and kind not in ("change","answer") and value["snapshot_id"]!=snapshot_id: raise ValueError()
+                if snapshot_id is not None and kind not in ("change","answer") and value["snapshot_id"]!=snapshot_id and not history: raise ValueError()
             except (KeyError,IndexError,ValueError):
                 raise S02Error("SOURCE_REF_INVALID","references","Source reference does not resolve in the pinned snapshot",record_id=rid,pointer=path,details={**value,"expected_kind":"pinned source value"})
         if name=="AnswerRef":
@@ -130,7 +140,7 @@ def validate_record(record, records, snapshots, *, events=None, stages=None, com
         if name in ("Scope","ElementRef"):
             model=records.get(value["model_id"]);check(model is not None and model["type"]=="model","scope_model")
             es,ps=index_model(model)
-            if b.get('model_id') is not None: check(value['model_id']==b['model_id'],'nested_reference_model')
+            if b.get('model_id') is not None and not history: check(value['model_id']==b['model_id'],'nested_reference_model')
             if name=="Scope": check(set(value["element_ids"])<=es.keys() and set(value["mapping_part_ids"])<=ps.keys(),"scope_members")
             else: check(value["element_id"] in es or value["element_id"] in ps,"element_reference")
         if name=="Trace": check(bool(value["source_refs"] or value["answer_refs"]),"trace_has_source")
@@ -154,38 +164,21 @@ def validate_record(record, records, snapshots, *, events=None, stages=None, com
             for field,p in (("prompt_artifact_id","prompt"),("request_artifact_id","llm_request"),("response_artifact_id","llm_response")):
                 if a[field]: check(get(a[field])["purpose"]==p,"attempt_artifact_kind")
             if a["status"] in ("completed","invalid_output","refused","incomplete"): check(a["response_artifact_id"] is not None,"attempt_response_required")
-    for value,spec,path,name in fields(record):
+    for value,spec,path,name in fields(record,profile=profile):
         if name=="Error":
             check(value['stage']!='parse' or value['pointer'] is None,'parse_error_pointer_null')
         if name in ('Actor','Action','Data','Rule','Workflow','Component','Responsibility','Interface','Dependency'):
             if value['state']=='needs_clarification':
-                check(any(get(i,'issue')['status'] in ('open','answered_pending_application') for i in value['trace']['issue_ids']),'clarification_state_issue')
+                check(any(get(i,'issue')['status'] in blocking_statuses(profile) for i in value['trace']['issue_ids']),'clarification_state_issue')
             if value['state']=='needs_reanalysis':
                 check(kind=='model' and b['change_id'] is not None,'reanalysis_state_change')
-    if kind=="model": validate_model(record,records,snapshots[snapshot_id])
+    if kind=="model": validate_model(record,records,snapshots[snapshot_id],owner_profile=profile)
     if kind=="issue":
-        check(b["affected"]["model_id"]==b["model_id"] and subset(b["blocking"],b["affected"]),"issue_blocking_subset")
-        check(b["status"] not in ("open","answered_pending_application") or not b["resolution_event_refs"],"pending_issue_not_applied")
-        if b["status"]=="resolved":
-            check(b["resolution"] is not None and bool(b["resolution_event_refs"] or b["trace"]["source_refs"]),"issue_resolution_evidence")
-            if b["answer_ids"]:
-                check(bool(b["resolution_event_refs"]),"answer_resolution_event")
-                applied_answers=set()
-                for reference in b["resolution_event_refs"]:
-                    event=events[reference["command_id"],reference["event_id"]]
-                    check(event['kind']=='application_applied','issue_resolution_application_event')
-                    payload=event['payload']
-                    check(payload['resolved_issue_id']==rid,'issue_resolution_target')
-                    answer=get(payload['answer_id'],'answer')
-                    check(get(answer['issue_id'],'issue')['issue_key']==b['issue_key'],'issue_resolution_answer_lineage')
-                    change=get(payload['change_id'],'change')
-                    check(reference in change['application_event_refs'] and change['new_model_id']==b['model_id'],'issue_resolution_change')
-                    applied_answers.add(payload['answer_id'])
-                check(applied_answers<=set(b['answer_ids']),'issue_resolution_answers_applied')
-                check(all(get(get(a,'answer')['issue_id'],'issue')['issue_key']==b['issue_key'] for a in b['answer_ids']),'issue_answer_lineage')
-            else:
-                check(not b['resolution_event_refs'] and bool(b['trace']['source_refs']),'source_only_resolution')
-        if b["supersedes_id"]: check(get(b["supersedes_id"])["issue_key"]==b["issue_key"],"issue_lineage")
+        if profile==E1 and (b['resolution_carry'] is not None or b['resolution_replacement'] is not None):
+            from .resolution import validate_resolution
+            validate_resolution(record,records,snapshots,events=events,stages=stages,commands=commands,profiles=profiles,reviews=reviews)
+        else:
+            validate_direct(record,records,events)
     if kind=="answer":
         if b["interpretation"]=="points_to_existing_source": check(bool(b["existing_source_refs"]),"answer_existing_source")
         if b["supersedes_answer_id"]: check(get(get(b["supersedes_answer_id"])["issue_id"])["issue_key"]==get(b["issue_id"])["issue_key"],"answer_lineage")
@@ -202,7 +195,7 @@ def validate_record(record, records, snapshots, *, events=None, stages=None, com
               (b["recommendation"]!="undecided" and option is not None and (option["action"]=="keep")== (b["recommendation"]=="keep")),"recommended_option")
         for option in b['options']:
             check(all(s['input_pointer'].startswith('/constraints/') and s['input_pointer'] in inventory(snapshots[snapshot_id]) for s in option['constraint_refs']),'option_constraint_source_kind')
-    if kind=="analysis_set": validate_set(record,records)
+    if kind=="analysis_set": validate_set(record,records,owner_profile=profile,profile_map=profiles)
     if kind=="change": validate_change(record,records)
     if kind=="view":
         m=get(b["model_id"]);cs={x["id"] for x in m["components"]}; ins={x["id"]:x for x in m["interfaces"]};deps={x["id"]:x for x in m["dependencies"]}
@@ -234,6 +227,12 @@ def validate_record(record, records, snapshots, *, events=None, stages=None, com
         check(not any(x&y for x,y in zip(scope_sets(b["accepted_scope"]),scope_sets(b["blocked_scope"]))),"review_scopes_disjoint")
         check(b["decision"] not in ("request_changes","revoked") or not any(scope_sets(b["accepted_scope"])),"review_no_acceptance")
         if b["decision"]=="conditionally_accepted": check(bool(b["conditions"]),"review_conditions")
+        # E1 contract correction only: retain the pinned L1 validation behavior.
+        if profile==E1:
+            previous=b['supersedes_review_id']
+            check(b['decision']!='revoked' or previous is not None,'review_revocation_predecessor')
+            if previous is not None:
+                check(previous!=rid and get(previous,'review')['bundle_id']==b['bundle_id'],'review_predecessor_binding')
     if kind=="handoff":
         bundle=get(b['bundle_id'],'bundle')
         check(bundle['model_id']==b['model_id'] and bundle['analysis_set_id']==b['analysis_set_id'],'handoff_bundle_binding')
@@ -247,10 +246,40 @@ def validate_record(record, records, snapshots, *, events=None, stages=None, com
             from .scope import permitted_scope
             tasks=[]
             for changeid in bundle['change_ids']: tasks.extend(get(changeid,'change')['reevaluate'])
-            result=permitted_scope(records[b['model_id']],review['accepted_scope'],review['accepted_scope'],current_analysis_set_id=b['analysis_set_id'],reviewed_analysis_set_id=bundle['analysis_set_id'],issues=[records[i] for i in a['issue_ids']],pending_tasks=tasks,conditions=review['conditions'],choices=review['workflow_choices'])
+            result=permitted_scope(records[b['model_id']],review['accepted_scope'],review['accepted_scope'],current_analysis_set_id=b['analysis_set_id'],reviewed_analysis_set_id=bundle['analysis_set_id'],issues=[records[i] for i in a['issue_ids']],pending_tasks=tasks,conditions=review['conditions'],choices=review['workflow_choices'],profile=profile)
             check(bool(result['allowed_scope']['mapping_part_ids']) and result['allowed_scope']==b['allowed_scope'] and result['blocked_scope']==b['blocked_scope'],'handoff_closed_allowed_scope')
 
-def validate_model(record, records, snapshot):
+def validate_direct(record,records,events):
+    """Unchanged a3 root-resolution rules. Operations verify atomic selection."""
+    rid=record['id'];b=record['body']
+    def check(ok,inv): require(ok,inv,record_id=rid)
+    def get(i,t=None):
+        v=records.get(i);check(v is not None and (t is None or v['type']==t),'typed_record_reference');return v['body']
+    check(b["affected"]["model_id"]==b["model_id"] and subset(b["blocking"],b["affected"]),"issue_blocking_subset")
+    check(b["status"] not in ("open","answered_pending_application") or not b["resolution_event_refs"],"pending_issue_not_applied")
+    if b["status"]=="resolved":
+        check(b["resolution"] is not None and bool(b["resolution_event_refs"] or b["trace"]["source_refs"]),"issue_resolution_evidence")
+        if b["answer_ids"]:
+            check(bool(b["resolution_event_refs"]),"answer_resolution_event")
+            applied_answers=set()
+            for reference in b["resolution_event_refs"]:
+                event=events[reference["command_id"],reference["event_id"]]
+                check(event['kind']=='application_applied','issue_resolution_application_event')
+                payload=event['payload']
+                check(payload['resolved_issue_id']==rid,'issue_resolution_target')
+                answer=get(payload['answer_id'],'answer')
+                check(get(answer['issue_id'],'issue')['issue_key']==b['issue_key'],'issue_resolution_answer_lineage')
+                change=get(payload['change_id'],'change')
+                check(reference in change['application_event_refs'] and change['new_model_id']==b['model_id'],'issue_resolution_change')
+                applied_answers.add(payload['answer_id'])
+            check(applied_answers<=set(b['answer_ids']),'issue_resolution_answers_applied')
+            check(all(get(get(a,'answer')['issue_id'],'issue')['issue_key']==b['issue_key'] for a in b['answer_ids']),'issue_answer_lineage')
+        else:
+            check(not b['resolution_event_refs'] and bool(b['trace']['source_refs']),'source_only_resolution')
+    if b["supersedes_id"]: check(get(b["supersedes_id"])["issue_key"]==b["issue_key"],"issue_lineage")
+
+def validate_model(record, records, snapshot, *, owner_profile=L1):
+    profile=get_profile(owner_profile).profile_id
     b=record["body"];rid=record["id"]
     def check(ok,inv): require(ok,inv,record_id=rid)
     creator=records.get(b['created_by_run_id'])
@@ -309,7 +338,7 @@ def validate_model(record, records, snapshot):
             if p["target"]=="system": check(not p["action_ids"],"system_part_actions")
             elif p["assignment"]=="proposed": check(bool(p["action_ids"] and p["primary_responsibility_ids"]),"component_part_actions_responsibility")
             if p["assignment"] in ("unassigned","blocked"): check(p["remaining_gap"] is not None,"part_gap")
-            if p["assignment"]=="blocked": check(any(records[i]["body"]["status"] in ("open","answered_pending_application") for i in p["issue_ids"]),"part_blocking_issue")
+            if p["assignment"]=="blocked": check(any(records[i]["body"]["status"] in blocking_statuses(profile) for i in p["issue_ids"]),"part_blocking_issue")
     missing=expected-set(seen)
     if missing: raise S02Error("MAPPING_INVENTORY_INCOMPLETE","references","Requirement/criterion mappings missing",record_id=rid,details={"missing_refs":[{"snapshot_id":snapshot["snapshot_id"],"input_pointer":p} for p in sorted(missing)]})
     check(len(seen)==len(set(seen)),"mapping_row_unique")
@@ -319,7 +348,8 @@ def validate_model(record, records, snapshot):
         old=records[parent]["body"];check(b["revision"]==old["revision"]+1 and b["change_id"] is not None,"model_revision")
         c=records[b["change_id"]]["body"];check(c["base_model_id"]==parent and c["new_model_id"]==rid,"model_change_binding")
 
-def validate_set(record,records):
+def validate_set(record,records, *, owner_profile=L1, profile_map=None):
+    profiles=owner_profiles(records,owner_profile,profile_map)
     b=record["body"];rid=record["id"]
     def check(ok,inv): require(ok,inv,record_id=rid)
     old=records[b["parent_set_id"]]["body"] if b["parent_set_id"] else None
@@ -337,9 +367,10 @@ def validate_set(record,records):
             if i not in previous:
                 for body in ([item,records[prev[k]]["body"]] if k in prev else [item]):
                     scope=body["affected" if typ=="issue" else "scope"];affected_e.update(scope["element_ids"]);affected_p.update(scope["mapping_part_ids"])
-            for _,target,t in typed_links(records[i]):
-                if t=="issue" and target!=item.get("supersedes_id"): check(target in b["issue_ids"],"analysis_issue_ref_current")
-                if t=="scenario" and target!=item.get("supersedes_id"): check(target in b["scenario_ids"],"analysis_scenario_ref_current")
+            for path,target,t in typed_links(records[i],profile=profiles[i]):
+                if profiles[i]==E1 and path in ("/body/resolution_carry/origin_issue_id","/body/resolution_carry/from_issue_id","/body/resolution_replacement/origin_issue_id","/body/resolution_replacement/from_issue_id","/body/resolution_replacement/obsolete_issue_id"): continue
+                if t=="issue" and not (target==item.get("supersedes_id") and (profiles[i]==L1 or path=="/body/supersedes_id")): check(target in b["issue_ids"],"analysis_issue_ref_current")
+                if t=="scenario" and not (target==item.get("supersedes_id") and (profiles[i]==L1 or path=="/body/supersedes_id")): check(target in b["scenario_ids"],"analysis_scenario_ref_current")
     check(set(b["changed_record_ids"])==selected-previous,"analysis_changed_inventory")
     es,ps=index_model(records[b["model_id"]]);scope=b["affected"]
     check(scope["model_id"]==b["model_id"],"analysis_affected_model")

@@ -1,10 +1,27 @@
 """Typed operational invariants. This is not a clarification orchestrator."""
 from .errors import require
-from .validation import walk_schema,SCHEMA,resolve_pointer
+from .validation import walk_schema,SCHEMA,resolve_pointer,shape
+from .profiles import L1,E1,get_profile,owner_profiles
 from dacn_s01.revision import json_equal
 
 
-def validate_operations(commands,events,stages,records,owners,snapshots):
+def validate_operations(commands,events,stages,records,owners,snapshots, *,
+                        operation_profile_map=None, record_profile_map=None, blobs=None):
+    if operation_profile_map is None:
+        require(record_profile_map is None or all(get_profile(p).profile_id==L1 for p in record_profile_map.values()),'explicit_operation_profiles_required')
+        operation_profile_map={c:L1 for c in commands}
+    require(set(operation_profile_map)==set(commands),'operation_profile_inventory')
+    op_profiles={c:get_profile(p).profile_id for c,p in operation_profile_map.items()}
+    profiles=owner_profiles(records,E1 if E1 in op_profiles.values() else L1,record_profile_map)
+    # Events and stages inherit their owner. Payloads never select a profile.
+    for cmd,operation in commands.items(): shape(operation,'Operation',profile=op_profiles[cmd])
+    for (cmd,eid),event in events.items():
+        require(cmd in commands and event['command_id']==cmd and event['event_id']==eid,'event_owner_identity')
+        shape(event,'OperationEvent',profile=op_profiles[cmd])
+    for (cmd,bid),item in stages.items():
+        require(cmd in commands and item['command_id']==cmd and item['blob_id']==bid,'stage_owner_identity')
+        shape({k:v for k,v in item.items() if k!='bytes'},'StagedBlob',profile=op_profiles[cmd])
+
     def record(i,kind=None):
         r=records.get(i);require(r is not None and (kind is None or r['type']==kind),'event_record_type');return r['body']
     def ref(value,kind=None):
@@ -58,6 +75,7 @@ def validate_operations(commands,events,stages,records,owners,snapshots):
             require(all(attempt[f] is None for f in ('returned_model','provider_response_id','usage')),'attempt_no_uncaptured_metadata')
             require(attempt['status'] in ('transport_failed','unknown_outcome','stale'),'attempt_no_response_status')
     for cmd,op in commands.items():
+        profile=op_profiles[cmd];owner_schema=get_profile(profile).schema
         req=op['request'];ancestors=lineage(cmd)
         if req['kind']=='recovery':
             require(op['parent_command_id'] is not None and commands[op['parent_command_id']]['session_id']==op['session_id'],'recovery_parent_session')
@@ -66,7 +84,7 @@ def validate_operations(commands,events,stages,records,owners,snapshots):
             record(req['source_context_id'],'source_context')
             if req['base_model_id']:
                 record(req['base_model_id'],'model');require(record(req['base_analysis_set_id'],'analysis_set')['model_id']==req['base_model_id'],'operation_base_set')
-            for value,schema,_,_ in walk_schema(req,SCHEMA['$defs']['Operation']['properties']['request']):
+            for value,schema,_,_ in walk_schema(req,owner_schema['$defs']['Operation']['properties']['request'],profile=profile):
                 if 'x-record' in schema:
                     record(value,schema['x-record']);require(owners[value]==op['session_id'],'operation_record_session')
         if req['kind']=='apply_answer':
@@ -81,7 +99,7 @@ def validate_operations(commands,events,stages,records,owners,snapshots):
         require(sum(e['kind']=='finalized' for e in ordered)<=1,'single_finalization')
         for event in ordered:
             p=event['payload'];kind=event['kind']
-            for value,spec,path,name in walk_schema(event,SCHEMA['$defs'][kind+'Event']):
+            for value,spec,path,name in walk_schema(event,owner_schema['$defs'][kind+'Event'],profile=profile):
                 if 'x-record' in spec:
                     target=records.get(value);expected=spec['x-record']
                     require(target is not None and (expected=='*' or target['type']==expected),'event_typed_record')
@@ -145,6 +163,8 @@ def validate_operations(commands,events,stages,records,owners,snapshots):
                 require(consent['answer_id']==p['answer_id'] and interpretation['interpretation']=='changes_requirements','dispatch_consent')
                 require(p['input_stage_ref']==interpretation['proposed_input'] and p['s01_request']==interpretation['s01_request'],'dispatch_exact_consented_input_request')
                 require(not any(e['kind']=='s01_dispatch_intent' for e in prior),'one_s01_dispatch')
+                if profile==E1:
+                    require(not any(e['kind']=='s01_dispatch_intent' for (c,_),e in events.items() if c in ancestors-{cmd}),'a1_no_resend')
             elif kind=='s01_result_observed':
                 dispatch=ref(p['dispatch_event'],'s01_dispatch_intent')['payload']
                 require(dispatch['s01_run_id']==p['s01_run_id'] and dispatch['answer_id']==p['answer_id'],'observed_run_identity')
@@ -172,16 +192,20 @@ def validate_operations(commands,events,stages,records,owners,snapshots):
                     ancestor=record(ancestor,'issue')['supersedes_id']
                 require(ancestor==original,'application_answer_current_lineage')
                 require(current_id in change['source_record_ids'],'application_issue_change_source')
-                if selected['interpretation']=='changes_requirements':
-                    require(p['consent_event'] is not None and p['s01_observation_event'] is not None,'application_requires_consent_observation')
-                    consent=ref(p['consent_event'],'consent_recorded')['payload'];observed=ref(p['s01_observation_event'],'s01_result_observed')['payload']
-                    require(consent['interpretation_event']==p['interpretation_event'] and observed['lookup_status']=='validated','application_validated_observation')
-                    context=record(p['new_source_context_id'],'source_context')
-                    require(context['s01_run_id']==observed['s01_run_id'] and context['snapshot_id']==observed['snapshot_id'] and change['kind']=='requirements_switch','application_selected_s01_result')
-                    dispatch=ref(observed['dispatch_event'],'s01_dispatch_intent')['payload']
-                    require(dispatch['consent_event']==p['consent_event'],'application_same_consent_chain')
+                if profile==E1:
+                    from .observed_source import check_application_source
+                    check_application_source(p,req,change,selected,records=records,events=events,stages=stages,blobs=blobs,snapshots=snapshots)
                 else:
-                    require(change['kind']=='analysis_edit' and p['s01_observation_event'] is None,'existing_source_application')
+                    if selected['interpretation']=='changes_requirements':
+                        require(p['consent_event'] is not None and p['s01_observation_event'] is not None,'application_requires_consent_observation')
+                        consent=ref(p['consent_event'],'consent_recorded')['payload'];observed=ref(p['s01_observation_event'],'s01_result_observed')['payload']
+                        require(consent['interpretation_event']==p['interpretation_event'] and observed['lookup_status']=='validated','application_validated_observation')
+                        context=record(p['new_source_context_id'],'source_context')
+                        require(context['s01_run_id']==observed['s01_run_id'] and context['snapshot_id']==observed['snapshot_id'] and change['kind']=='requirements_switch','application_selected_s01_result')
+                        dispatch=ref(observed['dispatch_event'],'s01_dispatch_intent')['payload']
+                        require(dispatch['consent_event']==p['consent_event'],'application_same_consent_chain')
+                    else:
+                        require(change['kind']=='analysis_edit' and p['s01_observation_event'] is None,'existing_source_application')
                 final=next((e for e in ordered if e['kind']=='finalized'),None)
                 require(final is not None,'application_atomic_finalization')
                 run=record(final['payload']['run_id'],'run')

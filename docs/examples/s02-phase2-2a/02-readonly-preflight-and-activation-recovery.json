@@ -1,0 +1,355 @@
+{
+  "illustration": {
+    "status": "ví dụ minh họa chưa thực thi",
+    "production_importable": false,
+    "runtime_ready": false,
+    "migration_executed": false,
+    "meaning": "Synthetic IDs/paths/time; no files, receipts or DB were created at these paths. All checkpoint outcomes are expectations, not measured results.",
+    "receipt_scope": "Complete proposed receipt fields from section 5.1.",
+    "manifest_scope": "Identity projection only: full table inventories/comparisons, tool versions and profile resource hashes are omitted; E1/DDL2 do not exist yet. Not a complete valid runtime migration manifest.",
+    "hash_scope": "SHA-256 of the exact illustrative UTF-8 strings below. Activation basis demonstrates this projection hash; production must instead hash the entire real manifest including all inventories and resource hashes.",
+    "source_hash_scope": "Synthetic string digest, not a database inventory digest; not usable for runtime verification."
+  },
+  "proposal_version": "s02-2a-storage-plan/0.1.0-draft.2",
+  "bindings": [
+    {
+      "name": "migration_id",
+      "file": "01-profile-and-migration.json",
+      "pointer": "/migration_projection/migration_id"
+    },
+    {
+      "name": "target_store_id",
+      "file": "01-profile-and-migration.json",
+      "pointer": "/migration_projection/target_store_id"
+    },
+    {
+      "name": "activation_id",
+      "file": "01-profile-and-migration.json",
+      "pointer": "/migration_projection/activation_id"
+    },
+    {
+      "name": "audit_readonly_preserved",
+      "file": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-2a-storage-draft1-2026-10-21/preflight-probe.json",
+      "pointer": "/mode_ro_preserved_files"
+    },
+    {
+      "name": "audit_public_verify_mutated",
+      "file": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-2a-storage-draft1-2026-10-21/preflight-probe.json",
+      "pointer": "/source_changed_by_a3_verify"
+    }
+  ],
+  "source_open_policy": {
+    "uri_mode": "ro",
+    "applies_to": [
+      "inspect",
+      "preflight",
+      "copy",
+      "copy_verification",
+      "resume",
+      "reconcile"
+    ],
+    "public_a3_verify_allowed": false,
+    "rw_fallback_allowed": false,
+    "immutable_allowed": false,
+    "automatic_source_recovery_allowed": false,
+    "on_recovery_required": "stop before destination creation or mutation; retain source DB/journal; recovery is separate, followed by full inspect"
+  },
+  "artifacts": {
+    "receipt": {
+      "receipt_version": "s02-migration/1",
+      "migration_id": "11111111-1111-4111-8111-111111111111",
+      "target_store_id": "22222222-2222-4222-8222-222222222222",
+      "activation_id": "33333333-3333-4333-8333-333333333333",
+      "source_state_dir": "/synthetic-s02-2a/source",
+      "destination_state_dir": "/synthetic-s02-2a/destination",
+      "plan_version": "s02-2a-storage-plan/0.1.0-draft.2",
+      "source_inventory_sha256": "abb063fe4978db146ed4fc8f6d5f5c86b195aaa0891104bcda738c1a0cf15138"
+    },
+    "manifest_identity_projection": {
+      "format": "s02-migration-manifest/1",
+      "migration_id": "11111111-1111-4111-8111-111111111111",
+      "target_store_id": "22222222-2222-4222-8222-222222222222",
+      "activation_id": "33333333-3333-4333-8333-333333333333",
+      "source_state_dir": "/synthetic-s02-2a/source",
+      "destination_state_dir": "/synthetic-s02-2a/destination",
+      "plan_version": "s02-2a-storage-plan/0.1.0-draft.2",
+      "source_inventory_sha256": "abb063fe4978db146ed4fc8f6d5f5c86b195aaa0891104bcda738c1a0cf15138",
+      "source_application_id_hex": "44414332",
+      "source_db_version": 1,
+      "target_db_version": 2,
+      "write_profile_id": "s02-profile/a1a2-v1"
+    },
+    "store_metadata_projection": {
+      "slot": 1,
+      "store_id": "22222222-2222-4222-8222-222222222222",
+      "write_profile_id": "s02-profile/a1a2-v1",
+      "origin_kind": "migration",
+      "migration_id": "11111111-1111-4111-8111-111111111111",
+      "manifest_sha256": "cf23ec59584abc7662dfbcfdc944d0c3c37c43e3b34e400beed6e97f4b584c6d"
+    },
+    "store_activation_row": {
+      "slot": 1,
+      "activation_id": "33333333-3333-4333-8333-333333333333",
+      "store_id": "22222222-2222-4222-8222-222222222222",
+      "profile_id": "s02-profile/a1a2-v1",
+      "basis_sha256": "cf23ec59584abc7662dfbcfdc944d0c3c37c43e3b34e400beed6e97f4b584c6d",
+      "operator": "synthetic-operator",
+      "activated_at": "2026-10-22T03:00:00Z"
+    }
+  },
+  "serialized_payloads": {
+    "receipt": {
+      "utf8": "{\"receipt_version\":\"s02-migration/1\",\"migration_id\":\"11111111-1111-4111-8111-111111111111\",\"target_store_id\":\"22222222-2222-4222-8222-222222222222\",\"activation_id\":\"33333333-3333-4333-8333-333333333333\",\"source_state_dir\":\"/synthetic-s02-2a/source\",\"destination_state_dir\":\"/synthetic-s02-2a/destination\",\"plan_version\":\"s02-2a-storage-plan/0.1.0-draft.2\",\"source_inventory_sha256\":\"abb063fe4978db146ed4fc8f6d5f5c86b195aaa0891104bcda738c1a0cf15138\"}",
+      "byte_length": 449,
+      "sha256": "fea28fb87e613a300c4cbe2bce20d769eeb3b70ee34ed584509330ed966eb45a"
+    },
+    "manifest_identity_projection": {
+      "utf8": "{\"format\":\"s02-migration-manifest/1\",\"migration_id\":\"11111111-1111-4111-8111-111111111111\",\"target_store_id\":\"22222222-2222-4222-8222-222222222222\",\"activation_id\":\"33333333-3333-4333-8333-333333333333\",\"source_state_dir\":\"/synthetic-s02-2a/source\",\"destination_state_dir\":\"/synthetic-s02-2a/destination\",\"plan_version\":\"s02-2a-storage-plan/0.1.0-draft.2\",\"source_inventory_sha256\":\"abb063fe4978db146ed4fc8f6d5f5c86b195aaa0891104bcda738c1a0cf15138\",\"source_application_id_hex\":\"44414332\",\"source_db_version\":1,\"target_db_version\":2,\"write_profile_id\":\"s02-profile/a1a2-v1\"}",
+      "byte_length": 573,
+      "sha256": "cf23ec59584abc7662dfbcfdc944d0c3c37c43e3b34e400beed6e97f4b584c6d"
+    }
+  },
+  "synthetic_source_inventory_seed_utf8": "SYNTHETIC source inventory root for identity illustration; no database was opened",
+  "availability": [
+    {
+      "checkpoint": "receipt_durable_before_effects",
+      "receipt_exists": true,
+      "manifest_exists": false,
+      "activation_exists": false,
+      "ids_from": "receipt",
+      "manifest_hash_required_in_receipt": false
+    },
+    {
+      "checkpoint": "copy_committed",
+      "receipt_exists": true,
+      "manifest_exists": true,
+      "activation_exists": false,
+      "ids_from": "receipt, equality checked against manifest/metadata",
+      "manifest_hash_required_in_receipt": false
+    },
+    {
+      "checkpoint": "activation_committed",
+      "receipt_exists": true,
+      "manifest_exists": true,
+      "activation_exists": true,
+      "ids_from": "receipt, equality checked through manifest/metadata/activation",
+      "manifest_hash_required_in_receipt": false
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "C1",
+      "case_ids": [
+        "ID01"
+      ],
+      "event": "crash_after_receipt_before_copy",
+      "executed": false,
+      "persisted_at_crash": [
+        "receipt"
+      ],
+      "resume_identity": {
+        "migration_id": "11111111-1111-4111-8111-111111111111",
+        "target_store_id": "22222222-2222-4222-8222-222222222222",
+        "activation_id": "33333333-3333-4333-8333-333333333333"
+      },
+      "expected": {
+        "source_connection_mode": "ro",
+        "source_full_verify_and_root_match_required": true,
+        "new_ids_generated": false,
+        "same_receipt_bytes": true,
+        "copy_same_destination_only_after_source_gate": true,
+        "activation_requires_operator_decision": true,
+        "no_future_manifest_hash_in_receipt": true
+      }
+    },
+    {
+      "id": "C2",
+      "case_ids": [
+        "ID02"
+      ],
+      "event": "copy_committed_before_activation",
+      "executed": false,
+      "persisted_at_crash": [
+        "receipt",
+        "manifest_identity_projection",
+        "store_metadata_projection"
+      ],
+      "resume_identity": {
+        "migration_id": "11111111-1111-4111-8111-111111111111",
+        "target_store_id": "22222222-2222-4222-8222-222222222222",
+        "activation_id": "33333333-3333-4333-8333-333333333333"
+      },
+      "expected": {
+        "source_connection_mode": "ro",
+        "same_receipt_bytes": true,
+        "new_ids_generated": false,
+        "recopy": false,
+        "normal_writes_before_activation": false,
+        "activation_uses_receipt_activation_id": true,
+        "activation_requires_operator_decision": true
+      }
+    },
+    {
+      "id": "C3",
+      "case_ids": [
+        "ID03"
+      ],
+      "event": "activation_committed_ack_lost",
+      "executed": false,
+      "persisted_at_crash": [
+        "receipt",
+        "manifest_identity_projection",
+        "store_metadata_projection",
+        "store_activation_row"
+      ],
+      "resume_identity": {
+        "migration_id": "11111111-1111-4111-8111-111111111111",
+        "target_store_id": "22222222-2222-4222-8222-222222222222",
+        "activation_id": "33333333-3333-4333-8333-333333333333"
+      },
+      "expected": {
+        "source_connection_mode_if_opened": "ro",
+        "new_ids_generated": false,
+        "return_exact_artifact": "/artifacts/store_activation_row",
+        "new_activation_inserted": false,
+        "operator_and_timestamp_rewritten": false,
+        "new_consent_required_to_lookup_committed_result": false
+      }
+    },
+    {
+      "id": "C4",
+      "case_ids": [
+        "ID04",
+        "ID05",
+        "ID06",
+        "ID07",
+        "ID08"
+      ],
+      "event": "invalid_identity_or_competing_activations",
+      "executed": false,
+      "expected": {
+        "missing_or_malformed_receipt": "MIGRATION_RECEIPT_INVALID; no destination effects; do not recover ID from destination",
+        "different_identity": "MIGRATION_IDENTITY_CONFLICT; manifest-bound identity only; no replacement",
+        "same_identity_wrong_basis_or_profile": "reject corruption/conflict, not replay success",
+        "same_identity_same_basis_concurrent": "one insert; both obtain exact stored activation row after recheck",
+        "different_identity_concurrent": "only identity pinned by manifest can insert/return; other conflicts even if it arrives first",
+        "receipt_or_source_gate_rejected": "no new destination DB; existing destination unchanged",
+        "busy": "persistence/busy, not identity conflict"
+      }
+    }
+  ],
+  "negative_receipt_examples": [
+    {
+      "case": "missing_activation_id",
+      "receipt": {
+        "receipt_version": "s02-migration/1",
+        "migration_id": "11111111-1111-4111-8111-111111111111",
+        "target_store_id": "22222222-2222-4222-8222-222222222222",
+        "source_state_dir": "/synthetic-s02-2a/source",
+        "destination_state_dir": "/synthetic-s02-2a/destination",
+        "plan_version": "s02-2a-storage-plan/0.1.0-draft.2",
+        "source_inventory_sha256": "abb063fe4978db146ed4fc8f6d5f5c86b195aaa0891104bcda738c1a0cf15138"
+      },
+      "expected": "MIGRATION_RECEIPT_INVALID",
+      "executed": false
+    },
+    {
+      "case": "malformed_activation_id",
+      "receipt": {
+        "receipt_version": "s02-migration/1",
+        "migration_id": "11111111-1111-4111-8111-111111111111",
+        "target_store_id": "22222222-2222-4222-8222-222222222222",
+        "activation_id": "NOT-A-UUID",
+        "source_state_dir": "/synthetic-s02-2a/source",
+        "destination_state_dir": "/synthetic-s02-2a/destination",
+        "plan_version": "s02-2a-storage-plan/0.1.0-draft.2",
+        "source_inventory_sha256": "abb063fe4978db146ed4fc8f6d5f5c86b195aaa0891104bcda738c1a0cf15138"
+      },
+      "expected": "MIGRATION_RECEIPT_INVALID",
+      "executed": false
+    },
+    {
+      "case": "different_valid_activation_id",
+      "receipt": {
+        "receipt_version": "s02-migration/1",
+        "migration_id": "11111111-1111-4111-8111-111111111111",
+        "target_store_id": "22222222-2222-4222-8222-222222222222",
+        "activation_id": "44444444-4444-4444-8444-444444444444",
+        "source_state_dir": "/synthetic-s02-2a/source",
+        "destination_state_dir": "/synthetic-s02-2a/destination",
+        "plan_version": "s02-2a-storage-plan/0.1.0-draft.2",
+        "source_inventory_sha256": "abb063fe4978db146ed4fc8f6d5f5c86b195aaa0891104bcda738c1a0cf15138"
+      },
+      "expected": "MIGRATION_IDENTITY_CONFLICT against the bound destination, regardless of arrival order",
+      "executed": false
+    }
+  ],
+  "planned_cases": [
+    {
+      "id": "RO01",
+      "scenario": "clean source plus separate wrong-DDL/hash/graph negatives",
+      "expected": "all source opens ro from start; full L1 validation; negatives rejected without source mutation",
+      "executed": false
+    },
+    {
+      "id": "RO02",
+      "scenario": "hot journal at preflight, no destination",
+      "expected": "SOURCE_RECOVERY_REQUIRED; source DB/journal bytes/length/existence unchanged; no new destination DB",
+      "executed": false
+    },
+    {
+      "id": "RO03",
+      "scenario": "hot journal at resume, destination absent or already copy-committed",
+      "expected": "same refusal and same IDs; no new destination DB or mutation/activation of existing destination",
+      "executed": false
+    },
+    {
+      "id": "ID01",
+      "scenario": "crash after durable receipt before copy",
+      "expected": "resume all three IDs from receipt; no UUID generation or future manifest hash",
+      "executed": false
+    },
+    {
+      "id": "ID02",
+      "scenario": "copy committed before activation",
+      "expected": "verify identity chain, no recopy; operator decision then use receipt activation_id",
+      "executed": false
+    },
+    {
+      "id": "ID03",
+      "scenario": "activation committed, ACK lost",
+      "expected": "return exact stored row, one activation, unchanged operator/time/IDs",
+      "executed": false
+    },
+    {
+      "id": "ID04",
+      "scenario": "receipt missing/null/blank/malformed ID or wrong version/path; durable receipt write/ACK failure",
+      "expected": "reject before destination effects; never overwrite or derive missing IDs from destination",
+      "executed": false
+    },
+    {
+      "id": "ID05",
+      "scenario": "valid receipt identity mismatch or wrong manifest/activation basis/profile",
+      "expected": "identity conflict or corruption; never report replay success or overwrite",
+      "executed": false
+    },
+    {
+      "id": "ID06",
+      "scenario": "two processes, two connections, same receipt and destination",
+      "expected": "IPC barrier/deadline; one insertion, same stored result; reopen evidence",
+      "executed": false
+    },
+    {
+      "id": "ID07",
+      "scenario": "two processes, different activation IDs; exercise both arrival orders",
+      "expected": "manifest-bound identity may succeed, other conflicts; preserve rows; busy distinct",
+      "executed": false
+    },
+    {
+      "id": "ID08",
+      "scenario": "existing receipt/destination, ambiguous copy commit or source changed after crash",
+      "expected": "no overwrite/new IDs/new target; existing-only reconcile or refuse when binding fails",
+      "executed": false
+    }
+  ]
+}

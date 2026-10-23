@@ -1,0 +1,1316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:dacn:s02:migration-manifest:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "plan_version",
+    "migration_id",
+    "target_store_id",
+    "activation_id",
+    "source_state_dir",
+    "destination_state_dir",
+    "source_inventory_sha256",
+    "source_application_id_hex",
+    "source_db_version",
+    "target_db_version",
+    "write_profile_id",
+    "source_ddl_sha256",
+    "target_ddl_sha256",
+    "profiles",
+    "tool",
+    "inventory_algorithm",
+    "tables",
+    "mutable_baseline",
+    "exclusions"
+  ],
+  "properties": {
+    "format": {
+      "const": "s02-migration-manifest/1"
+    },
+    "plan_version": {
+      "const": "s02-2a-storage-plan/0.1.0-draft.2"
+    },
+    "migration_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "target_store_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "activation_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "source_state_dir": {
+      "type": "string",
+      "minLength": 1
+    },
+    "destination_state_dir": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_inventory_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_application_id_hex": {
+      "const": "44414332"
+    },
+    "source_db_version": {
+      "const": 1
+    },
+    "target_db_version": {
+      "const": 2
+    },
+    "write_profile_id": {
+      "const": "s02-profile/a1a2-v1"
+    },
+    "source_ddl_sha256": {
+      "const": "ee348ac9d29992545b2654ce2ad1d4f0a203f98434de3abc4de84d9e8e1ed4d3"
+    },
+    "target_ddl_sha256": {
+      "const": "9d0625fa92dd5f9068260014af3032cc1460cddd491ab258c8a8ff5eec256d58"
+    },
+    "profiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "s02-profile/legacy-a3",
+        "s02-profile/a1a2-v1"
+      ],
+      "properties": {
+        "s02-profile/legacy-a3": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema_sha256",
+            "descriptor_sha256",
+            "rules_id",
+            "contract_version"
+          ],
+          "properties": {
+            "schema_sha256": {
+              "const": "dd32824ab03c5e4d5faae3eb3888bdea3cacd5ba4735a4a5df19416b024f70b7"
+            },
+            "descriptor_sha256": {
+              "const": "98cfc87bc9e478cb38c8b4812124f96721cdde8e67c1d590b7e3dc1a3c2b23dd"
+            },
+            "rules_id": {
+              "const": "s02-rules/legacy-a3"
+            },
+            "contract_version": {
+              "const": "s02/0.1.0-draft.3"
+            }
+          }
+        },
+        "s02-profile/a1a2-v1": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema_sha256",
+            "descriptor_sha256",
+            "rules_id",
+            "contract_version"
+          ],
+          "properties": {
+            "schema_sha256": {
+              "const": "bd8eb8e838b709edfa6f5ac3d710fb5e3414985270cad35f5aa86acf7f5ebf6d"
+            },
+            "descriptor_sha256": {
+              "const": "4db2107aef901aaa1e789a10a1558a48d464231581e691ec9d4ab478ed548016"
+            },
+            "rules_id": {
+              "const": "s02-rules/a1a2-v1"
+            },
+            "contract_version": {
+              "const": "s02/0.1.0-draft.4"
+            }
+          }
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "distribution",
+        "version",
+        "python_version",
+        "sqlite_version",
+        "rules_bundle_sha256"
+      ],
+      "properties": {
+        "distribution": {
+          "const": "dacn-s02"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "python_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sqlite_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rules_bundle_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "inventory_algorithm": {
+      "const": "s02-db1-inventory/1"
+    },
+    "tables": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sessions",
+        "records",
+        "models",
+        "analysis_sets",
+        "artifacts",
+        "operations",
+        "staged_blobs",
+        "operation_events",
+        "promotions",
+        "application_heads",
+        "active_reviews",
+        "record_links",
+        "record_event_links",
+        "record_stage_links",
+        "event_record_links",
+        "event_event_links",
+        "event_stage_links"
+      ],
+      "properties": {
+        "sessions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "session_id"
+                },
+                {
+                  "const": "spec_id"
+                },
+                {
+                  "const": "head_model_id"
+                },
+                {
+                  "const": "head_analysis_set_id"
+                },
+                {
+                  "const": "sequence"
+                }
+              ],
+              "items": false,
+              "minItems": 5,
+              "maxItems": 5
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "session_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "records": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "id"
+                },
+                {
+                  "const": "session_id"
+                },
+                {
+                  "const": "type"
+                },
+                {
+                  "const": "created_at"
+                },
+                {
+                  "const": "record_json"
+                },
+                {
+                  "const": "sha256"
+                }
+              ],
+              "items": false,
+              "minItems": 6,
+              "maxItems": 6
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "models": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "record_id"
+                },
+                {
+                  "const": "session_id"
+                },
+                {
+                  "const": "revision"
+                },
+                {
+                  "const": "parent_id"
+                },
+                {
+                  "const": "source_context_id"
+                }
+              ],
+              "items": false,
+              "minItems": 5,
+              "maxItems": 5
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "record_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "analysis_sets": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "record_id"
+                },
+                {
+                  "const": "model_id"
+                },
+                {
+                  "const": "revision"
+                },
+                {
+                  "const": "parent_set_id"
+                }
+              ],
+              "items": false,
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "record_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "artifacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "record_id"
+                },
+                {
+                  "const": "producer_run_id"
+                },
+                {
+                  "const": "sha256"
+                },
+                {
+                  "const": "byte_length"
+                },
+                {
+                  "const": "bytes"
+                }
+              ],
+              "items": false,
+              "minItems": 5,
+              "maxItems": 5
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "record_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "operations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "session_id"
+                },
+                {
+                  "const": "parent_command_id"
+                },
+                {
+                  "const": "reserved_run_id"
+                },
+                {
+                  "const": "request_json"
+                },
+                {
+                  "const": "sha256"
+                }
+              ],
+              "items": false,
+              "minItems": 6,
+              "maxItems": 6
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "command_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "staged_blobs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "blob_id"
+                },
+                {
+                  "const": "media_type"
+                },
+                {
+                  "const": "purpose"
+                },
+                {
+                  "const": "sha256"
+                },
+                {
+                  "const": "byte_length"
+                },
+                {
+                  "const": "bytes"
+                }
+              ],
+              "items": false,
+              "minItems": 7,
+              "maxItems": 7
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "blob_id"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "operation_events": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "event_id"
+                },
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "ordinal"
+                },
+                {
+                  "const": "kind"
+                },
+                {
+                  "const": "payload_json"
+                },
+                {
+                  "const": "sha256"
+                },
+                {
+                  "const": "answer_id"
+                }
+              ],
+              "items": false,
+              "minItems": 7,
+              "maxItems": 7
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "event_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "promotions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "blob_id"
+                },
+                {
+                  "const": "artifact_id"
+                }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "blob_id"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "application_heads": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "answer_id"
+                },
+                {
+                  "const": "active_command_id"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "answer_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "active_reviews": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "bundle_id"
+                },
+                {
+                  "const": "review_id"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "bundle_id"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "record_links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                },
+                {
+                  "const": "target_id"
+                }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "record_event_links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                },
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "event_id"
+                }
+              ],
+              "items": false,
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "record_stage_links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                },
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "blob_id"
+                }
+              ],
+              "items": false,
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "event_record_links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                },
+                {
+                  "const": "target_id"
+                }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "event_event_links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                },
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "event_id"
+                }
+              ],
+              "items": false,
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "event_stage_links": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "columns",
+            "primary_key",
+            "row_count",
+            "source_sha256",
+            "copied_legacy_sha256"
+          ],
+          "properties": {
+            "columns": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                },
+                {
+                  "const": "command_id"
+                },
+                {
+                  "const": "blob_id"
+                }
+              ],
+              "items": false,
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "primary_key": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "const": "owner_id"
+                },
+                {
+                  "const": "role"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "row_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "copied_legacy_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "mutable_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sessions",
+        "application_heads",
+        "active_reviews"
+      ],
+      "properties": {
+        "sessions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "session_id",
+              "spec_id",
+              "head_model_id",
+              "head_analysis_set_id",
+              "sequence"
+            ],
+            "properties": {
+              "session_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "spec_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "head_model_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "head_analysis_set_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "sequence": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "application_heads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "answer_id",
+              "active_command_id"
+            ],
+            "properties": {
+              "answer_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "active_command_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "active_reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "bundle_id",
+              "review_id"
+            ],
+            "properties": {
+              "bundle_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "review_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "const": "records.profile_id"
+        },
+        {
+          "const": "operations.profile_id"
+        },
+        {
+          "const": "schema_profiles"
+        },
+        {
+          "const": "store_metadata"
+        },
+        {
+          "const": "store_activation"
+        }
+      ],
+      "items": false,
+      "minItems": 5,
+      "maxItems": 5
+    }
+  }
+}

@@ -7,7 +7,7 @@
     "user_business_confirmation": false
   },
   "contract_version": "s02/0.1.0-draft.3",
-  "proposal_version": "s02-phase2-plan/0.1.0-draft.2",
+  "proposal_version": "s02-phase2-plan/0.1.0-draft.3",
   "bindings": [
     {
       "name": "selected_s01_snapshot",

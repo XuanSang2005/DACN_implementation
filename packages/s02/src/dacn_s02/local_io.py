@@ -64,8 +64,10 @@ def receipt_target(s,path):
         raise storage_error('Receipt must be a new file outside the state directory')
     return p
 
-def write_receipt(s,path,command_id):
-    p=receipt_target(s,path);raw=encode(dict(receipt_version='s02/1',command_id=command_id,state_dir=str(s.state)))+b'\n'
+def write_receipt(s,path,command_id,*,store_id):
+    from .store_profiles import uuid4_id
+    require(valid_id(command_id) and uuid4_id(store_id),'receipt_identity')
+    p=receipt_target(s,path);raw=encode(dict(receipt_version='s02/2',command_id=command_id,state_dir=str(s.state),store_id=store_id))+b'\n'
     directory=os.open(p.parent,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW);temp='.s02-'+str(uuid4())+'.tmp';exists=False
     try:
         fd=os.open(temp,os.O_CREAT|os.O_EXCL|os.O_WRONLY|os.O_NOFOLLOW,0o600,dir_fd=directory);exists=True
@@ -77,8 +79,16 @@ def write_receipt(s,path,command_id):
         if exists: os.unlink(temp,dir_fd=directory)
         os.close(directory)
 
-def read_receipt(s,path):
+def read_receipt(s,path,*,store_id=None):
     value=decode(Path(path).read_bytes())
-    require(type(value) is dict and value.keys()=={'receipt_version','command_id','state_dir'},'receipt_fields')
-    require(value['receipt_version']=='s02/1' and valid_id(value['command_id']),'receipt_version_id')
-    require(value['state_dir']==str(s.state),'receipt_store_binding');return value
+    require(type(value) is dict,'receipt_fields')
+    version=value.get('receipt_version')
+    expected={'receipt_version','command_id','state_dir'} | ({'store_id'} if version=='s02/2' else set())
+    require(value.keys()==expected,'receipt_fields')
+    require(version in ('s02/1','s02/2') and valid_id(value['command_id']),'receipt_version_id')
+    require(value['state_dir']==str(s.state),'receipt_store_binding')
+    if version=='s02/2':
+        from .store_profiles import uuid4_id
+        require(uuid4_id(value['store_id']) and value['store_id']==store_id,'receipt_store_identity')
+    else: require(store_id is None,'legacy_receipt_requires_db1')
+    return value

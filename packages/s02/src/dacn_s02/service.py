@@ -3,6 +3,7 @@ from .repository import record,digest
 from .codec_boundary import encode
 from .s01_adapter import intake
 from .errors import require,storage_error
+from .profiles import E1,get_profile
 
 def staged(command_id,blob_id,purpose,raw,media_type='application/json'):
     return (dict(command_id=command_id,blob_id=blob_id,media_type=media_type,purpose=purpose,
@@ -23,7 +24,7 @@ class Service:
         Failed checked intake creates no trusted SourceContext. A receipt with no
         operation is not evidence that a different store has no operation.
         """
-        repo=self.repository;cmd=command_id or self.allocate_command_id()
+        repo=self.repository;repo.assert_writable();cmd=command_id or self.allocate_command_id()
         existing=repo.get_command(cmd)
         if existing is not None: raise storage_error('Command ID already exists; use checked lookup, not start retry')
         selected=intake(s01_path,s01_run_id,expected_snapshot_id)
@@ -37,7 +38,8 @@ class Service:
         started=repo._clock();env=selected.envelope;snap=env['snapshot']
         operation=dict(command_id=cmd,session_id=session,parent_command_id=None,reserved_run_id=runid,
                        request=dict(kind='start',store_key=store_key,s01_run_id=s01_run_id,expected_snapshot_id=expected_snapshot_id))
-        config=encode(dict(contract_version='s02/0.1.0-draft.3',scope='phase1_intake_only',store_key=store_key))
+        profile=get_profile(E1)
+        config=encode(dict(profile_id=E1,contract_version=profile.descriptor['contract_version'],rules_id=profile.descriptor['rules_id'],scope='checked_intake_only',store_key=store_key))
         repo.prepare(operation,session_spec=snap['spec_id'],staged=[staged(cmd,configblob,'config',config)])
         records=[];blobs={}
         def archive(purpose,raw):

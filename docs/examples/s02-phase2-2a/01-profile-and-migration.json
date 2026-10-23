@@ -1,0 +1,71 @@
+{
+  "illustration": {
+    "status": "ví dụ minh họa chưa thực thi",
+    "production_importable": false,
+    "runtime_ready": false,
+    "meaning": "Descriptors và checkpoints đề xuất, không phải schema package, receipt thực, DB export hoặc migration đã chạy. E1 chưa có bytes/hash."
+  },
+  "proposal_version": "s02-2a-storage-plan/0.1.0-draft.2",
+  "design_baselines": {
+    "plan": "s02-phase2-plan/0.1.0-draft.3",
+    "amendment": "s02-phase2-amendment/0.1.0-draft.2",
+    "s01": "0.1.0a6",
+    "s02": "0.1.0a3",
+    "findings": "A1/A2-R1/R2 closed at design level only"
+  },
+  "bindings": [
+    {"name": "legacy_schema_id", "file": "../../../packages/s02/src/dacn_s02/schemas/contract.json", "pointer": "/$id"},
+    {"name": "carry_method_example", "file": "../s02-phase2/06-resolved-issue-carry-forward.json", "pointer": "/graphs/source_changed_needs_review/records/Q3/resolution_carry"},
+    {"name": "replacement_complete_example", "file": "../s02-phase2/07-resolution-replacement.json", "pointer": "/graphs/new_decision_then_replacement/records/Q5-replaced/resolution_replacement"}
+  ],
+  "profile_catalog_projection": [
+    {"profile_id": "s02-profile/legacy-a3", "contract_version": "s02/0.1.0-draft.3", "rules_id": "s02-rules/legacy-a3", "schema_sha256": "dd32824ab03c5e4d5faae3eb3888bdea3cacd5ba4735a4a5df19416b024f70b7", "required_capabilities": ["foundation-draft3"], "schema_exists": true},
+    {"profile_id": "s02-profile/a1a2-v1", "contract_version": "s02/0.1.0-draft.4", "rules_id": "s02-rules/a1a2-v1", "schema_sha256": null, "required_capabilities": ["foundation-draft3", "observed-s01-context-v1", "issue-carry-v1", "issue-replacement-v1", "typed-history-refs-v1"], "schema_exists": false}
+  ],
+  "binding_rules": {
+    "record_profile": "records.profile_id outside record_json",
+    "operation_profile": "operations.profile_id outside request_json",
+    "event_and_stage_profile": "inherit owning operation; no override",
+    "migrated_history_profile": "s02-profile/legacy-a3",
+    "new_write_profile": "s02-profile/a1a2-v1",
+    "new_write_requires_activation": true,
+    "legacy_command_append_allowed": false,
+    "fallback_by_missing_fields_allowed": false
+  },
+  "migration_projection": {
+    "source_db_version": 1,
+    "target_db_version": 2,
+    "application_id_hex": "44414332",
+    "migration_id": "11111111-1111-4111-8111-111111111111",
+    "target_store_id": "22222222-2222-4222-8222-222222222222",
+    "activation_id": "33333333-3333-4333-8333-333333333333",
+    "source_inventory_sha256": null,
+    "target_manifest_sha256": null,
+    "checkpoint_expectations": [
+      {"checkpoint": "inspected", "source_mutated": false, "destination_committed": false, "normal_writes_allowed": false},
+      {"checkpoint": "copy_committed_verified", "source_mutated": false, "destination_committed": true, "normal_writes_allowed": false},
+      {"checkpoint": "activated", "source_mutated": false, "destination_committed": true, "normal_writes_allowed": true}
+    ],
+    "synthetic_identity_example": {
+      "legacy_root": {"record_id": "Q2", "profile_id": "s02-profile/legacy-a3", "record_bytes_rewritten": false},
+      "new_successor": {"record_id": "Q3", "profile_id": "s02-profile/a1a2-v1", "carry_origin_issue_id": "Q2"},
+      "root_application_count_before": 1,
+      "root_application_count_after_migration": 1,
+      "model_revision_bumped_by_migration": false
+    }
+  },
+  "planned_cases": [
+    {"id": "P01", "scenario": "a3 opens DB2", "expected": "reject version before payload, no reset", "executed": false},
+    {"id": "P02", "scenario": "new reader checked lookup DB1", "expected": "L1 read-only; write requires explicit migration", "executed": false},
+    {"id": "P03", "scenario": "unknown profile/hash/capability", "expected": "reject whole store; no guessing legacy", "executed": false},
+    {"id": "P04", "scenario": "E1 Issue missing resolution_replacement", "expected": "reject, no default null or fallback L1", "executed": false},
+    {"id": "P05", "scenario": "L1 history -> E1 CARRY -> REPLACEMENT", "expected": "validate owner and target profiles, preserve root evidence and both current keys", "executed": false},
+    {"id": "M01", "scenario": "prepared/unfinalized or unknown dispatch in source", "expected": "migration refused without finalize, provider/S01 retry or claim release", "executed": false},
+    {"id": "M02", "scenario": "copy commit ACK lost", "expected": "validated receipt supplies all three IDs; source mode=ro; reopen same destination existing-only, verify manifest, no new copy", "executed": false},
+    {"id": "M03", "scenario": "source changes after lock lost before activation", "expected": "activation refused; no merge", "executed": false},
+    {"id": "M04", "scenario": "new E1 writes then request rollback to DB1", "expected": "refuse lossless rollback claim, retain histories", "executed": false},
+    {"id": "M05", "scenario": "old receipt used with new state_dir alone", "expected": "reject path binding; explicit migration receipt required for lookup-migrated", "executed": false},
+    {"id": "M06", "scenario": "copy verified but no activation row", "expected": "checked inspect allowed, normal write refused", "executed": false},
+    {"id": "M07", "scenario": "two activations / mixed-profile same Answer race", "expected": "same identity/basis returns stored activation; different identity conflicts; one application per Answer across all profiles", "executed": false}
+  ]
+}

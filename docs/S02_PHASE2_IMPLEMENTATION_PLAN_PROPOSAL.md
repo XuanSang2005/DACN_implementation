@@ -1,10 +1,10 @@
 # Đề xuất S02 Đợt 2 — bước 1–4
 
-**Trạng thái: proposed — đã phản hồi audit, chưa audit lại/chưa được duyệt implementation.**
+**Trạng thái: proposed — A1/A2 đã audit đạt ở mức thiết kế, G2 đã rõ; schema/profile/migration 2A còn chờ audit, chưa được duyệt implementation.**
 
-Phiên bản tài liệu: `s02-phase2-plan/0.1.0-draft.2`; ngày 21/10/2026. Astra chuẩn bị thiết kế; agent khác audit độc lập; người dùng quyết định phạm vi, nghiệp vụ và quyền dùng dữ liệu/ngân sách. Lượt này chỉ cập nhật AGENTS và viết tài liệu/ví dụ. Không viết code/tests, đổi package/schema/DB, cài dependencies, gọi LLM hoặc renderer. Các câu lệnh, schema candidate, giới hạn và kết quả mong đợi dưới đây đều là **đề xuất**, trừ những mục được ghi rõ đã có.
+Phiên bản tài liệu: `s02-phase2-plan/0.1.0-draft.3`; ngày 21/10/2026. Astra chuẩn bị thiết kế; agent khác audit độc lập; người dùng quyết định phạm vi, nghiệp vụ và quyền dùng dữ liệu/ngân sách. Lượt này chỉ cập nhật AGENTS và viết tài liệu/ví dụ. Không viết code/tests, đổi package/schema/DB, cài dependencies, gọi LLM hoặc renderer. Các câu lệnh, schema candidate, giới hạn và kết quả mong đợi dưới đây đều là **đề xuất**, trừ những mục được ghi rõ đã có.
 
-**Phản hồi audit draft.1:** [audit độc lập](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft1-2026-10-21/AUDIT_REPORT.md) đã tái hiện hai P1 trên wheel a3 ở cả hai backend: S02-P2-01 (S01 unchanged application) và S02-P2-02 (Issue resolved qua Model revision). Đây là incompatibility của thiết kế với nền tảng, **không chỉ thiếu orchestrator**. [Addendum A1/A2](S02_PHASE2_CONTRACT_AMENDMENT_PROPOSAL.md) đề nghị invariant thay thế có giới hạn; [bảng phản hồi](S02_PHASE2_DRAFT2_AUDIT_RESPONSE.md) đối chiếu từng finding. Chưa tự đóng finding, sửa contract draft.3, ghi lại acceptance Đợt 1 hoặc coi batch phụ thuộc đã sẵn sàng code.
+**Cập nhật trạng thái audit:** [audit draft.3 ngày 21/10/2026](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-phase2-proposal-draft3-2026-10-21/AUDIT_REPORT.md) đóng S02-P2-02/A2-R1/R2 ở mức thiết kế; A1 tiếp tục đóng và G2 giữ kết luận đã rõ. Semantics đã review giữ nguyên. [Gói schema/profile/migration 2A mới](S02_PHASE2_2A_SCHEMA_MIGRATION_PROPOSAL.md) cụ thể hóa gate kỹ thuật còn lại; gói này chưa audit/chưa được duyệt code. Báo cáo phản hồi và manifests cũ giữ trạng thái lịch sử. Nghiệm thu Đợt 1 không mở rộng sang implementation Đợt 2.
 
 ## 1. Baseline, căn cứ và chênh lệch tài liệu
 
@@ -181,7 +181,7 @@ Có thể yêu cầu consent lại khi chỉ Model/AnalysisSet đổi: khuyến 
 2. Dùng [S01 Service](../packages/s01/src/dacn_s01/service.py) `allocate_run_id()`; tạo receipt create-only bằng cơ chế [local_io](../packages/s01/src/dacn_s01/local_io.py) trước submit. S02 lưu s01_dispatch_intent cùng run ID/store key/request/input StageRef sau khi receipt đã bền vững. Không giữ transaction S02 khi ghi kho S01.
 3. Gọi S01 `submit(..., run_id=ID)` đúng raw bytes/request. CLI S01 hiện **không** nhận run ID do caller cấp; không gọi CLI submit mù rồi mới biết ID. Adapter dùng API public từ wheel a6, không import source hoặc sửa S01. Nếu cần thêm public adapter surface, đưa audit trước, không chạm `_` internals để né giao thức.
 4. S01 có thể validated/new_revision hoặc unchanged; kiểm envelope + `get_request` + raw source bằng checked lookup, đối chiếu hash/request đã consent. Intake archive đúng snapshot kết quả, không đọc head mới nhất thay thế.
-5. T3 S02 CAS cặp base + active claim trước phân nhánh. Theo **amendment A1 chưa duyệt**, archive Cobserved của run S01 mới dù snapshot trùng; application.observed_source_context_id trỏ archive đó. Nếu Sobserved bằng snapshot nguồn Model base: analysis_edit giữ đúng Cmodel; nếu khác: requirements_switch dùng Cobserved, **kể cả S01 result_kind=unchanged**. Model/Change/set/Issue/application/Run nguyên tử, Run giữ source pin của operation. Issue chỉ resolved khi cùng key/current lineage và backlinks đúng. a3 hiện từ chối nhánh cùng snapshot; không triển khai bằng orchestrator đơn thuần.
+5. T3 S02 CAS cặp base + active claim trước phân nhánh. Theo **amendment A1 đã đạt thiết kế, chưa được duyệt implementation**, archive Cobserved của run S01 mới dù snapshot trùng; application.observed_source_context_id trỏ archive đó. Nếu Sobserved bằng snapshot nguồn Model base: analysis_edit giữ đúng Cmodel; nếu khác: requirements_switch dùng Cobserved, **kể cả S01 result_kind=unchanged**. Model/Change/set/Issue/application/Run nguyên tử, Run giữ source pin của operation. Issue chỉ resolved khi cùng key/current lineage và backlinks đúng. a3 hiện từ chối nhánh cùng snapshot; không triển khai bằng orchestrator đơn thuần.
 
 Hai kho không có transaction phân tán; S01 commit rồi S02 fail là state hợp lệ cần reconciliation. Kho đang không đọc được thì dừng, không ghi “failed” đè run đã commit. Đã có s01_dispatch_intent mà chưa có observation ⇒ tra đúng ID. Lookup absent vẫn không tự resend; chỉ operator xử lý khi có bằng chứng chưa gửi/không còn worker đang chạy và quyết định rõ, không chọn run ID mới ngầm. Giao thức này không hứa exactly-once API.
 
@@ -193,7 +193,7 @@ Nếu race sau S01 commit: finalization cũ thành stale, giữ observation; suc
 
 ### 8.5 A1/A2 trước continuation
 
-[Addendum](S02_PHASE2_CONTRACT_AMENDMENT_PROPOSAL.md) đề xuất A1 tách Cmodel/Cobserved/Cresult, kiểm run/raw hash/consent/request; A2 giữ root application tại Q2/M2, successor Q3/M3 có resolution_carry và đánh applicability. `resolution_pending_revalidation` là status mới đề nghị, giữ Answer/event evidence, chặn scope cần kết quả cũ; không tự mở lại câu hỏi. Direct identity checks a3 vẫn giữ tại root.
+[Addendum](S02_PHASE2_CONTRACT_AMENDMENT_PROPOSAL.md) đề xuất A1 tách Cmodel/Cobserved/Cresult, kiểm run/raw hash/consent/request; A2 giữ root application tại Q2/M2, successor Q3/M3 có resolution_carry và đánh applicability. `resolution_pending_revalidation` là status mới đề nghị, giữ Answer/event evidence, chặn scope cần kết quả cũ; không tự mở lại câu hỏi. Direct identity checks a3 vẫn giữ tại root. A2-R1 đổi method thành structural_check: được ghi undetermined khi thiếu proof; chỉ applicable cần đủ điều kiện. A2-R2 thêm resolution_replacement: kết luận cũ not_applicable giữ nguyên; key mới xử lý nghĩa vụ hiện tại, old-key successor chỉ resolution_replaced sau đủ evidence/reanalysis và review quan hệ thay thế. Không ứng dụng lại Answer cũ, không bỏ key khỏi set.
 
 | Điểm rẽ | Quy tắc thay mô tả draft.1 |
 | --- | --- |
@@ -202,6 +202,8 @@ Nếu race sau S01 commit: finalization cũ thành stale, giữ observation; suc
 | S01 commit → recovery → base pair mới | Giữ observation/consent/Answer; successor claim sau stale, so snapshot lại, không dispatch S01 mới |
 | Resolved Q2/M2 → M3 | Root Q2/event không đổi; Q3/AS3 current, A2 applicable hoặc pending_revalidation; không application lần hai |
 | Nguồn/rule liên quan đổi | Không auto applicable; source/impact review, hold/reanalysis, giữ evidence |
+| CARRY undetermined, có proof mới | Review/kiểm tra theo matrix A2-R1; tạo successor applicable nếu đủ, không thêm application |
+| CARRY not_applicable, có quyết định mới | Key mới xử lý nghĩa vụ hiện tại; old-key REPLACEMENT incomplete giữ hold, complete sau proof/reanalysis/review mới được resolution_replaced |
 | Sai run/hash/consent/key/lineage/root event | Reject batch, không đổi head/đóng Issue |
 
 A1/A2 phải kiểm ở finalize và checked read/reopen, không chỉ UI/orchestrator. Hoàn tất reanalysis cần evidence/task riêng; resolution applicable không truyền approval Model/Bundle.
@@ -310,13 +312,13 @@ Các liên kết code gốc ở mục 1; chi tiết kiểm thử ở mục 12. N
 | ID | Gap/quyết định cần review | Khuyến nghị, trade-off và phần bị chặn |
 | --- | --- | --- |
 | G1 | Bootstrap/source holds | Audit draft.1 đã probe skeleton tối thiểu được a3 chấp nhận; chưa chứng minh full inventory/scheduler. Còn review profile mục 3/7.1, không thêm actor/obligation |
-| G2 | Gate review không dùng làm admission analysis | Manifest source holds + closure tái tính, giữ gate bàn giao nguyên. Tốn evidence ảnh hưởng nhưng tránh accepted scope giả; phải audit trước partial continuation |
+| G2 | Gate review không dùng làm admission analysis | Thiết kế admission đã được audit làm rõ; nội dung mục 7 giữ nguyên. Chưa nghiệm thu scheduler/thuật toán scope implementation |
 | G3 | Raw trước mọi parse nhưng capture hiện tại cần metadata từ outer JSON; mock/replay profile chưa cụ thể | Đề nghị amendment vận hành response_bytes_captured + transport metadata nguyên tử theo mục 9.1, rồi response_received. Không sửa draft.3 trong lượt này. Audit amendment/schema/lookup state trước nhánh capture; replay ghi origin, không nói provider đã nhận |
 | G4 | Ngân sách/dispatch ownership xuyên command chưa có; DB1 exact DDL | Ledger và atomic reservations/dispatch claim, DB version/migration riêng, cap gốc xuyên session pilot. Bắt buộc trước live; không dùng log text làm accounting authority |
 | G5 | Usage draft.3 chỉ input/cached/output/cost/price_source, chưa diễn tả mọi cache-write bucket | Giữ nguyên Usage, raw HTTP lưu đủ, chi tiết hóa đơn/tariff trong config/evidence blob; unknown cost null và giữ reservation. Nếu cần bucket có cấu trúc public thì audit contract amendment. Không tính thiếu phí để đạt cap |
 | G6 | Consent/stale orchestration + hai incompatibilities P1 | Cần A1 source/archive separation và A2 carry, không chỉ thêm orchestrator; exact full bytes/base/hash, no resend |
-| A1 / S02-P2-01 | Nhánh cùng snapshot bị a3 từ chối | Addendum mục 2, observed_source_context_id + snapshot comparison; chờ audit semantics/profile trước batch liên quan |
-| A2 / S02-P2-02 | Issue resolved không carry qua Model trên a3 | Addendum mục 3, DIRECT root giữ + resolution_carry/status revalidation; chờ audit schema/resolvers/blockers |
+| A1 / S02-P2-01 | Semantics đã đóng ở mức thiết kế, a3 chưa hỗ trợ | Addendum mục 2 giữ nguyên; schema/profile/checker implementation theo gói 2A mới còn cần review |
+| A2 / S02-P2-02 | A2-R1/R2 đóng ở mức thiết kế theo audit draft.3 | Giữ nguyên semantics; gói schema/profile/version, compatibility/migration 2A còn cần review trước persistence/carry |
 
 D1 cần người dùng giao implementation sau audit proposal **và A1/A2/profile/migration phần liên quan**; D2 chốt G1/G2/candidate profile; D3 chốt provider/model/adapter/data permission; D4 chốt ledger/DB migration/token counter/budget/limits; D5 chốt UX/CLI/consent/recovery; D6 chốt semantic dataset/rubric/reviewer/held-out policy. Có thể duyệt offline batches trước live, nhưng phải ghi phạm vi riêng, không suy cho phép cả Đợt 2 từ một batch.
 
@@ -330,6 +332,8 @@ Fixture nhỏ synthetic và kho tạm riêng; không dùng dataset vận hành h
 | Unit từng bước | case có thông tin sẵn vs thiếu; xem≠hủy; actor mới; workflow branch; alternatives; compound requirement/criterion | Không thêm quyền/priority/actor supplied; source omission chỉ rõ; inventory/handle errors đúng; multiple valid partitions không fail theo tên |
 | Contract canonical | batches Model/Change/set/Issue/Answer/Event, duplicate/foreign refs, old issues omitted, resolved bằng prepared, sai issue_key/current set, attempt/config mismatch | Giữ regressions S02-01–05; full graph kiểm fail, head không đổi, raw evidence còn; success không auto Review/Handoff |
 | Scope | all năm kiểu unassessed/unknown support/pending reanalysis/open issue/stale set; P1/P12(A1,A2) blocked A2; union chỉ lộ blocker khi ghép | Không bỏ constraint/criteria rỗng, mở toàn actions của Part đến fixed point, không kéo tất cả chỉ vì chung component; có membership/reason trace |
+| A2-R1 method × assessment | Cùng snapshot đủ/thiếu proof; khác snapshot chưa/có human review | Code structural_check ghi undetermined hợp lệ; applicable thiếu proof và human review giả reject; JSON 06 chỉ oracle tĩnh |
+| A2-R2 replacement lifecycle | Old not_applicable → key mới → Answer_new/S01 nếu cần → app mới → incomplete → review/complete; source-only variant | Old evidence/count không đổi; current cả hai keys; complete cần full coverage/task evidence; sai lineage/key/current target/prose-only/stale/recovery không release/app lần hai. JSON 07 dự kiến, chưa chạy |
 | A1 application | Same snapshot/archive run mới; unchanged nhưng S02 cũ; recovery/race M/AS; sai raw/request/hash/consent/run/snapshot | Positive commit thật đúng Context/Change, applied=1; negative rollback/head giữ. Ví dụ 05 là oracle dự kiến |
 | A2 carry | M2→M3, independent edit, source đổi, sai key/lineage/root, thiếu impact proof, bỏ current Issue | Applicable hoặc pending đúng, history/root không đổi, không app thứ hai; reopen kiểm chain; negatives reject. Ví dụ 06 chưa chạy |
 | Admission G2 | Nguồn rõ đi 1→4 không Parts trước bước 4; unknown constraint/quyền giữ hold khi graph lớn | Per-step manifest khác Mapping.assessment; checkpoint blocked không accepted; không vòng phụ thuộc |
@@ -370,9 +374,9 @@ Tất cả batch dưới đây **chưa được giao implementation**. Cây file
 
 | Batch / dependencies | Phạm vi file dự kiến | Điều kiện hoàn thành và bằng chứng audit |
 | --- | --- | --- |
-| 2A — D1 + G1/G2 + **A2/schema profile** được audit/duyệt trước builder carry | candidates/analysis_steps/orchestrator, typed Issue/validators/resolvers theo A2; tests dự kiến | Pure handlers có thể tách sub-scope không lưu carry nếu người dùng giao riêng, nhưng không gọi 2A đủ/ready trước A2. Bootstrap, admission không vòng, M2→M3 carry/pending, negative identity/source proof; offline synthetic |
+| 2A — D1 + G1/G2 + **A2 đã đạt thiết kế; schema profile/migration** còn cần audit/duyệt trước builder carry | candidates/analysis_steps/orchestrator, typed Issue/validators/resolvers theo A2; tests dự kiến | Pure handlers có thể tách sub-scope không lưu carry nếu người dùng giao riêng, nhưng không gọi 2A đủ/ready trước A2. Bootstrap, admission không vòng, M2→M3 carry/pending, A2-R1 matrix + A2-R2 replacement lifecycle, negative identity/source proof; offline synthetic |
 | 2B — sau nền 2A; **G3/G4/G5 và migration design riêng** được duyệt | transport/replay/capture/budget nếu được giao sau này | Tính A1/A2 profile vào migration order; không gộp migrations ngầm. Mock không chứng minh live; T0–T3/ledger/capture còn chờ audit, không triển khai lượt này |
-| 2C — sau 2A với A2; **A1 + G6 + compatibility/version/migration được audit/duyệt** | clarification, S01 adapter, application validators/schema/profile, CLI/receipt | Same-snapshot và khác-snapshot/unchanged phải hoàn thành thật; consent mismatch fail; recovery no resend, same Answer race, carry sau apply. Không chỉ thêm lời gọi vào a3 |
+| 2C — sau 2A với A2; **A1 + G6 + compatibility/version/migration được audit/duyệt** | clarification, S01 adapter, application validators/schema/profile, CLI/receipt | A2-R1/R2 đã đạt thiết kế; profile/checker/migration và quyền code phần phụ thuộc vẫn cần chốt; đủ pending→reuse và not_applicable→replacement, giữ application count từng Answer. Same-snapshot và khác-snapshot/unchanged phải hoàn thành thật; consent mismatch fail; recovery no resend, same Answer race, carry sau apply. Không chỉ thêm lời gọi vào a3 |
 | 2D — sau 2A/2B/2C được audit trong phạm vi giao | E2E CLI/replay/evidence, không renderer | Full flow A1/A2/G2, regressions/reopen/CAS, installed wheel/hashes. G3/G4 chưa duyệt chỉ cho sub-scope offline riêng, không coi 2D đầy đủ |
 | 2E — sau 2D + D3/D4/D6 + G3/G4/G5 và quyền live riêng | Adapter/config/corpus/rubric khi được giao | A1/A2 audit không cấp quyền model/dữ liệu/chi phí. Chưa ready code/live; chốt giới hạn/compatibility trước pilot |
 
@@ -392,4 +396,12 @@ Sáu file minh họa hiện hành có wrapper `illustration`, `contract_version`
 5. [05-unchanged-application.json](examples/s02-phase2/05-unchanged-application.json): A1 cùng/khác snapshot, archive, recovery/stale/negatives; fields mới chưa hợp a3.
 6. [06-resolved-issue-carry-forward.json](examples/s02-phase2/06-resolved-issue-carry-forward.json): A2 root application, carry lineage/proof, pending revalidation và race/recovery negatives.
 
-[STATIC_CHECKS.json](examples/s02-phase2/STATIC_CHECKS.json) giữ nguyên bằng chứng **draft.1**, không dùng hashes ấy để khẳng định files draft.2 vẫn như cũ. [STATIC_CHECKS_DRAFT2.json](examples/s02-phase2/STATIC_CHECKS_DRAFT2.json) là lần kiểm tĩnh mới: JSON strict/duplicate keys, bindings/JSON Pointers, payload byte length/hash/consent, local Markdown links, baseline hashes và phạm vi loại trừ. Không import package để validate Model, không chạy application tests/LLM/renderer. Vì examples là projections, việc đọc JSON và resolve refs **không phải** chứng nhận đáp ứng schema/invariants của full canonical graph. Quyền implement và những gap mục 11 còn chờ review.
+[STATIC_CHECKS.json](examples/s02-phase2/STATIC_CHECKS.json) giữ nguyên bằng chứng **draft.1**, không dùng hashes ấy để khẳng định files hiện hành vẫn như cũ. [STATIC_CHECKS_DRAFT2.json](examples/s02-phase2/STATIC_CHECKS_DRAFT2.json) giữ kết quả lịch sử draft.2: JSON strict/duplicate keys, bindings/JSON Pointers, payload byte length/hash/consent, local Markdown links, baseline hashes và phạm vi loại trừ. Không import package để validate Model, không chạy application tests/LLM/renderer. Vì examples là projections, việc đọc JSON và resolve refs **không phải** chứng nhận đáp ứng schema/invariants của full canonical graph. Quyền implement và những gap mục 11 còn chờ review.
+
+### Bổ sung audit draft.3 — chỉ A2-R1/R2
+
+Ví dụ [07-resolution-replacement.json](examples/s02-phase2/07-resolution-replacement.json) thể hiện đường ra khỏi pending sau quyết định mới, cùng các ca âm/race/recovery dự kiến. [STATIC_CHECKS_DRAFT3.json](examples/s02-phase2/STATIC_CHECKS_DRAFT3.json) là bằng chứng tĩnh mới; hai manifests draft.1/draft.2 và báo cáo phản hồi draft.2 giữ nguyên. A1 đã đạt thiết kế không có nghĩa a3 đã hỗ trợ; G3/G4 và quyền implementation vẫn cần quyết định riêng.
+
+### Trạng thái sau audit draft.3 và gate kỹ thuật 2A
+
+A1/A2-R1/R2 đã đạt ở mức thiết kế, không sửa lại các semantics đó. [Đề xuất kỹ thuật 2A](S02_PHASE2_2A_SCHEMA_MIGRATION_PROPOSAL.md) có version riêng `s02-2a-storage-plan/0.1.0-draft.1`: L1/E1 profile, DB2/copy migration, activation/receipt và tests dự kiến. Phương án E1 gộp low-level checks A1+A2 trong 2A là lựa chọn cần duyệt về batch; không đưa orchestration 2C hoặc G3/G4 vào scope ngầm. Chưa có schema/DB/package version mới được phát hành.
