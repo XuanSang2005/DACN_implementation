@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-25",
+  "candidate": "dacn-s02 0.5.0a2",
+  "wheel": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h1-fixes-0.5.0a2-2026-10-24/final/wheels/dacn_s02-0.5.0a2-py3-none-any.whl",
+  "wheel_sha256": "012a398d9c3aa3d085508bb8b2a60600a0c8f8211992f2bdd5396e8e618c4f11",
+  "decision": "ACCEPTED_TECHNICAL_LOCAL_SYNTHETIC_H1",
+  "scope": "Fresh E1, full scope, S01 synthetic + four mock responses through actual step 1–4 handlers; checkpoint/reopen/resume/blocked",
+  "closed_findings": [
+    "S02-2A-H1-01",
+    "S02-2A-H1-02"
+  ],
+  "new_implementation_findings": [],
+  "full_s02_per_backend": 769,
+  "h1_subset_per_backend": 103,
+  "full_s01_per_backend": 986,
+  "independent_v4_per_backend": 10,
+  "differential_l1": 413,
+  "original_v3": {
+    "passed": 9,
+    "logger_failures": 1,
+    "per_backend": true,
+    "history_preserved": true
+  },
+  "known_harness_notes": [
+    "V3 logger tuple; corrected in separate V4 with assertions unchanged",
+    "Original P2 oracle heads() setup failure",
+    "Historical a1 migration worker timeout not reproduced; root cause not proven"
+  ],
+  "not_accepted": [
+    "semantic or business correctness",
+    "LLM or renderer",
+    "entire S02",
+    "H2 partial scope",
+    "H3 historical entry point",
+    "operational migration or live"
+  ],
+  "repo_head": "4c7e69719dbd1a6e4215cfd01764c6750962ee7f",
+  "source_inventory": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h1-0.5.0a2-2026-10-25/before.json",
+  "audit_report": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h1-0.5.0a2-2026-10-25/AUDIT_REPORT.md",
+  "oracle_v4_sha256": "6695b6a3ce9de8da6d3a8846c687b84e697253956f01bc499486639465d76897",
+  "commit_push_performed": false
+}

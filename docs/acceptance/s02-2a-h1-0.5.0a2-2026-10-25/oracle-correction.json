@@ -1,0 +1,7 @@
+{
+  "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h1-0.5.0a1-2026-10-24/test_independent_h1_v3.py",
+  "v3_sha256": "9b7d8379a6551e1bc4c868cf46e98b1de47940010346b83ce7a9fccb766e3f9e",
+  "v4_sha256": "6695b6a3ce9de8da6d3a8846c687b84e697253956f01bc499486639465d76897",
+  "assertion_ast_equal": true,
+  "correction": "Convert head tuples to lists only in evidence logger call; test data, production and assertions unchanged"
+}

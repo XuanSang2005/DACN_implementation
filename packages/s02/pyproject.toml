@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dacn-s02"
-version = "0.4.0a3"
-description = "DACN S02 DB2/E1 persistence with read-only legacy compatibility"
+version = "0.5.0a2"
+description = "DACN S02 H1 offline mock handlers with durable work checkpoints"
 requires-python = ">=3.13,<3.14"
 dependencies = ["dacn-s01==0.1.0a6", "jsonschema==4.26.0"]
 

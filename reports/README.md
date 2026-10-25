@@ -2,6 +2,8 @@
 
 S02 P3 **0.4.0a3 đã nghiệm thu kỹ thuật local/synthetic**, findings P3 01/02 đã đóng theo [audit](../docs/acceptance/P3_AUDIT_REPORT.md) và [biên bản](../docs/acceptance/S02_2A_P3_ACCEPTANCE.json). S01/Đợt 1/P1/P2 giữ phạm vi nghiệm thu cũ. Không có nghiệm thu toàn S02/nghiệp vụ/LLM/live hoặc quyền operational/cutover.
 
+**H1 0.5.0a2 đã nghiệm thu kỹ thuật local/synthetic**, H1-01/02 đóng theo [audit 25/10](../docs/acceptance/s02-2a-h1-0.5.0a2-2026-10-25/AUDIT_REPORT.md) và [biên bản](../docs/acceptance/s02-2a-h1-0.5.0a2-2026-10-25/S02_2A_H1_ACCEPTANCE.json). [Bàn giao H1](s02-phase2/2a-h1-fixes-0.5.0a2-2026-10-25/START_HERE.md) giữ nguyên trạng thái lịch sử. **[H2 draft.2 đã đạt audit thiết kế](../docs/acceptance/s02-2a-h2-design-draft2-2026-10-25/README.md)**, D01/D02 đóng design-only; [bàn giao delta](s02-phase2/2a-h2-design-draft2-2026-10-25/START_HERE.md) giữ lịch sử. H2 chưa triển khai; H2-A cần giao riêng, không mở CLI/writer/live.
+
 | Mốc | Bàn giao bất biến |
 | --- | --- |
 | S01 CLI local a6 | [Đợt 4](s01-phase4/IMPLEMENTATION_REPORT.md), [acceptance](../docs/acceptance/S01_ACCEPTANCE.json) |
@@ -11,6 +13,11 @@ S02 P3 **0.4.0a3 đã nghiệm thu kỹ thuật local/synthetic**, findings P3 0
 | P3 a1 | [Bàn giao ban đầu](s02-phase2/2a-p3-0.4.0a1-2026-10-23/START_HERE.md) |
 | P3 a2 / fix 01 | [Bàn giao](s02-phase2/2a-p3-fix01-0.4.0a2-2026-10-23/START_HERE.md) |
 | P3 a3 / fix 02 | [Wheel/hash/diff/logs](s02-phase2/2a-p3-fix02-0.4.0a3-2026-10-23/START_HERE.md) |
+| H1 design draft.2 | [Bàn giao thiết kế lịch sử](s02-phase2/2a-h1-design-draft2-2026-10-23/START_HERE.md); audit đạt 24/10, nguồn trong bàn giao H1 |
+| H1 0.5.0a2 | [Bàn giao lịch sử](s02-phase2/2a-h1-fixes-0.5.0a2-2026-10-25/START_HERE.md), [nghiệm thu H1](../docs/acceptance/s02-2a-h1-0.5.0a2-2026-10-25/S02_2A_H1_ACCEPTANCE.json) |
+| H2 design draft.1 | [Bàn giao lịch sử](s02-phase2/2a-h2-design-draft1-2026-10-25/START_HERE.md), giữ nguyên evidence; audit yêu cầu bổ sung D01/D02 |
+| H2 design draft.2 | [Bàn giao lịch sử](s02-phase2/2a-h2-design-draft2-2026-10-25/START_HERE.md), [audit thiết kế đạt](../docs/acceptance/s02-2a-h2-design-draft2-2026-10-25/README.md), chưa implementation |
+| Mốc H1 + thiết kế H2 | [Trạng thái/commit cục bộ](s02-phase2/h1-h2-design-commit-2026-10-25/START_HERE.md); chưa push hoặc H2-A |
 | Layout 19/10 | [Bàn giao](repository-layout/2026-10-19/IMPLEMENTATION_REPORT.md), [fix wrappers](repository-layout/fixes-LAYOUT-01-2026-10-19/IMPLEMENTATION_REPORT.md) |
 | Cleanup GitHub riêng | [Kết quả trước/sau](../docs/GITHUB_CLEANUP_2026-10-23.md), [archive/restore](../docs/ARTIFACTS.md) |
 

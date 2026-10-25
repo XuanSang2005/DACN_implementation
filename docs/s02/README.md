@@ -1,10 +1,10 @@
 # S02 — chỉ dẫn hiện hành
 
-Package **0.4.0a3**, contract **draft.3**, DB structure **2**. Đợt 1/P1/P2/P3 đã nghiệm thu kỹ thuật trong phạm vi riêng; [P3 a3](../acceptance/P3_AUDIT_REPORT.md) đóng findings P3 01/02, chỉ local/synthetic. Chưa nghiệm thu toàn S02, nghiệp vụ/LLM/live hoặc migration operational/cutover. [Bootstrap/verification](../BOOTSTRAP.md).
+Package **0.5.0a2**, contract **draft.3**, DB structure **2**. Đợt 1/P1/P2/P3/H1 đã nghiệm thu kỹ thuật từng phạm vi; [H1 a2](../acceptance/s02-2a-h1-0.5.0a2-2026-10-25/AUDIT_REPORT.md) đạt local/synthetic fresh/full scope và đóng H1-01/02. Chưa nghiệm thu toàn S02/nghiệp vụ/LLM/renderer/live hoặc operational migration/cutover. [Môi trường H1](../../reports/s02-phase2/2a-h1-fixes-0.5.0a2-2026-10-25/REPRODUCE.md); [bootstrap P3](../BOOTSTRAP.md) giữ lane accepted-only riêng.
 
 [Code/config](../../packages/s02/), [tests](../../packages/s02/tests/), [tools](../../packages/s02/tools/). [README gốc](../../README.md) chỉ cách cài locks và build; S02 dependency vẫn là distribution S01 a6, không import source chéo. Kiểm suite hiện hành bằng `tools/verify_checkout.py` và environment đã bootstrap; S02 dùng E1 adapter/baseline helpers, không raw suite L1 cũ.
 
-CLI có init, checked intake S01, lookup và [nhóm migration offline P3](../S02_2A_P3_IMPLEMENTATION.md); không chạy LLM/renderer. Sau ví dụ [S01](../s01/README.md), tạo `$DACN_WORK/s02.toml` bên ngoài checkout với nội dung:
+CLI có init, checked intake S01, lookup, [handlers H1](../S02_2A_H1_IMPLEMENTATION.md) bootstrap/analyze-step/prepare-work/resume/progress và [migration offline P3](../S02_2A_P3_IMPLEMENTATION.md); không LLM/renderer. [H2 partial scope draft.2](../S02_2A_H2_PARTIAL_SCOPE_DESIGN_PROPOSAL.md) đã [đạt audit thiết kế](../acceptance/s02-2a-h2-design-draft2-2026-10-25/README.md), chưa có pure-policy/CLI/writer implementation. H2-A là đợt giao riêng tiếp theo. Sau ví dụ [S01](../s01/README.md), tạo `$DACN_WORK/s02.toml` bên ngoài checkout với nội dung:
 
 ```toml
 state_dir = "s02-state"

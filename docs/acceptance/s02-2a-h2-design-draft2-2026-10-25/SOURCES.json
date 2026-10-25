@@ -1,0 +1,12 @@
+{
+  "DESIGN_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-design-draft2-2026-10-25/DESIGN_ACCEPTANCE.json",
+    "sha256": "b1c1fd99daa7f67d8620b6f51846e455e342dff6217a42dba1b5361f2e7908bb",
+    "copy": "byte_exact"
+  },
+  "README.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-design-draft2-2026-10-25/AUDIT_REPORT.md",
+    "source_sha256": "2381e1e80ba7ca29792c73312b9da39c79bda11466e8410dde9fd99e75429ec1",
+    "copy": "reference_page_not_verbatim_report"
+  }
+}

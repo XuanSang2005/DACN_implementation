@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-25",
+  "proposal_version": "s02-2a-h2/0.1.0-draft.2",
+  "proposal_sha256": "490ed4f0ce3b9979fb8e7c06ef5f1e1113183dcbd67c8a23d6ecdd3ce62d9dcd",
+  "status": "ACCEPTED_DESIGN",
+  "scope": "local/synthetic, fresh E1, same snapshot, steps 1-4; D1-D4 technical design",
+  "findings": [
+    {
+      "id": "S02-2A-H2-D01",
+      "status": "CLOSED_DESIGN"
+    },
+    {
+      "id": "S02-2A-H2-D02",
+      "status": "CLOSED_DESIGN"
+    }
+  ],
+  "new_findings": [],
+  "H1_acceptance_unchanged": true,
+  "implementation_accepted": false,
+  "implementation_authorized_by_this_audit": false,
+  "application_tests_run": 0,
+  "recommended_next_assignment": "H2-A pure scope policy only; requires user assignment",
+  "excluded": [
+    "H2-B/C execution in this audit",
+    "H3",
+    "live LLM",
+    "operational migration",
+    "business semantic acceptance"
+  ],
+  "stage_commit_push": false
+}

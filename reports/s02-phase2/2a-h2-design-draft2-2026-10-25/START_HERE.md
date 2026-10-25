@@ -1,0 +1,15 @@
+# Bàn giao sửa thiết kế H2 draft.2
+
+Ngày 25/10/2026. **Hoàn tất mốc tài liệu: H2-D01/D02 đã sửa thiết kế, chờ audit lại.** Chưa tự đóng findings, chưa triển khai/nghiệm thu H2 hoặc được giao code. H1 a2 tiếp tục nghiệm thu đúng local/synthetic/fresh E1/full scope.
+
+Proposal duy nhất để audit: [S02_2A_H2_PARTIAL_SCOPE_DESIGN_PROPOSAL.md](../../../docs/S02_2A_H2_PARTIAL_SCOPE_DESIGN_PROPOSAL.md), **s02-2a-h2/0.1.0-draft.2**, SHA-256 `490ed4f0ce3b9979fb8e7c06ef5f1e1113183dcbd67c8a23d6ecdd3ce62d9dcd`.
+
+- [Phản hồi từng finding, traces/gates](FINDINGS_RESPONSE.md).
+- [Delta, phạm vi bảo toàn và giới hạn](DESIGN_DELTA.md).
+- [Audit đầu vào](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-design-draft1-2026-10-25/AUDIT_REPORT.md); [snapshot draft.1 nguyên byte](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/before/docs/S02_2A_H2_PARTIAL_SCOPE_DESIGN_PROPOSAL.md).
+- [Diff proposal draft.1→draft.2](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/proposal.diff.patch), [diff toàn lượt tài liệu](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/documentation.diff.patch), [hashes tài liệu](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/documentation.inventory.json).
+- [Kiểm tĩnh mới](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/STATIC_CHECKS.json), [inventory bảo toàn](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/protected-verification.json), [commands/logs](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/commands/), [seal](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/designs/s02-2a-h2-draft2-2026-10-25/SEAL.json).
+
+D1 chọn provider local/synthetic ghim file approvals từ invoker ngoài payload; restart cấp lại đúng trust context, không tin DB grant. D2 chọn scoped-revalidate AS-only/new command, predicate guard/lineage/progress đầy đủ, business/gap/global mapping holds giữ điều kiện riêng. D3 chọn bootstrap H2 riêng, hoãn H1 bridge; D4 định nghĩa counters/budget chung và stress. Đây là phương án cụ thể **trong proposal chờ phê duyệt**, không ghi người dùng đã duyệt.
+
+Mọi scenarios/CLI/provider trong proposal là **thiết kế và kỳ vọng synthetic, chưa thực chạy**. Lượt này không application tests/build/wheel/install/bootstrap/LLM/live; chỉ kiểm tài liệu và hashes. Production/tests/locks/old evidence giữ nguyên; không stage/commit/push. Bàn giao draft.1 và commit-preparation cũ giữ nguyên lịch sử; commit candidates cũ cần review lại sau delta này, không coi là staged tree hiện tại.

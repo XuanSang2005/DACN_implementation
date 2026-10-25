@@ -1,5 +1,7 @@
 # Bootstrap và kiểm checkout
 
+Trạng thái 25/10/2026: H1 `0.5.0a2` đã [nghiệm thu local/synthetic](acceptance/s02-2a-h1-0.5.0a2-2026-10-25/S02_2A_H1_ACCEPTANCE.json). Lane tools/bootstrap.py bên dưới giữ kiểm source P3 `0.4.0a3` với bundle accepted-only. Source H1 dùng [driver offline và commands H1](../reports/s02-phase2/2a-h1-fixes-0.5.0a2-2026-10-25/REPRODUCE.md), cùng bundle/locks; không ép equality khác version hoặc sửa baseline hash. H2 chưa triển khai.
+
 Chạy hai lệnh trong README bằng Python hệ thống. Platform đã kiểm: macOS arm64; runtime trong bundle là CPython 3.13.16 GIL/SQLite 3.53.1. Các platform khác chưa có bundle được nghiệm thu; tool từ chối thay vì tự tải/nâng runtime.
 
 `artifacts/bootstrap-bundle.json` pin archive SHA-256/size và inventory SHA; `artifacts/bootstrap.inventory.json` pin từng file/mode/symlink. Bundle tên `bootstrap-macos-arm64-2026-10-23.tar.gz`. Giữ nguyên file, không tự giải nén bằng lệnh ghi đè lên checkout.

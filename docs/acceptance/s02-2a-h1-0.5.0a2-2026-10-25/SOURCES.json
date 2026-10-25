@@ -1,0 +1,22 @@
+{
+  "AUDIT_REPORT.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h1-0.5.0a2-2026-10-25/AUDIT_REPORT.md",
+    "sha256": "d7d00c4689c5a8ae7ff68719d17382ebdd9896aea566d3833508b00188d8610d",
+    "copy": "byte_exact"
+  },
+  "S02_2A_H1_ACCEPTANCE.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h1-0.5.0a2-2026-10-25/S02_2A_H1_ACCEPTANCE.json",
+    "sha256": "9b9b78ad081897bacb59f9cc17ea922cfca71774d116c6f3db1ef3a8eed2c8c7",
+    "copy": "byte_exact"
+  },
+  "AUDIT_ERRATUM_A1.md": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h1-0.5.0a2-2026-10-25/AUDIT_ERRATUM_A1.md",
+    "sha256": "fbb94738e884c363f32c44435a26f01d7c08099f97739092f6c71c007a140e88",
+    "copy": "byte_exact"
+  },
+  "oracle-correction.json": {
+    "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h1-0.5.0a2-2026-10-25/oracle-correction.json",
+    "sha256": "274b9af8114c54d7cd861adbe36c0061b2472dd5d5543b53dd473fd40816a6d7",
+    "copy": "byte_exact"
+  }
+}
