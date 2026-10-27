@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-26",
+  "candidate": "dacn-s02 0.6.0a2",
+  "decision": "ACCEPTED_TECHNICAL_H2_A_PURE_POLICY_LOCAL_SYNTHETIC",
+  "acceptance_authority": "user",
+  "recorded_by": "implementation",
+  "user_confirmation": "H2-A dacn-s02 0.6.0a2 đã đạt audit độc lập; tôi chấp thuận nghiệm thu kỹ thuật trong phạm vi pure policy local/synthetic.",
+  "confirmation_source": "Explicit user message in this documentation closeout turn, 2026-10-26",
+  "scope": "Pure scope policy: contracts/selectors, Part–row–source context, closure/reverse impact/union and admission before/after Parts; local/synthetic, same checked snapshot/SourceContext, fresh E1, steps 1–4.",
+  "wheel": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-fixes-0.6.0a2-round1-2026-10-25/final/wheels/dacn_s02-0.6.0a2-py3-none-any.whl",
+  "wheel_sha256": "d4e824d66c3066c29d63792d60116c6e8596d96593037bc15f97ff5470ee08e2",
+  "closed_findings": [
+    "S02-2A-H2-A-01",
+    "S02-2A-H2-A-02",
+    "S02-2A-H2-A-03"
+  ],
+  "new_implementation_findings": [],
+  "audit_report": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/AUDIT_REPORT.md",
+  "audit_report_sha256": "b830cbd6ccaa4ff47342230bb82f57b2f8a31848fcbedc4ae94f49f3e5648043",
+  "audit_status": "audit_pass",
+  "audit_original_user_acceptance": "pending at audit publication; superseded only by the separate explicit user decision recorded here, not by rewriting audit files",
+  "oracle_erratum": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/ORACLE_ERRATUM.md",
+    "sha256": "1c82d3b3b0a236b7da95d50f3885171b90f95712c13707dc10df3735c649e959",
+    "disposition": "Auditor confirmed existing S02Error.error accessor; corrected oracle changes only accessor, original files/failures retained; finding03 closed on a2 review + corrected oracle"
+  },
+  "audit_reported_results": {
+    "independent_effective_per_backend": 25,
+    "full_s02_per_backend": 893,
+    "full_s01_per_backend": 986,
+    "differential_l1_cases": 413,
+    "result_origin": "Independent audit of 2026-10-26; no application tests rerun for documentation closeout"
+  },
+  "not_accepted": [
+    "H2 pipeline or H2-B/H2-C/H3",
+    "H2 provider file I/O/restart, raw-to-builder fidelity, IDs/records, scoped CLI/bootstrap/handlers/checkpoints/resume",
+    "H2 guard lifecycle/revalidation/persistence/CAS/crash/lost-ACK/stale publication",
+    "business or semantic correctness, human identity/authentication",
+    "entire S02, LLM, renderer, operational migration/cutover or live"
+  ],
+  "implementation_permission_next": "H2-B requires a separate user assignment; not started by this acceptance",
+  "repo_head_before_docs": "67134fa6f3198282fed650d817d865b792228742",
+  "documentation_only_closeout": true,
+  "application_tests_rerun": false,
+  "stage_commit_push_performed": false
+}

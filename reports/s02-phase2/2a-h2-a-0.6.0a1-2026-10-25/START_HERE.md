@@ -1,0 +1,15 @@
+# 2A-H2-A — bàn giao audit độc lập
+
+**H2-A đã triển khai pure scope policy, chờ audit độc lập.** `dacn-s02 0.6.0a1`, ngày 25/10/2026. Người dùng đã chấp thuận D1–D4 draft.2 và giao riêng A; [audit thiết kế](../../../docs/acceptance/s02-2a-h2-design-draft2-2026-10-25/README.md) không là nghiệm thu code.
+
+**Wheel duy nhất cần audit:** [dacn_s02-0.6.0a1-py3-none-any.whl](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final/wheels/dacn_s02-0.6.0a1-py3-none-any.whl)  
+SHA-256: `008fab80bc5607142aa2f1a479a7c79043cb1c0359df41a5045207609ef7c5dc`.
+
+- [Implementation/phạm vi và controls](IMPLEMENTATION_REPORT.md), [API và trust boundary](../../../docs/S02_2A_H2_A_IMPLEMENTATION.md).
+- [Kết quả kiểm mới, JUnit/instrumentation](TEST_RESULTS.md), [tái lập vào output mới](REPRODUCE.md).
+- [Evidence root](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25), [diff so trước sửa](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final/change.diff), [bảo toàn](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final/PRESERVATION.json), [inventory trước](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/before.inventory.json), [inventory sau](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final/after.inventory.json).
+- [Commands/cwd/environment/exit codes](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/commands), [source–wheel–installed](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final/package-evidence/manifest.json), [hai build sạch](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final-environment/environment.json), [hash inventory](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final/SHA256SUMS), [seal](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-0.6.0a1-2026-10-25/final/SEAL.json).
+
+Chỉ contracts/selectors/context Part–row–source/closure/reverse impact/union/admission/candidate và limits bằng hàm thuần. Cùng checked source fresh E1/synthetic, bước 1–4. Chưa pipeline H2: CLI/provider file I/O/writer/handlers/progress/seal/CAS/guard revalidation ở B; chưa C/H3/LLM/renderer/live. Pure test không chứng minh restart/concurrency/crash H2. H1 baseline và evidence cũ giữ nguyên.
+
+Không stage/commit/push. Không tự ghi nghiệm thu H2-A; mốc này sẵn sàng để auditor kiểm và người dùng chuẩn bị commit sau review.

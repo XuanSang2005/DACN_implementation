@@ -1,0 +1,51 @@
+{
+  "START_HERE.md": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/START_HERE.md",
+    "sha256": "10794b720a521818d486cde0b62e78fc0cf2d99fbe7281497fd57993b1fae23d",
+    "size": 720
+  },
+  "AUDIT_REPORT.md": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/AUDIT_REPORT.md",
+    "sha256": "b830cbd6ccaa4ff47342230bb82f57b2f8a31848fcbedc4ae94f49f3e5648043",
+    "size": 11456
+  },
+  "FINDINGS.json": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/FINDINGS.json",
+    "sha256": "6f5a92fcefa881be139d01bd950739cfb775a040eeb516f2f60d924cb3617dd0",
+    "size": 1976
+  },
+  "ORACLE_ERRATUM.md": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/ORACLE_ERRATUM.md",
+    "sha256": "1c82d3b3b0a236b7da95d50f3885171b90f95712c13707dc10df3735c649e959",
+    "size": 2176
+  },
+  "RESULTS.json": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/RESULTS.json",
+    "sha256": "199467fe345fac77bb870b6b02c7819124ed18091d669e54fe253444e510a578",
+    "size": 89315
+  },
+  "final-integrity.json": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/final-integrity.json",
+    "sha256": "7969465cc14bd62ff64959cf81758c8fe3069eb7f326b1f8195219307232a4a7",
+    "size": 360
+  },
+  "SEAL.json": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/SEAL.json",
+    "sha256": "52d9384b9817e89531dcfb6750088c3989492061c660d045bbada872201ddc0c",
+    "size": 983
+  },
+  "SHA256SUMS.txt": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-a-0.6.0a2-round1-2026-10-26/SHA256SUMS.txt",
+    "sha256": "6fb960b9088732a323d7690a6b86c750ec22c07d0a7f7a4c1f624020ccfcd0da",
+    "size": 225491
+  },
+  "wheel": {
+    "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-a-fixes-0.6.0a2-round1-2026-10-25/final/wheels/dacn_s02-0.6.0a2-py3-none-any.whl",
+    "sha256": "d4e824d66c3066c29d63792d60116c6e8596d96593037bc15f97ff5470ee08e2",
+    "size": 127344
+  },
+  "proposal": {
+    "path": "docs/S02_2A_H2_PARTIAL_SCOPE_DESIGN_PROPOSAL.md",
+    "sha256": "490ed4f0ce3b9979fb8e7c06ef5f1e1113183dcbd67c8a23d6ecdd3ce62d9dcd"
+  }
+}
