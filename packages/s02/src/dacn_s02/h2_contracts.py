@@ -127,9 +127,9 @@ class HoldSelector:
             ident(x)
 
     @classmethod
-    def parse(cls, value, source, budget):
+    def parse(cls, value, source, budget, *, input_lane=True):
         need(type(value) is dict, 'hold_object')
-        budget.inspect(value, input_lane=True, slot='selector.' + ident(value.get('issue_id')))
+        budget.inspect(value, input_lane=input_lane, slot='selector.' + ident(value.get('issue_id')))
         closed(value, 'version issue_id issue_key target_step kind source_refs element_ids mapping_part_ids impact_known code_task_role', 'hold')
         need(value['version'] == HOLD, 'hold_version')
         integer(value['target_step'], 1, 4)

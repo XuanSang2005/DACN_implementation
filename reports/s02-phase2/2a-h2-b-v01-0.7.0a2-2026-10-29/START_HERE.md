@@ -1,0 +1,13 @@
+# H2-B a2 — bổ sung xác minh V01, chờ audit
+
+**Chỉ bổ sung xác minh; không đổi production, repo tests hoặc version. V01 chưa tự đóng, H2-B chưa tự nghiệm thu.** Findings 01/02 đã được auditor đóng theo [audit a2](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-b-0.7.0a2-2026-10-29/AUDIT_REPORT.md). Người dùng quyết định nghiệm thu cuối.
+
+Giữ nguyên [wheel dacn_s02 0.7.0a2](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-b-fixes-0.7.0a2-2026-10-29/final/wheels/dacn_s02-0.7.0a2-py3-none-any.whl), SHA-256 **b5fcdba097c7fec74d87cd5a548c550764fdc05827301944bfa9bcbff307fb76**. Cài non-editable vào venv mới ngoài checkout từ locks offline; [source–wheel–installed](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-b-v01-0.7.0a2-2026-10-29/package-evidence/manifest.json). Không build/phát hành wheel mới.
+
+- [Kết luận V01](V01_RESPONSE.md), [kết quả và failures](TEST_RESULTS.md), [erratum/diff harness](HARNESS_ERRATUM.md), [tái lập](REPRODUCE.md).
+- [Evidence](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-b-v01-0.7.0a2-2026-10-29), [timeline/DB identity summary](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-b-v01-0.7.0a2-2026-10-29/RESULTS.json), [seal](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-b-v01-0.7.0a2-2026-10-29/SEAL.json), [manifest](/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/implementations/s02-2a-h2-b-v01-0.7.0a2-2026-10-29/MANIFEST.json), [marker sau seal](AUDIT_READY.json).
+- Full auditor lịch sử vẫn **C 959/959; Python 958/959**, một failure deadline sau finalize. Không chạy lại full trong đợt này. Targeted pass không thay thế full failure.
+
+Đã đo invocation fixture gốc, giữ hot DB+journal và tái tạo lỗi wall-clock deadline trước/sau publication trên clones của trạng thái crash thật. Checked readback, read-only report và fresh resume giữ plan/primary/raw/Run/head; snapshots lấy trước lần đọc đầu tiên. Harness mới giữ hot journal thật và toàn bộ assertions gốc, giảm fixture và dùng cache SQLite nhỏ chỉ trong worker test. Các thử nghiệm thất bại cũng được giữ.
+
+Không khẳng định nhiệt máy/scheduling/encode là nguyên nhân lịch sử. Không còn DB của chính lần full fail để đọc lại; không dùng DB mới thay bằng chứng thiếu đó. Sau seal/marker, dừng sửa chờ audit/người dùng. Không stage/commit/push, H2-C/H3/live.

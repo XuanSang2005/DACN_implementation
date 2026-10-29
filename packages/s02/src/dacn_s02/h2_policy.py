@@ -114,6 +114,19 @@ def materialize(ctx, selector, issue):
     return ctx.closure(e, p)
 
 
+def _building_task(permit, issue, selector, units, step):
+    """A batch may build several separately proven code-owned tasks at once.
+
+    Validate each task with its original unit set/key, never widen that set to
+    the batch. Only this matching task is exempt; all other holds still gate
+    every selected unit and the full union.
+    """
+    return (type(permit) is ConstructionPermit and
+            (permit.valid_for(issue, selector, units, step) or
+             permit.role == 'await_builder' and permit.unit_ids <= set(units) and
+             permit.valid_for(issue, selector, permit.unit_ids, step)))
+
+
 def _evaluate(base, ctx, aset, issues, selectors, binding, evidence, grant, candidate_raw, phase, permits, authority_context):
     need(phase in ('before', 'post'), 'admission_phase')
     need(base.budget is ctx.budget, 'shared_invocation_budget')
@@ -184,7 +197,7 @@ def _evaluate(base, ctx, aset, issues, selectors, binding, evidence, grant, cand
         for q, s in active:
             if step < s.target_step:
                 continue
-            exempt = any(type(p) is ConstructionPermit and p.valid_for(q, s, units, step) for p in permits)
+            exempt = any(_building_task(p, q, s, units, step) for p in permits)
             if exempt:
                 continue  # building this task, not resolving it/reviewing it
             if s.kind == 'all_source_uses' or not s.impact_known:
@@ -205,7 +218,7 @@ def _evaluate(base, ctx, aset, issues, selectors, binding, evidence, grant, cand
                             {p for u in eligible for p in seeds[u][1]})
     union_reasons = {r for r in permitted.reasons if r != 'ACTION_WITHOUT_PART' or phase == 'post' and step == 4}
     for q, s in active:
-        if step < s.target_step or any(type(p) is ConstructionPermit and p.valid_for(q, s, units, step) for p in permits):
+        if step < s.target_step or any(_building_task(p, q, s, units, step) for p in permits):
             continue
         if permitted.elements & s.elements or permitted.parts & s.parts:
             union_reasons.add('UNION_BLOCKING_USE')
@@ -270,7 +283,7 @@ def assess_union(base, candidate, aset, issues, selectors, binding, evidence, gr
     for footprint in (delta.before, delta.after):
         impact_reasons.update('IMPACT_' + r for r in footprint.reasons if r != 'ACTION_WITHOUT_PART' or step == 4)
     for q, s in ((q, s) for q in issues for s in selectors if s.issue_id == q['id']):
-        if q['body']['status'] != 'open' or step < s.target_step or any(type(p) is ConstructionPermit and p.valid_for(q, s, units, step) for p in permits):
+        if q['body']['status'] != 'open' or step < s.target_step or any(_building_task(p, q, s, units, step) for p in permits):
             continue
         for ctx, footprint in ((base, delta.before), (candidate, delta.after)):
             held = materialize(ctx, s, q)

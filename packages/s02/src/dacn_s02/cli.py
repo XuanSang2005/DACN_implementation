@@ -33,7 +33,10 @@ def main(argv=None):
         if name=='migration-activate':
             mig.add_argument('--confirm-activation',action='store_true');mig.add_argument('--operator',required=True)
         if name=='lookup-migrated':mig.add_argument('--receipt',required=True)
+    from .h2_cli import COMMANDS as H2_COMMANDS, add_arguments, validate_args
+    add_arguments(parser,sub)
     args=parser.parse_args(argv);cmd=None
+    validate_args(parser,args)
     if args.command=='prepare-work':
         if args.step=='bootstrap' and (args.mock_response is not None or args.expect_sha256 is not None):parser.error('bootstrap does not accept mock/hash flags')
         if args.step!='bootstrap' and (args.mock_response is None or args.expect_sha256 is None):parser.error('work step requires mock-response and expect-sha256')
@@ -42,6 +45,10 @@ def main(argv=None):
         result=None;record_ids=[];status='completed';exit_code=0;direct=None
         if args.command in ('bootstrap','analyze-step','prepare-work','resume','progress'):
             from .h1_cli import run
+            from .h1_service import exit_code as work_exit
+            direct=run(args,s,repo);cmd=direct['command_id'];exit_code=work_exit(direct)
+        elif args.command in H2_COMMANDS:
+            from .h2_cli import run
             from .h1_service import exit_code as work_exit
             direct=run(args,s,repo);cmd=direct['command_id'];exit_code=work_exit(direct)
         elif args.command.startswith('migration-') or args.command=='lookup-migrated':
