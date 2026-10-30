@@ -1,0 +1,35 @@
+{
+  "scope": "Read-only design audit draft.2 artifacts; no restoration/resealing of prior audit NEXT_PROMPT.",
+  "sources": [
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-design-draft2-2026-10-29/START_HERE.md",
+      "bytes": 1122,
+      "sha256": "fcfbf61a1c8775b51b1d046c27cb2f4da3d195199c67a2f24d7f411a7ed09ed8"
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-design-draft2-2026-10-29/AUDIT_REPORT.md",
+      "bytes": 12452,
+      "sha256": "c6aed5b7f99970062be58e6117aae958a5e8b6452d6079f8a6aba4b5644d32e3"
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-design-draft2-2026-10-29/proposal-draft2.snapshot.md",
+      "bytes": 69736,
+      "sha256": "7980042c558bb7f9dd0dc5058af8fb3a06c07c80566f5db6273e54fe6a4435d4"
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-design-draft2-2026-10-29/MANIFEST.json",
+      "bytes": 1928,
+      "sha256": "b3b8781308742b3481590256335e6057ebe71a66ccf527802b95c0e51c8c31a2"
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-design-draft2-2026-10-29/SEAL.json",
+      "bytes": 805,
+      "sha256": "e023bf1a93094970931543ab1a79cac34fe84e80d0d802421ca57e779e953101"
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-design-draft2-2026-10-29/INTEGRITY_OBSERVATION.json",
+      "bytes": 761,
+      "sha256": "4d0521e8648e65b9ebee209684f6246e7f17f813471cda28c4e10a7122e7dd15"
+    }
+  ]
+}

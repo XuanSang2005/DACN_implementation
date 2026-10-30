@@ -4,7 +4,7 @@ Input hashes and every text change are emitted for review. This is test tooling,
 not a production profile converter, writer, or migration entry point.
 """
 from pathlib import Path
-import argparse,difflib,hashlib,json,shutil
+import argparse,difflib,hashlib,json
 ROOT=Path(__file__).resolve().parents[3]
 def prepare(destination):
     destination=Path(destination);destination.mkdir(parents=True,exist_ok=False)

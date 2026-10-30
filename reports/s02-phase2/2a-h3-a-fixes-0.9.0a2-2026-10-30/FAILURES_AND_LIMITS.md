@@ -1,0 +1,21 @@
+# Failures và giới hạn a2
+
+| Attempt | Kết quả thực / lý do | Disposition |
+| --- | --- | --- |
+| Focused v1 (environment-v1) | 124 ca/backend, 5 fail/119 pass, 0 errors/skips | Lỗi mới: anchor missing-artifact diagnostics đổi; origin raw locator H2 dùng blob_id thay H3 StageRef; inventory quá chặt đòi cả unit không claim; positive no-output fixture thêm requirement nhưng initial model thiếu mapping. Giữ logs/JUnit/DB/source build copies; sửa trong code/fixture mới, không đổi oracle/caps |
+| Focused v2 (environment-v2) | 124 ca/backend, 2 fail/122 pass, 0 errors/skips | Positive full-anchor fixture đã kiểm selector target1 rồi đổi selector thành code task target4 trong cùng immutable Budget slot; code từ chối đúng input_slot_changed. Sửa fixture dựng actual task/selector trước lần kiểm đầu. Không reset/nới Budget hoặc hạ assertions stage2/unfinished-step |
+| Focused v3 | 124/124 mỗi backend, 0 failure/error/skip | Cùng production payload environment-v2, chỉ sửa fixture selector input order |
+| Oracle v3 launcher | C/Python thoát1 trước collection, không JUnit | Original helper resolve symlink Python ra runtime ngoài venv, không có pytest. Giữ stdout/stderr/argv; đây là launcher failure của implementer khi replay, khác 8 assertion failures a1 của auditor. Không coi là ca oracle đã chạy |
+| Oracle v4 + transport control | Kết quả theo START_HERE/RESULTS sau JUnit mới | Không sửa helper/oracles: physical interpreter copy trong candidate/bin, byte hash bằng runtime và sys.prefix/site-packages đúng venv (ORACLE_LAUNCHER.json). Control mới thêm valid hash-chain transport held, focused1 case/backend; không phải H3 runtime |
+
+Lỗi v1/v2 là development của implementer a2, không phải findings đã đóng. V1 là precursor production; v2/v3 cùng production nhưng khác source test fixture. COMMANDS và copied test workspaces giữ source/installed provenance từng lượt. Không dùng historical counts a1 làm kết quả a2.
+
+Giới hạn giữ nguyên pure/local-synthetic A: dữ liệu detached không thay checked operational lookup; không new H3 I/O/CLI/writer/restart/CAS, semantic business acceptance hoặc real authentication/network/UI. Anchor chỉ H2/H3 publisher được hỗ trợ, không general/H1 bridge. Transport không tiến completed stage từ prefix: nếu có intervening work mới, dùng complete current publisher anchor. Unit thiếu whole progress proof giữ unassessed/held; không ngụ ý completed output đã bị sửa. Current eligibility từ policy/authority vẫn khác immutable work history.
+
+Limits ceilings và shared Budget không đổi; counter draft.3 sửa typed Pair/StageRef counting. Deadline cooperative, không performance/SLA/liveness guarantee. Không diễn giải wall durations như benchmark hoặc suy nguyên nhân các khoảng gián đoạn khi chưa có evidence hệ thống.
+
+Không chạy external historical oracle suites P1/P2/P3/H1/H2 ngoài two original H3-A auditor oracles được giao; không báo chúng pass mới. Full regression H1/H2 là baseline compatibility, không H3-B/C runtime safety. D01/D02 đóng design-only, implementation findings01/02/03 vẫn OPEN chờ auditor/user. NEXT_PROMPT draft.1 mismatch giữ nguyên, không restore/reseal. Không stage/commit/push/dataset/LLM/live/operational.
+
+Provisional full environment-v2/delivery: SIGINT sau partial C1049 cases (0 fail/error/skip), không là full pass, chưa Python full. Bổ sung pin Plan.from_pair theo actual operation/Run base để không lách changed-key summaries; sửa coherent Plan positive fixture sang đúng base và thêm negative tương ứng. V5 dùng fresh environment-v3/focused126/oracle13; delivery-final là sole authority, old delivery/ và SHA289e5005…67523e là provisional. Không nới caps/timeout/assertions hoặc xóa failed DBs.
+
+Schema catalogue attempt1 phát hiện nested s01_store_key chưa classified (REFERENCE_FIELD_AUDIT.json), không là application test verdict. Hoàn tất unresolved/store/dispatch/analysis keys và Edge endpoints trong counter; final mixed8 boundary controls và exhaustive catalogue final phải pass trước full. Provisional v3/delivery-final dừng sau partial C675 cases, 0 failures/errors/skips; không full pass, không Python full. V5 final dùng environment-v5/delivery-release; v6 env4 focused129/oracle13 là precursor trước nested-key correction, không release evidence.

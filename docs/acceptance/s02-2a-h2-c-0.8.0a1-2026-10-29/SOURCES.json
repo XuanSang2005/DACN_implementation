@@ -1,0 +1,45 @@
+{
+  "policy": "Read-only external audit, no historical files rewritten or suites rerun; hashes verified in this docs-only turn.",
+  "sources": [
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/START_HERE.md",
+      "sha256": "1591f06093c5e969ca889573f6da82df4d2c84e82cf17957f28164f331415236",
+      "bytes": 1415
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/AUDIT_REPORT.md",
+      "sha256": "19d5431a894a3638bc63b9c1da3e818b47044d606a8e4ccdfa64110d62e02643",
+      "bytes": 13475
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/TEST_RESULTS.json",
+      "sha256": "834819a1ff82c915fb12f91bddaece7de47a03a9e92e3f0527081c7b10bc47ae",
+      "bytes": 8921
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/SUPPORTING_IMPLEMENTER_RUNS.json",
+      "sha256": "9da5b3e3862567b838949f940fc6ef92546b1d83f291c53c27356154e4447f63",
+      "bytes": 7108
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/INDEPENDENT_PUBLICATIONS.json",
+      "sha256": "bc9b3bfee47e1d6a5a6db955d61a731e533c850a9363435c597b5743a23828d2",
+      "bytes": 30409
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/FINAL_INTEGRITY.json",
+      "sha256": "6a166414c980b505dee320a5ea60cb657a9254c9d958ab13c08b0b854d8aa177",
+      "bytes": 431
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/MANIFEST.json",
+      "sha256": "91964c4cde974508ee1cc241496ce098efcace74f27c8557088dcfdc1ccafa5d",
+      "bytes": 324800
+    },
+    {
+      "path": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h2-c-0.8.0a1-2026-10-29/SEAL.json",
+      "sha256": "adf2c8fe8c521ae3860834f49bd0260bd6308426f1fee3c66a94362daeaa7344",
+      "bytes": 817
+    }
+  ]
+}

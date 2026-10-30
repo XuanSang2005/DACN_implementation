@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-29",
+  "design": "s02-2a-h3-history/0.1.0-draft.2",
+  "proposal_sha256": "7980042c558bb7f9dd0dc5058af8fb3a06c07c80566f5db6273e54fe6a4435d4",
+  "audit_status": "PASS_DESIGN_ONLY",
+  "closed_findings": [
+    "S02-2A-H3-D01",
+    "S02-2A-H3-D02"
+  ],
+  "user_decision": "D1–D5 accepted; separately assigned H3-A contracts/pure history policy",
+  "authority": "explicit user message in H3-A implementation turn",
+  "authorized_scope": "H3-A pure contracts, byte/data/pin/inventory validation, typed refs, history transition/hold policy, tests and installed wheel evidence",
+  "not_authorized": [
+    "H3-B/C/D",
+    "filesystem registry loader or Repository factory",
+    "new production I/O, CLI, writer, migration, source switch, Answer/application/human decisions",
+    "LLM/live"
+  ],
+  "implementation_acceptance": "not granted; implementer provides evidence, independent auditor reviews, user accepts final",
+  "known_integrity_observation": "H3-I01 supporting NEXT_PROMPT of draft.1 mismatches its historical seal; use draft.2 and current user instruction; do not restore or reseal historical file",
+  "repo_head": "b0d6ff26c2912c01ceea7a2d8f6a3fa163d3ce57"
+}

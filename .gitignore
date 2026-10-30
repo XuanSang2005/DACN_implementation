@@ -4,6 +4,14 @@
 .tools/
 .pytest_cache/
 __pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
 *.egg-info/
 build/
 dist/
@@ -16,5 +24,9 @@ dist/
 /reports/**/originals/
 /docs/**/STATIC_CHECKS*.json
 .DS_Store
+# Local configuration and credentials; keep distributable examples visible.
+.env
+.env.*
+!.env.example
 # Keep the handwritten CLI regression; only its generated evidence is archived.
 !/reports/s02-phase2/2a-p3-fix02-0.4.0a3-2026-10-23/test_cli_policy_controls.py
