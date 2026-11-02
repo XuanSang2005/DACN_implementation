@@ -1,0 +1,9 @@
+STEP 2: Propose actors, actions, workflows, logical data and rules with sources.
+Preserve all supplied actors through their base handles; do not duplicate them
+as discovered actors. Internal system behavior is not a new external actor.
+For each action identify initiator, actors, read/write data, permission/business
+rules and workflow refs. Viewing permission never implies cancellation rights.
+Keep missing actors/permissions unknown and linked to blocking findings.
+Represent source-supported main, alternative and exception paths with valid
+node/edge/entry refs and guards. Do not invent branches solely to fill arrays.
+Do not create components, deployment topology, interfaces or dependencies here.

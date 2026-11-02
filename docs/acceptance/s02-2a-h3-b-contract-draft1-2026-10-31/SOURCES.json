@@ -1,0 +1,14 @@
+{
+  "source_root": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-b-contract-draft1-2026-10-31",
+  "files": {
+    "AUDIT_REPORT.md": {
+      "sha256": "4f47bff4081f0c6aa9f053bda843ba3f03d52c107325a57070bcaf583dc19756",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-b-contract-draft1-2026-10-31/AUDIT_REPORT.md"
+    },
+    "START_HERE.md": {
+      "sha256": "1513da3bbc2d1b2c665c967ab930745d5bb377cdc6b0af852bd7535122375a84",
+      "original": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-b-contract-draft1-2026-10-31/START_HERE.md"
+    }
+  },
+  "relative_links_inside_copies_resolve_at_original_root": true
+}

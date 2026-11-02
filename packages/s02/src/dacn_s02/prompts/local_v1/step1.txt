@@ -1,0 +1,8 @@
+STEP 1: Check meaning and identify actual missing/ambiguous/conflicting facts.
+Inspect every supplied requirement and criterion for this step. Explicitly cite
+available facts in inspection before deciding to ask anything. Report only
+findings and linked questions in the provided shape, with honest source holds
+and omissions. Do not require components, mapping Parts or quality benchmarks
+to exist yet. Empty findings is valid when no blocking information is missing.
+Do not treat every null operating condition or empty criterion list as a reason
+to ask now; explain the specific decision that would otherwise be blocked.

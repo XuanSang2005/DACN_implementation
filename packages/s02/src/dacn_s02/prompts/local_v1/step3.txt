@@ -1,0 +1,8 @@
+STEP 3: Propose initial logical components and responsibilities from the checked
+actions, workflows, data and rules. Explain grouping/separation with sources,
+alternatives and uncertainties. Shared data/rules is evidence to consider, not
+a mandatory merge. Do not create one component mechanically per actor, entity,
+action or requirement. Components are not automatically microservices or
+deployment units. Link each responsibility to allowed actions/rules; report
+unassigned actions and gaps honestly. Do not invent protocols/dependencies or
+claim architecture characteristics were assessed in steps 5 or 6.

@@ -1,0 +1,24 @@
+{
+  "id": "S02-2A-H3-A-I02",
+  "kind": "working tree drift during audit, outside release snapshot",
+  "severity": "low",
+  "attribution": "unknown; no claim implementer caused it",
+  "time_utc": "2026-10-30T19:47:07.540887+00:00",
+  "files": [
+    {
+      "path": ".gitignore",
+      "audit_start_sha256": "1fb8b5c50e8482ac3a522097feca551d3d672b201fa7e37b125d979bea56eeed",
+      "observed_sha256": "c46f5256d589b2563885bd54013390ea8dc2da0d2e2e1e788579efdf41f57ada",
+      "observed_bytes": 650,
+      "observed_mtime_ns": 1793389305325980650
+    },
+    {
+      "path": "packages/s02/tools/prepare_p2_tests.py",
+      "audit_start_sha256": "f1ddd980bc0c911a6ad905cd396bbe18521f008c3eaf39aa54c66220137f094b",
+      "observed_sha256": "9b05a6ff40b6c2a929fe8ffede563ead02a144d45162df6aab3c058bd4d89865",
+      "observed_bytes": 3989,
+      "observed_mtime_ns": 1793389305325441526
+    }
+  ],
+  "action": "Preserved observed copies; no repo restore/edit/stage. Continue against sealed wheel and copied inputs; separate review before commit."
+}

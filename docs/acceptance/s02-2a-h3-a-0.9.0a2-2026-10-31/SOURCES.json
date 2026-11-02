@@ -1,0 +1,24 @@
+{
+  "copied_unchanged": [
+    {
+      "destination": "AUDIT_REPORT.md",
+      "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-a-0.9.0a2-2026-10-31/AUDIT_REPORT.md",
+      "bytes": 15796,
+      "sha256": "07024e65e163f7778f88240f28eabf04015c419bb79025f72838b5574aa05965"
+    },
+    {
+      "destination": "WORKTREE_DRIFT.json",
+      "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-a-0.9.0a2-2026-10-31/WORKTREE_DRIFT.json",
+      "bytes": 1040,
+      "sha256": "d9cc0845c6bcb860b0e9dca1643b5c34d989b8c8da7f645188a4a5af2be4e0fa"
+    },
+    {
+      "destination": "WORKTREE_DRIFT.patch",
+      "source": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-a-0.9.0a2-2026-10-31/WORKTREE_DRIFT.patch",
+      "bytes": 1278,
+      "sha256": "1b62ccb1dc2a88459b19fd09760df5916ee20849412035d4ccf84075258bd9c3"
+    }
+  ],
+  "audit_evidence_root": "/Users/macbookpro/.codex/.chatgpt-projects/g-p-68c38c8799f48191a101e19a975ca4f9/outputs/audits/s02-2a-h3-a-0.9.0a2-2026-10-31",
+  "relative_links_in_audit_report_resolve_at_original_root": true
+}

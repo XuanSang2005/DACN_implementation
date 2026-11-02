@@ -19,6 +19,8 @@ def main(argv=None):
     start.add_argument('--expect-snapshot');start.add_argument('--receipt',required=True)
     show=sub.add_parser('show-command');group=show.add_mutually_exclusive_group(required=True);group.add_argument('--receipt');group.add_argument('--id')
     show=sub.add_parser('show-record');show.add_argument('--id',required=True)
+    from .local_cli import add_arguments as add_local_arguments
+    add_local_arguments(sub)
     for name in ('bootstrap','analyze-step','prepare-work','resume','progress'):
         work=sub.add_parser(name,allow_abbrev=False);work.add_argument('--receipt',required=True)
         if name in ('bootstrap','analyze-step','prepare-work'):work.add_argument('--from-receipt',required=True)
@@ -43,7 +45,11 @@ def main(argv=None):
     try:
         s=settings(args.config);check_store(s);repo=Repository(s.state/'s02.sqlite3',timeout=s.timeout/1000)
         result=None;record_ids=[];status='completed';exit_code=0;direct=None
-        if args.command in ('bootstrap','analyze-step','prepare-work','resume','progress'):
+        if args.command in ('local-analyze','local-report','local-resume'):
+            from .local_cli import run as local_run
+            from .h1_service import exit_code as work_exit
+            direct=local_run(args,s);cmd=direct['command_id'];exit_code=work_exit(direct)
+        elif args.command in ('bootstrap','analyze-step','prepare-work','resume','progress'):
             from .h1_cli import run
             from .h1_service import exit_code as work_exit
             direct=run(args,s,repo);cmd=direct['command_id'];exit_code=work_exit(direct)

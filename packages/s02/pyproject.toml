@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dacn-s02"
-version = "0.9.0a2"
-description = "DACN S02 H3-A pure history contracts and policy"
+version = "0.13.0a1"
+description = "DACN S02 local transport and prompts; integration contract pending"
 requires-python = ">=3.13,<3.14"
 dependencies = ["dacn-s01==0.1.0a6", "jsonschema==4.26.0"]
 
@@ -14,7 +14,7 @@ where = ["src"]
 namespaces = false
 
 [tool.setuptools.package-data]
-dacn_s02 = ["schemas/*.json", "schemas/profiles/*.json", "schemas/profiles/*/*.json", "schemas/storage/*.json"]
+dacn_s02 = ["schemas/*.json", "schemas/profiles/*.json", "schemas/profiles/*/*.json", "schemas/storage/*.json", "prompts/local_v1/*.txt"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

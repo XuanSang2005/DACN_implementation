@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-31",
+  "decision": "B_P01_ACCEPTED_DESIGN_ONLY_BY_USER",
+  "user_confirmation": "Tôi chấp thuận B-P01 theo audit thiết kế và tiếp tục giao riêng H3-B — checked adoption/AS-only checkpoint.",
+  "proposal_sha256": "5ec9de7796faf7b752b04dfdf2c167896990abe910e72e05ab4d3f8652dc0a02",
+  "implementation_gates": [
+    "G1 pure projected graph round-trip and provenance/assessment separation",
+    "G2 private B version and semantic-authority domain separation",
+    "G3 full T0 dependency lifetime without refreshing pinned intent",
+    "G4 preserve A and execute B S1-S6 safety"
+  ],
+  "runtime_acceptance": false,
+  "assignment": "H3-B only, API before CLI; no C/D/live; no stage/commit/push"
+}

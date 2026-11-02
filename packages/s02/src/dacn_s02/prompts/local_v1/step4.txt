@@ -1,0 +1,10 @@
+STEP 4: Map every requirement and each criterion to proposed responsibility
+coverage, including NFR and constraints. Produce one row per inventory source
+ref. Decompose actual obligations into Parts when appropriate; preserve joint
+actions rather than splitting a Part to evade a hold. Allow many-to-many
+component mappings and system targets; do not invent a component for every NFR.
+Use the exact output schema for proposed/unassigned/blocked and target refs.
+State the covered portion and remaining gap; null coverage cannot establish
+completion. Empty Parts means not_assessed with a finding, never satisfied.
+Keep current blockers and omissions. Mapping is a proposal for review, not
+proof of performance, compliance, business acceptance or readiness for S03.
